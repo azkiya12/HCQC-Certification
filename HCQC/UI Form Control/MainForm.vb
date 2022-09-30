@@ -235,7 +235,7 @@ Public Class MainForm
 
         LabelValueSpl.Text = _DataToValue("SELECT COUNT(id) FROM [HCQC_server].[dbo].[receipt] " &
                                           filter.Replace("[column]", "[sampling]"))
-        'penambahan comentar
+
         LabelC_moi.Text = _DataToValue("SELECT COUNT(dbo.spl_request.id) id FROM dbo.spl_request RIGHT OUTER JOIN dbo.receipt ON dbo.spl_request.id = dbo.receipt.id_request" &
                                         filter.Replace("[column]", "dbo.receipt.datein") & " AND dbo.spl_request.test_moi=1")
         LabelC_Pur.Text = _DataToValue("SELECT COUNT(dbo.spl_request.id) id FROM dbo.spl_request RIGHT OUTER JOIN dbo.receipt ON dbo.spl_request.id = dbo.receipt.id_request" &
