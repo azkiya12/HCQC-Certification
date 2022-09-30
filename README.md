@@ -1,11 +1,14 @@
 ## HCQC-Certification
-<p>tool yang digunakan</p>
+
+###tool yang digunakan
 🛠 Devexpress
 🛠 MetroFramework
 🛠 ZebraBarcode
-<p>Database</p>
+
+###Database
 📚 SQL Server dengan seting TCP/IP
-<p>Print Report</p>
+
+###Print Report
 📄 Report CrystalReport
 
 
