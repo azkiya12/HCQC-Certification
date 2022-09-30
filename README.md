@@ -1,9 +1,7 @@
 ## HCQC-Certification
 <p>tool yang digunakan</p>
 🛠 Devexpress
-
 🛠 MetroFramework
-
 🛠 ZebraBarcode
 
 📚 SQL Server dengan seting TCP/IP
