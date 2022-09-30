@@ -236,15 +236,15 @@ Public Class MainForm
         LabelValueSpl.Text = _DataToValue("SELECT COUNT(id) FROM [HCQC_server].[dbo].[receipt] " &
                                           filter.Replace("[column]", "[sampling]"))
 
-        LabelC_moi.Text = _DataToValue("SELECT COUNT(dbo.spl_request.id) id FROM dbo.spl_request RIGHT OUTER JOIN dbo.receipt ON dbo.spl_request.id = dbo.receipt.id_request" &
-                                        filter.Replace("[column]", "dbo.receipt.datein") & " AND dbo.spl_request.test_moi=1")
-        LabelC_Pur.Text = _DataToValue("SELECT COUNT(dbo.spl_request.id) id FROM dbo.spl_request RIGHT OUTER JOIN dbo.receipt ON dbo.spl_request.id = dbo.receipt.id_request" &
-                                        filter.Replace("[column]", "dbo.receipt.datein") & " AND dbo.spl_request.test_pur=1")
-        LabelC_Raf.Text = _DataToValue("SELECT COUNT(dbo.spl_request.id) id FROM dbo.spl_request RIGHT OUTER JOIN dbo.receipt ON dbo.spl_request.id = dbo.receipt.id_request" &
-                                        filter.Replace("[column]", "dbo.receipt.datein") & " AND dbo.spl_request.test_raf=1")
-        LabelC_Via.Text = _DataToValue("SELECT COUNT(dbo.spl_request.id) id FROM dbo.spl_request RIGHT OUTER JOIN dbo.receipt ON dbo.spl_request.id = dbo.receipt.id_request" &
-                                        filter.Replace("[column]", "dbo.receipt.datein") & " AND dbo.spl_request.test_via=1")
-        LabelC_ger.Text = _DataToValue("SELECT COUNT(dbo.spl_request.id) id FROM dbo.spl_request RIGHT OUTER JOIN dbo.receipt ON dbo.spl_request.id = dbo.receipt.id_request" &
+        'LabelC_moi.Text = _DataToValue("SELECT COUNT(dbo.spl_request.id) id FROM dbo.spl_request RIGHT OUTER JOIN dbo.receipt ON dbo.spl_request.id = dbo.receipt.id_request" &
+        '                                filter.Replace("[column]", "dbo.receipt.datein") & " AND dbo.spl_request.test_moi=1")
+        'LabelC_Pur.Text = _DataToValue("SELECT COUNT(dbo.spl_request.id) id FROM dbo.spl_request RIGHT OUTER JOIN dbo.receipt ON dbo.spl_request.id = dbo.receipt.id_request" &
+        '                                filter.Replace("[column]", "dbo.receipt.datein") & " AND dbo.spl_request.test_pur=1")
+        'LabelC_Raf.Text = _DataToValue("SELECT COUNT(dbo.spl_request.id) id FROM dbo.spl_request RIGHT OUTER JOIN dbo.receipt ON dbo.spl_request.id = dbo.receipt.id_request" &
+        '                                filter.Replace("[column]", "dbo.receipt.datein") & " AND dbo.spl_request.test_raf=1")
+        'LabelC_Via.Text = _DataToValue("SELECT COUNT(dbo.spl_request.id) id FROM dbo.spl_request RIGHT OUTER JOIN dbo.receipt ON dbo.spl_request.id = dbo.receipt.id_request" &
+        '                                filter.Replace("[column]", "dbo.receipt.datein") & " AND dbo.spl_request.test_via=1")
+        'LabelC_ger.Text = _DataToValue("SELECT COUNT(dbo.spl_request.id) id FROM dbo.spl_request RIGHT OUTER JOIN dbo.receipt ON dbo.spl_request.id = dbo.receipt.id_request" &
                                         filter.Replace("[column]", "dbo.receipt.datein") & " AND dbo.spl_request.test_ger=1")
     End Sub
 
