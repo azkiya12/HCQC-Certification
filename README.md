@@ -2,9 +2,9 @@
 
 ###tool yang digunakan
 
-🛠 Devexpress
-🛠 MetroFramework
-🛠 ZebraBarcode
+🛠 [Devexpress]
+🛠 [MetroFramework]
+🛠 [ZebraBarcode]
 
 ###Database
 
