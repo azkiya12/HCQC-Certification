@@ -1,0 +1,1379 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>9.0.30729</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{FA43BE70-B716-444B-B199-9BBC0513583B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>WindowsApplication1.My.MyApplication</StartupObject>
+    <RootNamespace>WindowsApplication1</RootNamespace>
+    <AssemblyName>HCQC</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <OptionExplicit>On</OptionExplicit>
+    <OptionCompare>Binary</OptionCompare>
+    <OptionStrict>Off</OptionStrict>
+    <OptionInfer>On</OptionInfer>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <ApplicationManifest>My Project\app.manifest</ApplicationManifest>
+    <ManifestCertificateThumbprint>EE2575384FE17990FBD64923FC5B2D94DF638BA9</ManifestCertificateThumbprint>
+    <ManifestKeyFile>HCQC_1_TemporaryKey.pfx</ManifestKeyFile>
+    <GenerateManifests>true</GenerateManifests>
+    <SignManifests>false</SignManifests>
+    <ApplicationIcon>hcqc_2.ico</ApplicationIcon>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <UpgradeBackupLocation>
+    </UpgradeBackupLocation>
+    <OldToolsVersion>3.5</OldToolsVersion>
+    <TargetFrameworkProfile />
+    <PublishUrl>E:\PT. Bisi Internasional\Project Bisi HCQC\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Unc</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>\\Dhona\3. software\UNC\</InstallUrl>
+    <ApplicationRevision>128</ApplicationRevision>
+    <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>HCQC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <PlatformTarget>x86</PlatformTarget>
+    <Prefer32Bit>true</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>HCQC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DocumentationFile>HCQC.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DocumentationFile>HCQC.xml</DocumentationFile>
+    <Optimize>true</Optimize>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022,42353,42354,42355</NoWarn>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <AutoGenerateBindingRedirects>false</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Accessibility" />
+    <Reference Include="BouncyCastle.Crypto, Version=1.8.2.0, Culture=neutral, PublicKeyToken=0e99375e54769942, processorArchitecture=MSIL">
+      <HintPath>..\packages\Portable.BouncyCastle.1.8.2\lib\net40\BouncyCastle.Crypto.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.Core, Version=1.11.3.0, Culture=neutral, PublicKeyToken=e8e24ccd28363fe9" />
+    <Reference Include="Bunifu.UI.WinForms.BunifuButton">
+      <HintPath>C:\Users\hcqc laboratory\Documents\Bunifu UI WinForms 1.11.3.0\Bunifu.UI.WinForms.BunifuButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuDataGridView">
+      <HintPath>C:\Users\hcqc laboratory\Documents\Bunifu UI WinForms 1.11.3.0\Bunifu.UI.WinForms.BunifuDataGridView.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuFormDock">
+      <HintPath>C:\Users\hcqc laboratory\Documents\Bunifu UI WinForms 1.11.3.0\Bunifu.UI.WinForms.BunifuFormDock.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuImageButton">
+      <HintPath>C:\Users\hcqc laboratory\Documents\Bunifu UI WinForms 1.11.3.0\Bunifu.UI.WinForms.BunifuImageButton.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu.UI.WinForms.BunifuTextbox">
+      <HintPath>C:\Users\hcqc laboratory\Documents\Bunifu UI WinForms 1.11.3.0\Bunifu.UI.WinForms.BunifuTextbox.dll</HintPath>
+    </Reference>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>C:\Users\hcqc laboratory\Downloads\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.4000.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="Csv, Version=1.0.31.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Csv.1.0.31\lib\net40\Csv.dll</HintPath>
+    </Reference>
+    <Reference Include="DevExpress.BonusSkins.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Charts.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.CodeParser.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Dashboard.v20.1.Win, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Data.Desktop.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Data.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.DataAccess.v20.1.UI, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.ExpressApp.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Images.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.Map.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Office.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Persistent.Base.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.PivotGrid.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Printing.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.RichEdit.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Sparkline.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Spreadsheet.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.TreeMap.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Utils.v20.1.UI, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.Xpo.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraBars.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.UI, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraCharts.v20.1.Wizard, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraEditors.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Presets, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGauges.v20.1.Win, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraLayout.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraMap.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraNavBar.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPivotGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraPrinting.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraReports.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraRichEdit.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraScheduler.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraScheduler.v20.1.Core, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraSpreadsheet.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraTreeList.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraTreeMap.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+    <Reference Include="DevExpress.XtraVerticalGrid.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DevExpress.XtraWizard.v20.1, Version=20.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a, processorArchitecture=MSIL" />
+    <Reference Include="DgvFilterPopup, Version=1.1.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Service References\DgvFilterPopup.dll</HintPath>
+    </Reference>
+    <Reference Include="FluentFTP, Version=19.2.2.0, Culture=neutral, PublicKeyToken=f4af092b1d8df44f, processorArchitecture=MSIL">
+      <HintPath>..\packages\FluentFTP.19.2.2\lib\net45\FluentFTP.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Design, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Design.dll</HintPath>
+    </Reference>
+    <Reference Include="MetroFramework.Fonts, Version=1.4.0.0, Culture=neutral, PublicKeyToken=5f91a84759bf584a, processorArchitecture=MSIL">
+      <HintPath>..\packages\MetroModernUI.1.4.0.0\lib\net\MetroFramework.Fonts.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="Microsoft.DotNet.PlatformAbstractions, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.DotNet.PlatformAbstractions.2.1.0\lib\net45\Microsoft.DotNet.PlatformAbstractions.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Extensions.DependencyModel, Version=2.1.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Extensions.DependencyModel.2.1.0\lib\net451\Microsoft.Extensions.DependencyModel.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.Common, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.ReportViewer.WinForms, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic.Compatibility" />
+    <Reference Include="Microsoft.VisualBasic.PowerPacks, Version=9.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL" />
+    <Reference Include="Newtonsoft.Json, Version=11.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.11.0.2\lib\net45\Newtonsoft.Json.dll</HintPath>
+    </Reference>
+    <Reference Include="OnBarcode.Barcode.WinForms">
+      <HintPath>Service References\OnBarcode.Barcode.WinForms.dll</HintPath>
+    </Reference>
+    <Reference Include="PresentationCore">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="PresentationFramework">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="SdkApi.Core, Version=2.15.2634.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zebra.Printer.SDK.2.15.2634\lib\net471\SdkApi.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="SdkApi.Desktop, Version=2.15.2634.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zebra.Printer.SDK.2.15.2634\lib\net471\SdkApi.Desktop.dll</HintPath>
+    </Reference>
+    <Reference Include="SdkApi.Desktop.Usb, Version=2.15.2634.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zebra.Printer.SDK.2.15.2634\lib\net471\SdkApi.Desktop.Usb.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpSnmpLib, Version=12.0.0.0, Culture=neutral, PublicKeyToken=4c00852d3788e005, processorArchitecture=MSIL">
+      <HintPath>..\packages\Lextm.SharpSnmpLib.12.0.0\lib\net471\SharpSnmpLib.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Collections.Specialized, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Collections.Specialized.4.3.0\lib\net46\System.Collections.Specialized.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Design" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Net.NameResolution, Version=4.0.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.NameResolution.4.3.0\lib\net46\System.Net.NameResolution.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Net.Sockets, Version=4.1.1.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Net.Sockets.4.3.0\lib\net46\System.Net.Sockets.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.InteropServices.RuntimeInformation, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Runtime.InteropServices.RuntimeInformation.4.0.0\lib\net45\System.Runtime.InteropServices.RuntimeInformation.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Extensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Web.Services, Version=2.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>C:\Windows\assembly\GAC_MSIL\System.Web.Services\2.0.0.0__b03f5f7f11d50a3a\System.Web.Services.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.Linq">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Data.DataSetExtensions">
+      <RequiredTargetFramework>3.5</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="System.Xml.XmlDocument, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
+      <HintPath>..\packages\System.Xml.XmlDocument.4.3.0\lib\net46\System.Xml.XmlDocument.dll</HintPath>
+      <Private>True</Private>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="Transitions, Version=1.2.0.0, Culture=neutral, processorArchitecture=x86">
+      <HintPath>C:\Users\Owner\Documents\Visual Studio 2008\Projects\Panel slider\Panel slider\bin\Debug\Transitions.dll</HintPath>
+      <SpecificVersion>False</SpecificVersion>
+    </Reference>
+    <Reference Include="UIAutomationProvider">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsFormsIntegration">
+      <RequiredTargetFramework>3.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="ZebraPrinterSdk, Version=2.15.2634.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Zebra.Printer.SDK.2.15.2634\lib\net471\ZebraPrinterSdk.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net47\zxing.dll</HintPath>
+    </Reference>
+    <Reference Include="zxing.presentation, Version=0.16.6.0, Culture=neutral, PublicKeyToken=4e88037ac681fe60, processorArchitecture=MSIL">
+      <HintPath>..\packages\ZXing.Net.0.16.6\lib\net47\zxing.presentation.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="CrystalDecisions.CrystalReports.Engine" />
+    <Import Include="CrystalDecisions.ReportSource" />
+    <Import Include="MetroFramework" />
+    <Import Include="MetroFramework.Controls" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="Microsoft.VisualBasic.Compatibility" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+    <Import Include="Transitions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="About HCQC aplication.Designer.vb">
+      <DependentUpon>About HCQC aplication.vb</DependentUpon>
+    </Compile>
+    <Compile Include="About HCQC aplication.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="HCQC_NewDataset.vb">
+      <DependentUpon>HCQC_NewDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="UI Ex\Data List External.Designer.vb">
+      <DependentUpon>Data List External.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Ex\Data List External.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI FG\Data List Finish Goods.Designer.vb">
+      <DependentUpon>Data List Finish Goods.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI FG\Data List Finish Goods.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Control\Customer Info.Designer.vb">
+      <DependentUpon>Customer Info.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Control\Customer Info.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="HCQC_NewDataset.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCQC_NewDataset.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCQC_serverDataSet.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>HCQC_serverDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="HCQC_serverDataSet.vb">
+      <DependentUpon>HCQC_serverDataSet.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Resources\Coba WIP Certification.vb">
+      <DependentUpon>Coba WIP Certification.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\External Cerfication 2018.vb">
+      <DependentUpon>External Cerfication 2018.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="Resources\CrystalReport1.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\External Cerfication new.vb">
+      <DependentUpon>External Cerfication new.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\Raw Material Certificate.vb">
+      <DependentUpon>Raw Material Certificate.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\WIP Certification new DT2.vb">
+      <DependentUpon>WIP Certification new DT2.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\WIP Certification new.vb">
+      <DependentUpon>WIP Certification new.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\Copy of WIP Certification1.vb">
+      <DependentUpon>Copy of WIP Certification.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\External Cerfication.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>External Cerfication.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\Finish Good Certification.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Finish Good Certification.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Resources\Periodik Certificate.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Periodik Certificate.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Module1.vb" />
+    <Compile Include="Module2.vb" />
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="Resources\WIP Certification1.vb">
+      <DependentUpon>WIP Certification.rpt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Control\containermenu.designer.vb">
+      <DependentUpon>containermenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Control\containermenu.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Control\containerusermenu.designer.vb">
+      <DependentUpon>containerusermenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Control\containerusermenu.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\CertificationStandard\Conclution.Designer.vb">
+      <DependentUpon>Conclution.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\CertificationStandard\Conclution.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\DirectSAS\DirectStockOnProcess.Designer.vb">
+      <DependentUpon>DirectStockOnProcess.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\DirectSAS\DirectStockOnProcess.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\HarvestPlanning\DirectImportfromSAS.Designer.vb">
+      <DependentUpon>DirectImportfromSAS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\HarvestPlanning\DirectImportfromSAS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\SamplingRequest\DirectImportGlobalReportSAS.Designer.vb">
+      <DependentUpon>DirectImportGlobalReportSAS.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\SamplingRequest\DirectImportGlobalReportSAS.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\SamplingRequest\List of Production Number.Designer.vb">
+      <DependentUpon>List of Production Number.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\SamplingRequest\List of Production Number.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckIn1Count.Designer.vb">
+      <DependentUpon>CheckIn1Count.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckIn1Count.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInGer.Designer.vb">
+      <DependentUpon>CheckInGer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInGer.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInKa.Designer.vb">
+      <DependentUpon>CheckInKa.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInKa.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInPur.Designer.vb">
+      <DependentUpon>CheckInPur.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInPur.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInRaf.Designer.vb">
+      <DependentUpon>CheckInRaf.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInRaf.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInVia.Designer.vb">
+      <DependentUpon>CheckInVia.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInVia.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInVigor.Designer.vb">
+      <DependentUpon>CheckInVigor.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInVigor.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckOutQC.Designer.vb">
+      <DependentUpon>CheckOutQC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckOutQC.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckReturnHCP.Designer.vb">
+      <DependentUpon>CheckReturnHCP.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckReturnHCP.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Dashboard1.Designer.vb">
+      <DependentUpon>Dashboard1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Dashboard1.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Sample Return.Designer.vb">
+      <DependentUpon>Sample Return.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Sample Return.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\Data List Program Lama.Designer.vb">
+      <DependentUpon>Data List Program Lama.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\Data List Program Lama.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\GridDevexpress.Designer.vb">
+      <DependentUpon>GridDevexpress.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\GridDevexpress.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Control\Kategori Crop.Designer.vb">
+      <DependentUpon>Kategori Crop.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Control\Kategori Crop.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Control\PasswordControl.Designer.vb">
+      <DependentUpon>PasswordControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Control\PasswordControl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Form Import.Designer.vb">
+      <DependentUpon>Form Import.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Form Import.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Import Data Excel.Designer.vb">
+      <DependentUpon>Import Data Excel.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Import Data Excel.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\Sample Tracking.Designer.vb">
+      <DependentUpon>Sample Tracking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\Sample Tracking.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Sampling Verification\Confirmation.Designer.vb">
+      <DependentUpon>Confirmation.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Sampling Verification\Confirmation.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\SamplingRequest\Data Request.Designer.vb">
+      <DependentUpon>Data Request.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\SamplingRequest\Data Request.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\SamplingRequest\Multy Request Sample.Designer.vb">
+      <DependentUpon>Multy Request Sample.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\SamplingRequest\Multy Request Sample.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\Status Tracking.Designer.vb">
+      <DependentUpon>Status Tracking.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\Status Tracking.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Check in Sample.Designer.vb">
+      <DependentUpon>Check in Sample.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Check in Sample.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\QC Return.Designer.vb">
+      <DependentUpon>QC Return.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\QC Return.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\QC Verification.Designer.vb">
+      <DependentUpon>QC Verification.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\QC Verification.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\Request Sampling From.Designer.vb">
+      <DependentUpon>Request Sampling From.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\Request Sampling From.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\Sample Return Form.Designer.vb">
+      <DependentUpon>Sample Return Form.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\Sample Return Form.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Sampling Verification\Rejected Remark.Designer.vb">
+      <DependentUpon>Rejected Remark.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Sampling Verification\Rejected Remark.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\Harvest Planning.Designer.vb">
+      <DependentUpon>Harvest Planning.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Main Menu\Harvest Planning.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\HC Sample Test Control.Designer.vb">
+      <DependentUpon>HC Sample Test Control.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\HC Sample Test Control.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\Sample Return List.Designer.vb">
+      <DependentUpon>Sample Return List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\Sample Return List.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\MainForm.designer.vb">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\MainForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\arsip sample.Designer.vb">
+      <DependentUpon>arsip sample.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\arsip sample.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\Data List Inspection.Designer.vb">
+      <DependentUpon>Data List Inspection.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\Data List Inspection.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\global report.Designer.vb">
+      <DependentUpon>global report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\global report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\internal report.Designer.vb">
+      <DependentUpon>internal report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\internal report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\ista report.Designer.vb">
+      <DependentUpon>ista report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\ista report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\leadtime_report.Designer.vb">
+      <DependentUpon>leadtime_report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\leadtime_report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\Periodic Scedule.Designer.vb">
+      <DependentUpon>Periodic Scedule.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\Periodic Scedule.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\sas report.Designer.vb">
+      <DependentUpon>sas report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\sas report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\login\login.Designer.vb">
+      <DependentUpon>login.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\login\login.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\login\MsgSuccess.Designer.vb">
+      <DependentUpon>MsgSuccess.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\login\MsgSuccess.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\login\Signin.Designer.vb">
+      <DependentUpon>Signin.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\login\Signin.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\login\Signup.Designer.vb">
+      <DependentUpon>Signup.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\login\Signup.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\Seed Testing Result.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Seed Testing Result.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\External Cerfication v1.vb">
+      <DependentUpon>External Cerfication v1.rpt</DependentUpon>
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\Label Select.Designer.vb">
+      <DependentUpon>Label Select.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Report\Label Select.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\Print Report.Designer.vb">
+      <DependentUpon>Print Report.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Report\Print Report.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\Select Printer.Designer.vb">
+      <DependentUpon>Select Printer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Report\Select Printer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\TermalReport\Printer.vb" />
+    <Compile Include="UI Form Control\Report\Report Label HCQC.Designer.vb">
+      <DependentUpon>Report Label HCQC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Report\Report Label HCQC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\Report Label Production.Designer.vb">
+      <DependentUpon>Report Label Production.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Report\Report Label Production.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\Report Print List.Designer.vb">
+      <DependentUpon>Report Print List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Report\Report Print List.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\report_a2.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>report_a2.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\Print Label.Designer.vb">
+      <DependentUpon>Print Label.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Report\Print Label.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\report_a1.vb">
+      <DependentUpon>report_a1.rpt</DependentUpon>
+      <SubType>Component</SubType>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Category List.Designer.vb">
+      <DependentUpon>Category List.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Category List.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\CustomerControl.Designer.vb">
+      <DependentUpon>CustomerControl.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\CustomerControl.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\CertificationStandard\Germination Test.Designer.vb">
+      <DependentUpon>Germination Test.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\CertificationStandard\Germination Test.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Input Customer.Designer.vb">
+      <DependentUpon>Input Customer.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\Input Customer.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\InternalQuality\Inspection RM.Designer.vb">
+      <DependentUpon>Inspection RM.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\InternalQuality\Inspection RM.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\InternalQuality\Internal Rafraction Test.Designer.vb">
+      <DependentUpon>Internal Rafraction Test.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\InternalQuality\Internal Rafraction Test.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\CertificationStandard\Moisture Test.Designer.vb">
+      <DependentUpon>Moisture Test.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\CertificationStandard\Moisture Test.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\CertificationStandard\PurityTest.Designer.vb">
+      <DependentUpon>PurityTest.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\CertificationStandard\PurityTest.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Sample Archive.Designer.vb">
+      <DependentUpon>Sample Archive.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Sample Archive.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\CertificationStandard\Sample Control.Designer.vb">
+      <DependentUpon>Sample Control.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\CertificationStandard\Sample Control.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Sample Receipt.Designer.vb">
+      <DependentUpon>Sample Receipt.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\SeedsSampling\Sample Receipt.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Form\InternalQuality\Viability Test.Designer.vb">
+      <DependentUpon>Viability Test.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Form\InternalQuality\Viability Test.vb">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\report_a3.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>report_a3.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\report_a4.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>report_a4.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\TermalReport\Termal Print Label HCQC.Designer.vb">
+      <DependentUpon>Termal Print Label HCQC.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\Report\TermalReport\Termal Print Label HCQC.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\TermalReport\ZPLTemplate.vb" />
+    <Compile Include="UI G\Data List Daya Tumbuh.Designer.vb">
+      <DependentUpon>Data List Daya Tumbuh.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI G\Data List Daya Tumbuh.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI G\Data List Grafity.Designer.vb">
+      <DependentUpon>Data List Grafity.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI G\Data List Grafity.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI G\Data List Refraction.Designer.vb">
+      <DependentUpon>Data List Refraction.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI G\Data List Refraction.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI RM\Data List Raw Material.Designer.vb">
+      <DependentUpon>Data List Raw Material.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI RM\Data List Raw Material.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="WaterMarkTextBox.vb">
+      <SubType>Component</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="About HCQC aplication.resx">
+      <DependentUpon>About HCQC aplication.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\licenses.licx" />
+    <EmbeddedResource Include="UI Ex\Data List External.resx">
+      <DependentUpon>Data List External.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI FG\Data List Finish Goods.resx">
+      <DependentUpon>Data List Finish Goods.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Control\Customer Info.resx">
+      <DependentUpon>Customer Info.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="leadtime.rdlc" />
+    <EmbeddedResource Include="Resources\Coba WIP Certification.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Coba WIP Certification.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\External Cerfication 2018.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>External Cerfication 2018.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\CrystalReport1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\External Cerfication new.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>External Cerfication new.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Raw Material Certificate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Raw Material Certificate.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WIP Certification new DT2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>WIP Certification new DT2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WIP Certification new.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>WIP Certification new.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Copy of WIP Certification.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Copy of WIP Certification1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\External Cerfication.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>External Cerfication.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Finish Good Certification.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Finish Good Certification.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\Periodik Certificate.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Periodik Certificate.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Resources\WIP Certification.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>WIP Certification1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Control\containermenu.resx">
+      <DependentUpon>containermenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Control\containerusermenu.resx">
+      <DependentUpon>containerusermenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\CertificationStandard\Conclution.resx">
+      <DependentUpon>Conclution.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\DirectSAS\DirectStockOnProcess.resx">
+      <DependentUpon>DirectStockOnProcess.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\Main Menu\HarvestPlanning\DirectImportfromSAS.resx">
+      <DependentUpon>DirectImportfromSAS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\Main Menu\SamplingRequest\DirectImportGlobalReportSAS.resx">
+      <DependentUpon>DirectImportGlobalReportSAS.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\Main Menu\SamplingRequest\List of Production Number.resx">
+      <DependentUpon>List of Production Number.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckIn1Count.resx">
+      <DependentUpon>CheckIn1Count.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInGer.resx">
+      <DependentUpon>CheckInGer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInKa.resx">
+      <DependentUpon>CheckInKa.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInPur.resx">
+      <DependentUpon>CheckInPur.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInRaf.resx">
+      <DependentUpon>CheckInRaf.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInVia.resx">
+      <DependentUpon>CheckInVia.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckInVigor.resx">
+      <DependentUpon>CheckInVigor.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckOutQC.resx">
+      <DependentUpon>CheckOutQC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Control CheckIn\CheckReturnHCP.resx">
+      <DependentUpon>CheckReturnHCP.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Sample Return.resx">
+      <DependentUpon>Sample Return.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\gridview\Data List Program Lama.resx">
+      <DependentUpon>Data List Program Lama.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\gridview\GridDevexpress.resx">
+      <DependentUpon>GridDevexpress.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Control\Kategori Crop.resx">
+      <DependentUpon>Kategori Crop.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Control\PasswordControl.resx">
+      <DependentUpon>PasswordControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\Form Import.resx">
+      <DependentUpon>Form Import.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\Import Data Excel.resx">
+      <DependentUpon>Import Data Excel.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\Main Menu\Sample Tracking.resx">
+      <DependentUpon>Sample Tracking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Sampling Verification\Confirmation.resx">
+      <DependentUpon>Confirmation.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\Main Menu\SamplingRequest\Data Request.resx">
+      <DependentUpon>Data Request.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\Main Menu\SamplingRequest\Multy Request Sample.resx">
+      <DependentUpon>Multy Request Sample.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\Main Menu\Status Tracking.resx">
+      <DependentUpon>Status Tracking.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Check in Sample.resx">
+      <DependentUpon>Check in Sample.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\QC Return.resx">
+      <DependentUpon>QC Return.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\QC Verification.resx">
+      <DependentUpon>QC Verification.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\Main Menu\Request Sampling From.resx">
+      <DependentUpon>Request Sampling From.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\Main Menu\Sample Return Form.resx">
+      <DependentUpon>Sample Return Form.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Sampling Verification\Rejected Remark.resx">
+      <DependentUpon>Rejected Remark.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\Main Menu\Harvest Planning.resx">
+      <DependentUpon>Harvest Planning.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\gridview\HC Sample Test Control.resx">
+      <DependentUpon>HC Sample Test Control.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\gridview\Sample Return List.resx">
+      <DependentUpon>Sample Return List.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\MainForm.resx">
+      <DependentUpon>MainForm.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\gridview\arsip sample.resx">
+      <DependentUpon>arsip sample.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\gridview\Data List Inspection.resx">
+      <DependentUpon>Data List Inspection.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\gridview\global report.resx">
+      <DependentUpon>global report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\gridview\internal report.resx">
+      <DependentUpon>internal report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\gridview\ista report.resx">
+      <DependentUpon>ista report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\gridview\leadtime_report.resx">
+      <DependentUpon>leadtime_report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\gridview\Periodic Scedule.resx">
+      <DependentUpon>Periodic Scedule.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\gridview\sas report.resx">
+      <DependentUpon>sas report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\login\login.resx">
+      <DependentUpon>login.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\login\MsgSuccess.resx">
+      <DependentUpon>MsgSuccess.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\login\Signin.resx">
+      <DependentUpon>Signin.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\login\Signup.resx">
+      <DependentUpon>Signup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Report\Seed Testing Result.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>Seed Testing Result.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Report\External Cerfication v1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>External Cerfication v1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Report\Label Select.resx">
+      <DependentUpon>Label Select.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Report\Print Report.resx">
+      <DependentUpon>Print Report.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Report\Report Label HCQC.resx">
+      <DependentUpon>Report Label HCQC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Report\Report Label Production.resx">
+      <DependentUpon>Report Label Production.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Report\Report Print List.resx">
+      <DependentUpon>Report Print List.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Report\report_a2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_a2.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Report\Print Label.resx">
+      <DependentUpon>Print Label.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Report\report_a1.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_a1.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\Category List.resx">
+      <DependentUpon>Category List.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\gridview\CustomerControl.resx">
+      <DependentUpon>CustomerControl.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\CertificationStandard\Germination Test.resx">
+      <DependentUpon>Germination Test.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\Input Customer.resx">
+      <DependentUpon>Input Customer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\InternalQuality\Inspection RM.resx">
+      <DependentUpon>Inspection RM.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\InternalQuality\Internal Rafraction Test.resx">
+      <DependentUpon>Internal Rafraction Test.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\CertificationStandard\Moisture Test.resx">
+      <DependentUpon>Moisture Test.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\CertificationStandard\PurityTest.resx">
+      <DependentUpon>PurityTest.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Sample Archive.resx">
+      <DependentUpon>Sample Archive.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\CertificationStandard\Sample Control.resx">
+      <DependentUpon>Sample Control.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Sample Receipt.resx">
+      <DependentUpon>Sample Receipt.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Form\InternalQuality\Viability Test.resx">
+      <DependentUpon>Viability Test.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Report\report_a3.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_a3.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Report\report_a4.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>report_a4.vb</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Report\Select Printer.resx">
+      <DependentUpon>Select Printer.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Report\TermalReport\Termal Print Label HCQC.resx">
+      <DependentUpon>Termal Print Label HCQC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI G\Data List Daya Tumbuh.resx">
+      <DependentUpon>Data List Daya Tumbuh.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI G\Data List Grafity.resx">
+      <DependentUpon>Data List Grafity.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI G\Data List Refraction.resx">
+      <DependentUpon>Data List Refraction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI RM\Data List Raw Material.resx">
+      <DependentUpon>Data List Raw Material.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="HCQC_NewDataset.xsc">
+      <DependentUpon>HCQC_NewDataset.xsd</DependentUpon>
+    </None>
+    <None Include="HCQC_NewDataset.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCQC_NewDataset.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="HCQC_NewDataset.xss">
+      <DependentUpon>HCQC_NewDataset.xsd</DependentUpon>
+    </None>
+    <None Include="My Project\app.manifest" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{967B4E0D-AD0C-4609-AB67-0FA40C0206D8}" />
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="BusinessObjects.CrystalReports.10.5">
+      <Visible>False</Visible>
+      <ProductName>Crystal Reports Basic for Visual Studio 2008 %28x86, x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.2.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 2.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.0">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.0 %28x86%29</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="GerView.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="hcqc_2.ico" />
+    <Content Include="SetView1.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\appbar.refresh.png" />
+    <Content Include="Resources\printer.png" />
+    <None Include="Resources\print_30px.png" />
+    <None Include="Resources\print.bmp" />
+    <None Include="Resources\BunifuImageButton3.Image.png" />
+    <None Include="packages.config" />
+    <None Include="Resources\Right.png" />
+    <None Include="Resources\Find.png" />
+    <None Include="HCQC_serverDataSet.xsc">
+      <DependentUpon>HCQC_serverDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="HCQC_serverDataSet.xsd">
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>HCQC_serverDataSet.Designer.vb</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="HCQC_serverDataSet.xss">
+      <DependentUpon>HCQC_serverDataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Resources\Add.png" />
+    <None Include="Resources\tear_off_calendar.ico" />
+    <None Include="Resources\tear_off_calendar.png" />
+    <None Include="Resources\11_7.png" />
+    <None Include="Resources\icon.png" />
+    <None Include="Resources\icon.jpg" />
+    <None Include="Resources\Dasar.png" />
+    <None Include="Resources\search.png" />
+    <None Include="Resources\find-16x16.png" />
+    <None Include="Resources\1518434939.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

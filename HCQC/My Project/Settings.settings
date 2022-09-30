@@ -1,0 +1,18 @@
+﻿<?xml version='1.0' encoding='utf-8'?>
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="My" GeneratedClassName="MySettings" UseMySettingsClassName="true">
+  <Profiles />
+  <Settings>
+    <Setting Name="tema" Type="MetroFramework.MetroThemeStyle" Scope="User">
+      <Value Profile="(Default)">Default</Value>
+    </Setting>
+    <Setting Name="gaya" Type="MetroFramework.MetroColorStyle" Scope="User">
+      <Value Profile="(Default)">Default</Value>
+    </Setting>
+    <Setting Name="Seting" Type="System.String" Scope="User">
+      <Value Profile="(Default)">id;labnum;id_hvsprod;variety;farmer;location;harvest;nomnl;nojob;weight;scope;req_date;tgl_confirm;spl_receipt;lead;StatusResult;EstFinish;Finished_Date;Sample_Return;bag;crop;StatusTL</Value>
+    </Setting>
+    <Setting Name="Ignore" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">True</Value>
+    </Setting>
+  </Settings>
+</SettingsFile>

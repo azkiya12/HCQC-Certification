@@ -1,0 +1,600 @@
+﻿<XtraSerializer version="1.0" application="View">
+  <property name="#LayoutVersion" />
+  <property name="#LayoutScaleFactor">@1,Width=1@1,Height=1</property>
+  <property name="OptionsView" isnull="true" iskey="true">
+    <property name="ColumnAutoWidth">false</property>
+    <property name="ShowAutoFilterRow">true</property>
+    <property name="ShowFooter">true</property>
+  </property>
+  <property name="ActiveFilterEnabled">true</property>
+  <property name="Columns" iskey="true" value="65">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="Name">colid</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item2" isnull="true" iskey="true">
+      <property name="Name">collabnum</property>
+      <property name="VisibleIndex">0</property>
+      <property name="Visible">true</property>
+      <property name="Width">98</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+      <property name="Summary" iskey="true" value="2">
+        <property name="Item1" isnull="true" iskey="true">
+          <property name="Tag" isnull="true" />
+          <property name="FieldName">labnum</property>
+          <property name="SummaryType">Count</property>
+          <property name="Mode">Selection</property>
+          <property name="DisplayFormat">{0}</property>
+        </property>
+        <property name="Item2" isnull="true" iskey="true">
+          <property name="Tag" isnull="true" />
+          <property name="FieldName">labnum</property>
+          <property name="SummaryType">Count</property>
+          <property name="Mode">AllRows</property>
+          <property name="DisplayFormat">{0}</property>
+        </property>
+      </property>
+    </property>
+    <property name="Item3" isnull="true" iskey="true">
+      <property name="Name">colid_hvsprod</property>
+      <property name="Width">90</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item4" isnull="true" iskey="true">
+      <property name="Name">colvariety</property>
+      <property name="VisibleIndex">1</property>
+      <property name="Visible">true</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item5" isnull="true" iskey="true">
+      <property name="Name">colnomnl</property>
+      <property name="VisibleIndex">2</property>
+      <property name="Visible">true</property>
+      <property name="Width">55</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item6" isnull="true" iskey="true">
+      <property name="Name">colnojob</property>
+      <property name="VisibleIndex">3</property>
+      <property name="Visible">true</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item7" isnull="true" iskey="true">
+      <property name="Name">colweight</property>
+      <property name="VisibleIndex">5</property>
+      <property name="Visible">true</property>
+      <property name="Width">79</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item8" isnull="true" iskey="true">
+      <property name="Name">colfarmer</property>
+      <property name="Width">94</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item9" isnull="true" iskey="true">
+      <property name="Name">collocation</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item10" isnull="true" iskey="true">
+      <property name="Name">colharvest</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item11" isnull="true" iskey="true">
+      <property name="Name">colscope</property>
+      <property name="VisibleIndex">4</property>
+      <property name="Visible">true</property>
+      <property name="Width">87</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item12" isnull="true" iskey="true">
+      <property name="Name">coltest_sampling</property>
+      <property name="Width">80</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item13" isnull="true" iskey="true">
+      <property name="Name">coltest_moi</property>
+      <property name="Width">79</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item14" isnull="true" iskey="true">
+      <property name="Name">coltest_pur</property>
+      <property name="Width">67</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item15" isnull="true" iskey="true">
+      <property name="Name">coltest_ger</property>
+      <property name="VisibleIndex">8</property>
+      <property name="Visible">true</property>
+      <property name="Width">93</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item16" isnull="true" iskey="true">
+      <property name="Name">coltest_via</property>
+      <property name="Width">74</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item17" isnull="true" iskey="true">
+      <property name="Name">coltest_raf</property>
+      <property name="Width">83</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item18" isnull="true" iskey="true">
+      <property name="Name">coltest_ontest</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item19" isnull="true" iskey="true">
+      <property name="Name">colinput_date</property>
+      <property name="VisibleIndex">9</property>
+      <property name="Visible">true</property>
+      <property name="Width">80</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item20" isnull="true" iskey="true">
+      <property name="Name">colReceipt</property>
+      <property name="VisibleIndex">6</property>
+      <property name="Visible">true</property>
+      <property name="Width">76</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item21" isnull="true" iskey="true">
+      <property name="Name">colbrt_in</property>
+      <property name="Width">113</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item22" isnull="true" iskey="true">
+      <property name="Name">colReceipt_Input</property>
+      <property name="Width">97</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item23" isnull="true" iskey="true">
+      <property name="Name">colsampler</property>
+      <property name="Width">67</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item24" isnull="true" iskey="true">
+      <property name="Name">colstatus_confirm</property>
+      <property name="VisibleIndex">7</property>
+      <property name="Visible">true</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item25" isnull="true" iskey="true">
+      <property name="Name">colsampling</property>
+      <property name="Width">67</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item26" isnull="true" iskey="true">
+      <property name="Name">colRaf_Test</property>
+      <property name="Width">80</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item27" isnull="true" iskey="true">
+      <property name="Name">colRaf_Result</property>
+      <property name="Width">67</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item28" isnull="true" iskey="true">
+      <property name="Name">colRaf_Analys</property>
+      <property name="Width">67</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item29" isnull="true" iskey="true">
+      <property name="Name">colRaf_input</property>
+      <property name="Width">83</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item30" isnull="true" iskey="true">
+      <property name="Name">colMoi_Test</property>
+      <property name="Width">92</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item31" isnull="true" iskey="true">
+      <property name="Name">colMoi_Analys</property>
+      <property name="Width">93</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item32" isnull="true" iskey="true">
+      <property name="Name">colMoi_input</property>
+      <property name="Width">93</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item33" isnull="true" iskey="true">
+      <property name="Name">colGer_TestLog</property>
+      <property name="VisibleIndex">10</property>
+      <property name="Visible">true</property>
+      <property name="Width">117</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item34" isnull="true" iskey="true">
+      <property name="Name">colGer_Test</property>
+      <property name="Width">109</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item35" isnull="true" iskey="true">
+      <property name="Name">colGer_1st</property>
+      <property name="Width">88</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item36" isnull="true" iskey="true">
+      <property name="Name">colGer_1st_Est</property>
+      <property name="Width">82</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item37" isnull="true" iskey="true">
+      <property name="Name">colGer_2nd</property>
+      <property name="Width">91</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item38" isnull="true" iskey="true">
+      <property name="Name">colGer_2nd_Est</property>
+      <property name="VisibleIndex">13</property>
+      <property name="Visible">true</property>
+      <property name="Width">88</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item39" isnull="true" iskey="true">
+      <property name="Name">colGer_Analys</property>
+      <property name="Width">116</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item40" isnull="true" iskey="true">
+      <property name="Name">colGer_input</property>
+      <property name="Width">99</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item41" isnull="true" iskey="true">
+      <property name="Name">colVia_Test</property>
+      <property name="Width">82</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item42" isnull="true" iskey="true">
+      <property name="Name">colVia_Analys</property>
+      <property name="Width">99</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item43" isnull="true" iskey="true">
+      <property name="Name">colVia_input</property>
+      <property name="Width">93</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item44" isnull="true" iskey="true">
+      <property name="Name">colPur_Test</property>
+      <property name="Width">80</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item45" isnull="true" iskey="true">
+      <property name="Name">colPur_Analys</property>
+      <property name="Width">88</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item46" isnull="true" iskey="true">
+      <property name="Name">colPur_input</property>
+      <property name="Width">67</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item47" isnull="true" iskey="true">
+      <property name="Name">colQuick_Raf</property>
+      <property name="VisibleIndex">14</property>
+      <property name="Visible">true</property>
+      <property name="Width">104</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item48" isnull="true" iskey="true">
+      <property name="Name">colRetunQC</property>
+      <property name="VisibleIndex">15</property>
+      <property name="Visible">true</property>
+      <property name="Width">67</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item49" isnull="true" iskey="true">
+      <property name="Name">colReturnQC_Name</property>
+      <property name="Width">87</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item50" isnull="true" iskey="true">
+      <property name="Name">colStatusResult</property>
+      <property name="VisibleIndex">16</property>
+      <property name="Visible">true</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item51" isnull="true" iskey="true">
+      <property name="Name">coldays_est</property>
+      <property name="VisibleIndex">17</property>
+      <property name="Visible">true</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item52" isnull="true" iskey="true">
+      <property name="Name">coldate_est</property>
+      <property name="VisibleIndex">18</property>
+      <property name="Visible">true</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item53" isnull="true" iskey="true">
+      <property name="Name">colmoisture_log</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item54" isnull="true" iskey="true">
+      <property name="Name">colpurity_log</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item55" isnull="true" iskey="true">
+      <property name="Name">colrafaction_log</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item56" isnull="true" iskey="true">
+      <property name="Name">colviability_log</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item57" isnull="true" iskey="true">
+      <property name="Name">colgervigor_log</property>
+      <property name="VisibleIndex">12</property>
+      <property name="Visible">true</property>
+      <property name="Width">94</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item58" isnull="true" iskey="true">
+      <property name="Name">colgerout_log</property>
+      <property name="VisibleIndex">11</property>
+      <property name="Visible">true</property>
+      <property name="Width">101</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item59" isnull="true" iskey="true">
+      <property name="Name">colmoisture_namelog</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item60" isnull="true" iskey="true">
+      <property name="Name">colpurity_namelog</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item61" isnull="true" iskey="true">
+      <property name="Name">colrafaction_namelog</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item62" isnull="true" iskey="true">
+      <property name="Name">colviability_namelog</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item63" isnull="true" iskey="true">
+      <property name="Name">colgertest_namelog</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item64" isnull="true" iskey="true">
+      <property name="Name">colgerout_namelog</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+    <property name="Item65" isnull="true" iskey="true">
+      <property name="Name">colgervigor_namelog</property>
+      <property name="Width">75</property>
+      <property name="MinWidth">20</property>
+      <property name="MaxWidth">0</property>
+    </property>
+  </property>
+  <property name="GroupSummary" iskey="true" value="0" />
+  <property name="ActiveFilterString">[Receipt] Is Not Null And [Ger_TestLog] Is Null And [test_ger] = True</property>
+  <property name="MRUFiltersInfo" iskey="true" value="4">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="NonColumnFilter" />
+      <property name="ColumnsFilter" iskey="true" value="3">
+        <property name="Item1" isnull="true" iskey="true">
+          <property name="Type">Custom</property>
+          <property name="FilterString">[Receipt] Is Not Null</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">colReceipt</property>
+        </property>
+        <property name="Item2" isnull="true" iskey="true">
+          <property name="Type">Custom</property>
+          <property name="FilterString">[Ger_TestLog] Is Null</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">colGer_TestLog</property>
+        </property>
+        <property name="Item3" isnull="true" iskey="true">
+          <property name="Type">AutoFilter</property>
+          <property name="FilterString">[test_ger] = True</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">coltest_ger</property>
+        </property>
+      </property>
+    </property>
+    <property name="Item2" isnull="true" iskey="true">
+      <property name="NonColumnFilter" />
+      <property name="ColumnsFilter" iskey="true" value="5">
+        <property name="Item1" isnull="true" iskey="true">
+          <property name="Type">Custom</property>
+          <property name="FilterString">[Receipt] Is Not Null</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">colReceipt</property>
+        </property>
+        <property name="Item2" isnull="true" iskey="true">
+          <property name="Type">Custom</property>
+          <property name="FilterString">[Ger_TestLog] Is Not Null</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">colGer_TestLog</property>
+        </property>
+        <property name="Item3" isnull="true" iskey="true">
+          <property name="Type">Custom</property>
+          <property name="FilterString">[test_ger] = True</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">coltest_ger</property>
+        </property>
+        <property name="Item4" isnull="true" iskey="true">
+          <property name="Type">Custom</property>
+          <property name="FilterString">[Ger_2nd_Est] &lt;= #2022-06-23#</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">colGer_2nd_Est</property>
+        </property>
+        <property name="Item5" isnull="true" iskey="true">
+          <property name="Type">Custom</property>
+          <property name="FilterString">[gerout_log] Is Null</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">colgerout_log</property>
+        </property>
+      </property>
+    </property>
+    <property name="Item3" isnull="true" iskey="true">
+      <property name="NonColumnFilter" />
+      <property name="ColumnsFilter" iskey="true" value="5">
+        <property name="Item1" isnull="true" iskey="true">
+          <property name="Type">Custom</property>
+          <property name="FilterString">[Receipt] Is Not Null</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">colReceipt</property>
+        </property>
+        <property name="Item2" isnull="true" iskey="true">
+          <property name="Type">Custom</property>
+          <property name="FilterString">[Ger_TestLog] Is Not Null</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">colGer_TestLog</property>
+        </property>
+        <property name="Item3" isnull="true" iskey="true">
+          <property name="Type">AutoFilter</property>
+          <property name="FilterString">[test_ger] = True</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">coltest_ger</property>
+        </property>
+        <property name="Item4" isnull="true" iskey="true">
+          <property name="Type">AutoFilter</property>
+          <property name="FilterString">[Ger_2nd_Est] &lt;= #2022-06-13#</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">colGer_2nd_Est</property>
+        </property>
+        <property name="Item5" isnull="true" iskey="true">
+          <property name="Type">Custom</property>
+          <property name="FilterString">[gerout_log] Is Null</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">colgerout_log</property>
+        </property>
+      </property>
+    </property>
+    <property name="Item4" isnull="true" iskey="true">
+      <property name="NonColumnFilter" />
+      <property name="ColumnsFilter" iskey="true" value="5">
+        <property name="Item1" isnull="true" iskey="true">
+          <property name="Type">Custom</property>
+          <property name="FilterString">[Receipt] Is Not Null</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">colReceipt</property>
+        </property>
+        <property name="Item2" isnull="true" iskey="true">
+          <property name="Type">Custom</property>
+          <property name="FilterString">[Ger_TestLog] Is Not Null</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">colGer_TestLog</property>
+        </property>
+        <property name="Item3" isnull="true" iskey="true">
+          <property name="Type">Custom</property>
+          <property name="FilterString">[test_ger] = True</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">coltest_ger</property>
+        </property>
+        <property name="Item4" isnull="true" iskey="true">
+          <property name="Type">Custom</property>
+          <property name="FilterString">[Ger_2nd_Est] &lt;= #2022-06-23# And [Ger_2nd_Est] Is Not Null</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">colGer_2nd_Est</property>
+        </property>
+        <property name="Item5" isnull="true" iskey="true">
+          <property name="Type">Custom</property>
+          <property name="FilterString">[gerout_log] Is Null</property>
+          <property name="DisplayText" />
+          <property name="ColumnName">colgerout_log</property>
+        </property>
+      </property>
+    </property>
+  </property>
+  <property name="SortInfoState" iskey="true" value="1">
+    <property name="Item1" isnull="true" iskey="true">
+      <property name="Orders">Ascending</property>
+      <property name="Columns">colGer_TestLog</property>
+    </property>
+    <property name="Content" isnull="true" iskey="true">
+      <property name="GroupCount">0</property>
+    </property>
+  </property>
+  <property name="GroupSummarySortInfoState" />
+  <property name="FindFilterText" />
+  <property name="FindPanelVisible">false</property>
+</XtraSerializer>
