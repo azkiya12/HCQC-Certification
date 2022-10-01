@@ -347,7 +347,7 @@ Partial Class Sample_Tracking
         Me.MetroLink2.BackColor = System.Drawing.Color.Transparent
         Me.MetroLink2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.MetroLink2.FontWeight = MetroFramework.MetroLinkWeight.Light
-        Me.MetroLink2.Location = New System.Drawing.Point(943, 25)
+        Me.MetroLink2.Location = New System.Drawing.Point(890, 25)
         Me.MetroLink2.Margin = New System.Windows.Forms.Padding(0)
         Me.MetroLink2.Name = "MetroLink2"
         Me.MetroLink2.Size = New System.Drawing.Size(45, 23)
@@ -364,9 +364,9 @@ Partial Class Sample_Tracking
         Me.MetroLink1.BackColor = System.Drawing.Color.Transparent
         Me.MetroLink1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.MetroLink1.FontWeight = MetroFramework.MetroLinkWeight.Light
-        Me.MetroLink1.Location = New System.Drawing.Point(887, 25)
+        Me.MetroLink1.Location = New System.Drawing.Point(938, 25)
         Me.MetroLink1.Name = "MetroLink1"
-        Me.MetroLink1.Size = New System.Drawing.Size(56, 23)
+        Me.MetroLink1.Size = New System.Drawing.Size(50, 23)
         Me.MetroLink1.TabIndex = 87
         Me.MetroLink1.Text = "Delete"
         Me.MetroLink1.UseCustomBackColor = True

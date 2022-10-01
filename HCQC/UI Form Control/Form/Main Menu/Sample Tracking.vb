@@ -33,8 +33,14 @@ Public Class Sample_Tracking
         ''menghapus text "selectedText Combobox" di file DirectoryPart|GStyle_tracking.txt
         Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
         File.WriteAllLines(FilePath, File.ReadAllLines(FilePath).Where(Function(l) l <> ComboBoxEdit1.SelectedItem))
-
     End Sub
+
+    Public Sub SaveTextTrackingTemplating()
+        ''Tambah text "selectedText Combobox" di file DirectoryPart|GStyle_tracking.txt
+        Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
+        File.WriteAllLines(FilePath, File.ReadAllLines(FilePath).Where(Function(l) l = ComboBoxEdit1.Text))
+    End Sub
+
     Public Sub OnRefreshEventHendler()
         Me.Report_sampel_ambilTableAdapter.Fill(HCQC_NewDataset.report_sampel_ambil)
     End Sub
@@ -322,7 +328,7 @@ Public Class Sample_Tracking
     End Sub
 
     Private Sub MetroLink1_Click(sender As Object, e As EventArgs) Handles MetroLink1.Click
-        ''proses delete file template view
+        ''proses DELETE file template view
         Dim fileName As String = Application.StartupPath() + "\" + ComboBoxEdit1.SelectedItem + ".xml"
         If File.Exists(fileName) Then
             My.Computer.FileSystem.DeleteFile(fileName,
@@ -337,23 +343,23 @@ Public Class Sample_Tracking
     End Sub
 
     Private Sub MetroLink2_Click(sender As Object, e As EventArgs) Handles MetroLink2.Click
+        ''proses SAVE file template view
         Dim fileName As String = ComboBoxEdit1.SelectedItem + ".xml"
-        'Dim result As Integer = MetroFramework.MetroMessageBox.Show(Me, "simpan tampilan terakir", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
-        'If result = DialogResult.OK Then
-        GridView1.SaveLayoutToXml(fileName)
-        'End If
+        Dim result As Integer = MetroFramework.MetroMessageBox.Show(Me, "simpan tampilan terakir", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
+        If result = DialogResult.OK Then
+            GridView1.SaveLayoutToXml(fileName)
+        End If
+
+        Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
         Dim file As System.IO.StreamWriter
-        file = My.Computer.FileSystem.OpenTextFileWriter("c:\test.txt", True)
-        file.WriteLine("Here is the first string.")
+        file = My.Computer.FileSystem.OpenTextFileWriter(FilePath, True)
+        file.WriteLine(ComboBoxEdit1.SelectedItem)
         file.Close()
 
+        ''
+        SaveTextTrackingTemplating()
         ''proses load combobox
         LoadTextTrackingTemplating()
-    End Sub
-
-    Private Sub ComboBoxEdit1_TextChanged(sender As Object, e As EventArgs) Handles ComboBoxEdit1.TextChanged
-
-
     End Sub
 
     Private Sub ComboBoxEdit1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxEdit1.SelectedIndexChanged
@@ -363,5 +369,21 @@ Public Class Sample_Tracking
         Catch ex As Exception
             MsgBox("GridViewTemplate is error on " & ex.Message.ToString)
         End Try
+    End Sub
+
+    Private Sub MetroLink1_MouseEnter(sender As Object, e As EventArgs) Handles MetroLink1.MouseEnter
+        MetroLink1.BackColor = Color.OrangeRed
+    End Sub
+
+    Private Sub MetroLink1_MouseLeave(sender As Object, e As EventArgs) Handles MetroLink1.MouseLeave
+        MetroLink1.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub MetroLink2_MouseLeave(sender As Object, e As EventArgs) Handles MetroLink2.MouseLeave
+        MetroLink2.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub MetroLink2_MouseEnter(sender As Object, e As EventArgs) Handles MetroLink2.MouseEnter
+        MetroLink2.BackColor = Color.DodgerBlue
     End Sub
 End Class
