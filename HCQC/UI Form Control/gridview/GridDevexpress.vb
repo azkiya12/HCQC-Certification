@@ -100,7 +100,8 @@ Public Class GridDevexpress
         filterEnd = EndDate.Value.Date.ToString("yyyy") & EndDate.Value.Date.ToString("MM")
         filterEnd = "QC" & filterEnd & "%"
         'Console.WriteLine(filterStart & " --- " & filterEnd)
-
+        Console.WriteLine("------" & StartDate.Value.Date)
+        Console.WriteLine("------" & EndDate.Value.Date)
         Me.Report_global_viewTableAdapter.FillByFilterDate(Me.HCQC_NewDataset.report_global_view, StartDate.Value.Date, EndDate.Value.Date)
 
         LabelStatus.Text = "Loading...|2 get data Germination"

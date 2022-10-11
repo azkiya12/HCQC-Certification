@@ -35,7 +35,7 @@
                 Dim result As Integer = MetroMessageBox.Show(Me, "Data " + TLabnumKa.Text + " sudah pernah di Check IN pada tanggal " + tgljln.ToString("dd-MM-yyyy") + " . Apakan anda ingin memperbaharui tanggal Test Sample?", "Moisture Test Check IN", MessageBoxButtons.YesNo, MessageBoxIcon.Information, 211)
                 If result = DialogResult.Yes Then
                     strIdreq = _DataToValue("SELECT id_request FROM receipt WHERE labnum='" & TLabnumKa.Text & "'")
-                    _RunSQL("UPDATE periodic_schedule SET id_request='" & strIdreq & "',id_login='" & login.Luserid.Text & "',test_date=Convert(date, '" & TTestDateKa.Text & "', 120) WHERE (labnum='" & TLabnumKa.Text & "') AND [test_on]='" & LabelMoi.Text & "'")
+                    _RunSQL("UPDATE periodic_schedule SET id_request='" & strIdreq & "',id_login='" & login.Luserid.Text & "',test_date=Convert(datetime, '" & TTestDateKa.Text & "', 105) WHERE (labnum='" & TLabnumKa.Text & "') AND [test_on]='" & LabelMoi.Text & "'")
                     Me.TLabnumKa.Focus()
                     bersihKa()
                 ElseIf result = DialogResult.No Then

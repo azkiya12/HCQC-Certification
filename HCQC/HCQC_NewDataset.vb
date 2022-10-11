@@ -2,6 +2,9 @@
 
 
 Partial Public Class HCQC_NewDataset
+    Partial Public Class moistureDataTable
+    End Class
+
     Partial Public Class LabnumDataTableDataTable
         Private Sub LabnumDataTableDataTable_LabnumDataTableRowChanging(sender As Object, e As LabnumDataTableRowChangeEvent) Handles Me.LabnumDataTableRowChanging
 
@@ -11,6 +14,9 @@ Partial Public Class HCQC_NewDataset
 End Class
 
 Namespace HCQC_NewDatasetTableAdapters
+    Partial Public Class report_global_viewTableAdapter
+    End Class
+
     Partial Public Class HarvestProductionTableAdapter
     End Class
 

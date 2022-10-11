@@ -1,0 +1,257 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="0" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HCQC_serverConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HCQC_serverConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsApp1.My.MySettings.GlobalReference.Default.HCQC_serverConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="report_global_viewTableAdapter" GeneratorDataComponentClassName="report_global_viewTableAdapter" Name="report_global_view" UserDataComponentName="report_global_viewTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.report_global_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id, labnum, id_hvsprod, crop, farmer, location, variety, harvest, nomnl, nojob, weight, request_date, sampling_g, datein, remark, scope, test_moi, test_pur, test_ger, test_raf, test_via, test_ontest, raf_date, raf_total, raf_result, 
+                         analys, raf_inputat, via_date, via_mean, via_result, via_analyst, via_inputat, moi_date, moi_mean, moi_analyst, moi_inputat, pur_date, ws, pure, other, inert, purity_mean, pur_result, pur_inputat, vg, dt, [Abnormal Seedling (%)], 
+                         [Hard Seed (%)], [Fresh Seed (%)], [Dead Seed (%)], ger_date, ger_scnd, ger_inputat, staff, pur_test_date, abnormality
+FROM            report_global_view</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="id" DataSetColumn="id" />
+              <Mapping SourceColumn="labnum" DataSetColumn="labnum" />
+              <Mapping SourceColumn="id_hvsprod" DataSetColumn="id_hvsprod" />
+              <Mapping SourceColumn="crop" DataSetColumn="crop" />
+              <Mapping SourceColumn="farmer" DataSetColumn="farmer" />
+              <Mapping SourceColumn="location" DataSetColumn="location" />
+              <Mapping SourceColumn="variety" DataSetColumn="variety" />
+              <Mapping SourceColumn="harvest" DataSetColumn="harvest" />
+              <Mapping SourceColumn="nomnl" DataSetColumn="nomnl" />
+              <Mapping SourceColumn="nojob" DataSetColumn="nojob" />
+              <Mapping SourceColumn="weight" DataSetColumn="weight" />
+              <Mapping SourceColumn="request_date" DataSetColumn="request_date" />
+              <Mapping SourceColumn="sampling_g" DataSetColumn="sampling_g" />
+              <Mapping SourceColumn="datein" DataSetColumn="datein" />
+              <Mapping SourceColumn="remark" DataSetColumn="remark" />
+              <Mapping SourceColumn="scope" DataSetColumn="scope" />
+              <Mapping SourceColumn="test_moi" DataSetColumn="test_moi" />
+              <Mapping SourceColumn="test_pur" DataSetColumn="test_pur" />
+              <Mapping SourceColumn="test_ger" DataSetColumn="test_ger" />
+              <Mapping SourceColumn="test_raf" DataSetColumn="test_raf" />
+              <Mapping SourceColumn="test_via" DataSetColumn="test_via" />
+              <Mapping SourceColumn="test_ontest" DataSetColumn="test_ontest" />
+              <Mapping SourceColumn="raf_date" DataSetColumn="raf_date" />
+              <Mapping SourceColumn="raf_total" DataSetColumn="raf_total" />
+              <Mapping SourceColumn="raf_result" DataSetColumn="raf_result" />
+              <Mapping SourceColumn="analys" DataSetColumn="analys" />
+              <Mapping SourceColumn="raf_inputat" DataSetColumn="raf_inputat" />
+              <Mapping SourceColumn="via_date" DataSetColumn="via_date" />
+              <Mapping SourceColumn="via_mean" DataSetColumn="via_mean" />
+              <Mapping SourceColumn="via_result" DataSetColumn="via_result" />
+              <Mapping SourceColumn="via_analyst" DataSetColumn="via_analyst" />
+              <Mapping SourceColumn="via_inputat" DataSetColumn="via_inputat" />
+              <Mapping SourceColumn="moi_date" DataSetColumn="moi_date" />
+              <Mapping SourceColumn="moi_mean" DataSetColumn="moi_mean" />
+              <Mapping SourceColumn="moi_analyst" DataSetColumn="moi_analyst" />
+              <Mapping SourceColumn="moi_inputat" DataSetColumn="moi_inputat" />
+              <Mapping SourceColumn="pur_date" DataSetColumn="pur_date" />
+              <Mapping SourceColumn="ws" DataSetColumn="ws" />
+              <Mapping SourceColumn="pure" DataSetColumn="pure" />
+              <Mapping SourceColumn="other" DataSetColumn="other" />
+              <Mapping SourceColumn="inert" DataSetColumn="inert" />
+              <Mapping SourceColumn="purity_mean" DataSetColumn="purity_mean" />
+              <Mapping SourceColumn="pur_result" DataSetColumn="pur_result" />
+              <Mapping SourceColumn="pur_inputat" DataSetColumn="pur_inputat" />
+              <Mapping SourceColumn="vg" DataSetColumn="vg" />
+              <Mapping SourceColumn="dt" DataSetColumn="dt" />
+              <Mapping SourceColumn="Abnormal Seedling (%)" DataSetColumn="Abnormal Seedling (%)" />
+              <Mapping SourceColumn="Hard Seed (%)" DataSetColumn="Hard Seed (%)" />
+              <Mapping SourceColumn="Fresh Seed (%)" DataSetColumn="Fresh Seed (%)" />
+              <Mapping SourceColumn="Dead Seed (%)" DataSetColumn="Dead Seed (%)" />
+              <Mapping SourceColumn="ger_date" DataSetColumn="ger_date" />
+              <Mapping SourceColumn="ger_scnd" DataSetColumn="ger_scnd" />
+              <Mapping SourceColumn="ger_inputat" DataSetColumn="ger_inputat" />
+              <Mapping SourceColumn="staff" DataSetColumn="staff" />
+              <Mapping SourceColumn="pur_test_date" DataSetColumn="pur_test_date" />
+              <Mapping SourceColumn="abnormality" DataSetColumn="abnormality" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1" msprop:Generator_UserDSName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="report_global_view" msprop:Generator_TableClassName="report_global_viewDataTable" msprop:Generator_TableVarName="tablereport_global_view" msprop:Generator_TablePropName="report_global_view" msprop:Generator_RowDeletingName="report_global_viewRowDeleting" msprop:Generator_RowChangingName="report_global_viewRowChanging" msprop:Generator_RowEvHandlerName="report_global_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="report_global_viewRowDeleted" msprop:Generator_UserTableName="report_global_view" msprop:Generator_RowChangedName="report_global_viewRowChanged" msprop:Generator_RowEvArgName="report_global_viewRowChangeEvent" msprop:Generator_RowClassName="report_global_viewRow">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
+              <xs:element name="labnum" msprop:Generator_ColumnVarNameInTable="columnlabnum" msprop:Generator_ColumnPropNameInRow="labnum" msprop:Generator_ColumnPropNameInTable="labnumColumn" msprop:Generator_UserColumnName="labnum" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="id_hvsprod" msprop:Generator_ColumnVarNameInTable="columnid_hvsprod" msprop:Generator_ColumnPropNameInRow="id_hvsprod" msprop:Generator_ColumnPropNameInTable="id_hvsprodColumn" msprop:Generator_UserColumnName="id_hvsprod" type="xs:int" minOccurs="0" />
+              <xs:element name="crop" msprop:Generator_ColumnVarNameInTable="columncrop" msprop:Generator_ColumnPropNameInRow="crop" msprop:Generator_ColumnPropNameInTable="cropColumn" msprop:Generator_UserColumnName="crop" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="farmer" msprop:Generator_ColumnVarNameInTable="columnfarmer" msprop:Generator_ColumnPropNameInRow="farmer" msprop:Generator_ColumnPropNameInTable="farmerColumn" msprop:Generator_UserColumnName="farmer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="location" msprop:Generator_ColumnVarNameInTable="columnlocation" msprop:Generator_ColumnPropNameInRow="location" msprop:Generator_ColumnPropNameInTable="locationColumn" msprop:Generator_UserColumnName="location" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_UserColumnName="variety" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="harvest" msprop:Generator_ColumnVarNameInTable="columnharvest" msprop:Generator_ColumnPropNameInRow="harvest" msprop:Generator_ColumnPropNameInTable="harvestColumn" msprop:Generator_UserColumnName="harvest" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="nomnl" msprop:Generator_ColumnVarNameInTable="columnnomnl" msprop:Generator_ColumnPropNameInRow="nomnl" msprop:Generator_ColumnPropNameInTable="nomnlColumn" msprop:Generator_UserColumnName="nomnl" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="8" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nojob" msprop:Generator_ColumnVarNameInTable="columnnojob" msprop:Generator_ColumnPropNameInRow="nojob" msprop:Generator_ColumnPropNameInTable="nojobColumn" msprop:Generator_UserColumnName="nojob" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="weight" msprop:Generator_ColumnVarNameInTable="columnweight" msprop:Generator_ColumnPropNameInRow="weight" msprop:Generator_ColumnPropNameInTable="weightColumn" msprop:Generator_UserColumnName="weight" type="xs:decimal" minOccurs="0" />
+              <xs:element name="request_date" msprop:Generator_ColumnVarNameInTable="columnrequest_date" msprop:Generator_ColumnPropNameInRow="request_date" msprop:Generator_ColumnPropNameInTable="request_dateColumn" msprop:Generator_UserColumnName="request_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="sampling_g" msprop:Generator_ColumnVarNameInTable="columnsampling_g" msprop:Generator_ColumnPropNameInRow="sampling_g" msprop:Generator_ColumnPropNameInTable="sampling_gColumn" msprop:Generator_UserColumnName="sampling_g" type="xs:decimal" minOccurs="0" />
+              <xs:element name="datein" msprop:Generator_ColumnVarNameInTable="columndatein" msprop:Generator_ColumnPropNameInRow="datein" msprop:Generator_ColumnPropNameInTable="dateinColumn" msprop:Generator_UserColumnName="datein" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="remark" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnremark" msprop:Generator_ColumnPropNameInRow="remark" msprop:Generator_ColumnPropNameInTable="remarkColumn" msprop:Generator_UserColumnName="remark" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="428" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="scope" msprop:Generator_ColumnVarNameInTable="columnscope" msprop:Generator_ColumnPropNameInRow="scope" msprop:Generator_ColumnPropNameInTable="scopeColumn" msprop:Generator_UserColumnName="scope" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="test_moi" msprop:Generator_ColumnVarNameInTable="columntest_moi" msprop:Generator_ColumnPropNameInRow="test_moi" msprop:Generator_ColumnPropNameInTable="test_moiColumn" msprop:Generator_UserColumnName="test_moi" type="xs:boolean" minOccurs="0" />
+              <xs:element name="test_pur" msprop:Generator_ColumnVarNameInTable="columntest_pur" msprop:Generator_ColumnPropNameInRow="test_pur" msprop:Generator_ColumnPropNameInTable="test_purColumn" msprop:Generator_UserColumnName="test_pur" type="xs:boolean" minOccurs="0" />
+              <xs:element name="test_ger" msprop:Generator_ColumnVarNameInTable="columntest_ger" msprop:Generator_ColumnPropNameInRow="test_ger" msprop:Generator_ColumnPropNameInTable="test_gerColumn" msprop:Generator_UserColumnName="test_ger" type="xs:boolean" minOccurs="0" />
+              <xs:element name="test_raf" msprop:Generator_ColumnVarNameInTable="columntest_raf" msprop:Generator_ColumnPropNameInRow="test_raf" msprop:Generator_ColumnPropNameInTable="test_rafColumn" msprop:Generator_UserColumnName="test_raf" type="xs:boolean" minOccurs="0" />
+              <xs:element name="test_via" msprop:Generator_ColumnVarNameInTable="columntest_via" msprop:Generator_ColumnPropNameInRow="test_via" msprop:Generator_ColumnPropNameInTable="test_viaColumn" msprop:Generator_UserColumnName="test_via" type="xs:boolean" minOccurs="0" />
+              <xs:element name="test_ontest" msprop:Generator_ColumnVarNameInTable="columntest_ontest" msprop:Generator_ColumnPropNameInRow="test_ontest" msprop:Generator_ColumnPropNameInTable="test_ontestColumn" msprop:Generator_UserColumnName="test_ontest" type="xs:boolean" minOccurs="0" />
+              <xs:element name="raf_date" msprop:Generator_ColumnVarNameInTable="columnraf_date" msprop:Generator_ColumnPropNameInRow="raf_date" msprop:Generator_ColumnPropNameInTable="raf_dateColumn" msprop:Generator_UserColumnName="raf_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="raf_total" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnraf_total" msprop:Generator_ColumnPropNameInRow="raf_total" msprop:Generator_ColumnPropNameInTable="raf_totalColumn" msprop:Generator_UserColumnName="raf_total" type="xs:decimal" minOccurs="0" />
+              <xs:element name="raf_result" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnraf_result" msprop:Generator_ColumnPropNameInRow="raf_result" msprop:Generator_ColumnPropNameInTable="raf_resultColumn" msprop:Generator_UserColumnName="raf_result" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="analys" msprop:Generator_ColumnVarNameInTable="columnanalys" msprop:Generator_ColumnPropNameInRow="analys" msprop:Generator_ColumnPropNameInTable="analysColumn" msprop:Generator_UserColumnName="analys" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="raf_inputat" msprop:Generator_ColumnVarNameInTable="columnraf_inputat" msprop:Generator_ColumnPropNameInRow="raf_inputat" msprop:Generator_ColumnPropNameInTable="raf_inputatColumn" msprop:Generator_UserColumnName="raf_inputat" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="via_date" msprop:Generator_ColumnVarNameInTable="columnvia_date" msprop:Generator_ColumnPropNameInRow="via_date" msprop:Generator_ColumnPropNameInTable="via_dateColumn" msprop:Generator_UserColumnName="via_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="via_mean" msprop:Generator_ColumnVarNameInTable="columnvia_mean" msprop:Generator_ColumnPropNameInRow="via_mean" msprop:Generator_ColumnPropNameInTable="via_meanColumn" msprop:Generator_UserColumnName="via_mean" type="xs:decimal" minOccurs="0" />
+              <xs:element name="via_result" msprop:Generator_ColumnVarNameInTable="columnvia_result" msprop:Generator_ColumnPropNameInRow="via_result" msprop:Generator_ColumnPropNameInTable="via_resultColumn" msprop:Generator_UserColumnName="via_result" type="xs:boolean" minOccurs="0" />
+              <xs:element name="via_analyst" msprop:Generator_ColumnVarNameInTable="columnvia_analyst" msprop:Generator_ColumnPropNameInRow="via_analyst" msprop:Generator_ColumnPropNameInTable="via_analystColumn" msprop:Generator_UserColumnName="via_analyst" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="via_inputat" msprop:Generator_ColumnVarNameInTable="columnvia_inputat" msprop:Generator_ColumnPropNameInRow="via_inputat" msprop:Generator_ColumnPropNameInTable="via_inputatColumn" msprop:Generator_UserColumnName="via_inputat" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="moi_date" msprop:Generator_ColumnVarNameInTable="columnmoi_date" msprop:Generator_ColumnPropNameInRow="moi_date" msprop:Generator_ColumnPropNameInTable="moi_dateColumn" msprop:Generator_UserColumnName="moi_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="moi_mean" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnmoi_mean" msprop:Generator_ColumnPropNameInRow="moi_mean" msprop:Generator_ColumnPropNameInTable="moi_meanColumn" msprop:Generator_UserColumnName="moi_mean" type="xs:decimal" minOccurs="0" />
+              <xs:element name="moi_analyst" msprop:Generator_ColumnVarNameInTable="columnmoi_analyst" msprop:Generator_ColumnPropNameInRow="moi_analyst" msprop:Generator_ColumnPropNameInTable="moi_analystColumn" msprop:Generator_UserColumnName="moi_analyst" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="moi_inputat" msprop:Generator_ColumnVarNameInTable="columnmoi_inputat" msprop:Generator_ColumnPropNameInRow="moi_inputat" msprop:Generator_ColumnPropNameInTable="moi_inputatColumn" msprop:Generator_UserColumnName="moi_inputat" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="pur_date" msprop:Generator_ColumnVarNameInTable="columnpur_date" msprop:Generator_ColumnPropNameInRow="pur_date" msprop:Generator_ColumnPropNameInTable="pur_dateColumn" msprop:Generator_UserColumnName="pur_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ws" msprop:Generator_ColumnVarNameInTable="columnws" msprop:Generator_ColumnPropNameInRow="ws" msprop:Generator_ColumnPropNameInTable="wsColumn" msprop:Generator_UserColumnName="ws" type="xs:decimal" minOccurs="0" />
+              <xs:element name="pure" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnpure" msprop:Generator_ColumnPropNameInRow="pure" msprop:Generator_ColumnPropNameInTable="pureColumn" msprop:Generator_UserColumnName="pure" type="xs:decimal" minOccurs="0" />
+              <xs:element name="other" msprop:Generator_ColumnVarNameInTable="columnother" msprop:Generator_ColumnPropNameInRow="other" msprop:Generator_ColumnPropNameInTable="otherColumn" msprop:Generator_UserColumnName="other" type="xs:decimal" minOccurs="0" />
+              <xs:element name="inert" msprop:Generator_ColumnVarNameInTable="columninert" msprop:Generator_ColumnPropNameInRow="inert" msprop:Generator_ColumnPropNameInTable="inertColumn" msprop:Generator_UserColumnName="inert" type="xs:decimal" minOccurs="0" />
+              <xs:element name="purity_mean" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnpurity_mean" msprop:Generator_ColumnPropNameInRow="purity_mean" msprop:Generator_ColumnPropNameInTable="purity_meanColumn" msprop:Generator_UserColumnName="purity_mean" type="xs:decimal" minOccurs="0" />
+              <xs:element name="pur_result" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnpur_result" msprop:Generator_ColumnPropNameInRow="pur_result" msprop:Generator_ColumnPropNameInTable="pur_resultColumn" msprop:Generator_UserColumnName="pur_result" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="5" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pur_inputat" msprop:Generator_ColumnVarNameInTable="columnpur_inputat" msprop:Generator_ColumnPropNameInRow="pur_inputat" msprop:Generator_ColumnPropNameInTable="pur_inputatColumn" msprop:Generator_UserColumnName="pur_inputat" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="vg" msprop:Generator_ColumnVarNameInTable="columnvg" msprop:Generator_ColumnPropNameInRow="vg" msprop:Generator_ColumnPropNameInTable="vgColumn" msprop:Generator_UserColumnName="vg" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dt" msprop:Generator_ColumnVarNameInTable="columndt" msprop:Generator_ColumnPropNameInRow="dt" msprop:Generator_ColumnPropNameInTable="dtColumn" msprop:Generator_UserColumnName="dt" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Abnormal_x0020_Seedling_x0020__x0028__x0025__x0029_" msprop:Generator_ColumnVarNameInTable="_columnAbnormal_Seedling____" msprop:Generator_ColumnPropNameInRow="_Abnormal_Seedling____" msprop:Generator_ColumnPropNameInTable="_Abnormal_Seedling____Column" msprop:Generator_UserColumnName="Abnormal Seedling (%)" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Hard_x0020_Seed_x0020__x0028__x0025__x0029_" msprop:Generator_ColumnVarNameInTable="_columnHard_Seed____" msprop:Generator_ColumnPropNameInRow="_Hard_Seed____" msprop:Generator_ColumnPropNameInTable="_Hard_Seed____Column" msprop:Generator_UserColumnName="Hard Seed (%)" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Fresh_x0020_Seed_x0020__x0028__x0025__x0029_" msprop:Generator_ColumnVarNameInTable="_columnFresh_Seed____" msprop:Generator_ColumnPropNameInRow="_Fresh_Seed____" msprop:Generator_ColumnPropNameInTable="_Fresh_Seed____Column" msprop:Generator_UserColumnName="Fresh Seed (%)" type="xs:decimal" minOccurs="0" />
+              <xs:element name="Dead_x0020_Seed_x0020__x0028__x0025__x0029_" msprop:Generator_ColumnVarNameInTable="_columnDead_Seed____" msprop:Generator_ColumnPropNameInRow="_Dead_Seed____" msprop:Generator_ColumnPropNameInTable="_Dead_Seed____Column" msprop:Generator_UserColumnName="Dead Seed (%)" type="xs:decimal" minOccurs="0" />
+              <xs:element name="ger_date" msprop:Generator_ColumnVarNameInTable="columnger_date" msprop:Generator_ColumnPropNameInRow="ger_date" msprop:Generator_ColumnPropNameInTable="ger_dateColumn" msprop:Generator_UserColumnName="ger_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ger_scnd" msprop:Generator_ColumnVarNameInTable="columnger_scnd" msprop:Generator_ColumnPropNameInRow="ger_scnd" msprop:Generator_ColumnPropNameInTable="ger_scndColumn" msprop:Generator_UserColumnName="ger_scnd" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="ger_inputat" msprop:Generator_ColumnVarNameInTable="columnger_inputat" msprop:Generator_ColumnPropNameInRow="ger_inputat" msprop:Generator_ColumnPropNameInTable="ger_inputatColumn" msprop:Generator_UserColumnName="ger_inputat" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="staff" msprop:Generator_ColumnVarNameInTable="columnstaff" msprop:Generator_ColumnPropNameInRow="staff" msprop:Generator_ColumnPropNameInTable="staffColumn" msprop:Generator_UserColumnName="staff" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="100" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="pur_test_date" msprop:Generator_ColumnVarNameInTable="columnpur_test_date" msprop:Generator_ColumnPropNameInRow="pur_test_date" msprop:Generator_ColumnPropNameInTable="pur_test_dateColumn" msprop:Generator_UserColumnName="pur_test_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="abnormality" msprop:Generator_ColumnVarNameInTable="columnabnormality" msprop:Generator_ColumnPropNameInRow="abnormality" msprop:Generator_ColumnPropNameInTable="abnormalityColumn" msprop:Generator_UserColumnName="abnormality" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="150" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1">
+      <xs:selector xpath=".//mstns:report_global_view" />
+      <xs:field xpath="mstns:id" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

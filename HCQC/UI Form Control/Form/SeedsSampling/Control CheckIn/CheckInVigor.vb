@@ -84,7 +84,7 @@
                 Dim result As Integer = MetroMessageBox.Show(Me, "Data sudah pernah di Upload pada tanggal " + tgljln.ToString("dd-MM-yyyy") + " . Apakan anda ingin memperbaharui tanggal Test Sample?", "Germination Test Check OUT", MessageBoxButtons.YesNo, MessageBoxIcon.Information, 211)
                 If result = DialogResult.Yes Then
                     ''menampilkan data ke texbox dengan textButtonSave menjadi Update
-                    ' MetroPanel2.Enabled = True
+                    MetroPanel2.Enabled = True
                     Btn_save_ger.Enabled = True
                     Btn_del_ger.Enabled = True
                     Btn_save_ger.Text = "Update"

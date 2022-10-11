@@ -103,6 +103,28 @@ Namespace My
                 Me("Ignore") = value
             End Set
         End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=10.15.13.91\SQLEXPRESS;Initial Catalog=HCQC_server;User ID=admin;Pass"& _ 
+            "word=administrator;Connect Timeout=0")>  _
+        Public ReadOnly Property HCQC_serverConnectionString() As String
+            Get
+                Return CType(Me("HCQC_serverConnectionString"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DHONA\SQLEXPRESS;Initial Catalog=HCQC_server;User ID=admin;Password=a"& _ 
+            "dministrator;Connect Timeout=0")>  _
+        Public ReadOnly Property HCQC_serverConnectionString1() As String
+            Get
+                Return CType(Me("HCQC_serverConnectionString1"),String)
+            End Get
+        End Property
     End Class
 End Namespace
 
