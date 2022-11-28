@@ -99,7 +99,7 @@ Public Class MainForm
             Me.Width = Screen.PrimaryScreen.WorkingArea.Width
             BtnFullScreen.Tag = "Full Screen"
         Else
-            Me.Size = New Size(1100, 515)
+            Me.Size = New Size(1100, 570)
             Me.StartPosition = FormStartPosition.CenterScreen
             BtnFullScreen.Tag = "Normal"
         End If

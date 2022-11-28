@@ -3274,12 +3274,16 @@ FROM            report_arsip_sample_view</CommandText>
               <Mapping SourceColumn="kemasan" DataSetColumn="kemasan" />
               <Mapping SourceColumn="unit_kem" DataSetColumn="unit_kem" />
               <Mapping SourceColumn="input_at" DataSetColumn="input_at" />
+              <Mapping SourceColumn="masa_berlaku" DataSetColumn="masa_berlaku" />
+              <Mapping SourceColumn="awal_exp" DataSetColumn="awal_exp" />
+              <Mapping SourceColumn="P1" DataSetColumn="P1" />
+              <Mapping SourceColumn="P2" DataSetColumn="P2" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.report_arsip_sample_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByLastMonth" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByLastMonth" GeneratorSourceName="FillByLastMonth" GetMethodModifier="Public" GetMethodName="GetDataByLastMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByLastMonth" UserSourceName="FillByLastMonth">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        labnum, variety, harvest, nomnl, nojob, weight, scope, brt_in, datein, arsipdate, lokasi, boxnum, destroydate, dberkecambah, kemurnian, kadarair, expired, kemasan, unit_kem, input_at
+                    <CommandText>SELECT        P1, P2, arsipdate, awal_exp, boxnum, brt_in, datein, dberkecambah, destroydate, expired, harvest, input_at, kadarair, kemasan, kemurnian, labnum, lokasi, masa_berlaku, nojob, nomnl, scope, unit_kem, variety, weight
 FROM            report_arsip_sample_view
 WHERE        (input_at &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 2))) AND (input_at &lt; DATEADD(dd, 1, EOMONTH(GETDATE())))</CommandText>
                     <Parameters />
@@ -3289,7 +3293,7 @@ WHERE        (input_at &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 2))) AND (input
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.report_arsip_sample_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByThisMonth" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByThisMonth" GeneratorSourceName="FillByThisMonth" GetMethodModifier="Public" GetMethodName="GetDataByThisMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByThisMonth" UserSourceName="FillByThisMonth">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        labnum, variety, harvest, nomnl, nojob, weight, scope, brt_in, datein, arsipdate, lokasi, boxnum, destroydate, dberkecambah, kemurnian, kadarair, expired, kemasan, unit_kem, input_at
+                    <CommandText>SELECT        P1, P2, arsipdate, awal_exp, boxnum, brt_in, datein, dberkecambah, destroydate, expired, harvest, input_at, kadarair, kemasan, kemurnian, labnum, lokasi, masa_berlaku, nojob, nomnl, scope, unit_kem, variety, weight
 FROM            report_arsip_sample_view
 WHERE        (input_at &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (input_at &lt; DATEADD(dd, 1, EOMONTH(GETDATE())))</CommandText>
                     <Parameters />
@@ -3299,7 +3303,7 @@ WHERE        (input_at &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (input
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.report_arsip_sample_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByVariable" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByVariable" GeneratorSourceName="FillByVariable" GetMethodModifier="Public" GetMethodName="GetDataByVariable" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByVariable" UserSourceName="FillByVariable">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        labnum, variety, harvest, nomnl, nojob, weight, scope, brt_in, datein, arsipdate, lokasi, boxnum, destroydate, dberkecambah, kemurnian, kadarair, expired, kemasan, unit_kem, input_at
+                    <CommandText>SELECT        P1, P2, arsipdate, awal_exp, boxnum, brt_in, datein, dberkecambah, destroydate, expired, harvest, input_at, kadarair, kemasan, kemurnian, labnum, lokasi, masa_berlaku, nojob, nomnl, scope, unit_kem, variety, weight
 FROM            report_arsip_sample_view
 WHERE        (labnum LIKE @strvar) OR
                          (variety LIKE @strvar) OR
@@ -3307,7 +3311,7 @@ WHERE        (labnum LIKE @strvar) OR
                          (nojob LIKE @strvar) OR
                          (boxnum LIKE @strvar)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="true" AutogeneratedName="strvar" ColumnName="labnum" DataSourceName="HCQC_server.dbo.report_arsip_sample_view" DataTypeServer="varchar(15)" DbType="AnsiString" Direction="Input" ParameterName="@strvar" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="strvar" ColumnName="labnum" DataSourceName="HCQC_server.dbo.report_arsip_sample_view" DataTypeServer="varchar(15)" DbType="AnsiString" Direction="Input" ParameterName="@strvar" Precision="0" ProviderType="VarChar" Scale="0" Size="15" SourceColumn="labnum" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -5806,7 +5810,7 @@ FROM            report_global_view</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="customer" msprop:Generator_TableClassName="customerDataTable" msprop:Generator_TableVarName="tablecustomer" msprop:Generator_RowChangedName="customerRowChanged" msprop:Generator_TablePropName="customer" msprop:Generator_RowDeletingName="customerRowDeleting" msprop:Generator_RowChangingName="customerRowChanging" msprop:Generator_RowEvHandlerName="customerRowChangeEventHandler" msprop:Generator_RowDeletedName="customerRowDeleted" msprop:Generator_RowClassName="customerRow" msprop:Generator_UserTableName="customer" msprop:Generator_RowEvArgName="customerRowChangeEvent">
+        <xs:element name="customer" msprop:Generator_TableClassName="customerDataTable" msprop:Generator_TableVarName="tablecustomer" msprop:Generator_TablePropName="customer" msprop:Generator_RowDeletingName="customerRowDeleting" msprop:Generator_RowChangingName="customerRowChanging" msprop:Generator_RowEvHandlerName="customerRowChangeEventHandler" msprop:Generator_RowDeletedName="customerRowDeleted" msprop:Generator_UserTableName="customer" msprop:Generator_RowChangedName="customerRowChanged" msprop:Generator_RowEvArgName="customerRowChangeEvent" msprop:Generator_RowClassName="customerRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msdata:ReadOnly="true" msdata:AutoIncrementSeed="-1" msdata:AutoIncrementStep="-1" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />
@@ -5848,7 +5852,7 @@ FROM            report_global_view</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="report_arsip_sample_view" msprop:Generator_TableClassName="report_arsip_sample_viewDataTable" msprop:Generator_TableVarName="tablereport_arsip_sample_view" msprop:Generator_RowChangedName="report_arsip_sample_viewRowChanged" msprop:Generator_TablePropName="report_arsip_sample_view" msprop:Generator_RowDeletingName="report_arsip_sample_viewRowDeleting" msprop:Generator_RowChangingName="report_arsip_sample_viewRowChanging" msprop:Generator_RowEvHandlerName="report_arsip_sample_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="report_arsip_sample_viewRowDeleted" msprop:Generator_RowClassName="report_arsip_sample_viewRow" msprop:Generator_UserTableName="report_arsip_sample_view" msprop:Generator_RowEvArgName="report_arsip_sample_viewRowChangeEvent">
+        <xs:element name="report_arsip_sample_view" msprop:Generator_TableClassName="report_arsip_sample_viewDataTable" msprop:Generator_TableVarName="tablereport_arsip_sample_view" msprop:Generator_TablePropName="report_arsip_sample_view" msprop:Generator_RowDeletingName="report_arsip_sample_viewRowDeleting" msprop:Generator_RowChangingName="report_arsip_sample_viewRowChanging" msprop:Generator_RowEvHandlerName="report_arsip_sample_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="report_arsip_sample_viewRowDeleted" msprop:Generator_UserTableName="report_arsip_sample_view" msprop:Generator_RowChangedName="report_arsip_sample_viewRowChanged" msprop:Generator_RowEvArgName="report_arsip_sample_viewRowChangeEvent" msprop:Generator_RowClassName="report_arsip_sample_viewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="labnum" msprop:Generator_ColumnVarNameInTable="columnlabnum" msprop:Generator_ColumnPropNameInRow="labnum" msprop:Generator_ColumnPropNameInTable="labnumColumn" msprop:Generator_UserColumnName="labnum" minOccurs="0">
@@ -5927,10 +5931,14 @@ FROM            report_global_view</CommandText>
                 </xs:simpleType>
               </xs:element>
               <xs:element name="input_at" msprop:Generator_ColumnVarNameInTable="columninput_at" msprop:Generator_ColumnPropNameInRow="input_at" msprop:Generator_ColumnPropNameInTable="input_atColumn" msprop:Generator_UserColumnName="input_at" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="masa_berlaku" msprop:Generator_ColumnVarNameInTable="columnmasa_berlaku" msprop:Generator_ColumnPropNameInRow="masa_berlaku" msprop:Generator_ColumnPropNameInTable="masa_berlakuColumn" msprop:Generator_UserColumnName="masa_berlaku" type="xs:int" minOccurs="0" />
+              <xs:element name="awal_exp" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnawal_exp" msprop:Generator_ColumnPropNameInRow="awal_exp" msprop:Generator_ColumnPropNameInTable="awal_expColumn" msprop:Generator_UserColumnName="awal_exp" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="P1" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP1" msprop:Generator_ColumnPropNameInRow="P1" msprop:Generator_ColumnPropNameInTable="P1Column" msprop:Generator_UserColumnName="P1" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="P2" msdata:ReadOnly="true" msprop:Generator_ColumnVarNameInTable="columnP2" msprop:Generator_ColumnPropNameInRow="P2" msprop:Generator_ColumnPropNameInTable="P2Column" msprop:Generator_UserColumnName="P2" type="xs:dateTime" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="report_inspection" msprop:Generator_TableClassName="report_inspectionDataTable" msprop:Generator_TableVarName="tablereport_inspection" msprop:Generator_TablePropName="report_inspection" msprop:Generator_RowDeletingName="report_inspectionRowDeleting" msprop:Generator_RowChangingName="report_inspectionRowChanging" msprop:Generator_RowEvHandlerName="report_inspectionRowChangeEventHandler" msprop:Generator_RowDeletedName="report_inspectionRowDeleted" msprop:Generator_UserTableName="report_inspection" msprop:Generator_RowChangedName="report_inspectionRowChanged" msprop:Generator_RowEvArgName="report_inspectionRowChangeEvent" msprop:Generator_RowClassName="report_inspectionRow">
+        <xs:element name="report_inspection" msprop:Generator_TableClassName="report_inspectionDataTable" msprop:Generator_TableVarName="tablereport_inspection" msprop:Generator_RowChangedName="report_inspectionRowChanged" msprop:Generator_TablePropName="report_inspection" msprop:Generator_RowDeletingName="report_inspectionRowDeleting" msprop:Generator_RowChangingName="report_inspectionRowChanging" msprop:Generator_RowEvHandlerName="report_inspectionRowChangeEventHandler" msprop:Generator_RowDeletedName="report_inspectionRowDeleted" msprop:Generator_RowClassName="report_inspectionRow" msprop:Generator_UserTableName="report_inspection" msprop:Generator_RowEvArgName="report_inspectionRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="labnum" msprop:Generator_ColumnVarNameInTable="columnlabnum" msprop:Generator_ColumnPropNameInRow="labnum" msprop:Generator_ColumnPropNameInTable="labnumColumn" msprop:Generator_UserColumnName="labnum" minOccurs="0">
@@ -5996,7 +6004,7 @@ FROM            report_global_view</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="report_internal_view" msprop:Generator_TableClassName="report_internal_viewDataTable" msprop:Generator_TableVarName="tablereport_internal_view" msprop:Generator_TablePropName="report_internal_view" msprop:Generator_RowDeletingName="report_internal_viewRowDeleting" msprop:Generator_RowChangingName="report_internal_viewRowChanging" msprop:Generator_RowEvHandlerName="report_internal_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="report_internal_viewRowDeleted" msprop:Generator_UserTableName="report_internal_view" msprop:Generator_RowChangedName="report_internal_viewRowChanged" msprop:Generator_RowEvArgName="report_internal_viewRowChangeEvent" msprop:Generator_RowClassName="report_internal_viewRow">
+        <xs:element name="report_internal_view" msprop:Generator_TableClassName="report_internal_viewDataTable" msprop:Generator_TableVarName="tablereport_internal_view" msprop:Generator_RowChangedName="report_internal_viewRowChanged" msprop:Generator_TablePropName="report_internal_view" msprop:Generator_RowDeletingName="report_internal_viewRowDeleting" msprop:Generator_RowChangingName="report_internal_viewRowChanging" msprop:Generator_RowEvHandlerName="report_internal_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="report_internal_viewRowDeleted" msprop:Generator_RowClassName="report_internal_viewRow" msprop:Generator_UserTableName="report_internal_view" msprop:Generator_RowEvArgName="report_internal_viewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
@@ -6087,7 +6095,7 @@ FROM            report_global_view</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="report_ista_view" msprop:Generator_TableClassName="report_ista_viewDataTable" msprop:Generator_TableVarName="tablereport_ista_view" msprop:Generator_TablePropName="report_ista_view" msprop:Generator_RowDeletingName="report_ista_viewRowDeleting" msprop:Generator_RowChangingName="report_ista_viewRowChanging" msprop:Generator_RowEvHandlerName="report_ista_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="report_ista_viewRowDeleted" msprop:Generator_UserTableName="report_ista_view" msprop:Generator_RowChangedName="report_ista_viewRowChanged" msprop:Generator_RowEvArgName="report_ista_viewRowChangeEvent" msprop:Generator_RowClassName="report_ista_viewRow">
+        <xs:element name="report_ista_view" msprop:Generator_TableClassName="report_ista_viewDataTable" msprop:Generator_TableVarName="tablereport_ista_view" msprop:Generator_RowChangedName="report_ista_viewRowChanged" msprop:Generator_TablePropName="report_ista_view" msprop:Generator_RowDeletingName="report_ista_viewRowDeleting" msprop:Generator_RowChangingName="report_ista_viewRowChanging" msprop:Generator_RowEvHandlerName="report_ista_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="report_ista_viewRowDeleted" msprop:Generator_RowClassName="report_ista_viewRow" msprop:Generator_UserTableName="report_ista_view" msprop:Generator_RowEvArgName="report_ista_viewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id_request" msprop:Generator_ColumnVarNameInTable="columnid_request" msprop:Generator_ColumnPropNameInRow="id_request" msprop:Generator_ColumnPropNameInTable="id_requestColumn" msprop:Generator_UserColumnName="id_request" type="xs:int" minOccurs="0" />
@@ -6184,7 +6192,7 @@ FROM            report_global_view</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="report_periodicnext_view" msprop:Generator_TableClassName="report_periodicnext_viewDataTable" msprop:Generator_TableVarName="tablereport_periodicnext_view" msprop:Generator_TablePropName="report_periodicnext_view" msprop:Generator_RowDeletingName="report_periodicnext_viewRowDeleting" msprop:Generator_RowChangingName="report_periodicnext_viewRowChanging" msprop:Generator_RowEvHandlerName="report_periodicnext_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="report_periodicnext_viewRowDeleted" msprop:Generator_UserTableName="report_periodicnext_view" msprop:Generator_RowChangedName="report_periodicnext_viewRowChanged" msprop:Generator_RowEvArgName="report_periodicnext_viewRowChangeEvent" msprop:Generator_RowClassName="report_periodicnext_viewRow">
+        <xs:element name="report_periodicnext_view" msprop:Generator_TableClassName="report_periodicnext_viewDataTable" msprop:Generator_TableVarName="tablereport_periodicnext_view" msprop:Generator_RowChangedName="report_periodicnext_viewRowChanged" msprop:Generator_TablePropName="report_periodicnext_view" msprop:Generator_RowDeletingName="report_periodicnext_viewRowDeleting" msprop:Generator_RowChangingName="report_periodicnext_viewRowChanging" msprop:Generator_RowEvHandlerName="report_periodicnext_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="report_periodicnext_viewRowDeleted" msprop:Generator_RowClassName="report_periodicnext_viewRow" msprop:Generator_UserTableName="report_periodicnext_view" msprop:Generator_RowEvArgName="report_periodicnext_viewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" minOccurs="0" />
@@ -6254,7 +6262,7 @@ FROM            report_global_view</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="report_leadtime_view" msprop:Generator_TableClassName="report_leadtime_viewDataTable" msprop:Generator_TableVarName="tablereport_leadtime_view" msprop:Generator_RowChangedName="report_leadtime_viewRowChanged" msprop:Generator_TablePropName="report_leadtime_view" msprop:Generator_RowDeletingName="report_leadtime_viewRowDeleting" msprop:Generator_RowChangingName="report_leadtime_viewRowChanging" msprop:Generator_RowEvHandlerName="report_leadtime_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="report_leadtime_viewRowDeleted" msprop:Generator_RowClassName="report_leadtime_viewRow" msprop:Generator_UserTableName="report_leadtime_view" msprop:Generator_RowEvArgName="report_leadtime_viewRowChangeEvent">
+        <xs:element name="report_leadtime_view" msprop:Generator_TableClassName="report_leadtime_viewDataTable" msprop:Generator_TableVarName="tablereport_leadtime_view" msprop:Generator_TablePropName="report_leadtime_view" msprop:Generator_RowDeletingName="report_leadtime_viewRowDeleting" msprop:Generator_RowChangingName="report_leadtime_viewRowChanging" msprop:Generator_RowEvHandlerName="report_leadtime_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="report_leadtime_viewRowDeleted" msprop:Generator_UserTableName="report_leadtime_view" msprop:Generator_RowChangedName="report_leadtime_viewRowChanged" msprop:Generator_RowEvArgName="report_leadtime_viewRowChangeEvent" msprop:Generator_RowClassName="report_leadtime_viewRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="Id" msprop:Generator_ColumnVarNameInTable="columnId" msprop:Generator_ColumnPropNameInRow="Id" msprop:Generator_ColumnPropNameInTable="IdColumn" msprop:Generator_UserColumnName="Id" type="xs:int" />
@@ -6340,7 +6348,7 @@ FROM            report_global_view</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="report_gravity_sas" msprop:Generator_TableClassName="report_gravity_sasDataTable" msprop:Generator_TableVarName="tablereport_gravity_sas" msprop:Generator_RowChangedName="report_gravity_sasRowChanged" msprop:Generator_TablePropName="report_gravity_sas" msprop:Generator_RowDeletingName="report_gravity_sasRowDeleting" msprop:Generator_RowChangingName="report_gravity_sasRowChanging" msprop:Generator_RowEvHandlerName="report_gravity_sasRowChangeEventHandler" msprop:Generator_RowDeletedName="report_gravity_sasRowDeleted" msprop:Generator_RowClassName="report_gravity_sasRow" msprop:Generator_UserTableName="report_gravity_sas" msprop:Generator_RowEvArgName="report_gravity_sasRowChangeEvent">
+        <xs:element name="report_gravity_sas" msprop:Generator_TableClassName="report_gravity_sasDataTable" msprop:Generator_TableVarName="tablereport_gravity_sas" msprop:Generator_TablePropName="report_gravity_sas" msprop:Generator_RowDeletingName="report_gravity_sasRowDeleting" msprop:Generator_RowChangingName="report_gravity_sasRowChanging" msprop:Generator_RowEvHandlerName="report_gravity_sasRowChangeEventHandler" msprop:Generator_RowDeletedName="report_gravity_sasRowDeleted" msprop:Generator_UserTableName="report_gravity_sas" msprop:Generator_RowChangedName="report_gravity_sasRowChanged" msprop:Generator_RowEvArgName="report_gravity_sasRowChangeEvent" msprop:Generator_RowClassName="report_gravity_sasRow">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="labnum" msprop:Generator_ColumnVarNameInTable="columnlabnum" msprop:Generator_ColumnPropNameInRow="labnum" msprop:Generator_ColumnPropNameInTable="labnumColumn" msprop:Generator_UserColumnName="labnum" minOccurs="0">
@@ -6414,7 +6422,7 @@ FROM            report_global_view</CommandText>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="report_global_view" msprop:Generator_TableClassName="report_global_viewDataTable" msprop:Generator_TableVarName="tablereport_global_view" msprop:Generator_TablePropName="report_global_view" msprop:Generator_RowDeletingName="report_global_viewRowDeleting" msprop:Generator_RowChangingName="report_global_viewRowChanging" msprop:Generator_RowEvHandlerName="report_global_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="report_global_viewRowDeleted" msprop:Generator_UserTableName="report_global_view" msprop:Generator_RowChangedName="report_global_viewRowChanged" msprop:Generator_RowEvArgName="report_global_viewRowChangeEvent" msprop:Generator_RowClassName="report_global_viewRow">
+        <xs:element name="report_global_view" msprop:Generator_TableClassName="report_global_viewDataTable" msprop:Generator_TableVarName="tablereport_global_view" msprop:Generator_RowChangedName="report_global_viewRowChanged" msprop:Generator_TablePropName="report_global_view" msprop:Generator_RowDeletingName="report_global_viewRowDeleting" msprop:Generator_RowChangingName="report_global_viewRowChanging" msprop:Generator_RowEvHandlerName="report_global_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="report_global_viewRowDeleted" msprop:Generator_RowClassName="report_global_viewRow" msprop:Generator_UserTableName="report_global_view" msprop:Generator_RowEvArgName="report_global_viewRowChangeEvent">
           <xs:complexType>
             <xs:sequence>
               <xs:element name="id" msprop:Generator_ColumnVarNameInTable="columnid" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_UserColumnName="id" type="xs:int" />

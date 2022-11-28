@@ -14125,6 +14125,8 @@ Partial Public Class HCQC_NewDataset
         
         Private columnreceipt_date As Global.System.Data.DataColumn
         
+        Private columnloc_sample As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -14417,6 +14419,14 @@ Partial Public Class HCQC_NewDataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property loc_sampleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnloc_sample
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -14485,9 +14495,10 @@ Partial Public Class HCQC_NewDataset
                     ByVal crop As String,  _
                     ByVal status_confirm As String,  _
                     ByVal information_rejected As String,  _
-                    ByVal receipt_date As Date) As Spl_request1Row
+                    ByVal receipt_date As Date,  _
+                    ByVal loc_sample As String) As Spl_request1Row
             Dim rowSpl_request1Row As Spl_request1Row = CType(Me.NewRow,Spl_request1Row)
-            Dim columnValuesArray() As Object = New Object() {id, variety, farmer, location, harvest, weight, nomnl, nojob, scope, nama_req, input_date, nama_con, tgl_confirm, status, labnum, nama_ppc, tgl_kirim, rafaksi, officer, remark, tgl, id_hvsprod, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, crop, status_confirm, information_rejected, receipt_date}
+            Dim columnValuesArray() As Object = New Object() {id, variety, farmer, location, harvest, weight, nomnl, nojob, scope, nama_req, input_date, nama_con, tgl_confirm, status, labnum, nama_ppc, tgl_kirim, rafaksi, officer, remark, tgl, id_hvsprod, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, crop, status_confirm, information_rejected, receipt_date, loc_sample}
             rowSpl_request1Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowSpl_request1Row)
             Return rowSpl_request1Row
@@ -14542,6 +14553,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnstatus_confirm = MyBase.Columns("status_confirm")
             Me.columninformation_rejected = MyBase.Columns("information_rejected")
             Me.columnreceipt_date = MyBase.Columns("receipt_date")
+            Me.columnloc_sample = MyBase.Columns("loc_sample")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -14611,6 +14623,8 @@ Partial Public Class HCQC_NewDataset
             MyBase.Columns.Add(Me.columninformation_rejected)
             Me.columnreceipt_date = New Global.System.Data.DataColumn("receipt_date", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnreceipt_date)
+            Me.columnloc_sample = New Global.System.Data.DataColumn("loc_sample", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnloc_sample)
             Me.columnid.AllowDBNull = false
             Me.columnvariety.MaxLength = 25
             Me.columnfarmer.MaxLength = 255
@@ -14630,6 +14644,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnstatus_confirm.ReadOnly = true
             Me.columnstatus_confirm.MaxLength = 10
             Me.columninformation_rejected.MaxLength = 150
+            Me.columnloc_sample.MaxLength = 25
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -14820,6 +14835,8 @@ Partial Public Class HCQC_NewDataset
         Private columnreq_date As Global.System.Data.DataColumn
         
         Private columnremark As Global.System.Data.DataColumn
+        
+        Private columnloc_sample As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
@@ -15073,6 +15090,14 @@ Partial Public Class HCQC_NewDataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property loc_sampleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnloc_sample
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -15136,9 +15161,10 @@ Partial Public Class HCQC_NewDataset
                     ByVal labnum As String,  _
                     ByVal status_confirm As String,  _
                     ByVal req_date As Date,  _
-                    ByVal remark As String) As qc_confirm_viewerRow
+                    ByVal remark As String,  _
+                    ByVal loc_sample As String) As qc_confirm_viewerRow
             Dim rowqc_confirm_viewerRow As qc_confirm_viewerRow = CType(Me.NewRow,qc_confirm_viewerRow)
-            Dim columnValuesArray() As Object = New Object() {id, id_hvsprod, crop, variety, farmer, nomnl, nojob, scope, weight, location, harvest, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, req_name, tgl_confirm, status, information_rejected, nama_con, labnum, status_confirm, req_date, remark}
+            Dim columnValuesArray() As Object = New Object() {id, id_hvsprod, crop, variety, farmer, nomnl, nojob, scope, weight, location, harvest, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, req_name, tgl_confirm, status, information_rejected, nama_con, labnum, status_confirm, req_date, remark, loc_sample}
             rowqc_confirm_viewerRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowqc_confirm_viewerRow)
             Return rowqc_confirm_viewerRow
@@ -15194,6 +15220,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnstatus_confirm = MyBase.Columns("status_confirm")
             Me.columnreq_date = MyBase.Columns("req_date")
             Me.columnremark = MyBase.Columns("remark")
+            Me.columnloc_sample = MyBase.Columns("loc_sample")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -15253,6 +15280,8 @@ Partial Public Class HCQC_NewDataset
             MyBase.Columns.Add(Me.columnreq_date)
             Me.columnremark = New Global.System.Data.DataColumn("remark", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnremark)
+            Me.columnloc_sample = New Global.System.Data.DataColumn("loc_sample", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnloc_sample)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
@@ -15270,6 +15299,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnstatus_confirm.ReadOnly = true
             Me.columnstatus_confirm.MaxLength = 10
             Me.columnremark.MaxLength = 225
+            Me.columnloc_sample.MaxLength = 25
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -31238,6 +31268,21 @@ Partial Public Class HCQC_NewDataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property loc_sample() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableSpl_request1.loc_sampleColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'loc_sample' in table 'Spl_request1' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableSpl_request1.loc_sampleColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsvarietyNull() As Boolean
             Return Me.IsNull(Me.tableSpl_request1.varietyColumn)
         End Function
@@ -31606,6 +31651,18 @@ Partial Public Class HCQC_NewDataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub Setreceipt_dateNull()
             Me(Me.tableSpl_request1.receipt_dateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isloc_sampleNull() As Boolean
+            Return Me.IsNull(Me.tableSpl_request1.loc_sampleColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setloc_sampleNull()
+            Me(Me.tableSpl_request1.loc_sampleColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -32028,6 +32085,21 @@ Partial Public Class HCQC_NewDataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property loc_sample() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableqc_confirm_viewer.loc_sampleColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'loc_sample' in table 'qc_confirm_viewer' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableqc_confirm_viewer.loc_sampleColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function Isid_hvsprodNull() As Boolean
             Return Me.IsNull(Me.tableqc_confirm_viewer.id_hvsprodColumn)
         End Function
@@ -32336,6 +32408,18 @@ Partial Public Class HCQC_NewDataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetremarkNull()
             Me(Me.tableqc_confirm_viewer.remarkColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isloc_sampleNull() As Boolean
+            Return Me.IsNull(Me.tableqc_confirm_viewer.loc_sampleColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setloc_sampleNull()
+            Me(Me.tableqc_confirm_viewer.loc_sampleColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -42641,11 +42725,11 @@ Namespace HCQC_NewDatasetTableAdapters
                 "g, moisture_log, viability_log, gerout_log, gerout_namelog, gertest_namelog, pur"& _ 
                 "ity_namelog, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         rafaction_namelog, moisture_namelog, via"& _ 
                 "bility_namelog, gervigor_namelog, gervigor_log, accept_date"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            rep"& _ 
-                "ort_status_pengujian"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (input_date >= @startdate) AND (input_date <="& _ 
-                " @enddate)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
+                "ort_status_pengujian"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (cast(input_date as date) BETWEEN @startdate "& _ 
+                "AND @enddate)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@startdate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "input_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@enddate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "input_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@startdate", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@enddate", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT Ger_1st, Ger_1st_Est, Ger_2nd, Ger_2nd_Est, Ger_Analys, Ger_Test, Ger_Test"& _ 
@@ -42706,17 +42790,17 @@ Namespace HCQC_NewDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByDateFilter(ByVal dataTable As HCQC_NewDataset.report_status_pengujianDataTable, ByVal startdate As Global.System.Nullable(Of Date), ByVal enddate As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function FillByDateFilter(ByVal dataTable As HCQC_NewDataset.report_status_pengujianDataTable, ByVal startdate As String, ByVal enddate As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (startdate.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(startdate.Value,Date)
+            If (startdate Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("startdate")
             Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(startdate,String)
             End If
-            If (enddate.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(enddate.Value,Date)
+            If (enddate Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("enddate")
             Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(enddate,String)
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -42729,17 +42813,17 @@ Namespace HCQC_NewDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataByDateFilter(ByVal startdate As Global.System.Nullable(Of Date), ByVal enddate As Global.System.Nullable(Of Date)) As HCQC_NewDataset.report_status_pengujianDataTable
+        Public Overloads Overridable Function GetDataByDateFilter(ByVal startdate As String, ByVal enddate As String) As HCQC_NewDataset.report_status_pengujianDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (startdate.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(startdate.Value,Date)
+            If (startdate Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("startdate")
             Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(startdate,String)
             End If
-            If (enddate.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(enddate.Value,Date)
+            If (enddate Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("enddate")
             Else
-                Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(enddate,String)
             End If
             Dim dataTable As HCQC_NewDataset.report_status_pengujianDataTable = New HCQC_NewDataset.report_status_pengujianDataTable()
             Me.Adapter.Fill(dataTable)
@@ -44835,6 +44919,7 @@ Namespace HCQC_NewDatasetTableAdapters
             tableMapping.ColumnMappings.Add("status_confirm", "status_confirm")
             tableMapping.ColumnMappings.Add("information_rejected", "information_rejected")
             tableMapping.ColumnMappings.Add("receipt_date", "receipt_date")
+            tableMapping.ColumnMappings.Add("loc_sample", "loc_sample")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -44862,10 +44947,10 @@ Namespace HCQC_NewDatasetTableAdapters
                 "spl_request.test_moi, spl_request.test_pur, spl_request.test_ger, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"            "& _ 
                 "             spl_request.test_via, spl_request.test_raf, category_crop.crop, qc_"& _ 
                 "confirm_view.status_confirm, qc_confirm_view.information_rejected, qc_confirm_vi"& _ 
-                "ew.receipt_date"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            category_crop RIGHT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
-                "          qc_confirm_view ON category_crop.prodcode = qc_confirm_view.variety LE"& _ 
-                "FT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         spl_request ON qc_confirm_view.id = spl_"& _ 
-                "request.id"
+                "ew.receipt_date, spl_request.loc_sample"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            category_crop RIGHT OUT"& _ 
+                "ER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         qc_confirm_view ON category_crop.prodcode = qc"& _ 
+                "_confirm_view.variety LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         spl_request ON q"& _ 
+                "c_confirm_view.id = spl_request.id"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -45048,6 +45133,7 @@ Namespace HCQC_NewDatasetTableAdapters
             tableMapping.ColumnMappings.Add("status_confirm", "status_confirm")
             tableMapping.ColumnMappings.Add("req_date", "req_date")
             tableMapping.ColumnMappings.Add("remark", "remark")
+            tableMapping.ColumnMappings.Add("loc_sample", "loc_sample")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -45067,83 +45153,84 @@ Namespace HCQC_NewDatasetTableAdapters
             Me._commandCollection(0).CommandText = "SELECT        id, id_hvsprod, crop, variety, farmer, nomnl, nojob, scope, weight,"& _ 
                 " location, harvest, bag, test_sampling, test_moi, test_pur, test_ger, test_via, "& _ 
                 "test_raf, req_name, tgl_confirm, status, information_rejected, nama_con, labnum,"& _ 
-                " "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         status_confirm, req_date, remark"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            qc"& _ 
-                "_confirm_viewer"
+                " "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         status_confirm, req_date, remark, loc_sample"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
+                "          qc_confirm_viewer"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, sta"& _ 
-                "tus_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tg"& _ 
-                "l_confirm, variety, weight FROM qc_confirm_viewer WHERE (status_confirm = 'Accep"& _ 
-                "ted') AND (req_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date < "& _ 
-                "DATEADD(dd, 1, EOMONTH(GETDATE())))"
+                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
+                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
+                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (status_conf"& _ 
+                "irm = 'Accepted') AND (req_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND "& _ 
+                "(req_date < DATEADD(dd, 1, EOMONTH(GETDATE())))"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, sta"& _ 
-                "tus_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tg"& _ 
-                "l_confirm, variety, weight FROM qc_confirm_viewer WHERE (req_date >= DATEADD(dd,"& _ 
-                " 1, EOMONTH(GETDATE(), - 2))) AND (req_date < DATEADD(dd, 1, EOMONTH(GETDATE()))"& _ 
-                ") ORDER BY id DESC"
+                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
+                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
+                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (req_date >="& _ 
+                " DATEADD(dd, 1, EOMONTH(GETDATE(), - 2))) AND (req_date < DATEADD(dd, 1, EOMONTH"& _ 
+                "(GETDATE()))) ORDER BY id DESC"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
             Me._commandCollection(3).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, sta"& _ 
-                "tus_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tg"& _ 
-                "l_confirm, variety, weight FROM qc_confirm_viewer WHERE (status_confirm = 'On Pr"& _ 
-                "ocess')"
+                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
+                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
+                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (status_conf"& _ 
+                "irm = 'On Process')"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
             Me._commandCollection(4).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, sta"& _ 
-                "tus_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tg"& _ 
-                "l_confirm, variety, weight FROM qc_confirm_viewer WHERE (status_confirm = 'Rejec"& _ 
-                "ted') AND (req_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date < "& _ 
-                "DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC"
+                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
+                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
+                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (status_conf"& _ 
+                "irm = 'Rejected') AND (req_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND "& _ 
+                "(req_date < DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(5).Connection = Me.Connection
             Me._commandCollection(5).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, sta"& _ 
-                "tus_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tg"& _ 
-                "l_confirm, variety, weight FROM qc_confirm_viewer WHERE (labnum LIKE @strvar) OR"& _ 
-                " (id_hvsprod LIKE @strvar) OR (variety LIKE @strvar) OR (nomnl LIKE @strvar) OR "& _ 
-                "(nojob LIKE @strvar) OR (scope LIKE @strvar) OR (farmer LIKE @strvar) OR (locati"& _ 
-                "on LIKE @strvar) ORDER BY id DESC"
+                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
+                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
+                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (labnum LIKE"& _ 
+                " @strvar) OR (id_hvsprod LIKE @strvar) OR (variety LIKE @strvar) OR (nomnl LIKE "& _ 
+                "@strvar) OR (nojob LIKE @strvar) OR (scope LIKE @strvar) OR (farmer LIKE @strvar"& _ 
+                ") OR (location LIKE @strvar) ORDER BY id DESC"
             Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@strvar", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(6).Connection = Me.Connection
             Me._commandCollection(6).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, sta"& _ 
-                "tus_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tg"& _ 
-                "l_confirm, variety, weight FROM qc_confirm_viewer WHERE (req_date >= DATEADD(dd,"& _ 
-                " 1, EOMONTH(GETDATE(), - 1))) AND (req_date < DATEADD(dd, 1, EOMONTH(GETDATE()))"& _ 
-                ") ORDER BY id DESC"
+                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
+                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
+                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (req_date >="& _ 
+                " DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date < DATEADD(dd, 1, EOMONTH"& _ 
+                "(GETDATE()))) ORDER BY id DESC"
             Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(7) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(7).Connection = Me.Connection
             Me._commandCollection(7).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, sta"& _ 
-                "tus_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tg"& _ 
-                "l_confirm, variety, weight FROM qc_confirm_viewer WHERE (variety LIKE @strvariab"& _ 
-                "le) OR (nomnl LIKE @strvariable) OR (nojob LIKE @strvariable) OR (labnum LIKE @s"& _ 
-                "trvariable) OR (status_confirm LIKE @strvariable) OR (id_hvsprod LIKE @strvariab"& _ 
-                "le)"
+                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
+                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
+                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (variety LIK"& _ 
+                "E @strvariable) OR (nomnl LIKE @strvariable) OR (nojob LIKE @strvariable) OR (la"& _ 
+                "bnum LIKE @strvariable) OR (status_confirm LIKE @strvariable) OR (id_hvsprod LIK"& _ 
+                "E @strvariable)"
             Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@strvariable", Global.System.Data.SqlDbType.VarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "variety", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(8) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(8).Connection = Me.Connection
             Me._commandCollection(8).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, sta"& _ 
-                "tus_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tg"& _ 
-                "l_confirm, variety, weight FROM qc_confirm_viewer WHERE (req_date >= DATEADD(dd,"& _ 
-                " 1, EOMONTH(GETDATE(), - 1))) AND (req_date < DATEADD(dd, 1, EOMONTH(GETDATE()))"& _ 
-                ") AND (variety LIKE @Variety) AND (scope = 'Raw Material') ORDER BY id DESC"
+                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
+                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
+                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (req_date >="& _ 
+                " DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date < DATEADD(dd, 1, EOMONTH"& _ 
+                "(GETDATE()))) AND (variety LIKE @Variety) AND (scope = 'Raw Material') ORDER BY "& _ 
+                "id DESC"
             Me._commandCollection(8).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Variety", Global.System.Data.SqlDbType.VarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "variety", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub

@@ -5,6 +5,7 @@ Imports System.Reflection
 Imports DevExpress.XtraBars
 Imports DevExpress.XtraEditors
 Imports DevExpress.XtraEditors.Controls
+Imports System.Text
 
 Public Class Sample_Tracking
     Private Sub Sample_Tracking_Load(sender As Object, e As EventArgs) Handles Me.Load
@@ -21,10 +22,13 @@ Public Class Sample_Tracking
             My.Application.Info.DirectoryPath,
             FileIO.SearchOption.SearchTopLevelOnly, "GStyle_tracking.txt")
         Next
+        StartDate.Value = Today
+        EndDate.Value = Today
         LoadTextTrackingTemplating()
     End Sub
 
     Public Sub LoadTextTrackingTemplating()
+        ComboBoxEdit1.Properties.Items.Clear()
         Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
         ComboBoxEdit1.Properties.Items.AddRange(System.IO.File.ReadAllLines(FilePath))
     End Sub
@@ -33,6 +37,7 @@ Public Class Sample_Tracking
         ''menghapus text "selectedText Combobox" di file DirectoryPart|GStyle_tracking.txt
         Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
         File.WriteAllLines(FilePath, File.ReadAllLines(FilePath).Where(Function(l) l <> ComboBoxEdit1.SelectedItem))
+
     End Sub
 
     Public Sub SaveTextTrackingTemplating()
@@ -157,8 +162,10 @@ Public Class Sample_Tracking
             MetroMessageBox.Show(Me, "'Start Date' harus lebih kecil dari 'End Date'", "Filter Date Tracking")
             Return
         End If
+        Dim start_date As String = StartDate.Value.Date.ToString("yyyyMMdd")
+        Dim end_date As String = EndDate.Value.Date.ToString("yyyyMMdd")
 
-        Me.Report_status_pengujianTableAdapter.FillByDateFilter(Me.HCQC_NewDataset.report_status_pengujian, StartDate.Value.Date, EndDate.Value.Date)
+        Me.Report_status_pengujianTableAdapter.FillByDateFilter(Me.HCQC_NewDataset.report_status_pengujian, start_date, end_date)
     End Sub
 
     Public Sub CariTextBox(ByVal parameterCari As String, ByVal strVal As String)
@@ -340,6 +347,7 @@ Public Class Sample_Tracking
         DeleteTextTrackingTemplating()
         ''proses load combobox
         LoadTextTrackingTemplating()
+
     End Sub
 
     Private Sub MetroLink2_Click(sender As Object, e As EventArgs) Handles MetroLink2.Click
@@ -349,15 +357,24 @@ Public Class Sample_Tracking
         If result = DialogResult.OK Then
             GridView1.SaveLayoutToXml(fileName)
         End If
-
+        Dim textline As String
+        Dim stringcek As Boolean = False
         Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
-        Dim file As System.IO.StreamWriter
-        file = My.Computer.FileSystem.OpenTextFileWriter(FilePath, True)
-        file.WriteLine(ComboBoxEdit1.SelectedItem)
-        file.Close()
 
-        ''
-        SaveTextTrackingTemplating()
+        Using objReader As New StreamReader(FilePath, Encoding.ASCII)
+            textline = objReader.ReadLine()
+            If Not textline.Contains(ComboBoxEdit1.SelectedItem) Then
+                stringcek = True
+            End If
+        End Using
+
+        If stringcek = True Then
+            'SaveTextTrackingTemplating()
+            Using file As New System.IO.StreamWriter(FilePath, True)
+                file.WriteLine(ComboBoxEdit1.SelectedItem)
+            End Using
+        End If
+
         ''proses load combobox
         LoadTextTrackingTemplating()
     End Sub

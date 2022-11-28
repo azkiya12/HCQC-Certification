@@ -253,25 +253,38 @@ Public Class Sample_Archive
     End Sub
 
     Private Sub LinkDataList_Click(sender As Object, e As EventArgs) Handles LinkDataList.Click
+        ''tombo untuk membuka page Data_List
         NavigationFrame1.SelectedPage = NavigationPage2
-        Me.Report_arsip_sample_viewTableAdapter.FillByLastMonth(Me.HCQC_serverDataSet.report_arsip_sample_view)
+        LinkLastMonth_Click(sender, e)
     End Sub
 
     Private Sub LinkThisMonth_Click(sender As Object, e As EventArgs) Handles LinkThisMonth.Click
+        MetroPanel4.Enabled = False
         Me.Report_arsip_sample_viewTableAdapter.FillByThisMonth(Me.HCQC_serverDataSet.report_arsip_sample_view)
+        MetroPanel4.Enabled = True
     End Sub
 
     Private Sub LinkLastMonth_Click(sender As Object, e As EventArgs) Handles LinkLastMonth.Click
+        MetroPanel4.Enabled = False
         Me.Report_arsip_sample_viewTableAdapter.FillByLastMonth(Me.HCQC_serverDataSet.report_arsip_sample_view)
+        MetroPanel4.Enabled = True
     End Sub
 
     Private Sub Tsearch_ButtonClick(sender As Object, e As EventArgs) Handles Tsearch.ButtonClick
+        MetroPanel4.Enabled = False
         Me.Report_arsip_sample_viewTableAdapter.FillByVariable(Me.HCQC_serverDataSet.report_arsip_sample_view, "%" + Trim(Tsearch.Text) + "%")
+        MetroPanel4.Enabled = True
     End Sub
 
     Private Sub Tsearch_KeyDown(sender As Object, e As KeyEventArgs) Handles Tsearch.KeyDown
         If e.KeyCode = Keys.Enter Then
             Tsearch_ButtonClick(sender, e)
         End If
+    End Sub
+
+    Private Sub LinkAll_Click(sender As Object, e As EventArgs) Handles LinkAll.Click
+        MetroPanel4.Enabled = False
+        Me.Report_arsip_sample_viewTableAdapter.Fill(Me.HCQC_serverDataSet.report_arsip_sample_view)
+        MetroPanel4.Enabled = True
     End Sub
 End Class

@@ -39,6 +39,7 @@ Partial Class Request_Sampling_From
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colid = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colid_hvsprod = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.collabnum = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colcrop = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colvariety = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colfarmer = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -48,6 +49,7 @@ Partial Class Request_Sampling_From
         Me.colbag = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colnomnl = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colnojob = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colloc_sample = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colscope = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colnama_req = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coltest_sampling = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -58,10 +60,13 @@ Partial Class Request_Sampling_From
         Me.coltest_raf = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colinput_date = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colstatus_confirm = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colinformation_rejected = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.coltgl_confirm = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
         Me.Tsearch = New MetroFramework.Controls.MetroTextBox()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.tloc_sample = New MetroFramework.Controls.MetroComboBox()
         Me.LinkFind = New MetroFramework.Controls.MetroLink()
         Me.BtnSave = New DevExpress.XtraEditors.SimpleButton()
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
@@ -105,6 +110,13 @@ Partial Class Request_Sampling_From
         Me.LinkThisMonth = New MetroFramework.Controls.MetroLink()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid()
+        Me.QcconfirmviewerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
+        Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
+        Me.LinkLoad = New MetroFramework.Controls.MetroLink()
+        Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.Spl_request1TableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.Spl_request1TableAdapter()
+        Me.Qc_confirm_viewerTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.qc_confirm_viewerTableAdapter()
         Me.IdColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdhvsprodColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LabnumColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -116,18 +128,12 @@ Partial Class Request_Sampling_From
         Me.WeightColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NomnlColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NojobColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.loc_sampleColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.status_confirm = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.req_date = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.req_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColmEdit = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.ColmDelete = New System.Windows.Forms.DataGridViewButtonColumn()
-        Me.QcconfirmviewerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
-        Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
-        Me.LinkLoad = New MetroFramework.Controls.MetroLink()
-        Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
-        Me.Spl_request1TableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.Spl_request1TableAdapter()
-        Me.Qc_confirm_viewerTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.qc_confirm_viewerTableAdapter()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Splrequest1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HCQC_NewDataset, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -233,7 +239,7 @@ Partial Class Request_Sampling_From
         Me.GridView1.Appearance.HeaderPanel.Options.UseFont = True
         Me.GridView1.Appearance.HeaderPanel.Options.UseTextOptions = True
         Me.GridView1.Appearance.HeaderPanel.TextOptions.WordWrap = DevExpress.Utils.WordWrap.Wrap
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colid_hvsprod, Me.colcrop, Me.colvariety, Me.colfarmer, Me.collocation, Me.colharvest, Me.colweight, Me.colbag, Me.colnomnl, Me.colnojob, Me.colscope, Me.colnama_req, Me.coltest_sampling, Me.coltest_moi, Me.coltest_pur, Me.coltest_ger, Me.coltest_via, Me.coltest_raf, Me.colinput_date, Me.colstatus_confirm})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.colid_hvsprod, Me.collabnum, Me.colcrop, Me.colvariety, Me.colfarmer, Me.collocation, Me.colharvest, Me.colweight, Me.colbag, Me.colnomnl, Me.colnojob, Me.colloc_sample, Me.colscope, Me.colnama_req, Me.coltest_sampling, Me.coltest_moi, Me.coltest_pur, Me.coltest_ger, Me.coltest_via, Me.coltest_raf, Me.colinput_date, Me.colstatus_confirm, Me.colinformation_rejected, Me.coltgl_confirm})
         Me.GridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
@@ -252,7 +258,7 @@ Partial Class Request_Sampling_From
         '
         'colid
         '
-        Me.colid.Caption = "Request Number"
+        Me.colid.Caption = "Req Number"
         Me.colid.FieldName = "id"
         Me.colid.Name = "colid"
         Me.colid.Visible = True
@@ -268,13 +274,22 @@ Partial Class Request_Sampling_From
         Me.colid_hvsprod.VisibleIndex = 1
         Me.colid_hvsprod.Width = 106
         '
+        'collabnum
+        '
+        Me.collabnum.Caption = "Lab Number"
+        Me.collabnum.FieldName = "labnum"
+        Me.collabnum.Name = "collabnum"
+        Me.collabnum.Visible = True
+        Me.collabnum.VisibleIndex = 2
+        Me.collabnum.Width = 89
+        '
         'colcrop
         '
         Me.colcrop.Caption = "Crop"
         Me.colcrop.FieldName = "crop"
         Me.colcrop.Name = "colcrop"
         Me.colcrop.Visible = True
-        Me.colcrop.VisibleIndex = 2
+        Me.colcrop.VisibleIndex = 3
         Me.colcrop.Width = 109
         '
         'colvariety
@@ -283,8 +298,8 @@ Partial Class Request_Sampling_From
         Me.colvariety.FieldName = "variety"
         Me.colvariety.Name = "colvariety"
         Me.colvariety.Visible = True
-        Me.colvariety.VisibleIndex = 3
-        Me.colvariety.Width = 72
+        Me.colvariety.VisibleIndex = 4
+        Me.colvariety.Width = 76
         '
         'colfarmer
         '
@@ -292,7 +307,7 @@ Partial Class Request_Sampling_From
         Me.colfarmer.FieldName = "farmer"
         Me.colfarmer.Name = "colfarmer"
         Me.colfarmer.Visible = True
-        Me.colfarmer.VisibleIndex = 4
+        Me.colfarmer.VisibleIndex = 5
         Me.colfarmer.Width = 110
         '
         'collocation
@@ -301,7 +316,7 @@ Partial Class Request_Sampling_From
         Me.collocation.FieldName = "location"
         Me.collocation.Name = "collocation"
         Me.collocation.Visible = True
-        Me.collocation.VisibleIndex = 5
+        Me.collocation.VisibleIndex = 6
         Me.collocation.Width = 117
         '
         'colharvest
@@ -310,7 +325,7 @@ Partial Class Request_Sampling_From
         Me.colharvest.FieldName = "harvest"
         Me.colharvest.Name = "colharvest"
         Me.colharvest.Visible = True
-        Me.colharvest.VisibleIndex = 6
+        Me.colharvest.VisibleIndex = 7
         Me.colharvest.Width = 88
         '
         'colweight
@@ -319,7 +334,7 @@ Partial Class Request_Sampling_From
         Me.colweight.FieldName = "weight"
         Me.colweight.Name = "colweight"
         Me.colweight.Visible = True
-        Me.colweight.VisibleIndex = 7
+        Me.colweight.VisibleIndex = 8
         '
         'colbag
         '
@@ -327,7 +342,7 @@ Partial Class Request_Sampling_From
         Me.colbag.FieldName = "bag"
         Me.colbag.Name = "colbag"
         Me.colbag.Visible = True
-        Me.colbag.VisibleIndex = 19
+        Me.colbag.VisibleIndex = 15
         '
         'colnomnl
         '
@@ -335,7 +350,7 @@ Partial Class Request_Sampling_From
         Me.colnomnl.FieldName = "nomnl"
         Me.colnomnl.Name = "colnomnl"
         Me.colnomnl.Visible = True
-        Me.colnomnl.VisibleIndex = 8
+        Me.colnomnl.VisibleIndex = 9
         Me.colnomnl.Width = 56
         '
         'colnojob
@@ -344,8 +359,16 @@ Partial Class Request_Sampling_From
         Me.colnojob.FieldName = "nojob"
         Me.colnojob.Name = "colnojob"
         Me.colnojob.Visible = True
-        Me.colnojob.VisibleIndex = 9
+        Me.colnojob.VisibleIndex = 10
         Me.colnojob.Width = 61
+        '
+        'colloc_sample
+        '
+        Me.colloc_sample.CustomizationCaption = "Location Sample"
+        Me.colloc_sample.FieldName = "loc_sample"
+        Me.colloc_sample.Name = "colloc_sample"
+        Me.colloc_sample.Visible = True
+        Me.colloc_sample.VisibleIndex = 11
         '
         'colscope
         '
@@ -353,7 +376,7 @@ Partial Class Request_Sampling_From
         Me.colscope.FieldName = "scope"
         Me.colscope.Name = "colscope"
         Me.colscope.Visible = True
-        Me.colscope.VisibleIndex = 10
+        Me.colscope.VisibleIndex = 12
         '
         'colnama_req
         '
@@ -361,7 +384,7 @@ Partial Class Request_Sampling_From
         Me.colnama_req.FieldName = "nama_req"
         Me.colnama_req.Name = "colnama_req"
         Me.colnama_req.Visible = True
-        Me.colnama_req.VisibleIndex = 11
+        Me.colnama_req.VisibleIndex = 13
         Me.colnama_req.Width = 93
         '
         'coltest_sampling
@@ -369,8 +392,6 @@ Partial Class Request_Sampling_From
         Me.coltest_sampling.Caption = "Sampling Test"
         Me.coltest_sampling.FieldName = "test_sampling"
         Me.coltest_sampling.Name = "coltest_sampling"
-        Me.coltest_sampling.Visible = True
-        Me.coltest_sampling.VisibleIndex = 12
         Me.coltest_sampling.Width = 94
         '
         'coltest_moi
@@ -378,8 +399,6 @@ Partial Class Request_Sampling_From
         Me.coltest_moi.Caption = "Moi Test"
         Me.coltest_moi.FieldName = "test_moi"
         Me.coltest_moi.Name = "coltest_moi"
-        Me.coltest_moi.Visible = True
-        Me.coltest_moi.VisibleIndex = 13
         Me.coltest_moi.Width = 71
         '
         'coltest_pur
@@ -387,8 +406,6 @@ Partial Class Request_Sampling_From
         Me.coltest_pur.Caption = "Pur Test"
         Me.coltest_pur.FieldName = "test_pur"
         Me.coltest_pur.Name = "coltest_pur"
-        Me.coltest_pur.Visible = True
-        Me.coltest_pur.VisibleIndex = 14
         Me.coltest_pur.Width = 62
         '
         'coltest_ger
@@ -396,8 +413,6 @@ Partial Class Request_Sampling_From
         Me.coltest_ger.Caption = "Ger Test"
         Me.coltest_ger.FieldName = "test_ger"
         Me.coltest_ger.Name = "coltest_ger"
-        Me.coltest_ger.Visible = True
-        Me.coltest_ger.VisibleIndex = 15
         Me.coltest_ger.Width = 63
         '
         'coltest_via
@@ -405,8 +420,6 @@ Partial Class Request_Sampling_From
         Me.coltest_via.Caption = "Via Test"
         Me.coltest_via.FieldName = "test_via"
         Me.coltest_via.Name = "coltest_via"
-        Me.coltest_via.Visible = True
-        Me.coltest_via.VisibleIndex = 16
         Me.coltest_via.Width = 61
         '
         'coltest_raf
@@ -414,8 +427,6 @@ Partial Class Request_Sampling_From
         Me.coltest_raf.Caption = "Raf Test"
         Me.coltest_raf.FieldName = "test_raf"
         Me.coltest_raf.Name = "coltest_raf"
-        Me.coltest_raf.Visible = True
-        Me.coltest_raf.VisibleIndex = 17
         Me.coltest_raf.Width = 59
         '
         'colinput_date
@@ -424,8 +435,8 @@ Partial Class Request_Sampling_From
         Me.colinput_date.FieldName = "input_date"
         Me.colinput_date.Name = "colinput_date"
         Me.colinput_date.Visible = True
-        Me.colinput_date.VisibleIndex = 18
-        Me.colinput_date.Width = 100
+        Me.colinput_date.VisibleIndex = 14
+        Me.colinput_date.Width = 107
         '
         'colstatus_confirm
         '
@@ -433,7 +444,24 @@ Partial Class Request_Sampling_From
         Me.colstatus_confirm.FieldName = "status_confirm"
         Me.colstatus_confirm.Name = "colstatus_confirm"
         Me.colstatus_confirm.Visible = True
-        Me.colstatus_confirm.VisibleIndex = 20
+        Me.colstatus_confirm.VisibleIndex = 16
+        Me.colstatus_confirm.Width = 108
+        '
+        'colinformation_rejected
+        '
+        Me.colinformation_rejected.Caption = "Reject Info"
+        Me.colinformation_rejected.FieldName = "information_rejected"
+        Me.colinformation_rejected.Name = "colinformation_rejected"
+        Me.colinformation_rejected.Visible = True
+        Me.colinformation_rejected.VisibleIndex = 17
+        '
+        'coltgl_confirm
+        '
+        Me.coltgl_confirm.Caption = "Confirm QC Date"
+        Me.coltgl_confirm.FieldName = "tgl_confirm"
+        Me.coltgl_confirm.Name = "coltgl_confirm"
+        Me.coltgl_confirm.Visible = True
+        Me.coltgl_confirm.VisibleIndex = 18
         '
         'MetroStyleManager1
         '
@@ -507,6 +535,7 @@ Partial Class Request_Sampling_From
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroPanel1.AutoScroll = True
+        Me.MetroPanel1.Controls.Add(Me.tloc_sample)
         Me.MetroPanel1.Controls.Add(Me.LinkFind)
         Me.MetroPanel1.Controls.Add(Me.BtnSave)
         Me.MetroPanel1.Controls.Add(Me.MetroLabel6)
@@ -559,6 +588,24 @@ Partial Class Request_Sampling_From
         Me.MetroPanel1.VerticalScrollbarBarColor = True
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.VerticalScrollbarSize = 10
+        '
+        'tloc_sample
+        '
+        Me.tloc_sample.BackColor = System.Drawing.Color.Transparent
+        Me.tloc_sample.FontSize = MetroFramework.MetroComboBoxSize.Small
+        Me.tloc_sample.ForeColor = System.Drawing.Color.Transparent
+        Me.tloc_sample.FormattingEnabled = True
+        Me.tloc_sample.ItemHeight = 19
+        Me.tloc_sample.Items.AddRange(New Object() {"Gudang A", "Gudang B", "Gudang C", "Gudang E", "Gudang G", "Gudang WP", "CR C", "CR E", "CR F", "CR G"})
+        Me.tloc_sample.Location = New System.Drawing.Point(216, 239)
+        Me.tloc_sample.Name = "tloc_sample"
+        Me.tloc_sample.PromptText = "Sample Location..."
+        Me.tloc_sample.Size = New System.Drawing.Size(120, 25)
+        Me.tloc_sample.Style = MetroFramework.MetroColorStyle.Blue
+        Me.tloc_sample.TabIndex = 94
+        Me.tloc_sample.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.tloc_sample.UseSelectable = True
+        Me.tloc_sample.UseStyleColors = True
         '
         'LinkFind
         '
@@ -1272,7 +1319,7 @@ Partial Class Request_Sampling_From
         '
         '
         Me.tnoman.CustomButton.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
-        Me.tnoman.CustomButton.Location = New System.Drawing.Point(52, 1)
+        Me.tnoman.CustomButton.Location = New System.Drawing.Point(36, 1)
         Me.tnoman.CustomButton.Name = ""
         Me.tnoman.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.tnoman.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -1292,7 +1339,7 @@ Partial Class Request_Sampling_From
         Me.tnoman.SelectionLength = 0
         Me.tnoman.SelectionStart = 0
         Me.tnoman.ShortcutsEnabled = True
-        Me.tnoman.Size = New System.Drawing.Size(74, 23)
+        Me.tnoman.Size = New System.Drawing.Size(58, 23)
         Me.tnoman.TabIndex = 71
         Me.tnoman.UseCustomBackColor = True
         Me.tnoman.UseCustomForeColor = True
@@ -1308,7 +1355,7 @@ Partial Class Request_Sampling_From
         '
         '
         Me.tlotref.CustomButton.Image = Nothing
-        Me.tlotref.CustomButton.Location = New System.Drawing.Point(90, 1)
+        Me.tlotref.CustomButton.Location = New System.Drawing.Point(101, 1)
         Me.tlotref.CustomButton.Name = ""
         Me.tlotref.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.tlotref.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -1318,7 +1365,7 @@ Partial Class Request_Sampling_From
         Me.tlotref.CustomButton.Visible = False
         Me.tlotref.ForeColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.tlotref.Lines = New String(-1) {}
-        Me.tlotref.Location = New System.Drawing.Point(232, 210)
+        Me.tlotref.Location = New System.Drawing.Point(216, 210)
         Me.tlotref.MaxLength = 32767
         Me.tlotref.Name = "tlotref"
         Me.tlotref.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -1328,7 +1375,7 @@ Partial Class Request_Sampling_From
         Me.tlotref.SelectionLength = 0
         Me.tlotref.SelectionStart = 0
         Me.tlotref.ShortcutsEnabled = True
-        Me.tlotref.Size = New System.Drawing.Size(112, 23)
+        Me.tlotref.Size = New System.Drawing.Size(123, 23)
         Me.tlotref.TabIndex = 72
         Me.tlotref.UseCustomBackColor = True
         Me.tlotref.UseCustomForeColor = True
@@ -1424,7 +1471,7 @@ Partial Class Request_Sampling_From
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.MetroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdColumn, Me.IdhvsprodColumn, Me.LabnumColumn, Me.ScopeColumn, Me.VarietyColumn, Me.FarmerColumn, Me.LocationColumn, Me.HarvestColumn, Me.WeightColumn, Me.NomnlColumn, Me.NojobColumn, Me.status_confirm, Me.req_date, Me.req_name, Me.ColmEdit, Me.ColmDelete})
+        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdColumn, Me.IdhvsprodColumn, Me.LabnumColumn, Me.ScopeColumn, Me.VarietyColumn, Me.FarmerColumn, Me.LocationColumn, Me.HarvestColumn, Me.WeightColumn, Me.NomnlColumn, Me.NojobColumn, Me.loc_sampleColumn, Me.status_confirm, Me.req_date, Me.req_name, Me.ColmEdit, Me.ColmDelete})
         Me.MetroGrid1.DataSource = Me.QcconfirmviewerBindingSource
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
@@ -1457,6 +1504,70 @@ Partial Class Request_Sampling_From
         Me.MetroGrid1.Size = New System.Drawing.Size(814, 169)
         Me.MetroGrid1.TabIndex = 24
         Me.MetroGrid1.Theme = MetroFramework.MetroThemeStyle.Dark
+        '
+        'QcconfirmviewerBindingSource
+        '
+        Me.QcconfirmviewerBindingSource.DataMember = "qc_confirm_viewer"
+        Me.QcconfirmviewerBindingSource.DataSource = Me.HCQC_NewDataset
+        '
+        'MetroTabControl1
+        '
+        Me.MetroTabControl1.Controls.Add(Me.MetroTabPage1)
+        Me.MetroTabControl1.Controls.Add(Me.MetroTabPage3)
+        Me.MetroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTabControl1.Location = New System.Drawing.Point(0, 0)
+        Me.MetroTabControl1.Name = "MetroTabControl1"
+        Me.MetroTabControl1.SelectedIndex = 0
+        Me.MetroTabControl1.Size = New System.Drawing.Size(826, 520)
+        Me.MetroTabControl1.TabIndex = 55
+        Me.MetroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroTabControl1.UseSelectable = True
+        '
+        'MetroTabPage3
+        '
+        Me.MetroTabPage3.Controls.Add(Me.LinkLoad)
+        Me.MetroTabPage3.Controls.Add(Me.GridControl1)
+        Me.MetroTabPage3.HorizontalScrollbarBarColor = True
+        Me.MetroTabPage3.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage3.HorizontalScrollbarSize = 10
+        Me.MetroTabPage3.Location = New System.Drawing.Point(4, 38)
+        Me.MetroTabPage3.Name = "MetroTabPage3"
+        Me.MetroTabPage3.Size = New System.Drawing.Size(818, 478)
+        Me.MetroTabPage3.TabIndex = 2
+        Me.MetroTabPage3.Text = "List of Request   "
+        Me.MetroTabPage3.VerticalScrollbarBarColor = True
+        Me.MetroTabPage3.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage3.VerticalScrollbarSize = 10
+        '
+        'LinkLoad
+        '
+        Me.LinkLoad.AutoSize = True
+        Me.LinkLoad.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLoad.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkLoad.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.LinkLoad.Location = New System.Drawing.Point(3, 3)
+        Me.LinkLoad.Margin = New System.Windows.Forms.Padding(0)
+        Me.LinkLoad.Name = "LinkLoad"
+        Me.LinkLoad.Size = New System.Drawing.Size(105, 23)
+        Me.LinkLoad.TabIndex = 88
+        Me.LinkLoad.TabStop = False
+        Me.LinkLoad.Text = "Click to Load Data"
+        Me.LinkLoad.UseCustomBackColor = True
+        Me.LinkLoad.UseSelectable = True
+        Me.LinkLoad.UseStyleColors = True
+        '
+        'BunifuElipse1
+        '
+        Me.BunifuElipse1.ElipseRadius = 5
+        Me.BunifuElipse1.TargetControl = Me.MetroGrid1
+        '
+        'Spl_request1TableAdapter
+        '
+        Me.Spl_request1TableAdapter.ClearBeforeFill = True
+        '
+        'Qc_confirm_viewerTableAdapter
+        '
+        Me.Qc_confirm_viewerTableAdapter.ClearBeforeFill = True
         '
         'IdColumn
         '
@@ -1543,6 +1654,14 @@ Partial Class Request_Sampling_From
         Me.NojobColumn.ReadOnly = True
         Me.NojobColumn.Width = 80
         '
+        'loc_sampleColumn
+        '
+        Me.loc_sampleColumn.DataPropertyName = "loc_sample"
+        Me.loc_sampleColumn.HeaderText = "Sample Location"
+        Me.loc_sampleColumn.Name = "loc_sampleColumn"
+        Me.loc_sampleColumn.ReadOnly = True
+        Me.loc_sampleColumn.Width = 80
+        '
         'status_confirm
         '
         Me.status_confirm.DataPropertyName = "status_confirm"
@@ -1585,70 +1704,6 @@ Partial Class Request_Sampling_From
         Me.ColmDelete.Text = "Delete"
         Me.ColmDelete.UseColumnTextForButtonValue = True
         Me.ColmDelete.Width = 65
-        '
-        'QcconfirmviewerBindingSource
-        '
-        Me.QcconfirmviewerBindingSource.DataMember = "qc_confirm_viewer"
-        Me.QcconfirmviewerBindingSource.DataSource = Me.HCQC_NewDataset
-        '
-        'MetroTabControl1
-        '
-        Me.MetroTabControl1.Controls.Add(Me.MetroTabPage1)
-        Me.MetroTabControl1.Controls.Add(Me.MetroTabPage3)
-        Me.MetroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 0
-        Me.MetroTabControl1.Size = New System.Drawing.Size(826, 520)
-        Me.MetroTabControl1.TabIndex = 55
-        Me.MetroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroTabControl1.UseSelectable = True
-        '
-        'MetroTabPage3
-        '
-        Me.MetroTabPage3.Controls.Add(Me.LinkLoad)
-        Me.MetroTabPage3.Controls.Add(Me.GridControl1)
-        Me.MetroTabPage3.HorizontalScrollbarBarColor = True
-        Me.MetroTabPage3.HorizontalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage3.HorizontalScrollbarSize = 10
-        Me.MetroTabPage3.Location = New System.Drawing.Point(4, 38)
-        Me.MetroTabPage3.Name = "MetroTabPage3"
-        Me.MetroTabPage3.Size = New System.Drawing.Size(818, 478)
-        Me.MetroTabPage3.TabIndex = 2
-        Me.MetroTabPage3.Text = "List of Request   "
-        Me.MetroTabPage3.VerticalScrollbarBarColor = True
-        Me.MetroTabPage3.VerticalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage3.VerticalScrollbarSize = 10
-        '
-        'LinkLoad
-        '
-        Me.LinkLoad.AutoSize = True
-        Me.LinkLoad.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLoad.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkLoad.FontWeight = MetroFramework.MetroLinkWeight.Light
-        Me.LinkLoad.Location = New System.Drawing.Point(3, 3)
-        Me.LinkLoad.Margin = New System.Windows.Forms.Padding(0)
-        Me.LinkLoad.Name = "LinkLoad"
-        Me.LinkLoad.Size = New System.Drawing.Size(105, 23)
-        Me.LinkLoad.TabIndex = 88
-        Me.LinkLoad.TabStop = False
-        Me.LinkLoad.Text = "Click to Load Data"
-        Me.LinkLoad.UseCustomBackColor = True
-        Me.LinkLoad.UseSelectable = True
-        Me.LinkLoad.UseStyleColors = True
-        '
-        'BunifuElipse1
-        '
-        Me.BunifuElipse1.ElipseRadius = 5
-        Me.BunifuElipse1.TargetControl = Me.MetroGrid1
-        '
-        'Spl_request1TableAdapter
-        '
-        Me.Spl_request1TableAdapter.ClearBeforeFill = True
-        '
-        'Qc_confirm_viewerTableAdapter
-        '
-        Me.Qc_confirm_viewerTableAdapter.ClearBeforeFill = True
         '
         'Request_Sampling_From
         '
@@ -1777,6 +1832,11 @@ Partial Class Request_Sampling_From
     Friend WithEvents QcconfirmviewerBindingSource As BindingSource
     Friend WithEvents Qc_confirm_viewerTableAdapter As HCQC_NewDatasetTableAdapters.qc_confirm_viewerTableAdapter
     Friend WithEvents Tsearch As MetroTextBox
+    Friend WithEvents tloc_sample As MetroComboBox
+    Friend WithEvents collabnum As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colinformation_rejected As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents coltgl_confirm As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colloc_sample As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents IdColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdhvsprodColumn As DataGridViewTextBoxColumn
     Friend WithEvents LabnumColumn As DataGridViewTextBoxColumn
@@ -1788,6 +1848,7 @@ Partial Class Request_Sampling_From
     Friend WithEvents WeightColumn As DataGridViewTextBoxColumn
     Friend WithEvents NomnlColumn As DataGridViewTextBoxColumn
     Friend WithEvents NojobColumn As DataGridViewTextBoxColumn
+    Friend WithEvents loc_sampleColumn As DataGridViewTextBoxColumn
     Friend WithEvents status_confirm As DataGridViewTextBoxColumn
     Friend WithEvents req_date As DataGridViewTextBoxColumn
     Friend WithEvents req_name As DataGridViewTextBoxColumn

@@ -74,10 +74,11 @@ Partial Class Sample_Archive
         Me.BtnUpdate = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.NavigationPage2 = New DevExpress.XtraBars.Navigation.NavigationPage()
-        Me.Tsearch = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroPanel4 = New MetroFramework.Controls.MetroPanel()
         Me.LinkAll = New MetroFramework.Controls.MetroLink()
-        Me.LinkLastMonth = New MetroFramework.Controls.MetroLink()
         Me.LinkThisMonth = New MetroFramework.Controls.MetroLink()
+        Me.LinkLastMonth = New MetroFramework.Controls.MetroLink()
+        Me.Tsearch = New MetroFramework.Controls.MetroTextBox()
         Me.LinkBack = New MetroFramework.Controls.MetroLink()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.ReportarsipsampleviewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
@@ -106,6 +107,10 @@ Partial Class Sample_Archive
         Me.colunit_kem = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colinput_at = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.Report_arsip_sample_viewTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.report_arsip_sample_viewTableAdapter()
+        Me.colawal_exp = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colmasa_berlaku = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colP1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colP2 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.NavigationFrame1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.NavigationFrame1.SuspendLayout()
@@ -115,6 +120,7 @@ Partial Class Sample_Archive
         CType(Me.BtnFind, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroPanel2.SuspendLayout()
         Me.NavigationPage2.SuspendLayout()
+        Me.MetroPanel4.SuspendLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReportarsipsampleviewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HCQC_serverDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -937,14 +943,76 @@ Partial Class Sample_Archive
         '
         'NavigationPage2
         '
+        Me.NavigationPage2.Controls.Add(Me.MetroPanel4)
         Me.NavigationPage2.Controls.Add(Me.Tsearch)
-        Me.NavigationPage2.Controls.Add(Me.LinkAll)
-        Me.NavigationPage2.Controls.Add(Me.LinkLastMonth)
-        Me.NavigationPage2.Controls.Add(Me.LinkThisMonth)
         Me.NavigationPage2.Controls.Add(Me.LinkBack)
         Me.NavigationPage2.Controls.Add(Me.GridControl1)
         Me.NavigationPage2.Name = "NavigationPage2"
         Me.NavigationPage2.Size = New System.Drawing.Size(701, 452)
+        '
+        'MetroPanel4
+        '
+        Me.MetroPanel4.Controls.Add(Me.LinkAll)
+        Me.MetroPanel4.Controls.Add(Me.LinkThisMonth)
+        Me.MetroPanel4.Controls.Add(Me.LinkLastMonth)
+        Me.MetroPanel4.HorizontalScrollbarBarColor = True
+        Me.MetroPanel4.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroPanel4.HorizontalScrollbarSize = 10
+        Me.MetroPanel4.Location = New System.Drawing.Point(77, 3)
+        Me.MetroPanel4.Name = "MetroPanel4"
+        Me.MetroPanel4.Size = New System.Drawing.Size(190, 23)
+        Me.MetroPanel4.TabIndex = 106
+        Me.MetroPanel4.VerticalScrollbarBarColor = True
+        Me.MetroPanel4.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroPanel4.VerticalScrollbarSize = 10
+        '
+        'LinkAll
+        '
+        Me.LinkAll.AutoSize = True
+        Me.LinkAll.BackColor = System.Drawing.Color.Transparent
+        Me.LinkAll.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkAll.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.LinkAll.Location = New System.Drawing.Point(147, 0)
+        Me.LinkAll.Margin = New System.Windows.Forms.Padding(0)
+        Me.LinkAll.Name = "LinkAll"
+        Me.LinkAll.Size = New System.Drawing.Size(32, 23)
+        Me.LinkAll.TabIndex = 102
+        Me.LinkAll.Text = "All"
+        Me.LinkAll.UseCustomBackColor = True
+        Me.LinkAll.UseSelectable = True
+        Me.LinkAll.UseStyleColors = True
+        '
+        'LinkThisMonth
+        '
+        Me.LinkThisMonth.AutoSize = True
+        Me.LinkThisMonth.BackColor = System.Drawing.Color.Transparent
+        Me.LinkThisMonth.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkThisMonth.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.LinkThisMonth.Location = New System.Drawing.Point(0, 0)
+        Me.LinkThisMonth.Margin = New System.Windows.Forms.Padding(0)
+        Me.LinkThisMonth.Name = "LinkThisMonth"
+        Me.LinkThisMonth.Size = New System.Drawing.Size(70, 23)
+        Me.LinkThisMonth.TabIndex = 104
+        Me.LinkThisMonth.Text = "This Month"
+        Me.LinkThisMonth.UseCustomBackColor = True
+        Me.LinkThisMonth.UseSelectable = True
+        Me.LinkThisMonth.UseStyleColors = True
+        '
+        'LinkLastMonth
+        '
+        Me.LinkLastMonth.AutoSize = True
+        Me.LinkLastMonth.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLastMonth.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkLastMonth.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.LinkLastMonth.Location = New System.Drawing.Point(70, 0)
+        Me.LinkLastMonth.Margin = New System.Windows.Forms.Padding(0)
+        Me.LinkLastMonth.Name = "LinkLastMonth"
+        Me.LinkLastMonth.Size = New System.Drawing.Size(77, 23)
+        Me.LinkLastMonth.TabIndex = 103
+        Me.LinkLastMonth.Text = "Last Month"
+        Me.LinkLastMonth.UseCustomBackColor = True
+        Me.LinkLastMonth.UseSelectable = True
+        Me.LinkLastMonth.UseStyleColors = True
         '
         'Tsearch
         '
@@ -978,54 +1046,6 @@ Partial Class Sample_Archive
         Me.Tsearch.WaterMark = "Search..."
         Me.Tsearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.Tsearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
-        'LinkAll
-        '
-        Me.LinkAll.AutoSize = True
-        Me.LinkAll.BackColor = System.Drawing.Color.Transparent
-        Me.LinkAll.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkAll.FontWeight = MetroFramework.MetroLinkWeight.Light
-        Me.LinkAll.Location = New System.Drawing.Point(221, 3)
-        Me.LinkAll.Margin = New System.Windows.Forms.Padding(0)
-        Me.LinkAll.Name = "LinkAll"
-        Me.LinkAll.Size = New System.Drawing.Size(32, 23)
-        Me.LinkAll.TabIndex = 102
-        Me.LinkAll.Text = "All"
-        Me.LinkAll.UseCustomBackColor = True
-        Me.LinkAll.UseSelectable = True
-        Me.LinkAll.UseStyleColors = True
-        '
-        'LinkLastMonth
-        '
-        Me.LinkLastMonth.AutoSize = True
-        Me.LinkLastMonth.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLastMonth.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkLastMonth.FontWeight = MetroFramework.MetroLinkWeight.Light
-        Me.LinkLastMonth.Location = New System.Drawing.Point(144, 3)
-        Me.LinkLastMonth.Margin = New System.Windows.Forms.Padding(0)
-        Me.LinkLastMonth.Name = "LinkLastMonth"
-        Me.LinkLastMonth.Size = New System.Drawing.Size(77, 23)
-        Me.LinkLastMonth.TabIndex = 103
-        Me.LinkLastMonth.Text = "Last Month"
-        Me.LinkLastMonth.UseCustomBackColor = True
-        Me.LinkLastMonth.UseSelectable = True
-        Me.LinkLastMonth.UseStyleColors = True
-        '
-        'LinkThisMonth
-        '
-        Me.LinkThisMonth.AutoSize = True
-        Me.LinkThisMonth.BackColor = System.Drawing.Color.Transparent
-        Me.LinkThisMonth.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkThisMonth.FontWeight = MetroFramework.MetroLinkWeight.Light
-        Me.LinkThisMonth.Location = New System.Drawing.Point(74, 3)
-        Me.LinkThisMonth.Margin = New System.Windows.Forms.Padding(0)
-        Me.LinkThisMonth.Name = "LinkThisMonth"
-        Me.LinkThisMonth.Size = New System.Drawing.Size(70, 23)
-        Me.LinkThisMonth.TabIndex = 104
-        Me.LinkThisMonth.Text = "This Month"
-        Me.LinkThisMonth.UseCustomBackColor = True
-        Me.LinkThisMonth.UseSelectable = True
-        Me.LinkThisMonth.UseStyleColors = True
         '
         'LinkBack
         '
@@ -1071,7 +1091,7 @@ Partial Class Sample_Archive
         'GridView1
         '
         Me.GridView1.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.collabnum, Me.colvariety, Me.colnomnl, Me.collotid, Me.collotqtt, Me.colbrt_in, Me.coldatein, Me.colscope, Me.colarsipdate, Me.collokasi, Me.colboxnum, Me.coldestroydate, Me.colharvest, Me.colnojob, Me.colweight, Me.coldberkecambah, Me.colkemurnian, Me.colkadarair, Me.colexpired, Me.colkemasan, Me.colunit_kem, Me.colinput_at})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.collabnum, Me.colvariety, Me.colnomnl, Me.collotid, Me.collotqtt, Me.colbrt_in, Me.coldatein, Me.colscope, Me.colarsipdate, Me.collokasi, Me.colboxnum, Me.coldestroydate, Me.colharvest, Me.colnojob, Me.colweight, Me.coldberkecambah, Me.colkemurnian, Me.colkadarair, Me.colexpired, Me.colkemasan, Me.colunit_kem, Me.colinput_at, Me.colmasa_berlaku, Me.colawal_exp, Me.colP1, Me.colP2})
         Me.GridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
@@ -1254,6 +1274,26 @@ Partial Class Sample_Archive
         '
         Me.Report_arsip_sample_viewTableAdapter.ClearBeforeFill = True
         '
+        'colawal_exp
+        '
+        Me.colawal_exp.FieldName = "awal_exp"
+        Me.colawal_exp.Name = "colawal_exp"
+        '
+        'colmasa_berlaku
+        '
+        Me.colmasa_berlaku.FieldName = "masa_berlaku"
+        Me.colmasa_berlaku.Name = "colmasa_berlaku"
+        '
+        'colP1
+        '
+        Me.colP1.FieldName = "P1"
+        Me.colP1.Name = "colP1"
+        '
+        'colP2
+        '
+        Me.colP2.FieldName = "P2"
+        Me.colP2.Name = "colP2"
+        '
         'Sample_Archive
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1279,6 +1319,8 @@ Partial Class Sample_Archive
         Me.MetroPanel2.PerformLayout()
         Me.NavigationPage2.ResumeLayout(False)
         Me.NavigationPage2.PerformLayout()
+        Me.MetroPanel4.ResumeLayout(False)
+        Me.MetroPanel4.PerformLayout()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ReportarsipsampleviewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HCQC_serverDataSet, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1368,4 +1410,9 @@ Partial Class Sample_Archive
     Friend WithEvents LinkLastMonth As MetroLink
     Friend WithEvents LinkThisMonth As MetroLink
     Friend WithEvents Tsearch As MetroTextBox
+    Friend WithEvents MetroPanel4 As MetroPanel
+    Friend WithEvents colmasa_berlaku As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colawal_exp As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colP1 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colP2 As DevExpress.XtraGrid.Columns.GridColumn
 End Class

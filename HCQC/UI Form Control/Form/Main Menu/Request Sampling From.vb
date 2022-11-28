@@ -72,7 +72,8 @@ Public Class Request_Sampling_From
                        ,[test_ger]
                        ,[test_via]
                        ,[test_raf]
-                       ,[remark]                       
+                       ,[remark]  
+                       ,[loc_sample]
                        ,[input_by]
                        ,[input_date])
                  VALUES
@@ -94,6 +95,7 @@ Public Class Request_Sampling_From
                        ,'" & tvia.CheckState & "'
                        ,'" & traf.CheckState & "'
                        ,'" & tremark.Text & "'
+                       ,'" & tloc_sample.Text & "'
                        ,'" & GetIPAddress() & "'
                        ,GETDATE() )"
                     )
@@ -117,6 +119,7 @@ Public Class Request_Sampling_From
                                     ,[test_via] = '" & tvia.CheckState & "'
                                     ,[test_raf] = '" & traf.CheckState & "'
                                     ,[remark] = '" & tremark.Text & "'
+                                    ,[loc_sample]='" & tloc_sample.Text & "'
                                     ,[update_user] = '" & login.Luserid.Text & "'
                                     ,[update_by] = '" & GetIPAddress() & "'
                                     ,[update_date] = GETDATE()
@@ -125,7 +128,7 @@ Public Class Request_Sampling_From
                 End If
                 'LinkThisMonth_Click(sender, e)
                 LinkClear_Click(sender, e)
-
+                MetroGrid1.Refresh()
                 'notification neet to verification
                 'MainForm.LabelNotifVerivicaion.Text = VerificationCount(MainForm.PanelNotifVerification)
                 'MainForm.Containermenu2.LabelNotifContainerTracing.Text = VerificationCount(MainForm.Containermenu2.Panel2)
@@ -164,6 +167,7 @@ Public Class Request_Sampling_From
                     tnoman.Text = .Rows(i).Cells("NomnlColumn").Value.ToString
                     tlotref.Text = .Rows(i).Cells("NojobColumn").Value.ToString
                     tlotqtt.Text = .Rows(i).Cells("WeightColumn").Value.ToString
+                    tloc_sample.Text = _DataToValue("Select [loc_sample] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & vid & "")
                     tscope.Text = .Rows(i).Cells("ScopeColumn").Value.ToString
                     tbag.Text = _DataToValue("Select [bag] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & vid & "")
 
@@ -243,18 +247,6 @@ Public Class Request_Sampling_From
         End If
     End Sub
 
-    'Private Sub LinkAll_Click(sender As Object, e As EventArgs) Handles LinkAll.Click
-    '    SearchCustomers(LinkAll.Text)
-    'End Sub
-
-    'Private Sub LinkThisMonth_Click(sender As Object, e As EventArgs) Handles LinkThisMonth.Click
-    '    SearchCustomers(LinkThisMonth.Text)
-    'End Sub
-
-    'Private Sub Link2MonthAgo_Click(sender As Object, e As EventArgs) Handles Link2MonthAgo.Click
-    '    SearchCustomers(Link2MonthAgo.Text)
-    'End Sub
-
 
     Private Sub LinkClear_Click(sender As Object, e As EventArgs) Handles LinkClearRequest.Click
         BtnSave.Text = "Save"
@@ -285,6 +277,7 @@ Public Class Request_Sampling_From
         MetroMessageBox.Show(Me, "Tombol pada Kolom input Variety ini akan melakukan filter pencarian sesuai input-an", "Info", MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
     End Sub
 
+    '' Mencari Production Plan dengan key production_code
     Private Sub tid_hvsprod_KeyDown(sender As Object, e As KeyEventArgs) Handles tid_hvsprod.KeyDown
         If e.KeyCode = Keys.Enter Then
             If _isBOF("[harvestprod]", "[idcode]", tid_hvsprod.Text) = True Then
@@ -293,8 +286,8 @@ Public Class Request_Sampling_From
                 tlocation.Text = _DataToValue("SELECT [dusun] From [HCQC_server].[dbo].[harvestprod] WHERE [idcode]=" & tid_hvsprod.Text & "")
                 tgl_hvs.Text = _DataToValueDate("SELECT [harvest] From [HCQC_server].[dbo].[harvestprod] WHERE [idcode]=" & tid_hvsprod.Text & "").ToString(LabelDate.Text)
                 tlotref.Text = _DataToValue("SELECT case when [joblot] IS NULL then '' else [joblot] end as [joblot] from [HCQC_server].[dbo].[harvestprod] WHERE [idcode]=" & tid_hvsprod.Text & "")
-                'tnoman.Text = _DataToValue("SELECT max[nomnl] as maxman FROM [spl_request] WHERE [id_hvsprod]='" & tid_hvsprod.Text & "'")
-                tid_hvsprod.SelectAll()
+                    'tnoman.Text = _DataToValue("SELECT max[nomnl] as maxman FROM [spl_request] WHERE [id_hvsprod]='" & tid_hvsprod.Text & "'")
+                    tid_hvsprod.SelectAll()
             Else
                 MetroMessageBox.Show(Me, "Data Production Planing not found")
             End If

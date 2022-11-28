@@ -63,7 +63,7 @@ Public Class containermenu
         MainForm.LTitileControl.Text = TitleControl
 
         ''Memanggil UserControl Ke MetroPanel3
-        Control.Size = New Point(MainForm.MetroPanel3.Width - 6, MainForm.MetroPanel3.Height - 10)
+        Control.Size = New Point(MainForm.MetroPanel3.Width - 6, MainForm.MetroPanel3.Height - 3)
         Control.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left Or System.Windows.Forms.AnchorStyles.Right Or System.Windows.Forms.AnchorStyles.Bottom), System.Windows.Forms.AnchorStyles)
         Control.Name = "txt_" & (count + 1)
         MainForm.MetroPanel3.Controls.Add(Control)

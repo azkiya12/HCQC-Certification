@@ -336,7 +336,6 @@ Partial Class Sample_Tracking
         SimpleContextButton1.ImageOptionsCollection.ItemPressed.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
         SimpleContextButton1.Name = "simpleContextButton1"
         Me.ComboBoxEdit1.Properties.ContextButtons.Add(SimpleContextButton1)
-        Me.ComboBoxEdit1.Properties.Items.AddRange(New Object() {"SetView1", "GerView"})
         Me.ComboBoxEdit1.Size = New System.Drawing.Size(112, 20)
         Me.ComboBoxEdit1.TabIndex = 89
         '
