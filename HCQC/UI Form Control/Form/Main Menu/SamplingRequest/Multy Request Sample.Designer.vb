@@ -60,6 +60,8 @@ Partial Class Multy_Request_Sample
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.BtnClearSelected = New MetroFramework.Controls.MetroLink()
         Me.LprosesSave = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
+        Me.tloc_sample = New MetroFramework.Controls.MetroComboBox()
         CType(Me.SplrequestBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HCQC_NewDataset, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MetroGrid2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -235,7 +237,7 @@ Partial Class Multy_Request_Sample
         Me.traf.AutoSize = True
         Me.traf.BackColor = System.Drawing.Color.Transparent
         Me.traf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.traf.Location = New System.Drawing.Point(944, 232)
+        Me.traf.Location = New System.Drawing.Point(944, 289)
         Me.traf.Name = "traf"
         Me.traf.Size = New System.Drawing.Size(96, 15)
         Me.traf.TabIndex = 89
@@ -248,7 +250,7 @@ Partial Class Multy_Request_Sample
         Me.tvia.AutoSize = True
         Me.tvia.BackColor = System.Drawing.Color.Transparent
         Me.tvia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tvia.Location = New System.Drawing.Point(944, 274)
+        Me.tvia.Location = New System.Drawing.Point(944, 331)
         Me.tvia.Name = "tvia"
         Me.tvia.Size = New System.Drawing.Size(88, 15)
         Me.tvia.TabIndex = 91
@@ -261,7 +263,7 @@ Partial Class Multy_Request_Sample
         Me.tger.AutoSize = True
         Me.tger.BackColor = System.Drawing.Color.Transparent
         Me.tger.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tger.Location = New System.Drawing.Point(944, 253)
+        Me.tger.Location = New System.Drawing.Point(944, 310)
         Me.tger.Name = "tger"
         Me.tger.Size = New System.Drawing.Size(112, 15)
         Me.tger.TabIndex = 90
@@ -274,7 +276,7 @@ Partial Class Multy_Request_Sample
         Me.tpur.AutoSize = True
         Me.tpur.BackColor = System.Drawing.Color.Transparent
         Me.tpur.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tpur.Location = New System.Drawing.Point(944, 211)
+        Me.tpur.Location = New System.Drawing.Point(944, 268)
         Me.tpur.Name = "tpur"
         Me.tpur.Size = New System.Drawing.Size(77, 15)
         Me.tpur.TabIndex = 88
@@ -287,7 +289,7 @@ Partial Class Multy_Request_Sample
         Me.tmoi.AutoSize = True
         Me.tmoi.BackColor = System.Drawing.Color.Transparent
         Me.tmoi.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tmoi.Location = New System.Drawing.Point(944, 190)
+        Me.tmoi.Location = New System.Drawing.Point(944, 247)
         Me.tmoi.Name = "tmoi"
         Me.tmoi.Size = New System.Drawing.Size(93, 15)
         Me.tmoi.TabIndex = 87
@@ -300,7 +302,7 @@ Partial Class Multy_Request_Sample
         Me.tsampling.AutoSize = True
         Me.tsampling.BackColor = System.Drawing.Color.Transparent
         Me.tsampling.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tsampling.Location = New System.Drawing.Point(944, 169)
+        Me.tsampling.Location = New System.Drawing.Point(944, 226)
         Me.tsampling.Name = "tsampling"
         Me.tsampling.Size = New System.Drawing.Size(73, 15)
         Me.tsampling.TabIndex = 86
@@ -311,11 +313,11 @@ Partial Class Multy_Request_Sample
         '
         Me.MetroLabel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.Location = New System.Drawing.Point(923, 147)
+        Me.MetroLabel2.Location = New System.Drawing.Point(923, 204)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(163, 19)
         Me.MetroLabel2.TabIndex = 92
-        Me.MetroLabel2.Text = "2. Test Laboratory Request"
+        Me.MetroLabel2.Text = "3. Test Laboratory Request"
         '
         'MetroLabel7
         '
@@ -389,7 +391,7 @@ Partial Class Multy_Request_Sample
         Me.BtnSave.IconVisible = True
         Me.BtnSave.IconZoom = 50.0R
         Me.BtnSave.IsTab = False
-        Me.BtnSave.Location = New System.Drawing.Point(926, 315)
+        Me.BtnSave.Location = New System.Drawing.Point(926, 363)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnSave.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -442,11 +444,36 @@ Partial Class Multy_Request_Sample
         Me.LprosesSave.UseCustomForeColor = True
         Me.LprosesSave.WrapToLine = True
         '
+        'MetroLabel6
+        '
+        Me.MetroLabel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel6.AutoSize = True
+        Me.MetroLabel6.Location = New System.Drawing.Point(923, 146)
+        Me.MetroLabel6.Name = "MetroLabel6"
+        Me.MetroLabel6.Size = New System.Drawing.Size(120, 19)
+        Me.MetroLabel6.TabIndex = 98
+        Me.MetroLabel6.Text = "2. Sample Location"
+        '
+        'tloc_sample
+        '
+        Me.tloc_sample.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tloc_sample.FontSize = MetroFramework.MetroComboBoxSize.Small
+        Me.tloc_sample.FormattingEnabled = True
+        Me.tloc_sample.ItemHeight = 19
+        Me.tloc_sample.Items.AddRange(New Object() {"Gudang A", "Gudang B", "Gudang C", "Gudang E", "Gudang G", "Gudang WP", "CR C", "CR E", "CR F", "CR G"})
+        Me.tloc_sample.Location = New System.Drawing.Point(944, 167)
+        Me.tloc_sample.Name = "tloc_sample"
+        Me.tloc_sample.Size = New System.Drawing.Size(172, 25)
+        Me.tloc_sample.TabIndex = 99
+        Me.tloc_sample.UseSelectable = True
+        '
         'Multy_Request_Sample
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1142, 496)
+        Me.Controls.Add(Me.tloc_sample)
+        Me.Controls.Add(Me.MetroLabel6)
         Me.Controls.Add(Me.MetroLabel5)
         Me.Controls.Add(Me.BtnClearSelected)
         Me.Controls.Add(Me.LinkClear)
@@ -508,4 +535,6 @@ Partial Class Multy_Request_Sample
     Friend WithEvents WeightColumn As DataGridViewTextBoxColumn
     Friend WithEvents BagColumn As DataGridViewTextBoxColumn
     Friend WithEvents KetColumn As DataGridViewTextBoxColumn
+    Friend WithEvents MetroLabel6 As MetroLabel
+    Friend WithEvents tloc_sample As MetroComboBox
 End Class

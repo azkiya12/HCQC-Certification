@@ -642,7 +642,7 @@ Public Class Report_Label_HCQC
         'Dim selectedRows As List(Of DataGridViewRow) = (From row In MetroGrid2.Rows.Cast(Of DataGridViewRow)()
         '                                                Where Convert.ToBoolean(row.Cells("CheckColumn").Value) = True).ToList()
         ''Deklarasi variable untuk Template termal printer
-        Dim V_idprod, V_Crop, V_harvest1, V_variety1, V_farmer, v_labnum, V_variety2, Vlot, V_weight, V_sampling, V_sampler, V_scope, V_Bags As String
+        Dim V_idprod, V_Crop, V_harvest1, V_variety1, V_farmer, v_labnum, V_variety2, Vlot, V_weight, V_sampling, V_sampler, V_scope, V_Bags, V_Location As String
         Dim VRenc, Vkontrak, Vcgr As String
         Dim B_moisture, B_Purity, B_germination, B_sampling, B_rafaction, B_rapit As String
         Dim V_moisture, V_Purity, V_germination, V_Bsampling, V_rafaction, V_rapit As String
@@ -667,6 +667,7 @@ Public Class Report_Label_HCQC
             V_sampler = ""
             V_scope = CType(row.Cells("ScopeColumn").Value, String)
             V_Bags = _DataToValue("SELECT [bag] FROM [spl_request] WHERE [id]=" & _DataToValue("SELECT [id] FROM [qc_confirm_view] WHERE [labnum]='" & v_labnum & "'"))
+            V_Location = _DataToValue("SELECT [loc_sample] FROM [spl_request] WHERE [id]=" & _DataToValue("SELECT [id] FROM [qc_confirm_view] WHERE [labnum]='" & v_labnum & "'"))
 
             B_moisture = CType(row.Cells("moistureColumn").Value, String)
             B_Purity = CType(row.Cells("PurityColumn").Value, String)
@@ -734,10 +735,11 @@ Public Class Report_Label_HCQC
                         ^FT284,344^A@N,14,13,TT0003M_^FH\^CI28^FDDate Sampling :^FS^CI27
                         ^FT40,192^A@N,23,22,TT0003M_^FH\^CI28^FDQty:" & V_weight & " kg ; " & V_Bags & " Bags^FS^CI27
                         ^BY3,3,30^FT594,41^BCR,,Y,N
-                        ^FH\^FD>;" & noprodzpl & "^FS
-                        ^FPH,3^FT705,41^A@R,20,20,TT0003M_^FH\^CI28^FD" & V_variety1 & " ^FS^CI27
-                        ^FPH,3^FT677,41^A@R,20,20,TT0003M_^FH\^CI28^FD" & Vlot & "^FS^CI27
-                        ^FPH,1^FT646,41^A@R,20,20,TT0003M_^FH\^CI28^FDQty:" & V_weight & " kg ; " & V_Bags & " Bags^FS^CI27
+                        ^FH\^FD>;" & noprodzpl & "^FS                        
+                        ^FPH,3^FT702,41^A@R,23,22,TT0003M_^FH\^CI28^FD" & V_variety1 & " ^FS^CI27
+                        ^FPH,3^FT674,41^A@R,23,22,TT0003M_^FH\^CI28^FD" & Vlot & "^FS^CI27
+                        ^FPH,1^FT642,41^A@R,23,22,TT0003M_^FH\^CI28^FDQty:" & V_weight & " kg ; " & V_Bags & " Bags^FS^CI27
+                        ^FT0,150^AAN,18,10^FB545,1,0,R^FH\^FD" & V_Location.ToUpper & "^FS
                         ^PQ1,0,1,Y
                         ^XZ"
             Printer.RawHelper.SendStringToPrinter(LabelPrinter.Text, zplcom)

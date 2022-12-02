@@ -71,10 +71,11 @@ Public Class Multy_Request_Sample
                                                                    ,[test_via]
                                                                    ,[test_raf]
                                                                    ,[remark]
+                                                                   ,[loc_sample]
                                                                    ,[input_by]
                                                                    ,[input_date]) 
                                                  VALUES (@idlogin, @idprod, @variety, @farmer, @location, @harvest, @nomnl, @nojob, @weight, @scope
-                                ,@bag, @testSampling, @testmoi, @testpur, @testger, @testvia, @testraf, @remark, @inputby, GETDATE())", con)
+                                ,@bag, @testSampling, @testmoi, @testpur, @testger, @testvia, @testraf, @remark, @loc_sample, @inputby, GETDATE())", con)
                     cmd.Parameters.AddWithValue("@idlogin", stridlogin)
                     cmd.Parameters.AddWithValue("@idprod", row.Cells("idproductionColumn").Value)
                     cmd.Parameters.AddWithValue("@variety", row.Cells("VarietyColumn").Value)
@@ -97,6 +98,7 @@ Public Class Multy_Request_Sample
                     Dim remark As String
                     remark = IIf(row.Cells("KetColumn").Value Is Nothing, "", row.Cells("KetColumn").Value)
                     cmd.Parameters.AddWithValue("@remark", remark)
+                    cmd.Parameters.AddWithValue("@loc_sample", tloc_sample.Text)
                     cmd.Parameters.AddWithValue("@inputby", GetIPAddress)
 
 

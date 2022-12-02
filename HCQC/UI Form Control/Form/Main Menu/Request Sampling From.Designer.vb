@@ -110,13 +110,6 @@ Partial Class Request_Sampling_From
         Me.LinkThisMonth = New MetroFramework.Controls.MetroLink()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid()
-        Me.QcconfirmviewerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
-        Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
-        Me.LinkLoad = New MetroFramework.Controls.MetroLink()
-        Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
-        Me.Spl_request1TableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.Spl_request1TableAdapter()
-        Me.Qc_confirm_viewerTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.qc_confirm_viewerTableAdapter()
         Me.IdColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdhvsprodColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LabnumColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -134,6 +127,13 @@ Partial Class Request_Sampling_From
         Me.req_name = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ColmEdit = New System.Windows.Forms.DataGridViewButtonColumn()
         Me.ColmDelete = New System.Windows.Forms.DataGridViewButtonColumn()
+        Me.QcconfirmviewerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
+        Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
+        Me.LinkLoad = New MetroFramework.Controls.MetroLink()
+        Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.Spl_request1TableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.Spl_request1TableAdapter()
+        Me.Qc_confirm_viewerTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.qc_confirm_viewerTableAdapter()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Splrequest1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HCQC_NewDataset, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1505,70 +1505,6 @@ Partial Class Request_Sampling_From
         Me.MetroGrid1.TabIndex = 24
         Me.MetroGrid1.Theme = MetroFramework.MetroThemeStyle.Dark
         '
-        'QcconfirmviewerBindingSource
-        '
-        Me.QcconfirmviewerBindingSource.DataMember = "qc_confirm_viewer"
-        Me.QcconfirmviewerBindingSource.DataSource = Me.HCQC_NewDataset
-        '
-        'MetroTabControl1
-        '
-        Me.MetroTabControl1.Controls.Add(Me.MetroTabPage1)
-        Me.MetroTabControl1.Controls.Add(Me.MetroTabPage3)
-        Me.MetroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.MetroTabControl1.Location = New System.Drawing.Point(0, 0)
-        Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 0
-        Me.MetroTabControl1.Size = New System.Drawing.Size(826, 520)
-        Me.MetroTabControl1.TabIndex = 55
-        Me.MetroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroTabControl1.UseSelectable = True
-        '
-        'MetroTabPage3
-        '
-        Me.MetroTabPage3.Controls.Add(Me.LinkLoad)
-        Me.MetroTabPage3.Controls.Add(Me.GridControl1)
-        Me.MetroTabPage3.HorizontalScrollbarBarColor = True
-        Me.MetroTabPage3.HorizontalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage3.HorizontalScrollbarSize = 10
-        Me.MetroTabPage3.Location = New System.Drawing.Point(4, 38)
-        Me.MetroTabPage3.Name = "MetroTabPage3"
-        Me.MetroTabPage3.Size = New System.Drawing.Size(818, 478)
-        Me.MetroTabPage3.TabIndex = 2
-        Me.MetroTabPage3.Text = "List of Request   "
-        Me.MetroTabPage3.VerticalScrollbarBarColor = True
-        Me.MetroTabPage3.VerticalScrollbarHighlightOnWheel = False
-        Me.MetroTabPage3.VerticalScrollbarSize = 10
-        '
-        'LinkLoad
-        '
-        Me.LinkLoad.AutoSize = True
-        Me.LinkLoad.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLoad.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkLoad.FontWeight = MetroFramework.MetroLinkWeight.Light
-        Me.LinkLoad.Location = New System.Drawing.Point(3, 3)
-        Me.LinkLoad.Margin = New System.Windows.Forms.Padding(0)
-        Me.LinkLoad.Name = "LinkLoad"
-        Me.LinkLoad.Size = New System.Drawing.Size(105, 23)
-        Me.LinkLoad.TabIndex = 88
-        Me.LinkLoad.TabStop = False
-        Me.LinkLoad.Text = "Click to Load Data"
-        Me.LinkLoad.UseCustomBackColor = True
-        Me.LinkLoad.UseSelectable = True
-        Me.LinkLoad.UseStyleColors = True
-        '
-        'BunifuElipse1
-        '
-        Me.BunifuElipse1.ElipseRadius = 5
-        Me.BunifuElipse1.TargetControl = Me.MetroGrid1
-        '
-        'Spl_request1TableAdapter
-        '
-        Me.Spl_request1TableAdapter.ClearBeforeFill = True
-        '
-        'Qc_confirm_viewerTableAdapter
-        '
-        Me.Qc_confirm_viewerTableAdapter.ClearBeforeFill = True
-        '
         'IdColumn
         '
         Me.IdColumn.DataPropertyName = "id"
@@ -1704,6 +1640,70 @@ Partial Class Request_Sampling_From
         Me.ColmDelete.Text = "Delete"
         Me.ColmDelete.UseColumnTextForButtonValue = True
         Me.ColmDelete.Width = 65
+        '
+        'QcconfirmviewerBindingSource
+        '
+        Me.QcconfirmviewerBindingSource.DataMember = "qc_confirm_viewer"
+        Me.QcconfirmviewerBindingSource.DataSource = Me.HCQC_NewDataset
+        '
+        'MetroTabControl1
+        '
+        Me.MetroTabControl1.Controls.Add(Me.MetroTabPage1)
+        Me.MetroTabControl1.Controls.Add(Me.MetroTabPage3)
+        Me.MetroTabControl1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.MetroTabControl1.Location = New System.Drawing.Point(0, 0)
+        Me.MetroTabControl1.Name = "MetroTabControl1"
+        Me.MetroTabControl1.SelectedIndex = 0
+        Me.MetroTabControl1.Size = New System.Drawing.Size(826, 520)
+        Me.MetroTabControl1.TabIndex = 55
+        Me.MetroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.MetroTabControl1.UseSelectable = True
+        '
+        'MetroTabPage3
+        '
+        Me.MetroTabPage3.Controls.Add(Me.LinkLoad)
+        Me.MetroTabPage3.Controls.Add(Me.GridControl1)
+        Me.MetroTabPage3.HorizontalScrollbarBarColor = True
+        Me.MetroTabPage3.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage3.HorizontalScrollbarSize = 10
+        Me.MetroTabPage3.Location = New System.Drawing.Point(4, 38)
+        Me.MetroTabPage3.Name = "MetroTabPage3"
+        Me.MetroTabPage3.Size = New System.Drawing.Size(818, 478)
+        Me.MetroTabPage3.TabIndex = 2
+        Me.MetroTabPage3.Text = "List of Request   "
+        Me.MetroTabPage3.VerticalScrollbarBarColor = True
+        Me.MetroTabPage3.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroTabPage3.VerticalScrollbarSize = 10
+        '
+        'LinkLoad
+        '
+        Me.LinkLoad.AutoSize = True
+        Me.LinkLoad.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLoad.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkLoad.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.LinkLoad.Location = New System.Drawing.Point(3, 3)
+        Me.LinkLoad.Margin = New System.Windows.Forms.Padding(0)
+        Me.LinkLoad.Name = "LinkLoad"
+        Me.LinkLoad.Size = New System.Drawing.Size(105, 23)
+        Me.LinkLoad.TabIndex = 88
+        Me.LinkLoad.TabStop = False
+        Me.LinkLoad.Text = "Click to Load Data"
+        Me.LinkLoad.UseCustomBackColor = True
+        Me.LinkLoad.UseSelectable = True
+        Me.LinkLoad.UseStyleColors = True
+        '
+        'BunifuElipse1
+        '
+        Me.BunifuElipse1.ElipseRadius = 5
+        Me.BunifuElipse1.TargetControl = Me.MetroGrid1
+        '
+        'Spl_request1TableAdapter
+        '
+        Me.Spl_request1TableAdapter.ClearBeforeFill = True
+        '
+        'Qc_confirm_viewerTableAdapter
+        '
+        Me.Qc_confirm_viewerTableAdapter.ClearBeforeFill = True
         '
         'Request_Sampling_From
         '
