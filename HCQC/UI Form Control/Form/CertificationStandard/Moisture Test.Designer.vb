@@ -83,6 +83,7 @@ Partial Class Moisture_Test
         Me.LabelDate1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
+        Me.tremark = New MetroFramework.Controls.MetroTextBox()
         Me.MetroPanel2.SuspendLayout()
         CType(Me.BtnFind, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroPanel1.SuspendLayout()
@@ -567,6 +568,7 @@ Partial Class Moisture_Test
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroPanel1.AutoScroll = True
+        Me.MetroPanel1.Controls.Add(Me.tremark)
         Me.MetroPanel1.Controls.Add(Me.MetroLabel20)
         Me.MetroPanel1.Controls.Add(Me.LabelDevide)
         Me.MetroPanel1.Controls.Add(Me.LabelResult)
@@ -1140,6 +1142,38 @@ Partial Class Moisture_Test
         Me.MetroStyleManager1.Owner = Me
         Me.MetroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark
         '
+        'tremark
+        '
+        '
+        '
+        '
+        Me.tremark.CustomButton.Image = Nothing
+        Me.tremark.CustomButton.Location = New System.Drawing.Point(123, 1)
+        Me.tremark.CustomButton.Name = ""
+        Me.tremark.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.tremark.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.tremark.CustomButton.TabIndex = 1
+        Me.tremark.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.tremark.CustomButton.UseSelectable = True
+        Me.tremark.CustomButton.Visible = False
+        Me.tremark.Lines = New String(-1) {}
+        Me.tremark.Location = New System.Drawing.Point(206, 381)
+        Me.tremark.MaxLength = 32767
+        Me.tremark.Name = "tremark"
+        Me.tremark.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tremark.PromptText = "Remark"
+        Me.tremark.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.tremark.SelectedText = ""
+        Me.tremark.SelectionLength = 0
+        Me.tremark.SelectionStart = 0
+        Me.tremark.ShortcutsEnabled = True
+        Me.tremark.Size = New System.Drawing.Size(145, 23)
+        Me.tremark.TabIndex = 262
+        Me.tremark.UseSelectable = True
+        Me.tremark.WaterMark = "Remark"
+        Me.tremark.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.tremark.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
         'Moisture_Test
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1217,4 +1251,5 @@ Partial Class Moisture_Test
     Friend WithEvents LabelResult As MetroLabel
     Friend WithEvents LabelDevide As MetroLabel
     Friend WithEvents MetroLabel20 As MetroLabel
+    Friend WithEvents tremark As MetroTextBox
 End Class

@@ -42,11 +42,12 @@ Public Class Moisture_Test
                                     ,[toleran]
                                     ,[testdate]
                                     ,[analys]
+                                    ,[remark]
                                     ,[input_by]
                                     ,[input_at])                                   
                             VALUES ('" & Lreqnum.Text & "','" & login.Luserid.Text & "','" & tlabnum.Text & "', '" & tmethod.Text & "', '" & TPreparation.Text & "', '" & ttemp.Text & "', '" & tperiod.Text & "',
                                     '" & tequip.Text & "', '" & tbalanc.Text & "', " & Val(tmoi1.Text) & ", " & Val(tmoi2.Text) & ", " & Val(tmoimean.Text) & ", '" & ttoleran.CheckState & "',
-                                    '" & tgltest.ToString("yyyy-MM-dd") & "', '" & tanalyst.Text & "', '" & GetIPAddress() & "', GETDATE() ) ")
+                                    '" & tgltest.ToString("yyyy-MM-dd") & "', '" & tanalyst.Text & "', '" & tremark.Text & "', '" & GetIPAddress() & "', GETDATE() ) ")
 
                             ''Prosedur INSERT MOISTURE_OVEN value
                             If tmethod.Text = "Oven" Then
@@ -129,6 +130,7 @@ Public Class Moisture_Test
                     tmoimean.Text = dread.Item("mean").ToString '("0.0")
                     ttoleran.Checked = dread.Item("toleran")
                     tanalyst.Text = dread.Item("analys")
+                    tremark.Text = dread.Item("remark")
                     Dim tgltes As Date = dread.Item("testdate")
                     ttgltest.Text = tgltes.ToString(LabelDate1.Text)
 
@@ -207,6 +209,7 @@ Public Class Moisture_Test
                                     ,[toleran]='" & ttoleran.CheckState & "'
                                     ,[testdate]='" & tgltest.ToString("yyyy-MM-dd") & "'
                                     ,[analys]='" & tanalyst.Text & "'
+                                    ,[remark]='" & tremark.Text & "'
                                     ,[update_by]='" & login.Luserid.Text & "'
                                     ,[update_at]= GETDATE()
                                     ,[id_login]='" & login.Luserid.Text & "'
@@ -548,6 +551,8 @@ Public Class Moisture_Test
         tmoi1.Text = ""
         tmoi2.Text = ""
         tmoimean.Text = ""
+
+        tremark.Text = ""
 
         ttoleran.Checked = False
         'tanalyst.Text = ""

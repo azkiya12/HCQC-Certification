@@ -215,6 +215,7 @@ Partial Class GridDevexpress
         Me.MetroLabel15 = New MetroFramework.Controls.MetroLabel()
         Me.EndDate = New System.Windows.Forms.DateTimePicker()
         Me.StartDate = New System.Windows.Forms.DateTimePicker()
+        Me.colremark2 = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.MoistureGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReportglobalviewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -232,7 +233,7 @@ Partial Class GridDevexpress
         '
         'MoistureGridView2
         '
-        Me.MoistureGridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.coltestdate1, Me.colmois1, Me.colmois2, Me.colmean, Me.colground, Me.colidbalance1, Me.colperiod, Me.coltemp, Me.colprepare, Me.coltoleran, Me.colequipment, Me.colanalys, Me.colinput_at1})
+        Me.MoistureGridView2.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.coltestdate1, Me.colmois1, Me.colmois2, Me.colmean, Me.colground, Me.colidbalance1, Me.colperiod, Me.coltemp, Me.colprepare, Me.coltoleran, Me.colequipment, Me.colanalys, Me.colinput_at1, Me.colremark2})
         Me.MoistureGridView2.GridControl = Me.GridControl1
         Me.MoistureGridView2.Name = "MoistureGridView2"
         Me.MoistureGridView2.OptionsView.ColumnAutoWidth = False
@@ -1728,6 +1729,14 @@ Partial Class GridDevexpress
         Me.StartDate.TabIndex = 152
         Me.StartDate.Value = New Date(2022, 9, 20, 0, 0, 0, 0)
         '
+        'colremark2
+        '
+        Me.colremark2.Caption = "Remark"
+        Me.colremark2.FieldName = "remark"
+        Me.colremark2.Name = "colremark2"
+        Me.colremark2.Visible = True
+        Me.colremark2.VisibleIndex = 13
+        '
         'GridDevexpress
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1951,4 +1960,5 @@ Partial Class GridDevexpress
     Friend WithEvents MetroLabel15 As MetroLabel
     Friend WithEvents EndDate As DateTimePicker
     Friend WithEvents StartDate As DateTimePicker
+    Friend WithEvents colremark2 As DevExpress.XtraGrid.Columns.GridColumn
 End Class
