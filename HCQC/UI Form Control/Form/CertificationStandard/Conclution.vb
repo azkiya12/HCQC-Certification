@@ -55,13 +55,22 @@ Public Class Conclution
         If Llabnum.Text <> "..." Then
             Lreqnum.Text = _DataToValue("SELECT [id_request] FROM [HCQC_server].[dbo].[qc_confirm] WHERE [labnum]='" & Llabnum.Text & "'")
             TRemark.Text = _DataToValue("SELECT [remark] FROM [HCQC_server].[dbo].[spl_conclu] WHERE [id_request]='" & Lreqnum.Text & "'")
-
+            Lfarmer.Text = _DataToValue("SELECT [farmer] FROM [HCQC_server].[dbo].[spl_request] WHERE [id]='" & Lreqnum.Text & "'")
+            LLocation.Text = _DataToValue("SELECT [location] FROM [HCQC_server].[dbo].[spl_request] WHERE [id]='" & Lreqnum.Text & "'")
             Dim strstatus = _DataToValue("Select [status] From [spl_conclu] where [id_request]='" & Lreqnum.Text & "'")
             If strstatus = "False" Then
                 CheckReject.Checked = True
             ElseIf strstatus = "True" Then
                 CheckAccept.Checked = True
             End If
+        End If
+    End Sub
+
+    Private Sub BtnDelete_Click(sender As Object, e As EventArgs) Handles BtnDelete.Click
+        Dim result As Integer = MetroMessageBox.Show(Me, "Apakan anda ingin menghapus conclution data pada NO LAB " + Lreqnum.Text + " ?", "Conclution Sample", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, 211)
+        If result = DialogResult.OK Then
+            _RunSQL("DELETE spl_conclu WHERE (labnum='" & Lreqnum.Text & "') ")
+            Me.DialogResult = DialogResult.OK
         End If
     End Sub
 End Class

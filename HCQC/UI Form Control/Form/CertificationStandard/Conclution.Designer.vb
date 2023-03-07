@@ -43,6 +43,7 @@ Partial Class Conclution
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.BtnSave = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BtnDelete = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.SuspendLayout()
         '
         'TRemark
@@ -80,7 +81,7 @@ Partial Class Conclution
         '
         'BtnCancel
         '
-        Me.BtnCancel.Location = New System.Drawing.Point(133, 257)
+        Me.BtnCancel.Location = New System.Drawing.Point(329, 257)
         Me.BtnCancel.Name = "BtnCancel"
         Me.BtnCancel.Size = New System.Drawing.Size(75, 34)
         Me.BtnCancel.TabIndex = 97
@@ -326,24 +327,61 @@ Partial Class Conclution
         Me.BtnSave.IconVisible = True
         Me.BtnSave.IconZoom = 90.0R
         Me.BtnSave.IsTab = False
-        Me.BtnSave.Location = New System.Drawing.Point(214, 257)
+        Me.BtnSave.Location = New System.Drawing.Point(23, 257)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnSave.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.BtnSave.OnHoverTextColor = System.Drawing.Color.White
         Me.BtnSave.selected = False
-        Me.BtnSave.Size = New System.Drawing.Size(190, 34)
+        Me.BtnSave.Size = New System.Drawing.Size(104, 34)
         Me.BtnSave.TabIndex = 79
         Me.BtnSave.Text = "Save"
         Me.BtnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnSave.Textcolor = System.Drawing.Color.White
         Me.BtnSave.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
+        'BtnDelete
+        '
+        Me.BtnDelete.Activecolor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.BtnDelete.BackColor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.BtnDelete.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnDelete.BorderRadius = 0
+        Me.BtnDelete.ButtonText = "Delete"
+        Me.BtnDelete.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnDelete.DisabledColor = System.Drawing.Color.Gray
+        Me.BtnDelete.Enabled = False
+        Me.BtnDelete.Iconcolor = System.Drawing.Color.Transparent
+        Me.BtnDelete.Iconimage = CType(resources.GetObject("BtnDelete.Iconimage"), System.Drawing.Image)
+        Me.BtnDelete.Iconimage_right = Nothing
+        Me.BtnDelete.Iconimage_right_Selected = Nothing
+        Me.BtnDelete.Iconimage_Selected = Nothing
+        Me.BtnDelete.IconMarginLeft = 0
+        Me.BtnDelete.IconMarginRight = 0
+        Me.BtnDelete.IconRightVisible = True
+        Me.BtnDelete.IconRightZoom = 0R
+        Me.BtnDelete.IconVisible = True
+        Me.BtnDelete.IconZoom = 90.0R
+        Me.BtnDelete.IsTab = False
+        Me.BtnDelete.Location = New System.Drawing.Point(133, 257)
+        Me.BtnDelete.Name = "BtnDelete"
+        Me.BtnDelete.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(220, Byte), Integer), CType(CType(53, Byte), Integer), CType(CType(69, Byte), Integer))
+        Me.BtnDelete.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(243, Byte), Integer), CType(CType(106, Byte), Integer), CType(CType(113, Byte), Integer))
+        Me.BtnDelete.OnHoverTextColor = System.Drawing.Color.White
+        Me.BtnDelete.selected = False
+        Me.BtnDelete.Size = New System.Drawing.Size(104, 34)
+        Me.BtnDelete.TabIndex = 99
+        Me.BtnDelete.Text = "Delete"
+        Me.BtnDelete.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnDelete.Textcolor = System.Drawing.Color.White
+        Me.BtnDelete.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnDelete.Visible = False
+        '
         'Conclution
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(427, 314)
+        Me.Controls.Add(Me.BtnDelete)
         Me.Controls.Add(Me.TRemark)
         Me.Controls.Add(Me.BtnCancel)
         Me.Controls.Add(Me.CheckAccept)
@@ -391,4 +429,5 @@ Partial Class Conclution
     Friend WithEvents MetroLabel7 As MetroLabel
     Friend WithEvents MetroLabel5 As MetroLabel
     Friend WithEvents BtnSave As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents BtnDelete As Bunifu.Framework.UI.BunifuFlatButton
 End Class

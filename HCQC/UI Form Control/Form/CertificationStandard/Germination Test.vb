@@ -251,6 +251,8 @@ Public Class Germination_Test
                     btnSave.Enabled = False
                     btnUpdate.Enabled = True
                     btnDelete.Enabled = True
+                    cboxInputUpdate.Visible = True
+                    tcboxinput.Visible = True
                     con.Close()
                 End If
 
@@ -262,6 +264,8 @@ Public Class Germination_Test
                     btnSave.Enabled = True
                     btnUpdate.Enabled = False
                     btnDelete.Enabled = False
+                    cboxInputUpdate.Visible = False
+                    tcboxinput.Visible = False
                     tlabnum.Focus()
                 End If
             End If
@@ -271,16 +275,21 @@ Public Class Germination_Test
     Private Sub btnUpdate_ControlRemoved(sender As Object, e As EventArgs) Handles btnUpdate.Click
 
         If tlabnum.Text = "" Or tVariety.Text = "..." Then
-            MetroFramework.MetroMessageBox.Show(Me, "Identitas sample harus ada!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
+            MetroMessageBox.Show(Me, "Identitas sample harus ada!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
             tlabnum.Focus()
         Else
             Dim tgluji As Date
             tgluji = Date.ParseExact(Ttestdate.Text, formatDate, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.None)
             Dim tglfist As Date
             tglfist = Date.ParseExact(tfistdate.Text, formatDate, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.None)
+            Dim tglinput As String = ""
+            If cboxInputUpdate.CheckState Then
+                tglinput = "vg_tgl_input = GETDATE(),"
+            End If
+
             Dim tglfinl As Date
             tglfinl = Date.ParseExact(Tfinaldate.Text, formatDate, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.None)
-            _RunSQL("Update germination_id SET id_request='" & Lreqnum.Text & "',test_date ='" & tgluji.ToString("yyyy-MM-dd") & "', fist_count ='" & tglfist.ToString("yyyy-MM-dd") & "', scnd_count ='" & tglfinl.ToString("yyyy-MM-dd") & "', analyst ='" & tanalyst.Text & "', substrate ='" & Tsubst.Text & "', temp='" & Ttemperatur.Text & "', treatment='" & Ttreatment.Text & "', vg_tgl_input= GETDATE(), abnormality='" & tabnormal.Text & "' WHERE (labnum = '" & tlabnum.Text & "') ")
+            _RunSQL("Update germination_id SET id_request='" & Lreqnum.Text & "',test_date ='" & tgluji.ToString("yyyy-MM-dd") & "', fist_count ='" & tglfist.ToString("yyyy-MM-dd") & "', scnd_count ='" & tglfinl.ToString("yyyy-MM-dd") & "', analyst ='" & tanalyst.Text & "', substrate ='" & Tsubst.Text & "', temp='" & Ttemperatur.Text & "', treatment='" & Ttreatment.Text & "'," & tglinput & " abnormality='" & tabnormal.Text & "' WHERE (labnum = '" & tlabnum.Text & "') ")
 
             For values As Integer = 1 To 7
                 If values = 1 Then
@@ -1049,6 +1058,11 @@ Public Class Germination_Test
         End Try
         varts3 = ((ts1 + ts2 + ts3 + ts4 + ts5)).ToString
     End Sub
+
+    Private Sub MetroCheckBox1_CheckedChanged(sender As Object, e As EventArgs) Handles cboxInputUpdate.CheckedChanged
+
+    End Sub
+
     Private Sub test4()
         Dim ts1, ts2, ts3, ts5, ts4 As Decimal
 
@@ -1171,5 +1185,13 @@ Public Class Germination_Test
 
     Private Sub tGmPrc_NotifError(sender As Object, e As EventArgs) Handles tGmPrc.TextChanged, tGmArg.TextChanged
         tGmPrc.WithError = False
+    End Sub
+
+    Private Sub cboxInputUpdate_CheckStateChanged(sender As Object, e As EventArgs) Handles cboxInputUpdate.CheckStateChanged
+        If cboxInputUpdate.CheckState Then
+            tcboxinput.Text = "Yes"
+        Else
+            tcboxinput.Text = "No"
+        End If
     End Sub
 End Class

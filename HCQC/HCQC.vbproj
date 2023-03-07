@@ -802,12 +802,6 @@
     <Compile Include="UI Form Control\Report\Report Label Production.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="UI Form Control\Report\Report Print List.Designer.vb">
-      <DependentUpon>Report Print List.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UI Form Control\Report\Report Print List.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="UI Form Control\Report\report_a2.vb">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -1183,9 +1177,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Form Control\Report\Report Label Production.resx">
       <DependentUpon>Report Label Production.vb</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI Form Control\Report\Report Print List.resx">
-      <DependentUpon>Report Print List.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Form Control\Report\report_a2.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>

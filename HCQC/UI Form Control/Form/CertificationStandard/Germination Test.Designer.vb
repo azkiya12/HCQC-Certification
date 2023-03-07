@@ -109,6 +109,8 @@ Partial Class Germination_Test
         Me.tbagi = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
         Me.MetroPanel4 = New MetroFramework.Controls.MetroPanel()
+        Me.tcboxinput = New MetroFramework.Controls.MetroLabel()
+        Me.cboxInputUpdate = New MetroFramework.Controls.MetroCheckBox()
         Me.labeldate1 = New MetroFramework.Controls.MetroLabel()
         Me.labeldate2 = New MetroFramework.Controls.MetroLabel()
         Me.labeldate3 = New MetroFramework.Controls.MetroLabel()
@@ -2123,6 +2125,8 @@ Partial Class Germination_Test
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroPanel4.AutoScroll = True
+        Me.MetroPanel4.Controls.Add(Me.tcboxinput)
+        Me.MetroPanel4.Controls.Add(Me.cboxInputUpdate)
         Me.MetroPanel4.Controls.Add(Me.labeldate1)
         Me.MetroPanel4.Controls.Add(Me.labeldate2)
         Me.MetroPanel4.Controls.Add(Me.labeldate3)
@@ -2229,6 +2233,32 @@ Partial Class Germination_Test
         Me.MetroPanel4.VerticalScrollbarBarColor = True
         Me.MetroPanel4.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel4.VerticalScrollbarSize = 10
+        '
+        'tcboxinput
+        '
+        Me.tcboxinput.AutoSize = True
+        Me.tcboxinput.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.tcboxinput.ForeColor = System.Drawing.SystemColors.ControlText
+        Me.tcboxinput.Location = New System.Drawing.Point(766, 475)
+        Me.tcboxinput.Name = "tcboxinput"
+        Me.tcboxinput.Size = New System.Drawing.Size(23, 15)
+        Me.tcboxinput.TabIndex = 247
+        Me.tcboxinput.Text = "No"
+        Me.tcboxinput.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.tcboxinput.Visible = False
+        '
+        'cboxInputUpdate
+        '
+        Me.cboxInputUpdate.AutoSize = True
+        Me.cboxInputUpdate.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.cboxInputUpdate.Location = New System.Drawing.Point(643, 475)
+        Me.cboxInputUpdate.Name = "cboxInputUpdate"
+        Me.cboxInputUpdate.Size = New System.Drawing.Size(118, 15)
+        Me.cboxInputUpdate.TabIndex = 246
+        Me.cboxInputUpdate.Text = "update Date Input"
+        Me.cboxInputUpdate.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.cboxInputUpdate.UseSelectable = True
+        Me.cboxInputUpdate.Visible = False
         '
         'labeldate1
         '
@@ -2532,4 +2562,6 @@ Partial Class Germination_Test
     Friend WithEvents MetroLabel25 As MetroLabel
     Friend WithEvents MetroTabControl1 As MetroTabControl
     Friend WithEvents MetroTabPage1 As MetroTabPage
+    Friend WithEvents tcboxinput As MetroLabel
+    Friend WithEvents cboxInputUpdate As MetroCheckBox
 End Class

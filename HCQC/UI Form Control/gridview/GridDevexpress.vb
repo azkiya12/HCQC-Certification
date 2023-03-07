@@ -8,7 +8,13 @@ Public Class GridDevexpress
 
     Private Sub LinkRefresh_Click(sender As Object, e As EventArgs) Handles LinkRefresh.Click
         'BackgroundWorker1.RunWorkerAsync()
-        GridControl1.RefreshDataSource()
+        If LinkRefresh.Tag = "thisyear" Then
+            LinkThisYear_Click(sender, e)
+        ElseIf LinkRefresh.Tag = "lastyear" Then
+            LinkLastYear_Click(sender, e)
+        ElseIf LinkRefresh.Tag = "bydate" Then
+            BtnFilterDate_Click(sender, e)
+        End If
     End Sub
 
     Private Sub LinkLastYear_Click(sender As Object, e As EventArgs) Handles LinkLastYear.Click
@@ -34,6 +40,7 @@ Public Class GridDevexpress
         PurityTableAdapter1.FillByStr(Me.HCQC_NewDataset.purity, fillterStr, fillterStr2)
         ArchiveTableAdapter1.FillByStr(Me.HCQC_NewDataset.archive, fillterStr, fillterStr2)
         BtnFilterDate.Enabled = True
+        LinkRefresh.Tag = "lastyear"
     End Sub
 
     Private Sub LinkThisYear_Click(sender As Object, e As EventArgs) Handles LinkThisYear.Click
@@ -69,6 +76,7 @@ Public Class GridDevexpress
         MetroPanel1.Enabled = True
         BtnFilterDate.Enabled = True
         LabelStatus.Text = "Nilai persentase -1 menandakan bahwa sampel tidak di lakukan pengujian tertentu"
+        LinkRefresh.Tag = "thisyear"
     End Sub
 
     Private Sub LinkAll_Click(sender As Object, e As EventArgs)
@@ -87,6 +95,7 @@ Public Class GridDevexpress
         '    MetroMessageBox.Show(Me, "'Start Date' harus lebih kecil dari 'End Date'", "Global Report HCQC")
         '    Return
         'End If
+
         ProgressSpinner1.Visible = True
 
         LabelStatus.Text = "Loading get data this year..."
@@ -102,7 +111,7 @@ Public Class GridDevexpress
         'Console.WriteLine(filterStart & " --- " & filterEnd)
         Console.WriteLine("------" & StartDate.Value.Date)
         Console.WriteLine("------" & EndDate.Value.Date)
-        Me.Report_global_viewTableAdapter.FillByFilterDate(Me.HCQC_NewDataset.report_global_view, StartDate.Value.Date, EndDate.Value.Date)
+        Me.Report_global_viewTableAdapter.FillByFilterDate(Me.HCQC_NewDataset.report_global_view, StartDate.Value.Date.ToString("yyyyMMdd"), EndDate.Value.Date.ToString("yyyyMMdd"))
 
         LabelStatus.Text = "Loading...|2 get data Germination"
         GerminationTableAdapter1.FillByStr(Me.HCQC_NewDataset.germination, filterStart, filterEnd)
@@ -121,5 +130,6 @@ Public Class GridDevexpress
         MetroPanel1.Enabled = True
         BtnFilterDate.Enabled = True
         LabelStatus.Text = "Nilai persentase -1 menandakan bahwa sampel tidak di lakukan pengujian tertentu"
+        LinkRefresh.Tag = "bydate"
     End Sub
 End Class

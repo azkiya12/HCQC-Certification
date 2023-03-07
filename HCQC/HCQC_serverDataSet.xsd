@@ -3439,6 +3439,30 @@ FROM            report_ista_view</CommandText>
               <Mapping SourceColumn="remark" DataSetColumn="remark" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.report_ista_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByLastMonth" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByLastMonth" GeneratorSourceName="FillByLastMonth" GetMethodModifier="Public" GetMethodName="GetDataByLastMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByLastMonth" UserSourceName="FillByLastMonth">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id_request, id_hvsprod, labnum, variety, farmer, location, harvest, nomnl, nojob, weight, scope, datein, sampling, test_moi, test_pur, test_ger, testdate, input_at, mean, analys, pur_test_date, pure, purity_mean, analyst, 
+                         pur_input_at, vg, dt, [1000seed], status, date_concl, remark
+FROM            report_ista_view
+WHERE        (datein &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 2))) AND (datein &lt; DATEADD(dd, 1, EOMONTH(GETDATE())))
+ORDER BY id_request DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.report_ista_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByThisMonth" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByThisMonth" GeneratorSourceName="FillByThisMonth" GetMethodModifier="Public" GetMethodName="GetDataByThisMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByThisMonth" UserSourceName="FillByThisMonth">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        id_request, id_hvsprod, labnum, variety, farmer, location, harvest, nomnl, nojob, weight, scope, datein, sampling, test_moi, test_pur, test_ger, testdate, input_at, mean, analys, pur_test_date, pure, purity_mean, analyst, 
+                         pur_input_at, vg, dt, [1000seed], status, date_concl, remark
+FROM            report_ista_view
+WHERE ( datein&gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND ( datein&lt; DATEADD(dd, 1, EOMONTH(GETDATE())))
+ORDER BY id_request DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.report_ista_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByVar" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByVar" GeneratorSourceName="FillByVar" GetMethodModifier="Public" GetMethodName="GetDataByVar" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByVar" UserSourceName="FillByVar">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
@@ -6180,7 +6204,13 @@ FROM            report_global_view</CommandText>
               <xs:element name="sampling" msprop:Generator_ColumnVarNameInTable="columnsampling" msprop:Generator_ColumnPropNameInRow="sampling" msprop:Generator_ColumnPropNameInTable="samplingColumn" msprop:Generator_UserColumnName="sampling" type="xs:dateTime" minOccurs="0" />
               <xs:element name="pure" msprop:Generator_ColumnVarNameInTable="columnpure" msprop:Generator_ColumnPropNameInRow="pure" msprop:Generator_ColumnPropNameInTable="pureColumn" msprop:Generator_UserColumnName="pure" type="xs:decimal" minOccurs="0" />
               <xs:element name="_x0031_000seed" msprop:Generator_ColumnVarNameInTable="column1000seed" msprop:Generator_ColumnPropNameInRow="_1000seed" msprop:Generator_ColumnPropNameInTable="_1000seedColumn" msprop:Generator_UserColumnName="1000seed" type="xs:decimal" minOccurs="0" />
-              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" type="xs:boolean" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnVarNameInTable="columnstatus" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_UserColumnName="status" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="15" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
               <xs:element name="date_concl" msprop:Generator_ColumnVarNameInTable="columndate_concl" msprop:Generator_ColumnPropNameInRow="date_concl" msprop:Generator_ColumnPropNameInTable="date_conclColumn" msprop:Generator_UserColumnName="date_concl" type="xs:dateTime" minOccurs="0" />
               <xs:element name="remark" msprop:Generator_ColumnVarNameInTable="columnremark" msprop:Generator_ColumnPropNameInRow="remark" msprop:Generator_ColumnPropNameInTable="remarkColumn" msprop:Generator_UserColumnName="remark" minOccurs="0">
                 <xs:simpleType>

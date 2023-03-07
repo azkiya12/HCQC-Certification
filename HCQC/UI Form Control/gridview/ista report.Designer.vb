@@ -33,22 +33,26 @@ Partial Class ista_report
         Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
+        Me.StartDate = New System.Windows.Forms.DateTimePicker()
         Me.Report_ista_viewTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.report_ista_viewTableAdapter()
-        Me.LinkRefresh = New MetroFramework.Controls.MetroLink()
         Me.Tsearch = New MetroFramework.Controls.MetroTextBox()
-        Me.DetailColumn = New System.Windows.Forms.DataGridViewLinkColumn()
+        Me.BtnFilterDate = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.MetroLabel18 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel16 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel15 = New MetroFramework.Controls.MetroLabel()
+        Me.EndDate = New System.Windows.Forms.DateTimePicker()
+        Me.LinkLastMonth1 = New MetroFramework.Controls.MetroLink()
+        Me.LinkThisMonth1 = New MetroFramework.Controls.MetroLink()
+        Me.DetailColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Labnum = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductionCodeColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VarietyColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FarmerColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LocationColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HarvestColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NomnlColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NojobColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.WeightColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ScopeColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateinColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.samplingColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ConcludedColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MeanColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PurityColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -59,6 +63,7 @@ Partial Class ista_report
         CType(Me.ReportistaviewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HCQC_serverDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BtnFilterDate, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MetroGrid1
@@ -85,7 +90,7 @@ Partial Class ista_report
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.MetroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DetailColumn, Me.Labnum, Me.ProductionCodeColumn, Me.VarietyColumn, Me.FarmerColumn, Me.LocationColumn, Me.HarvestColumn, Me.NomnlColumn, Me.NojobColumn, Me.WeightColumn, Me.ScopeColumn, Me.DateinColumn, Me.samplingColumn, Me.ConcludedColumn, Me.MeanColumn, Me.PurityColumn, Me.seedColumn, Me.DtColumn, Me.BtnQcPassColumn})
+        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DetailColumn, Me.Labnum, Me.ProductionCodeColumn, Me.VarietyColumn, Me.HarvestColumn, Me.NomnlColumn, Me.NojobColumn, Me.WeightColumn, Me.ScopeColumn, Me.DateinColumn, Me.ConcludedColumn, Me.MeanColumn, Me.PurityColumn, Me.seedColumn, Me.DtColumn, Me.BtnQcPassColumn})
         Me.MetroGrid1.DataSource = Me.ReportistaviewBindingSource
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -98,7 +103,7 @@ Partial Class ista_report
         Me.MetroGrid1.EnableHeadersVisualStyles = False
         Me.MetroGrid1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.MetroGrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.MetroGrid1.Location = New System.Drawing.Point(23, 89)
+        Me.MetroGrid1.Location = New System.Drawing.Point(23, 104)
         Me.MetroGrid1.Name = "MetroGrid1"
         Me.MetroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -111,7 +116,7 @@ Partial Class ista_report
         Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.MetroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.MetroGrid1.Size = New System.Drawing.Size(900, 338)
+        Me.MetroGrid1.Size = New System.Drawing.Size(900, 323)
         Me.MetroGrid1.TabIndex = 0
         '
         'ReportistaviewBindingSource
@@ -128,28 +133,26 @@ Partial Class ista_report
         '
         Me.MetroStyleManager1.Owner = Me
         '
+        'StartDate
+        '
+        Me.MetroStyleExtender1.SetApplyMetroTheme(Me.StartDate, True)
+        Me.StartDate.CustomFormat = "dd-mmm-yyyy"
+        Me.StartDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.StartDate.Location = New System.Drawing.Point(185, 78)
+        Me.StartDate.MaxDate = New Date(2050, 12, 31, 0, 0, 0, 0)
+        Me.StartDate.MinDate = New Date(1990, 1, 1, 0, 0, 0, 0)
+        Me.StartDate.Name = "StartDate"
+        Me.StartDate.Size = New System.Drawing.Size(106, 20)
+        Me.StartDate.TabIndex = 154
+        Me.StartDate.Value = New Date(2022, 9, 19, 0, 0, 0, 0)
+        '
         'Report_ista_viewTableAdapter
         '
         Me.Report_ista_viewTableAdapter.ClearBeforeFill = True
         '
-        'LinkRefresh
-        '
-        Me.LinkRefresh.AutoSize = True
-        Me.LinkRefresh.BackColor = System.Drawing.Color.Transparent
-        Me.LinkRefresh.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkRefresh.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.LinkRefresh.Location = New System.Drawing.Point(23, 60)
-        Me.LinkRefresh.Margin = New System.Windows.Forms.Padding(0)
-        Me.LinkRefresh.Name = "LinkRefresh"
-        Me.LinkRefresh.Size = New System.Drawing.Size(70, 23)
-        Me.LinkRefresh.TabIndex = 60
-        Me.LinkRefresh.Text = "Refresh"
-        Me.LinkRefresh.UseCustomBackColor = True
-        Me.LinkRefresh.UseSelectable = True
-        Me.LinkRefresh.UseStyleColors = True
-        '
         'Tsearch
         '
+        Me.Tsearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
@@ -162,7 +165,7 @@ Partial Class ista_report
         Me.Tsearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
         Me.Tsearch.CustomButton.UseSelectable = True
         Me.Tsearch.Lines = New String(-1) {}
-        Me.Tsearch.Location = New System.Drawing.Point(96, 60)
+        Me.Tsearch.Location = New System.Drawing.Point(733, 75)
         Me.Tsearch.MaxLength = 32767
         Me.Tsearch.Name = "Tsearch"
         Me.Tsearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -180,12 +183,100 @@ Partial Class ista_report
         Me.Tsearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.Tsearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
+        'BtnFilterDate
+        '
+        Me.BtnFilterDate.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.BtnFilterDate.Image = CType(resources.GetObject("BtnFilterDate.Image"), System.Drawing.Image)
+        Me.BtnFilterDate.ImageActive = Nothing
+        Me.BtnFilterDate.Location = New System.Drawing.Point(427, 75)
+        Me.BtnFilterDate.Name = "BtnFilterDate"
+        Me.BtnFilterDate.Size = New System.Drawing.Size(38, 23)
+        Me.BtnFilterDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BtnFilterDate.TabIndex = 159
+        Me.BtnFilterDate.TabStop = False
+        Me.BtnFilterDate.Zoom = 10
+        '
+        'MetroLabel18
+        '
+        Me.MetroLabel18.AutoSize = True
+        Me.MetroLabel18.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.MetroLabel18.Location = New System.Drawing.Point(297, 81)
+        Me.MetroLabel18.Name = "MetroLabel18"
+        Me.MetroLabel18.Size = New System.Drawing.Size(12, 15)
+        Me.MetroLabel18.TabIndex = 158
+        Me.MetroLabel18.Text = "-"
+        '
+        'MetroLabel16
+        '
+        Me.MetroLabel16.AutoSize = True
+        Me.MetroLabel16.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.MetroLabel16.Location = New System.Drawing.Point(315, 60)
+        Me.MetroLabel16.Name = "MetroLabel16"
+        Me.MetroLabel16.Size = New System.Drawing.Size(53, 15)
+        Me.MetroLabel16.TabIndex = 157
+        Me.MetroLabel16.Text = "End Date"
+        '
+        'MetroLabel15
+        '
+        Me.MetroLabel15.AutoSize = True
+        Me.MetroLabel15.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.MetroLabel15.Location = New System.Drawing.Point(185, 60)
+        Me.MetroLabel15.Name = "MetroLabel15"
+        Me.MetroLabel15.Size = New System.Drawing.Size(59, 15)
+        Me.MetroLabel15.TabIndex = 156
+        Me.MetroLabel15.Text = "Start Date"
+        '
+        'EndDate
+        '
+        Me.EndDate.CustomFormat = "dd-mmm-yyyy"
+        Me.EndDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.EndDate.Location = New System.Drawing.Point(315, 78)
+        Me.EndDate.MaxDate = New Date(2050, 12, 31, 0, 0, 0, 0)
+        Me.EndDate.MinDate = New Date(1990, 1, 1, 0, 0, 0, 0)
+        Me.EndDate.Name = "EndDate"
+        Me.EndDate.Size = New System.Drawing.Size(106, 20)
+        Me.EndDate.TabIndex = 155
+        Me.EndDate.Value = New Date(2022, 9, 19, 0, 0, 0, 0)
+        '
+        'LinkLastMonth1
+        '
+        Me.LinkLastMonth1.AutoSize = True
+        Me.LinkLastMonth1.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLastMonth1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkLastMonth1.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.LinkLastMonth1.Location = New System.Drawing.Point(93, 75)
+        Me.LinkLastMonth1.Margin = New System.Windows.Forms.Padding(0)
+        Me.LinkLastMonth1.Name = "LinkLastMonth1"
+        Me.LinkLastMonth1.Size = New System.Drawing.Size(70, 23)
+        Me.LinkLastMonth1.TabIndex = 152
+        Me.LinkLastMonth1.Text = "Last Month"
+        Me.LinkLastMonth1.UseCustomBackColor = True
+        Me.LinkLastMonth1.UseSelectable = True
+        Me.LinkLastMonth1.UseStyleColors = True
+        '
+        'LinkThisMonth1
+        '
+        Me.LinkThisMonth1.AutoSize = True
+        Me.LinkThisMonth1.BackColor = System.Drawing.Color.Transparent
+        Me.LinkThisMonth1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkThisMonth1.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.LinkThisMonth1.Location = New System.Drawing.Point(23, 75)
+        Me.LinkThisMonth1.Margin = New System.Windows.Forms.Padding(0)
+        Me.LinkThisMonth1.Name = "LinkThisMonth1"
+        Me.LinkThisMonth1.Size = New System.Drawing.Size(70, 23)
+        Me.LinkThisMonth1.TabIndex = 153
+        Me.LinkThisMonth1.Text = "This Month"
+        Me.LinkThisMonth1.UseCustomBackColor = True
+        Me.LinkThisMonth1.UseSelectable = True
+        Me.LinkThisMonth1.UseStyleColors = True
+        '
         'DetailColumn
         '
         Me.DetailColumn.DataPropertyName = "status"
         Me.DetailColumn.HeaderText = "Detail"
         Me.DetailColumn.Name = "DetailColumn"
-        Me.DetailColumn.Text = "Detail"
+        Me.DetailColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.DetailColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
         Me.DetailColumn.Width = 60
         '
         'Labnum
@@ -205,18 +296,6 @@ Partial Class ista_report
         Me.VarietyColumn.DataPropertyName = "variety"
         Me.VarietyColumn.HeaderText = "Variety"
         Me.VarietyColumn.Name = "VarietyColumn"
-        '
-        'FarmerColumn
-        '
-        Me.FarmerColumn.DataPropertyName = "farmer"
-        Me.FarmerColumn.HeaderText = "Farmer"
-        Me.FarmerColumn.Name = "FarmerColumn"
-        '
-        'LocationColumn
-        '
-        Me.LocationColumn.DataPropertyName = "location"
-        Me.LocationColumn.HeaderText = "Location"
-        Me.LocationColumn.Name = "LocationColumn"
         '
         'HarvestColumn
         '
@@ -253,12 +332,6 @@ Partial Class ista_report
         Me.DateinColumn.DataPropertyName = "datein"
         Me.DateinColumn.HeaderText = "Sample Received"
         Me.DateinColumn.Name = "DateinColumn"
-        '
-        'samplingColumn
-        '
-        Me.samplingColumn.DataPropertyName = "sampling"
-        Me.samplingColumn.HeaderText = "Date of Sampling"
-        Me.samplingColumn.Name = "samplingColumn"
         '
         'ConcludedColumn
         '
@@ -305,16 +378,24 @@ Partial Class ista_report
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(946, 450)
+        Me.Controls.Add(Me.BtnFilterDate)
+        Me.Controls.Add(Me.MetroLabel18)
+        Me.Controls.Add(Me.MetroLabel16)
+        Me.Controls.Add(Me.MetroLabel15)
+        Me.Controls.Add(Me.EndDate)
+        Me.Controls.Add(Me.StartDate)
+        Me.Controls.Add(Me.LinkLastMonth1)
+        Me.Controls.Add(Me.LinkThisMonth1)
         Me.Controls.Add(Me.Tsearch)
-        Me.Controls.Add(Me.LinkRefresh)
         Me.Controls.Add(Me.MetroGrid1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
         Me.Name = "ista_report"
-        Me.Text = "Certification"
+        Me.Text = "Certification Standart"
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.ReportistaviewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HCQC_serverDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BtnFilterDate, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -326,21 +407,25 @@ Partial Class ista_report
     Friend WithEvents HCQC_serverDataSet As HCQC_serverDataSet
     Friend WithEvents ReportistaviewBindingSource As BindingSource
     Friend WithEvents Report_ista_viewTableAdapter As HCQC_serverDataSetTableAdapters.report_ista_viewTableAdapter
-    Friend WithEvents LinkRefresh As MetroLink
     Friend WithEvents Tsearch As MetroTextBox
-    Friend WithEvents DetailColumn As DataGridViewLinkColumn
+    Friend WithEvents BtnFilterDate As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents MetroLabel18 As MetroLabel
+    Friend WithEvents MetroLabel16 As MetroLabel
+    Friend WithEvents MetroLabel15 As MetroLabel
+    Friend WithEvents EndDate As DateTimePicker
+    Friend WithEvents StartDate As DateTimePicker
+    Friend WithEvents LinkLastMonth1 As MetroLink
+    Friend WithEvents LinkThisMonth1 As MetroLink
+    Friend WithEvents DetailColumn As DataGridViewTextBoxColumn
     Friend WithEvents Labnum As DataGridViewTextBoxColumn
     Friend WithEvents ProductionCodeColumn As DataGridViewTextBoxColumn
     Friend WithEvents VarietyColumn As DataGridViewTextBoxColumn
-    Friend WithEvents FarmerColumn As DataGridViewTextBoxColumn
-    Friend WithEvents LocationColumn As DataGridViewTextBoxColumn
     Friend WithEvents HarvestColumn As DataGridViewTextBoxColumn
     Friend WithEvents NomnlColumn As DataGridViewTextBoxColumn
     Friend WithEvents NojobColumn As DataGridViewTextBoxColumn
     Friend WithEvents WeightColumn As DataGridViewTextBoxColumn
     Friend WithEvents ScopeColumn As DataGridViewTextBoxColumn
     Friend WithEvents DateinColumn As DataGridViewTextBoxColumn
-    Friend WithEvents samplingColumn As DataGridViewTextBoxColumn
     Friend WithEvents ConcludedColumn As DataGridViewTextBoxColumn
     Friend WithEvents MeanColumn As DataGridViewTextBoxColumn
     Friend WithEvents PurityColumn As DataGridViewTextBoxColumn

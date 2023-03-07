@@ -100,7 +100,6 @@ Public Class DirectStockOnProcess
                                         RTrim(LTrim(SplitLine(2))))
                     End If
                     counter += 1
-
                 Loop
 
                 Return table
@@ -111,7 +110,6 @@ Public Class DirectStockOnProcess
             MsgBox("Erro Upload : " & ex.ToString)
             errorMsg = "Error Upload DataTable : " & ex.ToString
         End Try
-
     End Function
 
     Private Sub btnStokonprocess_Click(sender As Object, e As EventArgs) Handles btnStokonprocess.Click

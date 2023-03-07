@@ -44,6 +44,7 @@ Partial Class GridDevexpress
         Me.colequipment = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colanalys = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colinput_at1 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colremark2 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.ReportglobalviewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.HCQC_NewDataset = New WindowsApplication1.HCQC_NewDataset()
@@ -147,7 +148,6 @@ Partial Class GridDevexpress
         Me.colweight = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colscope = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colrequest_date = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colsampling = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coldatein = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colremark = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coltest_moi = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -215,7 +215,7 @@ Partial Class GridDevexpress
         Me.MetroLabel15 = New MetroFramework.Controls.MetroLabel()
         Me.EndDate = New System.Windows.Forms.DateTimePicker()
         Me.StartDate = New System.Windows.Forms.DateTimePicker()
-        Me.colremark2 = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colloc_sample = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.MoistureGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReportglobalviewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -355,6 +355,14 @@ Partial Class GridDevexpress
         Me.colinput_at1.Visible = True
         Me.colinput_at1.VisibleIndex = 10
         Me.colinput_at1.Width = 48
+        '
+        'colremark2
+        '
+        Me.colremark2.Caption = "Remark"
+        Me.colremark2.FieldName = "remark"
+        Me.colremark2.Name = "colremark2"
+        Me.colremark2.Visible = True
+        Me.colremark2.VisibleIndex = 13
         '
         'GridControl1
         '
@@ -1109,7 +1117,7 @@ Partial Class GridDevexpress
         'GridView
         '
         Me.GridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat
-        Me.GridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.collabnum1, Me.colid_hvsprod, Me.colcrop, Me.colvariety, Me.colfarmer, Me.collocation, Me.colharvest, Me.colnomnl, Me.colnojob, Me.colweight, Me.colscope, Me.colrequest_date, Me.colsampling, Me.coldatein, Me.colremark, Me.coltest_moi, Me.coltest_pur, Me.coltest_ger, Me.coltest_raf, Me.coltest_via, Me.coltest_ontest, Me.colraf_date, Me.colraf_total, Me.colraf_result, Me.colanalys2, Me.colraf_inputat, Me.colvia_date, Me.colvia_mean, Me.colvia_result, Me.colvia_analyst, Me.colvia_inputat, Me.colmoi_date, Me.colmoi_mean, Me.colmoi_analyst, Me.colmoi_inputat, Me.colws2, Me.colpure1, Me.colother1, Me.colinert1, Me.colpurity_mean, Me.colpur_date, Me.colpur_inputat, Me.colvg, Me.coldt, Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.colger_date, Me.colger_scnd, Me.colger_inputat, Me.GridColumn5, Me.GridColumn6, Me.colstaff, Me.colsampling_g, Me.colpur_result, Me.colabnormality})
+        Me.GridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.collabnum1, Me.colid_hvsprod, Me.colcrop, Me.colvariety, Me.colfarmer, Me.collocation, Me.colharvest, Me.colnomnl, Me.colnojob, Me.colweight, Me.colscope, Me.colloc_sample, Me.colrequest_date, Me.coldatein, Me.colremark, Me.coltest_moi, Me.coltest_pur, Me.coltest_ger, Me.coltest_raf, Me.coltest_via, Me.coltest_ontest, Me.colraf_date, Me.colraf_total, Me.colraf_result, Me.colanalys2, Me.colraf_inputat, Me.colvia_date, Me.colvia_mean, Me.colvia_result, Me.colvia_analyst, Me.colvia_inputat, Me.colmoi_date, Me.colmoi_mean, Me.colmoi_analyst, Me.colmoi_inputat, Me.colws2, Me.colpure1, Me.colother1, Me.colinert1, Me.colpurity_mean, Me.colpur_date, Me.colpur_inputat, Me.colvg, Me.coldt, Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.colger_date, Me.colger_scnd, Me.colger_inputat, Me.GridColumn5, Me.GridColumn6, Me.colstaff, Me.colsampling_g, Me.colpur_result, Me.colabnormality})
         Me.GridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.GridView.GridControl = Me.GridControl1
         Me.GridView.Name = "GridView"
@@ -1231,12 +1239,6 @@ Partial Class GridDevexpress
         Me.colrequest_date.FieldName = "request_date"
         Me.colrequest_date.Name = "colrequest_date"
         Me.colrequest_date.Width = 93
-        '
-        'colsampling
-        '
-        Me.colsampling.Caption = "Sampling"
-        Me.colsampling.FieldName = "sampling_g"
-        Me.colsampling.Name = "colsampling"
         '
         'coldatein
         '
@@ -1503,7 +1505,7 @@ Partial Class GridDevexpress
         '
         'colsampling_g
         '
-        Me.colsampling_g.Caption = "Sample gr"
+        Me.colsampling_g.Caption = "Sample (gr)"
         Me.colsampling_g.FieldName = "sampling_g"
         Me.colsampling_g.Name = "colsampling_g"
         '
@@ -1640,6 +1642,7 @@ Partial Class GridDevexpress
         Me.LinkRefresh.Name = "LinkRefresh"
         Me.LinkRefresh.Size = New System.Drawing.Size(70, 23)
         Me.LinkRefresh.TabIndex = 57
+        Me.LinkRefresh.Tag = "thisyear"
         Me.LinkRefresh.Text = "Refresh"
         Me.LinkRefresh.UseCustomBackColor = True
         Me.LinkRefresh.UseSelectable = True
@@ -1729,13 +1732,11 @@ Partial Class GridDevexpress
         Me.StartDate.TabIndex = 152
         Me.StartDate.Value = New Date(2022, 9, 20, 0, 0, 0, 0)
         '
-        'colremark2
+        'colloc_sample
         '
-        Me.colremark2.Caption = "Remark"
-        Me.colremark2.FieldName = "remark"
-        Me.colremark2.Name = "colremark2"
-        Me.colremark2.Visible = True
-        Me.colremark2.VisibleIndex = 13
+        Me.colloc_sample.Caption = "Sample Location"
+        Me.colloc_sample.FieldName = "loc_sample"
+        Me.colloc_sample.Name = "colloc_sample"
         '
         'GridDevexpress
         '
@@ -1797,7 +1798,6 @@ Partial Class GridDevexpress
     Friend WithEvents colnomnl As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colnojob As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colweight As DevExpress.XtraGrid.Columns.GridColumn
-    Friend WithEvents colsampling As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents coldatein As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colremark As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colscope As DevExpress.XtraGrid.Columns.GridColumn
@@ -1961,4 +1961,5 @@ Partial Class GridDevexpress
     Friend WithEvents EndDate As DateTimePicker
     Friend WithEvents StartDate As DateTimePicker
     Friend WithEvents colremark2 As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colloc_sample As DevExpress.XtraGrid.Columns.GridColumn
 End Class

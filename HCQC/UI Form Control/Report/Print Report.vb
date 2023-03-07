@@ -48,7 +48,7 @@
 
     Private Sub Print_Report_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'HCQC_NewDataset.report_external' table. You can move, or remove it, as needed.
-        ShowDataAdapter(sender, e)
+        ''ShowDataAdapter(sender, e)
 
     End Sub
 
@@ -76,8 +76,9 @@
 
             ' rowAlreadyExist => if the row already exist on MetroGrid2
             Dim rowAlreadyExist As Boolean = False
-            Dim check As Boolean = MetroGrid1.Rows(i).Cells(0).Value
             Dim row As DataGridViewRow = MetroGrid1.Rows(i)
+            Dim check As Boolean = MetroGrid1.Rows(i).Cells(0).Value
+
             If check = True Then
 
                 'Check the MetroGrid2 have one row or more

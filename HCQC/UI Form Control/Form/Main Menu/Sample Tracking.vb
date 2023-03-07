@@ -28,24 +28,96 @@ Public Class Sample_Tracking
     End Sub
 
     Public Sub LoadTextTrackingTemplating()
+
         ComboBoxEdit1.Properties.Items.Clear()
-        Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
+        Dim FolderPath As String = "C:\hcqc asset"
+        Dim FilePath As String = "C:\hcqc asset\GStyle_tracking.txt"
+
+        If Not Directory.Exists(FolderPath) Then
+            Directory.CreateDirectory(FolderPath)
+        End If
+
+        If Not File.Exists(FilePath) Then
+            File.Create(FilePath).Dispose()
+        End If
+        ''Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
         ComboBoxEdit1.Properties.Items.AddRange(System.IO.File.ReadAllLines(FilePath))
     End Sub
 
     Public Sub DeleteTextTrackingTemplating()
+        Dim FilePath As String = "C:\hcqc asset\GStyle_tracking.txt"
         ''menghapus text "selectedText Combobox" di file DirectoryPart|GStyle_tracking.txt
-        Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
+        ''Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
         File.WriteAllLines(FilePath, File.ReadAllLines(FilePath).Where(Function(l) l <> ComboBoxEdit1.SelectedItem))
 
     End Sub
 
     Public Sub SaveTextTrackingTemplating()
+
+        Dim FilePath As String = "C:\hcqc asset\GStyle_tracking.txt"
+        If Not File.Exists(FilePath) Then
+            File.Create(FilePath).Dispose()
+        End If
         ''Tambah text "selectedText Combobox" di file DirectoryPart|GStyle_tracking.txt
-        Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
+        'Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
         File.WriteAllLines(FilePath, File.ReadAllLines(FilePath).Where(Function(l) l = ComboBoxEdit1.Text))
     End Sub
 
+    Private Sub MetroLink2_Click(sender As Object, e As EventArgs) Handles MetroLink2.Click
+        ''proses SAVE file template view
+        Dim fileName As String = ComboBoxEdit1.SelectedItem + ".xml"
+        Dim result As Integer = MetroMessageBox.Show(Me, "simpan tampilan terakir", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
+        If result = DialogResult.OK Then
+            If File.Exists(fileName) Then
+                File.Delete(fileName)
+            End If
+
+            If Not File.Exists(fileName) Then
+                GridView1.SaveLayoutToXml(fileName)
+            End If
+        End If
+
+        Dim textline As String
+        Dim stringcek As Boolean = False
+        Dim FilePath As String = "C:\hcqc asset\GStyle_tracking.txt"
+
+        Using objReader As New StreamReader(FilePath, Encoding.ASCII)
+            textline = objReader.ReadLine()
+            '' cek apakah ada text pada combobox
+            If Not textline.Contains(Replace(fileName, ".xml", "")) Then
+                stringcek = True
+            End If
+        End Using
+
+        ''jika tidak ada text maka tulis text di file .txt
+        If stringcek = True Then
+            'SaveTextTrackingTemplating()
+            Using file As New StreamWriter(FilePath, True)
+                file.WriteLine(ComboBoxEdit1.SelectedItem)
+                file.Close()
+            End Using
+        End If
+
+        ''proses load combobox
+        LoadTextTrackingTemplating()
+    End Sub
+
+    Private Sub MetroLink1_Click(sender As Object, e As EventArgs) Handles MetroLink1.Click
+        ''proses DELETE file template view
+        Dim fileName As String = Application.StartupPath() + "\" + ComboBoxEdit1.SelectedItem + ".xml"
+        If File.Exists(fileName) Then
+            My.Computer.FileSystem.DeleteFile(
+                fileName,
+                FileIO.UIOption.AllDialogs,
+                FileIO.RecycleOption.DeletePermanently,
+                FileIO.UICancelOption.DoNothing)
+        End If
+        ''proses delete text file template view
+        DeleteTextTrackingTemplating()
+        ''proses load combobox
+        LoadTextTrackingTemplating()
+
+    End Sub
     Public Sub OnRefreshEventHendler()
         Me.Report_sampel_ambilTableAdapter.Fill(HCQC_NewDataset.report_sampel_ambil)
     End Sub
@@ -149,8 +221,12 @@ Public Class Sample_Tracking
 
     Private Sub LinkLastMonth1_Click(sender As Object, e As EventArgs) Handles LinkLastMonth1.Click
         Me.Report_status_pengujianTableAdapter.FillByLastMonth(Me.HCQC_NewDataset.report_status_pengujian)
-        Dim dt As Date = Now
-        Dim startDt As New Date(dt.Year, dt.Month - 1, 1)
+        Dim dt, startDt As Date
+        dt = Now
+        dt = dt.AddMonths(-1)
+
+        startDt = New DateTime(dt.Year, dt.Month, 1)
+
         StartDate.Value = startDt.ToString("dd-MMM-yyyy")
         EndDate.Value = Today.ToString("dd-MMM-yyyy")
         GridControl1.Refresh()
@@ -332,51 +408,6 @@ Public Class Sample_Tracking
         Dim b As Brush = SystemBrushes.ControlText
         e.Graphics.DrawString(rowNumber, MetroGrid1.Font, b, e.RowBounds.Location.X + 15,
         e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2))
-    End Sub
-
-    Private Sub MetroLink1_Click(sender As Object, e As EventArgs) Handles MetroLink1.Click
-        ''proses DELETE file template view
-        Dim fileName As String = Application.StartupPath() + "\" + ComboBoxEdit1.SelectedItem + ".xml"
-        If File.Exists(fileName) Then
-            My.Computer.FileSystem.DeleteFile(fileName,
-                    FileIO.UIOption.AllDialogs,
-                    FileIO.RecycleOption.DeletePermanently,
-                    FileIO.UICancelOption.DoNothing)
-        End If
-        ''proses delete text file template view
-        DeleteTextTrackingTemplating()
-        ''proses load combobox
-        LoadTextTrackingTemplating()
-
-    End Sub
-
-    Private Sub MetroLink2_Click(sender As Object, e As EventArgs) Handles MetroLink2.Click
-        ''proses SAVE file template view
-        Dim fileName As String = ComboBoxEdit1.SelectedItem + ".xml"
-        Dim result As Integer = MetroFramework.MetroMessageBox.Show(Me, "simpan tampilan terakir", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
-        If result = DialogResult.OK Then
-            GridView1.SaveLayoutToXml(fileName)
-        End If
-        Dim textline As String
-        Dim stringcek As Boolean = False
-        Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
-
-        Using objReader As New StreamReader(FilePath, Encoding.ASCII)
-            textline = objReader.ReadLine()
-            If Not textline.Contains(ComboBoxEdit1.SelectedItem) Then
-                stringcek = True
-            End If
-        End Using
-
-        If stringcek = True Then
-            'SaveTextTrackingTemplating()
-            Using file As New System.IO.StreamWriter(FilePath, True)
-                file.WriteLine(ComboBoxEdit1.SelectedItem)
-            End Using
-        End If
-
-        ''proses load combobox
-        LoadTextTrackingTemplating()
     End Sub
 
     Private Sub ComboBoxEdit1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxEdit1.SelectedIndexChanged

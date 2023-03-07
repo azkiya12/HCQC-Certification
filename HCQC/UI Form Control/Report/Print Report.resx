@@ -209,6 +209,9 @@
         /QvdJv9fqfdBEARBEATdpNf7AVa3xd3E9whLAAAAAElFTkSuQmCC
 </value>
   </data>
+  <metadata name="MetroToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>594, 17</value>
+  </metadata>
   <metadata name="Report_externalTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>384, 17</value>
   </metadata>

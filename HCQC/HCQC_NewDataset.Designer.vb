@@ -10878,7 +10878,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnraf_analys.MaxLength = 25
             Me.columnvia_analyst.MaxLength = 25
             Me.columnmoi_method.MaxLength = 17
-            Me.columnmoi_analyst.MaxLength = 15
+            Me.columnmoi_analyst.MaxLength = 25
             Me.columnpurity_mean.ReadOnly = true
             Me.columnkindseed.MaxLength = 255
             Me.columnkindmetter.MaxLength = 255
@@ -12501,6 +12501,8 @@ Partial Public Class HCQC_NewDataset
         
         Private columnabnormality As Global.System.Data.DataColumn
         
+        Private columnloc_sample As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub New()
@@ -12977,6 +12979,14 @@ Partial Public Class HCQC_NewDataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public ReadOnly Property loc_sampleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnloc_sample
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -13068,9 +13078,10 @@ Partial Public Class HCQC_NewDataset
                     ByVal pur_result As String,  _
                     ByVal pur_inputat As Date,  _
                     ByVal request_date As Date,  _
-                    ByVal abnormality As String) As report_global_viewRow
+                    ByVal abnormality As String,  _
+                    ByVal loc_sample As String) As report_global_viewRow
             Dim rowreport_global_viewRow As report_global_viewRow = CType(Me.NewRow,report_global_viewRow)
-            Dim columnValuesArray() As Object = New Object() {id, labnum, crop, farmer, location, variety, harvest, nomnl, nojob, weight, sampling_g, datein, remark, scope, test_moi, test_pur, test_ger, test_raf, test_via, raf_date, raf_total, raf_result, analys, raf_inputat, via_date, via_mean, via_result, via_analyst, via_inputat, moi_date, moi_mean, moi_analyst, moi_inputat, ws, pure, other, inert, purity_mean, pur_date, vg, dt, _Abnormal_Seedling____, _Hard_Seed____, _Fresh_Seed____, _Dead_Seed____, ger_date, ger_scnd, ger_inputat, id_hvsprod, test_ontest, staff, pur_result, pur_inputat, request_date, abnormality}
+            Dim columnValuesArray() As Object = New Object() {id, labnum, crop, farmer, location, variety, harvest, nomnl, nojob, weight, sampling_g, datein, remark, scope, test_moi, test_pur, test_ger, test_raf, test_via, raf_date, raf_total, raf_result, analys, raf_inputat, via_date, via_mean, via_result, via_analyst, via_inputat, moi_date, moi_mean, moi_analyst, moi_inputat, ws, pure, other, inert, purity_mean, pur_date, vg, dt, _Abnormal_Seedling____, _Hard_Seed____, _Fresh_Seed____, _Dead_Seed____, ger_date, ger_scnd, ger_inputat, id_hvsprod, test_ontest, staff, pur_result, pur_inputat, request_date, abnormality, loc_sample}
             rowreport_global_viewRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowreport_global_viewRow)
             Return rowreport_global_viewRow
@@ -13148,6 +13159,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnpur_inputat = MyBase.Columns("pur_inputat")
             Me.columnrequest_date = MyBase.Columns("request_date")
             Me.columnabnormality = MyBase.Columns("abnormality")
+            Me.columnloc_sample = MyBase.Columns("loc_sample")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13271,6 +13283,8 @@ Partial Public Class HCQC_NewDataset
             MyBase.Columns.Add(Me.columnrequest_date)
             Me.columnabnormality = New Global.System.Data.DataColumn("abnormality", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnabnormality)
+            Me.columnloc_sample = New Global.System.Data.DataColumn("loc_sample", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnloc_sample)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, false))
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint2", New Global.System.Data.DataColumn() {Me.columnlabnum}, false))
             Me.columnid.Unique = true
@@ -13291,6 +13305,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnpurity_mean.ReadOnly = true
             Me.columnstaff.MaxLength = 100
             Me.columnabnormality.MaxLength = 150
+            Me.columnloc_sample.MaxLength = 25
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -29335,6 +29350,21 @@ Partial Public Class HCQC_NewDataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Property loc_sample() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereport_global_view.loc_sampleColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'loc_sample' in table 'report_global_view' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereport_global_view.loc_sampleColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Function IsidNull() As Boolean
             Return Me.IsNull(Me.tablereport_global_view.idColumn)
         End Function
@@ -29991,6 +30021,18 @@ Partial Public Class HCQC_NewDataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
         Public Sub SetabnormalityNull()
             Me(Me.tablereport_global_view.abnormalityColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Function Isloc_sampleNull() As Boolean
+            Return Me.IsNull(Me.tablereport_global_view.loc_sampleColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0")>  _
+        Public Sub Setloc_sampleNull()
+            Me(Me.tablereport_global_view.loc_sampleColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -43344,8 +43386,8 @@ Namespace HCQC_NewDatasetTableAdapters
                 "g, moisture_log, viability_log, gerout_log, gerout_namelog, gertest_namelog, pur"& _ 
                 "ity_namelog, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         rafaction_namelog, moisture_namelog, via"& _ 
                 "bility_namelog, gervigor_namelog, gervigor_log, accept_date"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            rep"& _ 
-                "ort_status_pengujian"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (cast(input_date as date) BETWEEN @startdate "& _ 
-                "AND @enddate)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
+                "ort_status_pengujian"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        cast(input_date as date) BETWEEN @startdate A"& _ 
+                "ND @enddate"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@startdate", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@enddate", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -43361,8 +43403,8 @@ Namespace HCQC_NewDatasetTableAdapters
                 "amelog, rafaction_log, rafaction_namelog, sampler, sampling, scope, status_confi"& _ 
                 "rm, test_ger, test_moi, test_ontest, test_pur, test_raf, test_sampling, test_via"& _ 
                 ", variety, viability_log, viability_namelog, weight FROM report_status_pengujian"& _ 
-                " WHERE (input_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 2))) AND (input_date <"& _ 
-                " DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC"
+                "  WHERE (input_date <= DATEADD(dd, 1, EOMONTH(GETDATE()))) AND  (input_date >= D"& _ 
+                "ATEADD(dd, 1, EOMONTH(GETDATE(), -2)))"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY input_date DESC"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
@@ -43902,13 +43944,11 @@ Namespace HCQC_NewDatasetTableAdapters
                 "test_ger, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         test_moi, test_pur, test_raf, test_sampling"& _ 
                 ", test_via, treatment, variety, vg, via_analyst, via_date, via_inputat, via_mean"& _ 
                 ", via_result, weight, ws"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            report_external"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (id LIKE"& _ 
-                " @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (farmer LIKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"     "& _ 
-                "                    (location LIKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (v"& _ 
-                "ariety LIKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (nomnl LIKE @strvariable)"& _ 
-                " OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (nojob LIKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                    "& _ 
-                "     (labnum LIKE @strvariable)"
+                " @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (variety LIKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    "& _ 
+                "                     (nomnl LIKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (noj"& _ 
+                "ob LIKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (labnum LIKE @strvariable)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@strvariable", Global.System.Data.SqlDbType.VarChar, 15, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@strvariable", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -43939,12 +43979,12 @@ Namespace HCQC_NewDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByVariable(ByVal dataTable As HCQC_NewDataset.report_externalDataTable, ByVal strvariable As String) As Integer
+        Public Overloads Overridable Function FillByVariable(ByVal dataTable As HCQC_NewDataset.report_externalDataTable, ByVal strvariable As Global.System.Nullable(Of Integer)) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (strvariable Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            If (strvariable.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(strvariable.Value,Integer)
             Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(strvariable,String)
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -43957,12 +43997,12 @@ Namespace HCQC_NewDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataByVariable(ByVal strvariable As String) As HCQC_NewDataset.report_externalDataTable
+        Public Overloads Overridable Function GetDataByVariable(ByVal strvariable As Global.System.Nullable(Of Integer)) As HCQC_NewDataset.report_externalDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (strvariable Is Nothing) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            If (strvariable.HasValue = true) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(strvariable.Value,Integer)
             Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(strvariable,String)
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
             End If
             Dim dataTable As HCQC_NewDataset.report_externalDataTable = New HCQC_NewDataset.report_externalDataTable()
             Me.Adapter.Fill(dataTable)
@@ -44885,6 +44925,7 @@ Namespace HCQC_NewDatasetTableAdapters
             tableMapping.ColumnMappings.Add("pur_inputat", "pur_inputat")
             tableMapping.ColumnMappings.Add("request_date", "request_date")
             tableMapping.ColumnMappings.Add("abnormality", "abnormality")
+            tableMapping.ColumnMappings.Add("loc_sample", "loc_sample")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -44912,57 +44953,57 @@ Namespace HCQC_NewDatasetTableAdapters
                 "ean, pur_date, pur_inputat, vg, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         CASE WHEN test_ger = "& _ 
                 "1 THEN dt ELSE - 1 END AS dt, [Abnormal Seedling (%)], [Hard Seed (%)], [Fresh S"& _ 
                 "eed (%)], [Dead Seed (%)], ger_date, ger_scnd, ger_inputat, id_hvsprod, staff, p"& _ 
-                "ur_result, request_date, abnormality"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            report_global_view"
+                "ur_result, request_date, abnormality, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         loc_sample"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FRO"& _ 
+                "M            report_global_view"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        id, labnum, crop, farmer, location, variety, harvest, nomnl, nojob,"& _ 
-                " weight, sampling_g, datein, remark, scope, test_moi, test_pur, test_ger, test_r"& _ 
-                "af, test_via, test_ontest, raf_date, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         CASE WHEN test_r"& _ 
-                "af = 1 THEN raf_total ELSE - 1 END AS raf_total, raf_result, analys, raf_inputat"& _ 
-                ", via_date, CASE WHEN test_via = 1 THEN via_mean ELSE - 1 END AS via_mean, via_r"& _ 
-                "esult, via_analyst, via_inputat, moi_date, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         CASE WHEN "& _ 
-                "test_moi = 1 THEN moi_mean ELSE - 1 END AS moi_mean, moi_analyst, moi_inputat, w"& _ 
-                "s, CASE WHEN test_pur = 1 THEN pure ELSE - 1 END AS pure, other, inert, purity_m"& _ 
-                "ean, pur_date, pur_inputat, vg, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         CASE WHEN test_ger = "& _ 
-                "1 THEN dt ELSE - 1 END AS dt, [Abnormal Seedling (%)], [Hard Seed (%)], [Fresh S"& _ 
-                "eed (%)], [Dead Seed (%)], ger_date, ger_scnd, ger_inputat, id_hvsprod, staff, p"& _ 
-                "ur_result, request_date, abnormality"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            report_global_view"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE "& _ 
-                "       request_date BETWEEN @startdate AND @enddate"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
+            Me._commandCollection(1).CommandText = "SELECT [Abnormal Seedling (%)], [Dead Seed (%)], [Fresh Seed (%)], [Hard Seed (%)"& _ 
+                "], abnormality, analys, crop, datein, CASE WHEN test_ger = 1 THEN dt ELSE - 1 EN"& _ 
+                "D AS dt, farmer, ger_date, ger_inputat, ger_scnd, harvest, id, id_hvsprod, inert"& _ 
+                ", labnum, loc_sample, location, moi_analyst, moi_date, moi_inputat, CASE WHEN te"& _ 
+                "st_moi = 1 THEN moi_mean ELSE - 1 END AS moi_mean, nojob, nomnl, other, pur_date"& _ 
+                ", pur_inputat, pur_result, CASE WHEN test_pur = 1 THEN pure ELSE - 1 END AS pure"& _ 
+                ", purity_mean, raf_date, raf_inputat, raf_result, CASE WHEN test_raf = 1 THEN ra"& _ 
+                "f_total ELSE - 1 END AS raf_total, remark, request_date, sampling_g, scope, staf"& _ 
+                "f, test_ger, test_moi, test_ontest, test_pur, test_raf, test_via, variety, vg, v"& _ 
+                "ia_analyst, via_date, via_inputat, CASE WHEN test_via = 1 THEN via_mean ELSE - 1"& _ 
+                " END AS via_mean, via_result, weight, ws FROM report_global_view WHERE (request_"& _ 
+                "date BETWEEN @startdate AND @enddate) ORDER BY id DESC"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@startdate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@enddate", Global.System.Data.SqlDbType.DateTime, 8, Global.System.Data.ParameterDirection.Input, 0, 0, "request_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@startdate", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@enddate", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT [Abnormal Seedling (%)], [Dead Seed (%)], [Fresh Seed (%)], [Hard Seed (%)"& _ 
                 "], abnormality, analys, crop, datein, CASE WHEN test_ger = 1 THEN dt ELSE - 1 EN"& _ 
                 "D AS dt, farmer, ger_date, ger_inputat, ger_scnd, harvest, id, id_hvsprod, inert"& _ 
-                ", labnum, location, moi_analyst, moi_date, moi_inputat, CASE WHEN test_moi = 1 T"& _ 
-                "HEN moi_mean ELSE - 1 END AS moi_mean, nojob, nomnl, other, pur_date, pur_inputa"& _ 
-                "t, pur_result, CASE WHEN test_pur = 1 THEN pure ELSE - 1 END AS pure, purity_mea"& _ 
-                "n, raf_date, raf_inputat, raf_result, CASE WHEN test_raf = 1 THEN raf_total ELSE"& _ 
-                " - 1 END AS raf_total, remark, request_date, sampling_g, scope, staff, test_ger,"& _ 
-                " test_moi, test_ontest, test_pur, test_raf, test_via, variety, vg, via_analyst, "& _ 
-                "via_date, via_inputat, CASE WHEN test_via = 1 THEN via_mean ELSE - 1 END AS via_"& _ 
-                "mean, via_result, weight, ws FROM report_global_view WHERE (request_date >= DATE"& _ 
-                "FROMPARTS(YEAR(GETDATE()) - 1, 1, 1)) AND (request_date < DATEADD(dd, 1, EOMONTH"& _ 
-                "(GETDATE())))"
+                ", labnum, loc_sample, location, moi_analyst, moi_date, moi_inputat, CASE WHEN te"& _ 
+                "st_moi = 1 THEN moi_mean ELSE - 1 END AS moi_mean, nojob, nomnl, other, pur_date"& _ 
+                ", pur_inputat, pur_result, CASE WHEN test_pur = 1 THEN pure ELSE - 1 END AS pure"& _ 
+                ", purity_mean, raf_date, raf_inputat, raf_result, CASE WHEN test_raf = 1 THEN ra"& _ 
+                "f_total ELSE - 1 END AS raf_total, remark, request_date, sampling_g, scope, staf"& _ 
+                "f, test_ger, test_moi, test_ontest, test_pur, test_raf, test_via, variety, vg, v"& _ 
+                "ia_analyst, via_date, via_inputat, CASE WHEN test_via = 1 THEN via_mean ELSE - 1"& _ 
+                " END AS via_mean, via_result, weight, ws FROM report_global_view WHERE (request_"& _ 
+                "date >= DATEFROMPARTS(YEAR(GETDATE()) - 1, 1, 1)) AND (request_date < DATEADD(dd"& _ 
+                ", 1, EOMONTH(GETDATE())))"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
             Me._commandCollection(3).CommandText = "SELECT [Abnormal Seedling (%)], [Dead Seed (%)], [Fresh Seed (%)], [Hard Seed (%)"& _ 
                 "], abnormality, analys, crop, datein, CASE WHEN test_ger = 1 THEN dt ELSE - 1 EN"& _ 
                 "D AS dt, farmer, ger_date, ger_inputat, ger_scnd, harvest, id, id_hvsprod, inert"& _ 
-                ", labnum, location, moi_analyst, moi_date, moi_inputat, CASE WHEN test_moi = 1 T"& _ 
-                "HEN moi_mean ELSE - 1 END AS moi_mean, nojob, nomnl, other, pur_date, pur_inputa"& _ 
-                "t, pur_result, CASE WHEN test_pur = 1 THEN pure ELSE - 1 END AS pure, purity_mea"& _ 
-                "n, raf_date, raf_inputat, raf_result, CASE WHEN test_raf = 1 THEN raf_total ELSE"& _ 
-                " - 1 END AS raf_total, remark, request_date, sampling_g, scope, staff, test_ger,"& _ 
-                " test_moi, test_ontest, test_pur, test_raf, test_via, variety, vg, via_analyst, "& _ 
-                "via_date, via_inputat, CASE WHEN test_via = 1 THEN via_mean ELSE - 1 END AS via_"& _ 
-                "mean, via_result, weight, ws FROM report_global_view WHERE (request_date >= DATE"& _ 
-                "FROMPARTS(YEAR(GETDATE()), 1, 1)) AND (request_date < DATEADD(dd, 1, EOMONTH(GET"& _ 
-                "DATE())))"
+                ", labnum, loc_sample, location, moi_analyst, moi_date, moi_inputat, CASE WHEN te"& _ 
+                "st_moi = 1 THEN moi_mean ELSE - 1 END AS moi_mean, nojob, nomnl, other, pur_date"& _ 
+                ", pur_inputat, pur_result, CASE WHEN test_pur = 1 THEN pure ELSE - 1 END AS pure"& _ 
+                ", purity_mean, raf_date, raf_inputat, raf_result, CASE WHEN test_raf = 1 THEN ra"& _ 
+                "f_total ELSE - 1 END AS raf_total, remark, request_date, sampling_g, scope, staf"& _ 
+                "f, test_ger, test_moi, test_ontest, test_pur, test_raf, test_via, variety, vg, v"& _ 
+                "ia_analyst, via_date, via_inputat, CASE WHEN test_via = 1 THEN via_mean ELSE - 1"& _ 
+                " END AS via_mean, via_result, weight, ws FROM report_global_view WHERE (request_"& _ 
+                "date >= DATEFROMPARTS(YEAR(GETDATE()), 1, 1)) AND (request_date < DATEADD(dd, 1,"& _ 
+                " EOMONTH(GETDATE())))"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -44994,17 +45035,17 @@ Namespace HCQC_NewDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByFilterDate(ByVal dataTable As HCQC_NewDataset.report_global_viewDataTable, ByVal startdate As Global.System.Nullable(Of Date), ByVal enddate As Global.System.Nullable(Of Date)) As Integer
+        Public Overloads Overridable Function FillByFilterDate(ByVal dataTable As HCQC_NewDataset.report_global_viewDataTable, ByVal startdate As String, ByVal enddate As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (startdate.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(startdate.Value,Date)
-            Else
+            If (startdate Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (enddate.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(enddate.Value,Date)
             Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(startdate,String)
+            End If
+            If (enddate Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(enddate,String)
             End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -45017,17 +45058,17 @@ Namespace HCQC_NewDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "16.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataByFilterDate(ByVal startdate As Global.System.Nullable(Of Date), ByVal enddate As Global.System.Nullable(Of Date)) As HCQC_NewDataset.report_global_viewDataTable
+        Public Overloads Overridable Function GetDataByFilterDate(ByVal startdate As String, ByVal enddate As String) As HCQC_NewDataset.report_global_viewDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (startdate.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(startdate.Value,Date)
-            Else
+            If (startdate Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
-            End If
-            If (enddate.HasValue = true) Then
-                Me.Adapter.SelectCommand.Parameters(1).Value = CType(enddate.Value,Date)
             Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(startdate,String)
+            End If
+            If (enddate Is Nothing) Then
                 Me.Adapter.SelectCommand.Parameters(1).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(1).Value = CType(enddate,String)
             End If
             Dim dataTable As HCQC_NewDataset.report_global_viewDataTable = New HCQC_NewDataset.report_global_viewDataTable()
             Me.Adapter.Fill(dataTable)
