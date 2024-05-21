@@ -33,7 +33,6 @@ Partial Class Periodic_Scedule
         Me.VarietyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HarvestDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NomnlDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.nojobColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ScopeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DateinDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BrtinDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()

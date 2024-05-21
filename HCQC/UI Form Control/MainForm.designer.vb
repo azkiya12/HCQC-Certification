@@ -1445,7 +1445,6 @@ Partial Class MainForm
         Me.ControlBox = False
         Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.Panel1)
-        Me.Controls.Add(Me.Panel2)
         Me.BunifuTransition1.SetDecoration(Me, BunifuAnimatorNS.DecorationType.None)
         Me.DoubleBuffered = True
         Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None

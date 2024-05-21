@@ -141,26 +141,6 @@ Public Class MainForm
         BtnQcConfirm.Normalcolor = Color.FromArgb(46, 139, 87)
     End Sub
 
-    Private Sub BtnSampleReturn_Click(sender As Object, e As EventArgs)
-
-        ClearControls()
-
-        'MetroPanel5.Controls.Clear()
-        Dim UsQcReturn As QC_Return = New QC_Return With {
-            .Size = New Point(MetroPanel5.Width - 3, MetroPanel5.Height - 7),
-            .Anchor = AnchorStyles.Bottom Or AnchorStyles.Left Or AnchorStyles.Right Or AnchorStyles.Top
-        }
-        MetroPanel5.Controls.Add(UsQcReturn)
-        BtnQcConfirm.Normalcolor = Color.Gray
-        'BtnSampleReturn.Normalcolor = Color.FromArgb(142, 188, 0)
-
-    End Sub
-
-    'Private Sub MetroLink1_Click(sender As Object, e As EventArgs) Handles BtnLinkImport.LinkClicked
-    '    Dim F_Import As Form = New Form_Import
-    '    F_Import.ShowDialog(Me)
-    'End Sub
-
     Private Sub BtnLinkImport_MouseEnter(sender As Object, e As EventArgs)
         ' BtnLinkImport.BackColor = Color.FromArgb(70, 179, 226)
     End Sub
