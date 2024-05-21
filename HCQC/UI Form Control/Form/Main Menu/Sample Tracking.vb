@@ -18,10 +18,6 @@ Public Class Sample_Tracking
         DgvFilter.DataGridView = MetroGrid1
         MetroGrid1.ColumnHeadersHeight = 25
 
-        For Each foundFile As String In My.Computer.FileSystem.GetFiles(
-            My.Application.Info.DirectoryPath,
-            FileIO.SearchOption.SearchTopLevelOnly, "GStyle_tracking.txt")
-        Next
         StartDate.Value = Today
         EndDate.Value = Today
         LoadTextTrackingTemplating()
@@ -33,13 +29,8 @@ Public Class Sample_Tracking
         Dim FolderPath As String = "C:\hcqc asset"
         Dim FilePath As String = "C:\hcqc asset\GStyle_tracking.txt"
 
-        If Not Directory.Exists(FolderPath) Then
-            Directory.CreateDirectory(FolderPath)
-        End If
+        CreateGStyleTracking(FilePath, FolderPath)
 
-        If Not File.Exists(FilePath) Then
-            File.Create(FilePath).Dispose()
-        End If
         ''Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
         ComboBoxEdit1.Properties.Items.AddRange(System.IO.File.ReadAllLines(FilePath))
     End Sub
@@ -49,46 +40,67 @@ Public Class Sample_Tracking
         ''menghapus text "selectedText Combobox" di file DirectoryPart|GStyle_tracking.txt
         ''Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
         File.WriteAllLines(FilePath, File.ReadAllLines(FilePath).Where(Function(l) l <> ComboBoxEdit1.SelectedItem))
-
+        LoadTextTrackingTemplating()
     End Sub
 
-    Public Sub SaveTextTrackingTemplating()
+    Public Sub CreateGStyleTracking(ByVal FilePath As String, ByVal FolderPath As String)
 
-        Dim FilePath As String = "C:\hcqc asset\GStyle_tracking.txt"
+        'memastikan terdapat folder "C:\hcqc asset"
+        If Not Directory.Exists(FolderPath) Then
+            Directory.CreateDirectory(FolderPath)
+        End If
+
+        'memastiakan terdapat file GStyle_tracking.txt
         If Not File.Exists(FilePath) Then
             File.Create(FilePath).Dispose()
         End If
-        ''Tambah text "selectedText Combobox" di file DirectoryPart|GStyle_tracking.txt
-        'Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
-        File.WriteAllLines(FilePath, File.ReadAllLines(FilePath).Where(Function(l) l = ComboBoxEdit1.Text))
+
     End Sub
 
-    Private Sub MetroLink2_Click(sender As Object, e As EventArgs) Handles MetroLink2.Click
+    Private Sub SaveView_Click(sender As Object, e As EventArgs) Handles MetroLink2.Click
         ''proses SAVE file template view
-        Dim fileName As String = ComboBoxEdit1.SelectedItem + ".xml"
-        Dim result As Integer = MetroMessageBox.Show(Me, "simpan tampilan terakir", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
-        If result = DialogResult.OK Then
-            If File.Exists(fileName) Then
-                File.Delete(fileName)
-            End If
+        Dim fileName As String = "C:\hcqc asset\" + ComboBoxEdit1.Text + ".xml"
+        Dim result As Integer = MetroMessageBox.Show(Me, "Simpan tampilan terakir", Me.Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Information, 211)
+        If result = DialogResult.Cancel Then
+            Return
+        End If
 
-            If Not File.Exists(fileName) Then
-                GridView1.SaveLayoutToXml(fileName)
-            End If
+        'Memastikan jika ada nama file yang sama akan di delete dulu
+        If File.Exists(fileName) Then
+            File.Delete(fileName)
+        End If
+
+        'jika file tidak ada maka lalukan proses SaveLayout
+        If Not File.Exists(fileName) Then
+            GridView1.SaveLayoutToXml(fileName)
         End If
 
         Dim textline As String
         Dim stringcek As Boolean = False
         Dim FilePath As String = "C:\hcqc asset\GStyle_tracking.txt"
+        Dim ContentItem As String = ComboBoxEdit1.Text
+        If File.Exists(FilePath) Then
+            Try
+                'Proses membaca catatan layout yang sudah di save pada file GStyle_tracking.txt
+                Using objReader As New StreamReader(FilePath, Encoding.ASCII)
+                    textline = objReader.ReadToEnd
 
-        Using objReader As New StreamReader(FilePath, Encoding.ASCII)
-            textline = objReader.ReadLine()
-            '' cek apakah ada text pada combobox
-            If Not textline.Contains(Replace(fileName, ".xml", "")) Then
-                stringcek = True
-            End If
-        End Using
+                    ' Memeriksa apakah berhasil membaca baris pertama
+                    If (textline Is Nothing) Or (Not textline.Contains(ContentItem)) Then
+                        stringcek = True
+                    End If
+                End Using
 
+            Catch ex As Exception
+                MetroMessageBox.Show(Me, ex.Message)
+                Return
+            End Try
+        Else
+            MetroMessageBox.Show(Me, "File GStyle_tracking.txt tidak ditemukan.")
+            Return
+        End If
+
+        Console.WriteLine(stringcek)
         ''jika tidak ada text maka tulis text di file .txt
         If stringcek = True Then
             'SaveTextTrackingTemplating()
@@ -102,10 +114,39 @@ Public Class Sample_Tracking
         LoadTextTrackingTemplating()
     End Sub
 
-    Private Sub MetroLink1_Click(sender As Object, e As EventArgs) Handles MetroLink1.Click
+    Private Sub ComboBoxEdit1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxEdit1.SelectedIndexChanged
+        Dim fileName As String = "C:\hcqc asset\" + ComboBoxEdit1.Text + ".xml"
+        Dim FilePath As String = "C:\hcqc asset\GStyle_tracking.txt"
+        Dim searchText As String = ComboBoxEdit1.SelectedItem
+        Dim lines As List(Of String) = File.ReadAllLines(FilePath).ToList()
+
+        Try
+            GridView1.RestoreLayoutFromXml(fileName)
+        Catch ex As Exception
+            'jika file .xml tidak ada hapus daftar list combobox
+            lines.RemoveAll(Function(line) line.Trim() = searchText)
+            File.WriteAllLines(FilePath, lines)
+            MsgBox("GridViewTemplate is error on " & ex.Message.ToString)
+
+            LoadTextTrackingTemplating()
+        End Try
+    End Sub
+
+    Private Sub DeleteView_Click(sender As Object, e As EventArgs) Handles MetroLink1.Click
         ''proses DELETE file template view
-        Dim fileName As String = Application.StartupPath() + "\" + ComboBoxEdit1.SelectedItem + ".xml"
-        If File.Exists(fileName) Then
+        Dim fileName As String = "C:\hcqc asset\" + ComboBoxEdit1.Text + ".xml"
+        If ComboBoxEdit1.Text Is Nothing Then
+            MetroMessageBox.Show(Me, "Tidak ada yang harus dihapus. Lanjutkan hidup dan terima keadaan.")
+            Return
+        End If
+
+        Dim result As Integer = MetroMessageBox.Show(Me, "Yakin diHAPUS tampilan " & ComboBoxEdit1.Text & " ??", Me.Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, 211)
+        If result = DialogResult.Cancel Then
+            MetroMessageBox.Show(Me, "Tidak ada yang harus dihapus. Lanjutkan hidup dan terima keadaan.")
+            Return
+        End If
+
+        If Not File.Exists(fileName) Then
             My.Computer.FileSystem.DeleteFile(
                 fileName,
                 FileIO.UIOption.AllDialogs,
@@ -132,66 +173,6 @@ Public Class Sample_Tracking
         GridControl1.Refresh()
         'GridControl1.ActiveFilterString = "[City] = 'Paris'"
     End Sub
-
-
-    Private Sub Metrogrid1_LinkCellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-        'If e.RowIndex = -1 OrElse MetroGrid1.Columns(e.ColumnIndex).Name <> "StatusResultColumn" Then Return
-        'Dim i As Integer
-        'Dim tgl As Date
-
-        'With MetroGrid1
-        '    If MetroGrid1.Columns(e.ColumnIndex).Name = "StatusResultColumn" Or .Columns(e.ColumnIndex).Index = 15 Then
-        '        'Find current mouse cursor position
-        '        i = .CurrentRow.Index
-        '        Dim statusTracking = New Status_Tracking
-        '        statusTracking.Lreqnum.Text = .Rows(i).Cells("IdColumn").Value.ToString
-        '        statusTracking.LlabNum.Text = .Rows(i).Cells("LabnumColumn").Value.ToString
-        '        statusTracking.Lvariety.Text = .Rows(i).Cells("VarietyColumn").Value.ToString
-        '        statusTracking.Lfarmer.Text = .Rows(i).Cells("FarmerColumn").Value.ToString
-        '        tgl = .Rows(i).Cells("HarvestColumn").Value
-        '        statusTracking.Lharvest.Text = tgl.ToString("dd-MM-yyyy")
-        '        statusTracking.Ljob.Text = .Rows(i).Cells("NomnlColumn").Value.ToString & " / " & .Rows(i).Cells("NojobColumn").Value.ToString
-        '        statusTracking.LLocation.Text = .Rows(i).Cells("LocationColumn").Value.ToString
-        '        statusTracking.LabelLabnum.Text = .Rows(i).Cells("LabnumColumn").Value.ToString
-        '        statusTracking.Text = "Status Tracking " & .Rows(i).Cells("StatusResultColumn").Value.ToString
-
-        '        statusTracking.ShowDialog(Me)
-        '    End If
-        'End With
-
-
-    End Sub
-
-    ''control untuk update penerima sample di tolak/TL khusus RM
-    ''Datagrid TO new From Object textboxs and labels
-    'Private Sub MetroGrid2_LinkCellContentClick(sender As Object, e As DataGridViewCellEventArgs)
-    '    If e.RowIndex = -1 OrElse MetroGrid2.Columns(e.ColumnIndex).Name <> "IdColumnGrid2" Then Return
-    '    Dim i As Integer
-    '    Dim tgl As Date
-
-    '    With MetroGrid2
-    '        If MetroGrid2.Columns(e.ColumnIndex).Name = "IdColumnGrid2" Then
-    '            'Find current mouse cursor position
-    '            i = .CurrentRow.Index
-    '            Dim returnForm = New Sample_Return_Form
-    '            returnForm.Lreqnum.Text = .Rows(i).Cells("IdColumnGrid2").Value.ToString
-    '            returnForm.Lvariety.Text = .Rows(i).Cells("VarietyColumnGrid2").Value.ToString
-    '            returnForm.Lfarmer.Text = .Rows(i).Cells("FarmerColumnGrid2").Value.ToString
-    '            tgl = .Rows(i).Cells("HarvestColumnGrid2").Value
-    '            returnForm.Lharvest.Text = tgl.ToString("dd-MM-yyyy")
-    '            returnForm.Ljob.Text = .Rows(i).Cells("NojobColumnGrid2").Value.ToString
-    '            returnForm.LLocation.Text = .Rows(i).Cells("LocationColumnGrid2").Value.ToString
-
-    '            returnForm.Tnama.Text = .Rows(i).Cells("OfficerColumn").Value.ToString
-    '            returnForm.Tremark.Text = .Rows(i).Cells("RemarkColumn").Value.ToString
-
-    '            If returnForm.ShowDialog(Me) = DialogResult.OK Then
-    '                OnRefreshEventHendler()
-    '                returnForm.Close()
-    '            End If
-    '        End If
-    '    End With
-    'End Sub
 
     Private Sub MetroTabControl1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles MetroTabControl1.SelectedIndexChanged
         'suppose your *finance tab* instance is TabPageFinance 
@@ -238,10 +219,13 @@ Public Class Sample_Tracking
             MetroMessageBox.Show(Me, "'Start Date' harus lebih kecil dari 'End Date'", "Filter Date Tracking")
             Return
         End If
-        Dim start_date As String = StartDate.Value.Date.ToString("yyyyMMdd")
-        Dim end_date As String = EndDate.Value.Date.ToString("yyyyMMdd")
+        '' Mengatur tanggal awal
+        Dim getstartDate As DateTime = EndDate.Value.Date
 
-        Me.Report_status_pengujianTableAdapter.FillByDateFilter(Me.HCQC_NewDataset.report_status_pengujian, start_date, end_date)
+        '' Menambahkan satu hari ke tanggal awal dan mengurangi satu detik
+        Dim endDateTime As DateTime = getstartDate.AddDays(1).AddSeconds(-1)
+
+        Me.Report_status_pengujianTableAdapter.FillByDateRange(Me.HCQC_NewDataset.report_status_pengujian, StartDate.Value.Date.ToString("yyyy-MM-ddTHH:mm:ss"), endDateTime.ToString("yyyy-MM-ddTHH:mm:ss"))
     End Sub
 
     Public Sub CariTextBox(ByVal parameterCari As String, ByVal strVal As String)
@@ -408,15 +392,6 @@ Public Class Sample_Tracking
         Dim b As Brush = SystemBrushes.ControlText
         e.Graphics.DrawString(rowNumber, MetroGrid1.Font, b, e.RowBounds.Location.X + 15,
         e.RowBounds.Location.Y + ((e.RowBounds.Height - size.Height) / 2))
-    End Sub
-
-    Private Sub ComboBoxEdit1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxEdit1.SelectedIndexChanged
-        Dim fileName As String = ComboBoxEdit1.SelectedItem + ".xml"
-        Try
-            GridView1.RestoreLayoutFromXml(fileName)
-        Catch ex As Exception
-            MsgBox("GridViewTemplate is error on " & ex.Message.ToString)
-        End Try
     End Sub
 
     Private Sub MetroLink1_MouseEnter(sender As Object, e As EventArgs) Handles MetroLink1.MouseEnter

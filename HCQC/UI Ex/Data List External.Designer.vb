@@ -38,7 +38,7 @@ Partial Class Data_List_External
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
         Me.ExternalJoinBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet
+        Me.HCQC_serverDataSet = New HCQC_serverDataSet
         Me.NolabDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.KpdDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.AlamatDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -69,8 +69,8 @@ Partial Class Data_List_External
         Me.MtdkaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.KetDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.EksternalBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.ExternalJoinTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.ExternalJoinTableAdapter
-        Me.EksternalTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.eksternalTableAdapter
+        Me.ExternalJoinTableAdapter = New HCQC_serverDataSetTableAdapters.ExternalJoinTableAdapter
+        Me.EksternalTableAdapter = New HCQC_serverDataSetTableAdapters.eksternalTableAdapter
         Me.NolabDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.VarietyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.NojobDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -726,12 +726,12 @@ Partial Class Data_List_External
     Friend WithEvents MetroTabPage1 As MetroFramework.Controls.MetroTabPage
     Friend WithEvents MetroTabPage2 As MetroFramework.Controls.MetroTabPage
     Friend WithEvents MetroGrid1 As MetroFramework.Controls.MetroGrid
-    Friend WithEvents HCQC_serverDataSet As WindowsApplication1.HCQC_serverDataSet
+    Friend WithEvents HCQC_serverDataSet As HCQC_serverDataSet
     Friend WithEvents ExternalJoinBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents ExternalJoinTableAdapter As WindowsApplication1.HCQC_serverDataSetTableAdapters.ExternalJoinTableAdapter
+    Friend WithEvents ExternalJoinTableAdapter As HCQC_serverDataSetTableAdapters.ExternalJoinTableAdapter
     Friend WithEvents MetroGrid2 As MetroFramework.Controls.MetroGrid
     Friend WithEvents EksternalBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents EksternalTableAdapter As WindowsApplication1.HCQC_serverDataSetTableAdapters.eksternalTableAdapter
+    Friend WithEvents EksternalTableAdapter As HCQC_serverDataSetTableAdapters.eksternalTableAdapter
     Friend WithEvents NolabDataGridViewTextBoxColumn1 As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents KpdDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents AlamatDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn

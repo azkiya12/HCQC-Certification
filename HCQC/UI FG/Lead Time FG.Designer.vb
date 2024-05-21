@@ -29,10 +29,10 @@ Partial Class Lead_Time_FG
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid
         Me.FgleadtimeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet
+        Me.HCQC_serverDataSet = New HCQC_serverDataSet
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
-        Me.Fg_leadtimeTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.fg_leadtimeTableAdapter
+        Me.Fg_leadtimeTableAdapter = New HCQC_serverDataSetTableAdapters.fg_leadtimeTableAdapter
         Me.NolabDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.VarietyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.NojobDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -276,9 +276,9 @@ Partial Class Lead_Time_FG
     Friend WithEvents MetroGrid1 As MetroFramework.Controls.MetroGrid
     Friend WithEvents MetroStyleManager1 As MetroFramework.Components.MetroStyleManager
     Friend WithEvents MetroStyleExtender1 As MetroFramework.Components.MetroStyleExtender
-    Friend WithEvents HCQC_serverDataSet As WindowsApplication1.HCQC_serverDataSet
+    Friend WithEvents HCQC_serverDataSet As HCQC_serverDataSet
     Friend WithEvents FgleadtimeBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Fg_leadtimeTableAdapter As WindowsApplication1.HCQC_serverDataSetTableAdapters.fg_leadtimeTableAdapter
+    Friend WithEvents Fg_leadtimeTableAdapter As HCQC_serverDataSetTableAdapters.fg_leadtimeTableAdapter
     Friend WithEvents NolabDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents VarietyDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents NojobDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn

@@ -59,7 +59,7 @@ Partial Class Data_List_Grafity
         Me.VgfncDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.vg_tgl_input = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GrafityNewJoinBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet()
+        Me.HCQC_serverDataSet = New HCQC_serverDataSet()
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
@@ -83,8 +83,8 @@ Partial Class Data_List_Grafity
         Me.VgfncDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.GrafitiJoinBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
-        Me.GrafityNewJoinTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.GrafityNewJoinTableAdapter()
-        Me.GrafitiJoinTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.GrafitiJoinTableAdapter()
+        Me.GrafityNewJoinTableAdapter = New HCQC_serverDataSetTableAdapters.GrafityNewJoinTableAdapter()
+        Me.GrafitiJoinTableAdapter = New HCQC_serverDataSetTableAdapters.GrafitiJoinTableAdapter()
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GrafityNewJoinBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HCQC_serverDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -598,15 +598,15 @@ Partial Class Data_List_Grafity
     End Sub
     Friend WithEvents MetroGrid1 As MetroFramework.Controls.MetroGrid
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
-    Friend WithEvents HCQC_serverDataSet As WindowsApplication1.HCQC_serverDataSet
+    Friend WithEvents HCQC_serverDataSet As HCQC_serverDataSet
     Friend WithEvents GrafityNewJoinBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents GrafityNewJoinTableAdapter As WindowsApplication1.HCQC_serverDataSetTableAdapters.GrafityNewJoinTableAdapter
+    Friend WithEvents GrafityNewJoinTableAdapter As HCQC_serverDataSetTableAdapters.GrafityNewJoinTableAdapter
     Friend WithEvents MetroTabControl1 As MetroFramework.Controls.MetroTabControl
     Friend WithEvents MetroTabPage1 As MetroFramework.Controls.MetroTabPage
     Friend WithEvents MetroTabPage2 As MetroFramework.Controls.MetroTabPage
     Friend WithEvents MetroGrid2 As MetroFramework.Controls.MetroGrid
     Friend WithEvents GrafitiJoinBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents GrafitiJoinTableAdapter As WindowsApplication1.HCQC_serverDataSetTableAdapters.GrafitiJoinTableAdapter
+    Friend WithEvents GrafitiJoinTableAdapter As HCQC_serverDataSetTableAdapters.GrafitiJoinTableAdapter
     Friend WithEvents MetroStyleManager1 As MetroFramework.Components.MetroStyleManager
     Friend WithEvents NolabDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents VarietyDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn

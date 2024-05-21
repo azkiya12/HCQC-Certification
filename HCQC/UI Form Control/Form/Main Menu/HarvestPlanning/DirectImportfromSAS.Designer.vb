@@ -89,9 +89,9 @@ Partial Class DirectImportfromSAS
         Me.MetroLabel1.AutoSize = True
         Me.MetroLabel1.Location = New System.Drawing.Point(23, 60)
         Me.MetroLabel1.Name = "MetroLabel1"
-        Me.MetroLabel1.Size = New System.Drawing.Size(310, 19)
+        Me.MetroLabel1.Size = New System.Drawing.Size(325, 19)
         Me.MetroLabel1.TabIndex = 72
-        Me.MetroLabel1.Text = "Direct load data from SAS Weekly Harvest Planning"
+        Me.MetroLabel1.Text = "Direct import data from SAS Weekly Harvest Planning"
         '
         'btnSubmit
         '

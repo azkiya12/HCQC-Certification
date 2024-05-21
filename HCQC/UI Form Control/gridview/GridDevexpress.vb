@@ -1,10 +1,13 @@
 ﻿Imports System.ComponentModel
+Imports System.Threading.Tasks
 
 Public Class GridDevexpress
 
     Private Sub GridDevexpress_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         MainForm.Containermenu2.BtnGlobal.Enabled = True
     End Sub
+
+
 
     Private Sub LinkRefresh_Click(sender As Object, e As EventArgs) Handles LinkRefresh.Click
         'BackgroundWorker1.RunWorkerAsync()
@@ -17,33 +20,57 @@ Public Class GridDevexpress
         End If
     End Sub
 
-    Private Sub LinkLastYear_Click(sender As Object, e As EventArgs) Handles LinkLastYear.Click
+    Private Async Function FillByLastYearAsync() As Task
+        Await Task.Delay(1500)
+        ' Menjalankan metode Fill dalam sebuah task
+        Report_global_viewTableAdapter.Fill(HCQC_NewDataset.report_global_view)
+    End Function
+
+    Private Async Sub LinkLastYear_Click(sender As Object, e As EventArgs) Handles LinkLastYear.Click
         BtnFilterDate.Enabled = False
         Dim dt As Date = Now
         Dim startDt As New Date(dt.Year - 1, 1, 1)
+        Dim fillterStr, fillterStr2 As String
         StartDate.Value = startDt.ToString("dd-MMM-yyyy")
         EndDate.Value = Today.ToString("dd-MMM-yyyy")
 
-        Me.Report_global_viewTableAdapter.FillByLastYear(Me.HCQC_NewDataset.report_global_view)
+        ProgressSpinner1.Visible = True
+        LabelStatus.Text = "Loading...| Get data Last Year"
+        MetroPanel1.Enabled = False
 
-        Dim fillterStr, fillterStr2 As String
+        Await FillByLastYearAsync()
+        ''Me.Report_global_viewTableAdapter.FillByLastYear(Me.HCQC_NewDataset.report_global_view)
+
         fillterStr = Year(Now)
         fillterStr = "QC" & fillterStr & "%"
 
         fillterStr2 = Year(Now) - 1
         fillterStr2 = "QC" & fillterStr2 & "%"
 
-        GerminationTableAdapter1.FillByStr(Me.HCQC_NewDataset.germination, fillterStr, fillterStr2)
-        ViabilityTableAdapter1.FillByStr(Me.HCQC_NewDataset.viability, fillterStr, fillterStr2)
-        RafactionTableAdapter1.FillByStr(Me.HCQC_NewDataset.rafaction, fillterStr, fillterStr2)
-        MoistureTableAdapter1.FillByStr(Me.HCQC_NewDataset.moisture, fillterStr, fillterStr2)
-        PurityTableAdapter1.FillByStr(Me.HCQC_NewDataset.purity, fillterStr, fillterStr2)
-        ArchiveTableAdapter1.FillByStr(Me.HCQC_NewDataset.archive, fillterStr, fillterStr2)
+
+        'GerminationTableAdapter1.FillByStr(Me.HCQC_NewDataset.germination, fillterStr, fillterStr2)
+        LabelStatus.Text = "Loading...| 2 get data Germination"
+        Await GerminationTableAdapter1.FillAsync(Me.HCQC_NewDataset, fillterStr, fillterStr2)
+        LabelStatus.Text = "Loading...| 3 get data Viability"
+        Await ViabilityTableAdapter1.FillAsync(Me.HCQC_NewDataset, fillterStr, fillterStr2)
+        LabelStatus.Text = "Loading...| 4 get data Rafactiony"
+        Await RafactionTableAdapter1.FillAsync(Me.HCQC_NewDataset, fillterStr, fillterStr2)
+        LabelStatus.Text = "Loading...| 5 get data Moisture"
+        Await MoistureTableAdapter1.FillAsync(Me.HCQC_NewDataset, fillterStr, fillterStr2)
+        LabelStatus.Text = "Loading...| 6 get data Purity"
+        Await PurityTableAdapter1.FillAsync(Me.HCQC_NewDataset, fillterStr, fillterStr2)
+        LabelStatus.Text = "Loading...| 7 get data ArchiveFG"
+        Await ArchiveTableAdapter1.FillAsync(Me.HCQC_NewDataset, fillterStr, fillterStr2)
         BtnFilterDate.Enabled = True
+        ProgressSpinner1.Visible = False
+        MetroPanel1.Enabled = True
+        BtnFilterDate.Enabled = True
+        LabelStatus.Text = "Nilai persentase -1 menandakan bahwa sampel tidak di lakukan pengujian tertentu"
         LinkRefresh.Tag = "lastyear"
+
     End Sub
 
-    Private Sub LinkThisYear_Click(sender As Object, e As EventArgs) Handles LinkThisYear.Click
+    Private Async Sub LinkThisYear_Click(sender As Object, e As EventArgs) Handles LinkThisYear.Click
         BtnFilterDate.Enabled = False
         Dim dt As Date = Now
         Dim startDt As New Date(dt.Year, 1, 1)
@@ -53,6 +80,8 @@ Public Class GridDevexpress
         ProgressSpinner1.Visible = True
         LabelStatus.Text = "Loading get data this year..."
         MetroPanel1.Enabled = False
+
+        Await Task.Delay(1500)
         Me.Report_global_viewTableAdapter.FillByThisYear(Me.HCQC_NewDataset.report_global_view)
         Dim fillterStr, fillterStr2 As String
         fillterStr = Year(Now)
@@ -61,36 +90,29 @@ Public Class GridDevexpress
         fillterStr2 = Year(Now)
         fillterStr2 = "QC" & fillterStr2 & "%"
         LabelStatus.Text = "Loading...|2 get data Germination"
-        GerminationTableAdapter1.FillByStr(Me.HCQC_NewDataset.germination, fillterStr, fillterStr2)
+
+        'GerminationTableAdapter1.FillByStr(Me.HCQC_NewDataset.germination, fillterStr, fillterStr2)
+        Await GerminationTableAdapter1.FillAsync(Me.HCQC_NewDataset, fillterStr, fillterStr2)
         LabelStatus.Text = "Loading...|3 get data Viability"
-        ViabilityTableAdapter1.FillByStr(Me.HCQC_NewDataset.viability, fillterStr, fillterStr2)
+        Await ViabilityTableAdapter1.FillAsync(Me.HCQC_NewDataset, fillterStr, fillterStr2)
         LabelStatus.Text = "Loading...|4 get data Rafactiony"
-        RafactionTableAdapter1.FillByStr(Me.HCQC_NewDataset.rafaction, fillterStr, fillterStr2)
+        Await RafactionTableAdapter1.FillAsync(Me.HCQC_NewDataset, fillterStr, fillterStr2)
         LabelStatus.Text = "Loading...|5 get data Moisture"
-        MoistureTableAdapter1.FillByStr(Me.HCQC_NewDataset.moisture, fillterStr, fillterStr2)
+        Await MoistureTableAdapter1.FillAsync(Me.HCQC_NewDataset, fillterStr, fillterStr2)
         LabelStatus.Text = "Loading...|6 get data Purity"
-        PurityTableAdapter1.FillByStr(Me.HCQC_NewDataset.purity, fillterStr, fillterStr2)
+        Await PurityTableAdapter1.FillAsync(Me.HCQC_NewDataset, fillterStr, fillterStr2)
         LabelStatus.Text = "Loading...|7 get data ArchiveFG"
-        ArchiveTableAdapter1.FillByStr(Me.HCQC_NewDataset.archive, fillterStr, fillterStr2)
+        Await ArchiveTableAdapter1.FillAsync(Me.HCQC_NewDataset, fillterStr, fillterStr2)
+
+        BtnFilterDate.Enabled = True
         ProgressSpinner1.Visible = False
         MetroPanel1.Enabled = True
-        BtnFilterDate.Enabled = True
         LabelStatus.Text = "Nilai persentase -1 menandakan bahwa sampel tidak di lakukan pengujian tertentu"
         LinkRefresh.Tag = "thisyear"
     End Sub
 
-    Private Sub LinkAll_Click(sender As Object, e As EventArgs)
-        Me.Report_global_viewTableAdapter.Fill(Me.HCQC_NewDataset.report_global_view)
+    Private Async Sub BtnFilterDate_Click(sender As Object, e As EventArgs) Handles BtnFilterDate.Click
 
-        GerminationTableAdapter1.Fill(Me.HCQC_NewDataset.germination)
-        ViabilityTableAdapter1.Fill(Me.HCQC_NewDataset.viability)
-        RafactionTableAdapter1.Fill(Me.HCQC_NewDataset.rafaction)
-        MoistureTableAdapter1.Fill(Me.HCQC_NewDataset.moisture)
-        PurityTableAdapter1.Fill(Me.HCQC_NewDataset.purity)
-        ArchiveTableAdapter1.Fill(Me.HCQC_NewDataset.archive)
-    End Sub
-
-    Private Sub BtnFilterDate_Click(sender As Object, e As EventArgs) Handles BtnFilterDate.Click
         'If StartDate.Value.Date > EndDate.Value.Date Then
         '    MetroMessageBox.Show(Me, "'Start Date' harus lebih kecil dari 'End Date'", "Global Report HCQC")
         '    Return
@@ -98,9 +120,16 @@ Public Class GridDevexpress
 
         ProgressSpinner1.Visible = True
 
-        LabelStatus.Text = "Loading get data this year..."
+        LabelStatus.Text = "Loading get data"
         MetroPanel1.Enabled = False
         BtnFilterDate.Enabled = False
+
+        '' Mengatur tanggal awal
+        Dim getstartDate As DateTime = EndDate.Value.Date
+
+        '' Menambahkan satu hari ke tanggal awal dan mengurangi satu detik
+        Dim endDateTime As DateTime = getstartDate.AddDays(1).AddSeconds(-1)
+
 
         Dim filterStart, filterEnd As String
         filterStart = StartDate.Value.Date.ToString("yyyy") & StartDate.Value.Date.ToString("MM")
@@ -109,22 +138,24 @@ Public Class GridDevexpress
         filterEnd = EndDate.Value.Date.ToString("yyyy") & EndDate.Value.Date.ToString("MM")
         filterEnd = "QC" & filterEnd & "%"
         'Console.WriteLine(filterStart & " --- " & filterEnd)
-        Console.WriteLine("------" & StartDate.Value.Date)
-        Console.WriteLine("------" & EndDate.Value.Date)
-        Me.Report_global_viewTableAdapter.FillByFilterDate(Me.HCQC_NewDataset.report_global_view, StartDate.Value.Date.ToString("yyyyMMdd"), EndDate.Value.Date.ToString("yyyyMMdd"))
+        Console.WriteLine("------" & StartDate.Value.Date.ToString("yyyy-MM-ddTHH:mm:ss"))
+        Console.WriteLine("------" & EndDate.Value.Date.ToString("yyyy-MM-ddTHH:mm:ss"))
+        Console.WriteLine("------" & endDateTime.ToString("yyyy-MM-ddTHH:mm:ss"))
+        Await Task.Delay(1000)
+        Me.Report_global_viewTableAdapter.FillByDateRange(Me.HCQC_NewDataset.report_global_view, StartDate.Value.Date.ToString("yyyy-MM-ddTHH:mm:ss"), endDateTime.ToString("yyyy-MM-ddTHH:mm:ss"))
 
         LabelStatus.Text = "Loading...|2 get data Germination"
-        GerminationTableAdapter1.FillByStr(Me.HCQC_NewDataset.germination, filterStart, filterEnd)
+        Await GerminationTableAdapter1.FillAsync(Me.HCQC_NewDataset, filterStart, filterEnd)
         LabelStatus.Text = "Loading...|3 get data Viability"
-        ViabilityTableAdapter1.FillByStr(Me.HCQC_NewDataset.viability, filterStart, filterEnd)
+        Await ViabilityTableAdapter1.FillAsync(Me.HCQC_NewDataset, filterStart, filterEnd)
         LabelStatus.Text = "Loading...|4 get data Rafactiony"
-        RafactionTableAdapter1.FillByStr(Me.HCQC_NewDataset.rafaction, filterStart, filterEnd)
+        Await RafactionTableAdapter1.FillAsync(Me.HCQC_NewDataset, filterStart, filterEnd)
         LabelStatus.Text = "Loading...|5 get data Moisture"
-        MoistureTableAdapter1.FillByStr(Me.HCQC_NewDataset.moisture, filterStart, filterEnd)
+        Await MoistureTableAdapter1.FillAsync(Me.HCQC_NewDataset, filterStart, filterEnd)
         LabelStatus.Text = "Loading...|6 get data Purity"
-        PurityTableAdapter1.FillByStr(Me.HCQC_NewDataset.purity, filterStart, filterEnd)
+        Await PurityTableAdapter1.FillAsync(Me.HCQC_NewDataset, filterStart, filterEnd)
         LabelStatus.Text = "Loading...|7 get data ArchiveFG"
-        ArchiveTableAdapter1.FillByStr(Me.HCQC_NewDataset.archive, filterStart, filterEnd)
+        Await ArchiveTableAdapter1.FillAsync(Me.HCQC_NewDataset, filterStart, filterEnd)
 
         ProgressSpinner1.Visible = False
         MetroPanel1.Enabled = True

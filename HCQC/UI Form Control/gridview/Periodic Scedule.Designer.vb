@@ -29,6 +29,17 @@ Partial Class Periodic_Scedule
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Periodic_Scedule))
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid()
+        Me.nojobColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BtnFilterDate = New Bunifu.Framework.UI.BunifuImageButton()
+        Me.MetroLabel18 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel16 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel15 = New MetroFramework.Controls.MetroLabel()
+        Me.EndDate = New System.Windows.Forms.DateTimePicker()
+        Me.StartDate = New System.Windows.Forms.DateTimePicker()
+        Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.LinkRefresh = New MetroFramework.Controls.MetroLink()
+        Me.LinkLastMonth = New MetroFramework.Controls.MetroLink()
+        Me.LinkThisMonth = New MetroFramework.Controls.MetroLink()
         Me.LabnumDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VarietyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HarvestDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -41,10 +52,11 @@ Partial Class Periodic_Scedule
         Me.TimeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NexttestDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReportperiodicnextviewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet()
-        Me.BtnSave = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.Report_periodicnext_viewTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.report_periodicnext_viewTableAdapter()
+        Me.HCQC_serverDataSet = New HCQC_serverDataSet()
+        Me.Report_periodicnext_viewTableAdapter = New HCQC_serverDataSetTableAdapters.report_periodicnext_viewTableAdapter()
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.BtnFilterDate, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MetroPanel1.SuspendLayout()
         CType(Me.ReportperiodicnextviewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HCQC_serverDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -86,7 +98,7 @@ Partial Class Periodic_Scedule
         Me.MetroGrid1.EnableHeadersVisualStyles = False
         Me.MetroGrid1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.MetroGrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.MetroGrid1.Location = New System.Drawing.Point(23, 99)
+        Me.MetroGrid1.Location = New System.Drawing.Point(24, 109)
         Me.MetroGrid1.Name = "MetroGrid1"
         Me.MetroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -99,8 +111,147 @@ Partial Class Periodic_Scedule
         Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.MetroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.MetroGrid1.Size = New System.Drawing.Size(754, 328)
+        Me.MetroGrid1.Size = New System.Drawing.Size(754, 318)
         Me.MetroGrid1.TabIndex = 0
+        '
+        'nojobColumn
+        '
+        Me.nojobColumn.DataPropertyName = "nojob"
+        Me.nojobColumn.HeaderText = "Lot/Job Sas"
+        Me.nojobColumn.Name = "nojobColumn"
+        '
+        'BtnFilterDate
+        '
+        Me.BtnFilterDate.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
+        Me.BtnFilterDate.Image = CType(resources.GetObject("BtnFilterDate.Image"), System.Drawing.Image)
+        Me.BtnFilterDate.ImageActive = Nothing
+        Me.BtnFilterDate.Location = New System.Drawing.Point(497, 78)
+        Me.BtnFilterDate.Name = "BtnFilterDate"
+        Me.BtnFilterDate.Size = New System.Drawing.Size(31, 20)
+        Me.BtnFilterDate.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
+        Me.BtnFilterDate.TabIndex = 164
+        Me.BtnFilterDate.TabStop = False
+        Me.BtnFilterDate.Zoom = 10
+        '
+        'MetroLabel18
+        '
+        Me.MetroLabel18.AutoSize = True
+        Me.MetroLabel18.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.MetroLabel18.Location = New System.Drawing.Point(367, 81)
+        Me.MetroLabel18.Name = "MetroLabel18"
+        Me.MetroLabel18.Size = New System.Drawing.Size(12, 15)
+        Me.MetroLabel18.TabIndex = 163
+        Me.MetroLabel18.Text = "-"
+        '
+        'MetroLabel16
+        '
+        Me.MetroLabel16.AutoSize = True
+        Me.MetroLabel16.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.MetroLabel16.Location = New System.Drawing.Point(385, 60)
+        Me.MetroLabel16.Name = "MetroLabel16"
+        Me.MetroLabel16.Size = New System.Drawing.Size(53, 15)
+        Me.MetroLabel16.TabIndex = 162
+        Me.MetroLabel16.Text = "End Date"
+        '
+        'MetroLabel15
+        '
+        Me.MetroLabel15.AutoSize = True
+        Me.MetroLabel15.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.MetroLabel15.Location = New System.Drawing.Point(255, 60)
+        Me.MetroLabel15.Name = "MetroLabel15"
+        Me.MetroLabel15.Size = New System.Drawing.Size(59, 15)
+        Me.MetroLabel15.TabIndex = 161
+        Me.MetroLabel15.Text = "Start Date"
+        '
+        'EndDate
+        '
+        Me.EndDate.CustomFormat = "dd-mmm-yyyy"
+        Me.EndDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.EndDate.Location = New System.Drawing.Point(385, 78)
+        Me.EndDate.MaxDate = New Date(2050, 12, 31, 0, 0, 0, 0)
+        Me.EndDate.MinDate = New Date(1990, 1, 1, 0, 0, 0, 0)
+        Me.EndDate.Name = "EndDate"
+        Me.EndDate.Size = New System.Drawing.Size(106, 20)
+        Me.EndDate.TabIndex = 160
+        Me.EndDate.Value = New Date(2022, 9, 20, 8, 22, 25, 0)
+        '
+        'StartDate
+        '
+        Me.StartDate.CustomFormat = "dd-mmm-yyyy"
+        Me.StartDate.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
+        Me.StartDate.Location = New System.Drawing.Point(255, 78)
+        Me.StartDate.MaxDate = New Date(2050, 12, 31, 0, 0, 0, 0)
+        Me.StartDate.MinDate = New Date(1990, 1, 1, 0, 0, 0, 0)
+        Me.StartDate.Name = "StartDate"
+        Me.StartDate.Size = New System.Drawing.Size(106, 20)
+        Me.StartDate.TabIndex = 159
+        Me.StartDate.Value = New Date(2022, 9, 20, 0, 0, 0, 0)
+        '
+        'MetroPanel1
+        '
+        Me.MetroPanel1.Controls.Add(Me.LinkRefresh)
+        Me.MetroPanel1.Controls.Add(Me.LinkLastMonth)
+        Me.MetroPanel1.Controls.Add(Me.LinkThisMonth)
+        Me.MetroPanel1.HorizontalScrollbarBarColor = True
+        Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroPanel1.HorizontalScrollbarSize = 10
+        Me.MetroPanel1.Location = New System.Drawing.Point(24, 75)
+        Me.MetroPanel1.Margin = New System.Windows.Forms.Padding(3, 3, 3, 8)
+        Me.MetroPanel1.Name = "MetroPanel1"
+        Me.MetroPanel1.Size = New System.Drawing.Size(225, 23)
+        Me.MetroPanel1.TabIndex = 158
+        Me.MetroPanel1.VerticalScrollbarBarColor = True
+        Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroPanel1.VerticalScrollbarSize = 10
+        '
+        'LinkRefresh
+        '
+        Me.LinkRefresh.AutoSize = True
+        Me.LinkRefresh.BackColor = System.Drawing.Color.Transparent
+        Me.LinkRefresh.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkRefresh.FontWeight = MetroFramework.MetroLinkWeight.Regular
+        Me.LinkRefresh.Location = New System.Drawing.Point(0, 0)
+        Me.LinkRefresh.Margin = New System.Windows.Forms.Padding(0)
+        Me.LinkRefresh.Name = "LinkRefresh"
+        Me.LinkRefresh.Size = New System.Drawing.Size(70, 23)
+        Me.LinkRefresh.TabIndex = 57
+        Me.LinkRefresh.Tag = "thisyear"
+        Me.LinkRefresh.Text = "Refresh"
+        Me.LinkRefresh.UseCustomBackColor = True
+        Me.LinkRefresh.UseSelectable = True
+        Me.LinkRefresh.UseStyleColors = True
+        '
+        'LinkLastMonth
+        '
+        Me.LinkLastMonth.AutoSize = True
+        Me.LinkLastMonth.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLastMonth.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkLastMonth.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.LinkLastMonth.Location = New System.Drawing.Point(140, 0)
+        Me.LinkLastMonth.Margin = New System.Windows.Forms.Padding(0)
+        Me.LinkLastMonth.Name = "LinkLastMonth"
+        Me.LinkLastMonth.Size = New System.Drawing.Size(77, 23)
+        Me.LinkLastMonth.TabIndex = 86
+        Me.LinkLastMonth.Text = "Last Month"
+        Me.LinkLastMonth.UseCustomBackColor = True
+        Me.LinkLastMonth.UseSelectable = True
+        Me.LinkLastMonth.UseStyleColors = True
+        '
+        'LinkThisMonth
+        '
+        Me.LinkThisMonth.AutoSize = True
+        Me.LinkThisMonth.BackColor = System.Drawing.Color.Transparent
+        Me.LinkThisMonth.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkThisMonth.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.LinkThisMonth.Location = New System.Drawing.Point(70, 0)
+        Me.LinkThisMonth.Margin = New System.Windows.Forms.Padding(0)
+        Me.LinkThisMonth.Name = "LinkThisMonth"
+        Me.LinkThisMonth.Size = New System.Drawing.Size(70, 23)
+        Me.LinkThisMonth.TabIndex = 87
+        Me.LinkThisMonth.Text = "This Month"
+        Me.LinkThisMonth.UseCustomBackColor = True
+        Me.LinkThisMonth.UseSelectable = True
+        Me.LinkThisMonth.UseStyleColors = True
         '
         'LabnumDataGridViewTextBoxColumn
         '
@@ -125,12 +276,6 @@ Partial Class Periodic_Scedule
         Me.NomnlDataGridViewTextBoxColumn.DataPropertyName = "nomnl"
         Me.NomnlDataGridViewTextBoxColumn.HeaderText = "Manual"
         Me.NomnlDataGridViewTextBoxColumn.Name = "NomnlDataGridViewTextBoxColumn"
-        '
-        'nojobColumn
-        '
-        Me.nojobColumn.DataPropertyName = "nojob"
-        Me.nojobColumn.HeaderText = "Lot/Job Sas"
-        Me.nojobColumn.Name = "nojobColumn"
         '
         'ScopeDataGridViewTextBoxColumn
         '
@@ -185,40 +330,6 @@ Partial Class Periodic_Scedule
         Me.HCQC_serverDataSet.DataSetName = "HCQC_serverDataSet"
         Me.HCQC_serverDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'BtnSave
-        '
-        Me.BtnSave.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.BtnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.BtnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnSave.BorderRadius = 0
-        Me.BtnSave.ButtonText = "Refresh"
-        Me.BtnSave.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnSave.DisabledColor = System.Drawing.Color.Gray
-        Me.BtnSave.Iconcolor = System.Drawing.Color.Transparent
-        Me.BtnSave.Iconimage = CType(resources.GetObject("BtnSave.Iconimage"), System.Drawing.Image)
-        Me.BtnSave.Iconimage_right = Nothing
-        Me.BtnSave.Iconimage_right_Selected = Nothing
-        Me.BtnSave.Iconimage_Selected = Nothing
-        Me.BtnSave.IconMarginLeft = 0
-        Me.BtnSave.IconMarginRight = 0
-        Me.BtnSave.IconRightVisible = True
-        Me.BtnSave.IconRightZoom = 0R
-        Me.BtnSave.IconVisible = True
-        Me.BtnSave.IconZoom = 50.0R
-        Me.BtnSave.IsTab = False
-        Me.BtnSave.Location = New System.Drawing.Point(23, 63)
-        Me.BtnSave.Name = "BtnSave"
-        Me.BtnSave.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
-        Me.BtnSave.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.BtnSave.OnHoverTextColor = System.Drawing.Color.White
-        Me.BtnSave.selected = False
-        Me.BtnSave.Size = New System.Drawing.Size(126, 30)
-        Me.BtnSave.TabIndex = 2
-        Me.BtnSave.Text = "Refresh"
-        Me.BtnSave.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnSave.Textcolor = System.Drawing.Color.White
-        Me.BtnSave.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
         'Report_periodicnext_viewTableAdapter
         '
         Me.Report_periodicnext_viewTableAdapter.ClearBeforeFill = True
@@ -228,19 +339,28 @@ Partial Class Periodic_Scedule
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
-        Me.Controls.Add(Me.BtnSave)
+        Me.Controls.Add(Me.BtnFilterDate)
+        Me.Controls.Add(Me.MetroLabel18)
+        Me.Controls.Add(Me.MetroLabel16)
+        Me.Controls.Add(Me.MetroLabel15)
+        Me.Controls.Add(Me.EndDate)
+        Me.Controls.Add(Me.StartDate)
+        Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.MetroGrid1)
         Me.Name = "Periodic_Scedule"
         Me.Text = "Periodic Scedule List"
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.BtnFilterDate, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MetroPanel1.ResumeLayout(False)
+        Me.MetroPanel1.PerformLayout()
         CType(Me.ReportperiodicnextviewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HCQC_serverDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
     Friend WithEvents MetroGrid1 As MetroGrid
-    Friend WithEvents BtnSave As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents HCQC_serverDataSet As HCQC_serverDataSet
     Friend WithEvents ReportperiodicnextviewBindingSource As BindingSource
     Friend WithEvents Report_periodicnext_viewTableAdapter As HCQC_serverDataSetTableAdapters.report_periodicnext_viewTableAdapter
@@ -261,4 +381,14 @@ Partial Class Periodic_Scedule
     Friend WithEvents TestdateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TimeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NexttestDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents BtnFilterDate As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents MetroLabel18 As MetroLabel
+    Friend WithEvents MetroLabel16 As MetroLabel
+    Friend WithEvents MetroLabel15 As MetroLabel
+    Friend WithEvents EndDate As DateTimePicker
+    Friend WithEvents StartDate As DateTimePicker
+    Friend WithEvents MetroPanel1 As MetroPanel
+    Friend WithEvents LinkRefresh As MetroLink
+    Friend WithEvents LinkLastMonth As MetroLink
+    Friend WithEvents LinkThisMonth As MetroLink
 End Class

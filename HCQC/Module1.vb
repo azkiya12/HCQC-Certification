@@ -101,8 +101,9 @@ Module Module1
         Catch ex As Exception
             Return ex.Message
         Finally
-            'dread.Close()
-            con.Close()
+            If con.State = ConnectionState.Open Then
+                con.Close()
+            End If
         End Try
     End Function
 
@@ -277,4 +278,91 @@ Module Module1
 
     End Function
 
+    Public Function ReadDataFromDatabase(ByVal labnum As String, ByVal controls As Dictionary(Of String, Control)) As Boolean
+        'Function untuk manmpilkan identitas secara dinamis, contoh:
+
+        'Dim controls As New Dictionary(Of String, Control) From {
+        '        {"id", TextBox1},
+        '        {"variety", TexBox2},
+        '        {"farmer", Label1},
+        '        {"location", Label2},
+        '        {"harvest", LharvestGer},
+        '        {"job", LjobGer}
+        '    }
+        'ReadDataFromDatabase(tlabnumGer.Text, controls)
+
+        Try
+            openDB()
+            Dim sql As String = "SELECT [id], CONCAT([nomnl], ' - ', [nojob]) as job, [variety], [farmer], [location], [harvest]  
+                             FROM [qc_confirm_viewer] WHERE (labnum = @labnum)"
+            Using cmd As New SqlClient.SqlCommand(sql, con)
+                cmd.CommandType = CommandType.Text
+                cmd.Parameters.AddWithValue("@labnum", labnum)
+                Dim dread As SqlDataReader = cmd.ExecuteReader()
+                If dread.Read() Then
+                    For Each kvp As KeyValuePair(Of String, Control) In controls
+                        Dim fieldName As String = kvp.Key
+                        Dim control As Control = kvp.Value
+                        If dread.Item(fieldName) IsNot DBNull.Value Then
+                            control.Text = dread.Item(fieldName)
+                        Else
+                            control.Text = ""
+                        End If
+                    Next
+                    Return True ' Data berhasil dibaca
+                End If
+            End Using
+        Catch ex As Exception
+            MetroMessageBox.Show(Form.ActiveForm, "Error ID Sample: " + ex.Message, Form.ActiveForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+        Finally
+            If con.State = ConnectionState.Open Then
+                con.Close()
+            End If
+        End Try
+        Return False ' Data tidak ditemukan atau terjadi kesalahan
+    End Function
+
+    Public Function GetData(ByVal columns As String, ByVal tableName As String, ByVal filter As String) As DataTable
+        ' Function untuk mendapatkan data dengan menentukan kolom/field, table, filter
+        ' contoh penggunaan
+
+        'Dim columns As String = "kode_barang, nama_barang"
+        'Dim tableName As String = "Barang"
+        'Dim filter As String = "kategori = 'Alat Tulis'"
+
+        'Dim data As DataTable = GetData(columns, tableName, filter)
+        'DataGridView1.DataSource = data
+
+        Dim dataTable As New DataTable()
+
+        ' Membuat koneksi database
+        openDB()
+
+        Using con As New SqlConnection("connectionString")
+            ' Membuat objek command
+            Using cmd As New SqlCommand()
+                ' Menetapkan koneksi ke command
+                cmd.Connection = con
+                ' Menetapkan jenis perintah sebagai teks
+                cmd.CommandType = CommandType.Text
+                ' Membangun query SQL berdasarkan parameter
+                cmd.CommandText = $"SELECT {columns} FROM {tableName} WHERE {filter}"
+
+                Try
+                    ' Membuka koneksi
+                    con.Open()
+                    ' Membuat adapter data
+                    Using adapter As New SqlDataAdapter(cmd)
+                        ' Mengisi data ke DataTable
+                        adapter.Fill(dataTable)
+                    End Using
+                Catch ex As Exception
+                    ' Menampilkan pesan kesalahan jika terjadi
+                    MessageBox.Show("Error: " & ex.Message)
+                End Try
+            End Using
+        End Using
+
+        Return dataTable
+    End Function
 End Module

@@ -104,7 +104,32 @@ Public Class Moisture_Test
             tlabnum.Focus()
         End If
     End Sub
-
+    Private Sub GetIdSample()
+        ''mengambil data identitas sample dari sample_request
+        Dim sql As String
+        Try
+            openDB()
+            Sql = "SELECT [id],[nojob],[nomnl],[variety],[scope]  FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') "
+            cmd = New SqlClient.SqlCommand(Sql, con) With {
+                .CommandType = CommandType.Text,
+                .CommandText = Sql
+            }
+            dread = cmd.ExecuteReader
+            If dread.Read = True Then
+                Lreqnum.Text = dread.Item("id")
+                tvariety.Text = dread.Item("variety")
+                tlotref.Text = dread.Item("nojob")
+                tnoman.Text = dread.Item("nomnl")
+                tscope.Text = dread.Item("scope")
+            End If
+        Catch ex As Exception
+            MetroMessageBox.Show(Me, "Error ID Sample: " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+        Finally
+            If con.State = ConnectionState.Open Then
+                con.Close()
+            End If
+        End Try
+    End Sub
     Private Sub BtnFind_Click(sender As Object, e As EventArgs) Handles BtnFind.Click
         If String.IsNullOrEmpty(tlabnum.Text) Then
             MetroMessageBox.Show(Me, "Lab Number harus diisi!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
@@ -135,20 +160,7 @@ Public Class Moisture_Test
                     ttgltest.Text = tgltes.ToString(LabelDate1.Text)
 
                     ''mengambil data identitas sample dari sample_request
-                    openDB()
-                    sql = "Select labnum From receipt WHERE (labnum= '" & tlabnum.Text & "')"
-                    cmd = New SqlClient.SqlCommand(sql, con) With {
-                        .CommandType = CommandType.Text,
-                        .CommandText = sql
-                    }
-                    dread = cmd.ExecuteReader
-                    If dread.Read = True Then
-                        Lreqnum.Text = _DataToValue("SELECT [id] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tvariety.Text = _DataToValue("SELECT [variety] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tlotref.Text = _DataToValue("SELECT [nojob] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tnoman.Text = _DataToValue("SELECT [nomnl] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tscope.Text = _DataToValue("SELECT [scope] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    End If
+                    GetIdSample()
 
                     ''mengambil data dari method jika OVEN
                     If tmethod.Text = "Oven" Then
@@ -337,19 +349,39 @@ Public Class Moisture_Test
             Else
 
                 If _isBOF("moisture", "labnum", tlabnum.Text) = False Then
-
                     If _isBOF("receipt", "labnum", tlabnum.Text) = True Then
-                        Lreqnum.Text = _DataToValue("SELECT [id] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tvariety.Text = _DataToValue("SELECT [variety] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tlotref.Text = _DataToValue("SELECT [nojob] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tnoman.Text = _DataToValue("SELECT [nomnl] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tscope.Text = _DataToValue("SELECT [scope] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tanalyst.Text = _DataToValue("SELECT [moisture_namelog] FROM [report_status_pengujian] WHERE [labnum] = '" & tlabnum.Text & "'")
-                        Dim tgluji As Date = _DataToValue("SELECT [moisture_log] FROM [report_status_pengujian] WHERE [labnum]='" & tlabnum.Text & "'")
-                        ttgltest.Text = tgluji.ToString(LabelDate1.Text)
+                        GetIdSample()
+
+                        Try
+                            Dim sql As String
+                            Dim tgluji As Date
+                            openDB()
+                            Sql = "SELECT [moisture_namelog], [moisture_log] FROM [report_status_pengujian] WHERE [labnum] = '" & tlabnum.Text & "'"
+                            cmd = New SqlClient.SqlCommand(Sql, con) With {
+                                .CommandType = CommandType.Text,
+                                .CommandText = Sql
+                            }
+                            dread = cmd.ExecuteReader
+                            If dread.Read = True Then
+                                tanalyst.Text = dread.Item("moisture_namelog")
+                                tgluji = dread.Item("moisture_log")
+                                ttgltest.Text = tgluji.ToString(LabelDate1.Text)
+                            End If
+
+                        Catch ex As Exception
+                            MetroMessageBox.Show(Me, "Warning: Mohon untuk melakukan check in/out sample untuk analis. Deskription: " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+                        Finally
+                            If con.State = ConnectionState.Open Then
+                                con.Close()
+                            End If
+                        End Try
+
+
                         tlabnum.SelectAll()
+                        BtnSave.Text = "Save"
+                        BtnDel.Enabled = False
                     Else
-                        MetroFramework.MetroMessageBox.Show(Me, "Data " & tlabnum.Text & " belum masuk QC Receipt Sample", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
+                        MetroMessageBox.Show(Me, "Data " & tlabnum.Text & " belum masuk QC Receipt Sample", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
                         tlabnum.Focus()
                     End If
                 Else

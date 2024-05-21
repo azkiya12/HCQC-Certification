@@ -35,7 +35,7 @@ Partial Class CheckInPur
         Me.LfarmerGer = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.LjobGer = New MetroFramework.Controls.MetroLabel()
-        Me.LLocationgGer = New MetroFramework.Controls.MetroLabel()
+        Me.LLocationGer = New MetroFramework.Controls.MetroLabel()
         Me.LharvestGer = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
@@ -254,19 +254,19 @@ Partial Class CheckInPur
         Me.LjobGer.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.LjobGer.UseCustomForeColor = True
         '
-        'LLocationgGer
+        'LLocationGer
         '
-        Me.LLocationgGer.AutoSize = True
-        Me.LLocationgGer.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.LLocationgGer.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.LLocationgGer.ForeColor = System.Drawing.Color.White
-        Me.LLocationgGer.Location = New System.Drawing.Point(125, 208)
-        Me.LLocationgGer.Name = "LLocationgGer"
-        Me.LLocationgGer.Size = New System.Drawing.Size(54, 15)
-        Me.LLocationgGer.TabIndex = 157
-        Me.LLocationgGer.Text = "Location"
-        Me.LLocationgGer.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.LLocationgGer.UseCustomForeColor = True
+        Me.LLocationGer.AutoSize = True
+        Me.LLocationGer.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.LLocationGer.FontWeight = MetroFramework.MetroLabelWeight.Bold
+        Me.LLocationGer.ForeColor = System.Drawing.Color.White
+        Me.LLocationGer.Location = New System.Drawing.Point(125, 208)
+        Me.LLocationGer.Name = "LLocationGer"
+        Me.LLocationGer.Size = New System.Drawing.Size(54, 15)
+        Me.LLocationGer.TabIndex = 157
+        Me.LLocationGer.Text = "Location"
+        Me.LLocationGer.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.LLocationGer.UseCustomForeColor = True
         '
         'LharvestGer
         '
@@ -411,7 +411,7 @@ Partial Class CheckInPur
         Me.Controls.Add(Me.LfarmerGer)
         Me.Controls.Add(Me.MetroLabel5)
         Me.Controls.Add(Me.LjobGer)
-        Me.Controls.Add(Me.LLocationgGer)
+        Me.Controls.Add(Me.LLocationGer)
         Me.Controls.Add(Me.LharvestGer)
         Me.Controls.Add(Me.MetroLabel6)
         Me.Controls.Add(Me.MetroLabel7)
@@ -440,7 +440,7 @@ Partial Class CheckInPur
     Friend WithEvents LfarmerGer As MetroLabel
     Friend WithEvents MetroLabel5 As MetroLabel
     Friend WithEvents LjobGer As MetroLabel
-    Friend WithEvents LLocationgGer As MetroLabel
+    Friend WithEvents LLocationGer As MetroLabel
     Friend WithEvents LharvestGer As MetroLabel
     Friend WithEvents MetroLabel6 As MetroLabel
     Friend WithEvents MetroLabel7 As MetroLabel

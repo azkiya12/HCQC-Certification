@@ -52,11 +52,11 @@ Partial Class Data_List_Raw_Material
         Me.TglprintDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.ket = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.RawMaterialJoinBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet
+        Me.HCQC_serverDataSet = New HCQC_serverDataSet
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
-        Me.RawMaterialJoinTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.RawMaterialJoinTableAdapter
+        Me.RawMaterialJoinTableAdapter = New HCQC_serverDataSetTableAdapters.RawMaterialJoinTableAdapter
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.RawMaterialJoinBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HCQC_serverDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -322,9 +322,9 @@ Partial Class Data_List_Raw_Material
     End Sub
     Friend WithEvents MetroGrid1 As MetroFramework.Controls.MetroGrid
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
-    Friend WithEvents HCQC_serverDataSet As WindowsApplication1.HCQC_serverDataSet
+    Friend WithEvents HCQC_serverDataSet As HCQC_serverDataSet
     Friend WithEvents RawMaterialJoinBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents RawMaterialJoinTableAdapter As WindowsApplication1.HCQC_serverDataSetTableAdapters.RawMaterialJoinTableAdapter
+    Friend WithEvents RawMaterialJoinTableAdapter As HCQC_serverDataSetTableAdapters.RawMaterialJoinTableAdapter
     Friend WithEvents MetroStyleExtender1 As MetroFramework.Components.MetroStyleExtender
     Friend WithEvents MetroStyleManager1 As MetroFramework.Components.MetroStyleManager
     Friend WithEvents NolabDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn

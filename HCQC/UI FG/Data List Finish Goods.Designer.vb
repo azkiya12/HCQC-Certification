@@ -58,7 +58,7 @@ Partial Class Data_List_Finish_Goods
         Me.vg_tgl_input = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.TglprintDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.FinishGdJoinBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet
+        Me.HCQC_serverDataSet = New HCQC_serverDataSet
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton
@@ -68,9 +68,9 @@ Partial Class Data_List_Finish_Goods
         Me.MetroGrid3 = New MetroFramework.Controls.MetroGrid
         Me.ArchivefgBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.FgidBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.FinishGdJoinTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.FinishGdJoinTableAdapter
-        Me.Fg_idTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.fg_idTableAdapter
-        Me.Archive_fgTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.Archive_fgTableAdapter
+        Me.FinishGdJoinTableAdapter = New HCQC_serverDataSetTableAdapters.FinishGdJoinTableAdapter
+        Me.Fg_idTableAdapter = New HCQC_serverDataSetTableAdapters.fg_idTableAdapter
+        Me.Archive_fgTableAdapter = New HCQC_serverDataSetTableAdapters.Archive_fgTableAdapter
         Me.no_lab = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.variety = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.nojob = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -617,13 +617,13 @@ Partial Class Data_List_Finish_Goods
     Friend WithEvents KetDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents TglprintDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents FinishGdJoinBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents HCQC_serverDataSet As WindowsApplication1.HCQC_serverDataSet
-    Friend WithEvents FinishGdJoinTableAdapter As WindowsApplication1.HCQC_serverDataSetTableAdapters.FinishGdJoinTableAdapter
+    Friend WithEvents HCQC_serverDataSet As HCQC_serverDataSet
+    Friend WithEvents FinishGdJoinTableAdapter As HCQC_serverDataSetTableAdapters.FinishGdJoinTableAdapter
     Friend WithEvents FgidBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Fg_idTableAdapter As WindowsApplication1.HCQC_serverDataSetTableAdapters.fg_idTableAdapter
+    Friend WithEvents Fg_idTableAdapter As HCQC_serverDataSetTableAdapters.fg_idTableAdapter
     Friend WithEvents MetroGrid3 As MetroFramework.Controls.MetroGrid
     Friend WithEvents ArchivefgBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Archive_fgTableAdapter As WindowsApplication1.HCQC_serverDataSetTableAdapters.Archive_fgTableAdapter
+    Friend WithEvents Archive_fgTableAdapter As HCQC_serverDataSetTableAdapters.Archive_fgTableAdapter
     Friend WithEvents no_lab As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents variety As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents nojob As System.Windows.Forms.DataGridViewTextBoxColumn

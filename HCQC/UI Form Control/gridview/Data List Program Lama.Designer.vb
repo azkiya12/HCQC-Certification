@@ -29,6 +29,8 @@ Partial Class Data_List_Program_Lama
         Me.LinkDataListRafaction = New MetroFramework.Controls.MetroLink()
         Me.MetroLink1 = New MetroFramework.Controls.MetroLink()
         Me.LinkDataListGermination = New MetroFramework.Controls.MetroLink()
+        Me.LinkRafactionDataReport = New MetroFramework.Controls.MetroLink()
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.SuspendLayout()
         '
         'LinkDataListRM
@@ -157,10 +159,41 @@ Partial Class Data_List_Program_Lama
         Me.LinkDataListGermination.UseSelectable = True
         Me.LinkDataListGermination.UseStyleColors = True
         '
+        'LinkRafactionDataReport
+        '
+        Me.LinkRafactionDataReport.AutoSize = True
+        Me.LinkRafactionDataReport.BackColor = System.Drawing.Color.Transparent
+        Me.LinkRafactionDataReport.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkRafactionDataReport.FontSize = MetroFramework.MetroLinkSize.Medium
+        Me.LinkRafactionDataReport.FontWeight = MetroFramework.MetroLinkWeight.Regular
+        Me.LinkRafactionDataReport.Location = New System.Drawing.Point(21, 213)
+        Me.LinkRafactionDataReport.Name = "LinkRafactionDataReport"
+        Me.LinkRafactionDataReport.Size = New System.Drawing.Size(214, 23)
+        Me.LinkRafactionDataReport.TabIndex = 94
+        Me.LinkRafactionDataReport.TabStop = False
+        Me.LinkRafactionDataReport.Text = "Rafaction Data Report"
+        Me.LinkRafactionDataReport.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.LinkRafactionDataReport.UseCustomBackColor = True
+        Me.LinkRafactionDataReport.UseSelectable = True
+        Me.LinkRafactionDataReport.UseStyleColors = True
+        '
+        'MetroLabel1
+        '
+        Me.MetroLabel1.AutoSize = True
+        Me.MetroLabel1.FontWeight = MetroFramework.MetroLabelWeight.Bold
+        Me.MetroLabel1.Location = New System.Drawing.Point(21, 191)
+        Me.MetroLabel1.Name = "MetroLabel1"
+        Me.MetroLabel1.Size = New System.Drawing.Size(210, 19)
+        Me.MetroLabel1.TabIndex = 95
+        Me.MetroLabel1.Text = "Kumpulan Data Program Baru"
+        Me.MetroLabel1.Theme = MetroFramework.MetroThemeStyle.Dark
+        '
         'Data_List_Program_Lama
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.MetroLabel1)
+        Me.Controls.Add(Me.LinkRafactionDataReport)
         Me.Controls.Add(Me.LinkDataListGermination)
         Me.Controls.Add(Me.MetroLink1)
         Me.Controls.Add(Me.LinkDataListRafaction)
@@ -183,4 +216,6 @@ Partial Class Data_List_Program_Lama
     Friend WithEvents LinkDataListRafaction As MetroLink
     Friend WithEvents MetroLink1 As MetroLink
     Friend WithEvents LinkDataListGermination As MetroLink
+    Friend WithEvents LinkRafactionDataReport As MetroLink
+    Friend WithEvents MetroLabel1 As MetroLabel
 End Class

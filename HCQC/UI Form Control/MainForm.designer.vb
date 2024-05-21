@@ -23,14 +23,14 @@ Partial Class MainForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim Animation2 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.Containermenu2 = New WindowsApplication1.containermenu()
         Me.PnSlidebar = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.Panel2 = New System.Windows.Forms.Panel()
+        Me.Containermenu2 = New containermenu()
+        Me.Panel2 = New MetroFramework.Controls.MetroPanel()
         Me.LinkReport = New System.Windows.Forms.LinkLabel()
         Me.BtnCategoryCrop = New System.Windows.Forms.LinkLabel()
         Me.LinkHome = New System.Windows.Forms.LinkLabel()
@@ -39,7 +39,7 @@ Partial Class MainForm
         Me.BtnClose = New Bunifu.Framework.UI.BunifuImageButton()
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
-        Me.Containerusermenu1 = New WindowsApplication1.containerusermenu()
+        Me.Containerusermenu1 = New containerusermenu()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LTitileControl = New System.Windows.Forms.Label()
         Me.DashboardPanel5 = New MetroFramework.Controls.MetroPanel()
@@ -102,7 +102,7 @@ Partial Class MainForm
         Me.BtnPrintLabel = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BtnQcConfirm = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.MetroPanel2 = New MetroFramework.Controls.MetroPanel()
-        Me.Sample_Receipt1 = New WindowsApplication1.Sample_Receipt()
+        Me.Sample_Receipt1 = New Sample_Receipt()
         Me.MetroPanel3 = New MetroFramework.Controls.MetroPanel()
         Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
@@ -137,25 +137,15 @@ Partial Class MainForm
         'Panel1
         '
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.Panel1.Controls.Add(Me.Containermenu2)
         Me.Panel1.Controls.Add(Me.PnSlidebar)
+        Me.Panel1.Controls.Add(Me.Containermenu2)
         Me.BunifuTransition1.SetDecoration(Me.Panel1, BunifuAnimatorNS.DecorationType.None)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
-        Me.Panel1.Location = New System.Drawing.Point(0, 40)
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.MinimumSize = New System.Drawing.Size(38, 450)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(250, 474)
+        Me.Panel1.Size = New System.Drawing.Size(250, 514)
         Me.Panel1.TabIndex = 2
-        '
-        'Containermenu2
-        '
-        Me.Containermenu2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.BunifuTransition1.SetDecoration(Me.Containermenu2, BunifuAnimatorNS.DecorationType.None)
-        Me.Containermenu2.Location = New System.Drawing.Point(0, 40)
-        Me.Containermenu2.Name = "Containermenu2"
-        Me.Containermenu2.Size = New System.Drawing.Size(250, 434)
-        Me.Containermenu2.TabIndex = 6
         '
         'PnSlidebar
         '
@@ -195,6 +185,16 @@ Partial Class MainForm
         Me.BunifuImageButton1.TabStop = False
         Me.BunifuImageButton1.Zoom = 10
         '
+        'Containermenu2
+        '
+        Me.Containermenu2.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.BunifuTransition1.SetDecoration(Me.Containermenu2, BunifuAnimatorNS.DecorationType.None)
+        Me.Containermenu2.Location = New System.Drawing.Point(0, 40)
+        Me.Containermenu2.Name = "Containermenu2"
+        Me.Containermenu2.Size = New System.Drawing.Size(250, 474)
+        Me.Containermenu2.TabIndex = 6
+        '
         'Panel2
         '
         Me.Panel2.BackColor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(222, Byte), Integer))
@@ -206,10 +206,17 @@ Partial Class MainForm
         Me.Panel2.Controls.Add(Me.BtnClose)
         Me.BunifuTransition1.SetDecoration(Me.Panel2, BunifuAnimatorNS.DecorationType.None)
         Me.Panel2.Dock = System.Windows.Forms.DockStyle.Top
-        Me.Panel2.Location = New System.Drawing.Point(0, 0)
+        Me.Panel2.HorizontalScrollbarBarColor = True
+        Me.Panel2.HorizontalScrollbarHighlightOnWheel = False
+        Me.Panel2.HorizontalScrollbarSize = 10
+        Me.Panel2.Location = New System.Drawing.Point(250, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(1101, 40)
+        Me.Panel2.Size = New System.Drawing.Size(851, 40)
         Me.Panel2.TabIndex = 3
+        Me.Panel2.UseCustomBackColor = True
+        Me.Panel2.VerticalScrollbarBarColor = True
+        Me.Panel2.VerticalScrollbarHighlightOnWheel = False
+        Me.Panel2.VerticalScrollbarSize = 10
         '
         'LinkReport
         '
@@ -218,12 +225,12 @@ Partial Class MainForm
         Me.LinkReport.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BunifuTransition1.SetDecoration(Me.LinkReport, BunifuAnimatorNS.DecorationType.None)
         Me.LinkReport.DisabledLinkColor = System.Drawing.Color.Transparent
-        Me.LinkReport.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkReport.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkReport.ForeColor = System.Drawing.Color.Black
         Me.LinkReport.LinkArea = New System.Windows.Forms.LinkArea(0, 30)
         Me.LinkReport.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.LinkReport.LinkColor = System.Drawing.Color.White
-        Me.LinkReport.Location = New System.Drawing.Point(165, 11)
+        Me.LinkReport.Location = New System.Drawing.Point(186, 11)
         Me.LinkReport.Margin = New System.Windows.Forms.Padding(0)
         Me.LinkReport.Name = "LinkReport"
         Me.LinkReport.Size = New System.Drawing.Size(92, 18)
@@ -241,15 +248,15 @@ Partial Class MainForm
         Me.BtnCategoryCrop.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BunifuTransition1.SetDecoration(Me.BtnCategoryCrop, BunifuAnimatorNS.DecorationType.None)
         Me.BtnCategoryCrop.DisabledLinkColor = System.Drawing.Color.Transparent
-        Me.BtnCategoryCrop.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnCategoryCrop.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.BtnCategoryCrop.ForeColor = System.Drawing.Color.Black
         Me.BtnCategoryCrop.LinkArea = New System.Windows.Forms.LinkArea(0, 30)
         Me.BtnCategoryCrop.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.BtnCategoryCrop.LinkColor = System.Drawing.Color.White
-        Me.BtnCategoryCrop.Location = New System.Drawing.Point(73, 11)
+        Me.BtnCategoryCrop.Location = New System.Drawing.Point(79, 11)
         Me.BtnCategoryCrop.Margin = New System.Windows.Forms.Padding(0)
         Me.BtnCategoryCrop.Name = "BtnCategoryCrop"
-        Me.BtnCategoryCrop.Size = New System.Drawing.Size(92, 18)
+        Me.BtnCategoryCrop.Size = New System.Drawing.Size(105, 18)
         Me.BtnCategoryCrop.TabIndex = 7
         Me.BtnCategoryCrop.TabStop = True
         Me.BtnCategoryCrop.Text = "Category Crop"
@@ -264,12 +271,12 @@ Partial Class MainForm
         Me.LinkHome.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BunifuTransition1.SetDecoration(Me.LinkHome, BunifuAnimatorNS.DecorationType.None)
         Me.LinkHome.DisabledLinkColor = System.Drawing.Color.Transparent
-        Me.LinkHome.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkHome.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkHome.ForeColor = System.Drawing.Color.Black
         Me.LinkHome.LinkArea = New System.Windows.Forms.LinkArea(0, 30)
         Me.LinkHome.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
         Me.LinkHome.LinkColor = System.Drawing.Color.White
-        Me.LinkHome.Location = New System.Drawing.Point(3, 11)
+        Me.LinkHome.Location = New System.Drawing.Point(9, 11)
         Me.LinkHome.Margin = New System.Windows.Forms.Padding(0)
         Me.LinkHome.Name = "LinkHome"
         Me.LinkHome.Size = New System.Drawing.Size(70, 18)
@@ -288,13 +295,13 @@ Partial Class MainForm
         Me.LinkLabel1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BunifuTransition1.SetDecoration(Me.LinkLabel1, BunifuAnimatorNS.DecorationType.None)
         Me.LinkLabel1.DisabledLinkColor = System.Drawing.Color.Transparent
-        Me.LinkLabel1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkLabel1.Font = New System.Drawing.Font("Segoe UI", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkLabel1.ForeColor = System.Drawing.Color.Black
         Me.LinkLabel1.ImageAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.LinkLabel1.LinkArea = New System.Windows.Forms.LinkArea(0, 30)
         Me.LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
         Me.LinkLabel1.LinkColor = System.Drawing.Color.White
-        Me.LinkLabel1.Location = New System.Drawing.Point(877, 0)
+        Me.LinkLabel1.Location = New System.Drawing.Point(627, 0)
         Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(0)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(134, 40)
@@ -312,7 +319,7 @@ Partial Class MainForm
         Me.BunifuTransition1.SetDecoration(Me.BtnFullScreen, BunifuAnimatorNS.DecorationType.None)
         Me.BtnFullScreen.Image = CType(resources.GetObject("BtnFullScreen.Image"), System.Drawing.Image)
         Me.BtnFullScreen.ImageActive = Nothing
-        Me.BtnFullScreen.Location = New System.Drawing.Point(1057, 0)
+        Me.BtnFullScreen.Location = New System.Drawing.Point(807, 0)
         Me.BtnFullScreen.Margin = New System.Windows.Forms.Padding(0)
         Me.BtnFullScreen.Name = "BtnFullScreen"
         Me.BtnFullScreen.Size = New System.Drawing.Size(22, 22)
@@ -329,7 +336,7 @@ Partial Class MainForm
         Me.BunifuTransition1.SetDecoration(Me.BtnClose, BunifuAnimatorNS.DecorationType.None)
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
         Me.BtnClose.ImageActive = Nothing
-        Me.BtnClose.Location = New System.Drawing.Point(1079, 0)
+        Me.BtnClose.Location = New System.Drawing.Point(829, 0)
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(0)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(22, 22)
@@ -442,6 +449,7 @@ Partial Class MainForm
         Me.DashboardPanel5.Size = New System.Drawing.Size(838, 421)
         Me.DashboardPanel5.TabIndex = 9
         Me.DashboardPanel5.UseCustomBackColor = True
+        Me.DashboardPanel5.UseCustomForeColor = True
         Me.DashboardPanel5.VerticalScrollbar = True
         Me.DashboardPanel5.VerticalScrollbarBarColor = True
         Me.DashboardPanel5.VerticalScrollbarHighlightOnWheel = False
@@ -1399,22 +1407,22 @@ Partial Class MainForm
         '
         Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide
         Me.BunifuTransition1.Cursor = Nothing
-        Animation1.AnimateOnlyDifferences = True
-        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
-        Animation1.LeafCoeff = 0!
-        Animation1.MaxTime = 1.0!
-        Animation1.MinTime = 0!
-        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
-        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
-        Animation1.MosaicSize = 0
-        Animation1.Padding = New System.Windows.Forms.Padding(0)
-        Animation1.RotateCoeff = 0!
-        Animation1.RotateLimit = 0!
-        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
-        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
-        Animation1.TimeCoeff = 0!
-        Animation1.TransparencyCoeff = 0!
-        Me.BunifuTransition1.DefaultAnimation = Animation1
+        Animation2.AnimateOnlyDifferences = True
+        Animation2.BlindCoeff = CType(resources.GetObject("Animation2.BlindCoeff"), System.Drawing.PointF)
+        Animation2.LeafCoeff = 0!
+        Animation2.MaxTime = 1.0!
+        Animation2.MinTime = 0!
+        Animation2.MosaicCoeff = CType(resources.GetObject("Animation2.MosaicCoeff"), System.Drawing.PointF)
+        Animation2.MosaicShift = CType(resources.GetObject("Animation2.MosaicShift"), System.Drawing.PointF)
+        Animation2.MosaicSize = 0
+        Animation2.Padding = New System.Windows.Forms.Padding(0)
+        Animation2.RotateCoeff = 0!
+        Animation2.RotateLimit = 0!
+        Animation2.ScaleCoeff = CType(resources.GetObject("Animation2.ScaleCoeff"), System.Drawing.PointF)
+        Animation2.SlideCoeff = CType(resources.GetObject("Animation2.SlideCoeff"), System.Drawing.PointF)
+        Animation2.TimeCoeff = 0!
+        Animation2.TransparencyCoeff = 0!
+        Me.BunifuTransition1.DefaultAnimation = Animation2
         '
         'BunifuElipse1
         '
@@ -1444,6 +1452,7 @@ Partial Class MainForm
         Me.ClientSize = New System.Drawing.Size(1101, 514)
         Me.ControlBox = False
         Me.Controls.Add(Me.MetroPanel1)
+        Me.Controls.Add(Me.Panel2)
         Me.Controls.Add(Me.Panel1)
         Me.BunifuTransition1.SetDecoration(Me, BunifuAnimatorNS.DecorationType.None)
         Me.DoubleBuffered = True
@@ -1493,7 +1502,6 @@ Partial Class MainForm
 
     End Sub
     Friend WithEvents Panel1 As Panel
-    Friend WithEvents Panel2 As Panel
     Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
     Friend WithEvents PnSlidebar As Panel
     Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
@@ -1577,4 +1585,5 @@ Partial Class MainForm
     Friend WithEvents LabelC_Raf As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents LabelC_Pur As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents LabelC_moi As Bunifu.Framework.UI.BunifuCustomLabel
+    Friend WithEvents Panel2 As MetroPanel
 End Class

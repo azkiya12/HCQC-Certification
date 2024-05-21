@@ -51,7 +51,6 @@ Partial Class Germination_Test
         Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
-        Me.btncari1 = New MetroFramework.Controls.MetroButton()
         Me.MetroLabel30 = New MetroFramework.Controls.MetroLabel()
         Me.tGmPrc = New MetroFramework.Controls.MetroTextBox()
         Me.tGmArg = New MetroFramework.Controls.MetroTextBox()
@@ -448,16 +447,6 @@ Partial Class Germination_Test
         Me.MetroLabel8.Size = New System.Drawing.Size(132, 19)
         Me.MetroLabel8.TabIndex = 220
         Me.MetroLabel8.Text = "Normal Seedling (%)"
-        '
-        'btncari1
-        '
-        Me.btncari1.BackgroundImage = Global.WindowsApplication1.My.Resources.Resources.Add
-        Me.btncari1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Zoom
-        Me.btncari1.Location = New System.Drawing.Point(361, 35)
-        Me.btncari1.Name = "btncari1"
-        Me.btncari1.Size = New System.Drawing.Size(36, 23)
-        Me.btncari1.TabIndex = 213
-        Me.btncari1.UseSelectable = True
         '
         'MetroLabel30
         '
@@ -2194,7 +2183,6 @@ Partial Class Germination_Test
         Me.MetroPanel4.Controls.Add(Me.tHd4)
         Me.MetroPanel4.Controls.Add(Me.MetroLabel8)
         Me.MetroPanel4.Controls.Add(Me.tHdArg)
-        Me.MetroPanel4.Controls.Add(Me.btncari1)
         Me.MetroPanel4.Controls.Add(Me.tHdPrc)
         Me.MetroPanel4.Controls.Add(Me.tFrs1)
         Me.MetroPanel4.Controls.Add(Me.tbagi)
@@ -2488,7 +2476,6 @@ Partial Class Germination_Test
     Friend WithEvents MetroLabel10 As MetroLabel
     Friend WithEvents MetroLabel9 As MetroLabel
     Friend WithEvents MetroLabel8 As MetroLabel
-    Friend WithEvents btncari1 As MetroButton
     Friend WithEvents MetroLabel30 As MetroLabel
     Friend WithEvents tGmPrc As MetroTextBox
     Friend WithEvents tGmArg As MetroTextBox

@@ -30,8 +30,8 @@
     </UpgradeBackupLocation>
     <OldToolsVersion>3.5</OldToolsVersion>
     <TargetFrameworkProfile />
-    <PublishUrl>E:\PT. Bisi Internasional\Project Bisi HCQC\</PublishUrl>
-    <Install>true</Install>
+    <PublishUrl>\\DHONA\UserKhusus\update hcqc\</PublishUrl>
+    <Install>false</Install>
     <InstallFrom>Unc</InstallFrom>
     <UpdateEnabled>true</UpdateEnabled>
     <UpdateMode>Foreground</UpdateMode>
@@ -40,8 +40,9 @@
     <UpdatePeriodically>false</UpdatePeriodically>
     <UpdateRequired>false</UpdateRequired>
     <MapFileExtensions>true</MapFileExtensions>
-    <InstallUrl>\\Dhona\3. software\UNC\</InstallUrl>
-    <ApplicationRevision>128</ApplicationRevision>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>129</ApplicationRevision>
     <ApplicationVersion>2.0.0.%2a</ApplicationVersion>
     <UseApplicationTrust>false</UseApplicationTrust>
     <PublishWizardCompleted>true</PublishWizardCompleted>
@@ -226,7 +227,9 @@
     <Reference Include="SharpSnmpLib, Version=12.0.0.0, Culture=neutral, PublicKeyToken=4c00852d3788e005, processorArchitecture=MSIL">
       <HintPath>..\packages\Lextm.SharpSnmpLib.12.0.0\lib\net471\SharpSnmpLib.dll</HintPath>
     </Reference>
-    <Reference Include="System" />
+    <Reference Include="System">
+      <HintPath>C:\Program Files (x86)\Reference Assemblies\Microsoft\Framework\.NETFramework\v4.7.2\System.dll</HintPath>
+    </Reference>
     <Reference Include="System.Collections.Specialized, Version=4.0.2.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a, processorArchitecture=MSIL">
       <HintPath>..\packages\System.Collections.Specialized.4.3.0\lib\net46\System.Collections.Specialized.dll</HintPath>
       <Private>True</Private>
@@ -329,9 +332,11 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="ApplicationEvents.vb" />
+    <Compile Include="GerminationTableAdapterExtensions.vb" />
     <Compile Include="HCQC_NewDataset.vb">
       <DependentUpon>HCQC_NewDataset.xsd</DependentUpon>
     </Compile>
+    <Compile Include="TableAdapterExtensions.vb" />
     <Compile Include="UI Ex\Data List External.Designer.vb">
       <DependentUpon>Data List External.vb</DependentUpon>
     </Compile>
@@ -342,6 +347,12 @@
       <DependentUpon>Data List Finish Goods.vb</DependentUpon>
     </Compile>
     <Compile Include="UI FG\Data List Finish Goods.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI FG\Lead Time FG.Designer.vb">
+      <DependentUpon>Lead Time FG.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI FG\Lead Time FG.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI Form Control\Control\Customer Info.Designer.vb">
@@ -633,12 +644,6 @@
     <Compile Include="UI Form Control\Form\SeedsSampling\Check in Sample.vb">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="UI Form Control\Form\SeedsSampling\QC Return.Designer.vb">
-      <DependentUpon>QC Return.vb</DependentUpon>
-    </Compile>
-    <Compile Include="UI Form Control\Form\SeedsSampling\QC Return.vb">
-      <SubType>UserControl</SubType>
-    </Compile>
     <Compile Include="UI Form Control\Form\SeedsSampling\QC Verification.Designer.vb">
       <DependentUpon>QC Verification.vb</DependentUpon>
     </Compile>
@@ -673,6 +678,12 @@
       <DependentUpon>HC Sample Test Control.vb</DependentUpon>
     </Compile>
     <Compile Include="UI Form Control\gridview\HC Sample Test Control.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\RafactionDataReport.Designer.vb">
+      <DependentUpon>RafactionDataReport.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\gridview\RafactionDataReport.vb">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI Form Control\gridview\Sample Return List.Designer.vb">
@@ -758,6 +769,12 @@
     </Compile>
     <Compile Include="UI Form Control\login\Signup.vb">
       <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="UI Form Control\Report\CrystalReport2.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>CrystalReport2.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="UI Form Control\Report\Seed Testing Result.vb">
       <AutoGen>True</AutoGen>
@@ -929,6 +946,18 @@
     <Compile Include="UI G\Data List Refraction.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="UI Periodik\Lead Time Periodic.Designer.vb">
+      <DependentUpon>Lead Time Periodic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Periodik\Lead Time Periodic.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI Periodik\PenerimaanSamplePeriodik.Designer.vb">
+      <DependentUpon>PenerimaanSamplePeriodik.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Periodik\PenerimaanSamplePeriodik.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI RM\Data List Raw Material.Designer.vb">
       <DependentUpon>Data List Raw Material.vb</DependentUpon>
     </Compile>
@@ -949,6 +978,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI FG\Data List Finish Goods.resx">
       <DependentUpon>Data List Finish Goods.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI FG\Lead Time FG.resx">
+      <DependentUpon>Lead Time FG.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Form Control\Control\Customer Info.resx">
       <DependentUpon>Customer Info.vb</DependentUpon>
@@ -1095,9 +1127,6 @@
     <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\Check in Sample.resx">
       <DependentUpon>Check in Sample.vb</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\QC Return.resx">
-      <DependentUpon>QC Return.vb</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="UI Form Control\Form\SeedsSampling\QC Verification.resx">
       <DependentUpon>QC Verification.vb</DependentUpon>
     </EmbeddedResource>
@@ -1115,6 +1144,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Form Control\gridview\HC Sample Test Control.resx">
       <DependentUpon>HC Sample Test Control.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\gridview\RafactionDataReport.resx">
+      <DependentUpon>RafactionDataReport.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Form Control\gridview\Sample Return List.resx">
       <DependentUpon>Sample Return List.vb</DependentUpon>
@@ -1157,6 +1189,10 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Form Control\login\Signup.resx">
       <DependentUpon>Signup.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\Report\CrystalReport2.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>CrystalReport2.vb</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="UI Form Control\Report\Seed Testing Result.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
@@ -1247,6 +1283,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI G\Data List Refraction.resx">
       <DependentUpon>Data List Refraction.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Periodik\Lead Time Periodic.resx">
+      <DependentUpon>Lead Time Periodic.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Periodik\PenerimaanSamplePeriodik.resx">
+      <DependentUpon>PenerimaanSamplePeriodik.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI RM\Data List Raw Material.resx">
       <DependentUpon>Data List Raw Material.vb</DependentUpon>

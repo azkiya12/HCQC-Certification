@@ -82,7 +82,7 @@ Partial Class Sample_Archive
         Me.LinkBack = New MetroFramework.Controls.MetroLink()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.ReportarsipsampleviewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet()
+        Me.HCQC_serverDataSet = New HCQC_serverDataSet()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.collabnum = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colvariety = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -106,7 +106,7 @@ Partial Class Sample_Archive
         Me.colkemasan = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colunit_kem = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colinput_at = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.Report_arsip_sample_viewTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.report_arsip_sample_viewTableAdapter()
+        Me.Report_arsip_sample_viewTableAdapter = New HCQC_serverDataSetTableAdapters.report_arsip_sample_viewTableAdapter()
         Me.colawal_exp = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colmasa_berlaku = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colP1 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -1020,7 +1020,7 @@ Partial Class Sample_Archive
         '
         '
         '
-        Me.Tsearch.CustomButton.Image = Global.WindowsApplication1.My.Resources.Resources.Find
+        Me.Tsearch.CustomButton.Image = My.Resources.Resources.Find
         Me.Tsearch.CustomButton.Location = New System.Drawing.Point(168, 1)
         Me.Tsearch.CustomButton.Name = ""
         Me.Tsearch.CustomButton.Size = New System.Drawing.Size(21, 21)

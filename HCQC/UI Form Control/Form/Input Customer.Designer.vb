@@ -23,7 +23,7 @@ Partial Class Input_Customer
         Me.components = New System.ComponentModel.Container()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
-        Me.Customer_Info1 = New WindowsApplication1.Customer_Info()
+        Me.Customer_Info1 = New Customer_Info()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '

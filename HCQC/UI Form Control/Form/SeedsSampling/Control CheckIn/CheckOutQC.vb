@@ -76,18 +76,25 @@ Public Class CheckOutQC
         strrequest = _DataToValue("SELECT [id_request] FROM [receipt] WHERE [labnum]='" & strlabnum & "'")
         ''check/memastikan data yang ada di sample Receipt
         If _isBOFAND("receipt", "labnum", tlabnumOutQC.Text) = True Then
+
+            Dim controls As New Dictionary(Of String, Control) From {
+                    {"variety", LvarietyGer},
+                    {"farmer", LfarmerGer},
+                    {"location", LLocationgGer},
+                    {"harvest", LharvestGer},
+                    {"job", LjobGer}
+                }
+            ReadDataFromDatabase(tlabnumOutQC.Text, controls)
+
             ''Check apakah data sudah ada apa belum
+            ''megirimpesan kepastian dari pada tindakan user dan memberitahu data sudah masuk apa belum
             If _isBOF("[qc_kembali]", "[id_request]", strrequest) = False Then
-                ''megirimpesan kepastian dari pada tindakan user dan memberitahu data sudah masuk apa belum
                 ''Jika data belum pernah masuk
                 tTestDateGer.Text = Today.ToString(LabelDate1.Text)
                 LreqnumGer.Text = strrequest
-                LvarietyGer.Text = _DataToValue("SELECT [variety] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [id] = '" & strrequest & "'")
-                LfarmerGer.Text = _DataToValue("SELECT [farmer] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [id] = '" & strrequest & "'")
-                LjobGer.Text = _DataToValue("SELECT CONCAT([nomnl], ' - ', [nojob]) FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [id] = '" & strrequest & "'")
-                LLocationgGer.Text = _DataToValue("SELECT [location] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [id] = '" & strrequest & "'")
-                LharvestGer.Text = _DataToValueDate("SELECT [harvest] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [id] = '" & strrequest & "'")
+
                 Lstatus.Text = _DataToValue("SELECT CASE WHEN [quick_ra]=1 THEN 'LULUS' ELSE 'TOLAK' END AS [status] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [id] = '" & strrequest & "'")
+
                 Btn_save_QC.Text = "Save"
                 Btn_save_QC.Enabled = True
                 Btn_del_QC.Enabled = False
@@ -98,12 +105,9 @@ Public Class CheckOutQC
                 MetroMessageBox.Show(Me, "Lab Number sudah pernah di Check OUT QC", "Check Out Sample QC", MessageBoxButtons.OK, MessageBoxIcon.Question, 211)
                 tTestDateGer.Text = _DataToValueDate("SELECT [tgl_kirim] FROM [HCQC_server].[dbo].[qc_kembali] WHERE [id_request] ='" & strrequest & "'")
                 LreqnumGer.Text = strrequest
-                LvarietyGer.Text = _DataToValue("SELECT [variety] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [id] = '" & strrequest & "'")
-                LfarmerGer.Text = _DataToValue("SELECT [farmer] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [id] = '" & strrequest & "'")
-                LjobGer.Text = _DataToValue("SELECT CONCAT([nomnl], ' - ', [nojob]) FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [id] = '" & strrequest & "'")
-                LLocationgGer.Text = _DataToValue("SELECT [location] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [id] = '" & strrequest & "'")
-                LharvestGer.Text = _DataToValueDate("SELECT [harvest] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [id] = '" & strrequest & "'")
+
                 Lstatus.Text = _DataToValue("SELECT CASE WHEN [quick_ra]=1 THEN 'LULUS' ELSE 'TOLAK' END AS [status] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [id] = '" & strrequest & "'")
+
                 Btn_save_QC.Text = "Edit"
                 Btn_save_QC.Enabled = True
                 Btn_del_QC.Enabled = True

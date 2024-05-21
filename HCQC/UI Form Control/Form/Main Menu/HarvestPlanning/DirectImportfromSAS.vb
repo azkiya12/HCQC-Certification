@@ -64,6 +64,7 @@ Public Class DirectImportfromSAS
                             End With
                             cmd1.ExecuteScalar()
                             MetroProgressBar1.Value += i
+                            ' Console.WriteLine("UploadNoRencana " & table.Rows(i).Item(12).ToString)
                         Next
 
                     End Using
@@ -73,14 +74,14 @@ Public Class DirectImportfromSAS
                         Me.Close()
                     End If
                 Catch ex As Exception
-                    MessageBox.Show(ex.Message)
+                    MetroMessageBox.Show(Me, ex.Message, "Masalah Upload")
                     Return
                 Finally
                     con.Close()
                     MetroProgressBar1.Visible = False
                 End Try
             Else
-                MetroMessageBox.Show(Me, "Jumlah baris data kurang dari 2 baris")
+                MetroMessageBox.Show(Me, "Jumlah baris data kurang dari 2 baris", "SAS Data")
                 Return
             End If
         End If
@@ -96,7 +97,8 @@ Public Class DirectImportfromSAS
 
         ' Create new DataTable instance.
         Dim table As New DataTable
-        Dim searchString As String = "Total|ALL Area"
+        Dim searchString As String = "Total|"
+        Dim caseInsensitive As StringComparison = StringComparison.OrdinalIgnoreCase
         ' Create four typed columns in the DataTable.
         Dim names = {"HarvestColumn", "AreaColumn", "Variety", "Staff", "Location", "Column1", "Column2", "Column3", "PlantDate", "AreaHa", "Qty", "NoKontrak", "NoRencanaPanen", "BlockNo", "CGRNo", "CGRName", "NoLot"}
         Dim headers = {"Harvest Date", "Area", "Variety", "Staff", "Location", "Column1", "Column2", "Column3", "Plant Date", "Area Ha", "Qty kg", "NoKontrak", "NoRencanaPanen", "BlockNo", "CGRNo", "CGRName", "NoLot"}
@@ -127,25 +129,26 @@ Public Class DirectImportfromSAS
             Using response As WebResponse = request.GetResponse()
                 Using reader As New StreamReader(response.GetResponseStream())
                     html = reader.ReadToEnd()
-                    If html.Contains("Oracle Reports Server") Then
+                    If html.IndexOf("Oracle Reports Server", caseInsensitive) >= 0 Then
                         MetroMessageBox.Show(Me, "Oracle Reports Server : Unable to communicate with the SAS Reports Server")
                         errorMsg = "Oracle Reports Server : Unable to communicate with the Reports Server"
-                        Exit Function
+                        Return Nothing
                     End If
 
                     For index As Integer = html.Length - 1 To 0 Step -1
-                        If html.Contains(searchString) Then
+                        If html.IndexOf(searchString, caseInsensitive) >= 0 Then
                             html = html.Remove(index)
                         End If
                     Next
                     html = html.Substring(0, html.Length - searchString.Length)
+                    Console.WriteLine("###Raw Data Harvest Planing###")
                     Console.WriteLine(html)
                 End Using
             End Using
         Catch ex As Exception
             MetroMessageBox.Show(Me, "Connection Error : " & ex.Message)
             errorMsg = "Connection Error : " & ex.Message
-            Exit Function
+            Return Nothing
         End Try
 
         Dim TextLine As String
@@ -188,11 +191,12 @@ Public Class DirectImportfromSAS
                 Loop
                 Return table
                 'return empty if no error occured
-                errorMsg = ""
+                ' errorMsg = ""
             End Using
         Catch ex As Exception
             MsgBox("Erro Upload : " & ex.ToString)
             errorMsg = "Error Upload DataTable : " & ex.ToString
+            Return Nothing
         End Try
 
     End Function

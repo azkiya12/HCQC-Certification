@@ -81,4 +81,16 @@
     Private Sub LinkDataListGermination_MouseLeave(sender As Object, e As EventArgs) Handles LinkDataListGermination.MouseLeave
         LinkDataListGermination.BackColor = Color.Transparent
     End Sub
+
+    Private Sub LinkRafactionDataReport_MouseEnter(sender As Object, e As EventArgs) Handles LinkRafactionDataReport.MouseEnter
+        LinkRafactionDataReport.BackColor = Color.FromArgb(70, 179, 226)
+    End Sub
+
+    Private Sub LinkRafactionDataReport_MouseLeave(sender As Object, e As EventArgs) Handles LinkRafactionDataReport.MouseLeave
+        LinkRafactionDataReport.BackColor = Color.Transparent
+    End Sub
+
+    Private Sub LinkRafactionDataReport_Click(sender As Object, e As EventArgs) Handles LinkRafactionDataReport.Click
+        RafactionDataReport.Show()
+    End Sub
 End Class

@@ -5,9 +5,9 @@ Public Class Internal_report
         'TODO: This line of code loads data into the 'HCQC_serverDataSet.report_internal_view' table. You can move, or remove it, as needed.
         Me.Report_internal_viewTableAdapter.Fill(Me.HCQC_serverDataSet.report_internal_view)
 
-        'Dim DgvFilter As New DgvFilterManager
-        'DgvFilter.DataGridView = MetroGrid1
-        'MetroGrid1.ColumnHeadersHeight = 25
+        Dim DgvFilter As New DgvFilterManager
+        DgvFilter.DataGridView = MetroGrid1
+        MetroGrid1.ColumnHeadersHeight = 25
     End Sub
 
     Private Sub LinkRefresh_Click(sender As Object, e As EventArgs) Handles LinkRefresh.Click

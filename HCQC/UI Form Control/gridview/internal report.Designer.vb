@@ -29,10 +29,6 @@ Partial Class Internal_report
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Internal_report))
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid()
-        Me.ReportinternalviewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet()
-        Me.LinkRefresh = New MetroFramework.Controls.MetroLink()
-        Me.Report_internal_viewTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.report_internal_viewTableAdapter()
         Me.DetailColumn = New System.Windows.Forms.DataGridViewLinkColumn()
         Me.LabnumDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductionCodeColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -49,6 +45,13 @@ Partial Class Internal_report
         Me.RaftotalDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ResulDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MeanDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ReportinternalviewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet()
+        Me.LinkRefresh = New MetroFramework.Controls.MetroLink()
+        Me.Report_internal_viewTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.report_internal_viewTableAdapter()
+        Me.Tsearch = New MetroFramework.Controls.MetroTextBox()
+        Me.LinkLastMonth1 = New MetroFramework.Controls.MetroLink()
+        Me.LinkThisMonth1 = New MetroFramework.Controls.MetroLink()
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReportinternalviewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HCQC_serverDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -107,37 +110,6 @@ Partial Class Internal_report
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.MetroGrid1.Size = New System.Drawing.Size(754, 341)
         Me.MetroGrid1.TabIndex = 2
-        '
-        'ReportinternalviewBindingSource
-        '
-        Me.ReportinternalviewBindingSource.DataMember = "report_internal_view"
-        Me.ReportinternalviewBindingSource.DataSource = Me.HCQC_serverDataSet
-        '
-        'HCQC_serverDataSet
-        '
-        Me.HCQC_serverDataSet.DataSetName = "HCQC_serverDataSet"
-        Me.HCQC_serverDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'LinkRefresh
-        '
-        Me.LinkRefresh.AutoSize = True
-        Me.LinkRefresh.BackColor = System.Drawing.Color.Transparent
-        Me.LinkRefresh.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkRefresh.FontWeight = MetroFramework.MetroLinkWeight.Regular
-        Me.LinkRefresh.Image = Global.WindowsApplication1.My.Resources.Resources.appbar_refresh
-        Me.LinkRefresh.Location = New System.Drawing.Point(23, 60)
-        Me.LinkRefresh.Margin = New System.Windows.Forms.Padding(0)
-        Me.LinkRefresh.Name = "LinkRefresh"
-        Me.LinkRefresh.Size = New System.Drawing.Size(87, 23)
-        Me.LinkRefresh.TabIndex = 56
-        Me.LinkRefresh.Text = "Refresh"
-        Me.LinkRefresh.UseCustomBackColor = True
-        Me.LinkRefresh.UseSelectable = True
-        Me.LinkRefresh.UseStyleColors = True
-        '
-        'Report_internal_viewTableAdapter
-        '
-        Me.Report_internal_viewTableAdapter.ClearBeforeFill = True
         '
         'DetailColumn
         '
@@ -239,11 +211,110 @@ Partial Class Internal_report
         Me.MeanDataGridViewTextBoxColumn.HeaderText = "Viability (%)"
         Me.MeanDataGridViewTextBoxColumn.Name = "MeanDataGridViewTextBoxColumn"
         '
+        'ReportinternalviewBindingSource
+        '
+        Me.ReportinternalviewBindingSource.DataMember = "report_internal_view"
+        Me.ReportinternalviewBindingSource.DataSource = Me.HCQC_serverDataSet
+        '
+        'HCQC_serverDataSet
+        '
+        Me.HCQC_serverDataSet.DataSetName = "HCQC_serverDataSet"
+        Me.HCQC_serverDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'LinkRefresh
+        '
+        Me.LinkRefresh.AutoSize = True
+        Me.LinkRefresh.BackColor = System.Drawing.Color.Transparent
+        Me.LinkRefresh.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkRefresh.FontWeight = MetroFramework.MetroLinkWeight.Regular
+        Me.LinkRefresh.Image = Global.WindowsApplication1.My.Resources.Resources.appbar_refresh
+        Me.LinkRefresh.Location = New System.Drawing.Point(23, 60)
+        Me.LinkRefresh.Margin = New System.Windows.Forms.Padding(0)
+        Me.LinkRefresh.Name = "LinkRefresh"
+        Me.LinkRefresh.Size = New System.Drawing.Size(64, 23)
+        Me.LinkRefresh.TabIndex = 56
+        Me.LinkRefresh.Text = "Refresh"
+        Me.LinkRefresh.UseCustomBackColor = True
+        Me.LinkRefresh.UseSelectable = True
+        Me.LinkRefresh.UseStyleColors = True
+        '
+        'Report_internal_viewTableAdapter
+        '
+        Me.Report_internal_viewTableAdapter.ClearBeforeFill = True
+        '
+        'Tsearch
+        '
+        Me.Tsearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        '
+        '
+        '
+        Me.Tsearch.CustomButton.Image = Global.WindowsApplication1.My.Resources.Resources.Find
+        Me.Tsearch.CustomButton.Location = New System.Drawing.Point(168, 1)
+        Me.Tsearch.CustomButton.Name = ""
+        Me.Tsearch.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.Tsearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.Tsearch.CustomButton.TabIndex = 1
+        Me.Tsearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.Tsearch.CustomButton.UseSelectable = True
+        Me.Tsearch.Lines = New String(-1) {}
+        Me.Tsearch.Location = New System.Drawing.Point(587, 57)
+        Me.Tsearch.MaxLength = 32767
+        Me.Tsearch.Name = "Tsearch"
+        Me.Tsearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Tsearch.PromptText = "Search..."
+        Me.Tsearch.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.Tsearch.SelectedText = ""
+        Me.Tsearch.SelectionLength = 0
+        Me.Tsearch.SelectionStart = 0
+        Me.Tsearch.ShortcutsEnabled = True
+        Me.Tsearch.ShowButton = True
+        Me.Tsearch.Size = New System.Drawing.Size(190, 23)
+        Me.Tsearch.TabIndex = 63
+        Me.Tsearch.UseSelectable = True
+        Me.Tsearch.WaterMark = "Search..."
+        Me.Tsearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Tsearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'LinkLastMonth1
+        '
+        Me.LinkLastMonth1.AutoSize = True
+        Me.LinkLastMonth1.BackColor = System.Drawing.Color.Transparent
+        Me.LinkLastMonth1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkLastMonth1.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.LinkLastMonth1.Location = New System.Drawing.Point(157, 60)
+        Me.LinkLastMonth1.Margin = New System.Windows.Forms.Padding(0)
+        Me.LinkLastMonth1.Name = "LinkLastMonth1"
+        Me.LinkLastMonth1.Size = New System.Drawing.Size(70, 23)
+        Me.LinkLastMonth1.TabIndex = 154
+        Me.LinkLastMonth1.Text = "Last Month"
+        Me.LinkLastMonth1.UseCustomBackColor = True
+        Me.LinkLastMonth1.UseSelectable = True
+        Me.LinkLastMonth1.UseStyleColors = True
+        '
+        'LinkThisMonth1
+        '
+        Me.LinkThisMonth1.AutoSize = True
+        Me.LinkThisMonth1.BackColor = System.Drawing.Color.Transparent
+        Me.LinkThisMonth1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkThisMonth1.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.LinkThisMonth1.Location = New System.Drawing.Point(87, 60)
+        Me.LinkThisMonth1.Margin = New System.Windows.Forms.Padding(0)
+        Me.LinkThisMonth1.Name = "LinkThisMonth1"
+        Me.LinkThisMonth1.Size = New System.Drawing.Size(70, 23)
+        Me.LinkThisMonth1.TabIndex = 155
+        Me.LinkThisMonth1.Text = "This Month"
+        Me.LinkThisMonth1.UseCustomBackColor = True
+        Me.LinkThisMonth1.UseSelectable = True
+        Me.LinkThisMonth1.UseStyleColors = True
+        '
         'Internal_report
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(800, 450)
+        Me.Controls.Add(Me.LinkLastMonth1)
+        Me.Controls.Add(Me.LinkThisMonth1)
+        Me.Controls.Add(Me.Tsearch)
         Me.Controls.Add(Me.LinkRefresh)
         Me.Controls.Add(Me.MetroGrid1)
         Me.Icon = CType(resources.GetObject("$this.Icon"), System.Drawing.Icon)
@@ -285,4 +356,7 @@ Partial Class Internal_report
     Friend WithEvents RaftotalDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ResulDataGridViewCheckBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents MeanDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents Tsearch As MetroTextBox
+    Friend WithEvents LinkLastMonth1 As MetroLink
+    Friend WithEvents LinkThisMonth1 As MetroLink
 End Class

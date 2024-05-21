@@ -30,11 +30,11 @@ Partial Class ista_report
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ista_report))
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid()
         Me.ReportistaviewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet()
+        Me.HCQC_serverDataSet = New HCQC_serverDataSet()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
         Me.StartDate = New System.Windows.Forms.DateTimePicker()
-        Me.Report_ista_viewTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.report_ista_viewTableAdapter()
+        Me.Report_ista_viewTableAdapter = New HCQC_serverDataSetTableAdapters.report_ista_viewTableAdapter()
         Me.Tsearch = New MetroFramework.Controls.MetroTextBox()
         Me.BtnFilterDate = New Bunifu.Framework.UI.BunifuImageButton()
         Me.MetroLabel18 = New MetroFramework.Controls.MetroLabel()
@@ -156,7 +156,7 @@ Partial Class ista_report
         '
         '
         '
-        Me.Tsearch.CustomButton.Image = Global.WindowsApplication1.My.Resources.Resources.Find
+        Me.Tsearch.CustomButton.Image = My.Resources.Resources.Find
         Me.Tsearch.CustomButton.Location = New System.Drawing.Point(168, 1)
         Me.Tsearch.CustomButton.Name = ""
         Me.Tsearch.CustomButton.Size = New System.Drawing.Size(21, 21)

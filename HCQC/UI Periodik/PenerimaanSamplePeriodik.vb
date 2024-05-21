@@ -26,18 +26,18 @@ Public Class PenerimaanSamplePeriodik
                 Dim sql As String = ""
                 Dim strTam As String = ""
                 Dim strVal As String = ""
-                no1 = WindowsApplication1.Module2.ConvertToRomanNumeral(Month(Today)) + "/" + tglnow.ToString("yyyy")
+                no1 = Module2.ConvertToRomanNumeral(Month(Today)) + "/" + tglnow.ToString("yyyy")
                 sql = "Select no_lab from periodik_msk Where no_lab LIKE '%/" & no1 & "' ORDER by no_lab DESC"
                 cmd = New SqlClient.SqlCommand(sql, con)
                 dread = cmd.ExecuteReader
                 If dread.Read() Then
                     strTam = Mid(dread.Item("no_lab"), 2, 4)
                 Else
-                    tnolab.Text = "P0001/" & WindowsApplication1.Module2.ConvertToRomanNumeral(Month(Today)) & "/" & Year(Today)
+                    tnolab.Text = "P0001/" & Module2.ConvertToRomanNumeral(Month(Today)) & "/" & Year(Today)
                 End If
                 strVal = Val(strTam) + 1
                 jenis = strVal
-                tnolab.Text = "P" & Mid("000", 1, 4 - strVal.Length) & strVal & "/" & WindowsApplication1.Module2.ConvertToRomanNumeral(Month(Today)) & "/" & Year(Today)
+                tnolab.Text = "P" & Mid("000", 1, 4 - strVal.Length) & strVal & "/" & Module2.ConvertToRomanNumeral(Month(Today)) & "/" & Year(Today)
             End If
         Catch ex As Exception
             MsgBox("Terjadi Error : " & ex.Message)
@@ -58,18 +58,18 @@ Public Class PenerimaanSamplePeriodik
                 Dim sql As String = ""
                 Dim strTam As String = ""
                 Dim strVal As String = ""
-                no1 = WindowsApplication1.Module2.ConvertToRomanNumeral(Month(Today)) + "/" + tglnow.ToString("yyyy")
+                no1 = Module2.ConvertToRomanNumeral(Month(Today)) + "/" + tglnow.ToString("yyyy")
                 sql = "Select no_lab from periodik_msk Where no_lab LIKE '%/" & no1 & "' ORDER by no_lab DESC"
                 cmd = New SqlClient.SqlCommand(sql, con)
                 dread = cmd.ExecuteReader
                 If dread.Read() Then
                     strTam = Mid(dread.Item("no_lab"), 2, 4)
                 Else
-                    tnolab.Text = "P0001/" & WindowsApplication1.Module2.ConvertToRomanNumeral(Month(Today)) & "/" & Year(Today)
+                    tnolab.Text = "P0001/" & Module2.ConvertToRomanNumeral(Month(Today)) & "/" & Year(Today)
                 End If
                 strVal = Val(strTam) + 1
                 jenis = strVal
-                tnolab.Text = "P" & Mid("000", 1, 4 - strVal.Length) & strVal & "/" & WindowsApplication1.Module2.ConvertToRomanNumeral(Month(Today)) & "/" & Year(Today)
+                tnolab.Text = "P" & Mid("000", 1, 4 - strVal.Length) & strVal & "/" & Module2.ConvertToRomanNumeral(Month(Today)) & "/" & Year(Today)
             End If
         Catch ex As Exception
             MsgBox("Terjadi Error : " & ex.Message)
@@ -193,6 +193,7 @@ Public Class PenerimaanSamplePeriodik
             ElseIf tvariety.Text = "WM-1002" Or tvariety.Text = "WM-1012" Or tvariety.Text = "WM-1017" Or tvariety.Text = "WM-1029" Or tvariety.Text = "WM-1032" Then
                 Vstring = tvariety.Text
                 Vstring = Left(tvariety.Text, 2)
+                'mengabil value bulan berikutnya pada database
                 Vtimes = Val(_DataToValue("SELECT times FROM plot WHERE (variety LIKE '" & Vstring & "%')"))
             Else
                 Vtimes = 3
@@ -249,18 +250,18 @@ Public Class PenerimaanSamplePeriodik
                 Dim sql As String = ""
                 Dim strTam As String = ""
                 Dim strVal As String = ""
-                no1 = WindowsApplication1.Module2.ConvertToRomanNumeral(Month(Today)) + "/" + tglnow.ToString("yyyy")
+                no1 = Module2.ConvertToRomanNumeral(Month(Today)) + "/" + tglnow.ToString("yyyy")
                 sql = "Select no_lab from periodik_msk Where no_lab LIKE '%/" & no1 & "' ORDER by no_lab DESC"
                 cmd = New SqlClient.SqlCommand(sql, con)
                 dread = cmd.ExecuteReader
                 If dread.Read() Then
                     strTam = Mid(dread.Item("no_lab"), 2, 4)
                 Else
-                    tnolab.Text = "P0001/" & WindowsApplication1.Module2.ConvertToRomanNumeral(Month(Today)) & "/" & Year(Today)
+                    tnolab.Text = "P0001/" & Module2.ConvertToRomanNumeral(Month(Today)) & "/" & Year(Today)
                 End If
                 strVal = Val(strTam) + 1
                 jenis = strVal
-                tnolab.Text = "P" & Mid("000", 1, 4 - strVal.Length) & strVal & "/" & WindowsApplication1.Module2.ConvertToRomanNumeral(Month(Today)) & "/" & Year(Today)
+                tnolab.Text = "P" & Mid("000", 1, 4 - strVal.Length) & strVal & "/" & Module2.ConvertToRomanNumeral(Month(Today)) & "/" & Year(Today)
 
             Catch ex As Exception
                 MsgBox("Terjadi Error : " & ex.Message)

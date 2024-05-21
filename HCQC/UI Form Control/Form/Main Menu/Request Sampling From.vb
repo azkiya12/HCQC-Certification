@@ -151,6 +151,7 @@ Public Class Request_Sampling_From
 
         With MetroGrid1
             i = .CurrentRow.Index
+            '' ### Parameter vid penting untuk melakukan update
             vid = .Rows(i).Cells("IdColumn").Value
             If MetroGrid1.Columns(e.ColumnIndex).Name = "ColmEdit" Then
 
@@ -163,30 +164,65 @@ Public Class Request_Sampling_From
                     tcrop.Text = _DataToValue("select crop FROM dbo.category_crop RIGHT OUTER JOIN
                          dbo.spl_request ON dbo.category_crop.prodcode = dbo.spl_request.variety 
 						 where variety='" & tvariety.Text & "'")
-                    tgl_hvs.Text = _DataToValueDate("Select [harvest] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & vid & "").ToString(LabelDate.Text)
                     tnoman.Text = .Rows(i).Cells("NomnlColumn").Value.ToString
                     tlotref.Text = .Rows(i).Cells("NojobColumn").Value.ToString
                     tlotqtt.Text = .Rows(i).Cells("WeightColumn").Value.ToString
-                    tloc_sample.Text = _DataToValue("Select [loc_sample] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & vid & "")
                     tscope.Text = .Rows(i).Cells("ScopeColumn").Value.ToString
-                    tbag.Text = _DataToValue("Select [bag] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & vid & "")
+                    tloc_sample.Text = .Rows(i).Cells("loc_sampleColumn").Value.ToString
 
-                    tsampling.Checked = Convert.ToBoolean(_DataToValue("Select [test_sampling] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & vid & ""))
-                    tmoi.Checked = Convert.ToBoolean(_DataToValue("Select [test_moi] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & vid & ""))
-                    tpur.Checked = Convert.ToBoolean(_DataToValue("Select [test_pur] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & vid & ""))
-                    traf.Checked = Convert.ToBoolean(_DataToValue("Select [test_raf] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & vid & ""))
-                    tger.Checked = Convert.ToBoolean(_DataToValue("Select [test_ger] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & vid & ""))
-                    tvia.Checked = Convert.ToBoolean(_DataToValue("Select [test_via] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & vid & ""))
-                    tremark.Text = _DataToValue("Select [remark] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & vid & "")
+                    Try
+                        Using dread As SqlDataReader = GetSpl_RequestData(vid)
+                            If dread IsNot Nothing AndAlso dread.HasRows Then
+                                While dread.Read()
+                                    Dim harvestDate As DateTime
+                                    If DateTime.TryParse(dread.Item("harvest").ToString(), harvestDate) Then
+                                        tgl_hvs.Text = harvestDate.ToString("dd-MM-yyyy")
+                                    End If
+                                    'tgl_hvs.Text = dread.Item("harvest").ToString(LabelDate.Text)
+                                    tloc_sample.Text = dread.Item("loc_sample")
+                                    tbag.Text = dread.Item("bag")
+                                    tsampling.Checked = Convert.ToBoolean(dread.Item("test_sampling"))
+                                    tmoi.Checked = Convert.ToBoolean(dread.Item("test_moi"))
+                                    tpur.Checked = Convert.ToBoolean(dread.Item("test_pur"))
+                                    traf.Checked = Convert.ToBoolean(dread.Item("test_raf"))
+                                    tger.Checked = Convert.ToBoolean(dread.Item("test_ger"))
+                                    tvia.Checked = Convert.ToBoolean(dread.Item("test_via"))
+                                    tremark.Text = dread.Item("remark")
+                                End While
+                            End If
+
+                        End Using
+                    Catch ex As Exception
+                        MetroMessageBox.Show(Form.ActiveForm, "Error Get Data: " + ex.Message, Form.ActiveForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+                    Finally
+                        If con.State = ConnectionState.Open Then
+                            con.Close()
+                        End If
+                    End Try
+
                     BtnSave.Text = "Update"
                 Else
-                    MetroMessageBox.Show(Me, "Can only be edited the user request by " & _DataToValue("Select [nama_req] from [qc_confirm_view] Where [id]=" & vid & ""))
+                    MetroMessageBox.Show(Me, "Can only be edited the user request by " & _DataToValue("Select [req_name] from [qc_confirm_viewer] Where [id]=" & vid & ""))
                 End If
 
             End If
         End With
 
     End Sub
+
+    Private Function GetSpl_RequestData(ByVal vid As String) As SqlDataReader
+        'Function untuk manmpilkan identitas secara dinamis, contoh:
+
+        Dim sql As String = "SELECT   loc_sample, harvest, [bag], [test_sampling], [test_moi], [test_pur], [test_raf], [test_ger], [test_via], remark
+                            FROM [HCQC_server].[dbo].[spl_request] WHERE ([id] = @ID)"
+        openDB()
+        Dim cmd As New SqlCommand(sql, con) With {
+            .CommandType = CommandType.Text
+        }
+        cmd.Parameters.Add(New SqlParameter("@ID", vid))
+        '        con.Open()
+        Return cmd.ExecuteReader(CommandBehavior.CloseConnection)
+    End Function
 
     'Control untuk Buton Delete pada gridview1
     Private Sub MetroGrid1_DelCellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles MetroGrid1.CellContentClick
@@ -234,7 +270,7 @@ Public Class Request_Sampling_From
                     Return
                 End If
             Else
-                MetroMessageBox.Show(Me, "Can only be edited/delete the user request by " & _DataToValue("Select [nama_req] from [qc_confirm_view] Where [id]=" & vid) & " Or HCQC Staff ")
+                MetroMessageBox.Show(Me, "Can only be edited/delete the user request by " & _DataToValue("Select [req_name] from [qc_confirm_viewer] Where [id]=" & vid) & " Or HCQC Staff ")
             End If
 
         End If
@@ -279,15 +315,33 @@ Public Class Request_Sampling_From
 
     '' Mencari Production Plan dengan key production_code
     Private Sub tid_hvsprod_KeyDown(sender As Object, e As KeyEventArgs) Handles tid_hvsprod.KeyDown
+        Dim sql As String
         If e.KeyCode = Keys.Enter Then
             If _isBOF("[harvestprod]", "[idcode]", tid_hvsprod.Text) = True Then
-                tvariety.Text = _DataToValue("SELECT [variety] From [HCQC_server].[dbo].[harvestprod] WHERE [idcode]=" & tid_hvsprod.Text & "")
-                tfarmer.Text = _DataToValue("SELECT [cgrname] From [HCQC_server].[dbo].[harvestprod] WHERE [idcode]=" & tid_hvsprod.Text & "")
-                tlocation.Text = _DataToValue("SELECT [dusun] From [HCQC_server].[dbo].[harvestprod] WHERE [idcode]=" & tid_hvsprod.Text & "")
-                tgl_hvs.Text = _DataToValueDate("SELECT [harvest] From [HCQC_server].[dbo].[harvestprod] WHERE [idcode]=" & tid_hvsprod.Text & "").ToString(LabelDate.Text)
-                tlotref.Text = _DataToValue("SELECT case when [joblot] IS NULL then '' else [joblot] end as [joblot] from [HCQC_server].[dbo].[harvestprod] WHERE [idcode]=" & tid_hvsprod.Text & "")
-                    'tnoman.Text = _DataToValue("SELECT max[nomnl] as maxman FROM [spl_request] WHERE [id_hvsprod]='" & tid_hvsprod.Text & "'")
-                    tid_hvsprod.SelectAll()
+                Try
+                    openDB()
+                    sql = "SELECT [variety], cgrname, dusun,harvest, case when [joblot] IS NULL then '' else [joblot] end as [joblot] From [HCQC_server].[dbo].[harvestprod] WHERE [idcode]=" & tid_hvsprod.Text & ""
+                    cmd = New SqlClient.SqlCommand(Sql, con) With {
+                        .CommandType = CommandType.Text,
+                        .CommandText = Sql
+                    }
+                    dread = cmd.ExecuteReader
+                    If dread.Read = True Then
+                        tvariety.Text = dread.Item("variety")
+                        tfarmer.Text = dread.Item("cgrname")
+                        tlocation.Text = dread.Item("dusun")
+                        tlotref.Text = dread.Item("joblot")
+                        tgl_hvs.Text = dread.Item("harvest").ToString(LabelDate.Text)
+                    End If
+                Catch ex As Exception
+                    MetroMessageBox.Show(Form.ActiveForm, "Error Get Data Production: " + ex.Message, Form.ActiveForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+                Finally
+                    If con.State = ConnectionState.Open Then
+                        con.Close()
+                    End If
+                End Try
+
+                tid_hvsprod.SelectAll()
             Else
                 MetroMessageBox.Show(Me, "Data Production Planing not found")
             End If
@@ -352,7 +406,6 @@ Public Class Request_Sampling_From
     Private Sub OnOptionsSave(ByVal strData As String)
         'Or whatever you want to do on frmMain with Options Data.
         tid_hvsprod.Text = strData
-
     End Sub
 
     Private Sub LinkFind_Click(sender As Object, e As EventArgs) Handles LinkFind.Click
@@ -380,9 +433,6 @@ Public Class Request_Sampling_From
     End Sub
 
     Private Sub LinkThisMonth_Click(sender As Object, e As EventArgs) Handles LinkThisMonth.Click
-        'Dim sql As String
-        'sql = "SELECT qc_confirm_view.* FROM qc_confirm_view WHERE ([input_date] >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND ([input_date] < DATEADD(dd, 1, EOMONTH(GETDATE()))) Order by id desc"
-        'Dim da As New SqlDataAdapter(sql, con)
         Qc_confirm_viewerTableAdapter.FillByThisMonth(HCQC_NewDataset.qc_confirm_viewer)
         MetroGrid1.Refresh()
         Tsearch.Tag = "this_month"

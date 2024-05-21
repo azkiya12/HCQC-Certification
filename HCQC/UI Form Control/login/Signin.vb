@@ -2,6 +2,8 @@
 Imports System.Data.SqlClient
 
 Public Class Signin
+
+
     Private Sub btnlogin_Click(sender As Object, e As EventArgs) Handles btnlogin.Click
         Dim strEncPass1 As String
         strEncPass1 = Encrypt(tpass.Text)
@@ -17,11 +19,12 @@ Public Class Signin
                     r.Read()
                     Dim id As String = r.Item("id")
                     login.Luserid.Text = id
-                    MsgSuccess.StartPosition = FormStartPosition.CenterParent
-                    MsgSuccess.ShowDialog(Me)
+
+                    MsgSuccess.ShowDialog()
                     _RunSQL_nomsgbox("UPDATE [dbo].[login] SET [status] =1 WHERE id='" & id & "'")
-                    'global_form.Show()
+
                     MainForm.Show()
+
                     tpass.Clear()
                     login.Hide()
                 Else
@@ -50,9 +53,5 @@ Public Class Signin
             tpass.Focus()
             tpass.SelectAll()
         End If
-    End Sub
-
-    Private Sub tpass_Validating(sender As Object, e As CancelEventArgs) Handles tpass.Validating
-
     End Sub
 End Class

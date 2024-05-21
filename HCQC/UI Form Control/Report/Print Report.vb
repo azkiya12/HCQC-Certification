@@ -77,7 +77,7 @@
             ' rowAlreadyExist => if the row already exist on MetroGrid2
             Dim rowAlreadyExist As Boolean = False
             Dim row As DataGridViewRow = MetroGrid1.Rows(i)
-            Dim check As Boolean = MetroGrid1.Rows(i).Cells(0).Value
+            Dim check As Boolean = MetroGrid1.Rows(i).Cells(0).Value '' menangkap value pada baris ke-i cell(0)(kolom pertama)
 
             If check = True Then
 
@@ -193,6 +193,10 @@
         '    Next
         '    LabelCount.Text = count1
         'End If
+    End Sub
+
+    Private Sub tSearchReturn_Click(sender As Object, e As EventArgs) Handles tSearchReturn.Click
+
     End Sub
     '------------------------------------------------------------------Fungsi untuk Checkbox Select All pada DataGrid
 End Class

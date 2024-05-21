@@ -33,3 +33,16 @@ Namespace HCQC_NewDatasetTableAdapters
     Partial Public Class report_sample_trackingTableAdapter
     End Class
 End Namespace
+
+Namespace HCQC_NewDatasetTableAdapters
+    Partial Public Class report_status_pengujianTableAdapter
+    End Class
+
+    Partial Public Class report_global_viewTableAdapter
+    End Class
+End Namespace
+
+Namespace HCQC_NewDatasetTableAdapters
+    Partial Public Class rafaction_viewTableAdapter
+    End Class
+End Namespace

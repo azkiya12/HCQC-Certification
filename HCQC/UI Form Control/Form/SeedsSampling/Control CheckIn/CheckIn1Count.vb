@@ -58,12 +58,16 @@
         If _isBOFAND("receipt", "labnum", tlabnumGer.Text) = True Then
             ''TAMPILKAN DATA DI LABEL
             tTestDateGer.Text = Today.ToString(LabelDate1.Text)
-            LreqnumGer.Text = _DataToValue("SELECT [id] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] ='" & tlabnumGer.Text & "'")
-            LvarietyGer.Text = _DataToValue("SELECT [variety] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & tlabnumGer.Text & "'")
-            LfarmerGer.Text = _DataToValue("SELECT [farmer] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & tlabnumGer.Text & "'")
-            LjobGer.Text = _DataToValue("SELECT CONCAT([nomnl], ' - ', [nojob]) FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & tlabnumGer.Text & "'")
-            LLocationgGer.Text = _DataToValue("SELECT [location] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & tlabnumGer.Text & "'")
-            LharvestGer.Text = _DataToValueDate("SELECT [harvest] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & tlabnumGer.Text & "'")
+
+            Dim controls As New Dictionary(Of String, Control) From {
+                {"id", LreqnumGer},
+                {"variety", LvarietyGer},
+                {"farmer", LfarmerGer},
+                {"location", LLocationgGer},
+                {"harvest", LharvestGer},
+                {"job", LjobGer}
+            }
+            ReadDataFromDatabase(tlabnumGer.Text, controls)
 
             If _isBOFAND2("periodic_schedule", "labnum", tlabnumGer.Text, "[test_on]", "Germination Test") = False Then
                 MetroMessageBox.Show(Me, "Anda melawatkan tahap untuk Check IN Germination Test atau Pengujian DT", "Germination Vigor", MessageBoxButtons.OK, MessageBoxIcon.Warning, 211)

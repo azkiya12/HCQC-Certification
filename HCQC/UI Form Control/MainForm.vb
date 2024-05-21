@@ -154,7 +154,7 @@ Public Class MainForm
     End Sub
 
     Private Sub BtnPrintLabel_Click(sender As Object, e As EventArgs) Handles BtnPrintLabel.Click
-        Label_Select.ShowDialog(Me)
+        Report_Label_HCQC.ShowDialog(Me)
     End Sub
 
     Private Sub BtnCategoryCrop_LinkClicked(sender As Object, e As LinkLabelLinkClickedEventArgs) Handles BtnCategoryCrop.LinkClicked

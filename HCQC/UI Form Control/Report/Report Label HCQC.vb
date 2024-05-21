@@ -51,7 +51,6 @@ Public Class Report_Label_HCQC
         btnShowAll.Tag = "showall"
         AddHandler btnShowAll.ItemClick, AddressOf Me.btnShowAll_ItemClick
 
-
     End Sub
 
     Private Sub UpdateDropDownButton(ByVal submenuItem As BarItem)
@@ -83,7 +82,7 @@ Public Class Report_Label_HCQC
     End Sub
 
 
-    Private Sub dropDownButton1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles DropDownButton1.Click
+    Private Sub DropDownButton1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles DropDownButton1.Click
         Dim tag As String = (TryCast(sender, DropDownButton)).Tag.ToString()
         If tag = "rawmaterial" Then
             Raw_Material()
@@ -141,8 +140,6 @@ Public Class Report_Label_HCQC
         ShowAll()
     End Sub
 
-
-
     Private Sub Report_Label_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'BindGrid()
         DropDownOption()
@@ -165,9 +162,6 @@ Public Class Report_Label_HCQC
         Me.Dispose()
     End Sub
 
-    Private Sub LInkRefresh_Click(sender As Object, e As EventArgs)
-        BindGrid()
-    End Sub
 
     Function SqlToBinding(column As String, parameter As String)
         Dim hasil As String
@@ -206,42 +200,6 @@ Public Class Report_Label_HCQC
                               WHERE        (qc_confirm_viewer.labnum='" & parameter & "')")
         Return hasil
     End Function
-    Private Sub BindGrid()
-        'TODO: This line of code loads data into the 'HCQC_NewDataset.qc_confirm_view' table. You can move, or remove it, as needed.
-        Me.Qc_confirm_viewTableAdapter.FillBy(Me.HCQC_NewDataset.qc_confirm_view)
-
-        'Assign Click event to the DataGridView Cell.
-        AddHandler MetroGrid1.CellContentClick, AddressOf DataGridView_CellClick
-    End Sub
-
-    Sub ShowReport_A2()
-        'Dim Vdt As New HCQC_NewDataset.report_a1_TableDataTable
-        'Dim dt As New HCQC_NewDataset.qc_confirm_viewDataTable
-        'Dim ta As New HCQC_NewDatasetTableAdapters.qc_confirm_viewTableAdapter
-        'Vdt.Clear()
-        'dt.Clear()
-
-        ''Filling Products DataTable from DB
-        'ta.FillBy(dt) ''dibaca dt/report_a1DataTable akan di isi dengan sting SQL pada ta/TableAdapter
-
-        'For i As Integer = 0 To MetroGrid2.Rows.Count() - 1 Step +1
-        '    'Dim check As Boolean = MetroGrid2.Rows(i).Cells(0).Value
-        '    Dim row2 As DataGridViewRow = MetroGrid2.Rows(i)
-        '    'If check = True Then
-        '    Vdt.Rows.Add(row2.Cells(1).Value, ConvertToByteArray(EncodeBarCode(row2.Cells(1).Value, 100)))
-        '    'End If
-        'Next
-
-        ''Create a AveryMailLabels report object
-        ''and set its data source with the DataSet
-        ''--file Crystal Report yg akan tampil
-        'Dim report As New report_a2
-
-        'report.Database.Tables(0).SetDataSource(CType(Vdt, DataTable))
-        'report.Database.Tables(1).SetDataSource(CType(dt, DataTable))
-        'Print_Label.CrystalReportViewer1.ReportSource = report
-        'Print_Label.ShowDialog(Me)
-    End Sub
 
     Sub ShowReport_A3()
         Dim Vdt As New HCQC_NewDataset.report_a1_TableDataTable
@@ -642,7 +600,7 @@ Public Class Report_Label_HCQC
         'Dim selectedRows As List(Of DataGridViewRow) = (From row In MetroGrid2.Rows.Cast(Of DataGridViewRow)()
         '                                                Where Convert.ToBoolean(row.Cells("CheckColumn").Value) = True).ToList()
         ''Deklarasi variable untuk Template termal printer
-        Dim V_idprod, V_Crop, V_harvest1, V_variety1, V_farmer, v_labnum, V_variety2, Vlot, V_weight, V_sampling, V_sampler, V_scope, V_Bags, V_Location As String
+        Dim V_ID, V_idprod, V_Crop, V_harvest1, V_variety1, V_farmer, v_labnum, V_variety2, Vlot, V_weight, V_sampling, V_sampler, V_scope, V_Bags, V_Location As String
         Dim VRenc, Vkontrak, Vcgr As String
         Dim B_moisture, B_Purity, B_germination, B_sampling, B_rafaction, B_rapit As String
         Dim V_moisture, V_Purity, V_germination, V_Bsampling, V_rafaction, V_rapit As String
@@ -654,20 +612,39 @@ Public Class Report_Label_HCQC
             V_Crop = CType(row.Cells("CropColumn").Value, String)
             V_harvest1 = CType(row.Cells("HarvestColumn2").Value, String)
             V_variety1 = CType(row.Cells("VarietyColumn").Value, String)
+
             Vlot = CType(row.Cells("ManualColumn").Value, String) + " / " + CType(row.Cells("LotColumn").Value, String)
-            VRenc = _DataToValue("Select case when [norencana] IS NULL THEN '' ELSE [norencana] end as [noren] FROM [harvestprod] WHERE [idcode]=" & V_idprod)
-            Vkontrak = _DataToValue("SELECT case when [nokontrak] IS NULL THEN '' ELSE [nokontrak] END AS [nokontrak] FROM [harvestprod] WHERE [idcode]=" & V_idprod)
-            Vcgr = _DataToValue("SELECT case when [cgrno] IS NULL THEN '' ELSE [cgrno] END AS [cgrno] from [harvestprod] where [idcode]=" & V_idprod)
+
+            Dim columns As String = "case when [norencana] IS NULL THEN '' ELSE [norencana] end as [noren], " &
+                                    "case when [nokontrak] IS NULL THEN '' ELSE [nokontrak] END AS [nokontrak], " &
+                                    "case when [cgrno] IS NULL THEN '' ELSE [cgrno] END AS [cgrno]"
+            Dim tableName As String = "[harvestprod]"
+            Dim filter As String = "[idcode]=" & V_idprod
+
+            Dim data As DataTable = GetData(columns, tableName, filter)
+            ' Memeriksa apakah ada baris yang dikembalikan
+            If data.Rows.Count > 0 Then
+                ' Mengambil nilai dari field tertentu (misalnya, kolom pertama)
+                Dim fieldValue As String = data.Rows(0)("nama_barang").ToString()
+                VRenc = data.Rows(0)("norencana").ToString()
+                Vkontrak = data.Rows(0)("nokontrak").ToString()
+                Vcgr = data.Rows(0)("cgrno").ToString()
+            Else
+                MessageBox.Show("Tidak ditemukan di Data Production.")
+                Return
+            End If
+
 
             v_labnum = CType(row.Cells("LabNumberColumn").Value, String)
-            V_farmer = _DataToValue("SELECT [farmer] FROM [spl_request] WHERE [id]=" & _DataToValue("SELECT [id] FROM [qc_confirm_view] WHERE [labnum]='" & v_labnum & "'"))
+            V_ID = _DataToValue("SELECT [id] FROM [qc_confirm_viewer] WHERE [labnum]='" & v_labnum & "'")
+            V_farmer = _DataToValue("SELECT [farmer] FROM [spl_request] WHERE [id]=" & V_ID)
             V_variety2 = V_variety1
             V_weight = CType(row.Cells("WeightColumn").Value, String)
             V_sampling = CType(row.Cells("SamplingColumn").Value, String)
             V_sampler = ""
             V_scope = CType(row.Cells("ScopeColumn").Value, String)
-            V_Bags = _DataToValue("SELECT [bag] FROM [spl_request] WHERE [id]=" & _DataToValue("SELECT [id] FROM [qc_confirm_view] WHERE [labnum]='" & v_labnum & "'"))
-            V_Location = _DataToValue("SELECT [loc_sample] FROM [spl_request] WHERE [id]=" & _DataToValue("SELECT [id] FROM [qc_confirm_view] WHERE [labnum]='" & v_labnum & "'"))
+            V_Bags = _DataToValue("SELECT [bag] FROM [spl_request] WHERE [id]=" & V_ID)
+            V_Location = _DataToValue("SELECT [loc_sample] FROM [spl_request] WHERE [id]=" & V_ID)
 
             B_moisture = CType(row.Cells("moistureColumn").Value, String)
             B_Purity = CType(row.Cells("PurityColumn").Value, String)
@@ -708,7 +685,7 @@ Public Class Report_Label_HCQC
                         ^FT40,160^A@N,23,22,TT0003M_^FH\^CI28^FD" & Vlot & "^FS^CI27
                         ^FT403,185^AAN,18,10^FH\^FD" & UCase(V_scope) & "^FS
                         ^BY3,3,30^FT754,34^BCR,,Y,N
-                        ^FH\^FD>" & IIf(V_scope = "Finish Good", ":" & labzpl, ";" & noprodzpl) & "^FS
+                        ^FH\^FD>" & IIf(V_scope = "Finish Good" Or V_scope = "Other", ":" & labzpl, ";" & noprodzpl) & "^FS
                         ^FO631,0^GB0,398,2^FS
                         ^FT40,128^A@N,23,22,TT0003M_^FH\^CI28^FD" & V_variety1 & " ; " & V_farmer & "^FS^CI27
                         ^FT41,83^AAN,27,15^FH\^FD" & v_labnum & "^FS
@@ -913,7 +890,7 @@ Public Class Report_Label_HCQC
                                             SqlToBinding2("qc_confirm_viewer.test_sampling", row.Cells(3).Value.ToString()),
                                             SqlToBinding2("qc_confirm_viewer.test_raf", row.Cells(3).Value.ToString()),
                                             SqlToBinding2("qc_confirm_viewer.test_via", row.Cells(3).Value.ToString())
-)
+                                            )
                     End If
 
                 Else
@@ -1040,4 +1017,5 @@ Public Class Report_Label_HCQC
     Private Sub Report_Label_HCQC_KeyDown(sender As Object, e As KeyEventArgs) Handles Me.KeyDown
         If e.KeyCode = Keys.Escape Then Me.Close()
     End Sub
+
 End Class

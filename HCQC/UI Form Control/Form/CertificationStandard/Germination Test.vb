@@ -166,74 +166,221 @@ Public Class Germination_Test
             dread = cmd.ExecuteReader
             If dread.Read = True Then
                 'Normal Seedling (%)'
-                tNml1.Text = _DataToValue("SELECT t1 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and ([character]='Normal Seedling (%)') ")
-                tNml2.Text = _DataToValue("SELECT t2 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and ([character]='Normal Seedling (%)') ")
-                tNml3.Text = _DataToValue("SELECT t3 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and ([character]='Normal Seedling (%)') ")
-                tNml4.Text = _DataToValue("SELECT t4 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and ([character]='Normal Seedling (%)') ")
-                tNmlArg.Text = _DataToValue("SELECT avrg FROM germination WHERE (labnum= '" & tlabnum.Text & "') and ([character]='Normal Seedling (%)') ")
-                tNmlPrc.Text = _DataToValue("SELECT percn FROM germination WHERE (labnum= '" & tlabnum.Text & "') and ([character]='Normal Seedling (%)') ")
+                Try
+                    openDB()
+                    sql = "SELECT t1,t2,t3,t4,avrg,percn FROM germination WHERE (labnum= '" & tlabnum.Text & "') and ([character]='Normal Seedling (%)') "
+                    cmd = New SqlClient.SqlCommand(sql, con) With {
+                        .CommandType = CommandType.Text,
+                        .CommandText = sql
+                    }
+                    dread = cmd.ExecuteReader
+                    If dread.Read = True Then
+                        tNml1.Text = dread.Item("t1")
+                        tNml2.Text = dread.Item("t2")
+                        tNml3.Text = dread.Item("t3")
+                        tNml4.Text = dread.Item("t4")
+                        tNmlArg.Text = dread.Item("avrg")
+                        tNmlPrc.Text = dread.Item("percn")
+                    End If
+                Catch ex As Exception
+                    MetroMessageBox.Show(Me, "Error Normal Seedling: " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+                Finally
+                    If con.State = ConnectionState.Open Then
+                        con.Close()
+                    End If
+                End Try
 
                 'Abnormal Seedling (%)'
-                tAbNml1.Text = _DataToValue("SELECT t1 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Abnormal Seedling (%)' ")
-                tAbNml2.Text = _DataToValue("SELECT t2 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Abnormal Seedling (%)' ")
-                tAbNml3.Text = _DataToValue("SELECT t3 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Abnormal Seedling (%)' ")
-                tAbNml4.Text = _DataToValue("SELECT t4 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Abnormal Seedling (%)' ")
-                tAbNmlArg.Text = _DataToValue("SELECT avrg FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Abnormal Seedling (%)' ")
-                tAbNmlPrc.Text = _DataToValue("SELECT percn FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Abnormal Seedling (%)' ")
+                Try
+                    openDB()
+                    sql = "SELECT t1,t2,t3,t4,avrg,percn FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Abnormal Seedling (%)' "
+                    cmd = New SqlClient.SqlCommand(sql, con) With {
+                        .CommandType = CommandType.Text,
+                        .CommandText = sql
+                    }
+                    dread = cmd.ExecuteReader
+                    If dread.Read = True Then
+                        tAbNml1.Text = dread.Item("t1")
+                        tAbNml2.Text = dread.Item("t2")
+                        tAbNml3.Text = dread.Item("t3")
+                        tAbNml4.Text = dread.Item("t4")
+                        tAbNmlArg.Text = dread.Item("avrg")
+                        tAbNmlPrc.Text = dread.Item("percn")
+                    End If
+                Catch ex As Exception
+                    MetroMessageBox.Show(Me, "Error Normal Seedling: " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+                Finally
+                    If con.State = ConnectionState.Open Then
+                        con.Close()
+                    End If
+                End Try
 
                 'Hard Seedling (%)'
-                tHd1.Text = _DataToValue("SELECT t1 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Hard Seed (%)' ")
-                tHd2.Text = _DataToValue("SELECT t2 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Hard Seed (%)' ")
-                tHd3.Text = _DataToValue("SELECT t3 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Hard Seed (%)' ")
-                tHd4.Text = _DataToValue("SELECT t4 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Hard Seed (%)' ")
-                tHdArg.Text = _DataToValue("SELECT avrg FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Hard Seed (%)' ")
-                tHdPrc.Text = _DataToValue("SELECT percn FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Hard Seed (%)' ")
+                Try
+                    openDB()
+                    sql = "SELECT t1,t2,t3,t4,avrg,percn FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Hard Seed (%)' "
+                    cmd = New SqlClient.SqlCommand(sql, con) With {
+                        .CommandType = CommandType.Text,
+                        .CommandText = sql
+                    }
+                    dread = cmd.ExecuteReader
+                    If dread.Read = True Then
+                        tHd1.Text = dread.Item("t1")
+                        tHd2.Text = dread.Item("t2")
+                        tHd3.Text = dread.Item("t3")
+                        tHd4.Text = dread.Item("t4")
+                        tHdArg.Text = dread.Item("avrg")
+                        tHdPrc.Text = dread.Item("percn")
+                    End If
+                Catch ex As Exception
+                    MetroMessageBox.Show(Me, "Error Hard Seedling: " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+                Finally
+                    If con.State = ConnectionState.Open Then
+                        con.Close()
+                    End If
+                End Try
 
                 'Fresh Seedling (%)'
-                tFrs1.Text = _DataToValue("SELECT t1 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Fresh Seed (%)' ")
-                tFrs2.Text = _DataToValue("SELECT t2 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Fresh Seed (%)' ")
-                tFrs3.Text = _DataToValue("SELECT t3 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Fresh Seed (%)' ")
-                tFrs4.Text = _DataToValue("SELECT t4 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Fresh Seed (%)' ")
-                tFrsArg.Text = _DataToValue("SELECT avrg FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Fresh Seed (%)' ")
-                tFrsPrc.Text = _DataToValue("SELECT percn FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Fresh Seed (%)' ")
+                Try
+                    openDB()
+                    sql = "SELECT t1,t2,t3,t4,avrg,percn FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Fresh Seed (%)' "
+                    cmd = New SqlClient.SqlCommand(sql, con) With {
+                        .CommandType = CommandType.Text,
+                        .CommandText = sql
+                    }
+                    dread = cmd.ExecuteReader
+                    If dread.Read = True Then
+                        tFrs1.Text = dread.Item("t1")
+                        tFrs2.Text = dread.Item("t2")
+                        tFrs3.Text = dread.Item("t3")
+                        tFrs4.Text = dread.Item("t4")
+                        tFrsArg.Text = dread.Item("avrg")
+                        tFrsPrc.Text = dread.Item("percn")
+
+                    End If
+                Catch ex As Exception
+                    MetroMessageBox.Show(Me, "Error Fresh Seedling: " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+                Finally
+                    If con.State = ConnectionState.Open Then
+                        con.Close()
+                    End If
+                End Try
 
                 'Dead Seed (%)'
-                tDd1.Text = _DataToValue("SELECT t1 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Dead Seed (%)' ")
-                tDd2.Text = _DataToValue("SELECT t2 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Dead Seed (%)' ")
-                tDd3.Text = _DataToValue("SELECT t3 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Dead Seed (%)' ")
-                tDd4.Text = _DataToValue("SELECT t4 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Dead Seed (%)' ")
-                tDdArg.Text = _DataToValue("SELECT avrg FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Dead Seed (%)' ")
-                tDdPrc.Text = _DataToValue("SELECT percn FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Dead Seed (%)' ")
+                Try
+                    openDB()
+                    sql = "SELECT t1,t2,t3,t4,avrg,percn FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Dead Seed (%)' "
+                    cmd = New SqlClient.SqlCommand(sql, con) With {
+                        .CommandType = CommandType.Text,
+                        .CommandText = sql
+                    }
+                    dread = cmd.ExecuteReader
+                    If dread.Read = True Then
+                        tDd1.Text = dread.Item("t1")
+                        tDd2.Text = dread.Item("t2")
+                        tDd3.Text = dread.Item("t3")
+                        tDd4.Text = dread.Item("t4")
+                        tDdArg.Text = dread.Item("avrg")
+                        tDdPrc.Text = dread.Item("percn")
+
+                    End If
+                Catch ex As Exception
+                    MetroMessageBox.Show(Me, "Error Dead Seedling: " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+                Finally
+                    If con.State = ConnectionState.Open Then
+                        con.Close()
+                    End If
+                End Try
+
 
                 'Index Vigor (%)'
-                tVg1.Text = _DataToValue("SELECT t1 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Index Vigor (%)' ")
-                tVg2.Text = _DataToValue("SELECT t2 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Index Vigor (%)' ")
-                tVg3.Text = _DataToValue("SELECT t3 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Index Vigor (%)' ")
-                tVg4.Text = _DataToValue("SELECT t4 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Index Vigor (%)' ")
-                tVgArg.Text = _DataToValue("SELECT avrg FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Index Vigor (%)' ")
-                tVgPrc.Text = _DataToValue("SELECT percn FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Index Vigor (%)' ")
+                Try
+                    openDB()
+                    sql = "SELECT t1,t2,t3,t4,avrg,percn FROM germination WHERE (labnum= '" & tlabnum.Text & "') and [character]='Index Vigor (%)' "
+                    cmd = New SqlClient.SqlCommand(sql, con) With {
+                        .CommandType = CommandType.Text,
+                        .CommandText = sql
+                    }
+                    dread = cmd.ExecuteReader
+                    If dread.Read = True Then
+                        tVg1.Text = dread.Item("t1")
+                        tVg2.Text = dread.Item("t2")
+                        tVg3.Text = dread.Item("t3")
+                        tVg4.Text = dread.Item("t4")
+                        tVgArg.Text = dread.Item("avrg")
+                        tVgPrc.Text = dread.Item("percn")
+
+                    End If
+                Catch ex As Exception
+                    MetroMessageBox.Show(Me, "Error Index Vigor: " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+                Finally
+                    If con.State = ConnectionState.Open Then
+                        con.Close()
+                    End If
+                End Try
+
 
                 'Gemination (%)'
-                tGm1.Text = _DataToValue("SELECT t1 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and ([character]='Germination (%)') ")
-                tGm2.Text = _DataToValue("SELECT t2 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and ([character]='Germination (%)') ")
-                tGm3.Text = _DataToValue("SELECT t3 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and ([character]='Germination (%)') ")
-                tGm4.Text = _DataToValue("SELECT t4 FROM germination WHERE (labnum= '" & tlabnum.Text & "') and ([character]='Germination (%)') ")
-                tGmArg.Text = _DataToValue("SELECT avrg FROM germination WHERE (labnum= '" & tlabnum.Text & "') and ([character]='Germination (%)') ")
-                tGmPrc.Text = _DataToValue("SELECT percn FROM germination WHERE (labnum= '" & tlabnum.Text & "') and ([character]='Germination (%)') ")
+                Try
+                    openDB()
+                    sql = "SELECT t1,t2,t3,t4,avrg,percn FROM germination WHERE (labnum= '" & tlabnum.Text & "') and  ([character]='Germination (%)') "
+                    cmd = New SqlClient.SqlCommand(sql, con) With {
+                        .CommandType = CommandType.Text,
+                        .CommandText = sql
+                    }
+                    dread = cmd.ExecuteReader
+                    If dread.Read = True Then
+                        tGm1.Text = dread.Item("t1")
+                        tGm2.Text = dread.Item("t2")
+                        tGm3.Text = dread.Item("t3")
+                        tGm4.Text = dread.Item("t4")
+                        tGmArg.Text = dread.Item("avrg")
+                        tGmPrc.Text = dread.Item("percn")
+
+                    End If
+                Catch ex As Exception
+                    MetroMessageBox.Show(Me, "Error Gemination: " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+                Finally
+                    If con.State = ConnectionState.Open Then
+                        con.Close()
+                    End If
+                End Try
 
                 'Get Value from Table germination_id
-                Dim tgluji As Date = _DataToValue("SELECT [test_date] FROM [germination_id] WHERE [labnum]='" & tlabnum.Text & "'")
-                Dim tglfist As Date = _DataToValue("SELECT [fist_count] FROM [germination_id] WHERE [labnum]='" & tlabnum.Text & "'")
-                Dim tglfinl As Date = _DataToValue("SELECT [scnd_count] FROM [germination_id] WHERE [labnum]='" & tlabnum.Text & "'")
-                Ttestdate.Text = tgluji.ToString(labeldate1.Text)
-                tfistdate.Text = tglfist.ToString(labeldate2.Text)
-                Tfinaldate.Text = tglfinl.ToString(labeldate3.Text)
+                Dim tgluji, tglfist, tglfinl As Date
 
-                tanalyst.Text = _DataToValue("SELECT [analyst] FROM [germination_id] WHERE [labnum]='" & tlabnum.Text & "'")
-                Tsubst.Text = _DataToValue("SELECT [substrate] FROM [germination_id] WHERE [labnum]='" & tlabnum.Text & "'")
-                Ttemperatur.Text = _DataToValue("SELECT [temp] FROM [germination_id] WHERE [labnum]='" & tlabnum.Text & "'")
-                Ttreatment.Text = _DataToValue("SELECT [treatment] FROM [germination_id] WHERE [labnum]='" & tlabnum.Text & "'")
-                tabnormal.Text = _DataToValue("SELECT [abnormality] FROM [germination_id] WHERE [labnum]='" & tlabnum.Text & "'")
+                Try
+                    openDB()
+                    sql = "SELECT [test_date], [fist_count], [scnd_count],
+                                  [analyst], [substrate], [temp], [treatment], [abnormality] 
+                            FROM [germination_id] WHERE [labnum]='" & tlabnum.Text & "'"
+                    cmd = New SqlClient.SqlCommand(sql, con) With {
+                        .CommandType = CommandType.Text,
+                        .CommandText = sql
+                    }
+                    dread = cmd.ExecuteReader
+                    If dread.Read = True Then
+                        tgluji = dread.Item("test_date")
+                        Ttestdate.Text = tgluji.ToString(labeldate1.Text)
+                        tglfist = dread.Item("fist_count")
+                        tfistdate.Text = tglfist.ToString(labeldate2.Text)
+                        tglfinl = dread.Item("scnd_count")
+                        Tfinaldate.Text = tglfinl.ToString(labeldate3.Text)
+
+                        tanalyst.Text = dread.Item("analyst")
+                        Tsubst.Text = dread.Item("substrate")
+                        Ttemperatur.Text = dread.Item("temp")
+                        Ttreatment.Text = dread.Item("treatment")
+                        tabnormal.Text = dread.Item("abnormality")
+                    End If
+                Catch ex As Exception
+                    MetroMessageBox.Show(Me, "Error Germination ID: " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+                Finally
+                    If con.State = ConnectionState.Open Then
+                        con.Close()
+                    End If
+                End Try
+
 
                 openDB()
                 sql = "Select labnum From receipt WHERE (labnum= '" & tlabnum.Text & "') AND delete_at is NULL"
@@ -243,17 +390,15 @@ Public Class Germination_Test
                 }
                 dread = cmd.ExecuteReader
                 If dread.Read = True Then
-                    Lreqnum.Text = _DataToValue("SELECT [id] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    tlotid.Text = _DataToValue("SELECT [nojob] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    tnomnl.Text = _DataToValue("SELECT [nomnl] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    tVariety.Text = _DataToValue("SELECT [variety] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    tscope.Text = _DataToValue("SELECT [scope] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
+
+                    GetIdSample()
+
                     btnSave.Enabled = False
                     btnUpdate.Enabled = True
                     btnDelete.Enabled = True
                     cboxInputUpdate.Visible = True
                     tcboxinput.Visible = True
-                    con.Close()
+
                 End If
 
             Else
@@ -312,7 +457,13 @@ Public Class Germination_Test
         End If
     End Sub
 
-    Private Sub btncari1_Click(sender As Object, e As EventArgs) Handles btncari1.Click
+    Private Sub tlabnum_KeyDown(sender As Object, e As KeyEventArgs) Handles tlabnum.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            btncari1_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub btncari1_Click(sender As Object, e As EventArgs)
         If String.IsNullOrEmpty(tlabnum.Text) Then
             MetroMessageBox.Show(Me, "Lab Number harus diisi!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
             Return
@@ -321,33 +472,53 @@ Public Class Germination_Test
             ''akan dilanjutkan mengambil data receipt (varietas, lotid, dll)
             If _isBOF("germination", "labnum", tlabnum.Text) = False Then
                 If _isBOF("receipt", "labnum", tlabnum.Text) = True Then
-                    Lreqnum.Text = _DataToValue("SELECT [id] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    tlotid.Text = _DataToValue("SELECT [nojob] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    tnomnl.Text = _DataToValue("SELECT [nomnl] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    tVariety.Text = _DataToValue("SELECT [variety] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    tscope.Text = _DataToValue("SELECT [scope] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    tanalyst.Text = _DataToValue("SELECT [gerout_namelog] FROM [report_status_pengujian] WHERE [labnum] = '" & tlabnum.Text & "'")
-                    Dim tgluji As Date = _DataToValue("SELECT [Ger_TestLog] FROM [report_status_pengujian] WHERE [labnum]='" & tlabnum.Text & "'")
-                    Dim tglvigor As Date = _DataToValue("SELECT CASE WHEN [gervigor_log] IS NULL THEN [gerout_log] ELSE [gervigor_log] END AS [gervigor] FROM [report_status_pengujian] WHERE [labnum]='" & tlabnum.Text & "'")
-                    Dim tglfinl As Date = _DataToValue("SELECT [gerout_log] FROM [report_status_pengujian] WHERE [labnum]='" & tlabnum.Text & "'")
-                    Ttestdate.Text = tgluji.ToString(labeldate1.Text)
-                    tfistdate.Text = tglvigor.ToString(labeldate2.Text)
-                    Tfinaldate.Text = tglfinl.ToString(labeldate3.Text)
+                    Dim tgluji, tglfinl, tglvigor As Date
+                    Dim sql As String
+                    GetIdSample()
+
+                    Try
+                        openDB()
+                        sql = "SELECT [gerout_namelog],[Ger_TestLog],[gerout_log],
+                                    CASE WHEN [gervigor_log] IS NULL 
+                                    THEN [gerout_log] ELSE [gervigor_log] 
+                                    END AS [gervigor]
+                                FROM [report_status_pengujian] WHERE [labnum] = '" & tlabnum.Text & "'"
+                        cmd = New SqlClient.SqlCommand(sql, con) With {
+                            .CommandType = CommandType.Text,
+                            .CommandText = sql
+                        }
+                        dread = cmd.ExecuteReader
+                        If dread.Read = True Then
+                            tgluji = dread.Item("Ger_TestLog")
+                            Ttestdate.Text = tgluji.ToString(labeldate1.Text)
+                            tglvigor = dread.Item("gervigor")
+                            tfistdate.Text = tglvigor.ToString(labeldate2.Text)
+                            tglfinl = dread.Item("gerout_log")
+                            Tfinaldate.Text = tglfinl.ToString(labeldate3.Text)
+                            tanalyst.Text = dread.Item("gerout_namelog")
+                        End If
+                    Catch ex As Exception
+                        MetroMessageBox.Show(Me, "Warning: Mohon untuk melakukan check in/out sample untuk analis. Deskription: " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+                    Finally
+                        If con.State = ConnectionState.Open Then
+                            con.Close()
+                        End If
+                    End Try
+
                 Else
-                    Dim result As Integer = MetroMessageBox.Show(Me, "Data tidak ditemukan!. No Lab. belum terdaftar di Peneriamaan Sampel Masuk!.", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
-                    If result = DialogResult.OK Then
-                        Me.tlabnum.Focus()
-                    ElseIf result = DialogResult.No Then
-                        btnSave.Enabled = True
-                        btnUpdate.Enabled = False
-                        btnDelete.Enabled = False
-                        Me.tlabnum.Focus()
-                    End If
+                    MetroMessageBox.Show(Me, "Data tidak ditemukan!. No Lab. belum terdaftar di Peneriamaan Sampel Masuk!.", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
+
+                    btnSave.Enabled = True
+                    btnUpdate.Enabled = False
+                    btnDelete.Enabled = False
+                    Me.tlabnum.Focus()
+
                 End If
             Else
-                Dim result As Integer = MetroFramework.MetroMessageBox.Show(Me, "Data sudah ada!. Apakah anda ingin melanjutkan pencarian data?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information, 211)
+                Dim result As Integer = MetroFramework.MetroMessageBox.Show(Me, "Data Germination lab number " & tlabnum.Text & " sudah pernah di input!. Click 'Yes' untuk menampilkan data atau Click 'No' untuk input data baru", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information, 211)
                 If result = DialogResult.Yes Then
-                    tlabnum.Focus()
+                    BtnFind_Click(sender, e)
+                    'tlabnum.Focus()
                 ElseIf result = DialogResult.No Then
                     btnSave.Enabled = True
                     btnUpdate.Enabled = False
@@ -381,11 +552,30 @@ Public Class Germination_Test
             End If
         End If
     End Sub
-
-    Private Sub tlabnum_KeyDown(sender As Object, e As KeyEventArgs) Handles tlabnum.KeyDown
-        If e.KeyCode = Keys.Enter Then
-            btncari1_Click(sender, e)
-        End If
+    Private Sub GetIdSample()
+        Dim sql As String
+        Try
+            openDB()
+            sql = "SELECT [id],[nojob],[nomnl],[variety],[scope]  FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') "
+            cmd = New SqlClient.SqlCommand(sql, con) With {
+                .CommandType = CommandType.Text,
+                .CommandText = sql
+            }
+            dread = cmd.ExecuteReader
+            If dread.Read = True Then
+                Lreqnum.Text = dread.Item("id")
+                tlotid.Text = dread.Item("nojob")
+                tnomnl.Text = dread.Item("nomnl")
+                tVariety.Text = dread.Item("variety")
+                tscope.Text = dread.Item("scope")
+            End If
+        Catch ex As Exception
+            MetroMessageBox.Show(Me, "Error ID Sample: " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+        Finally
+            If con.State = ConnectionState.Open Then
+                con.Close()
+            End If
+        End Try
     End Sub
 
     Dim myTextBoxes, myTextBoxes2, myTextBoxes3, myTextBoxes4, myTextBoxes5, myTextBoxes6, myTextBoxes7 As New List(Of MetroFramework.Controls.MetroTextBox)
@@ -1122,16 +1312,6 @@ Public Class Germination_Test
             ts5 = 0
         End Try
         varts5 = ((ts1 + ts2 + ts3 + ts4 + ts5)).ToString
-    End Sub
-
-    Private Sub MetroTabControl1_Click(sender As Object, e As EventArgs) Handles MetroTabControl1.Click
-        '' Gets the number of TabPage objects in the tabControl1 controls collection.  
-        'Dim tabCount As Integer = MetroTabControl1.TabPages.Count
-        'For tabIndex As Integer = 0 To tabCount - 1
-        '    If MetroTabControl1.GetTabRect(tabIndex).Contains(e.Location) Then
-        '        ...  ' clicked on tab with index tabIndex '
-        '    End If
-        'Next
     End Sub
 
     Sub bersih2()

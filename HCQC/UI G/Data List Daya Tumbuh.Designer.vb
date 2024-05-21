@@ -29,8 +29,8 @@ Partial Class Data_List_Daya_Tumbuh
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton
         Me.GrafityDtBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet
-        Me.Grafity_DtTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.Grafity_DtTableAdapter
+        Me.HCQC_serverDataSet = New HCQC_serverDataSet
+        Me.Grafity_DtTableAdapter = New HCQC_serverDataSetTableAdapters.Grafity_DtTableAdapter
         Me.NolabDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.VarietyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.NomnlDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -279,9 +279,9 @@ Partial Class Data_List_Daya_Tumbuh
 
     End Sub
     Friend WithEvents MetroGrid1 As MetroFramework.Controls.MetroGrid
-    Friend WithEvents HCQC_serverDataSet As WindowsApplication1.HCQC_serverDataSet
+    Friend WithEvents HCQC_serverDataSet As HCQC_serverDataSet
     Friend WithEvents GrafityDtBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Grafity_DtTableAdapter As WindowsApplication1.HCQC_serverDataSetTableAdapters.Grafity_DtTableAdapter
+    Friend WithEvents Grafity_DtTableAdapter As HCQC_serverDataSetTableAdapters.Grafity_DtTableAdapter
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
     Friend WithEvents NolabDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents VarietyDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn

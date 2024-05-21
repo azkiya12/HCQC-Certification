@@ -22,83 +22,83 @@ Partial Class PenerimaanSamplePeriodik
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle
-        Me.MetroPanel3 = New MetroFramework.Controls.MetroPanel
-        Me.tdatehvs = New System.Windows.Forms.MaskedTextBox
-        Me.MetroPanel2 = New MetroFramework.Controls.MetroPanel
-        Me.tTgl_msk = New System.Windows.Forms.MaskedTextBox
-        Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel
-        Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid
-        Me.NolabDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.VarietyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.NomnlDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.NojobDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.HvdtDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.WeightDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.DtqcDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.NextTs = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.BrtinDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.uk_bnh = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.TakenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.UjikaDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.UjiraDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.UjidtDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ab_kmsn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ab_bnh = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ab_label = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.KetDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
-        Me.ppc2 = New System.Windows.Forms.DataGridViewTextBoxColumn
+        Me.components = New System.ComponentModel.Container()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Me.MetroPanel3 = New MetroFramework.Controls.MetroPanel()
+        Me.tdatehvs = New System.Windows.Forms.MaskedTextBox()
+        Me.MetroPanel2 = New MetroFramework.Controls.MetroPanel()
+        Me.tTgl_msk = New System.Windows.Forms.MaskedTextBox()
+        Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid()
+        Me.NolabDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VarietyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NomnlDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NojobDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HvdtDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.WeightDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.DtqcDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.NextTs = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BrtinDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.uk_bnh = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.TakenDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UjikaDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UjiraDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UjidtDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ab_kmsn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ab_bnh = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ab_label = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KetDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ppc2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PeriodikmskBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet
-        Me.MetroTile1 = New MetroFramework.Controls.MetroTile
-        Me.btnDelete = New MetroFramework.Controls.MetroButton
-        Me.btnEdit = New MetroFramework.Controls.MetroButton
-        Me.btnSave = New MetroFramework.Controls.MetroButton
-        Me.tket = New MetroFramework.Controls.MetroTextBox
-        Me.tab_bnh = New MetroFramework.Controls.MetroTextBox
-        Me.tab_kmsn = New MetroFramework.Controls.MetroTextBox
-        Me.chkuji_DT = New MetroFramework.Controls.MetroCheckBox
-        Me.chkuji_RA = New MetroFramework.Controls.MetroCheckBox
-        Me.chkuji_KA = New MetroFramework.Controls.MetroCheckBox
-        Me.tPPC = New MetroFramework.Controls.MetroTextBox
-        Me.tBrt_in = New MetroFramework.Controls.MetroTextBox
-        Me.tcls = New MetroFramework.Controls.MetroTextBox
-        Me.tweight = New MetroFramework.Controls.MetroTextBox
-        Me.tnojob = New MetroFramework.Controls.MetroTextBox
-        Me.tnomnl = New MetroFramework.Controls.MetroTextBox
-        Me.MetroLabel16 = New MetroFramework.Controls.MetroLabel
-        Me.MetroLabel15 = New MetroFramework.Controls.MetroLabel
-        Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel
-        Me.MetroLabel13 = New MetroFramework.Controls.MetroLabel
-        Me.MetroLabel12 = New MetroFramework.Controls.MetroLabel
-        Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel
-        Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel
-        Me.tvariety = New MetroFramework.Controls.MetroTextBox
-        Me.tnolab = New MetroFramework.Controls.MetroTextBox
-        Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel
-        Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel
-        Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel
-        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel
-        Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel
-        Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel
-        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel
-        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel
+        Me.HCQC_serverDataSet = New HCQC_serverDataSet()
+        Me.MetroTile1 = New MetroFramework.Controls.MetroTile()
+        Me.btnDelete = New MetroFramework.Controls.MetroButton()
+        Me.btnEdit = New MetroFramework.Controls.MetroButton()
+        Me.btnSave = New MetroFramework.Controls.MetroButton()
+        Me.tket = New MetroFramework.Controls.MetroTextBox()
+        Me.tab_bnh = New MetroFramework.Controls.MetroTextBox()
+        Me.tab_kmsn = New MetroFramework.Controls.MetroTextBox()
+        Me.chkuji_DT = New MetroFramework.Controls.MetroCheckBox()
+        Me.chkuji_RA = New MetroFramework.Controls.MetroCheckBox()
+        Me.chkuji_KA = New MetroFramework.Controls.MetroCheckBox()
+        Me.tPPC = New MetroFramework.Controls.MetroTextBox()
+        Me.tBrt_in = New MetroFramework.Controls.MetroTextBox()
+        Me.tcls = New MetroFramework.Controls.MetroTextBox()
+        Me.tweight = New MetroFramework.Controls.MetroTextBox()
+        Me.tnojob = New MetroFramework.Controls.MetroTextBox()
+        Me.tnomnl = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroLabel16 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel15 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel13 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel12 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
+        Me.tvariety = New MetroFramework.Controls.MetroTextBox()
+        Me.tnolab = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroLabel9 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel7 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel3 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
-        Me.MetroButton1 = New MetroFramework.Controls.MetroButton
-        Me.MetroButton2 = New MetroFramework.Controls.MetroButton
-        Me.tab_label = New MetroFramework.Controls.MetroTextBox
-        Me.MetroToolTip1 = New MetroFramework.Components.MetroToolTip
-        Me.tuk_bnh = New MetroFramework.Controls.MetroComboBox
-        Me.Periodik_mskTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.periodik_mskTableAdapter
-        Me.tPPC2 = New MetroFramework.Controls.MetroTextBox
-        Me.MetroLabel17 = New MetroFramework.Controls.MetroLabel
-        Me.MetroLabel18 = New MetroFramework.Controls.MetroLabel
-        Me.MetroTile2 = New MetroFramework.Controls.MetroTile
+        Me.MetroButton1 = New MetroFramework.Controls.MetroButton()
+        Me.MetroButton2 = New MetroFramework.Controls.MetroButton()
+        Me.tab_label = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroToolTip1 = New MetroFramework.Components.MetroToolTip()
+        Me.tuk_bnh = New MetroFramework.Controls.MetroComboBox()
+        Me.Periodik_mskTableAdapter = New HCQC_serverDataSetTableAdapters.periodik_mskTableAdapter()
+        Me.tPPC2 = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroLabel17 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel18 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroTile2 = New MetroFramework.Controls.MetroTile()
         Me.MetroPanel3.SuspendLayout()
         Me.MetroPanel2.SuspendLayout()
         Me.MetroPanel1.SuspendLayout()
@@ -171,8 +171,8 @@ Partial Class PenerimaanSamplePeriodik
         'MetroPanel1
         '
         Me.MetroPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
-                    Or System.Windows.Forms.AnchorStyles.Left) _
-                    Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroPanel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
         Me.MetroPanel1.Controls.Add(Me.MetroGrid1)
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
@@ -451,6 +451,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.tket.SelectedText = ""
         Me.tket.SelectionLength = 0
         Me.tket.SelectionStart = 0
+        Me.tket.ShortcutsEnabled = True
         Me.tket.Size = New System.Drawing.Size(335, 66)
         Me.tket.TabIndex = 77
         Me.tket.UseSelectable = True
@@ -482,6 +483,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.tab_bnh.SelectedText = ""
         Me.tab_bnh.SelectionLength = 0
         Me.tab_bnh.SelectionStart = 0
+        Me.tab_bnh.ShortcutsEnabled = True
         Me.tab_bnh.Size = New System.Drawing.Size(116, 23)
         Me.tab_bnh.TabIndex = 73
         Me.MetroToolTip1.SetToolTip(Me.tab_bnh, "Kondisi Benih" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Diisi 'Baik' , 'Sobek' , 'Lubang' , dll")
@@ -514,6 +516,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.tab_kmsn.SelectedText = ""
         Me.tab_kmsn.SelectionLength = 0
         Me.tab_kmsn.SelectionStart = 0
+        Me.tab_kmsn.ShortcutsEnabled = True
         Me.tab_kmsn.Size = New System.Drawing.Size(116, 23)
         Me.tab_kmsn.TabIndex = 72
         Me.MetroToolTip1.SetToolTip(Me.tab_kmsn, "Kondisi Kemasan" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Diisi 'Baik' , 'Bercendawan' , 'Busuk' , dsb")
@@ -582,6 +585,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.tPPC.SelectedText = ""
         Me.tPPC.SelectionLength = 0
         Me.tPPC.SelectionStart = 0
+        Me.tPPC.ShortcutsEnabled = True
         Me.tPPC.Size = New System.Drawing.Size(114, 23)
         Me.tPPC.TabIndex = 75
         Me.tPPC.UseSelectable = True
@@ -613,6 +617,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.tBrt_in.SelectedText = ""
         Me.tBrt_in.SelectionLength = 0
         Me.tBrt_in.SelectionStart = 0
+        Me.tBrt_in.ShortcutsEnabled = True
         Me.tBrt_in.Size = New System.Drawing.Size(114, 23)
         Me.tBrt_in.TabIndex = 66
         Me.tBrt_in.UseSelectable = True
@@ -644,6 +649,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.tcls.SelectedText = ""
         Me.tcls.SelectionLength = 0
         Me.tcls.SelectionStart = 0
+        Me.tcls.ShortcutsEnabled = True
         Me.tcls.Size = New System.Drawing.Size(116, 23)
         Me.tcls.TabIndex = 64
         Me.tcls.UseSelectable = True
@@ -675,6 +681,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.tweight.SelectedText = ""
         Me.tweight.SelectionLength = 0
         Me.tweight.SelectionStart = 0
+        Me.tweight.ShortcutsEnabled = True
         Me.tweight.Size = New System.Drawing.Size(116, 23)
         Me.tweight.TabIndex = 63
         Me.tweight.UseSelectable = True
@@ -706,6 +713,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.tnojob.SelectedText = ""
         Me.tnojob.SelectionLength = 0
         Me.tnojob.SelectionStart = 0
+        Me.tnojob.ShortcutsEnabled = True
         Me.tnojob.Size = New System.Drawing.Size(76, 23)
         Me.tnojob.TabIndex = 61
         Me.tnojob.UseSelectable = True
@@ -738,6 +746,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.tnomnl.SelectedText = ""
         Me.tnomnl.SelectionLength = 0
         Me.tnomnl.SelectionStart = 0
+        Me.tnomnl.ShortcutsEnabled = True
         Me.tnomnl.Size = New System.Drawing.Size(33, 23)
         Me.tnomnl.TabIndex = 60
         Me.tnomnl.UseSelectable = True
@@ -792,7 +801,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.MetroLabel12.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.MetroLabel12.Location = New System.Drawing.Point(257, 183)
         Me.MetroLabel12.Name = "MetroLabel12"
-        Me.MetroLabel12.Size = New System.Drawing.Size(87, 19)
+        Me.MetroLabel12.Size = New System.Drawing.Size(86, 19)
         Me.MetroLabel12.TabIndex = 55
         Me.MetroLabel12.Text = "Test Request"
         Me.MetroLabel12.UseStyleColors = True
@@ -842,6 +851,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.tvariety.SelectedText = ""
         Me.tvariety.SelectionLength = 0
         Me.tvariety.SelectionStart = 0
+        Me.tvariety.ShortcutsEnabled = True
         Me.tvariety.Size = New System.Drawing.Size(114, 23)
         Me.tvariety.TabIndex = 52
         Me.tvariety.UseSelectable = True
@@ -873,6 +883,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.tnolab.SelectedText = ""
         Me.tnolab.SelectionLength = 0
         Me.tnolab.SelectionStart = 0
+        Me.tnolab.ShortcutsEnabled = True
         Me.tnolab.Size = New System.Drawing.Size(114, 23)
         Me.tnolab.TabIndex = 51
         Me.tnolab.UseSelectable = True
@@ -896,7 +907,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.MetroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.MetroLabel8.Location = New System.Drawing.Point(644, 224)
         Me.MetroLabel8.Name = "MetroLabel8"
-        Me.MetroLabel8.Size = New System.Drawing.Size(64, 19)
+        Me.MetroLabel8.Size = New System.Drawing.Size(62, 19)
         Me.MetroLabel8.TabIndex = 49
         Me.MetroLabel8.Text = "Taken By"
         '
@@ -906,7 +917,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.MetroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.MetroLabel7.Location = New System.Drawing.Point(29, 253)
         Me.MetroLabel7.Name = "MetroLabel7"
-        Me.MetroLabel7.Size = New System.Drawing.Size(73, 19)
+        Me.MetroLabel7.Size = New System.Drawing.Size(72, 19)
         Me.MetroLabel7.TabIndex = 48
         Me.MetroLabel7.Text = "Weight (g)"
         '
@@ -926,7 +937,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.MetroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.MetroLabel5.Location = New System.Drawing.Point(331, 102)
         Me.MetroLabel5.Name = "MetroLabel5"
-        Me.MetroLabel5.Size = New System.Drawing.Size(80, 19)
+        Me.MetroLabel5.Size = New System.Drawing.Size(79, 19)
         Me.MetroLabel5.TabIndex = 46
         Me.MetroLabel5.Text = "Weight (kg)"
         '
@@ -956,7 +967,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.MetroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.MetroLabel2.Location = New System.Drawing.Point(29, 102)
         Me.MetroLabel2.Name = "MetroLabel2"
-        Me.MetroLabel2.Size = New System.Drawing.Size(52, 19)
+        Me.MetroLabel2.Size = New System.Drawing.Size(51, 19)
         Me.MetroLabel2.TabIndex = 43
         Me.MetroLabel2.Text = "Variety"
         '
@@ -1020,6 +1031,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.tab_label.SelectedText = ""
         Me.tab_label.SelectionLength = 0
         Me.tab_label.SelectionStart = 0
+        Me.tab_label.ShortcutsEnabled = True
         Me.tab_label.Size = New System.Drawing.Size(116, 23)
         Me.tab_label.TabIndex = 74
         Me.MetroToolTip1.SetToolTip(Me.tab_label, "Kondisi Label" & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10) & "Diisi 'Lengkap' , 'Kurang' , 'Rusak' , 'Sobek' , dll")
@@ -1074,6 +1086,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.tPPC2.SelectedText = ""
         Me.tPPC2.SelectionLength = 0
         Me.tPPC2.SelectionStart = 0
+        Me.tPPC2.ShortcutsEnabled = True
         Me.tPPC2.Size = New System.Drawing.Size(114, 23)
         Me.tPPC2.TabIndex = 76
         Me.tPPC2.UseSelectable = True
@@ -1097,7 +1110,7 @@ Partial Class PenerimaanSamplePeriodik
         Me.MetroLabel18.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.MetroLabel18.Location = New System.Drawing.Point(29, 282)
         Me.MetroLabel18.Name = "MetroLabel18"
-        Me.MetroLabel18.Size = New System.Drawing.Size(38, 19)
+        Me.MetroLabel18.Size = New System.Drawing.Size(37, 19)
         Me.MetroLabel18.TabIndex = 48
         Me.MetroLabel18.Text = "Type"
         '
@@ -1225,9 +1238,9 @@ Partial Class PenerimaanSamplePeriodik
     Friend WithEvents MetroLabel1 As MetroFramework.Controls.MetroLabel
     Private WithEvents MetroStyleManager1 As MetroFramework.Components.MetroStyleManager
     Friend WithEvents MetroStyleExtender1 As MetroFramework.Components.MetroStyleExtender
-    Friend WithEvents HCQC_serverDataSet As WindowsApplication1.HCQC_serverDataSet
+    Friend WithEvents HCQC_serverDataSet As HCQC_serverDataSet
     Friend WithEvents PeriodikmskBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Periodik_mskTableAdapter As WindowsApplication1.HCQC_serverDataSetTableAdapters.periodik_mskTableAdapter
+    Friend WithEvents Periodik_mskTableAdapter As HCQC_serverDataSetTableAdapters.periodik_mskTableAdapter
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
     Friend WithEvents tab_label As MetroFramework.Controls.MetroTextBox

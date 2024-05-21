@@ -124,7 +124,7 @@
   <data name="BtnDel.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAYAAADHl1ErAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAArhJREFUeF7t2r9qFFEUBvB9ghRiBIuAiN2CRdAuhV0KwS6FdUijjQgWdul8gjyB
+        wAAADsABataJCQAAArhJREFUeF7t2r9qFFEUBvB9ghRiBIuAiN2CRdAuhV0KwS6FdUijjQgWdul8gjyB
         XUhjF6vY2YlNmhBIYSNpwu7iMjv7J37n3nMvZ0e3WHOzMMfvB5edObOT4TvMbnZP0iEiIiIiIiIiIiIi
         os5gMLg3Go26dlVV9VAPkzWZTF7OZrP6ugG1GR729GmUoC9nsUV/wrHv+jRK6rp+gsb80B5ZP8fj8TN9
         2v8BoZ9K6NtcuMaWXq7dEGY73CcrgPfB53rZ9kKOgxhnJQ70su2FECcxy0qc6GXbCyHkJbmzorWtl22/
@@ -142,7 +142,7 @@
   <data name="BtnSave.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTAw9HKhAAANJElEQVR4Xu3d
+        wAAADsABataJCQAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTAw9HKhAAANJElEQVR4Xu3d
         a+hsZRUGcC/lDUKzMFOzrJPKMeKIwqkvoeSH/GAgplkfNEhKyIikkqORhrdMEyGiAikIsoI0S0u6qZRm
         ec8isdLKboplalB28/SsWWvgz5ln73n3zN6zZ708D/zgsM563/0Oc/aZy77MTtu3bxeRBrQoIo4WRcTR
         oog4WhQRR4si4mhRRBwtioijRRFxtCgijhZFxNGiiDhaFBFHiyLiaFFEHC2KiKNFEXG0KCKOFkXE0aKI
@@ -205,7 +205,7 @@
   <data name="BtnFind.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAYAAADHl1ErAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAA0ZJREFUeF7t2b9rU1EYxvEiooigXcTB3UXs4CCIf4GDmw5uXf0bBOmqiJtbB9Gt
+        wAAADsABataJCQAAA0ZJREFUeF7t2b9rU1EYxvEiooigXcTB3UXs4CCIf4GDmw5uXf0bBOmqiJtbB9Gt
         g7g5VgdXFwmCFFFEGhwqHRrSNI0+556vL/2Z5Jw04eTm/cAl5jn3vHnvS5sm1znnnHPOOeecc84555yb
         mL9j1Ov13jebzfO8VD1wbWNTu6FxXWNVq6FxTWNXm6FxPYY4CyWOVYuhcS2GOAsljAb0ln+aqR8a12GI
         s1DCNBqNM7UbGtdgiLNQwoSsdkOjf0OchRKGuF5Do3dDnIUShrhSm6HRtyHOQglDbGoxNHo2xFkoYYj3

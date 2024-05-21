@@ -51,6 +51,7 @@ Partial Class Moisture_Test
         Me.BtnFind = New Bunifu.Framework.UI.BunifuImageButton()
         Me.MetroToolTip1 = New MetroFramework.Components.MetroToolTip()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.tremark = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel20 = New MetroFramework.Controls.MetroLabel()
         Me.LabelDevide = New MetroFramework.Controls.MetroLabel()
         Me.LabelResult = New MetroFramework.Controls.MetroLabel()
@@ -83,7 +84,6 @@ Partial Class Moisture_Test
         Me.LabelDate1 = New MetroFramework.Controls.MetroLabel()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
-        Me.tremark = New MetroFramework.Controls.MetroTextBox()
         Me.MetroPanel2.SuspendLayout()
         CType(Me.BtnFind, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroPanel1.SuspendLayout()
@@ -636,6 +636,38 @@ Partial Class Moisture_Test
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.VerticalScrollbarSize = 10
         '
+        'tremark
+        '
+        '
+        '
+        '
+        Me.tremark.CustomButton.Image = Nothing
+        Me.tremark.CustomButton.Location = New System.Drawing.Point(123, 1)
+        Me.tremark.CustomButton.Name = ""
+        Me.tremark.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.tremark.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.tremark.CustomButton.TabIndex = 1
+        Me.tremark.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.tremark.CustomButton.UseSelectable = True
+        Me.tremark.CustomButton.Visible = False
+        Me.tremark.Lines = New String(-1) {}
+        Me.tremark.Location = New System.Drawing.Point(206, 381)
+        Me.tremark.MaxLength = 32767
+        Me.tremark.Name = "tremark"
+        Me.tremark.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tremark.PromptText = "Remark"
+        Me.tremark.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.tremark.SelectedText = ""
+        Me.tremark.SelectionLength = 0
+        Me.tremark.SelectionStart = 0
+        Me.tremark.ShortcutsEnabled = True
+        Me.tremark.Size = New System.Drawing.Size(145, 23)
+        Me.tremark.TabIndex = 262
+        Me.tremark.UseSelectable = True
+        Me.tremark.WaterMark = "Remark"
+        Me.tremark.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.tremark.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
         'MetroLabel20
         '
         Me.MetroLabel20.AutoSize = True
@@ -694,7 +726,7 @@ Partial Class Moisture_Test
         '
         Me.tperiod.FormattingEnabled = True
         Me.tperiod.ItemHeight = 23
-        Me.tperiod.Items.AddRange(New Object() {"1 h ± 15 m", "17 h ± 1 h"})
+        Me.tperiod.Items.AddRange(New Object() {"1 h ± 3 m", "17 h ± 1 h"})
         Me.tperiod.Location = New System.Drawing.Point(400, 127)
         Me.tperiod.Name = "tperiod"
         Me.tperiod.PromptText = "Pilih..."
@@ -706,7 +738,7 @@ Partial Class Moisture_Test
         '
         Me.ttemp.FormattingEnabled = True
         Me.ttemp.ItemHeight = 23
-        Me.ttemp.Items.AddRange(New Object() {"103 °C", "130-133 °C"})
+        Me.ttemp.Items.AddRange(New Object() {"103 °C", "127-133 °C"})
         Me.ttemp.Location = New System.Drawing.Point(239, 127)
         Me.ttemp.Name = "ttemp"
         Me.ttemp.PromptText = "Pilih..."
@@ -1141,38 +1173,6 @@ Partial Class Moisture_Test
         '
         Me.MetroStyleManager1.Owner = Me
         Me.MetroStyleManager1.Theme = MetroFramework.MetroThemeStyle.Dark
-        '
-        'tremark
-        '
-        '
-        '
-        '
-        Me.tremark.CustomButton.Image = Nothing
-        Me.tremark.CustomButton.Location = New System.Drawing.Point(123, 1)
-        Me.tremark.CustomButton.Name = ""
-        Me.tremark.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.tremark.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.tremark.CustomButton.TabIndex = 1
-        Me.tremark.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.tremark.CustomButton.UseSelectable = True
-        Me.tremark.CustomButton.Visible = False
-        Me.tremark.Lines = New String(-1) {}
-        Me.tremark.Location = New System.Drawing.Point(206, 381)
-        Me.tremark.MaxLength = 32767
-        Me.tremark.Name = "tremark"
-        Me.tremark.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.tremark.PromptText = "Remark"
-        Me.tremark.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.tremark.SelectedText = ""
-        Me.tremark.SelectionLength = 0
-        Me.tremark.SelectionStart = 0
-        Me.tremark.ShortcutsEnabled = True
-        Me.tremark.Size = New System.Drawing.Size(145, 23)
-        Me.tremark.TabIndex = 262
-        Me.tremark.UseSelectable = True
-        Me.tremark.WaterMark = "Remark"
-        Me.tremark.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.tremark.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Moisture_Test
         '

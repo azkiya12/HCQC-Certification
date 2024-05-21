@@ -29,10 +29,10 @@ Partial Class Lead_Time_Periodic
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid
         Me.PeriodikleadtimeBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet
+        Me.HCQC_serverDataSet = New HCQC_serverDataSet
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
-        Me.Periodik_leadtimeTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.periodik_leadtimeTableAdapter
+        Me.Periodik_leadtimeTableAdapter = New HCQC_serverDataSetTableAdapters.periodik_leadtimeTableAdapter
         Me.NolabDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.VarietyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.NomnlDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -258,9 +258,9 @@ Partial Class Lead_Time_Periodic
     End Sub
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroGrid1 As MetroFramework.Controls.MetroGrid
-    Friend WithEvents HCQC_serverDataSet As WindowsApplication1.HCQC_serverDataSet
+    Friend WithEvents HCQC_serverDataSet As HCQC_serverDataSet
     Friend WithEvents PeriodikleadtimeBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents Periodik_leadtimeTableAdapter As WindowsApplication1.HCQC_serverDataSetTableAdapters.periodik_leadtimeTableAdapter
+    Friend WithEvents Periodik_leadtimeTableAdapter As HCQC_serverDataSetTableAdapters.periodik_leadtimeTableAdapter
     Friend WithEvents MetroStyleManager1 As MetroFramework.Components.MetroStyleManager
     Friend WithEvents MetroStyleExtender1 As MetroFramework.Components.MetroStyleExtender
     Friend WithEvents NolabDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn

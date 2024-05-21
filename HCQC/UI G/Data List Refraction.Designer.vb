@@ -32,8 +32,8 @@ Partial Class Data_List_Refraction
         Me.MetroButton1 = New MetroFramework.Controls.MetroButton
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.RafactionListBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet
-        Me.RafactionListTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.RafactionListTableAdapter
+        Me.HCQC_serverDataSet = New HCQC_serverDataSet
+        Me.RafactionListTableAdapter = New HCQC_serverDataSetTableAdapters.RafactionListTableAdapter
         Me.NolabDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.VarietyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
         Me.NomnlDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn
@@ -409,9 +409,9 @@ Partial Class Data_List_Refraction
     Friend WithEvents ImDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents KetDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents MetroButton1 As MetroFramework.Controls.MetroButton
-    Friend WithEvents HCQC_serverDataSet As WindowsApplication1.HCQC_serverDataSet
+    Friend WithEvents HCQC_serverDataSet As HCQC_serverDataSet
     Friend WithEvents RafactionListBindingSource As System.Windows.Forms.BindingSource
-    Friend WithEvents RafactionListTableAdapter As WindowsApplication1.HCQC_serverDataSetTableAdapters.RafactionListTableAdapter
+    Friend WithEvents RafactionListTableAdapter As HCQC_serverDataSetTableAdapters.RafactionListTableAdapter
     Friend WithEvents MetroStyleManager1 As MetroFramework.Components.MetroStyleManager
     Friend WithEvents NolabDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn
     Friend WithEvents VarietyDataGridViewTextBoxColumn As System.Windows.Forms.DataGridViewTextBoxColumn

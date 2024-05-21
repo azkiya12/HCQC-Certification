@@ -30,7 +30,7 @@ Partial Class QC_Verification
         Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid()
         Me.QcconfirmviewerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_NewDataset = New WindowsApplication1.HCQC_NewDataset()
+        Me.HCQC_NewDataset = New HCQC_NewDataset()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
@@ -41,7 +41,7 @@ Partial Class QC_Verification
         Me.LinkOnProcess = New MetroFramework.Controls.MetroLink()
         Me.Tsearch = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
-        Me.Qc_confirm_viewerTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.qc_confirm_viewerTableAdapter()
+        Me.Qc_confirm_viewerTableAdapter = New HCQC_NewDatasetTableAdapters.qc_confirm_viewerTableAdapter()
         Me.AcceptedColumn = New System.Windows.Forms.DataGridViewLinkColumn()
         Me.RejectedColumn = New System.Windows.Forms.DataGridViewLinkColumn()
         Me.status_confirmColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -265,7 +265,7 @@ Partial Class QC_Verification
         '
         '
         '
-        Me.Tsearch.CustomButton.Image = Global.WindowsApplication1.My.Resources.Resources.Find
+        Me.Tsearch.CustomButton.Image = My.Resources.Resources.Find
         Me.Tsearch.CustomButton.Location = New System.Drawing.Point(168, 1)
         Me.Tsearch.CustomButton.Name = ""
         Me.Tsearch.CustomButton.Size = New System.Drawing.Size(21, 21)

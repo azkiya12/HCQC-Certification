@@ -1,7 +1,13 @@
 ﻿Imports System.Data.SqlClient
+Imports DgvFilterPopup
+
 Public Class Category_List
     Private Sub Category_Form_Load(sender As Object, e As EventArgs) Handles Me.Load
         OnRefreshEventHendler()
+
+        Dim DgvFilter As New DgvFilterManager
+        DgvFilter.DataGridView = MetroGrid1
+        MetroGrid1.ColumnHeadersHeight = 25
     End Sub
 
     Public Sub OnRefreshEventHendler()

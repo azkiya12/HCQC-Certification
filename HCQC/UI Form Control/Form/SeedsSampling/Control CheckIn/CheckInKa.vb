@@ -1,4 +1,6 @@
-﻿Public Class CheckInKa
+﻿Imports Lextm.SharpSnmpLib
+
+Public Class CheckInKa
     Private Sub BtnSaveKa_Click(sender As Object, e As EventArgs) Handles BtnSaveKa.Click
         Dim strIdreq As Integer
         ''check/memastikan data yang ada di sample Receipt
@@ -37,7 +39,7 @@
                     strIdreq = _DataToValue("SELECT id_request FROM receipt WHERE labnum='" & TLabnumKa.Text & "'")
                     _RunSQL("UPDATE periodic_schedule SET id_request='" & strIdreq & "',id_login='" & login.Luserid.Text & "',test_date=Convert(datetime, '" & TTestDateKa.Text & "', 105) WHERE (labnum='" & TLabnumKa.Text & "') AND [test_on]='" & LabelMoi.Text & "'")
                     Me.TLabnumKa.Focus()
-                    bersihKa()
+                    Bersihka()
                 ElseIf result = DialogResult.No Then
                     TLabnumKa.Focus()
                     Return
@@ -54,14 +56,19 @@
     Private Sub BtnFindMoi_Click(sender As Object, e As EventArgs) Handles BtnFindMoi.Click
         ''check/memastikan data yang ada di sample Receipt
         If _isBOFAND("receipt", "labnum", TLabnumKa.Text) = True Then
+
             ''TAMPILKAN DATA DI LABEL
             TTestDateKa.Text = Today.ToString(LabelDate1.Text)
-            LabelIdKa.Text = _DataToValue("SELECT [id] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] ='" & TLabnumKa.Text & "'")
-            LabelVarietyKa.Text = _DataToValue("SELECT [variety] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & TLabnumKa.Text & "'")
-            LabelFarmerKa.Text = _DataToValue("SELECT [farmer] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & TLabnumKa.Text & "'")
-            LabelJobKa.Text = _DataToValue("SELECT CONCAT([nomnl], ' - ', [nojob]) FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & TLabnumKa.Text & "'")
-            LabelLocationKa.Text = _DataToValue("SELECT [location] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & TLabnumKa.Text & "'")
-            LabelHarvestKa.Text = _DataToValueDate("SELECT [harvest] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & TLabnumKa.Text & "'")
+
+            Dim controls As New Dictionary(Of String, Control) From {
+                {"id", LabelIdKa},
+                {"variety", LabelVarietyKa},
+                {"farmer", LabelFarmerKa},
+                {"location", LabelLocationKa},
+                {"harvest", LabelHarvestKa},
+                {"job", LabelJobKa}
+            }
+            ReadDataFromDatabase(TLabnumKa.Text, controls)
 
             ''menentukan apakah nanti ini data baru atau data yang diperbaharui
             If _isBOFAND2("periodic_schedule", "labnum", TLabnumKa.Text, "[test_on]", LabelMoi.Text) = False Then

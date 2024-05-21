@@ -492,19 +492,6 @@ Public Class Sample_Receipt
         tremark.SelectAll()
     End Sub
 
-    Private Sub MetroTabPage1_Click(sender As Object, e As EventArgs) Handles MetroTabPage1.Click
-
-    End Sub
-
-    Private Sub SimpleButton1_Click(sender As Object, e As EventArgs)
-
-    End Sub
-
-    Private Sub Sample_Receipt_KeyUp(sender As Object, e As KeyEventArgs) Handles Me.KeyUp
-
-    End Sub
-
-
     Private Sub LabelPrinter_MouseEnter(sender As Object, e As EventArgs) Handles LabelPrinter.MouseEnter
         LabelPrinter.BackColor = Color.FromArgb(70, 179, 226)
     End Sub

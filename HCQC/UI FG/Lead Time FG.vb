@@ -8,6 +8,7 @@ Public Class Lead_Time_FG
         Dim startCol As Integer
         Dim startRow As Integer
     End Structure
+
     Private pages As Dictionary(Of Integer, pageDetails)
     Dim maxPagesWide As Integer
     Dim maxPagesTall As Integer

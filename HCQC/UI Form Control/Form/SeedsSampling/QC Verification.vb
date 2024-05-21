@@ -47,8 +47,6 @@ Public Class QC_Verification
                     con.Close()
                 End Using
                 MetroGrid1.Rows.RemoveAt(e.RowIndex)
-                'Me.Qc_confirm_viewTableAdapter.FillByOnProcess(Me.HCQC_NewDataset.qc_confirm_view)
-                'MetroGrid1.Refresh()
 
                 'notification neet to verification
                 MainForm.LabelNotifVerivicaion.Text = MainForm.LabelNotifVerivicaion.Text - 1
@@ -87,7 +85,6 @@ Public Class QC_Verification
                 End If
 
                 If RejectedDialog.ShowDialog(Me) = DialogResult.OK Then
-                    'Me.Qc_confirm_viewTableAdapter.FillByRejected(Me.HCQC_NewDataset.qc_confirm_view)
                     MetroGrid1.Rows.RemoveAt(e.RowIndex)
                     RejectedDialog.Close()
                     'notification neet to verification
@@ -103,46 +100,6 @@ Public Class QC_Verification
         End If
 
     End Sub
-    'Private Sub MetroGrid1_AproveCellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles MetroGrid1.CellContentClick
-    '    If e.RowIndex = -1 OrElse MetroGrid1.Columns(e.ColumnIndex).Name <> "BtnCheck" Then Return
-    '    ''Procedure to Save Confirmation Sample Request then Check form Staff
-    '    'If e.ColumnIndex = 13 Then
-
-    '    Dim row As DataGridViewRow = MetroGrid1.Rows(e.RowIndex)
-    '    If MetroGrid1.Columns(e.ColumnIndex).Name = "BtnCheck" Then
-    '        RaiseEvent SaveLabnumber(row.Cells("idColumn").Value)
-    '        Dim ConfirmDialog = New Confirmation
-    '        ConfirmDialog.Lreqnum.Text = row.Cells("idColumn").Value
-    '        ConfirmDialog.Lvariety.Text = row.Cells("VarietyColumn").Value
-    '        ConfirmDialog.Lfarmer.Text = row.Cells("FarmerColumn").Value
-    '        ConfirmDialog.Ljob.Text = row.Cells("NomnlColumn").Value + "/" + row.Cells("NojobColumn").Value
-    '        ConfirmDialog.Lharvest.Text = row.Cells("HarvestColumn").Value
-    '        ConfirmDialog.LLocation.Text = row.Cells("LocationColumn").Value
-    '        ConfirmDialog.LabelLabNumber.Text = row.Cells("labnum").Value.ToString
-    '        ConfirmDialog.TRemarkReject.Text = row.Cells("information_rejectedColumn").Value.ToString
-
-    '        If row.Cells("status_confirmColumn").Value = "Accepted" Then
-    '            ConfirmDialog.CheckAccept.Checked = True
-    '        ElseIf row.Cells("status_confirmColumn").Value = "Rejected" Then
-    '            ConfirmDialog.CheckReject.Checked = True
-    '        End If
-
-    '        If IsDBNull(MetroGrid1.Rows(e.RowIndex).Cells.Item("TglconfirmColumn").Value) Then
-    '            ConfirmDialog.BtnSave.Text = "Submit"
-    '        Else
-    '            ConfirmDialog.BtnSave.Text = "Update"
-    '        End If
-
-    '        If ConfirmDialog.ShowDialog(Me) = DialogResult.OK Then
-    '            Me.Qc_confirm_viewTableAdapter.Fill(Me.HCQC_NewDataset.qc_confirm_view)
-    '            ConfirmDialog.Close()
-
-    '            'notification neet to verification Baloon Popup
-    '            MainForm.LabelNotifVerivicaion.Text = VerificationCount(MainForm.PanelNotifVerification)
-    '            MainForm.Containermenu2.LabelNotifContainerTracing.Text = VerificationCount(MainForm.Containermenu2.Panel2)
-    '        End If
-    '    End If
-    'End Sub
 
     Private Sub MetroGrid1_DelCellContentClick(sender As Object, e As DataGridViewCellEventArgs) Handles MetroGrid1.CellContentClick
         If e.RowIndex = -1 OrElse MetroGrid1.Columns(e.ColumnIndex).Name <> "BtnDel" Then Return

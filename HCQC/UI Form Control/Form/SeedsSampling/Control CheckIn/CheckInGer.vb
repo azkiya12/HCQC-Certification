@@ -1,4 +1,23 @@
 ﻿Public Class CheckInGer
+    Public Function NextPeriodicTest()
+        Dim Vstring As String
+        Dim Vtimes As Integer
+        'Penentuan banyak Bulan berikutnya untuk di Test Ulang
+        'DENGAN VARIABEL "Vtime" sebagai acuan
+        Vstring = Microsoft.VisualBasic.Left(LvarietyGer.Text, 2)
+        If (Vstring = "SC") Then
+            Vstring = Microsoft.VisualBasic.Left(LvarietyGer.Text, 2)
+            'mengabil value bulan berikutnya pada database
+            Vtimes = Val(_DataToValue("SELECT times FROM plot WHERE (variety LIKE '" & Vstring & "%')"))
+        ElseIf {"WM-1002", "WM-1012", "WM-1017", "WM-1029", "WM-1032"}.Contains(LvarietyGer.Text) Then
+            Vtimes = Val(_DataToValue("SELECT times FROM plot WHERE (variety LIKE '" & LvarietyGer.Text & "%')"))
+        ElseIf Vstring <> "SC" AndAlso Vstring <> "WM" Then     'jika kondisi pertama adalah False, maka kondisi kedua tidak akan dievaluasi.
+            Vtimes = 3
+        End If
+
+        Return Vtimes
+    End Function
+
     Private Sub Btn_save_ger_Click(sender As Object, e As EventArgs) Handles Btn_save_ger.Click
         Dim strIdreq As Integer
         ''check/memastikan data yang ada sudah di sample Receipt
@@ -17,6 +36,7 @@
                                ,[labnum]
                                ,[test_on]
                                ,[test_date]
+                               ,[time]
                                )
                              VALUES
                                ('" & strIdreq & "'
@@ -24,6 +44,7 @@
                                ,'" & tlabnumGer.Text & "'
                                ,'" & LabelGer.Text & "'
                                ,Convert(date, getdate())
+                               ," & NextPeriodicTest() & "
                                )")
                     bersihGer()
                     tlabnumGer.Focus()
@@ -58,12 +79,16 @@
         If _isBOFAND("receipt", "labnum", tlabnumGer.Text) = True Then
             ''TAMPILKAN DATA DI LABEL
             tTestDateGer.Text = Today.ToString(LabelDate1.Text)
-            LreqnumGer.Text = _DataToValue("SELECT [id] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] ='" & tlabnumGer.Text & "'")
-            LvarietyGer.Text = _DataToValue("SELECT [variety] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & tlabnumGer.Text & "'")
-            LfarmerGer.Text = _DataToValue("SELECT [farmer] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & tlabnumGer.Text & "'")
-            LjobGer.Text = _DataToValue("SELECT CONCAT([nomnl], ' - ', [nojob]) FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & tlabnumGer.Text & "'")
-            LLocationgGer.Text = _DataToValue("SELECT [location] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & tlabnumGer.Text & "'")
-            LharvestGer.Text = _DataToValueDate("SELECT [harvest] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & tlabnumGer.Text & "'")
+
+            Dim controls As New Dictionary(Of String, Control) From {
+                {"id", LreqnumGer},
+                {"variety", LvarietyGer},
+                {"farmer", LfarmerGer},
+                {"location", LLocationgGer},
+                {"harvest", LharvestGer},
+                {"job", LjobGer}
+            }
+            ReadDataFromDatabase(tlabnumGer.Text, controls)
 
             ''menentukan apakah nanti ini data baru atau data yang diperbaharui
             If _isBOFAND2("periodic_schedule", "labnum", tlabnumGer.Text, "[test_on]", LabelGer.Text) = False Then

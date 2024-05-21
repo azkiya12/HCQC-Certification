@@ -102,7 +102,6 @@ Public Class ista_report
             End If
 
             If ConclutionDialog.ShowDialog(Me) = DialogResult.OK Then
-                'Me.Qc_confirm_viewTableAdapter.FillByRejected(Me.HCQC_NewDataset.qc_confirm_view)
                 MetroGrid1.Rows.RemoveAt(e.RowIndex)
                 ConclutionDialog.Close()
                 'notification neet to verification

@@ -54,14 +54,18 @@
     Private Sub BtnFindPur_Click(sender As Object, e As EventArgs) Handles BtnFindPur.Click
         ''check/memastikan data yang ada di sample Receipt
         If _isBOFAND("receipt", "labnum", tlabnumPur.Text) = True Then
+
             ''TAMPILKAN DATA DI LABEL
             tTestDateGer.Text = Today.ToString(LabelDate1.Text)
-            LreqnumGer.Text = _DataToValue("SELECT [id] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] ='" & tlabnumPur.Text & "'")
-            LvarietyGer.Text = _DataToValue("SELECT [variety] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & tlabnumPur.Text & "'")
-            LfarmerGer.Text = _DataToValue("SELECT [farmer] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & tlabnumPur.Text & "'")
-            LjobGer.Text = _DataToValue("SELECT CONCAT([nomnl], ' - ', [nojob]) FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & tlabnumPur.Text & "'")
-            LLocationgGer.Text = _DataToValue("SELECT [location] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & tlabnumPur.Text & "'")
-            LharvestGer.Text = _DataToValueDate("SELECT [harvest] FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum] = '" & tlabnumPur.Text & "'")
+            Dim controls As New Dictionary(Of String, Control) From {
+                {"id", LreqnumGer},
+                {"variety", LvarietyGer},
+                {"farmer", LfarmerGer},
+                {"location", LLocationGer},
+                {"harvest", LharvestGer},
+                {"job", LjobGer}
+            }
+            ReadDataFromDatabase(tlabnumPur.Text, controls)
 
             ''menentukan apakah nanti ini data baru atau data yang diperbaharui
             If _isBOFAND2("periodic_schedule", "labnum", tlabnumPur.Text, "[test_on]", LabelPur.Text) = False Then
@@ -133,7 +137,7 @@
         LvarietyGer.Text = ""
         LfarmerGer.Text = ""
         LjobGer.Text = ""
-        LLocationgGer.Text = ""
+        LLocationGer.Text = ""
         LharvestGer.Text = ""
 
         Btn_save_Pur.Text = "Save"
