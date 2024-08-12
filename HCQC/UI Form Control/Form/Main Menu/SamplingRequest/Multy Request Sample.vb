@@ -43,7 +43,7 @@ Public Class Multy_Request_Sample
         Dim tglharvest As Date
         Dim stridlogin As Integer = login.Luserid.Text
         Dim strscope As String
-        Dim strSampling, strTestmoi, strTestPur, strTestRaf, strTestGer, strTestVia As Boolean
+        Dim strSampling, strTestmoi, strTestPur, strTestRaf, strTestGer, strTestVia, strkarantina As Boolean
         strscope = TComboScope.Text
         strSampling = tsampling.CheckState
         strTestmoi = tmoi.CheckState
@@ -51,6 +51,7 @@ Public Class Multy_Request_Sample
         strTestRaf = traf.CheckState
         strTestGer = tger.CheckState
         strTestVia = tvia.CheckState
+        strkarantina = tkarantina.CheckState
         Try
             For Each row As DataGridViewRow In MetroGrid2.Rows
                 Using cmd As New SqlCommand("INSERT INTO [spl_request] ([id_login]
@@ -72,10 +73,11 @@ Public Class Multy_Request_Sample
                                                                    ,[test_raf]
                                                                    ,[remark]
                                                                    ,[loc_sample]
+                                                                   ,[kesehatan_benih]
                                                                    ,[input_by]
                                                                    ,[input_date]) 
                                                  VALUES (@idlogin, @idprod, @variety, @farmer, @location, @harvest, @nomnl, @nojob, @weight, @scope
-                                ,@bag, @testSampling, @testmoi, @testpur, @testger, @testvia, @testraf, @remark, @loc_sample, @inputby, GETDATE())", con)
+                                ,@bag, @testSampling, @testmoi, @testpur, @testger, @testvia, @testraf, @remark, @loc_sample, @kesehatan_benih, @inputby, GETDATE())", con)
                     cmd.Parameters.AddWithValue("@idlogin", stridlogin)
                     cmd.Parameters.AddWithValue("@idprod", row.Cells("idproductionColumn").Value)
                     cmd.Parameters.AddWithValue("@variety", row.Cells("VarietyColumn").Value)
@@ -99,6 +101,7 @@ Public Class Multy_Request_Sample
                     remark = IIf(row.Cells("KetColumn").Value Is Nothing, "", row.Cells("KetColumn").Value)
                     cmd.Parameters.AddWithValue("@remark", remark)
                     cmd.Parameters.AddWithValue("@loc_sample", tloc_sample.Text)
+                    cmd.Parameters.AddWithValue("@kesehatan_benih", strkarantina)
                     cmd.Parameters.AddWithValue("@inputby", GetIPAddress)
 
 

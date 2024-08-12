@@ -185,6 +185,8 @@ Public Class Sample_Receipt
                 traf.Checked = Convert.ToBoolean(_DataToValue("Select [test_raf] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & Lreqnum.Text & ""))
                 tger.Checked = Convert.ToBoolean(_DataToValue("Select [test_ger] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & Lreqnum.Text & ""))
                 tvia.Checked = Convert.ToBoolean(_DataToValue("Select [test_via] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & Lreqnum.Text & ""))
+                tkarantina.Checked = Convert.ToBoolean(_DataToValue("Select [kesehatan_benih] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & Lreqnum.Text & ""))
+
                 Lremark.Text = _DataToValue("Select [remark] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & Lreqnum.Text & "")
                 If _isBOF("receipt", "labnum", tlabnum.Text) = True Then
 
@@ -294,6 +296,7 @@ Public Class Sample_Receipt
                         ,[test_ger] = '" & tger.CheckState & "'
                         ,[test_via] = '" & tvia.CheckState & "'
                         ,[test_raf] = '" & traf.CheckState & "'
+                        ,[kesehatan_benih] = '" & tkarantina.CheckState & "'
                         ,[test_ontest]='" & tontest.CheckState & "' WHERE id='" & Lreqnum.Text & "'")
 
                     TermalPrintLA2(sender, e)
@@ -361,6 +364,7 @@ Public Class Sample_Receipt
                         ,[test_ger] = '" & tger.CheckState & "'
                         ,[test_via] = '" & tvia.CheckState & "'
                         ,[test_raf] = '" & traf.CheckState & "'
+                        ,[kesehatan_benih] = '" & tkarantina.CheckState & "'
                         ,[test_ontest]='" & tontest.CheckState & "' WHERE id='" & Lreqnum.Text & "'")
 
             If strupdate = 1 Then
@@ -450,6 +454,7 @@ Public Class Sample_Receipt
         traf.Checked = False
         tger.Checked = False
         tvia.Checked = False
+        tkarantina.Checked = False
         tontest.Checked = False
         tlabnum.Focus()
     End Sub

@@ -323,6 +323,8 @@ Module Module1
     End Function
 
     Public Function GetData(ByVal columns As String, ByVal tableName As String, ByVal filter As String) As DataTable
+        ' Function pengambangan dari Public Function _DataToValue(ByVal sql As String) As String
+        ' ang hanya bisa mengambil 1 output data bertipe string saja
         ' Function untuk mendapatkan data dengan menentukan kolom/field, table, filter
         ' contoh penggunaan
 
@@ -334,34 +336,38 @@ Module Module1
         'DataGridView1.DataSource = data
 
         Dim dataTable As New DataTable()
-
+        con.Close()
         ' Membuat koneksi database
         openDB()
 
-        Using con As New SqlConnection("connectionString")
-            ' Membuat objek command
-            Using cmd As New SqlCommand()
-                ' Menetapkan koneksi ke command
-                cmd.Connection = con
-                ' Menetapkan jenis perintah sebagai teks
-                cmd.CommandType = CommandType.Text
-                ' Membangun query SQL berdasarkan parameter
-                cmd.CommandText = $"SELECT {columns} FROM {tableName} WHERE {filter}"
+        ' Using con As New SqlConnection("Data Source=10.15.13.91\SQLEXPRESS;Initial CataLog=HCQC_server;User ID=admin;Password=administrator")
+        ' Membuat objek command
+        Using cmd As New SqlCommand()
+            ' Menetapkan koneksi ke command
+            cmd.Connection = con
+            ' Menetapkan jenis perintah sebagai teks
+            cmd.CommandType = CommandType.Text
+            ' Membangun query SQL berdasarkan parameter
+            cmd.CommandText = $"SELECT {columns} FROM {tableName} WHERE {filter}"
 
-                Try
-                    ' Membuka koneksi
-                    con.Open()
-                    ' Membuat adapter data
-                    Using adapter As New SqlDataAdapter(cmd)
-                        ' Mengisi data ke DataTable
-                        adapter.Fill(dataTable)
-                    End Using
-                Catch ex As Exception
-                    ' Menampilkan pesan kesalahan jika terjadi
-                    MessageBox.Show("Error: " & ex.Message)
-                End Try
-            End Using
+            Try
+                ' Membuka koneksi
+                'con.Open()
+                ' Membuat adapter data
+                Using adapter As New SqlDataAdapter(cmd)
+                    ' Mengisi data ke DataTable
+                    adapter.Fill(dataTable)
+                End Using
+            Catch ex As Exception
+                ' Menampilkan pesan kesalahan jika terjadi
+                MessageBox.Show("Error Get Data: " & ex.Message)
+            End Try
         End Using
+        'End Using
+
+        If con.State = ConnectionState.Open Then
+            con.Close()
+        End If
 
         Return dataTable
     End Function

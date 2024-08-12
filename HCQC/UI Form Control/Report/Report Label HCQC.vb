@@ -6,6 +6,7 @@ Imports System.Drawing.Printing
 Imports DevExpress.XtraBars
 Imports DevExpress.XtraEditors
 Imports System.ComponentModel
+Imports System.Windows.Controls
 
 Public Class Report_Label_HCQC
     Private barManager1 As BarManager
@@ -36,7 +37,7 @@ Public Class Report_Label_HCQC
         popupMenu1.AddItem(btnShowAll)
 
         DropDownButton1.DropDownControl = popupMenu1
-        AddHandler DropDownButton1.Click, New System.EventHandler(AddressOf Me.dropDownButton1_Click)
+        AddHandler DropDownButton1.Click, New System.EventHandler(AddressOf Me.DropDownButton1_Click)
 
         btnRawMaterial.Tag = "rawmaterial"
         AddHandler btnRawMaterial.ItemClick, AddressOf Me.btnRawMaterial_ItemClick
@@ -595,6 +596,7 @@ Public Class Report_Label_HCQC
         End If
     End Function
 
+
     Public Sub TermalPrintLA42(sender As Object, e As EventArgs)
         ''Membuat list datagrid yang CheckBox Selected
         'Dim selectedRows As List(Of DataGridViewRow) = (From row In MetroGrid2.Rows.Cast(Of DataGridViewRow)()
@@ -615,22 +617,23 @@ Public Class Report_Label_HCQC
 
             Vlot = CType(row.Cells("ManualColumn").Value, String) + " / " + CType(row.Cells("LotColumn").Value, String)
 
-            Dim columns As String = "case when [norencana] IS NULL THEN '' ELSE [norencana] end as [noren], " &
+            Dim columns As String = "case when [norencana] IS NULL THEN '' ELSE [norencana] end as [norencana], " &
                                     "case when [nokontrak] IS NULL THEN '' ELSE [nokontrak] END AS [nokontrak], " &
                                     "case when [cgrno] IS NULL THEN '' ELSE [cgrno] END AS [cgrno]"
             Dim tableName As String = "[harvestprod]"
             Dim filter As String = "[idcode]=" & V_idprod
 
             Dim data As DataTable = GetData(columns, tableName, filter)
+
             ' Memeriksa apakah ada baris yang dikembalikan
             If data.Rows.Count > 0 Then
                 ' Mengambil nilai dari field tertentu (misalnya, kolom pertama)
-                Dim fieldValue As String = data.Rows(0)("nama_barang").ToString()
+                'Dim fieldValue As String = data.Rows(0)("nama_barang").ToString()
                 VRenc = data.Rows(0)("norencana").ToString()
                 Vkontrak = data.Rows(0)("nokontrak").ToString()
                 Vcgr = data.Rows(0)("cgrno").ToString()
             Else
-                MessageBox.Show("Tidak ditemukan di Data Production.")
+                MessageBox.Show("Data Production tidak ditemukan.")
                 Return
             End If
 

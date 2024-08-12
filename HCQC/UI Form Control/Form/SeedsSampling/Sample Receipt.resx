@@ -124,7 +124,7 @@
   <data name="BtnDel.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAYAAADHl1ErAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wQAADsEBuJFr7QAAArhJREFUeF7t2r9qFFEUBvB9ghRiBIuAiN2CRdAuhV0KwS6FdUijjQgWdul8gjyB
+        vwAADr8BOAVTJAAAArhJREFUeF7t2r9qFFEUBvB9ghRiBIuAiN2CRdAuhV0KwS6FdUijjQgWdul8gjyB
         XUhjF6vY2YlNmhBIYSNpwu7iMjv7J37n3nMvZ0e3WHOzMMfvB5edObOT4TvMbnZP0iEiIiIiIiIiIiIi
         os5gMLg3Go26dlVV9VAPkzWZTF7OZrP6ugG1GR729GmUoC9nsUV/wrHv+jRK6rp+gsb80B5ZP8fj8TN9
         2v8BoZ9K6NtcuMaWXq7dEGY73CcrgPfB53rZ9kKOgxhnJQ70su2FECcxy0qc6GXbCyHkJbmzorWtl22/
@@ -150,9 +150,6 @@
   </metadata>
   <metadata name="ReceiptListBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>636, 17</value>
-  </metadata>
-  <metadata name="HCQC_NewDataset.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>480, 17</value>
   </metadata>
   <metadata name="HCQC_NewDataset.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>480, 17</value>

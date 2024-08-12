@@ -25,9 +25,9 @@ Partial Class Sample_Receipt
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Sample_Receipt))
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MetroLabel20 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel21 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel22 = New MetroFramework.Controls.MetroLabel()
@@ -71,6 +71,7 @@ Partial Class Sample_Receipt
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
+        Me.tkarantina = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroLabel18 = New MetroFramework.Controls.MetroLabel()
         Me.Lremark = New MetroFramework.Controls.MetroLabel()
         Me.LabelPrinter = New MetroFramework.Controls.MetroLink()
@@ -129,12 +130,12 @@ Partial Class Sample_Receipt
         Me.InputatDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReceiptbyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReceiptListBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_NewDataset = New HCQC_NewDataset()
+        Me.HCQC_NewDataset = New WindowsApplication1.HCQC_NewDataset()
         Me.StepProgressBarItem1 = New DevExpress.XtraEditors.StepProgressBarItem()
         Me.StepProgressBarItem2 = New DevExpress.XtraEditors.StepProgressBarItem()
         Me.StepProgressBarItem3 = New DevExpress.XtraEditors.StepProgressBarItem()
         Me.DateTimeChartRangeControlClient1 = New DevExpress.XtraEditors.DateTimeChartRangeControlClient()
-        Me.ReceiptListTableAdapter = New HCQC_NewDatasetTableAdapters.ReceiptListTableAdapter()
+        Me.ReceiptListTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.ReceiptListTableAdapter()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroTabControl1.SuspendLayout()
@@ -843,7 +844,7 @@ Partial Class Sample_Receipt
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage2)
         Me.MetroTabControl1.Location = New System.Drawing.Point(3, 3)
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 1
+        Me.MetroTabControl1.SelectedIndex = 0
         Me.MetroTabControl1.Size = New System.Drawing.Size(1178, 482)
         Me.MetroTabControl1.TabIndex = 53
         Me.MetroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark
@@ -852,6 +853,7 @@ Partial Class Sample_Receipt
         'MetroTabPage1
         '
         Me.MetroTabPage1.AutoScroll = True
+        Me.MetroTabPage1.Controls.Add(Me.tkarantina)
         Me.MetroTabPage1.Controls.Add(Me.MetroLabel18)
         Me.MetroTabPage1.Controls.Add(Me.Lremark)
         Me.MetroTabPage1.Controls.Add(Me.LabelPrinter)
@@ -918,9 +920,9 @@ Partial Class Sample_Receipt
         Me.MetroTabPage1.HorizontalScrollbarBarColor = True
         Me.MetroTabPage1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroTabPage1.HorizontalScrollbarSize = 10
-        Me.MetroTabPage1.Location = New System.Drawing.Point(4, 35)
+        Me.MetroTabPage1.Location = New System.Drawing.Point(4, 38)
         Me.MetroTabPage1.Name = "MetroTabPage1"
-        Me.MetroTabPage1.Size = New System.Drawing.Size(1170, 443)
+        Me.MetroTabPage1.Size = New System.Drawing.Size(1170, 440)
         Me.MetroTabPage1.TabIndex = 0
         Me.MetroTabPage1.Text = "Receipt Form       "
         Me.MetroTabPage1.Theme = MetroFramework.MetroThemeStyle.Dark
@@ -928,6 +930,20 @@ Partial Class Sample_Receipt
         Me.MetroTabPage1.VerticalScrollbarBarColor = True
         Me.MetroTabPage1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage1.VerticalScrollbarSize = 10
+        '
+        'tkarantina
+        '
+        Me.tkarantina.AutoSize = True
+        Me.tkarantina.BackColor = System.Drawing.Color.Transparent
+        Me.tkarantina.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.tkarantina.Location = New System.Drawing.Point(540, 300)
+        Me.tkarantina.Name = "tkarantina"
+        Me.tkarantina.Size = New System.Drawing.Size(110, 15)
+        Me.tkarantina.TabIndex = 101
+        Me.tkarantina.Text = "Kesehatan Benih"
+        Me.tkarantina.UseCustomBackColor = True
+        Me.tkarantina.UseCustomForeColor = True
+        Me.tkarantina.UseSelectable = True
         '
         'MetroLabel18
         '
@@ -988,7 +1004,7 @@ Partial Class Sample_Receipt
         Me.tontest.AutoSize = True
         Me.tontest.BackColor = System.Drawing.Color.Transparent
         Me.tontest.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tontest.Location = New System.Drawing.Point(537, 342)
+        Me.tontest.Location = New System.Drawing.Point(540, 363)
         Me.tontest.Name = "tontest"
         Me.tontest.Size = New System.Drawing.Size(78, 15)
         Me.tontest.TabIndex = 95
@@ -1046,7 +1062,7 @@ Partial Class Sample_Receipt
         Me.traf.AutoSize = True
         Me.traf.BackColor = System.Drawing.Color.Transparent
         Me.traf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.traf.Location = New System.Drawing.Point(537, 321)
+        Me.traf.Location = New System.Drawing.Point(540, 342)
         Me.traf.Name = "traf"
         Me.traf.Size = New System.Drawing.Size(96, 15)
         Me.traf.TabIndex = 89
@@ -1061,7 +1077,7 @@ Partial Class Sample_Receipt
         Me.tvia.AutoSize = True
         Me.tvia.BackColor = System.Drawing.Color.Transparent
         Me.tvia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tvia.Location = New System.Drawing.Point(537, 300)
+        Me.tvia.Location = New System.Drawing.Point(540, 321)
         Me.tvia.Name = "tvia"
         Me.tvia.Size = New System.Drawing.Size(88, 15)
         Me.tvia.TabIndex = 91
@@ -1166,7 +1182,7 @@ Partial Class Sample_Receipt
         Me.BunifuSeparator2.LineThickness = 1
         Me.BunifuSeparator2.Location = New System.Drawing.Point(392, 11)
         Me.BunifuSeparator2.Name = "BunifuSeparator2"
-        Me.BunifuSeparator2.Size = New System.Drawing.Size(13, 362)
+        Me.BunifuSeparator2.Size = New System.Drawing.Size(13, 369)
         Me.BunifuSeparator2.TabIndex = 79
         Me.BunifuSeparator2.Transparency = 255
         Me.BunifuSeparator2.Vertical = True
@@ -1323,9 +1339,9 @@ Partial Class Sample_Receipt
         Me.MetroTabPage2.HorizontalScrollbarBarColor = True
         Me.MetroTabPage2.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroTabPage2.HorizontalScrollbarSize = 10
-        Me.MetroTabPage2.Location = New System.Drawing.Point(4, 38)
+        Me.MetroTabPage2.Location = New System.Drawing.Point(4, 35)
         Me.MetroTabPage2.Name = "MetroTabPage2"
-        Me.MetroTabPage2.Size = New System.Drawing.Size(1170, 440)
+        Me.MetroTabPage2.Size = New System.Drawing.Size(1170, 443)
         Me.MetroTabPage2.Style = MetroFramework.MetroColorStyle.Lime
         Me.MetroTabPage2.TabIndex = 1
         Me.MetroTabPage2.Text = "Receipt List       "
@@ -1371,42 +1387,42 @@ Partial Class Sample_Receipt
         Me.MetroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.MetroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.MetroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.MetroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.LabnumDataGridViewTextBoxColumn, Me.IdhvsprodDataGridViewTextBoxColumn, Me.CropDataGridViewTextBoxColumn, Me.VarietyDataGridViewTextBoxColumn, Me.FarmerDataGridViewTextBoxColumn, Me.LocationDataGridViewTextBoxColumn, Me.HarvestDataGridViewTextBoxColumn, Me.WeightDataGridViewTextBoxColumn, Me.NomnlDataGridViewTextBoxColumn, Me.NojobDataGridViewTextBoxColumn, Me.ScopeDataGridViewTextBoxColumn, Me.TestsamplingDataGridViewCheckBoxColumn, Me.TestmoiDataGridViewCheckBoxColumn, Me.TestpurDataGridViewCheckBoxColumn, Me.TestgerDataGridViewCheckBoxColumn, Me.TestviaDataGridViewCheckBoxColumn, Me.TestrafDataGridViewCheckBoxColumn, Me.InputdateDataGridViewTextBoxColumn, Me.RequestbyDataGridViewTextBoxColumn, Me.BrtinDataGridViewTextBoxColumn, Me.SamplingDataGridViewTextBoxColumn, Me.SamplerDataGridViewTextBoxColumn, Me.PackDataGridViewTextBoxColumn, Me.SeedsDataGridViewTextBoxColumn, Me.LabelDataGridViewTextBoxColumn, Me.InputatDataGridViewTextBoxColumn, Me.ReceiptbyDataGridViewTextBoxColumn})
         Me.MetroGrid1.DataSource = Me.ReceiptListBindingSource
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle2
         Me.MetroGrid1.EnableHeadersVisualStyles = False
         Me.MetroGrid1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.MetroGrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.MetroGrid1.Location = New System.Drawing.Point(0, 38)
         Me.MetroGrid1.Name = "MetroGrid1"
         Me.MetroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.MetroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.MetroGrid1.Size = New System.Drawing.Size(1167, 403)
+        Me.MetroGrid1.Size = New System.Drawing.Size(1167, 400)
         Me.MetroGrid1.TabIndex = 2
         Me.MetroGrid1.UseStyleColors = True
         '
@@ -1754,4 +1770,5 @@ Partial Class Sample_Receipt
     Friend WithEvents MetroLabel24 As MetroLabel
     Friend WithEvents MetroLabel18 As MetroLabel
     Friend WithEvents Lremark As MetroLabel
+    Friend WithEvents tkarantina As MetroCheckBox
 End Class

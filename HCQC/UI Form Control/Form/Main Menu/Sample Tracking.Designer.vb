@@ -24,11 +24,11 @@ Partial Class Sample_Tracking
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Sample_Tracking))
-        Dim SimpleContextButton1 As DevExpress.Utils.SimpleContextButton = New DevExpress.Utils.SimpleContextButton()
-        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim SimpleContextButton2 As DevExpress.Utils.SimpleContextButton = New DevExpress.Utils.SimpleContextButton()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.LInkRefresh = New MetroFramework.Controls.MetroLink()
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
         Me.StartDate = New System.Windows.Forms.DateTimePicker()
@@ -169,6 +169,7 @@ Partial Class Sample_Tracking
         Me.LLocation = New MetroFramework.Controls.MetroLabel()
         Me.Report_status_pengujianTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.report_status_pengujianTableAdapter()
         Me.Report_sampel_ambilTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.report_sampel_ambilTableAdapter()
+        Me.colkesehatan_benih = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
@@ -327,15 +328,15 @@ Partial Class Sample_Tracking
         Me.ComboBoxEdit1.Location = New System.Drawing.Point(772, 25)
         Me.ComboBoxEdit1.Name = "ComboBoxEdit1"
         Me.ComboBoxEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        SimpleContextButton1.AlignmentOptions.Panel = DevExpress.Utils.ContextItemPanel.Center
-        SimpleContextButton1.AlignmentOptions.Position = DevExpress.Utils.ContextItemPosition.Far
-        SimpleContextButton1.AnchorAlignment = DevExpress.Utils.AnchorAlignment.Right
-        SimpleContextButton1.Id = New System.Guid("1c5390a2-4707-44f9-ba6b-367a99011a00")
-        SimpleContextButton1.ImageOptionsCollection.ItemHovered.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
-        SimpleContextButton1.ImageOptionsCollection.ItemNormal.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
-        SimpleContextButton1.ImageOptionsCollection.ItemPressed.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
-        SimpleContextButton1.Name = "simpleContextButton1"
-        Me.ComboBoxEdit1.Properties.ContextButtons.Add(SimpleContextButton1)
+        SimpleContextButton2.AlignmentOptions.Panel = DevExpress.Utils.ContextItemPanel.Center
+        SimpleContextButton2.AlignmentOptions.Position = DevExpress.Utils.ContextItemPosition.Far
+        SimpleContextButton2.AnchorAlignment = DevExpress.Utils.AnchorAlignment.Right
+        SimpleContextButton2.Id = New System.Guid("1c5390a2-4707-44f9-ba6b-367a99011a00")
+        SimpleContextButton2.ImageOptionsCollection.ItemHovered.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        SimpleContextButton2.ImageOptionsCollection.ItemNormal.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        SimpleContextButton2.ImageOptionsCollection.ItemPressed.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
+        SimpleContextButton2.Name = "simpleContextButton1"
+        Me.ComboBoxEdit1.Properties.ContextButtons.Add(SimpleContextButton2)
         Me.ComboBoxEdit1.Size = New System.Drawing.Size(112, 20)
         Me.ComboBoxEdit1.TabIndex = 89
         '
@@ -399,7 +400,7 @@ Partial Class Sample_Tracking
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.collabnum, Me.colid_hvsprod, Me.colvariety, Me.colnomnl, Me.colnojob, Me.colweight, Me.colfarmer, Me.collocation, Me.colharvest, Me.colscope, Me.coltest_sampling, Me.coltest_moi, Me.coltest_pur, Me.coltest_ger, Me.coltest_via, Me.coltest_raf, Me.coltest_ontest, Me.colinput_date, Me.colReceipt, Me.colbrt_in, Me.colReceipt_Input, Me.colsampler, Me.colstatus_confirm, Me.colsampling, Me.colRaf_Test, Me.colRaf_Result, Me.colRaf_Analys, Me.colRaf_input, Me.colMoi_Test, Me.colMoi_Analys, Me.colMoi_input, Me.colGer_TestLog, Me.colGer_Test, Me.colGer_1st, Me.colGer_1st_Est, Me.colGer_2nd, Me.colGer_2nd_Est, Me.colGer_Analys, Me.colGer_input, Me.colVia_Test, Me.colVia_Analys, Me.colVia_input, Me.colPur_Test, Me.colPur_Analys, Me.colPur_input, Me.colQuick_Raf, Me.colRetunQC, Me.colReturnQC_Name, Me.colStatusResult, Me.coldays_est, Me.coldate_est, Me.colmoisture_log, Me.colpurity_log, Me.colrafaction_log, Me.colviability_log, Me.colgervigor_log, Me.colgerout_log, Me.colmoisture_namelog, Me.colpurity_namelog, Me.colrafaction_namelog, Me.colviability_namelog, Me.colgertest_namelog, Me.colgerout_namelog, Me.colgervigor_namelog, Me.colaccept_date})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.collabnum, Me.colid_hvsprod, Me.colvariety, Me.colnomnl, Me.colnojob, Me.colweight, Me.colfarmer, Me.collocation, Me.colharvest, Me.colscope, Me.coltest_sampling, Me.coltest_moi, Me.coltest_pur, Me.coltest_ger, Me.coltest_via, Me.coltest_raf, Me.colkesehatan_benih, Me.coltest_ontest, Me.colinput_date, Me.colReceipt, Me.colbrt_in, Me.colReceipt_Input, Me.colsampler, Me.colstatus_confirm, Me.colsampling, Me.colRaf_Test, Me.colRaf_Result, Me.colRaf_Analys, Me.colRaf_input, Me.colMoi_Test, Me.colMoi_Analys, Me.colMoi_input, Me.colGer_TestLog, Me.colGer_Test, Me.colGer_1st, Me.colGer_1st_Est, Me.colGer_2nd, Me.colGer_2nd_Est, Me.colGer_Analys, Me.colGer_input, Me.colVia_Test, Me.colVia_Analys, Me.colVia_input, Me.colPur_Test, Me.colPur_Analys, Me.colPur_input, Me.colQuick_Raf, Me.colRetunQC, Me.colReturnQC_Name, Me.colStatusResult, Me.coldays_est, Me.coldate_est, Me.colmoisture_log, Me.colpurity_log, Me.colrafaction_log, Me.colviability_log, Me.colgervigor_log, Me.colgerout_log, Me.colmoisture_namelog, Me.colpurity_namelog, Me.colrafaction_namelog, Me.colviability_namelog, Me.colgertest_namelog, Me.colgerout_namelog, Me.colgervigor_namelog, Me.colaccept_date})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplace
@@ -576,7 +577,7 @@ Partial Class Sample_Tracking
         Me.colinput_date.FieldName = "input_date"
         Me.colinput_date.Name = "colinput_date"
         Me.colinput_date.Visible = True
-        Me.colinput_date.VisibleIndex = 18
+        Me.colinput_date.VisibleIndex = 19
         Me.colinput_date.Width = 80
         '
         'colReceipt
@@ -585,7 +586,7 @@ Partial Class Sample_Tracking
         Me.colReceipt.FieldName = "Receipt"
         Me.colReceipt.Name = "colReceipt"
         Me.colReceipt.Visible = True
-        Me.colReceipt.VisibleIndex = 19
+        Me.colReceipt.VisibleIndex = 20
         Me.colReceipt.Width = 76
         '
         'colbrt_in
@@ -623,7 +624,7 @@ Partial Class Sample_Tracking
         Me.colsampling.FieldName = "sampling"
         Me.colsampling.Name = "colsampling"
         Me.colsampling.Visible = True
-        Me.colsampling.VisibleIndex = 20
+        Me.colsampling.VisibleIndex = 21
         Me.colsampling.Width = 67
         '
         'colRaf_Test
@@ -681,7 +682,7 @@ Partial Class Sample_Tracking
         Me.colGer_TestLog.FieldName = "Ger_TestLog"
         Me.colGer_TestLog.Name = "colGer_TestLog"
         Me.colGer_TestLog.Visible = True
-        Me.colGer_TestLog.VisibleIndex = 25
+        Me.colGer_TestLog.VisibleIndex = 26
         Me.colGer_TestLog.Width = 101
         '
         'colGer_Test
@@ -781,7 +782,7 @@ Partial Class Sample_Tracking
         Me.colQuick_Raf.FieldName = "Quick_Raf"
         Me.colQuick_Raf.Name = "colQuick_Raf"
         Me.colQuick_Raf.Visible = True
-        Me.colQuick_Raf.VisibleIndex = 28
+        Me.colQuick_Raf.VisibleIndex = 29
         Me.colQuick_Raf.Width = 104
         '
         'colRetunQC
@@ -789,7 +790,7 @@ Partial Class Sample_Tracking
         Me.colRetunQC.FieldName = "RetunQC"
         Me.colRetunQC.Name = "colRetunQC"
         Me.colRetunQC.Visible = True
-        Me.colRetunQC.VisibleIndex = 29
+        Me.colRetunQC.VisibleIndex = 30
         Me.colRetunQC.Width = 67
         '
         'colReturnQC_Name
@@ -804,7 +805,7 @@ Partial Class Sample_Tracking
         Me.colStatusResult.FieldName = "StatusResult"
         Me.colStatusResult.Name = "colStatusResult"
         Me.colStatusResult.Visible = True
-        Me.colStatusResult.VisibleIndex = 30
+        Me.colStatusResult.VisibleIndex = 31
         '
         'coldays_est
         '
@@ -812,7 +813,7 @@ Partial Class Sample_Tracking
         Me.coldays_est.FieldName = "days_est"
         Me.coldays_est.Name = "coldays_est"
         Me.coldays_est.Visible = True
-        Me.coldays_est.VisibleIndex = 31
+        Me.coldays_est.VisibleIndex = 32
         '
         'coldate_est
         '
@@ -820,35 +821,35 @@ Partial Class Sample_Tracking
         Me.coldate_est.FieldName = "date_est"
         Me.coldate_est.Name = "coldate_est"
         Me.coldate_est.Visible = True
-        Me.coldate_est.VisibleIndex = 32
+        Me.coldate_est.VisibleIndex = 33
         '
         'colmoisture_log
         '
         Me.colmoisture_log.FieldName = "moisture_log"
         Me.colmoisture_log.Name = "colmoisture_log"
         Me.colmoisture_log.Visible = True
-        Me.colmoisture_log.VisibleIndex = 21
+        Me.colmoisture_log.VisibleIndex = 22
         '
         'colpurity_log
         '
         Me.colpurity_log.FieldName = "purity_log"
         Me.colpurity_log.Name = "colpurity_log"
         Me.colpurity_log.Visible = True
-        Me.colpurity_log.VisibleIndex = 22
+        Me.colpurity_log.VisibleIndex = 23
         '
         'colrafaction_log
         '
         Me.colrafaction_log.FieldName = "rafaction_log"
         Me.colrafaction_log.Name = "colrafaction_log"
         Me.colrafaction_log.Visible = True
-        Me.colrafaction_log.VisibleIndex = 23
+        Me.colrafaction_log.VisibleIndex = 24
         '
         'colviability_log
         '
         Me.colviability_log.FieldName = "viability_log"
         Me.colviability_log.Name = "colviability_log"
         Me.colviability_log.Visible = True
-        Me.colviability_log.VisibleIndex = 24
+        Me.colviability_log.VisibleIndex = 25
         '
         'colgervigor_log
         '
@@ -856,7 +857,7 @@ Partial Class Sample_Tracking
         Me.colgervigor_log.FieldName = "gervigor_log"
         Me.colgervigor_log.Name = "colgervigor_log"
         Me.colgervigor_log.Visible = True
-        Me.colgervigor_log.VisibleIndex = 26
+        Me.colgervigor_log.VisibleIndex = 27
         Me.colgervigor_log.Width = 94
         '
         'colgerout_log
@@ -865,7 +866,7 @@ Partial Class Sample_Tracking
         Me.colgerout_log.FieldName = "gerout_log"
         Me.colgerout_log.Name = "colgerout_log"
         Me.colgerout_log.Visible = True
-        Me.colgerout_log.VisibleIndex = 27
+        Me.colgerout_log.VisibleIndex = 28
         Me.colgerout_log.Width = 101
         '
         'colmoisture_namelog
@@ -911,7 +912,7 @@ Partial Class Sample_Tracking
         Me.colaccept_date.FieldName = "accept_date"
         Me.colaccept_date.Name = "colaccept_date"
         Me.colaccept_date.Visible = True
-        Me.colaccept_date.VisibleIndex = 33
+        Me.colaccept_date.VisibleIndex = 34
         '
         'LinkLastMonth1
         '
@@ -1024,9 +1025,9 @@ Partial Class Sample_Tracking
         Me.MetroGrid1.AllowUserToAddRows = False
         Me.MetroGrid1.AllowUserToDeleteRows = False
         Me.MetroGrid1.AllowUserToResizeRows = False
-        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
-        Me.MetroGrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
+        Me.MetroGrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
         Me.MetroGrid1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -1035,39 +1036,39 @@ Partial Class Sample_Tracking
         Me.MetroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.MetroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.MetroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.MetroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.IdhvsprodDataGridViewTextBoxColumn, Me.LabnumDataGridViewTextBoxColumn, Me.VarietyDataGridViewTextBoxColumn, Me.FarmerDataGridViewTextBoxColumn, Me.LocationDataGridViewTextBoxColumn, Me.HarvestDataGridViewTextBoxColumn, Me.NomnlDataGridViewTextBoxColumn, Me.WeightDataGridViewTextBoxColumn, Me.request_date, Me.OfficerDataGridViewTextBoxColumn, Me.RemarkDataGridViewTextBoxColumn, Me.TglDataGridViewTextBoxColumn})
         Me.MetroGrid1.DataSource = Me.ReportsampelambilBindingSource
-        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle3
+        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle7
         Me.MetroGrid1.EnableHeadersVisualStyles = False
         Me.MetroGrid1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.MetroGrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.MetroGrid1.Location = New System.Drawing.Point(3, 316)
         Me.MetroGrid1.Name = "MetroGrid1"
         Me.MetroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
         Me.MetroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.MetroGrid1.Size = New System.Drawing.Size(985, 188)
@@ -1680,6 +1681,14 @@ Partial Class Sample_Tracking
         '
         Me.Report_sampel_ambilTableAdapter.ClearBeforeFill = True
         '
+        'colkesehatan_benih
+        '
+        Me.colkesehatan_benih.Caption = "Kesehatan Benih"
+        Me.colkesehatan_benih.FieldName = "kesehatan_benih"
+        Me.colkesehatan_benih.Name = "colkesehatan_benih"
+        Me.colkesehatan_benih.Visible = True
+        Me.colkesehatan_benih.VisibleIndex = 18
+        '
         'Sample_Tracking
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1845,4 +1854,5 @@ Partial Class Sample_Tracking
     Friend WithEvents StartDate As DateTimePicker
     Friend WithEvents MetroLabel19 As MetroLabel
     Friend WithEvents BtnFilterDate As Bunifu.Framework.UI.BunifuImageButton
+    Friend WithEvents colkesehatan_benih As DevExpress.XtraGrid.Columns.GridColumn
 End Class

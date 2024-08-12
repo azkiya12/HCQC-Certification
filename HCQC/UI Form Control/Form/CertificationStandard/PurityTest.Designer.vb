@@ -97,6 +97,7 @@ Partial Class PurityTest
         '
         'tlabnum
         '
+        Me.tlabnum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         '
         '
         '

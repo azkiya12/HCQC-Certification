@@ -117,12 +117,6 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="SplrequestBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>173, 11</value>
-  </metadata>
-  <metadata name="HCQC_NewDataset.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 11</value>
-  </metadata>
   <metadata name="CheckColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -156,14 +150,11 @@
   <metadata name="KetColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="Spl_requestTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>361, 11</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="BtnSave.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAYAAADHl1ErAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAATJJREFUeF7t0DGOBSEMRMG5/6V3k0pa8hB8kcB0pc+ywE9VVVVVVVVVVVVV3e5v
+        wAAADsABataJCQAAATJJREFUeF7t0DGOBSEMRMG5/6V3k0pa8hB8kcB0pc+ywE9VVVVVVVVVVVVV3e5v
         INXEjYJUEzcKUk3cKEg1caMg1cSNglQTNwrSd7nDFlbezV+3sPJu/rqFlXfz1y2svJu/bmHld7lDkGri
         RkG6n/8G6ZWxIN3Pf4P0yliQ7ue/QXplLEj3898gvTIWpPv5b5BeGQvS/fw3SDVxoyB9lztsYeWS0SCd
         wZu3sHLJaJDO4M1bWLlkNEhn8OYtrFwyGqQzePMWVi4ZDdL5/CdIP7MmSOfznyD9zJognc9/grRkdAsr
@@ -171,6 +162,15 @@
         INXEjYJUVVVVVVVVVVVVVQd4nn9UArSuwkoV7AAAAABJRU5ErkJggg==
 </value>
   </data>
+  <metadata name="SplrequestBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>173, 11</value>
+  </metadata>
+  <metadata name="HCQC_NewDataset.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 11</value>
+  </metadata>
+  <metadata name="Spl_requestTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>361, 11</value>
+  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>50</value>
   </metadata>

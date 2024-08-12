@@ -133,13 +133,13 @@ Public Class Germination_Test
                             tlabnum.Focus()
                             bersih2()
                         Else
-                            MetroMessageBox.Show(Me, "Data sudah pernah di input petugas")
+                            MetroMessageBox.Show(Me, "Data sudah pernah di input petugas **")
                         End If
                     Else
-                        MetroMessageBox.Show(Me, "Data sudah pernah di input petugas")
+                        MetroMessageBox.Show(Me, "Data sudah pernah di input petugas *")
                     End If
                 Else
-                    MetroMessageBox.Show(Me, "Germination Persen tidak sama dengan Normal Percen", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning, 211)
+                    MetroMessageBox.Show(Me, "Germination percent tidak sama dengan Normal percent", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning, 211)
                     tGmPrc.WithError = True
                 End If
             Else
@@ -454,6 +454,8 @@ Public Class Germination_Test
                 End If
             Next
 
+            tlabnum.Focus()
+            bersih2()
         End If
     End Sub
 

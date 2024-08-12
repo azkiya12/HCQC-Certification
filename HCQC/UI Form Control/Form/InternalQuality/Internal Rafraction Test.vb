@@ -131,11 +131,11 @@ Public Class Internal_Rafraction_Test
 
                     dread = cmd.ExecuteReader
                     If dread.Read = True Then
-                        Lreqnum.Text = _DataToValue("SELECT [id] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tvariety.Text = _DataToValue("SELECT [variety] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tlotref.Text = _DataToValue("SELECT [nojob] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tnoman.Text = _DataToValue("SELECT [nomnl] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tscope.Text = _DataToValue("SELECT [scope] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
+                        Lreqnum.Text = _DataToValue("SELECT [id] FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') ")
+                        tvariety.Text = _DataToValue("SELECT [variety] FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') ")
+                        tlotref.Text = _DataToValue("SELECT [nojob] FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') ")
+                        tnoman.Text = _DataToValue("SELECT [nomnl] FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') ")
+                        tscope.Text = _DataToValue("SELECT [scope] FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') ")
                     End If
                     BtnSave.Enabled = False
                     BtnUpdate.Enabled = True
@@ -233,30 +233,40 @@ Public Class Internal_Rafraction_Test
 
     Private Sub tlabnum_KeyDown(sender As Object, e As KeyEventArgs) Handles tlabnum.KeyDown
         If e.KeyCode = Keys.Enter Then
-            openDB()
-            Dim sql As String = "Select labnum From rafaction WHERE (labnum= '" & tlabnum.Text & "') AND delete_at IS NUll"
-            cmd = New SqlClient.SqlCommand(sql, con) With {
-                .CommandType = CommandType.Text,
-                .CommandText = sql
-            }
-            dread = cmd.ExecuteReader
-            If dread.Read = False Then
-                openDB()
-                sql = "Select labnum From receipt WHERE (labnum= '" & tlabnum.Text & "')"
-                cmd = New SqlClient.SqlCommand(sql, con) With {
-                    .CommandType = CommandType.Text,
-                    .CommandText = sql
-                }
-                dread = cmd.ExecuteReader
-                If dread.Read = True Then
+            If _isBOFAND("rafaction", "labnum", tlabnum.Text) = False Then
+                If _isBOFAND("receipt", "labnum", tlabnum.Text) = True Then
                     Lreqnum.Text = _DataToValue("SELECT [id] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
                     tvariety.Text = _DataToValue("SELECT [variety] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
                     tlotref.Text = _DataToValue("SELECT [nojob] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
                     tnoman.Text = _DataToValue("SELECT [nomnl] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
                     tscope.Text = _DataToValue("SELECT [scope] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    tanalyst.Text = _DataToValue("SELECT [rafaction_namelog] FROM [report_status_pengujian] WHERE [labnum] = '" & tlabnum.Text & "'")
-                    Dim tgluji As Date = _DataToValue("SELECT [rafaction_log] FROM [report_status_pengujian] WHERE [labnum]='" & tlabnum.Text & "'")
-                    dtgl_uji.Text = tgluji.ToString(LabelDateFormat.Text)
+
+                    Dim tgluji As Date
+                    Dim sql As String
+                    Try
+                        openDB()
+                        sql = "SELECT [rafaction_namelog],[rafaction_log]
+                                FROM [report_status_pengujian] WHERE [labnum] = '" & tlabnum.Text & "'"
+                        cmd = New SqlClient.SqlCommand(sql, con) With {
+                            .CommandType = CommandType.Text,
+                            .CommandText = sql
+                        }
+                        dread = cmd.ExecuteReader
+                        If dread.Read = True Then
+                            tgluji = dread.Item("rafaction_log")
+                            dtgl_uji.Text = tgluji.ToString(LabelDateFormat.Text)
+
+                            tanalyst.Text = dread.Item("rafaction_namelog")
+                        End If
+                    Catch ex As Exception
+                        MetroMessageBox.Show(Me, "Warning: Mohon untuk melakukan check in/out sample untuk analis. Deskription: " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+                    Finally
+                        If con.State = ConnectionState.Open Then
+                            con.Close()
+                        End If
+                    End Try
+
+
                 Else
                     MetroFramework.MetroMessageBox.Show(Me, "Data tidak ditemukan!. Apakah anda ingin melanjutkan pencarian data?", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Warning, 211)
                     'tlabnum.Focus()

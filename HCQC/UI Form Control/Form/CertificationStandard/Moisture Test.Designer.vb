@@ -51,6 +51,9 @@ Partial Class Moisture_Test
         Me.BtnFind = New Bunifu.Framework.UI.BunifuImageButton()
         Me.MetroToolTip1 = New MetroFramework.Components.MetroToolTip()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.BtnMirror = New MetroFramework.Controls.MetroButton()
+        Me.MetroLabel23 = New MetroFramework.Controls.MetroLabel()
+        Me.tmoimean3 = New MetroFramework.Controls.MetroTextBox()
         Me.tremark = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel20 = New MetroFramework.Controls.MetroLabel()
         Me.LabelDevide = New MetroFramework.Controls.MetroLabel()
@@ -174,11 +177,11 @@ Partial Class Moisture_Test
         '
         Me.MetroLabel11.AutoSize = True
         Me.MetroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Regular
-        Me.MetroLabel11.Location = New System.Drawing.Point(405, 327)
+        Me.MetroLabel11.Location = New System.Drawing.Point(394, 356)
         Me.MetroLabel11.Name = "MetroLabel11"
-        Me.MetroLabel11.Size = New System.Drawing.Size(103, 19)
+        Me.MetroLabel11.Size = New System.Drawing.Size(114, 19)
         Me.MetroLabel11.TabIndex = 10
-        Me.MetroLabel11.Text = "Moisture Mean"
+        Me.MetroLabel11.Text = "Mean (1 decimal)"
         '
         'MetroLabel13
         '
@@ -202,6 +205,7 @@ Partial Class Moisture_Test
         '
         'tlabnum
         '
+        Me.tlabnum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         '
         '
         '
@@ -374,7 +378,7 @@ Partial Class Moisture_Test
         Me.tmoimean.CustomButton.Visible = False
         Me.tmoimean.FontSize = MetroFramework.MetroTextBoxSize.Medium
         Me.tmoimean.Lines = New String(-1) {}
-        Me.tmoimean.Location = New System.Drawing.Point(514, 323)
+        Me.tmoimean.Location = New System.Drawing.Point(514, 352)
         Me.tmoimean.MaxLength = 32767
         Me.tmoimean.Name = "tmoimean"
         Me.tmoimean.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -425,7 +429,7 @@ Partial Class Moisture_Test
         Me.ttoleran.AutoSize = True
         Me.ttoleran.CheckAlign = System.Drawing.ContentAlignment.MiddleRight
         Me.ttoleran.FontSize = MetroFramework.MetroCheckBoxSize.Medium
-        Me.ttoleran.Location = New System.Drawing.Point(405, 352)
+        Me.ttoleran.Location = New System.Drawing.Point(405, 381)
         Me.ttoleran.Name = "ttoleran"
         Me.ttoleran.Size = New System.Drawing.Size(126, 19)
         Me.ttoleran.TabIndex = 18
@@ -568,6 +572,9 @@ Partial Class Moisture_Test
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroPanel1.AutoScroll = True
+        Me.MetroPanel1.Controls.Add(Me.BtnMirror)
+        Me.MetroPanel1.Controls.Add(Me.MetroLabel23)
+        Me.MetroPanel1.Controls.Add(Me.tmoimean3)
         Me.MetroPanel1.Controls.Add(Me.tremark)
         Me.MetroPanel1.Controls.Add(Me.MetroLabel20)
         Me.MetroPanel1.Controls.Add(Me.LabelDevide)
@@ -629,12 +636,62 @@ Partial Class Moisture_Test
         Me.MetroPanel1.HorizontalScrollbarSize = 10
         Me.MetroPanel1.Location = New System.Drawing.Point(13, 13)
         Me.MetroPanel1.Name = "MetroPanel1"
-        Me.MetroPanel1.Size = New System.Drawing.Size(639, 485)
+        Me.MetroPanel1.Size = New System.Drawing.Size(655, 485)
         Me.MetroPanel1.TabIndex = 0
         Me.MetroPanel1.VerticalScrollbar = True
         Me.MetroPanel1.VerticalScrollbarBarColor = True
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.VerticalScrollbarSize = 10
+        '
+        'BtnMirror
+        '
+        Me.BtnMirror.Location = New System.Drawing.Point(578, 265)
+        Me.BtnMirror.Name = "BtnMirror"
+        Me.BtnMirror.Size = New System.Drawing.Size(51, 23)
+        Me.BtnMirror.TabIndex = 265
+        Me.BtnMirror.Text = "Mirror"
+        Me.BtnMirror.UseSelectable = True
+        '
+        'MetroLabel23
+        '
+        Me.MetroLabel23.AutoSize = True
+        Me.MetroLabel23.FontWeight = MetroFramework.MetroLabelWeight.Regular
+        Me.MetroLabel23.Location = New System.Drawing.Point(394, 327)
+        Me.MetroLabel23.Name = "MetroLabel23"
+        Me.MetroLabel23.Size = New System.Drawing.Size(114, 19)
+        Me.MetroLabel23.TabIndex = 264
+        Me.MetroLabel23.Text = "Mean (3 decimal)"
+        '
+        'tmoimean3
+        '
+        '
+        '
+        '
+        Me.tmoimean3.CustomButton.Image = Nothing
+        Me.tmoimean3.CustomButton.Location = New System.Drawing.Point(36, 1)
+        Me.tmoimean3.CustomButton.Name = ""
+        Me.tmoimean3.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.tmoimean3.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.tmoimean3.CustomButton.TabIndex = 1
+        Me.tmoimean3.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.tmoimean3.CustomButton.UseSelectable = True
+        Me.tmoimean3.CustomButton.Visible = False
+        Me.tmoimean3.FontSize = MetroFramework.MetroTextBoxSize.Medium
+        Me.tmoimean3.Lines = New String(-1) {}
+        Me.tmoimean3.Location = New System.Drawing.Point(514, 323)
+        Me.tmoimean3.MaxLength = 32767
+        Me.tmoimean3.Name = "tmoimean3"
+        Me.tmoimean3.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tmoimean3.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.tmoimean3.SelectedText = ""
+        Me.tmoimean3.SelectionLength = 0
+        Me.tmoimean3.SelectionStart = 0
+        Me.tmoimean3.ShortcutsEnabled = True
+        Me.tmoimean3.Size = New System.Drawing.Size(58, 23)
+        Me.tmoimean3.TabIndex = 263
+        Me.tmoimean3.UseSelectable = True
+        Me.tmoimean3.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.tmoimean3.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'tremark
         '
@@ -671,7 +728,7 @@ Partial Class Moisture_Test
         'MetroLabel20
         '
         Me.MetroLabel20.AutoSize = True
-        Me.MetroLabel20.Location = New System.Drawing.Point(571, 374)
+        Me.MetroLabel20.Location = New System.Drawing.Point(571, 403)
         Me.MetroLabel20.Name = "MetroLabel20"
         Me.MetroLabel20.Size = New System.Drawing.Size(20, 19)
         Me.MetroLabel20.TabIndex = 261
@@ -681,7 +738,7 @@ Partial Class Moisture_Test
         '
         Me.LabelDevide.AutoSize = True
         Me.LabelDevide.FontWeight = MetroFramework.MetroLabelWeight.Regular
-        Me.LabelDevide.Location = New System.Drawing.Point(514, 374)
+        Me.LabelDevide.Location = New System.Drawing.Point(514, 403)
         Me.LabelDevide.Name = "LabelDevide"
         Me.LabelDevide.Size = New System.Drawing.Size(51, 19)
         Me.LabelDevide.TabIndex = 260
@@ -692,7 +749,7 @@ Partial Class Moisture_Test
         '
         Me.LabelResult.AutoSize = True
         Me.LabelResult.FontWeight = MetroFramework.MetroLabelWeight.Regular
-        Me.LabelResult.Location = New System.Drawing.Point(541, 352)
+        Me.LabelResult.Location = New System.Drawing.Point(541, 381)
         Me.LabelResult.Name = "LabelResult"
         Me.LabelResult.Size = New System.Drawing.Size(52, 19)
         Me.LabelResult.TabIndex = 260
@@ -1181,7 +1238,7 @@ Partial Class Moisture_Test
         Me.Controls.Add(Me.MetroPanel1)
         Me.Name = "Moisture_Test"
         Me.Padding = New System.Windows.Forms.Padding(10)
-        Me.Size = New System.Drawing.Size(652, 511)
+        Me.Size = New System.Drawing.Size(668, 511)
         Me.MetroPanel2.ResumeLayout(False)
         Me.MetroPanel2.PerformLayout()
         CType(Me.BtnFind, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1252,4 +1309,7 @@ Partial Class Moisture_Test
     Friend WithEvents LabelDevide As MetroLabel
     Friend WithEvents MetroLabel20 As MetroLabel
     Friend WithEvents tremark As MetroTextBox
+    Friend WithEvents MetroLabel23 As MetroLabel
+    Friend WithEvents tmoimean3 As MetroTextBox
+    Friend WithEvents BtnMirror As MetroButton
 End Class

@@ -127,7 +127,7 @@
   <data name="BtnFilterDate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAYAAADHl1ErAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAAplJREFUeF7t2j2LE1EUBuAgYgphtRBFxMafYCNiYyE2Wohgbyf+APvAIjaLCLKF
+        vAAADrwBlbxySQAAAplJREFUeF7t2j2LE1EUBuAgYgphtRBFxMafYCNiYyE2Wohgbyf+APvAIjaLCLKF
         H8Va2FnY2NhEsBBSLIqk22ZZxGFZAiZMGPLpe3LfmWR0Ns7M7kq4eR8YLrkfB85h5uZmdisiIiIiIiIi
         IiIiIiIii6lWqx3r9/tXx+PxGq7GaDTaQRuxbQyHww20t3FVuWQ5WaFQhHsozBbaPAIU70G9Xj/OEMsj
         DMPzKNRnFqIQrPseRdElhvJfr9e7jKR/Mv9SsL6F5gpD+qvb7V5Asj9c2lPoC/G4vRoMBrcw5yK6qtZi
@@ -184,6 +184,9 @@
   <metadata name="HCQC_NewDataset.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>609, 17</value>
   </metadata>
+  <metadata name="HCQC_NewDataset.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>609, 17</value>
+  </metadata>
   <metadata name="request_date.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
@@ -193,7 +196,7 @@
   <data name="BtnSave.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAMgAAADICAYAAACtWK6eAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTAw9HKhAAANJElEQVR4Xu3d
+        vAAADrwBlbxySQAAABp0RVh0U29mdHdhcmUAUGFpbnQuTkVUIHYzLjUuMTAw9HKhAAANJElEQVR4Xu3d
         a+hsZRUGcC/lDUKzMFOzrJPKMeKIwqkvoeSH/GAgplkfNEhKyIikkqORhrdMEyGiAikIsoI0S0u6qZRm
         ec8isdLKboplalB28/SsWWvgz5ln73n3zN6zZ708D/zgsM563/0Oc/aZy77MTtu3bxeRBrQoIo4WRcTR
         oog4WhQRR4si4mhRRBwtioijRRFxtCgijhZFxNGiiDhaFBFHiyLiaFFEHC2KiKNFEXG0KCKOFkXE0aKI

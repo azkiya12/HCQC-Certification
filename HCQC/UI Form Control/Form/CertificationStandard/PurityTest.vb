@@ -8,23 +8,39 @@ Public Class PurityTest
                 Return
             Else
                 If _isBOFAND("purity", "labnum", tlabnum.Text) = False Then
-                    openDB()
-                    Dim sql As String
-                    sql = "Select * From receipt WHERE (labnum= '" & tlabnum.Text & "')"
-                    cmd = New SqlClient.SqlCommand(sql, con) With {
-                        .CommandType = CommandType.Text,
-                        .CommandText = sql
-                    }
-                    dread = cmd.ExecuteReader
-                    If dread.Read = True Then
-                        Lreqnum.Text = _DataToValue("SELECT [id] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tvariety.Text = _DataToValue("SELECT [variety] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tlotref.Text = _DataToValue("SELECT [nojob] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tnoman.Text = _DataToValue("SELECT [nomnl] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tscope.Text = _DataToValue("SELECT [scope] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                        tanalyst.Text = _DataToValue("SELECT [purity_namelog] FROM [report_status_pengujian] WHERE [labnum] = '" & tlabnum.Text & "'")
-                        Dim tgluji As Date = _DataToValue("SELECT [purity_log] FROM [report_status_pengujian] WHERE [labnum]='" & tlabnum.Text & "'")
-                        ttgldate.Text = tgluji.ToString(LabelDate1.Text)
+                    If _isBOFAND("receipt", "labnum", tlabnum.Text) = True Then
+
+                        Dim tgluji As Date
+                        Dim sql As String
+                        Try
+                            openDB()
+                            sql = "SELECT [purity_namelog],[purity_log]
+                                FROM [report_status_pengujian] WHERE [labnum] = '" & tlabnum.Text & "'"
+                            cmd = New SqlClient.SqlCommand(sql, con) With {
+                            .CommandType = CommandType.Text,
+                            .CommandText = sql
+                        }
+                            dread = cmd.ExecuteReader
+                            If dread.Read = True Then
+                                tgluji = dread.Item("purity_log")
+                                ttgldate.Text = tgluji.ToString(LabelDate1.Text)
+
+                                tanalyst.Text = dread.Item("purity_namelog")
+                            End If
+                        Catch ex As Exception
+                            MetroMessageBox.Show(Me, "Warning: Mohon untuk melakukan check in/out sample untuk analis. Deskription: " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+                        Finally
+                            If con.State = ConnectionState.Open Then
+                                con.Close()
+                            End If
+                        End Try
+
+                        Lreqnum.Text = _DataToValue("SELECT [id] FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') ")
+                        tvariety.Text = _DataToValue("SELECT [variety] FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') ")
+                        tlotref.Text = _DataToValue("SELECT [nojob] FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') ")
+                        tnoman.Text = _DataToValue("SELECT [nomnl] FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') ")
+                        tscope.Text = _DataToValue("SELECT [scope] FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') ")
+
                     Else
                         MetroFramework.MetroMessageBox.Show(Me, "Data Lab Number tidak ditemukan!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
                         tlabnum.Focus()
@@ -166,14 +182,14 @@ Public Class PurityTest
                     BtnUpdate.Enabled = True
                     BtnDel.Enabled = True
                 Else
-                    Dim result As Integer = MetroFramework.MetroMessageBox.Show(Me, "Data tidak ditemukan!. Click 'Yes' untuk melanjutkan pencarian. Click 'No' untuk Input Data Baru", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information, 211)
+                    Dim result As Integer = MetroFramework.MetroMessageBox.Show(Me, "Data tidak ditemukan!. Click 'Yes' untuk input data baru.     Click 'No' untuk mengulangi pencarian", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information, 211)
                     If result = DialogResult.Yes Then
-                        Me.tlabnum.Focus()
-                    ElseIf result = DialogResult.No Then
+                        Me.tlabnum.SelectAll()
                         BtnSave.Enabled = True
                         BtnUpdate.Enabled = False
                         BtnDel.Enabled = False
-                        Me.tlabnum.Focus()
+                    ElseIf result = DialogResult.No Then
+                        Me.tlabnum.SelectAll()
                     End If
                 End If
             Catch ex As Exception

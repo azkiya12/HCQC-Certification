@@ -27,8 +27,6 @@ Partial Class Multy_Request_Sample
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Multy_Request_Sample))
-        Me.SplrequestBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_NewDataset = New HCQC_NewDataset()
         Me.MetroGrid2 = New MetroFramework.Controls.MetroGrid()
         Me.CheckColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.idproductionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -41,7 +39,6 @@ Partial Class Multy_Request_Sample
         Me.WeightColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BagColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.KetColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Spl_requestTableAdapter = New HCQC_NewDatasetTableAdapters.spl_requestTableAdapter()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.TComboScope = New MetroFramework.Controls.MetroComboBox()
@@ -62,20 +59,14 @@ Partial Class Multy_Request_Sample
         Me.LprosesSave = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
         Me.tloc_sample = New MetroFramework.Controls.MetroComboBox()
+        Me.SplrequestBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HCQC_NewDataset = New WindowsApplication1.HCQC_NewDataset()
+        Me.Spl_requestTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.spl_requestTableAdapter()
+        Me.tkarantina = New MetroFramework.Controls.MetroCheckBox()
+        CType(Me.MetroGrid2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplrequestBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HCQC_NewDataset, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.MetroGrid2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
-        '
-        'SplrequestBindingSource
-        '
-        Me.SplrequestBindingSource.DataMember = "spl_request"
-        Me.SplrequestBindingSource.DataSource = Me.HCQC_NewDataset
-        '
-        'HCQC_NewDataset
-        '
-        Me.HCQC_NewDataset.DataSetName = "HCQC_NewDataset"
-        Me.HCQC_NewDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
         'MetroGrid2
         '
@@ -193,10 +184,6 @@ Partial Class Multy_Request_Sample
         Me.KetColumn.HeaderText = "Keterangan"
         Me.KetColumn.Name = "KetColumn"
         '
-        'Spl_requestTableAdapter
-        '
-        Me.Spl_requestTableAdapter.ClearBeforeFill = True
-        '
         'MetroLabel4
         '
         Me.MetroLabel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
@@ -237,7 +224,7 @@ Partial Class Multy_Request_Sample
         Me.traf.AutoSize = True
         Me.traf.BackColor = System.Drawing.Color.Transparent
         Me.traf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.traf.Location = New System.Drawing.Point(944, 289)
+        Me.traf.Location = New System.Drawing.Point(944, 310)
         Me.traf.Name = "traf"
         Me.traf.Size = New System.Drawing.Size(96, 15)
         Me.traf.TabIndex = 89
@@ -250,7 +237,7 @@ Partial Class Multy_Request_Sample
         Me.tvia.AutoSize = True
         Me.tvia.BackColor = System.Drawing.Color.Transparent
         Me.tvia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tvia.Location = New System.Drawing.Point(944, 331)
+        Me.tvia.Location = New System.Drawing.Point(944, 352)
         Me.tvia.Name = "tvia"
         Me.tvia.Size = New System.Drawing.Size(88, 15)
         Me.tvia.TabIndex = 91
@@ -263,7 +250,7 @@ Partial Class Multy_Request_Sample
         Me.tger.AutoSize = True
         Me.tger.BackColor = System.Drawing.Color.Transparent
         Me.tger.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tger.Location = New System.Drawing.Point(944, 310)
+        Me.tger.Location = New System.Drawing.Point(944, 331)
         Me.tger.Name = "tger"
         Me.tger.Size = New System.Drawing.Size(112, 15)
         Me.tger.TabIndex = 90
@@ -276,7 +263,7 @@ Partial Class Multy_Request_Sample
         Me.tpur.AutoSize = True
         Me.tpur.BackColor = System.Drawing.Color.Transparent
         Me.tpur.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tpur.Location = New System.Drawing.Point(944, 268)
+        Me.tpur.Location = New System.Drawing.Point(944, 289)
         Me.tpur.Name = "tpur"
         Me.tpur.Size = New System.Drawing.Size(77, 15)
         Me.tpur.TabIndex = 88
@@ -289,7 +276,7 @@ Partial Class Multy_Request_Sample
         Me.tmoi.AutoSize = True
         Me.tmoi.BackColor = System.Drawing.Color.Transparent
         Me.tmoi.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tmoi.Location = New System.Drawing.Point(944, 247)
+        Me.tmoi.Location = New System.Drawing.Point(944, 268)
         Me.tmoi.Name = "tmoi"
         Me.tmoi.Size = New System.Drawing.Size(93, 15)
         Me.tmoi.TabIndex = 87
@@ -391,7 +378,7 @@ Partial Class Multy_Request_Sample
         Me.BtnSave.IconVisible = True
         Me.BtnSave.IconZoom = 50.0R
         Me.BtnSave.IsTab = False
-        Me.BtnSave.Location = New System.Drawing.Point(926, 363)
+        Me.BtnSave.Location = New System.Drawing.Point(926, 373)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnSave.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -460,18 +447,46 @@ Partial Class Multy_Request_Sample
         Me.tloc_sample.FontSize = MetroFramework.MetroComboBoxSize.Small
         Me.tloc_sample.FormattingEnabled = True
         Me.tloc_sample.ItemHeight = 19
-        Me.tloc_sample.Items.AddRange(New Object() {"Gudang A", "Gudang B", "Gudang C", "Gudang E", "Gudang G", "Gudang WP", "CR C", "CR E", "CR F", "CR G"})
+        Me.tloc_sample.Items.AddRange(New Object() {"Gudang A", "Gudang B", "Gudang C", "Gudang E", "Gudang G", "Gudang WP", "Gudang TR", "CR C", "CR E", "CR F", "CR G"})
         Me.tloc_sample.Location = New System.Drawing.Point(944, 167)
         Me.tloc_sample.Name = "tloc_sample"
         Me.tloc_sample.Size = New System.Drawing.Size(172, 25)
         Me.tloc_sample.TabIndex = 99
         Me.tloc_sample.UseSelectable = True
         '
+        'SplrequestBindingSource
+        '
+        Me.SplrequestBindingSource.DataMember = "spl_request"
+        Me.SplrequestBindingSource.DataSource = Me.HCQC_NewDataset
+        '
+        'HCQC_NewDataset
+        '
+        Me.HCQC_NewDataset.DataSetName = "HCQC_NewDataset"
+        Me.HCQC_NewDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Spl_requestTableAdapter
+        '
+        Me.Spl_requestTableAdapter.ClearBeforeFill = True
+        '
+        'tkarantina
+        '
+        Me.tkarantina.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.tkarantina.AutoSize = True
+        Me.tkarantina.BackColor = System.Drawing.Color.Transparent
+        Me.tkarantina.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.tkarantina.Location = New System.Drawing.Point(944, 247)
+        Me.tkarantina.Name = "tkarantina"
+        Me.tkarantina.Size = New System.Drawing.Size(110, 15)
+        Me.tkarantina.TabIndex = 100
+        Me.tkarantina.Text = "Kesehatan Benih"
+        Me.tkarantina.UseSelectable = True
+        '
         'Multy_Request_Sample
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1142, 496)
+        Me.Controls.Add(Me.tkarantina)
         Me.Controls.Add(Me.tloc_sample)
         Me.Controls.Add(Me.MetroLabel6)
         Me.Controls.Add(Me.MetroLabel5)
@@ -495,9 +510,9 @@ Partial Class Multy_Request_Sample
         Me.Controls.Add(Me.MetroGrid2)
         Me.Name = "Multy_Request_Sample"
         Me.Text = "Multipel Request Sample"
+        CType(Me.MetroGrid2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.SplrequestBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HCQC_NewDataset, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.MetroGrid2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -537,4 +552,5 @@ Partial Class Multy_Request_Sample
     Friend WithEvents KetColumn As DataGridViewTextBoxColumn
     Friend WithEvents MetroLabel6 As MetroLabel
     Friend WithEvents tloc_sample As MetroComboBox
+    Friend WithEvents tkarantina As MetroCheckBox
 End Class

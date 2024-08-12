@@ -74,6 +74,7 @@ Public Class Request_Sampling_From
                        ,[test_raf]
                        ,[remark]  
                        ,[loc_sample]
+                       ,[kesehatan_benih]
                        ,[input_by]
                        ,[input_date])
                  VALUES
@@ -96,6 +97,7 @@ Public Class Request_Sampling_From
                        ,'" & traf.CheckState & "'
                        ,'" & tremark.Text & "'
                        ,'" & tloc_sample.Text & "'
+                       ,'" & tkarantina.CheckState & "'
                        ,'" & GetIPAddress() & "'
                        ,GETDATE() )"
                     )
@@ -120,6 +122,7 @@ Public Class Request_Sampling_From
                                     ,[test_raf] = '" & traf.CheckState & "'
                                     ,[remark] = '" & tremark.Text & "'
                                     ,[loc_sample]='" & tloc_sample.Text & "'
+                                    ,[kesehatan_benih]='" & tkarantina.CheckState & "'
                                     ,[update_user] = '" & login.Luserid.Text & "'
                                     ,[update_by] = '" & GetIPAddress() & "'
                                     ,[update_date] = GETDATE()
@@ -187,6 +190,7 @@ Public Class Request_Sampling_From
                                     traf.Checked = Convert.ToBoolean(dread.Item("test_raf"))
                                     tger.Checked = Convert.ToBoolean(dread.Item("test_ger"))
                                     tvia.Checked = Convert.ToBoolean(dread.Item("test_via"))
+                                    tkarantina.Checked = Convert.ToBoolean(dread.Item("kesehatan_benih"))
                                     tremark.Text = dread.Item("remark")
                                 End While
                             End If
@@ -213,7 +217,7 @@ Public Class Request_Sampling_From
     Private Function GetSpl_RequestData(ByVal vid As String) As SqlDataReader
         'Function untuk manmpilkan identitas secara dinamis, contoh:
 
-        Dim sql As String = "SELECT   loc_sample, harvest, [bag], [test_sampling], [test_moi], [test_pur], [test_raf], [test_ger], [test_via], remark
+        Dim sql As String = "SELECT   loc_sample, harvest, [bag], [test_sampling], [test_moi], [test_pur], [test_raf], [test_ger], [test_via], [kesehatan_benih], remark
                             FROM [HCQC_server].[dbo].[spl_request] WHERE ([id] = @ID)"
         openDB()
         Dim cmd As New SqlCommand(sql, con) With {
@@ -303,6 +307,7 @@ Public Class Request_Sampling_From
         tger.CheckState = CheckState.Unchecked
         tvia.CheckState = CheckState.Unchecked
         traf.CheckState = CheckState.Unchecked
+        tkarantina.CheckState = CheckState.Unchecked
         tremark.Text = ""
         tcrop.Text = ""
         tid_hvsprod.Focus()

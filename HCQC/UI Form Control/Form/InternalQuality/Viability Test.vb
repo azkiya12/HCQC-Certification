@@ -272,14 +272,37 @@ Public Class Viability_Test
         If e.KeyCode = Keys.Enter Then
             If _isBOFAND("viability", "labnum", tlabnum.Text) = False Then
                 If _isBOFAND("receipt", "labnum", tlabnum.Text) = True Then
-                    Lreqnum.Text = _DataToValue("SELECT [id] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    tvariety.Text = _DataToValue("SELECT [variety] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    tlotref.Text = _DataToValue("SELECT [nojob] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    tnoman.Text = _DataToValue("SELECT [nomnl] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    tscope.Text = _DataToValue("SELECT [scope] FROM [qc_confirm_view] WHERE (labnum= '" & tlabnum.Text & "') ")
-                    tanalyst.Text = _DataToValue("SELECT [viability_namelog] FROM [report_status_pengujian] WHERE [labnum] = '" & tlabnum.Text & "'")
-                    Dim tgluji As Date = _DataToValue("SELECT [viability_log] FROM [report_status_pengujian] WHERE [labnum]='" & tlabnum.Text & "'")
-                    ttestdate.Text = tgluji.ToString(LabelFormatDate.Text)
+                    Lreqnum.Text = _DataToValue("SELECT [id] FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') ")
+                    tvariety.Text = _DataToValue("SELECT [variety] FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') ")
+                    tlotref.Text = _DataToValue("SELECT [nojob] FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') ")
+                    tnoman.Text = _DataToValue("SELECT [nomnl] FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') ")
+                    tscope.Text = _DataToValue("SELECT [scope] FROM [qc_confirm_viewer] WHERE (labnum= '" & tlabnum.Text & "') ")
+
+                    Dim tgluji As Date
+                    Dim sql As String
+                    Try
+                        openDB()
+                        sql = "SELECT [viability_namelog],[viability_log]
+                                FROM [report_status_pengujian] WHERE [labnum] = '" & tlabnum.Text & "'"
+                        cmd = New SqlClient.SqlCommand(Sql, con) With {
+                            .CommandType = CommandType.Text,
+                            .CommandText = Sql
+                        }
+                        dread = cmd.ExecuteReader
+                        If dread.Read = True Then
+                            tgluji = dread.Item("viability_log")
+                            ttestdate.Text = tgluji.ToString(LabelFormatDate.Text)
+
+                            tanalyst.Text = dread.Item("viability_namelog")
+                        End If
+                    Catch ex As Exception
+                        MetroMessageBox.Show(Me, "Warning: Mohon untuk melakukan check in/out sample untuk analis. Deskription: " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+                    Finally
+                        If con.State = ConnectionState.Open Then
+                            con.Close()
+                        End If
+                    End Try
+
                     tlabnum.SelectAll()
                 Else
                     MetroFramework.MetroMessageBox.Show(Me, "Data belum ada di penerimaan HCQC", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
@@ -377,5 +400,17 @@ Public Class Viability_Test
         If e.KeyCode = Keys.Enter Or e.KeyCode = Keys.Space Then
             BtnSave_Click(sender, e)
         End If
+    End Sub
+
+    Private Sub ttemp_GotFocus(sender As Object, e As EventArgs) Handles ttemp.GotFocus
+        ttemp.SelectAll()
+    End Sub
+
+    Private Sub ttime_GotFocus(sender As Object, e As EventArgs) Handles ttime.GotFocus
+        ttime.SelectAll()
+    End Sub
+
+    Private Sub tconcentration_GotFocus(sender As Object, e As EventArgs) Handles tconcentration.GotFocus
+        tconcentration.SelectAll()
     End Sub
 End Class

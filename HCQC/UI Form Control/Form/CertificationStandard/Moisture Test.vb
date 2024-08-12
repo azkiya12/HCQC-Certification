@@ -45,7 +45,7 @@ Public Class Moisture_Test
                                     ,[remark]
                                     ,[input_by]
                                     ,[input_at])                                   
-                            VALUES ('" & Lreqnum.Text & "','" & login.Luserid.Text & "','" & tlabnum.Text & "', '" & tmethod.Text & "', '" & TPreparation.Text & "', '" & ttemp.Text & "', '" & tperiod.Text & "',
+                            VALUES ('" & Lreqnum.Text & "','" & login.Luserid.Text & "','" & tlabnum.Text.ToUpper & "', '" & tmethod.Text & "', '" & TPreparation.Text & "', '" & ttemp.Text & "', '" & tperiod.Text & "',
                                     '" & tequip.Text & "', '" & tbalanc.Text & "', " & Val(tmoi1.Text) & ", " & Val(tmoi2.Text) & ", " & Val(tmoimean.Text) & ", '" & ttoleran.CheckState & "',
                                     '" & tgltest.ToString("yyyy-MM-dd") & "', '" & tanalyst.Text & "', '" & tremark.Text & "', '" & GetIPAddress() & "', GETDATE() ) ")
 
@@ -63,7 +63,7 @@ Public Class Moisture_Test
                                         ,[input_at])
                                     VALUES
                                         ('" & login.Luserid.Text & "'
-                                        ,'" & Lreqnum.Text & "'
+                                        ,'" & Lreqnum.Text.ToUpper & "'
                                         ,'" & tlabnum.Text & "'
                                         ,1
                                         ,'" & Trim(TContIDRep1.Text) & "'
@@ -74,7 +74,7 @@ Public Class Moisture_Test
                                         
                                         ('" & login.Luserid.Text & "'
                                         ,'" & Lreqnum.Text & "'
-                                        ,'" & tlabnum.Text & "'
+                                        ,'" & tlabnum.Text.ToUpper & "'
                                         ,2
                                         ,'" & Trim(TContIDRep2.Text) & "'
                                         ,'" & Trim(TContWgRep2.Text) & "'
@@ -347,7 +347,6 @@ Public Class Moisture_Test
                 MetroMessageBox.Show(Me, "Lab Number harus diisi!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
                 Return
             Else
-
                 If _isBOF("moisture", "labnum", tlabnum.Text) = False Then
                     If _isBOF("receipt", "labnum", tlabnum.Text) = True Then
                         GetIdSample()
@@ -495,9 +494,34 @@ Public Class Moisture_Test
             LabelDevide.Text = Math.Abs(mt1 - mt2)
         End If
     End Sub
+    Private Sub Tmoimean3_TextChanege(sender As Object, e As EventArgs) Handles tmoi1.TextChanged, tmoi2.TextChanged
+        Dim mt1, mt2 As Decimal
+        Try
+            mt1 = Convert.ToDecimal(tmoi1.Text)
+        Catch
+            mt1 = 0
+        End Try
+        Try
+            mt2 = Convert.ToDecimal(tmoi2.Text)
+        Catch
+            mt2 = 0
+        End Try
+        tmoimean3.Text = ((mt1 + mt2) / 2).ToString("0.000")
 
+        If Math.Abs(mt1 - mt2) > 0.2 Then
+            ttoleran.CheckState = CheckState.Unchecked
+            LabelResult.Text = "No"
+            LabelDevide.Text = Math.Abs(mt1 - mt2)
+        Else
+            ttoleran.CheckState = CheckState.Checked
+            LabelResult.Text = "Yes"
+            LabelDevide.Text = Math.Abs(mt1 - mt2)
+        End If
+    End Sub
     Private Sub tmethod_SelectedValueChanged(sender As Object, e As EventArgs) Handles tmethod.SelectedValueChanged
         If tmethod.Text = "Oven" Then
+            BtnMirror.Visible = True
+
             'ttemp.Text = ""
             ttemp.PromptText = "Pilih..."
             ttemp.Enabled = True
@@ -533,6 +557,7 @@ Public Class Moisture_Test
             tmoi1.Text = ""
             tmoi2.Text = ""
         ElseIf tmethod.Text = "Moisture Meter" Then
+            BtnMirror.Visible = False
 
             ttemp.SelectedIndex = -1
             ttemp.PromptText = ""
@@ -655,4 +680,11 @@ Public Class Moisture_Test
         End If
     End Sub
 
+    Private Sub BtnMirror_Click(sender As Object, e As EventArgs) Handles BtnMirror.Click
+        ''Replication 2 in Oven Method
+        TContIDRep2.Text = TContIDRep1.Text
+        TContWgRep2.Text = TContWgRep1.Text
+        TContWgFillRep2.Text = TContWgFillRep1.Text
+        TWgDryRep2.Text = TWgDryRep1.Text
+    End Sub
 End Class

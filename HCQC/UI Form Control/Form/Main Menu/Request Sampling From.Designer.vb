@@ -35,7 +35,7 @@ Partial Class Request_Sampling_From
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.Splrequest1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_NewDataset = New HCQC_NewDataset()
+        Me.HCQC_NewDataset = New WindowsApplication1.HCQC_NewDataset()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colid = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colid_hvsprod = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -66,6 +66,7 @@ Partial Class Request_Sampling_From
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
         Me.Tsearch = New MetroFramework.Controls.MetroTextBox()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.tkarantina = New MetroFramework.Controls.MetroCheckBox()
         Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
         Me.tloc_sample = New MetroFramework.Controls.MetroComboBox()
         Me.LinkFind = New MetroFramework.Controls.MetroLink()
@@ -133,8 +134,8 @@ Partial Class Request_Sampling_From
         Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
         Me.LinkLoad = New MetroFramework.Controls.MetroLink()
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
-        Me.Spl_request1TableAdapter = New HCQC_NewDatasetTableAdapters.Spl_request1TableAdapter()
-        Me.Qc_confirm_viewerTableAdapter = New HCQC_NewDatasetTableAdapters.qc_confirm_viewerTableAdapter()
+        Me.Spl_request1TableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.Spl_request1TableAdapter()
+        Me.Qc_confirm_viewerTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.qc_confirm_viewerTableAdapter()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.Splrequest1BindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HCQC_NewDataset, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -536,6 +537,7 @@ Partial Class Request_Sampling_From
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroPanel1.AutoScroll = True
+        Me.MetroPanel1.Controls.Add(Me.tkarantina)
         Me.MetroPanel1.Controls.Add(Me.MetroTextBox1)
         Me.MetroPanel1.Controls.Add(Me.tloc_sample)
         Me.MetroPanel1.Controls.Add(Me.LinkFind)
@@ -590,6 +592,20 @@ Partial Class Request_Sampling_From
         Me.MetroPanel1.VerticalScrollbarBarColor = True
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.VerticalScrollbarSize = 10
+        '
+        'tkarantina
+        '
+        Me.tkarantina.AutoSize = True
+        Me.tkarantina.BackColor = System.Drawing.Color.Transparent
+        Me.tkarantina.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.tkarantina.Location = New System.Drawing.Point(603, 68)
+        Me.tkarantina.Name = "tkarantina"
+        Me.tkarantina.Size = New System.Drawing.Size(110, 15)
+        Me.tkarantina.TabIndex = 96
+        Me.tkarantina.Text = "Kesehatan Benih"
+        Me.tkarantina.UseCustomBackColor = True
+        Me.tkarantina.UseCustomForeColor = True
+        Me.tkarantina.UseSelectable = True
         '
         'MetroTextBox1
         '
@@ -672,10 +688,10 @@ Partial Class Request_Sampling_From
         Me.BtnSave.AppearanceHovered.Options.UseBackColor = True
         Me.BtnSave.AppearancePressed.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnSave.AppearancePressed.Options.UseBackColor = True
-        Me.BtnSave.Location = New System.Drawing.Point(537, 254)
+        Me.BtnSave.Location = New System.Drawing.Point(483, 254)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.[True]
-        Me.BtnSave.Size = New System.Drawing.Size(176, 34)
+        Me.BtnSave.Size = New System.Drawing.Size(230, 34)
         Me.BtnSave.TabIndex = 90
         Me.BtnSave.Text = "Save"
         '
@@ -855,7 +871,7 @@ Partial Class Request_Sampling_From
         '
         '
         Me.tremark.CustomButton.Image = Nothing
-        Me.tremark.CustomButton.Location = New System.Drawing.Point(126, 2)
+        Me.tremark.CustomButton.Location = New System.Drawing.Point(180, 2)
         Me.tremark.CustomButton.Name = ""
         Me.tremark.CustomButton.Size = New System.Drawing.Size(47, 47)
         Me.tremark.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -865,7 +881,7 @@ Partial Class Request_Sampling_From
         Me.tremark.CustomButton.Visible = False
         Me.tremark.ForeColor = System.Drawing.Color.Transparent
         Me.tremark.Lines = New String(-1) {}
-        Me.tremark.Location = New System.Drawing.Point(537, 194)
+        Me.tremark.Location = New System.Drawing.Point(483, 194)
         Me.tremark.MaxLength = 32767
         Me.tremark.Multiline = True
         Me.tremark.Name = "tremark"
@@ -876,7 +892,7 @@ Partial Class Request_Sampling_From
         Me.tremark.SelectionLength = 0
         Me.tremark.SelectionStart = 0
         Me.tremark.ShortcutsEnabled = True
-        Me.tremark.Size = New System.Drawing.Size(176, 52)
+        Me.tremark.Size = New System.Drawing.Size(230, 52)
         Me.tremark.TabIndex = 82
         Me.tremark.UseCustomBackColor = True
         Me.tremark.UseCustomForeColor = True
@@ -890,7 +906,7 @@ Partial Class Request_Sampling_From
         Me.traf.AutoSize = True
         Me.traf.BackColor = System.Drawing.Color.Transparent
         Me.traf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.traf.Location = New System.Drawing.Point(537, 131)
+        Me.traf.Location = New System.Drawing.Point(483, 131)
         Me.traf.Name = "traf"
         Me.traf.Size = New System.Drawing.Size(96, 15)
         Me.traf.TabIndex = 79
@@ -904,7 +920,7 @@ Partial Class Request_Sampling_From
         Me.tvia.AutoSize = True
         Me.tvia.BackColor = System.Drawing.Color.Transparent
         Me.tvia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tvia.Location = New System.Drawing.Point(537, 173)
+        Me.tvia.Location = New System.Drawing.Point(483, 173)
         Me.tvia.Name = "tvia"
         Me.tvia.Size = New System.Drawing.Size(88, 15)
         Me.tvia.TabIndex = 81
@@ -933,7 +949,7 @@ Partial Class Request_Sampling_From
         Me.tger.AutoSize = True
         Me.tger.BackColor = System.Drawing.Color.Transparent
         Me.tger.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tger.Location = New System.Drawing.Point(537, 152)
+        Me.tger.Location = New System.Drawing.Point(483, 152)
         Me.tger.Name = "tger"
         Me.tger.Size = New System.Drawing.Size(112, 15)
         Me.tger.TabIndex = 80
@@ -962,7 +978,7 @@ Partial Class Request_Sampling_From
         Me.tpur.AutoSize = True
         Me.tpur.BackColor = System.Drawing.Color.Transparent
         Me.tpur.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tpur.Location = New System.Drawing.Point(537, 110)
+        Me.tpur.Location = New System.Drawing.Point(483, 110)
         Me.tpur.Name = "tpur"
         Me.tpur.Size = New System.Drawing.Size(77, 15)
         Me.tpur.TabIndex = 78
@@ -1006,7 +1022,7 @@ Partial Class Request_Sampling_From
         Me.tmoi.AutoSize = True
         Me.tmoi.BackColor = System.Drawing.Color.Transparent
         Me.tmoi.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tmoi.Location = New System.Drawing.Point(537, 89)
+        Me.tmoi.Location = New System.Drawing.Point(483, 89)
         Me.tmoi.Name = "tmoi"
         Me.tmoi.Size = New System.Drawing.Size(93, 15)
         Me.tmoi.TabIndex = 77
@@ -1050,7 +1066,7 @@ Partial Class Request_Sampling_From
         Me.tsampling.AutoSize = True
         Me.tsampling.BackColor = System.Drawing.Color.Transparent
         Me.tsampling.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tsampling.Location = New System.Drawing.Point(537, 68)
+        Me.tsampling.Location = New System.Drawing.Point(483, 68)
         Me.tsampling.Name = "tsampling"
         Me.tsampling.Size = New System.Drawing.Size(73, 15)
         Me.tsampling.TabIndex = 76
@@ -1894,4 +1910,5 @@ Partial Class Request_Sampling_From
     Friend WithEvents ColmEdit As DataGridViewButtonColumn
     Friend WithEvents ColmDelete As DataGridViewButtonColumn
     Friend WithEvents MetroTextBox1 As MetroTextBox
+    Friend WithEvents tkarantina As MetroCheckBox
 End Class

@@ -1726,7 +1726,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnground.MaxLength = 17
             Me.columnequipment.MaxLength = 10
             Me.columnidbalance.MaxLength = 10
-            Me.columnanalys.MaxLength = 50
+            Me.columnanalys.MaxLength = 100
             Me.columninput_by.MaxLength = 25
             Me.columnupdate_by.MaxLength = 25
             Me.columntemp.MaxLength = 17
@@ -2926,7 +2926,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnid.ReadOnly = true
             Me.columnlabnum.MaxLength = 15
             Me.columnidbalance.MaxLength = 10
-            Me.columnanalys.MaxLength = 25
+            Me.columnanalys.MaxLength = 100
             Me.columnket.MaxLength = 225
             Me.columninput_by.MaxLength = 25
             Me.columnupdate_by.MaxLength = 25
@@ -3567,7 +3567,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnsubtrade.MaxLength = 5
             Me.columnequipment.MaxLength = 10
             Me.columncharacter.MaxLength = 6
-            Me.columnanalyst.MaxLength = 25
+            Me.columnanalyst.MaxLength = 100
             Me.columninput_by.MaxLength = 25
             Me.columnupdate_by.MaxLength = 25
             Me.columndelete_by.MaxLength = 25
@@ -8533,6 +8533,8 @@ Partial Public Class HCQC_NewDataset
         
         Private columnaccept_date As Global.System.Data.DataColumn
         
+        Private columnkesehatan_benih As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -9097,6 +9099,14 @@ Partial Public Class HCQC_NewDataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property kesehatan_benihColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnkesehatan_benih
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -9199,9 +9209,10 @@ Partial Public Class HCQC_NewDataset
                     ByVal viability_namelog As String,  _
                     ByVal gervigor_namelog As String,  _
                     ByVal gervigor_log As Date,  _
-                    ByVal accept_date As Date) As report_status_pengujianRow
+                    ByVal accept_date As Date,  _
+                    ByVal kesehatan_benih As Boolean) As report_status_pengujianRow
             Dim rowreport_status_pengujianRow As report_status_pengujianRow = CType(Me.NewRow,report_status_pengujianRow)
-            Dim columnValuesArray() As Object = New Object() {id, id_hvsprod, labnum, variety, nomnl, nojob, weight, location, brt_in, sampler, farmer, harvest, scope, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, input_date, Receipt, sampling, Receipt_Input, Raf_Test, Raf_Result, Raf_Analys, Raf_input, Moi_Test, Moi_Analys, Moi_input, Ger_Test, Ger_1st, Ger_2nd, Ger_Analys, Ger_input, Via_Test, Via_Analys, Via_input, Pur_Test, Pur_Analys, Pur_input, Quick_Raf, RetunQC, ReturnQC_Name, Ger_TestLog, test_ontest, Ger_1st_Est, Ger_2nd_Est, StatusResult, days_est, status_confirm, date_est, rafaction_log, purity_log, moisture_log, viability_log, gerout_log, gerout_namelog, gertest_namelog, purity_namelog, rafaction_namelog, moisture_namelog, viability_namelog, gervigor_namelog, gervigor_log, accept_date}
+            Dim columnValuesArray() As Object = New Object() {id, id_hvsprod, labnum, variety, nomnl, nojob, weight, location, brt_in, sampler, farmer, harvest, scope, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, input_date, Receipt, sampling, Receipt_Input, Raf_Test, Raf_Result, Raf_Analys, Raf_input, Moi_Test, Moi_Analys, Moi_input, Ger_Test, Ger_1st, Ger_2nd, Ger_Analys, Ger_input, Via_Test, Via_Analys, Via_input, Pur_Test, Pur_Analys, Pur_input, Quick_Raf, RetunQC, ReturnQC_Name, Ger_TestLog, test_ontest, Ger_1st_Est, Ger_2nd_Est, StatusResult, days_est, status_confirm, date_est, rafaction_log, purity_log, moisture_log, viability_log, gerout_log, gerout_namelog, gertest_namelog, purity_namelog, rafaction_namelog, moisture_namelog, viability_namelog, gervigor_namelog, gervigor_log, accept_date, kesehatan_benih}
             rowreport_status_pengujianRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowreport_status_pengujianRow)
             Return rowreport_status_pengujianRow
@@ -9296,6 +9307,7 @@ Partial Public Class HCQC_NewDataset
             Me.columngervigor_namelog = MyBase.Columns("gervigor_namelog")
             Me.columngervigor_log = MyBase.Columns("gervigor_log")
             Me.columnaccept_date = MyBase.Columns("accept_date")
+            Me.columnkesehatan_benih = MyBase.Columns("kesehatan_benih")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9433,6 +9445,8 @@ Partial Public Class HCQC_NewDataset
             MyBase.Columns.Add(Me.columngervigor_log)
             Me.columnaccept_date = New Global.System.Data.DataColumn("accept_date", GetType(Date), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnaccept_date)
+            Me.columnkesehatan_benih = New Global.System.Data.DataColumn("kesehatan_benih", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnkesehatan_benih)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
@@ -9446,7 +9460,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnscope.MaxLength = 50
             Me.columnRaf_Analys.MaxLength = 25
             Me.columnMoi_Analys.MaxLength = 50
-            Me.columnGer_Analys.MaxLength = 25
+            Me.columnGer_Analys.MaxLength = 50
             Me.columnVia_Analys.MaxLength = 25
             Me.columnPur_Analys.MaxLength = 50
             Me.columnReturnQC_Name.MaxLength = 255
@@ -9465,6 +9479,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnmoisture_namelog.MaxLength = 255
             Me.columnviability_namelog.MaxLength = 255
             Me.columngervigor_namelog.MaxLength = 255
+            Me.columnkesehatan_benih.AllowDBNull = false
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13348,9 +13363,9 @@ Partial Public Class HCQC_NewDataset
             Me.columnremark.MaxLength = 200
             Me.columnscope.MaxLength = 50
             Me.columnraf_total.ReadOnly = true
-            Me.columnanalys.MaxLength = 25
-            Me.columnvia_analyst.MaxLength = 25
-            Me.columnmoi_analyst.MaxLength = 50
+            Me.columnanalys.MaxLength = 100
+            Me.columnvia_analyst.MaxLength = 100
+            Me.columnmoi_analyst.MaxLength = 100
             Me.columnpurity_mean.ReadOnly = true
             Me.columnstaff.MaxLength = 100
             Me.columnabnormality.MaxLength = 150
@@ -25495,6 +25510,17 @@ Partial Public Class HCQC_NewDataset
             End Get
             Set
                 Me(Me.tablereport_status_pengujian.accept_dateColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property kesehatan_benih() As Boolean
+            Get
+                Return CType(Me(Me.tablereport_status_pengujian.kesehatan_benihColumn),Boolean)
+            End Get
+            Set
+                Me(Me.tablereport_status_pengujian.kesehatan_benihColumn) = value
             End Set
         End Property
         
@@ -45155,6 +45181,7 @@ Namespace HCQC_NewDatasetTableAdapters
             tableMapping.ColumnMappings.Add("gervigor_namelog", "gervigor_namelog")
             tableMapping.ColumnMappings.Add("gervigor_log", "gervigor_log")
             tableMapping.ColumnMappings.Add("accept_date", "accept_date")
+            tableMapping.ColumnMappings.Add("kesehatan_benih", "kesehatan_benih")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -45181,24 +45208,23 @@ Namespace HCQC_NewDatasetTableAdapters
                 "_Est, StatusResult, days_est, status_confirm, date_est, rafaction_log, purity_lo"& _ 
                 "g, moisture_log, viability_log, gerout_log, gerout_namelog, gertest_namelog, pur"& _ 
                 "ity_namelog, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         rafaction_namelog, moisture_namelog, via"& _ 
-                "bility_namelog, gervigor_namelog, gervigor_log, accept_date"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            rep"& _ 
-                "ort_status_pengujian"
+                "bility_namelog, gervigor_namelog, gervigor_log, accept_date, kesehatan_benih"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FR"& _ 
+                "OM            report_status_pengujian"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        id, id_hvsprod, labnum, variety, nomnl, nojob, location, farmer, ha"& _ 
-                "rvest, weight, scope, test_sampling, test_moi, test_pur, test_ger, test_via, tes"& _ 
-                "t_raf, test_ontest, input_date, Receipt, brt_in, sampler, sampling, Receipt_Inpu"& _ 
-                "t, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         Raf_Test, Raf_Result, Raf_Analys, Raf_input, Moi_T"& _ 
-                "est, Moi_Analys, Moi_input, Ger_Test, Ger_TestLog, Ger_1st, Ger_2nd, Ger_Analys,"& _ 
-                " Ger_input, Via_Test, Via_Analys, Via_input, Pur_Test, Pur_Analys, Pur_input, Qu"& _ 
-                "ick_Raf, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         RetunQC, ReturnQC_Name, Ger_1st_Est, Ger_2nd"& _ 
-                "_Est, StatusResult, days_est, status_confirm, date_est, rafaction_log, purity_lo"& _ 
-                "g, moisture_log, viability_log, gerout_log, gerout_namelog, gertest_namelog, pur"& _ 
-                "ity_namelog, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         rafaction_namelog, moisture_namelog, via"& _ 
-                "bility_namelog, gervigor_namelog, gervigor_log, accept_date"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            rep"& _ 
-                "ort_status_pengujian"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        cast(input_date as date) BETWEEN @startdate A"& _ 
-                "ND @enddate"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
+            Me._commandCollection(1).CommandText = "SELECT Ger_1st, Ger_1st_Est, Ger_2nd, Ger_2nd_Est, Ger_Analys, Ger_Test, Ger_Test"& _ 
+                "Log, Ger_input, Moi_Analys, Moi_Test, Moi_input, Pur_Analys, Pur_Test, Pur_input"& _ 
+                ", Quick_Raf, Raf_Analys, Raf_Result, Raf_Test, Raf_input, Receipt, Receipt_Input"& _ 
+                ", RetunQC, ReturnQC_Name, StatusResult, Via_Analys, Via_Test, Via_input, accept_"& _ 
+                "date, brt_in, date_est, days_est, farmer, gerout_log, gerout_namelog, gertest_na"& _ 
+                "melog, gervigor_log, gervigor_namelog, harvest, id, id_hvsprod, input_date, kese"& _ 
+                "hatan_benih, labnum, location, moisture_log, moisture_namelog, nojob, nomnl, pur"& _ 
+                "ity_log, purity_namelog, rafaction_log, rafaction_namelog, sampler, sampling, sc"& _ 
+                "ope, status_confirm, test_ger, test_moi, test_ontest, test_pur, test_raf, test_s"& _ 
+                "ampling, test_via, variety, viability_log, viability_namelog, weight FROM report"& _ 
+                "_status_pengujian WHERE (CAST(input_date AS date) BETWEEN @startdate AND @enddat"& _ 
+                "e) ORDER BY id DESC"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@startdate", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@enddate", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -45216,13 +45242,13 @@ Namespace HCQC_NewDatasetTableAdapters
                 ", Quick_Raf, Raf_Analys, Raf_Result, Raf_Test, Raf_input, Receipt, Receipt_Input"& _ 
                 ", RetunQC, ReturnQC_Name, StatusResult, Via_Analys, Via_Test, Via_input, accept_"& _ 
                 "date, brt_in, date_est, days_est, farmer, gerout_log, gerout_namelog, gertest_na"& _ 
-                "melog, gervigor_log, gervigor_namelog, harvest, id, id_hvsprod, input_date, labn"& _ 
-                "um, location, moisture_log, moisture_namelog, nojob, nomnl, purity_log, purity_n"& _ 
-                "amelog, rafaction_log, rafaction_namelog, sampler, sampling, scope, status_confi"& _ 
-                "rm, test_ger, test_moi, test_ontest, test_pur, test_raf, test_sampling, test_via"& _ 
-                ", variety, viability_log, viability_namelog, weight FROM report_status_pengujian"& _ 
-                "  WHERE (input_date <= DATEADD(dd, 1, EOMONTH(GETDATE()))) AND  (input_date >= D"& _ 
-                "ATEADD(dd, 1, EOMONTH(GETDATE(), -2)))"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY input_date DESC"
+                "melog, gervigor_log, gervigor_namelog, harvest, id, id_hvsprod, input_date, kese"& _ 
+                "hatan_benih, labnum, location, moisture_log, moisture_namelog, nojob, nomnl, pur"& _ 
+                "ity_log, purity_namelog, rafaction_log, rafaction_namelog, sampler, sampling, sc"& _ 
+                "ope, status_confirm, test_ger, test_moi, test_ontest, test_pur, test_raf, test_s"& _ 
+                "ampling, test_via, variety, viability_log, viability_namelog, weight FROM report"& _ 
+                "_status_pengujian WHERE (input_date <= DATEADD(dd, 1, EOMONTH(GETDATE()))) AND ("& _ 
+                "input_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 2))) ORDER BY input_date DESC"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
@@ -45231,13 +45257,13 @@ Namespace HCQC_NewDatasetTableAdapters
                 ", Quick_Raf, Raf_Analys, Raf_Result, Raf_Test, Raf_input, Receipt, Receipt_Input"& _ 
                 ", RetunQC, ReturnQC_Name, StatusResult, Via_Analys, Via_Test, Via_input, accept_"& _ 
                 "date, brt_in, date_est, days_est, farmer, gerout_log, gerout_namelog, gertest_na"& _ 
-                "melog, gervigor_log, gervigor_namelog, harvest, id, id_hvsprod, input_date, labn"& _ 
-                "um, location, moisture_log, moisture_namelog, nojob, nomnl, purity_log, purity_n"& _ 
-                "amelog, rafaction_log, rafaction_namelog, sampler, sampling, scope, status_confi"& _ 
-                "rm, test_ger, test_moi, test_ontest, test_pur, test_raf, test_sampling, test_via"& _ 
-                ", variety, viability_log, viability_namelog, weight FROM report_status_pengujian"& _ 
-                " WHERE (input_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (input_date <"& _ 
-                " DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC"
+                "melog, gervigor_log, gervigor_namelog, harvest, id, id_hvsprod, input_date, kese"& _ 
+                "hatan_benih, labnum, location, moisture_log, moisture_namelog, nojob, nomnl, pur"& _ 
+                "ity_log, purity_namelog, rafaction_log, rafaction_namelog, sampler, sampling, sc"& _ 
+                "ope, status_confirm, test_ger, test_moi, test_ontest, test_pur, test_raf, test_s"& _ 
+                "ampling, test_via, variety, viability_log, viability_namelog, weight FROM report"& _ 
+                "_status_pengujian WHERE (input_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) "& _ 
+                "AND (input_date < DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
         End Sub
         

@@ -58,7 +58,7 @@ Public Class DirectImportfromSAS
                                 .Parameters("@blokno").Value = table.Rows(i).Item(13).ToString
                                 .Parameters("@cgrno").Value = table.Rows(i).Item(14).ToString
                                 .Parameters("@cgrname").Value = table.Rows(i).Item(15).ToString
-                                .Parameters("@joblot").Value = table.Rows(i).Item(16).ToString
+                                .Parameters("@joblot").Value = table.Rows(i).Item(19).ToString
                                 .Parameters("@id_login").Value = login.Luserid.Text
                                 .Parameters("@upload_id").Value = GetIPAddress()
                             End With
@@ -100,12 +100,12 @@ Public Class DirectImportfromSAS
         Dim searchString As String = "Total|"
         Dim caseInsensitive As StringComparison = StringComparison.OrdinalIgnoreCase
         ' Create four typed columns in the DataTable.
-        Dim names = {"HarvestColumn", "AreaColumn", "Variety", "Staff", "Location", "Column1", "Column2", "Column3", "PlantDate", "AreaHa", "Qty", "NoKontrak", "NoRencanaPanen", "BlockNo", "CGRNo", "CGRName", "NoLot"}
-        Dim headers = {"Harvest Date", "Area", "Variety", "Staff", "Location", "Column1", "Column2", "Column3", "Plant Date", "Area Ha", "Qty kg", "NoKontrak", "NoRencanaPanen", "BlockNo", "CGRNo", "CGRName", "NoLot"}
+        Dim names = {"HarvestColumn", "AreaColumn", "Variety", "Staff", "Location", "Column1", "Column2", "Column3", "PlantDate", "AreaHa", "Qty", "NoKontrak", "NoRencanaPanen", "BlockNo", "CGRNo", "CGRName", "NoSJManual", "GRDate", "GR NO", "NoLot"}
+        Dim headers = {"Harvest Date", "Area", "Variety", "Staff", "Location", "Column1", "Column2", "Column3", "Plant Date", "Area Ha", "Qty kg", "NoKontrak", "NoRencanaPanen", "BlockNo", "CGRNo", "CGRName", "NoSJManual", "GRDate", "GR NO", "NoLot"}
         Dim icol As Integer = 0
         errorMsg = ""
         '-- Insert columns to DataTable
-        For index = 0 To 16 'How many do you want?
+        For index = 0 To 19 'How many do you want?
             Dim column As New DataColumn()
             With column
                 .Caption = headers(icol)
@@ -161,12 +161,13 @@ Public Class DirectImportfromSAS
                 Do While objReader.Peek() <> -1
                     'Baca isi dari file
                     TextLine = objReader.ReadLine().Replace("Dariyono, A.Md", "Dariyono A.Md")
-                    Console.WriteLine("1##" & TextLine)
+                    TextLine = TextLine.Replace("Imron Hamzah, S.P", "Imron Hamzah S.P")
+                    'Console.WriteLine("1##" & TextLine)
                     TextLine = TextLine.Replace("|", ",")
                     Console.WriteLine("2####" & TextLine)
                     'identifikasi pembatas antar column
                     SplitLine = Split(TextLine, ",")
-                    If Not TextLine.Contains("SC-") Then '--add multiple containt
+                    If Not (TextLine.IndexOf("SC-", caseInsensitive) >= 0 Or TextLine.IndexOf("FC/RD", caseInsensitive) >= 0) Then '--add multiple containt
                         If counter > 0 Then
                             ''Proses Insert ke DataTable
                             table.Rows.Add(CDate(SplitLine(0)).ToString("dd-MMM-yyyy"),
@@ -184,7 +185,11 @@ Public Class DirectImportfromSAS
                                                     SplitLine(12),
                                                     SplitLine(13),
                                                     SplitLine(14),
-                                                    SplitLine(15), "")
+                                                    SplitLine(15),
+                                                    SplitLine(16),
+                                                    SplitLine(17),
+                                                    SplitLine(18), "")
+                            Console.WriteLine("Upload ### " & TextLine)
                         End If
                         counter += 1
                     End If

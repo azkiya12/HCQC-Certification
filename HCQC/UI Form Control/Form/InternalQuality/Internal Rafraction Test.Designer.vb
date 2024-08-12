@@ -108,6 +108,7 @@ Partial Class Internal_Rafraction_Test
         '
         'tlabnum
         '
+        Me.tlabnum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         '
         '
         '
