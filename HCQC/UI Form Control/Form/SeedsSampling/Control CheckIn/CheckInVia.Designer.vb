@@ -336,6 +336,7 @@ Partial Class CheckInVia
         '
         'tlabnumVia
         '
+        Me.tlabnumVia.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         '
         '
         '

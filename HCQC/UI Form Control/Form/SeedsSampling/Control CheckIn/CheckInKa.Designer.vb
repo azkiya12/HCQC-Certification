@@ -325,6 +325,7 @@ Partial Class CheckInKa
         '
         'TLabnumKa
         '
+        Me.TLabnumKa.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         '
         '
         '

@@ -305,6 +305,7 @@ Partial Class CheckOutQC
         '
         'tlabnumOutQC
         '
+        Me.tlabnumOutQC.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         '
         '
         '

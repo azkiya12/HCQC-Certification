@@ -336,6 +336,7 @@ Partial Class CheckIn1Count
         '
         'tlabnumGer
         '
+        Me.tlabnumGer.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         '
         '
         '

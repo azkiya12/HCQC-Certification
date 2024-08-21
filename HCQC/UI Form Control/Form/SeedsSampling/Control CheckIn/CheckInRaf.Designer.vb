@@ -336,6 +336,7 @@ Partial Class CheckInRaf
         '
         'tlabnumRaf
         '
+        Me.tlabnumRaf.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         '
         '
         '

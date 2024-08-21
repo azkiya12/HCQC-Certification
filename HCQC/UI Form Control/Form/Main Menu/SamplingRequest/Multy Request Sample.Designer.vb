@@ -447,7 +447,7 @@ Partial Class Multy_Request_Sample
         Me.tloc_sample.FontSize = MetroFramework.MetroComboBoxSize.Small
         Me.tloc_sample.FormattingEnabled = True
         Me.tloc_sample.ItemHeight = 19
-        Me.tloc_sample.Items.AddRange(New Object() {"Gudang A", "Gudang B", "Gudang C", "Gudang E", "Gudang G", "Gudang WP", "Gudang TR", "CR C", "CR E", "CR F", "CR G"})
+        Me.tloc_sample.Items.AddRange(New Object() {"Gudang A", "Gudang B", "Gudang C", "Gudang E", "Gudang G", "Small G", "Gudang WP", "Gudang TR", "CR C", "CR E", "CR F", "CR G"})
         Me.tloc_sample.Location = New System.Drawing.Point(944, 167)
         Me.tloc_sample.Name = "tloc_sample"
         Me.tloc_sample.Size = New System.Drawing.Size(172, 25)

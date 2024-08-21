@@ -30,6 +30,7 @@ Partial Class GridDevexpress
         Dim GridLevelNode5 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim GridLevelNode6 As DevExpress.XtraGrid.GridLevelNode = New DevExpress.XtraGrid.GridLevelNode()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(GridDevexpress))
+        Dim SimpleContextButton1 As DevExpress.Utils.SimpleContextButton = New DevExpress.Utils.SimpleContextButton()
         Me.MoistureGridView2 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.coltestdate1 = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colmois1 = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -217,6 +218,10 @@ Partial Class GridDevexpress
         Me.MetroLabel15 = New MetroFramework.Controls.MetroLabel()
         Me.EndDate = New System.Windows.Forms.DateTimePicker()
         Me.StartDate = New System.Windows.Forms.DateTimePicker()
+        Me.MetroLabel19 = New MetroFramework.Controls.MetroLabel()
+        Me.ComboBoxEdit1 = New DevExpress.XtraEditors.ComboBoxEdit()
+        Me.MetroLink2 = New MetroFramework.Controls.MetroLink()
+        Me.MetroLink1 = New MetroFramework.Controls.MetroLink()
         CType(Me.MoistureGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReportglobalviewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -230,6 +235,7 @@ Partial Class GridDevexpress
         CType(Me.RepositoryItemHyperLinkEdit1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroPanel1.SuspendLayout()
         CType(Me.BtnFilterDate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MoistureGridView2
@@ -395,7 +401,7 @@ Partial Class GridDevexpress
         Me.GridControl1.MainView = Me.GridView
         Me.GridControl1.Name = "GridControl1"
         Me.GridControl1.RepositoryItems.AddRange(New DevExpress.XtraEditors.Repository.RepositoryItem() {Me.RepositoryItemHyperLinkEdit1})
-        Me.GridControl1.Size = New System.Drawing.Size(932, 330)
+        Me.GridControl1.Size = New System.Drawing.Size(1034, 449)
         Me.GridControl1.TabIndex = 0
         Me.GridControl1.ViewCollection.AddRange(New DevExpress.XtraGrid.Views.Base.BaseView() {Me.RafactionGridView3, Me.PureGridView1, Me.ViabilityGridView4, Me.GerminationGridView5, Me.ArchiveGridView6, Me.GridView, Me.MoistureGridView2})
         '
@@ -1580,7 +1586,7 @@ Partial Class GridDevexpress
         Me.LabelStatus.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.LabelStatus.AutoSize = True
         Me.LabelStatus.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.LabelStatus.Location = New System.Drawing.Point(23, 415)
+        Me.LabelStatus.Location = New System.Drawing.Point(23, 534)
         Me.LabelStatus.Name = "LabelStatus"
         Me.LabelStatus.Size = New System.Drawing.Size(413, 15)
         Me.LabelStatus.TabIndex = 58
@@ -1592,7 +1598,7 @@ Partial Class GridDevexpress
         Me.MetroLabel2.AutoSize = True
         Me.MetroLabel2.FontSize = MetroFramework.MetroLabelSize.Small
         Me.MetroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold
-        Me.MetroLabel2.Location = New System.Drawing.Point(23, 396)
+        Me.MetroLabel2.Location = New System.Drawing.Point(23, 515)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(41, 15)
         Me.MetroLabel2.TabIndex = 59
@@ -1605,7 +1611,7 @@ Partial Class GridDevexpress
         'ProgressSpinner1
         '
         Me.ProgressSpinner1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
-        Me.ProgressSpinner1.Location = New System.Drawing.Point(3, 413)
+        Me.ProgressSpinner1.Location = New System.Drawing.Point(3, 532)
         Me.ProgressSpinner1.Maximum = 100
         Me.ProgressSpinner1.Name = "ProgressSpinner1"
         Me.ProgressSpinner1.Size = New System.Drawing.Size(19, 19)
@@ -1747,11 +1753,77 @@ Partial Class GridDevexpress
         Me.StartDate.TabIndex = 152
         Me.StartDate.Value = New Date(2024, 3, 15, 0, 0, 0, 0)
         '
+        'MetroLabel19
+        '
+        Me.MetroLabel19.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLabel19.AutoSize = True
+        Me.MetroLabel19.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.MetroLabel19.Location = New System.Drawing.Point(788, 14)
+        Me.MetroLabel19.Name = "MetroLabel19"
+        Me.MetroLabel19.Size = New System.Drawing.Size(92, 15)
+        Me.MetroLabel19.TabIndex = 161
+        Me.MetroLabel19.Text = " Setting GridView"
+        '
+        'ComboBoxEdit1
+        '
+        Me.ComboBoxEdit1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.ComboBoxEdit1.Location = New System.Drawing.Point(788, 32)
+        Me.ComboBoxEdit1.Name = "ComboBoxEdit1"
+        Me.ComboBoxEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
+        SimpleContextButton1.AlignmentOptions.Panel = DevExpress.Utils.ContextItemPanel.Center
+        SimpleContextButton1.AlignmentOptions.Position = DevExpress.Utils.ContextItemPosition.Far
+        SimpleContextButton1.AnchorAlignment = DevExpress.Utils.AnchorAlignment.Right
+        SimpleContextButton1.Id = New System.Guid("1c5390a2-4707-44f9-ba6b-367a99011a00")
+        SimpleContextButton1.ImageOptionsCollection.ItemHovered.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        SimpleContextButton1.ImageOptionsCollection.ItemNormal.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        SimpleContextButton1.ImageOptionsCollection.ItemPressed.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
+        SimpleContextButton1.Name = "simpleContextButton1"
+        Me.ComboBoxEdit1.Properties.ContextButtons.Add(SimpleContextButton1)
+        Me.ComboBoxEdit1.Size = New System.Drawing.Size(112, 20)
+        Me.ComboBoxEdit1.TabIndex = 160
+        '
+        'MetroLink2
+        '
+        Me.MetroLink2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLink2.AutoSize = True
+        Me.MetroLink2.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLink2.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MetroLink2.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.MetroLink2.Location = New System.Drawing.Point(903, 29)
+        Me.MetroLink2.Margin = New System.Windows.Forms.Padding(0)
+        Me.MetroLink2.Name = "MetroLink2"
+        Me.MetroLink2.Size = New System.Drawing.Size(45, 23)
+        Me.MetroLink2.TabIndex = 159
+        Me.MetroLink2.Text = "Save"
+        Me.MetroLink2.UseCustomBackColor = True
+        Me.MetroLink2.UseSelectable = True
+        Me.MetroLink2.UseStyleColors = True
+        '
+        'MetroLink1
+        '
+        Me.MetroLink1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.MetroLink1.AutoSize = True
+        Me.MetroLink1.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLink1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MetroLink1.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.MetroLink1.Location = New System.Drawing.Point(951, 29)
+        Me.MetroLink1.Name = "MetroLink1"
+        Me.MetroLink1.Size = New System.Drawing.Size(50, 23)
+        Me.MetroLink1.TabIndex = 158
+        Me.MetroLink1.Text = "Delete"
+        Me.MetroLink1.UseCustomBackColor = True
+        Me.MetroLink1.UseSelectable = True
+        Me.MetroLink1.UseStyleColors = True
+        '
         'GridDevexpress
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(978, 450)
+        Me.ClientSize = New System.Drawing.Size(1080, 569)
+        Me.Controls.Add(Me.MetroLabel19)
+        Me.Controls.Add(Me.ComboBoxEdit1)
+        Me.Controls.Add(Me.MetroLink2)
+        Me.Controls.Add(Me.MetroLink1)
         Me.Controls.Add(Me.BtnFilterDate)
         Me.Controls.Add(Me.MetroLabel18)
         Me.Controls.Add(Me.MetroLabel16)
@@ -1780,6 +1852,7 @@ Partial Class GridDevexpress
         Me.MetroPanel1.ResumeLayout(False)
         Me.MetroPanel1.PerformLayout()
         CType(Me.BtnFilterDate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ComboBoxEdit1.Properties, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1972,4 +2045,8 @@ Partial Class GridDevexpress
     Friend WithEvents colremark2 As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colloc_sample As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colraf_ket As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents MetroLabel19 As MetroLabel
+    Friend WithEvents ComboBoxEdit1 As DevExpress.XtraEditors.ComboBoxEdit
+    Friend WithEvents MetroLink2 As MetroLink
+    Friend WithEvents MetroLink1 As MetroLink
 End Class

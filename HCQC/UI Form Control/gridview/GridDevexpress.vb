@@ -1,4 +1,6 @@
 ﻿Imports System.ComponentModel
+Imports System.IO
+Imports System.Text
 Imports System.Threading.Tasks
 
 Public Class GridDevexpress
@@ -7,7 +9,142 @@ Public Class GridDevexpress
         MainForm.Containermenu2.BtnGlobal.Enabled = True
     End Sub
 
+    Public Sub LoadTextTrackingTemplating()
 
+        ComboBoxEdit1.Properties.Items.Clear()
+        Dim FolderPath As String = "C:\hcqc asset"
+        Dim FilePath As String = "C:\hcqc asset\GStyle_Global.txt"
+
+        CreateGStyleTracking(FilePath, FolderPath)
+
+        ''Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
+        ComboBoxEdit1.Properties.Items.AddRange(File.ReadAllLines(FilePath))
+    End Sub
+
+    Public Sub DeleteTextTrackingTemplating()
+        Dim FilePath As String = "C:\hcqc asset\GStyle_Global.txt"
+        ''menghapus text "selectedText Combobox" di file DirectoryPart|GStyle_tracking.txt
+        ''Dim FilePath As String = My.Application.Info.DirectoryPath + "\GStyle_tracking.txt"
+        File.WriteAllLines(FilePath, File.ReadAllLines(FilePath).Where(Function(l) l <> ComboBoxEdit1.SelectedItem))
+        LoadTextTrackingTemplating()
+    End Sub
+
+    Public Sub CreateGStyleTracking(ByVal FilePath As String, ByVal FolderPath As String)
+
+        'memastikan terdapat folder "C:\hcqc asset"
+        If Not Directory.Exists(FolderPath) Then
+            Directory.CreateDirectory(FolderPath)
+        End If
+
+        'memastiakan terdapat file GStyle_tracking.txt
+        If Not File.Exists(FilePath) Then
+            File.Create(FilePath).Dispose()
+        End If
+
+    End Sub
+
+    Private Sub SaveView_Click(sender As Object, e As EventArgs) Handles MetroLink2.Click
+        ''proses SAVE file template view
+        Dim fileName As String = "C:\hcqc asset\" + ComboBoxEdit1.Text + ".xml"
+        Dim result As Integer = MetroMessageBox.Show(Me, "Simpan tampilan terakir", Me.Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Information, 211)
+        If result = DialogResult.Cancel Then
+            Return
+        End If
+
+        'Memastikan jika ada nama file yang sama akan di delete dulu
+        If File.Exists(fileName) Then
+            File.Delete(fileName)
+        End If
+
+        'jika file tidak ada maka lalukan proses SaveLayout
+        If Not File.Exists(fileName) Then
+            GridView.SaveLayoutToXml(fileName)
+        End If
+
+        Dim textline As String
+        Dim stringcek As Boolean = False
+        Dim FilePath As String = "C:\hcqc asset\GStyle_GLobal.txt"
+        Dim ContentItem As String = ComboBoxEdit1.Text
+        If File.Exists(FilePath) Then
+            Try
+                'Proses membaca catatan layout yang sudah di save pada file GStyle_tracking.txt
+                Using objReader As New StreamReader(FilePath, Encoding.ASCII)
+                    textline = objReader.ReadToEnd
+
+                    ' Memeriksa apakah berhasil membaca baris pertama
+                    If (textline Is Nothing) Or (Not textline.Contains(ContentItem)) Then
+                        stringcek = True
+                    End If
+                End Using
+
+            Catch ex As Exception
+                MetroMessageBox.Show(Me, ex.Message)
+                Return
+            End Try
+        Else
+            MetroMessageBox.Show(Me, "File GStyle_Global.txt tidak ditemukan.")
+            Return
+        End If
+
+        Console.WriteLine(stringcek)
+        ''jika tidak ada text maka tulis text di file .txt
+        If stringcek = True Then
+            'SaveTextTrackingTemplating()
+            Using file As New StreamWriter(FilePath, True)
+                file.WriteLine(ComboBoxEdit1.SelectedItem)
+                file.Close()
+            End Using
+        End If
+
+        ''proses load combobox
+        LoadTextTrackingTemplating()
+    End Sub
+
+    Private Sub ComboBoxEdit1_SelectedIndexChanged(sender As Object, e As EventArgs) Handles ComboBoxEdit1.SelectedIndexChanged
+        Dim fileName As String = "C:\hcqc asset\" + ComboBoxEdit1.Text + ".xml"
+        Dim FilePath As String = "C:\hcqc asset\GStyle_Global.txt"
+        Dim searchText As String = ComboBoxEdit1.SelectedItem
+        Dim lines As List(Of String) = File.ReadAllLines(FilePath).ToList()
+
+        Try
+            GridView.RestoreLayoutFromXml(fileName)
+        Catch ex As Exception
+            'jika file .xml tidak ada hapus daftar list combobox
+            lines.RemoveAll(Function(line) line.Trim() = searchText)
+            File.WriteAllLines(FilePath, lines)
+            MsgBox("GridViewTemplate is error on " & ex.Message.ToString)
+
+            LoadTextTrackingTemplating()
+        End Try
+    End Sub
+
+    Private Sub DeleteView_Click(sender As Object, e As EventArgs) Handles MetroLink1.Click
+        ''proses DELETE file template view
+        Dim fileName As String = "C:\hcqc asset\" + ComboBoxEdit1.Text + ".xml"
+        If ComboBoxEdit1.Text Is Nothing Then
+            MetroMessageBox.Show(Me, "Tidak ada yang harus dihapus. Lanjutkan hidup dan terima keadaan.")
+            Return
+        End If
+
+        Dim result As Integer = MetroMessageBox.Show(Me, "Yakin diHAPUS tampilan " & ComboBoxEdit1.Text & " ??", Me.Text, MessageBoxButtons.OKCancel, MessageBoxIcon.Warning, 211)
+        If result = DialogResult.Cancel Then
+            MetroMessageBox.Show(Me, "Tidak ada yang harus dihapus. Lanjutkan hidup dan terima keadaan.")
+            Return
+        End If
+
+        If Not File.Exists(fileName) Then
+            My.Computer.FileSystem.DeleteFile(
+                fileName,
+                FileIO.UIOption.AllDialogs,
+                FileIO.RecycleOption.DeletePermanently,
+                FileIO.UICancelOption.DoNothing)
+        End If
+        ''proses delete text file template view
+        DeleteTextTrackingTemplating()
+        ''proses load combobox
+        LoadTextTrackingTemplating()
+
+    End Sub
 
     Private Sub LinkRefresh_Click(sender As Object, e As EventArgs) Handles LinkRefresh.Click
         'BackgroundWorker1.RunWorkerAsync()
@@ -162,5 +299,9 @@ Public Class GridDevexpress
         BtnFilterDate.Enabled = True
         LabelStatus.Text = "Nilai persentase -1 menandakan bahwa sampel tidak di lakukan pengujian tertentu"
         LinkRefresh.Tag = "bydate"
+    End Sub
+
+    Private Sub GridDevexpress_Load(sender As Object, e As EventArgs) Handles Me.Load
+        LoadTextTrackingTemplating()
     End Sub
 End Class

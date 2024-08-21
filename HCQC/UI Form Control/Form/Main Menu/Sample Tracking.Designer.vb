@@ -24,11 +24,11 @@ Partial Class Sample_Tracking
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Sample_Tracking))
-        Dim SimpleContextButton2 As DevExpress.Utils.SimpleContextButton = New DevExpress.Utils.SimpleContextButton()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim SimpleContextButton1 As DevExpress.Utils.SimpleContextButton = New DevExpress.Utils.SimpleContextButton()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.LInkRefresh = New MetroFramework.Controls.MetroLink()
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
         Me.StartDate = New System.Windows.Forms.DateTimePicker()
@@ -65,6 +65,7 @@ Partial Class Sample_Tracking
         Me.coltest_ger = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coltest_via = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coltest_raf = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colkesehatan_benih = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coltest_ontest = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colinput_date = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colReceipt = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -169,7 +170,6 @@ Partial Class Sample_Tracking
         Me.LLocation = New MetroFramework.Controls.MetroLabel()
         Me.Report_status_pengujianTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.report_status_pengujianTableAdapter()
         Me.Report_sampel_ambilTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.report_sampel_ambilTableAdapter()
-        Me.colkesehatan_benih = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroTabControl1.SuspendLayout()
         Me.MetroTabPage1.SuspendLayout()
@@ -328,15 +328,15 @@ Partial Class Sample_Tracking
         Me.ComboBoxEdit1.Location = New System.Drawing.Point(772, 25)
         Me.ComboBoxEdit1.Name = "ComboBoxEdit1"
         Me.ComboBoxEdit1.Properties.Buttons.AddRange(New DevExpress.XtraEditors.Controls.EditorButton() {New DevExpress.XtraEditors.Controls.EditorButton(DevExpress.XtraEditors.Controls.ButtonPredefines.Combo)})
-        SimpleContextButton2.AlignmentOptions.Panel = DevExpress.Utils.ContextItemPanel.Center
-        SimpleContextButton2.AlignmentOptions.Position = DevExpress.Utils.ContextItemPosition.Far
-        SimpleContextButton2.AnchorAlignment = DevExpress.Utils.AnchorAlignment.Right
-        SimpleContextButton2.Id = New System.Guid("1c5390a2-4707-44f9-ba6b-367a99011a00")
-        SimpleContextButton2.ImageOptionsCollection.ItemHovered.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
-        SimpleContextButton2.ImageOptionsCollection.ItemNormal.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
-        SimpleContextButton2.ImageOptionsCollection.ItemPressed.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
-        SimpleContextButton2.Name = "simpleContextButton1"
-        Me.ComboBoxEdit1.Properties.ContextButtons.Add(SimpleContextButton2)
+        SimpleContextButton1.AlignmentOptions.Panel = DevExpress.Utils.ContextItemPanel.Center
+        SimpleContextButton1.AlignmentOptions.Position = DevExpress.Utils.ContextItemPosition.Far
+        SimpleContextButton1.AnchorAlignment = DevExpress.Utils.AnchorAlignment.Right
+        SimpleContextButton1.Id = New System.Guid("1c5390a2-4707-44f9-ba6b-367a99011a00")
+        SimpleContextButton1.ImageOptionsCollection.ItemHovered.Image = CType(resources.GetObject("resource.Image"), System.Drawing.Image)
+        SimpleContextButton1.ImageOptionsCollection.ItemNormal.Image = CType(resources.GetObject("resource.Image1"), System.Drawing.Image)
+        SimpleContextButton1.ImageOptionsCollection.ItemPressed.Image = CType(resources.GetObject("resource.Image2"), System.Drawing.Image)
+        SimpleContextButton1.Name = "simpleContextButton1"
+        Me.ComboBoxEdit1.Properties.ContextButtons.Add(SimpleContextButton1)
         Me.ComboBoxEdit1.Size = New System.Drawing.Size(112, 20)
         Me.ComboBoxEdit1.TabIndex = 89
         '
@@ -564,6 +564,14 @@ Partial Class Sample_Tracking
         Me.coltest_raf.Visible = True
         Me.coltest_raf.VisibleIndex = 17
         Me.coltest_raf.Width = 83
+        '
+        'colkesehatan_benih
+        '
+        Me.colkesehatan_benih.Caption = "Kesehatan Benih"
+        Me.colkesehatan_benih.FieldName = "kesehatan_benih"
+        Me.colkesehatan_benih.Name = "colkesehatan_benih"
+        Me.colkesehatan_benih.Visible = True
+        Me.colkesehatan_benih.VisibleIndex = 18
         '
         'coltest_ontest
         '
@@ -1025,9 +1033,9 @@ Partial Class Sample_Tracking
         Me.MetroGrid1.AllowUserToAddRows = False
         Me.MetroGrid1.AllowUserToDeleteRows = False
         Me.MetroGrid1.AllowUserToResizeRows = False
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black
-        Me.MetroGrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black
+        Me.MetroGrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.MetroGrid1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
@@ -1036,39 +1044,39 @@ Partial Class Sample_Tracking
         Me.MetroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.MetroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.MetroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.MetroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn, Me.IdhvsprodDataGridViewTextBoxColumn, Me.LabnumDataGridViewTextBoxColumn, Me.VarietyDataGridViewTextBoxColumn, Me.FarmerDataGridViewTextBoxColumn, Me.LocationDataGridViewTextBoxColumn, Me.HarvestDataGridViewTextBoxColumn, Me.NomnlDataGridViewTextBoxColumn, Me.WeightDataGridViewTextBoxColumn, Me.request_date, Me.OfficerDataGridViewTextBoxColumn, Me.RemarkDataGridViewTextBoxColumn, Me.TglDataGridViewTextBoxColumn})
         Me.MetroGrid1.DataSource = Me.ReportsampelambilBindingSource
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle3
         Me.MetroGrid1.EnableHeadersVisualStyles = False
         Me.MetroGrid1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.MetroGrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.MetroGrid1.Location = New System.Drawing.Point(3, 316)
         Me.MetroGrid1.Name = "MetroGrid1"
         Me.MetroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.Black
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.Black
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.MetroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.MetroGrid1.Size = New System.Drawing.Size(985, 188)
@@ -1680,14 +1688,6 @@ Partial Class Sample_Tracking
         'Report_sampel_ambilTableAdapter
         '
         Me.Report_sampel_ambilTableAdapter.ClearBeforeFill = True
-        '
-        'colkesehatan_benih
-        '
-        Me.colkesehatan_benih.Caption = "Kesehatan Benih"
-        Me.colkesehatan_benih.FieldName = "kesehatan_benih"
-        Me.colkesehatan_benih.Name = "colkesehatan_benih"
-        Me.colkesehatan_benih.Visible = True
-        Me.colkesehatan_benih.VisibleIndex = 18
         '
         'Sample_Tracking
         '

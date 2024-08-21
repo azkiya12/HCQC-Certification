@@ -302,6 +302,7 @@ Partial Class CheckInGer
         '
         'tlabnumGer
         '
+        Me.tlabnumGer.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         '
         '
         '

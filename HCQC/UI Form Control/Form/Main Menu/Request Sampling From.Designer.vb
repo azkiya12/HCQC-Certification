@@ -606,6 +606,7 @@ Partial Class Request_Sampling_From
         Me.tkarantina.UseCustomBackColor = True
         Me.tkarantina.UseCustomForeColor = True
         Me.tkarantina.UseSelectable = True
+        Me.tkarantina.Visible = False
         '
         'MetroTextBox1
         '
@@ -648,7 +649,7 @@ Partial Class Request_Sampling_From
         Me.tloc_sample.ForeColor = System.Drawing.Color.Transparent
         Me.tloc_sample.FormattingEnabled = True
         Me.tloc_sample.ItemHeight = 19
-        Me.tloc_sample.Items.AddRange(New Object() {"Gudang A", "Gudang B", "Gudang C", "Gudang E", "Gudang G", "Gudang WP", "Gudang TR", "CR C", "CR E", "CR F", "CR G"})
+        Me.tloc_sample.Items.AddRange(New Object() {"Gudang A", "Gudang B", "Gudang C", "Gudang E", "Gudang G", "Small G", "Gudang WP", "Gudang TR", "CR C", "CR E", "CR F", "CR G"})
         Me.tloc_sample.Location = New System.Drawing.Point(216, 239)
         Me.tloc_sample.Name = "tloc_sample"
         Me.tloc_sample.PromptText = "Sample Location..."

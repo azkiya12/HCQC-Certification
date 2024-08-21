@@ -336,6 +336,7 @@ Partial Class CheckInPur
         '
         'tlabnumPur
         '
+        Me.tlabnumPur.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         '
         '
         '

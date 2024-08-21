@@ -134,69 +134,69 @@ Public Class Moisture_Test
         If String.IsNullOrEmpty(tlabnum.Text) Then
             MetroMessageBox.Show(Me, "Lab Number harus diisi!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
             Return
-        Else
-            Try
-                openDB()
-                Dim sql As String = "Select * From moisture WHERE (labnum= '" & tlabnum.Text & "') "
-                cmd = New SqlClient.SqlCommand(sql, con) With {
+        End If
+
+        Try
+            openDB()
+            Dim sql As String = "Select * From moisture WHERE (labnum= '" & tlabnum.Text & "') "
+            cmd = New SqlClient.SqlCommand(sql, con) With {
                     .CommandType = CommandType.Text,
                     .CommandText = sql
                 }
-                dread = cmd.ExecuteReader
-                If dread.Read = True Then
-                    tmethod.Text = dread.Item("ground")
-                    TPreparation.Text = dread.Item("prepare")
-                    ttemp.Text = dread.Item("temp")
-                    tperiod.Text = dread.Item("period")
-                    tequip.Text = dread.Item("equipment")
-                    tbalanc.Text = dread.Item("idbalance")
-                    tmoi1.Text = dread.Item("mois1").ToString '("0,0")
-                    tmoi2.Text = dread.Item("mois2").ToString '("0,0")
-                    tmoimean.Text = dread.Item("mean").ToString '("0.0")
-                    ttoleran.Checked = dread.Item("toleran")
-                    tanalyst.Text = dread.Item("analys")
-                    tremark.Text = dread.Item("remark")
-                    Dim tgltes As Date = dread.Item("testdate")
-                    ttgltest.Text = tgltes.ToString(LabelDate1.Text)
+            dread = cmd.ExecuteReader
+            If dread.Read = True Then
+                tmethod.Text = dread.Item("ground")
+                TPreparation.Text = dread.Item("prepare")
+                ttemp.Text = dread.Item("temp")
+                tperiod.Text = dread.Item("period")
+                tequip.Text = dread.Item("equipment")
+                tbalanc.Text = dread.Item("idbalance")
+                tmoi1.Text = dread.Item("mois1").ToString '("0,0")
+                tmoi2.Text = dread.Item("mois2").ToString '("0,0")
+                tmoimean.Text = dread.Item("mean").ToString '("0.0")
+                ttoleran.Checked = dread.Item("toleran")
+                tanalyst.Text = dread.Item("analys")
+                tremark.Text = dread.Item("remark")
+                Dim tgltes As Date = dread.Item("testdate")
+                ttgltest.Text = tgltes.ToString(LabelDate1.Text)
 
-                    ''mengambil data identitas sample dari sample_request
-                    GetIdSample()
+                ''mengambil data identitas sample dari sample_request
+                GetIdSample()
 
-                    ''mengambil data dari method jika OVEN
-                    If tmethod.Text = "Oven" Then
-                        ''Replication 1 in Oven Method
-                        TContIDRep1.Text = _DataToValue("SELECT [container] FROM [moisture_oven] WHERE [repication]=1 AND labnum='" & tlabnum.Text & "'")
-                        TContWgRep1.Text = _DataToValue("SELECT [con_weight] FROM [moisture_oven] WHERE [repication]=1 AND labnum='" & tlabnum.Text & "'")
-                        TContWgFillRep1.Text = _DataToValue("SELECT [con_fill_weight] FROM [moisture_oven] WHERE [repication]=1 AND labnum='" & tlabnum.Text & "'")
-                        TWgDryRep1.Text = _DataToValue("SELECT [dry_weight] FROM [moisture_oven] WHERE [repication]=1 AND labnum='" & tlabnum.Text & "'")
+                ''mengambil data dari method jika OVEN
+                If tmethod.Text = "Oven" Then
+                    ''Replication 1 in Oven Method
+                    TContIDRep1.Text = _DataToValue("SELECT [container] FROM [moisture_oven] WHERE [repication]=1 AND labnum='" & tlabnum.Text & "'")
+                    TContWgRep1.Text = _DataToValue("SELECT [con_weight] FROM [moisture_oven] WHERE [repication]=1 AND labnum='" & tlabnum.Text & "'")
+                    TContWgFillRep1.Text = _DataToValue("SELECT [con_fill_weight] FROM [moisture_oven] WHERE [repication]=1 AND labnum='" & tlabnum.Text & "'")
+                    TWgDryRep1.Text = _DataToValue("SELECT [dry_weight] FROM [moisture_oven] WHERE [repication]=1 AND labnum='" & tlabnum.Text & "'")
 
-                        ''Replication 2 in Oven Method
-                        TContIDRep2.Text = _DataToValue("SELECT [container] FROM [moisture_oven] WHERE [repication]=2 AND labnum='" & tlabnum.Text & "'")
-                        TContWgRep2.Text = _DataToValue("SELECT [con_weight] FROM [moisture_oven] WHERE [repication]=2 AND labnum='" & tlabnum.Text & "'")
-                        TContWgFillRep2.Text = _DataToValue("SELECT [con_fill_weight] FROM [moisture_oven] WHERE [repication]=2 AND labnum='" & tlabnum.Text & "'")
-                        TWgDryRep2.Text = _DataToValue("SELECT [dry_weight] FROM [moisture_oven] WHERE [repication]=2 AND labnum='" & tlabnum.Text & "'")
+                    ''Replication 2 in Oven Method
+                    TContIDRep2.Text = _DataToValue("SELECT [container] FROM [moisture_oven] WHERE [repication]=2 AND labnum='" & tlabnum.Text & "'")
+                    TContWgRep2.Text = _DataToValue("SELECT [con_weight] FROM [moisture_oven] WHERE [repication]=2 AND labnum='" & tlabnum.Text & "'")
+                    TContWgFillRep2.Text = _DataToValue("SELECT [con_fill_weight] FROM [moisture_oven] WHERE [repication]=2 AND labnum='" & tlabnum.Text & "'")
+                    TWgDryRep2.Text = _DataToValue("SELECT [dry_weight] FROM [moisture_oven] WHERE [repication]=2 AND labnum='" & tlabnum.Text & "'")
 
-                    End If
-                    tlabnum.SelectAll()
-                    BtnSave.Text = "Update"
-                    BtnDel.Enabled = True
-                Else
-                    Dim result As Integer = MetroFramework.MetroMessageBox.Show(Me, "Data tidak ditemukan!. Apakah anda ingin melanjutkan pencarian data?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information, 211)
-                    If result = DialogResult.Yes Then
-                        tlabnum.Focus()
-                    ElseIf result = DialogResult.No Then
-                        BtnSave.Text = "Save"
-                        BtnDel.Enabled = False
-                        tlabnum.SelectAll()
-                    End If
                 End If
+                tlabnum.SelectAll()
+                BtnSave.Text = "Update"
+                BtnDel.Enabled = True
+            Else
+                Dim result As Integer = MetroFramework.MetroMessageBox.Show(Me, "Data tidak ditemukan!. Apakah anda ingin melanjutkan pencarian data?", Me.Text, MessageBoxButtons.YesNo, MessageBoxIcon.Information, 211)
+                If result = DialogResult.Yes Then
+                    tlabnum.Focus()
+                ElseIf result = DialogResult.No Then
+                    BtnSave.Text = "Save"
+                    BtnDel.Enabled = False
+                    tlabnum.SelectAll()
+                End If
+            End If
 
-            Catch ex As Exception
-                MetroFramework.MetroMessageBox.Show(Me, "Error " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
-            Finally
-                con.Close()
-            End Try
-        End If
+        Catch ex As Exception
+            MetroFramework.MetroMessageBox.Show(Me, "Error " + ex.Message, Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
+        Finally
+            con.Close()
+        End Try
     End Sub
 
     Private Sub BtnUpdate_Click(sender As Object, e As EventArgs)

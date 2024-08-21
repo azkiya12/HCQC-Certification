@@ -337,6 +337,7 @@ Partial Class CheckInVigor
         '
         'tlabnumGer
         '
+        Me.tlabnumGer.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         '
         '
         '
