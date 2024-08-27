@@ -25,6 +25,7 @@ Public Class Germination_Test
                             tglfist = Date.ParseExact(tfistdate.Text, formatDate, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.None)
                             Dim tglfinl As Date
                             tglfinl = Date.ParseExact(Tfinaldate.Text, formatDate, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.None)
+
                             'Prosedur to insert to ID Germination
                             _RunSQL("INSERT INTO [germination_id]
                                 (id_request
@@ -55,7 +56,6 @@ Public Class Germination_Test
 
                             'Prosedur INSERT Germinator value
                             _RunSQL_nomsgbox("INSERT INTO [dbo].[germination]
-
                                 ([labnum]
                                 ,[character]
                                 ,[t1]
@@ -64,9 +64,7 @@ Public Class Germination_Test
                                 ,[t4]
                                 ,[avrg]
                                 ,[percn])
-
                             VALUES
-
                                 ('" & tlabnum.Text & "'
                                 ,'Normal Seedling (%)'
                                 ," & Val(tNml1.Text) & "

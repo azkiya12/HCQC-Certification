@@ -1139,7 +1139,6 @@ Partial Class GridDevexpress
         Me.GridView.OptionsView.ColumnAutoWidth = False
         Me.GridView.OptionsView.ShowAutoFilterRow = True
         Me.GridView.OptionsView.ShowFooter = True
-        Me.GridView.SortInfo.AddRange(New DevExpress.XtraGrid.Columns.GridColumnSortInfo() {New DevExpress.XtraGrid.Columns.GridColumnSortInfo(Me.colpur_inputat, DevExpress.Data.ColumnSortOrder.Ascending)})
         '
         'colid
         '

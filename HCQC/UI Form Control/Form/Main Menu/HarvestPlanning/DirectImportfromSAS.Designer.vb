@@ -31,6 +31,8 @@ Partial Class DirectImportfromSAS
         Me.btnSubmit = New MetroFramework.Controls.MetroButton()
         Me.MetroProgressBar1 = New MetroFramework.Controls.MetroProgressBar()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
+        Me.MetroProgressSpinner1 = New MetroFramework.Controls.MetroProgressSpinner()
+        Me.LabelStatus = New MetroFramework.Controls.MetroLabel()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
@@ -38,7 +40,7 @@ Partial Class DirectImportfromSAS
         '
         Me.Label_to.AutoSize = True
         Me.Label_to.FontWeight = MetroFramework.MetroLabelWeight.Regular
-        Me.Label_to.Location = New System.Drawing.Point(166, 108)
+        Me.Label_to.Location = New System.Drawing.Point(166, 97)
         Me.Label_to.Name = "Label_to"
         Me.Label_to.Size = New System.Drawing.Size(65, 19)
         Me.Label_to.TabIndex = 70
@@ -48,7 +50,7 @@ Partial Class DirectImportfromSAS
         '
         Me.Label_from.AutoSize = True
         Me.Label_from.FontWeight = MetroFramework.MetroLabelWeight.Regular
-        Me.Label_from.Location = New System.Drawing.Point(23, 108)
+        Me.Label_from.Location = New System.Drawing.Point(23, 97)
         Me.Label_from.Name = "Label_from"
         Me.Label_from.Size = New System.Drawing.Size(71, 19)
         Me.Label_from.TabIndex = 69
@@ -59,7 +61,7 @@ Partial Class DirectImportfromSAS
         Me.DateTo.CustomFormat = "dd-MM-yyyy"
         Me.DateTo.FontSize = MetroFramework.MetroDateTimeSize.Small
         Me.DateTo.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateTo.Location = New System.Drawing.Point(166, 130)
+        Me.DateTo.Location = New System.Drawing.Point(166, 119)
         Me.DateTo.MaxDate = New Date(2060, 12, 31, 0, 0, 0, 0)
         Me.DateTo.MinDate = New Date(1990, 1, 1, 0, 0, 0, 0)
         Me.DateTo.MinimumSize = New System.Drawing.Size(0, 25)
@@ -74,7 +76,7 @@ Partial Class DirectImportfromSAS
         Me.DateFrom.CustomFormat = ""
         Me.DateFrom.FontSize = MetroFramework.MetroDateTimeSize.Small
         Me.DateFrom.Format = System.Windows.Forms.DateTimePickerFormat.[Short]
-        Me.DateFrom.Location = New System.Drawing.Point(23, 130)
+        Me.DateFrom.Location = New System.Drawing.Point(23, 119)
         Me.DateFrom.MaxDate = New Date(2060, 12, 31, 0, 0, 0, 0)
         Me.DateFrom.MinDate = New Date(1990, 1, 1, 0, 0, 0, 0)
         Me.DateFrom.MinimumSize = New System.Drawing.Size(0, 25)
@@ -95,7 +97,7 @@ Partial Class DirectImportfromSAS
         '
         'btnSubmit
         '
-        Me.btnSubmit.Location = New System.Drawing.Point(312, 130)
+        Me.btnSubmit.Location = New System.Drawing.Point(312, 119)
         Me.btnSubmit.Name = "btnSubmit"
         Me.btnSubmit.Size = New System.Drawing.Size(75, 25)
         Me.btnSubmit.TabIndex = 73
@@ -117,11 +119,35 @@ Partial Class DirectImportfromSAS
         '
         Me.MetroStyleManager1.Owner = Nothing
         '
+        'MetroProgressSpinner1
+        '
+        Me.MetroProgressSpinner1.Location = New System.Drawing.Point(21, 164)
+        Me.MetroProgressSpinner1.Margin = New System.Windows.Forms.Padding(1)
+        Me.MetroProgressSpinner1.Maximum = 100
+        Me.MetroProgressSpinner1.Name = "MetroProgressSpinner1"
+        Me.MetroProgressSpinner1.Size = New System.Drawing.Size(16, 16)
+        Me.MetroProgressSpinner1.TabIndex = 76
+        Me.MetroProgressSpinner1.UseSelectable = True
+        Me.MetroProgressSpinner1.Value = 35
+        Me.MetroProgressSpinner1.Visible = False
+        '
+        'LabelStatus
+        '
+        Me.LabelStatus.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
+        Me.LabelStatus.AutoSize = True
+        Me.LabelStatus.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.LabelStatus.Location = New System.Drawing.Point(41, 164)
+        Me.LabelStatus.Name = "LabelStatus"
+        Me.LabelStatus.Size = New System.Drawing.Size(0, 0)
+        Me.LabelStatus.TabIndex = 77
+        '
         'DirectImportfromSAS
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(431, 201)
+        Me.Controls.Add(Me.LabelStatus)
+        Me.Controls.Add(Me.MetroProgressSpinner1)
         Me.Controls.Add(Me.MetroProgressBar1)
         Me.Controls.Add(Me.btnSubmit)
         Me.Controls.Add(Me.MetroLabel1)
@@ -144,4 +170,6 @@ Partial Class DirectImportfromSAS
     Friend WithEvents btnSubmit As MetroButton
     Friend WithEvents MetroProgressBar1 As MetroProgressBar
     Friend WithEvents MetroStyleManager1 As Components.MetroStyleManager
+    Friend WithEvents MetroProgressSpinner1 As MetroProgressSpinner
+    Friend WithEvents LabelStatus As MetroLabel
 End Class
