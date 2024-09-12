@@ -324,7 +324,7 @@ Module Module1
 
     Public Function GetData(ByVal columns As String, ByVal tableName As String, ByVal filter As String) As DataTable
         ' Function pengambangan dari Public Function _DataToValue(ByVal sql As String) As String
-        ' ang hanya bisa mengambil 1 output data bertipe string saja
+        ' yang hanya bisa mengambil 1 output data bertipe string saja
         ' Function untuk mendapatkan data dengan menentukan kolom/field, table, filter
         ' contoh penggunaan
 

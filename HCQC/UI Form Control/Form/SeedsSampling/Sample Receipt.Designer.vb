@@ -76,7 +76,6 @@ Partial Class Sample_Receipt
         Me.Lremark = New MetroFramework.Controls.MetroLabel()
         Me.LabelPrinter = New MetroFramework.Controls.MetroLink()
         Me.Cek_auto_print = New MetroFramework.Controls.MetroCheckBox()
-        Me.tontest = New MetroFramework.Controls.MetroCheckBox()
         Me.BtnSave2 = New DevExpress.XtraEditors.SimpleButton()
         Me.MetroLabel14 = New MetroFramework.Controls.MetroLabel()
         Me.LProductionCode = New MetroFramework.Controls.MetroLabel()
@@ -844,7 +843,7 @@ Partial Class Sample_Receipt
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage2)
         Me.MetroTabControl1.Location = New System.Drawing.Point(3, 3)
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 0
+        Me.MetroTabControl1.SelectedIndex = 1
         Me.MetroTabControl1.Size = New System.Drawing.Size(1178, 482)
         Me.MetroTabControl1.TabIndex = 53
         Me.MetroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark
@@ -858,7 +857,6 @@ Partial Class Sample_Receipt
         Me.MetroTabPage1.Controls.Add(Me.Lremark)
         Me.MetroTabPage1.Controls.Add(Me.LabelPrinter)
         Me.MetroTabPage1.Controls.Add(Me.Cek_auto_print)
-        Me.MetroTabPage1.Controls.Add(Me.tontest)
         Me.MetroTabPage1.Controls.Add(Me.BtnSave2)
         Me.MetroTabPage1.Controls.Add(Me.MetroLabel14)
         Me.MetroTabPage1.Controls.Add(Me.LProductionCode)
@@ -936,7 +934,7 @@ Partial Class Sample_Receipt
         Me.tkarantina.AutoSize = True
         Me.tkarantina.BackColor = System.Drawing.Color.Transparent
         Me.tkarantina.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tkarantina.Location = New System.Drawing.Point(540, 300)
+        Me.tkarantina.Location = New System.Drawing.Point(540, 342)
         Me.tkarantina.Name = "tkarantina"
         Me.tkarantina.Size = New System.Drawing.Size(110, 15)
         Me.tkarantina.TabIndex = 101
@@ -999,21 +997,6 @@ Partial Class Sample_Receipt
         Me.Cek_auto_print.UseCustomForeColor = True
         Me.Cek_auto_print.UseSelectable = True
         '
-        'tontest
-        '
-        Me.tontest.AutoSize = True
-        Me.tontest.BackColor = System.Drawing.Color.Transparent
-        Me.tontest.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tontest.Location = New System.Drawing.Point(540, 363)
-        Me.tontest.Name = "tontest"
-        Me.tontest.Size = New System.Drawing.Size(78, 15)
-        Me.tontest.TabIndex = 95
-        Me.tontest.TabStop = False
-        Me.tontest.Text = "On Test DT"
-        Me.tontest.UseCustomBackColor = True
-        Me.tontest.UseCustomForeColor = True
-        Me.tontest.UseSelectable = True
-        '
         'BtnSave2
         '
         Me.BtnSave2.Appearance.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -1062,7 +1045,7 @@ Partial Class Sample_Receipt
         Me.traf.AutoSize = True
         Me.traf.BackColor = System.Drawing.Color.Transparent
         Me.traf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.traf.Location = New System.Drawing.Point(540, 342)
+        Me.traf.Location = New System.Drawing.Point(540, 321)
         Me.traf.Name = "traf"
         Me.traf.Size = New System.Drawing.Size(96, 15)
         Me.traf.TabIndex = 89
@@ -1077,7 +1060,7 @@ Partial Class Sample_Receipt
         Me.tvia.AutoSize = True
         Me.tvia.BackColor = System.Drawing.Color.Transparent
         Me.tvia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tvia.Location = New System.Drawing.Point(540, 321)
+        Me.tvia.Location = New System.Drawing.Point(540, 300)
         Me.tvia.Name = "tvia"
         Me.tvia.Size = New System.Drawing.Size(88, 15)
         Me.tvia.TabIndex = 91
@@ -1182,7 +1165,7 @@ Partial Class Sample_Receipt
         Me.BunifuSeparator2.LineThickness = 1
         Me.BunifuSeparator2.Location = New System.Drawing.Point(392, 11)
         Me.BunifuSeparator2.Name = "BunifuSeparator2"
-        Me.BunifuSeparator2.Size = New System.Drawing.Size(13, 369)
+        Me.BunifuSeparator2.Size = New System.Drawing.Size(13, 363)
         Me.BunifuSeparator2.TabIndex = 79
         Me.BunifuSeparator2.Transparency = 255
         Me.BunifuSeparator2.Vertical = True
@@ -1339,9 +1322,9 @@ Partial Class Sample_Receipt
         Me.MetroTabPage2.HorizontalScrollbarBarColor = True
         Me.MetroTabPage2.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroTabPage2.HorizontalScrollbarSize = 10
-        Me.MetroTabPage2.Location = New System.Drawing.Point(4, 35)
+        Me.MetroTabPage2.Location = New System.Drawing.Point(4, 38)
         Me.MetroTabPage2.Name = "MetroTabPage2"
-        Me.MetroTabPage2.Size = New System.Drawing.Size(1170, 443)
+        Me.MetroTabPage2.Size = New System.Drawing.Size(1170, 440)
         Me.MetroTabPage2.Style = MetroFramework.MetroColorStyle.Lime
         Me.MetroTabPage2.TabIndex = 1
         Me.MetroTabPage2.Text = "Receipt List       "
@@ -1422,7 +1405,7 @@ Partial Class Sample_Receipt
         Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.MetroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.MetroGrid1.Size = New System.Drawing.Size(1167, 400)
+        Me.MetroGrid1.Size = New System.Drawing.Size(1167, 397)
         Me.MetroGrid1.TabIndex = 2
         Me.MetroGrid1.UseStyleColors = True
         '
@@ -1761,7 +1744,6 @@ Partial Class Sample_Receipt
     Friend WithEvents MetroLabel15 As MetroLabel
     Friend WithEvents DropDownButton1 As DevExpress.XtraEditors.DropDownButton
     Friend WithEvents DateTimeChartRangeControlClient1 As DevExpress.XtraEditors.DateTimeChartRangeControlClient
-    Friend WithEvents tontest As MetroCheckBox
     Friend WithEvents Cek_auto_print As MetroCheckBox
     Friend WithEvents MetroLabel16 As MetroLabel
     Friend WithEvents tcopy As MetroTextBox
