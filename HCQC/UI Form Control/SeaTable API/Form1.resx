@@ -117,47 +117,4 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <metadata name="MetroToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
-  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="BtnDel.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAYAAADHl1ErAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vQAADr0BR/uQrQAAArhJREFUeF7t2r9qFFEUBvB9ghRiBIuAiN2CRdAuhV0KwS6FdUijjQgWdul8gjyB
-        XUhjF6vY2YlNmhBIYSNpwu7iMjv7J37n3nMvZ0e3WHOzMMfvB5edObOT4TvMbnZP0iEiIiIiIiIiIiIi
-        os5gMLg3Go26dlVV9VAPkzWZTF7OZrP6ugG1GR729GmUoC9nsUV/wrHv+jRK6rp+gsb80B5ZP8fj8TN9
-        2v8BoZ9K6NtcuMaWXq7dEGY73CcrgPfB53rZ9kKOgxhnJQ70su2FECcxy0qc6GXbCyHkJbmzorWtl22/
-        Xq93ZzqdvsHaL7nQpHf9fv+uXsYPBDvCuhX4OHKkl/EDuS5jvPLQsK96GT+Q6zzGyz5hHSLs57gbYf8b
-        Hg5l6Xamz5Vjcq51rJfxQ+4CDZesSx2P3bibvQongGzHUrbonI/hBE8Q6jhmy0o2rP2fv5oQSl5KVsmG
-        7YcTPEGouU/8w+FwQ+pVVT3SUrJ0w/Dx4m04wRPk+hDjZV2tr8fdbGHDtCx1+bJt7eohP+Qu0HBJyYa9
-        0EN+INRuzJaVbJi/eRlCyXc9a1Pra3E3+5eGhea7glAL7wrdTxY17FLLUp9rfvoF4gpybcZ4WbGGwZoe
-        8kPuAg2XlGpYpWVfEKz5XlWqYbnujgZMdrQsdTvJWNSwcy1L3f7GPdWyPwhnG7Nsw3JjsJ3r8qVey/4g
-        nx3xFGkY+BvtJI0RT6mG+RvtJAhnRzy2MaexFPy1Yfalh69Z77Us/I12EoSzI56lGgb5T2jYlj9+JP5G
-        OwnC2RFPkYa5HO0kyGdHPKXuMH+jnaQx4rnA+9IXWdi+iqXgzNTtv0BdmfpFLAX+RjsJwjVHPCX4G+0k
-        CPcAd8ivmPPm8LPkPxbv64/3CQEfY+3h5fn6pquu6zBTIyIiIiIiIiIiIiIimtfp/AbcTUkFfz1U/gAA
-        AABJRU5ErkJggg==
-</value>
-  </data>
-  <metadata name="MetroStyleExtender1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>149, 17</value>
-  </metadata>
-  <metadata name="MetroStyleManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>314, 17</value>
-  </metadata>
-  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
-    <value>84</value>
-  </metadata>
-  <metadata name="ReceiptListBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>636, 17</value>
-  </metadata>
-  <metadata name="HCQC_NewDataset.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>480, 17</value>
-  </metadata>
-  <metadata name="DateTimeChartRangeControlClient1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>200, 56</value>
-  </metadata>
-  <metadata name="ReceiptListTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>22, 56</value>
-  </metadata>
 </root>

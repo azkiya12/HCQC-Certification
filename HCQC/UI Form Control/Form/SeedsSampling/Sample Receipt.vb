@@ -3,6 +3,8 @@ Imports System.Globalization
 Imports DgvFilterPopup
 Imports DevExpress.XtraBars
 Imports DevExpress.XtraEditors
+Imports Lextm.SharpSnmpLib
+Imports DevExpress.DataProcessing
 
 Public Class Sample_Receipt
 
@@ -90,40 +92,73 @@ Public Class Sample_Receipt
     End Sub
 
     Public Sub TermalPrintLA2(sender As Object, e As EventArgs)
-        Dim v_labnum, V_variety2, V_weight, V_job As String
+        Dim v_labnum, V_variety, V_manual, V_job, V_scope, labzpl As String
         Dim zplcom As String
 
 
         v_labnum = tlabnum.Text
-        V_variety2 = _DataToValue("SELECT [variety] FROM [qc_confirm_viewer]  WHERE [labnum]='" & tlabnum.Text & "'")
-        V_weight = _DataToValue("SELECT [nomnl] FROM [qc_confirm_viewer]  WHERE [labnum]='" & tlabnum.Text & "'")
-        V_job = _DataToValue("SELECT [nojob] FROM [qc_confirm_viewer]  WHERE [labnum]='" & tlabnum.Text & "'")
+        Dim columns As String = "variety,nomnl,nojob, scope"
+        Dim tableName As String = "[qc_confirm_viewer]"
+        Dim filter As String = "[labnum]='" & v_labnum & "'"
+
+        Dim data As DataTable = GetData(columns, tableName, filter)
+
+        ' Memeriksa apakah ada baris yang dikembalikan
+        If data.Rows.Count > 0 Then
+            ' Mengambil nilai dari field tertentu (misalnya, kolom pertama)
+            'Dim fieldValue As String = data.Rows(0)("nama_barang").ToString()
+            V_variety = data.Rows(0)("variety").ToString()
+            V_manual = data.Rows(0)("nomnl").ToString()
+            V_job = data.Rows(0)("nojob").ToString()
+            V_scope = data.Rows(0)("scope").ToString()
+        Else
+            MessageBox.Show("Data tidak ditemukan.")
+            Return
+        End If
+
+        labzpl = IIf(Len(v_labnum) >= 9, v_labnum.Insert(2, ">5"), v_labnum)
+
+        Select Case V_scope
+            Case "Raw Material"
+                V_scope = "RM"
+            Case "Gravity"
+                V_scope = "G"
+            Case "Periodic"
+                V_scope = "P"
+            Case "Finish Good"
+                V_scope = "FG"
+            Case "Other"
+                V_scope = "OT"
+        End Select
 
         zplcom = "CT~~CD,~CC^~CT~
-                ^XA
-                ~TA000
-                ~JSN
-                ^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR5,5
-                ~SD30
-                ^JUS^LRN^CI27^PA0,1,1,0
-                ^XZ
+                        ^XA
+                        ~TA000
+                        ~JSN
+                        ^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR5,5
+                        ~SD30
+                        ^JUS^LRN^CI27^PA0,1,1,0
+                        ^XZ
 
-                ^XA
-                ^MMT^PW831^LL120^LS0
-                ^BY1,3,37^FT46,76^BCN,,N,N
-                ^FH\^FD>:QC" & v_labnum.Substring(v_labnum.Length - 10) & "^FS
-                ^FT46,97^A0N,17,18^FH\^CI28^FD" & V_variety2 & "; " & V_weight & " / " & V_job & ";^FS^CI27
-                ^FT46,32^AAN,18,10^FH\^FDQC" & v_labnum.Substring(v_labnum.Length - 10) & "^FS
-                ^BY1,3,37^FT334,76^BCN,,N,N
-                ^FH\^FD>:QC" & v_labnum.Substring(v_labnum.Length - 10) & "^FS
-                ^FT334,97^A0N,17,18^FH\^CI28^FD" & V_variety2 & "; " & V_weight & " / " & V_job & ";^FS^CI27
-                ^FT334,32^AAN,18,10^FH\^FDQC" & v_labnum.Substring(v_labnum.Length - 10) & "^FS
-                ^BY1,3,37^FT621,76^BCN,,N,N
-                ^FH\^FD>:QC" & v_labnum.Substring(v_labnum.Length - 10) & "^FS
-                ^FT621,97^A0N,17,18^FH\^CI28^FD" & V_variety2 & "; " & V_weight & " / " & V_job & ";^FS^CI27
-                ^FT621,32^AAN,18,10^FH\^FDQC" & v_labnum.Substring(v_labnum.Length - 10) & "^FS
-                ^PQ" & tcopy.Text & ",0,1,Y
-                ^XZ"
+                        ^XA
+                        ^MMT^PW831^LL120^LS0
+                        ^BY2,3,20^FT6,70^BCN,,N,N
+                        ^FH\^FD>:" & labzpl & "^FS
+                        ^FT12,36^AAN,18,10^FH\^FD" & v_labnum & "^FS
+                        ^FPH,1^FT13,96^A0N,17,18^FH\^CI28^FD" & V_variety & "; " & V_manual & " / " & V_job & "^FS^CI27
+                        ^FT167,36^AAN,18,10^FH\^FD" & V_scope & "^FS
+                        ^BY2,3,20^FT294,70^BCN,,N,N
+                        ^FH\^FD>:" & labzpl & "^FS
+                        ^FT300,36^AAN,18,10^FH\^FD" & v_labnum & "^FS
+                        ^FPH,1^FT301,96^A0N,17,18^FH\^CI28^FD" & V_variety & "; " & V_manual & " / " & V_job & "^FS^CI27
+                        ^FT455,36^AAN,18,10^FH\^FD" & V_scope & "^FS
+                        ^BY2,3,20^FT581,70^BCN,,N,N
+                        ^FH\^FD>:" & labzpl & "^FS
+                        ^FT587,36^AAN,18,10^FH\^FD" & v_labnum & "^FS
+                        ^FPH,1^FT588,96^A0N,17,18^FH\^CI28^FD" & V_variety & "; " & V_manual & " / " & V_job & "^FS^CI27
+                        ^FT742,36^AAN,18,10^FH\^FD" & V_scope & "^FS
+                        ^PQ" & tcopy.Text & ",0,1,Y
+                        ^XZ"
 
         If Cek_auto_print.Checked Then
             Printer.RawHelper.SendStringToPrinter(LabelPrinter.Text, zplcom)
@@ -238,7 +273,6 @@ Public Class Sample_Receipt
             tsamqtt.WithError = True
         ElseIf String.IsNullOrEmpty(tsampling.Text) Then
             MetroMessageBox.Show(Me, "Sampling date harus ada!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
-
         ElseIf String.IsNullOrEmpty(tsampler.Text) Then
             MetroMessageBox.Show(Me, "Sampler harus ada!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
             tsampler.WithError = True
@@ -296,8 +330,7 @@ Public Class Sample_Receipt
                         ,[test_ger] = '" & tger.CheckState & "'
                         ,[test_via] = '" & tvia.CheckState & "'
                         ,[test_raf] = '" & traf.CheckState & "'
-                        ,[kesehatan_benih] = '" & tkarantina.CheckState & "'
-                        ,[test_ontest]='" & tontest.CheckState & "' WHERE id='" & Lreqnum.Text & "'")
+                        ,[kesehatan_benih] = '" & tkarantina.CheckState & "' WHERE id='" & Lreqnum.Text & "'")
 
                     TermalPrintLA2(sender, e)
                     ClearText()
@@ -364,8 +397,7 @@ Public Class Sample_Receipt
                         ,[test_ger] = '" & tger.CheckState & "'
                         ,[test_via] = '" & tvia.CheckState & "'
                         ,[test_raf] = '" & traf.CheckState & "'
-                        ,[kesehatan_benih] = '" & tkarantina.CheckState & "'
-                        ,[test_ontest]='" & tontest.CheckState & "' WHERE id='" & Lreqnum.Text & "'")
+                        ,[kesehatan_benih] = '" & tkarantina.CheckState & "' WHERE id='" & Lreqnum.Text & "'")
 
             If strupdate = 1 Then
                 BtnSave2.Text = "Save"
@@ -455,7 +487,6 @@ Public Class Sample_Receipt
         tger.Checked = False
         tvia.Checked = False
         tkarantina.Checked = False
-        tontest.Checked = False
         tlabnum.Focus()
     End Sub
 
@@ -499,6 +530,10 @@ Public Class Sample_Receipt
 
     Private Sub LabelPrinter_MouseEnter(sender As Object, e As EventArgs) Handles LabelPrinter.MouseEnter
         LabelPrinter.BackColor = Color.FromArgb(70, 179, 226)
+    End Sub
+
+    Private Sub tkarantina_CheckedChanged(sender As Object, e As EventArgs) Handles tkarantina.CheckedChanged
+
     End Sub
 
     Private Sub LabelPrinter_MouseLeave(sender As Object, e As EventArgs) Handles LabelPrinter.MouseLeave

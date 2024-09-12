@@ -7,6 +7,7 @@ Imports DevExpress.XtraBars
 Imports DevExpress.XtraEditors
 Imports System.ComponentModel
 Imports System.Windows.Controls
+Imports DevExpress.ExpressApp.Editors
 
 Public Class Report_Label_HCQC
     Private barManager1 As BarManager
@@ -60,30 +61,31 @@ Public Class Report_Label_HCQC
     End Sub
 
     Private Sub Raw_Material()
-        Me.Qc_confirm_viewTableAdapter.FillByFilterL4(Me.HCQC_NewDataset.qc_confirm_view)
+        Me.TermalDataTableTableAdapter.FillByParameterScope(Me.HCQC_NewDataset.TermalDataTable, "Raw Material")
     End Sub
 
     Private Sub Gravity()
-        MsgBox("Gravity under Maintenace")
+        Me.TermalDataTableTableAdapter.FillByParameterScope(Me.HCQC_NewDataset.TermalDataTable, "Gravity")
     End Sub
 
     Private Sub Periodic()
-        Me.Qc_confirm_viewTableAdapter.FillByFilterL3(Me.HCQC_NewDataset.qc_confirm_view)
+        Me.TermalDataTableTableAdapter.FillByParameterScope(Me.HCQC_NewDataset.TermalDataTable, "Periodic")
     End Sub
 
     Private Sub Finish_Good()
-        MsgBox("filter Finis Goods Maintenance")
+        Me.TermalDataTableTableAdapter.FillByParameterScope(Me.HCQC_NewDataset.TermalDataTable, "Finish Good")
     End Sub
 
     Private Sub Other()
-        MsgBox("Filter Other Maintenance")
+        Me.TermalDataTableTableAdapter.FillByParameterScope(Me.HCQC_NewDataset.TermalDataTable, "Other")
     End Sub
     Private Sub ShowAll()
-        Me.Qc_confirm_viewTableAdapter.FillBy(Me.HCQC_NewDataset.qc_confirm_view)
+        Me.TermalDataTableTableAdapter.FillByShowAll(Me.HCQC_NewDataset.TermalDataTable)
     End Sub
 
 
     Private Sub DropDownButton1_Click(ByVal sender As Object, ByVal e As EventArgs) Handles DropDownButton1.Click
+        MetroPanel1.Enabled = False
         Dim tag As String = (TryCast(sender, DropDownButton)).Tag.ToString()
         If tag = "rawmaterial" Then
             Raw_Material()
@@ -108,7 +110,7 @@ Public Class Report_Label_HCQC
         If tag = "showall" Then
             ShowAll()
         End If
-
+        MetroPanel1.Enabled = True
     End Sub
 
     Private Sub btnRawMaterial_ItemClick(ByVal sender As Object, ByVal e As ItemClickEventArgs)
@@ -142,13 +144,15 @@ Public Class Report_Label_HCQC
     End Sub
 
     Private Sub Report_Label_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        'TODO: This line of code loads data into the 'HCQC_NewDataset.TermalDataTable' table. You can move, or remove it, as needed.
+
         'BindGrid()
         DropDownOption()
         UpdateDropDownButton(btnRawMaterial)
         'Menamoilkan nomor urut pada datagrid view
-        Dim DgvFilter As New DgvFilterManager With {
-            .DataGridView = MetroGrid1
-        }
+
+        Dim DgvFilter1 As New DgvFilterManager()
+        DgvFilter1.DataGridView = MetroGrid1
         MetroGrid1.ColumnHeadersHeight = 25
 
 
@@ -202,80 +206,6 @@ Public Class Report_Label_HCQC
         Return hasil
     End Function
 
-    Sub ShowReport_A3()
-        Dim Vdt As New HCQC_NewDataset.report_a1_TableDataTable
-        Dim dt As New HCQC_NewDataset.qc_confirm_viewDataTable
-        Dim ta As New HCQC_NewDatasetTableAdapters.qc_confirm_viewTableAdapter
-        Vdt.Clear()
-        dt.Clear()
-
-        'Filling Products DataTable from DB
-        ta.FillBy(dt) ''dibaca dt/report_a1DataTable akan di isi dengan sting SQL pada ta/TableAdapter
-
-        For i As Integer = 0 To MetroGrid2.Rows.Count() - 1 Step +1
-            'Dim check As Boolean = MetroGrid2.Rows(i).Cells(0).Value
-            Dim row2 As DataGridViewRow = MetroGrid2.Rows(i)
-            'If check = True Then
-            Vdt.Rows.Add(row2.Cells(1).Value, ConvertToByteArray(EncodeBarCode(row2.Cells(1).Value, 100)))
-            'End If
-        Next
-
-        'Create a AveryMailLabels report object
-        'and set its data source with the DataSet
-        '--file Crystal Report yg akan tampil
-        Dim report As New report_a3
-
-        report.Database.Tables(0).SetDataSource(CType(dt, DataTable))
-        report.Database.Tables(1).SetDataSource(CType(Vdt, DataTable))
-
-        Print_Label.CrystalReportViewer1.ReportSource = report
-        Print_Label.Show()
-    End Sub
-
-    Sub ShowReport_A4()
-        'Dim Vdt As New HCQC_NewDataset.report_a1_TableDataTable
-        'Dim dt As New HCQC_NewDataset.qc_confirm_viewDataTable
-        'Dim ta As New HCQC_NewDatasetTableAdapters.qc_confirm_viewTableAdapter
-        'Vdt.Clear()
-        'dt.Clear()
-
-        ''Filling Products DataTable from DB
-        'ta.FillBy(dt) ''dibaca dt/report_a1DataTable akan di isi dengan sting SQL pada ta/TableAdapter
-
-        'Dim row As HCQC_NewDataset.qc_confirm_viewRow
-        'For Each row In dt.Rows
-        '    'Converting BItmap to Byte Array
-        '    row.barcode_idhvsprod = ConvertToByteArray(EncodeQrCode2(row.id_hvsprod.ToString(), 70))
-        'Next
-
-        'For i As Integer = 0 To MetroGrid2.Rows.Count() - 1 Step +1
-        '    'Dim check As Boolean = MetroGrid2.Rows(i).Cells(0).Value
-        '    Dim row2 As DataGridViewRow = MetroGrid2.Rows(i)
-        '    'If check = True Then
-        '    Vdt.Rows.Add(row2.Cells(1).Value, ConvertToByteArray(EncodeBarCode(row2.Cells(1).Value, 70)))
-        '    'End If
-        'Next
-
-        ''Create a AveryMailLabels report object
-        ''and set its data source with the DataSet
-        ''--file Crystal Report yg akan tampil
-        'Dim report As New report_a4
-
-        'report.Database.Tables(0).SetDataSource(CType(dt, DataTable))
-        'report.Database.Tables(1).SetDataSource(CType(Vdt, DataTable))
-
-        'Print_Label.CrystalReportViewer1.ReportSource = report
-        'Print_Label.Show()
-
-
-        For Each row As DataGridViewRow In MetroGrid2.Rows
-            'Dim isSelected As Boolean = Convert.ToBoolean(row.Cells("CheckColumn").Value)
-            'If isSelected Then
-
-            'End If
-        Next
-    End Sub
-
     Public Sub FlagRawStorage()
         ''mengirim tanda/flag/mark ke database telah di print
         For Each row As DataGridViewRow In MetroGrid2.Rows
@@ -305,11 +235,28 @@ Public Class Report_Label_HCQC
             If Not IsDBNull(row.Cells("idproductionColumn").Value) AndAlso row.Cells("idproductionColumn").Value <> "" AndAlso row.Cells("idproductionColumn").Value <> 0 Then
 
                 VCode = CType(row.Cells("idproductionColumn").Value, String)
-                Vpetani = _DataToValue("Select [cgrname] from [harvestprod] where [idcode]=" & VCode & "")
-                Vharvest = _DataToValue("Select convert(varchar, [harvest], 103) from [harvestprod] where [idcode]=" & VCode & "")
-                VCrop = _DataToValue("SELECT area FROM dbo.harvestprod WHERE [idcode]=" & VCode & "")
-                VKontrak = _DataToValue("Select [nokontrak] from [harvestprod] where [idcode]=" & VCode & "")
-                VNoRen = _DataToValue("Select [norencana] from [harvestprod] where [idcode]=" & VCode & "")
+                Dim columns As String = "case when [norencana] IS NULL THEN '' ELSE [norencana] end as [norencana], " &
+                                    "case when [nokontrak] IS NULL THEN '' ELSE [nokontrak] END AS [nokontrak], " &
+                                    "area, convert(varchar, [harvest], 103) as harvest, cgrname"
+                Dim tableName As String = "[harvestprod]"
+                Dim filter As String = "[idcode]=" & VCode
+
+                Dim data As DataTable = GetData(columns, tableName, filter)
+
+                ' Memeriksa apakah ada baris yang dikembalikan
+                If data.Rows.Count > 0 Then
+                    ' Mengambil nilai dari field tertentu (misalnya, kolom pertama)
+                    'Dim fieldValue As String = data.Rows(0)("nama_barang").ToString()
+                    VNoRen = data.Rows(0)("norencana").ToString()
+                    VKontrak = data.Rows(0)("nokontrak").ToString()
+                    VCrop = data.Rows(0)("area").ToString()
+                    Vharvest = data.Rows(0)("harvest").ToString()
+                    Vpetani = data.Rows(0)("cgrname").ToString()
+                Else
+                    MessageBox.Show("Data Production tidak ditemukan.")
+                    Return
+                End If
+
                 zplcom = "CT~~CD,~CC^~CT~
                         ^XA
                         ~TA000
@@ -347,7 +294,7 @@ Public Class Report_Label_HCQC
     End Sub
 
     Public Sub TermalPrintLA2(sender As Object, e As EventArgs)
-        Dim v_labnum, V_variety2, V_manual, V_job As String
+        Dim labzpl, v_labnum, V_variety2, V_manual, V_job, V_scope As String
         Dim zplcom As String
 
         For Each row As DataGridViewRow In MetroGrid2.Rows
@@ -355,6 +302,21 @@ Public Class Report_Label_HCQC
             V_variety2 = CType(row.Cells("VarietyColumn").Value, String)
             V_manual = CType(row.Cells("ManualColumn").Value, String)
             V_job = CType(row.Cells("LotColumn").Value, String)
+            V_scope = CType(row.Cells("ScopeColumn").Value, String)
+            labzpl = IIf(Len(v_labnum) >= 9, v_labnum.Insert(2, ">5"), v_labnum)
+
+            Select Case V_scope
+                Case "Raw Material"
+                    V_scope = "RM"
+                Case "Gravity"
+                    V_scope = "G"
+                Case "Periodic"
+                    V_scope = "P"
+                Case "Finish Good"
+                    V_scope = "FG"
+                Case "Other"
+                    V_scope = "OT"
+            End Select
 
             zplcom = "CT~~CD,~CC^~CT~
                         ^XA
@@ -367,112 +329,23 @@ Public Class Report_Label_HCQC
 
                         ^XA
                         ^MMT^PW831^LL120^LS0
-                        ^BY1,3,37^FT46,76^BCN,,N,N
-                        ^FH\^FD>:QC" & v_labnum.Substring(v_labnum.Length - 10) & "^FS
-                        ^FT46,97^A0N,17,18^FH\^CI28^FD" & V_variety2 & "; " & V_manual & " / " & V_job & ";^FS^CI27
-                        ^FT46,32^AAN,18,10^FH\^FDQC" & v_labnum.Substring(v_labnum.Length - 10) & "^FS
-                        ^BY1,3,37^FT334,76^BCN,,N,N
-                        ^FH\^FD>:QC" & v_labnum.Substring(v_labnum.Length - 10) & "^FS
-                        ^FT334,97^A0N,17,18^FH\^CI28^FD" & V_variety2 & "; " & V_manual & " / " & V_job & ";^FS^CI27
-                        ^FT334,32^AAN,18,10^FH\^FDQC" & v_labnum.Substring(v_labnum.Length - 10) & "^FS
-                        ^BY1,3,37^FT621,76^BCN,,N,N
-                        ^FH\^FD>:QC" & v_labnum.Substring(v_labnum.Length - 10) & "^FS
-                        ^FT621,97^A0N,17,18^FH\^CI28^FD" & V_variety2 & "; " & V_manual & " / " & V_job & ";^FS^CI27
-                        ^FT621,32^AAN,18,10^FH\^FDQC" & v_labnum.Substring(v_labnum.Length - 10) & "^FS
+                        ^BY2,3,20^FT6,70^BCN,,N,N
+                        ^FH\^FD>:" & labzpl & "^FS
+                        ^FT12,36^AAN,18,10^FH\^FD" & v_labnum & "^FS
+                        ^FPH,1^FT13,96^A0N,17,18^FH\^CI28^FD" & V_variety2 & "; " & V_manual & " / " & V_job & "^FS^CI27
+                        ^FT167,36^AAN,18,10^FH\^FD" & V_scope & "^FS
+                        ^BY2,3,20^FT294,70^BCN,,N,N
+                        ^FH\^FD>:" & labzpl & "^FS
+                        ^FT300,36^AAN,18,10^FH\^FD" & v_labnum & "^FS
+                        ^FPH,1^FT301,96^A0N,17,18^FH\^CI28^FD" & V_variety2 & "; " & V_manual & " / " & V_job & "^FS^CI27
+                        ^FT455,36^AAN,18,10^FH\^FD" & V_scope & "^FS
+                        ^BY2,3,20^FT581,70^BCN,,N,N
+                        ^FH\^FD>:" & labzpl & "^FS
+                        ^FT587,36^AAN,18,10^FH\^FD" & v_labnum & "^FS
+                        ^FPH,1^FT588,96^A0N,17,18^FH\^CI28^FD" & V_variety2 & "; " & V_manual & " / " & V_job & "^FS^CI27
+                        ^FT742,36^AAN,18,10^FH\^FD" & V_scope & "^FS
                         ^PQ1,0,1,Y
                         ^XZ"
-            Printer.RawHelper.SendStringToPrinter(LabelPrinter.Text, zplcom)
-        Next
-
-    End Sub
-
-    Public Sub TermalPrintLA3(sender As Object, e As EventArgs)
-        ''Deklarasi variable untuk Template termal printer
-        Dim VReqNUm, V_idprod, v_labnum, V_Crop, Vcgr, V_variety2, Vlot, V_weight, V_sampling, V_sampler, V_scope, V_bags As String
-        Dim B_moisture, B_Purity, B_germination, B_sampling, B_rafaction, B_rapit As String
-        Dim V_moisture, V_Purity, V_germination, V_Bsampling, V_rafaction, V_rapit As String
-        Dim zplcom As String
-
-        For Each row As DataGridViewRow In MetroGrid2.Rows
-
-            V_idprod = CType(row.Cells("idproductionColumn").Value, String)
-            v_labnum = CType(row.Cells("LabNumberColumn").Value, String)
-            V_Crop = CType(row.Cells("CropColumn").Value, String)
-            V_variety2 = CType(row.Cells("VarietyColumn").Value, String)
-            Vlot = CType(row.Cells("ManualColumn").Value, String) + " / " + CType(row.Cells("LotColumn").Value, String)
-            V_weight = CType(row.Cells("WeightColumn").Value, String)
-            V_sampling = CType(row.Cells("SamplingColumn").Value, String)
-            V_sampler = ""
-            V_scope = CType(row.Cells("ScopeColumn").Value, String)
-            VReqNUm = _DataToValue("SELECT [id] FROM [qc_confirm_view] WHERE [labnum]='" & v_labnum & "'")
-            V_bags = _DataToValue("Select [bag] FROM [spl_request] WHERE [id]='" & VReqNUm & "'")
-            Vcgr = _DataToValue("SELECT [cgrno] from [harvestprod] where [idcode]=" & V_idprod)
-
-            B_moisture = CType(row.Cells("moistureColumn").Value, String)
-            B_Purity = CType(row.Cells("PurityColumn").Value, String)
-            B_germination = CType(row.Cells("GerminationColumn").Value, String)
-            B_sampling = CType(row.Cells("SamplingTestColumn").Value, String)
-            B_rafaction = CType(row.Cells("RafactionColumn").Value, String)
-            B_rapit = CType(row.Cells("RapitColumn").Value, String)
-
-            V_moisture = CType(IIf(B_moisture = "True", "8", "2"), String)
-            V_Purity = CType(IIf(B_Purity = "True", "8", "2"), String)
-            V_germination = CType(IIf(B_germination = "True", "8", "2"), String)
-            V_Bsampling = CType(IIf(B_sampling = "True", "8", "2"), String)
-            V_rafaction = CType(IIf(B_rafaction = "True", "8", "2"), String)
-            V_rapit = CType(IIf(B_rapit = "True", "8", "2"), String)
-
-            zplcom = "CT~~CD,~CC^~CT~
-                        ^XA
-                        ~TA000
-                        ~JSN
-                        ^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR6,6
-                        ~SD30
-                        ^JUS^LRN^CI27^PA0,1,1,0
-                        ^XZ
-
-                        ^XA
-                        ^MMT^LS0
-                        ^BY3,3,24^FT16,49^BCN,,Y,N
-                        ^FH\^FD>:QC>5" & v_labnum.Substring(v_labnum.Length - 10) & "^FS
-                        ^FT281,95^A@N,17,18,TT0003M_^FH\^CI28^FD" & V_scope & "^FS^CI27
-                        ^FT16,95^A@N,17,18,TT0003M_^FH\^CI28^FD" & V_variety2 & "^FS^CI27
-                        ^FT16,150^A@N,17,18,TT0003M_^FH\^CI28^FDQTY:" & V_weight & " kg^FS^CI27
-                        ^FO301,104^GB12,12," & V_moisture & "^FS
-                        ^FT318,116^A@N,14,13,TT0003M_^FH\^CI28^FDMoisture^FS^CI27
-                        ^FT318,138^A@N,14,13,TT0003M_^FH\^CI28^FDPurity^FS^CI27
-                        ^FT318,158^A@N,14,13,TT0003M_^FH\^CI28^FDGermination^FS^CI27
-                        ^FT225,116^A@N,14,13,TT0003M_^FH\^CI28^FDSampling^FS^CI27
-                        ^FT225,138^A@N,14,13,TT0003M_^FH\^CI28^FDRafaction^FS^CI27
-                        ^FT225,158^A@N,14,13,TT0003M_^FH\^CI28^FDRapid test^FS^CI27
-                        ^FO301,126^GB12,12," & V_Purity & "^FS
-                        ^FO301,146^GB12,12," & V_germination & "^FS
-                        ^FO208,104^GB12,12," & V_Bsampling & "^FS
-                        ^FO208,126^GB12,12," & V_rafaction & "^FS
-                        ^FO208,146^GB12,12," & V_rapit & "^FS
-                        ^FT16,124^A@N,17,18,TT0003M_^FH\^CI28^FD" & Vlot & "^FS^CI27
-
-                        ^BY3,3,24^FT440,49^BCN,,Y,N
-                        ^FH\^FD>:QC>5" & v_labnum.Substring(v_labnum.Length - 10) & "^FS
-                        ^FT705,95^A@N,17,18,TT0003M_^FH\^CI28^FD" & V_scope & "^FS^CI27
-                        ^FT440,95^A@N,17,18,TT0003M_^FH\^CI28^FD" & V_variety2 & "^FS^CI27
-                        ^FT440,150^A@N,17,18,TT0003M_^FH\^CI28^FDQTY:" & V_weight & " kg^FS^CI27
-                        ^FO725,104^GB12,12," & V_moisture & "^FS
-                        ^FT742,116^A@N,14,13,TT0003M_^FH\^CI28^FDMoisture^FS^CI27
-                        ^FT742,138^A@N,14,13,TT0003M_^FH\^CI28^FDPurity^FS^CI27
-                        ^FT742,158^A@N,14,13,TT0003M_^FH\^CI28^FDGermination^FS^CI27
-                        ^FT649,116^A@N,14,13,TT0003M_^FH\^CI28^FDSampling^FS^CI27
-                        ^FT649,138^A@N,14,13,TT0003M_^FH\^CI28^FDRafaction^FS^CI27
-                        ^FT649,158^A@N,14,13,TT0003M_^FH\^CI28^FDRapid test^FS^CI27
-                        ^FO725,126^GB12,12," & V_Purity & "^FS
-                        ^FO725,146^GB12,12," & V_germination & "^FS
-                        ^FO632,104^GB12,12," & V_Bsampling & "^FS
-                        ^FO632,126^GB12,12," & V_rafaction & "^FS
-                        ^FO632,146^GB12,12," & V_rapit & "^FS
-                        ^FT440,124^A@N,17,18,TT0003M_^FH\^CI28^FD" & Vlot & "^FS^CI27
-                        ^PQ1,0,1,Y
-                        ^XZ
-                        "
             Printer.RawHelper.SendStringToPrinter(LabelPrinter.Text, zplcom)
         Next
 
@@ -602,8 +475,7 @@ Public Class Report_Label_HCQC
         'Dim selectedRows As List(Of DataGridViewRow) = (From row In MetroGrid2.Rows.Cast(Of DataGridViewRow)()
         '                                                Where Convert.ToBoolean(row.Cells("CheckColumn").Value) = True).ToList()
         ''Deklarasi variable untuk Template termal printer
-        Dim V_ID, V_idprod, V_Crop, V_harvest1, V_variety1, V_farmer, v_labnum, V_variety2, Vlot, V_weight, V_sampling, V_sampler, V_scope, V_Bags, V_Location As String
-        Dim VRenc, Vkontrak, Vcgr As String
+        Dim V_ID, V_idprod, V_Crop, V_harvest1, V_variety1, V_farmer, v_labnum, Vlot, V_weight, V_sampling, V_sampler, V_scope, V_Bags, V_Location As String
         Dim B_moisture, B_Purity, B_germination, B_sampling, B_rafaction, B_rapit As String
         Dim V_moisture, V_Purity, V_germination, V_Bsampling, V_rafaction, V_rapit As String
         Dim zplcom As String
@@ -615,13 +487,15 @@ Public Class Report_Label_HCQC
             V_harvest1 = CType(row.Cells("HarvestColumn2").Value, String)
             V_variety1 = CType(row.Cells("VarietyColumn").Value, String)
 
-            Vlot = CType(row.Cells("ManualColumn").Value, String) + " / " + CType(row.Cells("LotColumn").Value, String)
+            Vlot = CType(row.Cells("ManualColumn").Value, String) + "; " + CType(row.Cells("LotColumn").Value, String)
 
-            Dim columns As String = "case when [norencana] IS NULL THEN '' ELSE [norencana] end as [norencana], " &
-                                    "case when [nokontrak] IS NULL THEN '' ELSE [nokontrak] END AS [nokontrak], " &
-                                    "case when [cgrno] IS NULL THEN '' ELSE [cgrno] END AS [cgrno]"
-            Dim tableName As String = "[harvestprod]"
-            Dim filter As String = "[idcode]=" & V_idprod
+
+            v_labnum = CType(row.Cells("LabNumberColumn").Value, String)
+            V_ID = _DataToValue("SELECT [id] FROM [qc_confirm_viewer] WHERE [labnum]='" & v_labnum & "'")
+
+            Dim columns As String = "farmer,bag,loc_sample"
+            Dim tableName As String = "[spl_request]"
+            Dim filter As String = "[id]=" & V_ID
 
             Dim data As DataTable = GetData(columns, tableName, filter)
 
@@ -629,25 +503,19 @@ Public Class Report_Label_HCQC
             If data.Rows.Count > 0 Then
                 ' Mengambil nilai dari field tertentu (misalnya, kolom pertama)
                 'Dim fieldValue As String = data.Rows(0)("nama_barang").ToString()
-                VRenc = data.Rows(0)("norencana").ToString()
-                Vkontrak = data.Rows(0)("nokontrak").ToString()
-                Vcgr = data.Rows(0)("cgrno").ToString()
+                V_farmer = data.Rows(0)("farmer").ToString()
+                V_Bags = data.Rows(0)("bag").ToString()
+                V_Location = data.Rows(0)("loc_sample").ToString()
             Else
                 MessageBox.Show("Data Production tidak ditemukan.")
                 Return
             End If
 
 
-            v_labnum = CType(row.Cells("LabNumberColumn").Value, String)
-            V_ID = _DataToValue("SELECT [id] FROM [qc_confirm_viewer] WHERE [labnum]='" & v_labnum & "'")
-            V_farmer = _DataToValue("SELECT [farmer] FROM [spl_request] WHERE [id]=" & V_ID)
-            V_variety2 = V_variety1
             V_weight = CType(row.Cells("WeightColumn").Value, String)
             V_sampling = CType(row.Cells("SamplingColumn").Value, String)
             V_sampler = ""
             V_scope = CType(row.Cells("ScopeColumn").Value, String)
-            V_Bags = _DataToValue("SELECT [bag] FROM [spl_request] WHERE [id]=" & V_ID)
-            V_Location = _DataToValue("SELECT [loc_sample] FROM [spl_request] WHERE [id]=" & V_ID)
 
             B_moisture = CType(row.Cells("moistureColumn").Value, String)
             B_Purity = CType(row.Cells("PurityColumn").Value, String)
@@ -719,7 +587,7 @@ Public Class Report_Label_HCQC
                         ^FPH,3^FT702,41^A@R,23,22,TT0003M_^FH\^CI28^FD" & V_variety1 & " ^FS^CI27
                         ^FPH,3^FT674,41^A@R,23,22,TT0003M_^FH\^CI28^FD" & Vlot & "^FS^CI27
                         ^FPH,1^FT642,41^A@R,23,22,TT0003M_^FH\^CI28^FDQty:" & V_weight & " kg ; " & V_Bags & " Bags^FS^CI27
-                        ^FT0,150^AAN,18,10^FB545,1,0,R^FH\^FD" & V_Location.ToUpper & "^FS
+                        ^FT77,306^AAB,27,15^FH\^FD" & V_Location.ToUpper & "^FS
                         ^PQ1,0,1,Y
                         ^XZ"
             Printer.RawHelper.SendStringToPrinter(LabelPrinter.Text, zplcom)
@@ -727,6 +595,147 @@ Public Class Report_Label_HCQC
 
     End Sub
 
+    Public Sub TermalPrintA42024(sender As Object, e As EventArgs)
+        ''Membuat list datagrid yang CheckBox Selected
+        'Dim selectedRows As List(Of DataGridViewRow) = (From row In MetroGrid2.Rows.Cast(Of DataGridViewRow)()
+        '                                                Where Convert.ToBoolean(row.Cells("CheckColumn").Value) = True).ToList()
+        ''Deklarasi variable untuk Template termal printer
+        Dim V_ID, V_idprod, V_Crop, V_harvest1, V_variety1, V_farmer, v_labnum, VManualLot, V_weight, V_sampling, V_scope, V_Bags, V_Location As String
+        Dim B_moisture, B_Purity, B_germination, B_sampling, B_rafaction, B_rapit As String
+        Dim V_moisture, V_Purity, V_germination, V_Bsampling, V_rafaction, V_rapit As String
+        Dim zplcom As String
+
+        'If MessageBox.Show(String.Format("Do you want to delete {0} rows?", selectedRows.Count), "Confirmation", MessageBoxButtons.YesNo) = DialogResult.Yes Then
+        For Each row As DataGridViewRow In MetroGrid2.Rows
+            V_idprod = CType(row.Cells("idproductionColumn").Value, String)
+            V_Crop = CType(row.Cells("CropColumn").Value, String)
+            V_harvest1 = CType(row.Cells("HarvestColumn2").Value, String)
+            V_variety1 = CType(row.Cells("VarietyColumn").Value, String)
+
+            VManualLot = CType(row.Cells("ManualColumn").Value, String) + "; " + CType(row.Cells("LotColumn").Value, String)
+            v_labnum = CType(row.Cells("LabNumberColumn").Value, String)
+            V_ID = _DataToValue("SELECT [id] FROM [qc_confirm_viewer] WHERE [labnum]='" & v_labnum & "'")
+
+            Dim columns As String = "dbo.spl_request.farmer,dbo.spl_request.bag,dbo.spl_request.loc_sample, [crop]"
+            Dim tableName As String = "dbo.spl_request LEFT OUTER JOIN dbo.category_crop ON dbo.spl_request.variety = dbo.category_crop.prodcode"
+            Dim filter As String = "dbo.spl_request.[id]=" & V_ID
+
+            Dim data As DataTable = GetData(columns, tableName, filter)
+
+            ' Memeriksa apakah ada baris yang dikembalikan
+            If data.Rows.Count > 0 Then
+                'Mengambil nilai dari field tertentu (misalnya, kolom pertama)
+                'Dim fieldValue As String = data.Rows(0)("nama_barang").ToString()
+                V_farmer = data.Rows(0)("farmer").ToString()
+                V_Bags = data.Rows(0)("bag").ToString()
+                V_Location = data.Rows(0)("loc_sample").ToString()
+                V_Crop = data.Rows(0)("crop").ToString()
+            Else
+                MessageBox.Show("Data Production tidak ditemukan.")
+                Return
+            End If
+
+            V_weight = CType(row.Cells("WeightColumn").Value, String)
+            V_sampling = CType(row.Cells("SamplingColumn").Value, String)
+            V_scope = CType(row.Cells("ScopeColumn").Value, String)
+
+            B_moisture = CType(row.Cells("moistureColumn").Value, String)
+            B_Purity = CType(row.Cells("PurityColumn").Value, String)
+            B_germination = CType(row.Cells("GerminationColumn").Value, String)
+            B_sampling = CType(row.Cells("SamplingTestColumn").Value, String)
+            B_rafaction = CType(row.Cells("RafactionColumn").Value, String)
+            B_rapit = CType(row.Cells("RapitColumn").Value, String)
+
+            V_Bsampling = CType(IIf(B_sampling = "True", "8", "2"), String)
+            V_moisture = CType(IIf(B_moisture = "True", "8", "2"), String)
+            V_rafaction = CType(IIf(B_rafaction = "True", "8", "2"), String)
+            V_Purity = CType(IIf(B_Purity = "True", "8", "2"), String)
+            V_germination = CType(IIf(B_germination = "True", "8", "2"), String)
+            V_rapit = CType(IIf(B_rapit = "True", "8", "2"), String)
+
+            Dim labzpl, noprodzpl As String
+            labzpl = IIf(Len(v_labnum) >= 9, v_labnum.Insert(2, ">5"), v_labnum)
+            If V_idprod.Length >= 8 Then
+                noprodzpl = V_idprod.Insert(8, ">6")
+            Else
+                noprodzpl = ""
+            End If
+            'noprodzpl = IIf(V_idprod.Length >= 8, V_idprod.Insert(8, ">6"), V_idprod)
+
+            zplcom = "CT~~CD,~CC^~CT~
+            ^XA
+            ~TA000
+            ~JSN
+            ^LT0^MNW^MTT^PON^PMN^LH0,0^JMA^PR6,6
+            ~SD30
+            ^JUS^LRN^CI27^PA0,1,1,0
+            ^XZ
+
+            ^XA
+            ^MMT^PW799^LL400^LS0
+            ^FO92,211^GB463,159,2^FS
+            ^FT101,331^A@N,20,20,TT0003M_^FH\^CI28^FDSampler ^FS^CI27
+            ^FT101,362^A@N,20,20,TT0003M_^FH\^CI28^FDDate of Sampling^FS^CI27
+            ^FT101,299^A@N,20,20,TT0003M_^FH\^CI28^FDSample Weight* (g)^FS^CI27
+            ^FT101,268^A@N,20,20,TT0003M_^FH\^CI28^FDEquipments used^FS^CI27
+            ^FT102,388^A@N,17,18,TT0003M_^FH\^CI28^FD*estimation from weighing on sampling location^FS^CI27
+            ^FT101,235^A@N,20,20,TT0003M_^FH\^CI28^FDTotal primary samples^FS^CI27
+            ^FO320,211^GB0,158,2^FS
+            ^FO92,243^GB463,0,2^FS
+            ^FO92,275^GB463,0,2^FS
+            ^FO92,306^GB463,0,2^FS
+            ^FO92,337^GB463,0,2^FS
+            ^FPH,3^FT52,321^A0B,23,23^FH\^CI28^FDSUBMITTED SAMPLE^FS^CI27
+            ^FT101,117^A0N,20,23^FH\^CI28^FD" & V_Crop & "; " & V_variety1 & "^FS^CI27
+            ^FT101,144^A0N,20,23^FH\^CI28^FD" & V_farmer & "^FS^CI27
+            ^FT101,170^A0N,20,23^FH\^CI28^FD" & VManualLot & "; " & V_Location.ToUpper & "^FS^CI27
+            ^FT101,197^A0N,20,23^FH\^CI28^FD" & V_weight & " (kg); " & V_Bags & " Bags^FS^CI27
+            ^BY3,3,23^FT598,386^BCB,,Y,N
+            ^FH\^FD>" & IIf(noprodzpl = "", ":" & labzpl, ";" & noprodzpl) & "^FS
+
+            ^FO642,3^GFA,45,1580,4,:Z64:eJw7wMDAcIABAQ6g4VHxUfFR8VHxUfFRcQAt+cVB:193B
+            ^BY3,3,33^FT41,56^BCN,,N,N
+            ^FH\^FD>:" & labzpl & "^FS
+            ^FT738,380^A@B,20,20,TT0003M_^FH\^CI28^FD" & V_variety1 & "^FS^CI27
+            ^FT738,400^A@B,20,20,TT0003M_^FB377,1,11,R^FH\^CI28^FD" & VManualLot & "^FS^CI27
+            ^FT766,400^A@B,20,20,TT0003M_^FB377,1,11,R^FH\^CI28^FD" & V_weight & " KG^FS^CI27
+            ^BY3,3,23^FT685,386^BCB,,Y,N
+            ^FH\^FD>" & IIf(V_scope = "Finish Good" Or V_scope = "Other", ":" & labzpl, ";" & noprodzpl) & "^FS
+            ^FT766,380^A@B,20,20,TT0003M_^FH\^CI28^FD" & V_farmer & " ^FS^CI27
+
+            ^FT101,90^A0N,20,23^FH\^CI28^FD" & UCase(V_scope) & "^FS^CI27
+            ^FO436,17^GB76,31,1^FS
+            ^FT465,41^A0N,20,23^FH\^CI28^FDSAM^FS^CI27
+            ^FO514,17^GB41,31,1^FS
+            ^FO444,24^GE16,17," & V_Bsampling & "^FS
+            ^FO436,47^GB76,31,1^FS
+            ^FT465,71^A0N,20,23^FH\^CI28^FDMOI^FS^CI27
+            ^FO514,47^GB41,31,1^FS
+            ^FO444,54^GE16,17," & V_moisture & "^FS
+            ^FO436,77^GB76,31,1^FS
+            ^FT465,101^A0N,20,23^FH\^CI28^FDRAF^FS^CI27
+            ^FO514,77^GB41,31,1^FS
+            ^FO444,84^GE16,17," & V_rafaction & "^FS
+            ^FO436,107^GB76,31,1^FS
+            ^FT465,131^A0N,20,23^FH\^CI28^FDPUR^FS^CI27
+            ^FO514,107^GB41,31,1^FS
+            ^FO444,114^GE16,17," & V_Purity & "^FS
+            ^FO436,137^GB76,31,1^FS
+            ^FT465,160^A0N,20,23^FH\^CI28^FDGER^FS^CI27
+            ^FO514,137^GB41,31,1^FS
+            ^FO444,143^GE16,17," & V_germination & "^FS
+            ^FO436,166^GB76,31,1^FS
+            ^FT465,190^A0N,20,23^FH\^CI28^FDVIA^FS^CI27
+            ^FO514,166^GB41,31,1^FS
+            ^FO444,173^GE16,17," & V_rapit & "^FS
+            ^FT77,306^AAB,27,15^FH\^FD" & v_labnum & "^FS
+            ^PQ1,0,1,Y
+            ^XZ
+            "
+            Printer.RawHelper.SendStringToPrinter(LabelPrinter.Text, zplcom)
+        Next
+
+    End Sub
     'Fungsi untuk Checkbox Select All pada DataGrid------------------------------------------------------------------
     Private Sub HeaderCheckBox_Clicked(ByVal sender As Object, ByVal e As EventArgs) Handles CheckBox1.Click
         'Necessary to end the edit mode of the Cell.
@@ -829,11 +838,11 @@ Public Class Report_Label_HCQC
                 If RadioA2internal.Checked = True Then
                     TermalPrintLA2(sender, e)
                     FlagRawStorage()
-                ElseIf RadioA3SubLabel.Checked = True Then
-                    TermalPrintLA3(sender, e)
-                    FlagRawStorage()
+                    'ElseIf RadioA3SubLabel.Checked = True Then
+                    '    TermalPrintLA3(sender, e)
+                    '    FlagRawStorage()
                 ElseIf RadioA4LabelSample.Checked = True Then
-                    TermalPrintLA42(sender, e)
+                    TermalPrintA42024(sender, e)
                     FlagRawStorage()
                 Else
                     MetroMessageBox.Show(Me, "2. Pilih Label Type")
@@ -954,7 +963,7 @@ Public Class Report_Label_HCQC
         LabelMark.Text = "LA2"
     End Sub
 
-    Private Sub RadioA3SubLabel_CheckedChanged(sender As Object, e As EventArgs) Handles RadioA3SubLabel.CheckedChanged
+    Private Sub RadioA3SubLabel_CheckedChanged(sender As Object, e As EventArgs)
         LabelMark.Text = "LA3"
     End Sub
 
@@ -1013,7 +1022,7 @@ Public Class Report_Label_HCQC
 
     Private Sub Tsearch_ButtonClick(sender As Object, e As EventArgs) Handles Tsearch.ButtonClick
         If String.IsNullOrEmpty(Tsearch.Text) = False Then
-            Me.Qc_confirm_viewTableAdapter.FillByLabnum(Me.HCQC_NewDataset.qc_confirm_view, "%" + Trim(Tsearch.Text) + "%")
+            Me.TermalDataTableTableAdapter.FillByParameterLabnum(Me.HCQC_NewDataset.TermalDataTable, "%" + Trim(Tsearch.Text) + "%")
         End If
     End Sub
 
@@ -1021,4 +1030,9 @@ Public Class Report_Label_HCQC
         If e.KeyCode = Keys.Escape Then Me.Close()
     End Sub
 
+    Private Sub LinkFiltertoPrint_Click(sender As Object, e As EventArgs) Handles LinkFiltertoPrint.Click
+        MetroPanel1.Enabled = False
+        Me.TermalDataTableTableAdapter.FillByNotPrint(Me.HCQC_NewDataset.TermalDataTable)
+        MetroPanel1.Enabled = True
+    End Sub
 End Class

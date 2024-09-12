@@ -606,7 +606,6 @@ Partial Class Request_Sampling_From
         Me.tkarantina.UseCustomBackColor = True
         Me.tkarantina.UseCustomForeColor = True
         Me.tkarantina.UseSelectable = True
-        Me.tkarantina.Visible = False
         '
         'MetroTextBox1
         '

@@ -940,6 +940,12 @@
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="UI Form Control\Report\TermalReport\ZPLTemplate.vb" />
+    <Compile Include="UI Form Control\SeaTable API\Form1.Designer.vb">
+      <DependentUpon>Form1.vb</DependentUpon>
+    </Compile>
+    <Compile Include="UI Form Control\SeaTable API\Form1.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="UI G\Data List Daya Tumbuh.Designer.vb">
       <DependentUpon>Data List Daya Tumbuh.vb</DependentUpon>
     </Compile>
@@ -1286,6 +1292,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI Form Control\Report\TermalReport\Termal Print Label HCQC.resx">
       <DependentUpon>Termal Print Label HCQC.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI Form Control\SeaTable API\Form1.resx">
+      <DependentUpon>Form1.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI G\Data List Daya Tumbuh.resx">
       <DependentUpon>Data List Daya Tumbuh.vb</DependentUpon>

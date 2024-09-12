@@ -45,17 +45,12 @@ Partial Class Report_Label_HCQC
         Me.NomnlDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NojobDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ScopeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NamareqDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NamaconDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.TglconfirmDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ReceiptColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.RemarkDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LA2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LA3 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LA4 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.QcconfirmviewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.TermalDataTableBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.HCQC_NewDataset = New WindowsApplication1.HCQC_NewDataset()
-        Me.RadioA3SubLabel = New MetroFramework.Controls.MetroRadioButton()
         Me.RadioA4LabelSample = New MetroFramework.Controls.MetroRadioButton()
         Me.RadioA2internal = New MetroFramework.Controls.MetroRadioButton()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
@@ -114,9 +109,11 @@ Partial Class Report_Label_HCQC
         Me.ToolTipController1 = New DevExpress.Utils.ToolTipController(Me.components)
         Me.DropDownButton1 = New DevExpress.XtraEditors.DropDownButton()
         Me.Tsearch = New MetroFramework.Controls.MetroTextBox()
-        Me.Qc_confirm_viewTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.qc_confirm_viewTableAdapter()
+        Me.TermalDataTableTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.TermalDataTableTableAdapter()
+        Me.LinkFiltertoPrint = New MetroFramework.Controls.MetroLink()
+        Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.QcconfirmviewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.TermalDataTableBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HCQC_NewDataset, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MetroGrid2, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroTabControl1.SuspendLayout()
@@ -126,6 +123,7 @@ Partial Class Report_Label_HCQC
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnSendBack, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnSend, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.MetroPanel1.SuspendLayout()
         Me.SuspendLayout()
         '
         'MetroGrid1
@@ -152,8 +150,8 @@ Partial Class Report_Label_HCQC
         DataGridViewCellStyle18.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle18
         Me.MetroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CheckColumn, Me.IdreqColumn, Me.IdhvsprodDataGridViewTextBoxColumn, Me.LabnumColumn, Me.VarietyDataGridViewTextBoxColumn, Me.FarmerDataGridViewTextBoxColumn, Me.LocationDataGridViewTextBoxColumn, Me.HarvestDataGridViewTextBoxColumn, Me.WeightDataGridViewTextBoxColumn, Me.NomnlDataGridViewTextBoxColumn, Me.NojobDataGridViewTextBoxColumn, Me.ScopeDataGridViewTextBoxColumn, Me.NamareqDataGridViewTextBoxColumn, Me.NamaconDataGridViewTextBoxColumn, Me.TglconfirmDataGridViewTextBoxColumn, Me.ReceiptColumn1, Me.RemarkDataGridViewTextBoxColumn, Me.LA2, Me.LA3, Me.LA4})
-        Me.MetroGrid1.DataSource = Me.QcconfirmviewBindingSource
+        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CheckColumn, Me.IdreqColumn, Me.IdhvsprodDataGridViewTextBoxColumn, Me.LabnumColumn, Me.VarietyDataGridViewTextBoxColumn, Me.FarmerDataGridViewTextBoxColumn, Me.LocationDataGridViewTextBoxColumn, Me.HarvestDataGridViewTextBoxColumn, Me.WeightDataGridViewTextBoxColumn, Me.NomnlDataGridViewTextBoxColumn, Me.NojobDataGridViewTextBoxColumn, Me.ScopeDataGridViewTextBoxColumn, Me.NamaconDataGridViewTextBoxColumn, Me.TglconfirmDataGridViewTextBoxColumn, Me.RemarkDataGridViewTextBoxColumn, Me.LA4})
+        Me.MetroGrid1.DataSource = Me.TermalDataTableBindingSource
         DataGridViewCellStyle19.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle19.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle19.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -178,7 +176,7 @@ Partial Class Report_Label_HCQC
         Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle20
         Me.MetroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.MetroGrid1.Size = New System.Drawing.Size(493, 366)
+        Me.MetroGrid1.Size = New System.Drawing.Size(675, 498)
         Me.MetroGrid1.TabIndex = 0
         '
         'CheckColumn
@@ -256,12 +254,6 @@ Partial Class Report_Label_HCQC
         Me.ScopeDataGridViewTextBoxColumn.HeaderText = "Scope"
         Me.ScopeDataGridViewTextBoxColumn.Name = "ScopeDataGridViewTextBoxColumn"
         '
-        'NamareqDataGridViewTextBoxColumn
-        '
-        Me.NamareqDataGridViewTextBoxColumn.DataPropertyName = "nama_req"
-        Me.NamareqDataGridViewTextBoxColumn.HeaderText = "Request by"
-        Me.NamareqDataGridViewTextBoxColumn.Name = "NamareqDataGridViewTextBoxColumn"
-        '
         'NamaconDataGridViewTextBoxColumn
         '
         Me.NamaconDataGridViewTextBoxColumn.DataPropertyName = "nama_con"
@@ -271,34 +263,14 @@ Partial Class Report_Label_HCQC
         'TglconfirmDataGridViewTextBoxColumn
         '
         Me.TglconfirmDataGridViewTextBoxColumn.DataPropertyName = "tgl_confirm"
-        Me.TglconfirmDataGridViewTextBoxColumn.HeaderText = "QC Verification"
+        Me.TglconfirmDataGridViewTextBoxColumn.HeaderText = "Verification Date"
         Me.TglconfirmDataGridViewTextBoxColumn.Name = "TglconfirmDataGridViewTextBoxColumn"
-        '
-        'ReceiptColumn1
-        '
-        Me.ReceiptColumn1.DataPropertyName = "receipt_date"
-        Me.ReceiptColumn1.HeaderText = "Receipt"
-        Me.ReceiptColumn1.Name = "ReceiptColumn1"
         '
         'RemarkDataGridViewTextBoxColumn
         '
         Me.RemarkDataGridViewTextBoxColumn.DataPropertyName = "remark"
         Me.RemarkDataGridViewTextBoxColumn.HeaderText = "Remark"
         Me.RemarkDataGridViewTextBoxColumn.Name = "RemarkDataGridViewTextBoxColumn"
-        '
-        'LA2
-        '
-        Me.LA2.DataPropertyName = "LA2"
-        Me.LA2.HeaderText = "Label A2"
-        Me.LA2.Name = "LA2"
-        Me.LA2.ToolTipText = "A2- Internal Lab Label"
-        '
-        'LA3
-        '
-        Me.LA3.DataPropertyName = "LA3"
-        Me.LA3.HeaderText = "Label A3"
-        Me.LA3.Name = "LA3"
-        Me.LA3.ToolTipText = "A3-Sub Sampling Label"
         '
         'LA4
         '
@@ -307,32 +279,21 @@ Partial Class Report_Label_HCQC
         Me.LA4.Name = "LA4"
         Me.LA4.ToolTipText = "A4-Main Sampling Label"
         '
-        'QcconfirmviewBindingSource
+        'TermalDataTableBindingSource
         '
-        Me.QcconfirmviewBindingSource.DataMember = "qc_confirm_view"
-        Me.QcconfirmviewBindingSource.DataSource = Me.HCQC_NewDataset
+        Me.TermalDataTableBindingSource.DataMember = "TermalDataTable"
+        Me.TermalDataTableBindingSource.DataSource = Me.HCQC_NewDataset
         '
         'HCQC_NewDataset
         '
         Me.HCQC_NewDataset.DataSetName = "HCQC_NewDataset"
         Me.HCQC_NewDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'RadioA3SubLabel
-        '
-        Me.RadioA3SubLabel.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.RadioA3SubLabel.AutoSize = True
-        Me.RadioA3SubLabel.Location = New System.Drawing.Point(22, 202)
-        Me.RadioA3SubLabel.Name = "RadioA3SubLabel"
-        Me.RadioA3SubLabel.Size = New System.Drawing.Size(188, 15)
-        Me.RadioA3SubLabel.TabIndex = 9
-        Me.RadioA3SubLabel.Text = "A3-Sub Sampling Label 5x3 Dbl"
-        Me.RadioA3SubLabel.UseSelectable = True
-        '
         'RadioA4LabelSample
         '
         Me.RadioA4LabelSample.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.RadioA4LabelSample.AutoSize = True
-        Me.RadioA4LabelSample.Location = New System.Drawing.Point(22, 223)
+        Me.RadioA4LabelSample.Location = New System.Drawing.Point(22, 202)
         Me.RadioA4LabelSample.Name = "RadioA4LabelSample"
         Me.RadioA4LabelSample.Size = New System.Drawing.Size(180, 15)
         Me.RadioA4LabelSample.TabIndex = 8
@@ -373,7 +334,7 @@ Partial Class Report_Label_HCQC
         'CheckBox1
         '
         Me.CheckBox1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.CheckBox1.Location = New System.Drawing.Point(441, 57)
+        Me.CheckBox1.Location = New System.Drawing.Point(236, 4)
         Me.CheckBox1.Name = "CheckBox1"
         Me.CheckBox1.Size = New System.Drawing.Size(75, 23)
         Me.CheckBox1.TabIndex = 12
@@ -419,7 +380,7 @@ Partial Class Report_Label_HCQC
         Me.MetroLabel4.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroLabel4.AutoSize = True
         Me.MetroLabel4.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel4.Location = New System.Drawing.Point(567, 455)
+        Me.MetroLabel4.Location = New System.Drawing.Point(749, 587)
         Me.MetroLabel4.Name = "MetroLabel4"
         Me.MetroLabel4.Size = New System.Drawing.Size(244, 15)
         Me.MetroLabel4.TabIndex = 70
@@ -431,7 +392,7 @@ Partial Class Report_Label_HCQC
         Me.MetroLink1.AutoSize = True
         Me.MetroLink1.BackColor = System.Drawing.Color.Transparent
         Me.MetroLink1.FontWeight = MetroFramework.MetroLinkWeight.Light
-        Me.MetroLink1.Location = New System.Drawing.Point(742, 57)
+        Me.MetroLink1.Location = New System.Drawing.Point(924, 57)
         Me.MetroLink1.Name = "MetroLink1"
         Me.MetroLink1.Size = New System.Drawing.Size(57, 23)
         Me.MetroLink1.TabIndex = 69
@@ -472,7 +433,7 @@ Partial Class Report_Label_HCQC
         Me.MetroGrid2.EnableHeadersVisualStyles = False
         Me.MetroGrid2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.MetroGrid2.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        Me.MetroGrid2.Location = New System.Drawing.Point(567, 86)
+        Me.MetroGrid2.Location = New System.Drawing.Point(749, 86)
         Me.MetroGrid2.Name = "MetroGrid2"
         Me.MetroGrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
         DataGridViewCellStyle24.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
@@ -485,7 +446,7 @@ Partial Class Report_Label_HCQC
         Me.MetroGrid2.RowHeadersDefaultCellStyle = DataGridViewCellStyle24
         Me.MetroGrid2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.MetroGrid2.Size = New System.Drawing.Size(232, 366)
+        Me.MetroGrid2.Size = New System.Drawing.Size(232, 498)
         Me.MetroGrid2.TabIndex = 66
         '
         'CheckColumn1
@@ -594,7 +555,7 @@ Partial Class Report_Label_HCQC
         'MetroLabel3
         '
         Me.MetroLabel3.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroLabel3.Location = New System.Drawing.Point(567, 57)
+        Me.MetroLabel3.Location = New System.Drawing.Point(749, 57)
         Me.MetroLabel3.Name = "MetroLabel3"
         Me.MetroLabel3.Size = New System.Drawing.Size(83, 23)
         Me.MetroLabel3.TabIndex = 65
@@ -606,7 +567,7 @@ Partial Class Report_Label_HCQC
         Me.MetroLabel5.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.MetroLabel5.AutoSize = True
         Me.MetroLabel5.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.MetroLabel5.Location = New System.Drawing.Point(23, 455)
+        Me.MetroLabel5.Location = New System.Drawing.Point(23, 587)
         Me.MetroLabel5.Name = "MetroLabel5"
         Me.MetroLabel5.Size = New System.Drawing.Size(205, 15)
         Me.MetroLabel5.TabIndex = 71
@@ -679,7 +640,7 @@ Partial Class Report_Label_HCQC
         Me.MetroTabControl1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage2)
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage1)
-        Me.MetroTabControl1.Location = New System.Drawing.Point(817, 57)
+        Me.MetroTabControl1.Location = New System.Drawing.Point(999, 57)
         Me.MetroTabControl1.Name = "MetroTabControl1"
         Me.MetroTabControl1.SelectedIndex = 0
         Me.MetroTabControl1.Size = New System.Drawing.Size(225, 420)
@@ -908,7 +869,6 @@ Partial Class Report_Label_HCQC
         Me.MetroTabPage1.Controls.Add(Me.MetroLabel7)
         Me.MetroTabPage1.Controls.Add(Me.RadioA2internal)
         Me.MetroTabPage1.Controls.Add(Me.RadioA4LabelSample)
-        Me.MetroTabPage1.Controls.Add(Me.RadioA3SubLabel)
         Me.MetroTabPage1.Controls.Add(Me.MetroLabel1)
         Me.MetroTabPage1.Controls.Add(Me.PictureBox1)
         Me.MetroTabPage1.Controls.Add(Me.Label1)
@@ -979,7 +939,7 @@ Partial Class Report_Label_HCQC
         Me.BtnSendBack.BackColor = System.Drawing.Color.Brown
         Me.BtnSendBack.Image = CType(resources.GetObject("BtnSendBack.Image"), System.Drawing.Image)
         Me.BtnSendBack.ImageActive = Nothing
-        Me.BtnSendBack.Location = New System.Drawing.Point(522, 242)
+        Me.BtnSendBack.Location = New System.Drawing.Point(704, 242)
         Me.BtnSendBack.Name = "BtnSendBack"
         Me.BtnSendBack.Size = New System.Drawing.Size(39, 24)
         Me.BtnSendBack.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -993,7 +953,7 @@ Partial Class Report_Label_HCQC
         Me.BtnSend.BackColor = System.Drawing.Color.SeaGreen
         Me.BtnSend.Image = CType(resources.GetObject("BtnSend.Image"), System.Drawing.Image)
         Me.BtnSend.ImageActive = Nothing
-        Me.BtnSend.Location = New System.Drawing.Point(522, 212)
+        Me.BtnSend.Location = New System.Drawing.Point(704, 212)
         Me.BtnSend.Name = "BtnSend"
         Me.BtnSend.Size = New System.Drawing.Size(39, 24)
         Me.BtnSend.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
@@ -1004,7 +964,7 @@ Partial Class Report_Label_HCQC
         'DropDownButton1
         '
         Me.DropDownButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.DropDownButton1.Location = New System.Drawing.Point(299, 57)
+        Me.DropDownButton1.Location = New System.Drawing.Point(94, 4)
         Me.DropDownButton1.Name = "DropDownButton1"
         Me.DropDownButton1.Size = New System.Drawing.Size(136, 23)
         Me.DropDownButton1.TabIndex = 79
@@ -1043,17 +1003,48 @@ Partial Class Report_Label_HCQC
         Me.Tsearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.Tsearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'Qc_confirm_viewTableAdapter
+        'TermalDataTableTableAdapter
         '
-        Me.Qc_confirm_viewTableAdapter.ClearBeforeFill = True
+        Me.TermalDataTableTableAdapter.ClearBeforeFill = True
+        '
+        'LinkFiltertoPrint
+        '
+        Me.LinkFiltertoPrint.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LinkFiltertoPrint.AutoSize = True
+        Me.LinkFiltertoPrint.BackColor = System.Drawing.Color.Transparent
+        Me.LinkFiltertoPrint.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.LinkFiltertoPrint.Location = New System.Drawing.Point(13, 4)
+        Me.LinkFiltertoPrint.Name = "LinkFiltertoPrint"
+        Me.LinkFiltertoPrint.Size = New System.Drawing.Size(75, 23)
+        Me.LinkFiltertoPrint.TabIndex = 82
+        Me.LinkFiltertoPrint.Text = "Filter to Print"
+        Me.LinkFiltertoPrint.UseCustomBackColor = True
+        Me.LinkFiltertoPrint.UseSelectable = True
+        Me.LinkFiltertoPrint.UseStyleColors = True
+        '
+        'MetroPanel1
+        '
+        Me.MetroPanel1.Controls.Add(Me.LinkFiltertoPrint)
+        Me.MetroPanel1.Controls.Add(Me.CheckBox1)
+        Me.MetroPanel1.Controls.Add(Me.DropDownButton1)
+        Me.MetroPanel1.HorizontalScrollbarBarColor = True
+        Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
+        Me.MetroPanel1.HorizontalScrollbarSize = 10
+        Me.MetroPanel1.Location = New System.Drawing.Point(384, 49)
+        Me.MetroPanel1.Name = "MetroPanel1"
+        Me.MetroPanel1.Size = New System.Drawing.Size(314, 31)
+        Me.MetroPanel1.TabIndex = 83
+        Me.MetroPanel1.VerticalScrollbarBarColor = True
+        Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
+        Me.MetroPanel1.VerticalScrollbarSize = 10
         '
         'Report_Label_HCQC
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
-        Me.ClientSize = New System.Drawing.Size(1065, 500)
+        Me.ClientSize = New System.Drawing.Size(1247, 632)
+        Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.Tsearch)
-        Me.Controls.Add(Me.DropDownButton1)
         Me.Controls.Add(Me.MetroTabControl1)
         Me.Controls.Add(Me.MetroLabel5)
         Me.Controls.Add(Me.MetroLabel4)
@@ -1063,13 +1054,12 @@ Partial Class Report_Label_HCQC
         Me.Controls.Add(Me.MetroGrid2)
         Me.Controls.Add(Me.MetroLabel3)
         Me.Controls.Add(Me.MetroLabel6)
-        Me.Controls.Add(Me.CheckBox1)
         Me.Controls.Add(Me.MetroGrid1)
         Me.KeyPreview = True
         Me.Name = "Report_Label_HCQC"
         Me.Text = "Termal Label HCQC"
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.QcconfirmviewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.TermalDataTableBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HCQC_NewDataset, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MetroGrid2, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MetroTabControl1.ResumeLayout(False)
@@ -1081,6 +1071,8 @@ Partial Class Report_Label_HCQC
         CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnSendBack, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnSend, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.MetroPanel1.ResumeLayout(False)
+        Me.MetroPanel1.PerformLayout()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -1088,10 +1080,7 @@ Partial Class Report_Label_HCQC
 
     Friend WithEvents MetroGrid1 As MetroGrid
     Friend WithEvents HCQC_NewDataset As HCQC_NewDataset
-    Friend WithEvents QcconfirmviewBindingSource As BindingSource
-    Friend WithEvents Qc_confirm_viewTableAdapter As HCQC_NewDatasetTableAdapters.qc_confirm_viewTableAdapter
     Friend WithEvents BtnPreview As Bunifu.Framework.UI.BunifuFlatButton
-    Friend WithEvents RadioA3SubLabel As MetroRadioButton
     Friend WithEvents RadioA4LabelSample As MetroRadioButton
     Friend WithEvents RadioA2internal As MetroRadioButton
     Friend WithEvents MetroLabel1 As MetroLabel
@@ -1146,6 +1135,11 @@ Partial Class Report_Label_HCQC
     Friend WithEvents RafactionColumn As DataGridViewTextBoxColumn
     Friend WithEvents RapitColumn As DataGridViewTextBoxColumn
     Friend WithEvents MetroLabel10 As MetroLabel
+    Friend WithEvents ToolTipController1 As DevExpress.Utils.ToolTipController
+    Friend WithEvents DropDownButton1 As DevExpress.XtraEditors.DropDownButton
+    Friend WithEvents Tsearch As MetroTextBox
+    Friend WithEvents TermalDataTableBindingSource As BindingSource
+    Friend WithEvents TermalDataTableTableAdapter As HCQC_NewDatasetTableAdapters.TermalDataTableTableAdapter
     Friend WithEvents CheckColumn As DataGridViewCheckBoxColumn
     Friend WithEvents IdreqColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdhvsprodDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -1158,15 +1152,10 @@ Partial Class Report_Label_HCQC
     Friend WithEvents NomnlDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NojobDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ScopeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents NamareqDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NamaconDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents TglconfirmDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ReceiptColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents RemarkDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents LA2 As DataGridViewTextBoxColumn
-    Friend WithEvents LA3 As DataGridViewTextBoxColumn
     Friend WithEvents LA4 As DataGridViewTextBoxColumn
-    Friend WithEvents ToolTipController1 As DevExpress.Utils.ToolTipController
-    Friend WithEvents DropDownButton1 As DevExpress.XtraEditors.DropDownButton
-    Friend WithEvents Tsearch As MetroTextBox
+    Friend WithEvents LinkFiltertoPrint As MetroLink
+    Friend WithEvents MetroPanel1 As MetroPanel
 End Class
