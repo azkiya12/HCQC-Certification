@@ -690,8 +690,8 @@ Public Class Report_Label_HCQC
             ^FT101,144^A0N,20,23^FH\^CI28^FD" & V_farmer & "^FS^CI27
             ^FT101,170^A0N,20,23^FH\^CI28^FD" & VManualLot & "; " & V_Location.ToUpper & "^FS^CI27
             ^FT101,197^A0N,20,23^FH\^CI28^FD" & V_weight & " (kg); " & V_Bags & " Bags^FS^CI27
-            ^BY3,3,23^FT605,353^BCB,,Y,N
-            ^FH\^FD>;" & IIf(V_scope = "Finish Good" Or V_scope = "Other", ":" & labzpl, ";" & noprodzpl) & "^FS
+            ^BY3,3,23^FT598,386^BCB,,Y,N
+            ^FH\^FD>" & IIf(noprodzpl = "", ":" & labzpl, ";" & noprodzpl) & "^FS
 
             ^FO642,3^GFA,45,1580,4,:Z64:eJw7wMDAcIABAQ6g4VHxUfFR8VHxUfFRcQAt+cVB:193B
             ^BY3,3,33^FT41,56^BCN,,N,N
