@@ -63,8 +63,8 @@ Partial Class leadtime_report
         Me.PurdatetestDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ViadatetestDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReportleadtimeviewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_serverDataSet = New HCQC_serverDataSet()
-        Me.Report_leadtime_viewTableAdapter = New HCQC_serverDataSetTableAdapters.report_leadtime_viewTableAdapter()
+        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet()
+        Me.Report_leadtime_viewTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.report_leadtime_viewTableAdapter()
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
         Me.BtnRefresh = New MetroFramework.Controls.MetroLink()
@@ -81,18 +81,10 @@ Partial Class leadtime_report
         Me.datein = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BrtinDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SamplerDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.DttDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ResulDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.TestdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TestdateDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FistcountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ScndcountDataGridViewTextBoxColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.TglkirimDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.NameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ReportstatuspengujianBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_NewDataset = New HCQC_NewDataset()
+        Me.HCQC_NewDataset = New WindowsApplication1.HCQC_NewDataset()
         Me.BtnRefresStatus = New MetroFramework.Controls.MetroLink()
-        Me.Report_status_pengujianTableAdapter = New HCQC_NewDatasetTableAdapters.report_status_pengujianTableAdapter()
+        Me.Report_status_pengujianTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.report_status_pengujianTableAdapter()
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReportleadtimeviewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HCQC_serverDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -460,7 +452,7 @@ Partial Class leadtime_report
         DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.MetroGrid2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.MetroGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MetroGrid2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn1, Me.IdhvsprodDataGridViewTextBoxColumn, Me.LabnumDataGridViewTextBoxColumn1, Me.VarietyDataGridViewTextBoxColumn1, Me.NomnlDataGridViewTextBoxColumn1, Me.NojobDataGridViewTextBoxColumn1, Me.WeightDataGridViewTextBoxColumn1, Me.LocationDataGridViewTextBoxColumn1, Me.datein, Me.BrtinDataGridViewTextBoxColumn1, Me.SamplerDataGridViewTextBoxColumn, Me.DttDataGridViewTextBoxColumn, Me.ResulDataGridViewCheckBoxColumn, Me.TestdateDataGridViewTextBoxColumn, Me.TestdateDataGridViewTextBoxColumn1, Me.FistcountDataGridViewTextBoxColumn, Me.ScndcountDataGridViewTextBoxColumn1, Me.TglkirimDataGridViewTextBoxColumn, Me.NameDataGridViewTextBoxColumn})
+        Me.MetroGrid2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdDataGridViewTextBoxColumn1, Me.IdhvsprodDataGridViewTextBoxColumn, Me.LabnumDataGridViewTextBoxColumn1, Me.VarietyDataGridViewTextBoxColumn1, Me.NomnlDataGridViewTextBoxColumn1, Me.NojobDataGridViewTextBoxColumn1, Me.WeightDataGridViewTextBoxColumn1, Me.LocationDataGridViewTextBoxColumn1, Me.datein, Me.BrtinDataGridViewTextBoxColumn1, Me.SamplerDataGridViewTextBoxColumn})
         Me.MetroGrid2.DataSource = Me.ReportstatuspengujianBindingSource
         DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -554,54 +546,6 @@ Partial Class leadtime_report
         Me.SamplerDataGridViewTextBoxColumn.DataPropertyName = "sampler"
         Me.SamplerDataGridViewTextBoxColumn.HeaderText = "Sampler"
         Me.SamplerDataGridViewTextBoxColumn.Name = "SamplerDataGridViewTextBoxColumn"
-        '
-        'DttDataGridViewTextBoxColumn
-        '
-        Me.DttDataGridViewTextBoxColumn.DataPropertyName = "dt_t"
-        Me.DttDataGridViewTextBoxColumn.HeaderText = "Refraction Date"
-        Me.DttDataGridViewTextBoxColumn.Name = "DttDataGridViewTextBoxColumn"
-        '
-        'ResulDataGridViewCheckBoxColumn
-        '
-        Me.ResulDataGridViewCheckBoxColumn.DataPropertyName = "resul"
-        Me.ResulDataGridViewCheckBoxColumn.HeaderText = "Refraction Resul"
-        Me.ResulDataGridViewCheckBoxColumn.Name = "ResulDataGridViewCheckBoxColumn"
-        '
-        'TestdateDataGridViewTextBoxColumn
-        '
-        Me.TestdateDataGridViewTextBoxColumn.DataPropertyName = "testdate"
-        Me.TestdateDataGridViewTextBoxColumn.HeaderText = "KA Date"
-        Me.TestdateDataGridViewTextBoxColumn.Name = "TestdateDataGridViewTextBoxColumn"
-        '
-        'TestdateDataGridViewTextBoxColumn1
-        '
-        Me.TestdateDataGridViewTextBoxColumn1.DataPropertyName = "test_date"
-        Me.TestdateDataGridViewTextBoxColumn1.HeaderText = "DT Test Date"
-        Me.TestdateDataGridViewTextBoxColumn1.Name = "TestdateDataGridViewTextBoxColumn1"
-        '
-        'FistcountDataGridViewTextBoxColumn
-        '
-        Me.FistcountDataGridViewTextBoxColumn.DataPropertyName = "fist_count"
-        Me.FistcountDataGridViewTextBoxColumn.HeaderText = "DT 1st_Count"
-        Me.FistcountDataGridViewTextBoxColumn.Name = "FistcountDataGridViewTextBoxColumn"
-        '
-        'ScndcountDataGridViewTextBoxColumn1
-        '
-        Me.ScndcountDataGridViewTextBoxColumn1.DataPropertyName = "scnd_count"
-        Me.ScndcountDataGridViewTextBoxColumn1.HeaderText = "DT 2nd_Count"
-        Me.ScndcountDataGridViewTextBoxColumn1.Name = "ScndcountDataGridViewTextBoxColumn1"
-        '
-        'TglkirimDataGridViewTextBoxColumn
-        '
-        Me.TglkirimDataGridViewTextBoxColumn.DataPropertyName = "tgl_kirim"
-        Me.TglkirimDataGridViewTextBoxColumn.HeaderText = "Kembali Date"
-        Me.TglkirimDataGridViewTextBoxColumn.Name = "TglkirimDataGridViewTextBoxColumn"
-        '
-        'NameDataGridViewTextBoxColumn
-        '
-        Me.NameDataGridViewTextBoxColumn.DataPropertyName = "name"
-        Me.NameDataGridViewTextBoxColumn.HeaderText = "Kembali Name"
-        Me.NameDataGridViewTextBoxColumn.Name = "NameDataGridViewTextBoxColumn"
         '
         'ReportstatuspengujianBindingSource
         '

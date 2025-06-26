@@ -1,8 +1,4 @@
-﻿Imports System.ComponentModel
-Imports System.Linq
-Imports System.Reflection
-
-Public Class containermenu
+﻿Public Class containermenu
 
     Sub AutentificatioUser()
         Dim level As String = _DataToValue("SELECT [userlevel] FROM [login] WHERE [id]='" & login.Luserid.Text & "'")
@@ -69,6 +65,7 @@ Public Class containermenu
         MainForm.MetroPanel3.Controls.Add(Control)
         MainForm.MetroPanel3.AutoScroll = True
         MainForm.Label1.Text = Control.Name
+
     End Sub
 
     Private Sub BtnMainMenu_Click(sender As Object, e As EventArgs) Handles BtnMainMenu.Click
@@ -301,5 +298,13 @@ Public Class containermenu
     Private Sub BunifuFlatButton1_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton1.Click
         Dim USDataListLama As Data_List_Program_Lama = New Data_List_Program_Lama
         ShowUserControl(USDataListLama, "Data List Program Lama")
+    End Sub
+
+    Private Sub AboutMeButton_Click(sender As Object, e As EventArgs) Handles AboutMeButton.Click
+        About_HCQC_aplication.Show()
+    End Sub
+
+    Private Sub Button1_Click(sender As Object, e As EventArgs) Handles Button1.Click
+
     End Sub
 End Class

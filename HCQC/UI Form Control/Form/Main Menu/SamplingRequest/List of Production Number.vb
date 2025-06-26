@@ -30,4 +30,16 @@ Public Class List_of_Production_Number
     Private Sub List_of_Production_Number_Closed(sender As Object, e As EventArgs) Handles Me.Closed
         Me.Dispose()
     End Sub
+
+    Private Sub TSearch_ButtonClick(sender As Object, e As EventArgs) Handles TSearch.ButtonClick
+        Me.Report_a1TableAdapter.FillByParm(Me.HCQC_NewDataset.report_a1, TSearch.Text)
+    End Sub
+
+    Private Sub TSearch_KeyDown(sender As Object, e As KeyEventArgs) Handles TSearch.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            TSearch_ButtonClick(sender, e)
+        End If
+    End Sub
+
+
 End Class

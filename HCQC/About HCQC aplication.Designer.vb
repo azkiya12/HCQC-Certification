@@ -1,9 +1,9 @@
-﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
+﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()>
 Partial Class About_HCQC_aplication
     Inherits MetroFramework.Forms.MetroForm
 
     'Form overrides dispose to clean up the component list.
-    <System.Diagnostics.DebuggerNonUserCode()> _
+    <System.Diagnostics.DebuggerNonUserCode()>
     Protected Overrides Sub Dispose(ByVal disposing As Boolean)
         Try
             If disposing AndAlso components IsNot Nothing Then
@@ -20,11 +20,13 @@ Partial Class About_HCQC_aplication
     'NOTE: The following procedure is required by the Windows Form Designer
     'It can be modified using the Windows Form Designer.  
     'Do not modify it using the code editor.
-    <System.Diagnostics.DebuggerStepThrough()> _
+    <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(About_HCQC_aplication))
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
+        Me.LabelStatus = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTextBox2 = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.MetroTabControl2 = New MetroFramework.Controls.MetroTabControl()
@@ -54,6 +56,8 @@ Partial Class About_HCQC_aplication
         '
         'MetroTabPage1
         '
+        Me.MetroTabPage1.Controls.Add(Me.LabelStatus)
+        Me.MetroTabPage1.Controls.Add(Me.MetroLabel5)
         Me.MetroTabPage1.Controls.Add(Me.MetroTextBox2)
         Me.MetroTabPage1.Controls.Add(Me.MetroLabel4)
         Me.MetroTabPage1.HorizontalScrollbarBarColor = True
@@ -67,6 +71,28 @@ Partial Class About_HCQC_aplication
         Me.MetroTabPage1.VerticalScrollbarBarColor = True
         Me.MetroTabPage1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage1.VerticalScrollbarSize = 10
+        '
+        'LabelStatus
+        '
+        Me.LabelStatus.AutoSize = True
+        Me.LabelStatus.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.LabelStatus.FontWeight = MetroFramework.MetroLabelWeight.Regular
+        Me.LabelStatus.Location = New System.Drawing.Point(55, 57)
+        Me.LabelStatus.Name = "LabelStatus"
+        Me.LabelStatus.Size = New System.Drawing.Size(46, 15)
+        Me.LabelStatus.TabIndex = 12
+        Me.LabelStatus.Text = "License"
+        '
+        'MetroLabel5
+        '
+        Me.MetroLabel5.AutoSize = True
+        Me.MetroLabel5.FontSize = MetroFramework.MetroLabelSize.Small
+        Me.MetroLabel5.FontWeight = MetroFramework.MetroLabelWeight.Regular
+        Me.MetroLabel5.Location = New System.Drawing.Point(3, 57)
+        Me.MetroLabel5.Name = "MetroLabel5"
+        Me.MetroLabel5.Size = New System.Drawing.Size(46, 15)
+        Me.MetroLabel5.TabIndex = 11
+        Me.MetroLabel5.Text = "License"
         '
         'MetroTextBox2
         '
@@ -106,7 +132,7 @@ Partial Class About_HCQC_aplication
         Me.MetroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.MetroLabel4.Location = New System.Drawing.Point(3, 31)
         Me.MetroLabel4.Name = "MetroLabel4"
-        Me.MetroLabel4.Size = New System.Drawing.Size(136, 15)
+        Me.MetroLabel4.Size = New System.Drawing.Size(137, 15)
         Me.MetroLabel4.TabIndex = 10
         Me.MetroLabel4.Text = "Support by HCQC Team "
         '
@@ -250,4 +276,6 @@ Partial Class About_HCQC_aplication
     Friend WithEvents MetroLink2 As MetroFramework.Controls.MetroLink
     Friend WithEvents MetroButton2 As MetroFramework.Controls.MetroButton
     Friend WithEvents MetroLabel4 As MetroFramework.Controls.MetroLabel
+    Friend WithEvents MetroLabel5 As MetroLabel
+    Friend WithEvents LabelStatus As MetroLabel
 End Class

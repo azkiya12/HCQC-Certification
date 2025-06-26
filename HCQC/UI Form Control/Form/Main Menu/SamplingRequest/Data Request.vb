@@ -1,7 +1,44 @@
-﻿Imports System.Data.SqlClient
-Imports DgvFilterPopup
+﻿Imports DgvFilterPopup
 
 Public Class Data_Request
+
+    Public Event UploadCompleted As EventHandler
+    Public Event ImportSelesai(dtResult As DataTable)
+    Private dtLocal As New DataTable
+    Dim FirstBuiltColumn As Boolean = False
+    Private Sub SetupDataTable()
+        With dtLocal.Columns
+            If Not .Contains("CheckColumn1") Then .Add("CheckColumn1", GetType(Boolean))
+            If Not .Contains("ProductionCodeColumn") Then .Add("ProductionCodeColumn", GetType(String))
+            If Not .Contains("dovendorColumn") Then .Add("dovendorColumn", GetType(String))
+            If Not .Contains("VarietyColumn") Then .Add("VarietyColumn", GetType(String))
+            If Not .Contains("InsplotColumn") Then .Add("InsplotColumn", GetType(String))
+            If Not .Contains("FarmerColumn") Then .Add("FarmerColumn", GetType(String))
+            If Not .Contains("LocationColumn") Then .Add("LocationColumn", GetType(String))
+            If Not .Contains("HarvestColumn") Then .Add("HarvestColumn", GetType(String))
+            If Not .Contains("ManualColumn") Then .Add("ManualColumn", GetType(String))
+            If Not .Contains("LotColumn") Then .Add("LotColumn", GetType(String))
+            If Not .Contains("WeightColumn") Then .Add("WeightColumn", GetType(Decimal))
+            If Not .Contains("UnitColumn") Then .Add("UnitColumn", GetType(String))
+            If Not .Contains("BagColumn") Then .Add("BagColumn", GetType(String))
+            If Not .Contains("smplLocation") Then .Add("smplLocation", GetType(String))
+            If Not .Contains("ScopeColumn") Then .Add("ScopeColumn", GetType(String))
+            If Not .Contains("KetColumn") Then .Add("KetColumn", GetType(String))
+            If Not .Contains("TestRequest") Then .Add("TestRequest", GetType(String))
+            If Not .Contains("SPL") Then .Add("SPL", GetType(Boolean))
+            If Not .Contains("KesBnh") Then .Add("KesBnh", GetType(Boolean))
+            If Not .Contains("MOI") Then .Add("MOI", GetType(Boolean))
+            If Not .Contains("PUR") Then .Add("PUR", GetType(Boolean))
+            If Not .Contains("RAF") Then .Add("RAF", GetType(Boolean))
+            If Not .Contains("GER") Then .Add("GER", GetType(Boolean))
+            If Not .Contains("VIA") Then .Add("VIA", GetType(Boolean))
+        End With
+    End Sub
+    Private Sub ProsesUploadSelesai()
+        ' Ini dipanggil ketika proses upload selesai
+        RaiseEvent UploadCompleted(Me, EventArgs.Empty)
+    End Sub
+
     Private Sub Add_Data_Request_Load(sender As Object, e As EventArgs) Handles MyBase.Load
         'TODO: This line of code loads data into the 'HCQC_NewDataset.spl_request' table. You can move, or remove it, as needed.
         Me.Spl_requestTableAdapter.FillByThisMonth(Me.HCQC_NewDataset.spl_request)
@@ -10,6 +47,8 @@ Public Class Data_Request
         Dim DgvFilter As New DgvFilterManager
         DgvFilter.DataGridView = MetroGrid1
         MetroGrid1.ColumnHeadersHeight = 25
+
+
     End Sub
 
     Private Sub Tsearch_ButtonClick(sender As Object, e As EventArgs) Handles Tsearch.ButtonClick
@@ -35,16 +74,18 @@ Public Class Data_Request
     End Sub
 
     Private Sub BtnPreview_Click(sender As Object, e As EventArgs) Handles BtnSend.Click
+        Dim targetForm As Multy_Request_Sample = Application.OpenForms.OfType(Of Multy_Request_Sample)().FirstOrDefault()
 
         ' loop to check if the checkbox cell is checked
         For i As Integer = 0 To MetroGrid1.Rows.Count() - 1 Step +1
+            SetupDataTable()
 
-            ' rowAlreadyExist => if the row already exist on MetroGrid2
-            Dim rowAlreadyExist As Boolean = False
-            Dim check As Boolean = MetroGrid1.Rows(i).Cells(0).Value
             Dim row As DataGridViewRow = MetroGrid1.Rows(i)
-            If check = True Then
 
+            Dim check As Boolean = MetroGrid1.Rows(i).Cells(0).Value
+            If check = True Then
+                ' rowAlreadyExist => if the row already exist on MetroGrid2
+                Dim rowAlreadyExist As Boolean = False
                 'Check the MetroGrid2 have one row or more
                 If Multy_Request_Sample.MetroGrid2.Rows.Count() > 0 Then
 
@@ -57,35 +98,79 @@ Public Class Data_Request
                         End If
                     Next
 
-                    If rowAlreadyExist = False Then
-                        Multy_Request_Sample.MetroGrid2.Rows.Add(
-                                            False,
-                                            row.Cells(1).Value,
-                                            row.Cells(2).Value.ToString(),
-                                            row.Cells(3).Value.ToString(),
-                                            row.Cells(4).Value.ToString(),
-                                            CDate(row.Cells(5).Value),
-                                            row.Cells(6).Value.ToString(),
-                                            row.Cells(7).Value.ToString(),
-                                            row.Cells(8).Value,
-                                            row.Cells(9).Value)
+                    If targetForm IsNot Nothing AndAlso targetForm.dtTransfer IsNot Nothing Then
+                        ' Buat baris baru
+                        Dim newRow As DataRow = targetForm.dtTransfer.NewRow()
+                        newRow("CheckColumn1") = False
+                        newRow("ProductionCodeColumn") = row.Cells("id_hvsprodColumn").Value
+                        newRow("dovendorColumn") = ""
+                        newRow("VarietyColumn") = row.Cells("VarietyDataGridViewTextBoxColumn").Value.ToString()
+                        newRow("InsplotColumn") = row.Cells("insplot").Value.ToString()
+                        newRow("FarmerColumn") = row.Cells("FarmerDataGridViewTextBoxColumn").Value.ToString()
+                        newRow("LocationColumn") = row.Cells("LocationDataGridViewTextBoxColumn").Value.ToString()
+                        newRow("HarvestColumn") = Convert.ToDateTime(row.Cells("HarvestDataGridViewTextBoxColumn").Value).ToString("dd-MM-yyyy")
+                        newRow("ManualColumn") = row.Cells("NomnlDataGridViewTextBoxColumn").Value.ToString()
+                        newRow("LotColumn") = row.Cells("NojobDataGridViewTextBoxColumn").Value.ToString()
+                        newRow("WeightColumn") = row.Cells("WeightDataGridViewTextBoxColumn").Value
+                        newRow("UnitColumn") = "KG"
+                        newRow("BagColumn") = row.Cells("bagColumn").Value
+                        newRow("smplLocation") = row.Cells("loc_sample").Value
+                        newRow("ScopeColumn") = ""
+                        newRow("KetColumn") = row.Cells("RemarkDataGridViewTextBoxColumn").Value
+                        newRow("TestRequest") = ""
+                        newRow("SPL") = False
+                        newRow("KesBnh") = False
+                        newRow("MOI") = False
+                        newRow("PUR") = False
+                        newRow("RAF") = False
+                        newRow("GER") = False
+                        newRow("VIA") = False
+
+                        ' Tambah ke DataTable
+                        targetForm.dtTransfer.Rows.Add(newRow)
+                    Else
+                        MessageBox.Show("Gagal menambahkan baris. Form tujuan tidak ditemukan atau belum diisi.")
                     End If
 
                 Else
-                    Multy_Request_Sample.MetroGrid2.Rows.Add(
-                                            False,
-                                            row.Cells(1).Value,
-                                            row.Cells(2).Value.ToString(),
-                                            row.Cells(3).Value.ToString(),
-                                            row.Cells(4).Value.ToString(),
-                                            CDate(row.Cells(5).Value),
-                                            row.Cells(6).Value.ToString(),
-                                            row.Cells(7).Value.ToString(),
-                                            row.Cells(8).Value,
-                                            row.Cells(9).Value)
+                    dtLocal.Rows.Add(
+                            False,
+                            row.Cells("id_hvsprodColumn").Value,
+                            "",
+                            row.Cells("VarietyDataGridViewTextBoxColumn").Value.ToString(),
+                            row.Cells("insplot").Value.ToString(),
+                            row.Cells("FarmerDataGridViewTextBoxColumn").Value.ToString(),
+                            row.Cells("LocationDataGridViewTextBoxColumn").Value.ToString(),
+                            Convert.ToDateTime(row.Cells("HarvestDataGridViewTextBoxColumn").Value).ToString("dd-MM-yyyy"),
+                            row.Cells("NomnlDataGridViewTextBoxColumn").Value.ToString(),
+                            row.Cells("NojobDataGridViewTextBoxColumn").Value.ToString(),
+                            row.Cells("WeightDataGridViewTextBoxColumn").Value,
+                            "KG",
+                            row.Cells("bagColumn").Value,
+                            row.Cells("loc_sample").Value,
+                            "",
+                            row.Cells("RemarkDataGridViewTextBoxColumn").Value,
+                            "",
+                            False,
+                            False,
+                            False,
+                            False,
+                            False,
+                            False,
+                            False)
+
+                    FirstBuiltColumn = True
                 End If
             End If
         Next
+
+        If FirstBuiltColumn Then
+            ' Setelah semua baris ditambahkan ke dtTransfer
+            RaiseEvent ImportSelesai(dtLocal)
+            ProsesUploadSelesai()
+            FirstBuiltColumn = False
+        End If
+
     End Sub
 
     Private Sub LInkRefresh_Click(sender As Object, e As EventArgs) Handles LInkRefresh.Click
@@ -100,53 +185,8 @@ Public Class Data_Request
         'MetroGrid1.DataSource = Me.PopulateDataGridView()
     End Sub
 
-    'Private Function PopulateDataGridView() As DataTable
-    '    Dim query As String = "SELECT   [id_hvsprod]
-    '                                    ,[variety]
-    '                                    ,[farmer]
-    '                                    ,[location]
-    '                                    ,[harvest]
-    '                                    ,[nomnl]
-    '                                    ,[nojob]
-    '                                    ,[weight]
-    '                                    ,[bag]
-    '                                    ,[scope]
-    '                                    ,[test_moi]
-    '                                    ,[test_raf]
-    '                                    ,[test_pur]
-    '                                    ,[test_ger]
-    '                                    ,[test_via]
-    '                                    ,[remark]
-    '                                    ,[input_date]
-    '                                FROM [HCQC_server].[dbo].[spl_request]"
-    '    query &= " Where [id_hvsprod] Like '%' + @SearchTerm + '%'"
-    '    query &= " OR [variety] LIKE '%' + @SearchTerm + '%'"
-    '    query &= " OR [farmer] LIKE '%' + @SearchTerm + '%'"
-    '    query &= " OR [location] LIKE '%' + @SearchTerm + '%'"
-    '    query &= " OR [nomnl] LIKE '%' + @SearchTerm + '%'"
-    '    query &= " OR [nojob] LIKE '%' + @SearchTerm + '%'"
-    '    query &= " OR [weight] LIKE '%' + @SearchTerm + '%'"
-    '    query &= " OR [scope] LIKE '%' + @SearchTerm + '%'"
-    '    query &= " OR [input_date] LIKE '%' + @SearchTerm + '%'"
-    '    query &= " OR @SearchTerm = ''"
 
-    '    Using cmd = New SqlCommand(query, con)
-    '        cmd.Parameters.AddWithValue("@SearchTerm", tsearch.Text.Trim())
-    '        Using adapter = New SqlDataAdapter(cmd)
-    '            Dim dt As DataTable = New DataTable()
-    '            adapter.Fill(dt)
-    '            Return dt
-    '        End Using
-    '    End Using
-
-    '    ''Menamoilkan nomor urut pada datagrid view
-    '    Dim DgvFilter As New DgvFilterManager
-    '    DgvFilter.DataGridView = MetroGrid1
-    '    MetroGrid1.ColumnHeadersHeight = 25
-    'End Function
-
-
-    'Fungsi untuk Checkbox Select All pada DataGrid------------------------------------------------------------------
+    'Fungsi untuk Checkbox Select All pada DataGrid--------------------------------------------------------
     Private Sub HeaderCheckBox_Clicked(ByVal sender As Object, ByVal e As EventArgs) Handles CheckBox1.Click
         'Necessary to end the edit mode of the Cell.
         MetroGrid1.EndEdit()

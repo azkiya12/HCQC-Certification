@@ -1,8 +1,6 @@
 ﻿Imports System.Data.SqlClient
 Imports System.IO
 Imports System.Net
-Imports System.Net.Http
-Imports System.Text
 Imports System.Threading.Tasks
 
 Public Class DirectImportfromSAS
@@ -338,9 +336,9 @@ Public Class DirectImportfromSAS
         Dim webAddress As String
         Dim searchString As String = "Total|"
 
-        webAddress = "http://10.15.13.2/cgi-bin/rwcgi60.exe?bisicsv+report=/production/weekly_harvest_planning_csv.rdf+P_HARVEST_DATE_FROM=" &
-                      DateFrom.Value.ToString("dd-MM-yyyy") & "+P_HARVEST_DATE_UNTIL=" & DateTo.Value.ToString("dd-MM-yyyy") &
-                      "+P_CROP_NAME=+P_PARENTAREA=+P_AREA=+P_ITEM_CODE=+P_LOCATION=+P_STAFF=+P_USERNAME=trinur"
+        webAddress = $"http://10.15.13.2/cgi-bin/rwcgi60.exe?bisicsv+report=/production/weekly_harvest_planning_csv.rdf+
+                        P_HARVEST_DATE_FROM={DateFrom.Value:dd-MM-yyyy}+P_HARVEST_DATE_UNTIL={DateTo.Value:dd-MM-yyyy}+
+                        P_CROP_NAME=+P_PARENTAREA=+P_AREA=+P_ITEM_CODE=+P_LOCATION=+P_STAFF=+P_USERNAME=trinur"
         Try
             ' Memanggil fungsi GetWebContentAsync dan menangkap hasil tuple
             Dim result As (String, String) = Await GetWebContentAsync(webAddress, searchString, True)

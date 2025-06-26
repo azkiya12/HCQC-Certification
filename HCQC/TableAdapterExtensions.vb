@@ -3,6 +3,8 @@ Imports System.Runtime.CompilerServices
 Imports WindowsApplication1.HCQC_NewDatasetTableAdapters
 
 Module TableAdapterExtensions
+    'Modul ini di gunakan untuk interaksi dengan database
+    'secara Asyncronus sehingga tidak menimbulkan loading bufering
 
     <Extension()>
     Public Function FillAsync(adapter As report_global_viewTableAdapter, dataset As HCQC_NewDataset) As Task

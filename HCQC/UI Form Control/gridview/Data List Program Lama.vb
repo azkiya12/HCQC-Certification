@@ -54,18 +54,6 @@
         Data_List_Refraction.Show()
     End Sub
 
-    Private Sub MetroLink1_Click(sender As Object, e As EventArgs) Handles MetroLink1.Click
-        HC_Sample_Test_Control.Show()
-    End Sub
-
-    Private Sub MetroLink1_MouseEnter(sender As Object, e As EventArgs) Handles MetroLink1.MouseEnter
-        MetroLink1.BackColor = Color.FromArgb(70, 179, 226)
-    End Sub
-
-    Private Sub MetroLink1_MouseLeave(sender As Object, e As EventArgs) Handles MetroLink1.MouseLeave
-        MetroLink1.BackColor = Color.Transparent
-    End Sub
-
     Private Sub LinkDataListRafaction_MouseEnter(sender As Object, e As EventArgs) Handles LinkDataListRafaction.MouseEnter
         LinkDataListRafaction.BackColor = Color.FromArgb(70, 179, 226)
     End Sub
@@ -92,5 +80,9 @@
 
     Private Sub LinkRafactionDataReport_Click(sender As Object, e As EventArgs) Handles LinkRafactionDataReport.Click
         RafactionDataReport.Show()
+    End Sub
+
+    Private Sub Data_List_Program_Lama_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
     End Sub
 End Class

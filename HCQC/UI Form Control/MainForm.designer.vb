@@ -23,13 +23,13 @@ Partial Class MainForm
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Animation2 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainForm))
-        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.Panel1 = New MetroFramework.Controls.MetroPanel()
         Me.PnSlidebar = New System.Windows.Forms.Panel()
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.BunifuImageButton1 = New Bunifu.Framework.UI.BunifuImageButton()
-        Me.Containermenu2 = New containermenu()
+        Me.Containermenu2 = New WindowsApplication1.containermenu()
         Me.Panel2 = New MetroFramework.Controls.MetroPanel()
         Me.LinkReport = New System.Windows.Forms.LinkLabel()
         Me.BtnCategoryCrop = New System.Windows.Forms.LinkLabel()
@@ -39,7 +39,7 @@ Partial Class MainForm
         Me.BtnClose = New Bunifu.Framework.UI.BunifuImageButton()
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
-        Me.Containerusermenu1 = New containerusermenu()
+        Me.Containerusermenu1 = New WindowsApplication1.containerusermenu()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.LTitileControl = New System.Windows.Forms.Label()
         Me.DashboardPanel5 = New MetroFramework.Controls.MetroPanel()
@@ -102,13 +102,14 @@ Partial Class MainForm
         Me.BtnPrintLabel = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BtnQcConfirm = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.MetroPanel2 = New MetroFramework.Controls.MetroPanel()
-        Me.Sample_Receipt1 = New Sample_Receipt()
+        Me.Sample_Receipt1 = New WindowsApplication1.Sample_Receipt()
         Me.MetroPanel3 = New MetroFramework.Controls.MetroPanel()
         Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuElipse2 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuElipse3 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.BunifuElipse4 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
+        Me.MetroToolTip1 = New MetroFramework.Components.MetroToolTip()
         Me.Panel1.SuspendLayout()
         Me.PnSlidebar.SuspendLayout()
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -141,11 +142,18 @@ Partial Class MainForm
         Me.Panel1.Controls.Add(Me.Containermenu2)
         Me.BunifuTransition1.SetDecoration(Me.Panel1, BunifuAnimatorNS.DecorationType.None)
         Me.Panel1.Dock = System.Windows.Forms.DockStyle.Left
+        Me.Panel1.HorizontalScrollbarBarColor = True
+        Me.Panel1.HorizontalScrollbarHighlightOnWheel = False
+        Me.Panel1.HorizontalScrollbarSize = 10
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.MinimumSize = New System.Drawing.Size(38, 450)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(250, 514)
+        Me.Panel1.Size = New System.Drawing.Size(250, 675)
         Me.Panel1.TabIndex = 2
+        Me.Panel1.UseCustomBackColor = True
+        Me.Panel1.VerticalScrollbarBarColor = True
+        Me.Panel1.VerticalScrollbarHighlightOnWheel = False
+        Me.Panel1.VerticalScrollbarSize = 10
         '
         'PnSlidebar
         '
@@ -192,7 +200,7 @@ Partial Class MainForm
         Me.BunifuTransition1.SetDecoration(Me.Containermenu2, BunifuAnimatorNS.DecorationType.None)
         Me.Containermenu2.Location = New System.Drawing.Point(0, 40)
         Me.Containermenu2.Name = "Containermenu2"
-        Me.Containermenu2.Size = New System.Drawing.Size(250, 474)
+        Me.Containermenu2.Size = New System.Drawing.Size(250, 635)
         Me.Containermenu2.TabIndex = 6
         '
         'Panel2
@@ -211,7 +219,7 @@ Partial Class MainForm
         Me.Panel2.HorizontalScrollbarSize = 10
         Me.Panel2.Location = New System.Drawing.Point(250, 0)
         Me.Panel2.Name = "Panel2"
-        Me.Panel2.Size = New System.Drawing.Size(851, 40)
+        Me.Panel2.Size = New System.Drawing.Size(880, 40)
         Me.Panel2.TabIndex = 3
         Me.Panel2.UseCustomBackColor = True
         Me.Panel2.VerticalScrollbarBarColor = True
@@ -271,7 +279,7 @@ Partial Class MainForm
         Me.LinkHome.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BunifuTransition1.SetDecoration(Me.LinkHome, BunifuAnimatorNS.DecorationType.None)
         Me.LinkHome.DisabledLinkColor = System.Drawing.Color.Transparent
-        Me.LinkHome.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.LinkHome.Font = New System.Drawing.Font("Microsoft Sans Serif", 10.0!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         Me.LinkHome.ForeColor = System.Drawing.Color.Black
         Me.LinkHome.LinkArea = New System.Windows.Forms.LinkArea(0, 30)
         Me.LinkHome.LinkBehavior = System.Windows.Forms.LinkBehavior.HoverUnderline
@@ -301,7 +309,7 @@ Partial Class MainForm
         Me.LinkLabel1.LinkArea = New System.Windows.Forms.LinkArea(0, 30)
         Me.LinkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline
         Me.LinkLabel1.LinkColor = System.Drawing.Color.White
-        Me.LinkLabel1.Location = New System.Drawing.Point(627, 0)
+        Me.LinkLabel1.Location = New System.Drawing.Point(656, 0)
         Me.LinkLabel1.Margin = New System.Windows.Forms.Padding(0)
         Me.LinkLabel1.Name = "LinkLabel1"
         Me.LinkLabel1.Size = New System.Drawing.Size(134, 40)
@@ -319,7 +327,7 @@ Partial Class MainForm
         Me.BunifuTransition1.SetDecoration(Me.BtnFullScreen, BunifuAnimatorNS.DecorationType.None)
         Me.BtnFullScreen.Image = CType(resources.GetObject("BtnFullScreen.Image"), System.Drawing.Image)
         Me.BtnFullScreen.ImageActive = Nothing
-        Me.BtnFullScreen.Location = New System.Drawing.Point(807, 0)
+        Me.BtnFullScreen.Location = New System.Drawing.Point(836, 0)
         Me.BtnFullScreen.Margin = New System.Windows.Forms.Padding(0)
         Me.BtnFullScreen.Name = "BtnFullScreen"
         Me.BtnFullScreen.Size = New System.Drawing.Size(22, 22)
@@ -336,7 +344,7 @@ Partial Class MainForm
         Me.BunifuTransition1.SetDecoration(Me.BtnClose, BunifuAnimatorNS.DecorationType.None)
         Me.BtnClose.Image = CType(resources.GetObject("BtnClose.Image"), System.Drawing.Image)
         Me.BtnClose.ImageActive = Nothing
-        Me.BtnClose.Location = New System.Drawing.Point(829, 0)
+        Me.BtnClose.Location = New System.Drawing.Point(858, 0)
         Me.BtnClose.Margin = New System.Windows.Forms.Padding(0)
         Me.BtnClose.Name = "BtnClose"
         Me.BtnClose.Size = New System.Drawing.Size(22, 22)
@@ -373,7 +381,7 @@ Partial Class MainForm
         Me.MetroPanel1.HorizontalScrollbarSize = 10
         Me.MetroPanel1.Location = New System.Drawing.Point(250, 40)
         Me.MetroPanel1.Name = "MetroPanel1"
-        Me.MetroPanel1.Size = New System.Drawing.Size(851, 474)
+        Me.MetroPanel1.Size = New System.Drawing.Size(880, 635)
         Me.MetroPanel1.TabIndex = 4
         Me.MetroPanel1.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroPanel1.UseCustomBackColor = True
@@ -388,7 +396,7 @@ Partial Class MainForm
         Me.Containerusermenu1.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Containerusermenu1.BackColor = System.Drawing.Color.Transparent
         Me.BunifuTransition1.SetDecoration(Me.Containerusermenu1, BunifuAnimatorNS.DecorationType.Custom)
-        Me.Containerusermenu1.Location = New System.Drawing.Point(627, 0)
+        Me.Containerusermenu1.Location = New System.Drawing.Point(656, 0)
         Me.Containerusermenu1.Name = "Containerusermenu1"
         Me.Containerusermenu1.Size = New System.Drawing.Size(134, 82)
         Me.Containerusermenu1.TabIndex = 2
@@ -446,7 +454,7 @@ Partial Class MainForm
         Me.DashboardPanel5.HorizontalScrollbarSize = 8
         Me.DashboardPanel5.Location = New System.Drawing.Point(13, 41)
         Me.DashboardPanel5.Name = "DashboardPanel5"
-        Me.DashboardPanel5.Size = New System.Drawing.Size(838, 421)
+        Me.DashboardPanel5.Size = New System.Drawing.Size(867, 582)
         Me.DashboardPanel5.TabIndex = 9
         Me.DashboardPanel5.UseCustomBackColor = True
         Me.DashboardPanel5.UseCustomForeColor = True
@@ -566,6 +574,7 @@ Partial Class MainForm
         Me.LabelValueGerOut.TabIndex = 2
         Me.LabelValueGerOut.Text = "120"
         Me.LabelValueGerOut.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MetroToolTip1.SetToolTip(Me.LabelValueGerOut, "Summary Analys")
         '
         'BunifuCards9
         '
@@ -597,6 +606,7 @@ Partial Class MainForm
         Me.LabelC_ger.Size = New System.Drawing.Size(39, 20)
         Me.LabelC_ger.TabIndex = 6
         Me.LabelC_ger.Text = "120"
+        Me.MetroToolTip1.SetToolTip(Me.LabelC_ger, "Summary Requst Job")
         '
         'LabelTitleGerTest
         '
@@ -635,6 +645,7 @@ Partial Class MainForm
         Me.LabelValueGerTest.TabIndex = 2
         Me.LabelValueGerTest.Text = "120"
         Me.LabelValueGerTest.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MetroToolTip1.SetToolTip(Me.LabelValueGerTest, "Summary Analys")
         '
         'BunifuCards8
         '
@@ -667,6 +678,7 @@ Partial Class MainForm
         Me.LabelC_Via.TabIndex = 5
         Me.LabelC_Via.Text = "120"
         Me.LabelC_Via.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MetroToolTip1.SetToolTip(Me.LabelC_Via, "Summary Requst Job")
         '
         'LabelTitleVia
         '
@@ -705,6 +717,7 @@ Partial Class MainForm
         Me.LabelValueVia.TabIndex = 2
         Me.LabelValueVia.Text = "120"
         Me.LabelValueVia.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MetroToolTip1.SetToolTip(Me.LabelValueVia, "Summary Analys")
         '
         'BunifuCards7
         '
@@ -737,6 +750,7 @@ Partial Class MainForm
         Me.LabelC_Raf.TabIndex = 4
         Me.LabelC_Raf.Text = "120"
         Me.LabelC_Raf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MetroToolTip1.SetToolTip(Me.LabelC_Raf, "Summary Requst Job")
         '
         'LabelTitleRaf
         '
@@ -775,6 +789,7 @@ Partial Class MainForm
         Me.LabelValueRaf.TabIndex = 2
         Me.LabelValueRaf.Text = "120"
         Me.LabelValueRaf.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MetroToolTip1.SetToolTip(Me.LabelValueRaf, "Summary Analys")
         '
         'BunifuCards6
         '
@@ -807,6 +822,7 @@ Partial Class MainForm
         Me.LabelC_Pur.TabIndex = 4
         Me.LabelC_Pur.Text = "120"
         Me.LabelC_Pur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MetroToolTip1.SetToolTip(Me.LabelC_Pur, "Summary Requst Job")
         '
         'LabelTitlePur
         '
@@ -845,6 +861,7 @@ Partial Class MainForm
         Me.LabelValuePur.TabIndex = 2
         Me.LabelValuePur.Text = "120"
         Me.LabelValuePur.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MetroToolTip1.SetToolTip(Me.LabelValuePur, "Summary Analys")
         '
         'BunifuCards5
         '
@@ -877,6 +894,7 @@ Partial Class MainForm
         Me.LabelC_moi.TabIndex = 3
         Me.LabelC_moi.Text = "120"
         Me.LabelC_moi.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MetroToolTip1.SetToolTip(Me.LabelC_moi, "Summary Requst Job")
         '
         'LabelTitleKa
         '
@@ -915,6 +933,7 @@ Partial Class MainForm
         Me.LabelValueKA.TabIndex = 2
         Me.LabelValueKA.Text = "120"
         Me.LabelValueKA.TextAlign = System.Drawing.ContentAlignment.MiddleCenter
+        Me.MetroToolTip1.SetToolTip(Me.LabelValueKA, "Summary Analys")
         '
         'LinkMonth
         '
@@ -1226,7 +1245,7 @@ Partial Class MainForm
         Me.MetroPanel4.HorizontalScrollbarSize = 8
         Me.MetroPanel4.Location = New System.Drawing.Point(13, 41)
         Me.MetroPanel4.Name = "MetroPanel4"
-        Me.MetroPanel4.Size = New System.Drawing.Size(838, 421)
+        Me.MetroPanel4.Size = New System.Drawing.Size(867, 582)
         Me.MetroPanel4.TabIndex = 6
         Me.MetroPanel4.UseCustomBackColor = True
         Me.MetroPanel4.VerticalScrollbar = True
@@ -1267,11 +1286,12 @@ Partial Class MainForm
         Me.BunifuTransition1.SetDecoration(Me.MetroPanel5, BunifuAnimatorNS.DecorationType.None)
         Me.MetroPanel5.Location = New System.Drawing.Point(3, 60)
         Me.MetroPanel5.Name = "MetroPanel5"
-        Me.MetroPanel5.Size = New System.Drawing.Size(835, 358)
+        Me.MetroPanel5.Size = New System.Drawing.Size(864, 519)
         Me.MetroPanel5.TabIndex = 11
         '
         'BtnPrintLabel
         '
+        Me.BtnPrintLabel.Active = False
         Me.BtnPrintLabel.Activecolor = System.Drawing.Color.FromArgb(CType(CType(42, Byte), Integer), CType(CType(168, Byte), Integer), CType(CType(222, Byte), Integer))
         Me.BtnPrintLabel.BackColor = System.Drawing.Color.Gray
         Me.BtnPrintLabel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -1308,6 +1328,7 @@ Partial Class MainForm
         '
         'BtnQcConfirm
         '
+        Me.BtnQcConfirm.Active = False
         Me.BtnQcConfirm.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.BtnQcConfirm.BackColor = System.Drawing.Color.Gray
         Me.BtnQcConfirm.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -1356,7 +1377,7 @@ Partial Class MainForm
         Me.MetroPanel2.HorizontalScrollbarSize = 8
         Me.MetroPanel2.Location = New System.Drawing.Point(13, 41)
         Me.MetroPanel2.Name = "MetroPanel2"
-        Me.MetroPanel2.Size = New System.Drawing.Size(838, 421)
+        Me.MetroPanel2.Size = New System.Drawing.Size(867, 582)
         Me.MetroPanel2.TabIndex = 5
         Me.MetroPanel2.UseCustomBackColor = True
         Me.MetroPanel2.VerticalScrollbar = True
@@ -1374,7 +1395,7 @@ Partial Class MainForm
         Me.BunifuTransition1.SetDecoration(Me.Sample_Receipt1, BunifuAnimatorNS.DecorationType.None)
         Me.Sample_Receipt1.Location = New System.Drawing.Point(6, 3)
         Me.Sample_Receipt1.Name = "Sample_Receipt1"
-        Me.Sample_Receipt1.Size = New System.Drawing.Size(826, 412)
+        Me.Sample_Receipt1.Size = New System.Drawing.Size(855, 573)
         Me.Sample_Receipt1.TabIndex = 2
         Me.Sample_Receipt1.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.Sample_Receipt1.UseCustomBackColor = True
@@ -1395,7 +1416,7 @@ Partial Class MainForm
         Me.MetroPanel3.HorizontalScrollbarSize = 8
         Me.MetroPanel3.Location = New System.Drawing.Point(13, 41)
         Me.MetroPanel3.Name = "MetroPanel3"
-        Me.MetroPanel3.Size = New System.Drawing.Size(838, 421)
+        Me.MetroPanel3.Size = New System.Drawing.Size(867, 582)
         Me.MetroPanel3.TabIndex = 6
         Me.MetroPanel3.UseCustomBackColor = True
         Me.MetroPanel3.VerticalScrollbar = True
@@ -1407,22 +1428,22 @@ Partial Class MainForm
         '
         Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide
         Me.BunifuTransition1.Cursor = Nothing
-        Animation2.AnimateOnlyDifferences = True
-        Animation2.BlindCoeff = CType(resources.GetObject("Animation2.BlindCoeff"), System.Drawing.PointF)
-        Animation2.LeafCoeff = 0!
-        Animation2.MaxTime = 1.0!
-        Animation2.MinTime = 0!
-        Animation2.MosaicCoeff = CType(resources.GetObject("Animation2.MosaicCoeff"), System.Drawing.PointF)
-        Animation2.MosaicShift = CType(resources.GetObject("Animation2.MosaicShift"), System.Drawing.PointF)
-        Animation2.MosaicSize = 0
-        Animation2.Padding = New System.Windows.Forms.Padding(0)
-        Animation2.RotateCoeff = 0!
-        Animation2.RotateLimit = 0!
-        Animation2.ScaleCoeff = CType(resources.GetObject("Animation2.ScaleCoeff"), System.Drawing.PointF)
-        Animation2.SlideCoeff = CType(resources.GetObject("Animation2.SlideCoeff"), System.Drawing.PointF)
-        Animation2.TimeCoeff = 0!
-        Animation2.TransparencyCoeff = 0!
-        Me.BunifuTransition1.DefaultAnimation = Animation2
+        Animation1.AnimateOnlyDifferences = True
+        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
+        Animation1.LeafCoeff = 0!
+        Animation1.MaxTime = 1.0!
+        Animation1.MinTime = 0!
+        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
+        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
+        Animation1.MosaicSize = 0
+        Animation1.Padding = New System.Windows.Forms.Padding(0)
+        Animation1.RotateCoeff = 0!
+        Animation1.RotateLimit = 0!
+        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
+        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
+        Animation1.TimeCoeff = 0!
+        Animation1.TransparencyCoeff = 0!
+        Me.BunifuTransition1.DefaultAnimation = Animation1
         '
         'BunifuElipse1
         '
@@ -1444,12 +1465,18 @@ Partial Class MainForm
         Me.BunifuElipse4.ElipseRadius = 14
         Me.BunifuElipse4.TargetControl = Me.PanelNotifVerification
         '
+        'MetroToolTip1
+        '
+        Me.MetroToolTip1.Style = MetroFramework.MetroColorStyle.Blue
+        Me.MetroToolTip1.StyleManager = Nothing
+        Me.MetroToolTip1.Theme = MetroFramework.MetroThemeStyle.Light
+        '
         'MainForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(40, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(46, Byte), Integer))
-        Me.ClientSize = New System.Drawing.Size(1101, 514)
+        Me.ClientSize = New System.Drawing.Size(1130, 675)
         Me.ControlBox = False
         Me.Controls.Add(Me.MetroPanel1)
         Me.Controls.Add(Me.Panel2)
@@ -1463,10 +1490,12 @@ Partial Class MainForm
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Dashboard"
         Me.Panel1.ResumeLayout(False)
+
         Me.PnSlidebar.ResumeLayout(False)
         CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.Panel2.ResumeLayout(False)
+
         CType(Me.BtnFullScreen, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnClose, System.ComponentModel.ISupportInitialize).EndInit()
         Me.MetroPanel1.ResumeLayout(False)
@@ -1501,7 +1530,7 @@ Partial Class MainForm
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents Panel1 As Panel
+    Friend WithEvents Panel1 As MetroPanel
     Friend WithEvents BunifuDragControl1 As Bunifu.Framework.UI.BunifuDragControl
     Friend WithEvents PnSlidebar As Panel
     Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
@@ -1586,4 +1615,5 @@ Partial Class MainForm
     Friend WithEvents LabelC_Pur As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents LabelC_moi As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents Panel2 As MetroPanel
+    Friend WithEvents MetroToolTip1 As Components.MetroToolTip
 End Class

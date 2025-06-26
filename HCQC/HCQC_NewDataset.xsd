@@ -2,10 +2,11 @@
 <xs:schema id="HCQC_NewDataset" targetNamespace="http://tempuri.org/HCQC_NewDataset.xsd" xmlns:mstns="http://tempuri.org/HCQC_NewDataset.xsd" xmlns="http://tempuri.org/HCQC_NewDataset.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
   <xs:annotation>
     <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
-      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="2" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
         <Connections>
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HCQC_serverConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Public" Name="HCQC_serverConnectionString (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsApplication1.My.MySettings.GlobalReference.Default.HCQC_serverConnectionString" Provider="System.Data.SqlClient" />
           <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HCQC_serverConnectionString1" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Public" Name="HCQC_serverConnectionString1 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsApplication1.My.MySettings.GlobalReference.Default.HCQC_serverConnectionString1" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="MySettings" AppSettingsPropertyName="HCQC_serverConnectionString2" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="HCQC_serverConnectionString2 (MySettings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.WindowsApplication1.My.MySettings.GlobalReference.Default.HCQC_serverConnectionString2" Provider="Microsoft.Data.SqlClient" />
         </Connections>
         <Tables>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="moistureTableAdapter" GeneratorDataComponentClassName="moistureTableAdapter" Name="moisture" UserDataComponentName="moistureTableAdapter">
@@ -641,15 +642,13 @@ where labnum Like @str or labnum LIKE @str2</CommandText>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.spl_request" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <DeleteCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>DELETE FROM [spl_request] WHERE (([id] = @Original_id) AND ((@IsNull_id_login = 1 AND [id_login] IS NULL) OR ([id_login] = @Original_id_login)) AND ((@IsNull_id_hvsprod = 1 AND [id_hvsprod] IS NULL) OR ([id_hvsprod] = @Original_id_hvsprod)) AND ((@IsNull_class = 1 AND [class] IS NULL) OR ([class] = @Original_class)) AND ((@IsNull_variety = 1 AND [variety] IS NULL) OR ([variety] = @Original_variety)) AND ((@IsNull_farmer = 1 AND [farmer] IS NULL) OR ([farmer] = @Original_farmer)) AND ((@IsNull_location = 1 AND [location] IS NULL) OR ([location] = @Original_location)) AND ((@IsNull_harvest = 1 AND [harvest] IS NULL) OR ([harvest] = @Original_harvest)) AND ((@IsNull_croptype = 1 AND [croptype] IS NULL) OR ([croptype] = @Original_croptype)) AND ((@IsNull_nomnl = 1 AND [nomnl] IS NULL) OR ([nomnl] = @Original_nomnl)) AND ((@IsNull_nojob = 1 AND [nojob] IS NULL) OR ([nojob] = @Original_nojob)) AND ((@IsNull_weight = 1 AND [weight] IS NULL) OR ([weight] = @Original_weight)) AND ((@IsNull_scope = 1 AND [scope] IS NULL) OR ([scope] = @Original_scope)) AND ((@IsNull_bag = 1 AND [bag] IS NULL) OR ([bag] = @Original_bag)) AND ((@IsNull_test_sampling = 1 AND [test_sampling] IS NULL) OR ([test_sampling] = @Original_test_sampling)) AND ((@IsNull_test_moi = 1 AND [test_moi] IS NULL) OR ([test_moi] = @Original_test_moi)) AND ((@IsNull_test_pur = 1 AND [test_pur] IS NULL) OR ([test_pur] = @Original_test_pur)) AND ((@IsNull_test_ger = 1 AND [test_ger] IS NULL) OR ([test_ger] = @Original_test_ger)) AND ((@IsNull_test_via = 1 AND [test_via] IS NULL) OR ([test_via] = @Original_test_via)) AND ((@IsNull_test_raf = 1 AND [test_raf] IS NULL) OR ([test_raf] = @Original_test_raf)) AND ((@IsNull_remark = 1 AND [remark] IS NULL) OR ([remark] = @Original_remark)) AND ((@IsNull_repro = 1 AND [repro] IS NULL) OR ([repro] = @Original_repro)) AND ((@IsNull_input_by = 1 AND [input_by] IS NULL) OR ([input_by] = @Original_input_by)) AND ((@IsNull_input_date = 1 AND [input_date] IS NULL) OR ([input_date] = @Original_input_date)) AND ((@IsNull_update_date = 1 AND [update_date] IS NULL) OR ([update_date] = @Original_update_date)))</CommandText>
+                    <CommandText>DELETE FROM [spl_request] WHERE (([id] = @Original_id) AND ((@IsNull_id_login = 1 AND [id_login] IS NULL) OR ([id_login] = @Original_id_login)) AND ((@IsNull_id_hvsprod = 1 AND [id_hvsprod] IS NULL) OR ([id_hvsprod] = @Original_id_hvsprod)) AND ((@IsNull_variety = 1 AND [variety] IS NULL) OR ([variety] = @Original_variety)) AND ((@IsNull_farmer = 1 AND [farmer] IS NULL) OR ([farmer] = @Original_farmer)) AND ((@IsNull_location = 1 AND [location] IS NULL) OR ([location] = @Original_location)) AND ((@IsNull_harvest = 1 AND [harvest] IS NULL) OR ([harvest] = @Original_harvest)) AND ((@IsNull_nomnl = 1 AND [nomnl] IS NULL) OR ([nomnl] = @Original_nomnl)) AND ((@IsNull_nojob = 1 AND [nojob] IS NULL) OR ([nojob] = @Original_nojob)) AND ((@IsNull_insplot = 1 AND [insplot] IS NULL) OR ([insplot] = @Original_insplot)) AND ((@IsNull_weight = 1 AND [weight] IS NULL) OR ([weight] = @Original_weight)) AND ((@IsNull_scope = 1 AND [scope] IS NULL) OR ([scope] = @Original_scope)) AND ((@IsNull_bag = 1 AND [bag] IS NULL) OR ([bag] = @Original_bag)) AND ((@IsNull_test_sampling = 1 AND [test_sampling] IS NULL) OR ([test_sampling] = @Original_test_sampling)) AND ((@IsNull_test_moi = 1 AND [test_moi] IS NULL) OR ([test_moi] = @Original_test_moi)) AND ((@IsNull_test_pur = 1 AND [test_pur] IS NULL) OR ([test_pur] = @Original_test_pur)) AND ((@IsNull_test_ger = 1 AND [test_ger] IS NULL) OR ([test_ger] = @Original_test_ger)) AND ((@IsNull_test_via = 1 AND [test_via] IS NULL) OR ([test_via] = @Original_test_via)) AND ((@IsNull_test_raf = 1 AND [test_raf] IS NULL) OR ([test_raf] = @Original_test_raf)) AND ((@IsNull_test_ontest = 1 AND [test_ontest] IS NULL) OR ([test_ontest] = @Original_test_ontest)) AND ((@IsNull_remark = 1 AND [remark] IS NULL) OR ([remark] = @Original_remark)) AND ((@IsNull_loc_sample = 1 AND [loc_sample] IS NULL) OR ([loc_sample] = @Original_loc_sample)) AND ((@IsNull_input_by = 1 AND [input_by] IS NULL) OR ([input_by] = @Original_input_by)) AND ((@IsNull_input_date = 1 AND [input_date] IS NULL) OR ([input_date] = @Original_input_date)) AND ((@IsNull_update_user = 1 AND [update_user] IS NULL) OR ([update_user] = @Original_update_user)) AND ((@IsNull_update_by = 1 AND [update_by] IS NULL) OR ([update_by] = @Original_update_by)) AND ((@IsNull_update_date = 1 AND [update_date] IS NULL) OR ([update_date] = @Original_update_date)) AND ([visible] = @Original_visible) AND ([visible_lv2] = @Original_visible_lv2) AND ([kesehatan_benih] = @Original_kesehatan_benih) AND ((@IsNull_unit = 1 AND [unit] IS NULL) OR ([unit] = @Original_unit)))</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_id_login" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_login" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_login" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_login" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_id_hvsprod" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_hvsprod" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_hvsprod" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_hvsprod" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_class" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="class" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_class" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="class" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_variety" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="variety" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_variety" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="variety" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_farmer" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="farmer" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -658,12 +657,12 @@ where labnum Like @str or labnum LIKE @str2</CommandText>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_location" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="location" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_harvest" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="harvest" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_harvest" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="harvest" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_croptype" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="croptype" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_croptype" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="croptype" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nomnl" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nomnl" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_nomnl" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nomnl" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nojob" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nojob" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_nojob" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nojob" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_insplot" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="insplot" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_insplot" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="insplot" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_weight" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="weight" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_weight" Precision="9" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="weight" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_scope" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="scope" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -682,34 +681,44 @@ where labnum Like @str or labnum LIKE @str2</CommandText>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_test_via" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="test_via" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_test_raf" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="test_raf" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_test_raf" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="test_raf" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_test_ontest" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="test_ontest" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_test_ontest" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="test_ontest" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_remark" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="remark" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_remark" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="remark" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_repro" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="repro" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_repro" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="repro" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_loc_sample" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="loc_sample" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_loc_sample" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="loc_sample" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_input_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="input_by" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_input_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="input_by" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_input_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="input_date" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_input_date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="input_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_update_user" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="update_user" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_update_user" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="update_user" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_update_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="update_by" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_update_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="update_by" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_update_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="update_date" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_update_date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="update_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_visible" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="visible" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_visible_lv2" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="visible_lv2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_kesehatan_benih" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="kesehatan_benih" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_unit" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="unit" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_unit" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="unit" SourceColumnNullMapping="false" SourceVersion="Original" />
                     </Parameters>
                   </DbCommand>
                 </DeleteCommand>
                 <InsertCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>INSERT INTO [spl_request] ([id_login], [id_hvsprod], [class], [variety], [farmer], [location], [harvest], [croptype], [nomnl], [nojob], [weight], [scope], [bag], [test_sampling], [test_moi], [test_pur], [test_ger], [test_via], [test_raf], [remark], [repro], [input_by], [input_date], [update_date]) VALUES (@id_login, @id_hvsprod, @class, @variety, @farmer, @location, @harvest, @croptype, @nomnl, @nojob, @weight, @scope, @bag, @test_sampling, @test_moi, @test_pur, @test_ger, @test_via, @test_raf, @remark, @repro, @input_by, @input_date, @update_date);
-SELECT id, id_login, id_hvsprod, class, variety, farmer, location, harvest, croptype, nomnl, nojob, weight, scope, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, remark, repro, input_by, input_date, update_date FROM spl_request WHERE (id = SCOPE_IDENTITY())</CommandText>
+                    <CommandText>INSERT INTO [spl_request] ([id_login], [id_hvsprod], [variety], [farmer], [location], [harvest], [nomnl], [nojob], [insplot], [weight], [scope], [bag], [test_sampling], [test_moi], [test_pur], [test_ger], [test_via], [test_raf], [test_ontest], [remark], [loc_sample], [input_by], [input_date], [update_user], [update_by], [update_date], [visible], [visible_lv2], [kesehatan_benih], [unit]) VALUES (@id_login, @id_hvsprod, @variety, @farmer, @location, @harvest, @nomnl, @nojob, @insplot, @weight, @scope, @bag, @test_sampling, @test_moi, @test_pur, @test_ger, @test_via, @test_raf, @test_ontest, @remark, @loc_sample, @input_by, @input_date, @update_user, @update_by, @update_date, @visible, @visible_lv2, @kesehatan_benih, @unit);
+SELECT id, id_login, id_hvsprod, variety, farmer, location, harvest, nomnl, nojob, insplot, weight, scope, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, test_ontest, remark, loc_sample, input_by, input_date, update_user, update_by, update_date, visible, visible_lv2, kesehatan_benih, unit FROM spl_request WHERE (id = SCOPE_IDENTITY())</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id_login" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_login" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id_hvsprod" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_hvsprod" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@class" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="class" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@variety" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="variety" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@farmer" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="farmer" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@location" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="location" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@harvest" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="harvest" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@croptype" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="croptype" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@nomnl" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nomnl" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@nojob" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nojob" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@insplot" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="insplot" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@weight" Precision="9" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="weight" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@scope" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="scope" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@bag" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="bag" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -719,36 +728,43 @@ SELECT id, id_login, id_hvsprod, class, variety, farmer, location, harvest, crop
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@test_ger" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="test_ger" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@test_via" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="test_via" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@test_raf" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="test_raf" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@test_ontest" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="test_ontest" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@remark" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="remark" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@repro" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="repro" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@loc_sample" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="loc_sample" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@input_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="input_by" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@input_date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="input_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@update_user" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="update_user" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@update_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="update_by" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@update_date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="update_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@visible" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="visible" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@visible_lv2" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="visible_lv2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@kesehatan_benih" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="kesehatan_benih" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@unit" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="unit" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </InsertCommand>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        spl_request.*
+                    <CommandText>SELECT        id, id_login, id_hvsprod, variety, farmer, location, harvest, nomnl, nojob, insplot, weight, scope, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, test_ontest, remark, loc_sample, input_by, input_date, 
+                         update_user, update_by, update_date, visible, visible_lv2, kesehatan_benih, unit
 FROM            spl_request</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
                 <UpdateCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>UPDATE [spl_request] SET [id_login] = @id_login, [id_hvsprod] = @id_hvsprod, [class] = @class, [variety] = @variety, [farmer] = @farmer, [location] = @location, [harvest] = @harvest, [croptype] = @croptype, [nomnl] = @nomnl, [nojob] = @nojob, [weight] = @weight, [scope] = @scope, [bag] = @bag, [test_sampling] = @test_sampling, [test_moi] = @test_moi, [test_pur] = @test_pur, [test_ger] = @test_ger, [test_via] = @test_via, [test_raf] = @test_raf, [remark] = @remark, [repro] = @repro, [input_by] = @input_by, [input_date] = @input_date, [update_date] = @update_date WHERE (([id] = @Original_id) AND ((@IsNull_id_login = 1 AND [id_login] IS NULL) OR ([id_login] = @Original_id_login)) AND ((@IsNull_id_hvsprod = 1 AND [id_hvsprod] IS NULL) OR ([id_hvsprod] = @Original_id_hvsprod)) AND ((@IsNull_class = 1 AND [class] IS NULL) OR ([class] = @Original_class)) AND ((@IsNull_variety = 1 AND [variety] IS NULL) OR ([variety] = @Original_variety)) AND ((@IsNull_farmer = 1 AND [farmer] IS NULL) OR ([farmer] = @Original_farmer)) AND ((@IsNull_location = 1 AND [location] IS NULL) OR ([location] = @Original_location)) AND ((@IsNull_harvest = 1 AND [harvest] IS NULL) OR ([harvest] = @Original_harvest)) AND ((@IsNull_croptype = 1 AND [croptype] IS NULL) OR ([croptype] = @Original_croptype)) AND ((@IsNull_nomnl = 1 AND [nomnl] IS NULL) OR ([nomnl] = @Original_nomnl)) AND ((@IsNull_nojob = 1 AND [nojob] IS NULL) OR ([nojob] = @Original_nojob)) AND ((@IsNull_weight = 1 AND [weight] IS NULL) OR ([weight] = @Original_weight)) AND ((@IsNull_scope = 1 AND [scope] IS NULL) OR ([scope] = @Original_scope)) AND ((@IsNull_bag = 1 AND [bag] IS NULL) OR ([bag] = @Original_bag)) AND ((@IsNull_test_sampling = 1 AND [test_sampling] IS NULL) OR ([test_sampling] = @Original_test_sampling)) AND ((@IsNull_test_moi = 1 AND [test_moi] IS NULL) OR ([test_moi] = @Original_test_moi)) AND ((@IsNull_test_pur = 1 AND [test_pur] IS NULL) OR ([test_pur] = @Original_test_pur)) AND ((@IsNull_test_ger = 1 AND [test_ger] IS NULL) OR ([test_ger] = @Original_test_ger)) AND ((@IsNull_test_via = 1 AND [test_via] IS NULL) OR ([test_via] = @Original_test_via)) AND ((@IsNull_test_raf = 1 AND [test_raf] IS NULL) OR ([test_raf] = @Original_test_raf)) AND ((@IsNull_remark = 1 AND [remark] IS NULL) OR ([remark] = @Original_remark)) AND ((@IsNull_repro = 1 AND [repro] IS NULL) OR ([repro] = @Original_repro)) AND ((@IsNull_input_by = 1 AND [input_by] IS NULL) OR ([input_by] = @Original_input_by)) AND ((@IsNull_input_date = 1 AND [input_date] IS NULL) OR ([input_date] = @Original_input_date)) AND ((@IsNull_update_date = 1 AND [update_date] IS NULL) OR ([update_date] = @Original_update_date)));
-SELECT id, id_login, id_hvsprod, class, variety, farmer, location, harvest, croptype, nomnl, nojob, weight, scope, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, remark, repro, input_by, input_date, update_date FROM spl_request WHERE (id = @id)</CommandText>
+                    <CommandText>UPDATE [spl_request] SET [id_login] = @id_login, [id_hvsprod] = @id_hvsprod, [variety] = @variety, [farmer] = @farmer, [location] = @location, [harvest] = @harvest, [nomnl] = @nomnl, [nojob] = @nojob, [insplot] = @insplot, [weight] = @weight, [scope] = @scope, [bag] = @bag, [test_sampling] = @test_sampling, [test_moi] = @test_moi, [test_pur] = @test_pur, [test_ger] = @test_ger, [test_via] = @test_via, [test_raf] = @test_raf, [test_ontest] = @test_ontest, [remark] = @remark, [loc_sample] = @loc_sample, [input_by] = @input_by, [input_date] = @input_date, [update_user] = @update_user, [update_by] = @update_by, [update_date] = @update_date, [visible] = @visible, [visible_lv2] = @visible_lv2, [kesehatan_benih] = @kesehatan_benih, [unit] = @unit WHERE (([id] = @Original_id) AND ((@IsNull_id_login = 1 AND [id_login] IS NULL) OR ([id_login] = @Original_id_login)) AND ((@IsNull_id_hvsprod = 1 AND [id_hvsprod] IS NULL) OR ([id_hvsprod] = @Original_id_hvsprod)) AND ((@IsNull_variety = 1 AND [variety] IS NULL) OR ([variety] = @Original_variety)) AND ((@IsNull_farmer = 1 AND [farmer] IS NULL) OR ([farmer] = @Original_farmer)) AND ((@IsNull_location = 1 AND [location] IS NULL) OR ([location] = @Original_location)) AND ((@IsNull_harvest = 1 AND [harvest] IS NULL) OR ([harvest] = @Original_harvest)) AND ((@IsNull_nomnl = 1 AND [nomnl] IS NULL) OR ([nomnl] = @Original_nomnl)) AND ((@IsNull_nojob = 1 AND [nojob] IS NULL) OR ([nojob] = @Original_nojob)) AND ((@IsNull_insplot = 1 AND [insplot] IS NULL) OR ([insplot] = @Original_insplot)) AND ((@IsNull_weight = 1 AND [weight] IS NULL) OR ([weight] = @Original_weight)) AND ((@IsNull_scope = 1 AND [scope] IS NULL) OR ([scope] = @Original_scope)) AND ((@IsNull_bag = 1 AND [bag] IS NULL) OR ([bag] = @Original_bag)) AND ((@IsNull_test_sampling = 1 AND [test_sampling] IS NULL) OR ([test_sampling] = @Original_test_sampling)) AND ((@IsNull_test_moi = 1 AND [test_moi] IS NULL) OR ([test_moi] = @Original_test_moi)) AND ((@IsNull_test_pur = 1 AND [test_pur] IS NULL) OR ([test_pur] = @Original_test_pur)) AND ((@IsNull_test_ger = 1 AND [test_ger] IS NULL) OR ([test_ger] = @Original_test_ger)) AND ((@IsNull_test_via = 1 AND [test_via] IS NULL) OR ([test_via] = @Original_test_via)) AND ((@IsNull_test_raf = 1 AND [test_raf] IS NULL) OR ([test_raf] = @Original_test_raf)) AND ((@IsNull_test_ontest = 1 AND [test_ontest] IS NULL) OR ([test_ontest] = @Original_test_ontest)) AND ((@IsNull_remark = 1 AND [remark] IS NULL) OR ([remark] = @Original_remark)) AND ((@IsNull_loc_sample = 1 AND [loc_sample] IS NULL) OR ([loc_sample] = @Original_loc_sample)) AND ((@IsNull_input_by = 1 AND [input_by] IS NULL) OR ([input_by] = @Original_input_by)) AND ((@IsNull_input_date = 1 AND [input_date] IS NULL) OR ([input_date] = @Original_input_date)) AND ((@IsNull_update_user = 1 AND [update_user] IS NULL) OR ([update_user] = @Original_update_user)) AND ((@IsNull_update_by = 1 AND [update_by] IS NULL) OR ([update_by] = @Original_update_by)) AND ((@IsNull_update_date = 1 AND [update_date] IS NULL) OR ([update_date] = @Original_update_date)) AND ([visible] = @Original_visible) AND ([visible_lv2] = @Original_visible_lv2) AND ([kesehatan_benih] = @Original_kesehatan_benih) AND ((@IsNull_unit = 1 AND [unit] IS NULL) OR ([unit] = @Original_unit)));
+SELECT id, id_login, id_hvsprod, variety, farmer, location, harvest, nomnl, nojob, insplot, weight, scope, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, test_ontest, remark, loc_sample, input_by, input_date, update_user, update_by, update_date, visible, visible_lv2, kesehatan_benih, unit FROM spl_request WHERE (id = @id)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id_login" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_login" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@id_hvsprod" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_hvsprod" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@class" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="class" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@variety" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="variety" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@farmer" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="farmer" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@location" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="location" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@harvest" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="harvest" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@croptype" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="croptype" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@nomnl" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nomnl" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@nojob" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nojob" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@insplot" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="insplot" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@weight" Precision="9" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="weight" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@scope" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="scope" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@bag" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="bag" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -758,18 +774,23 @@ SELECT id, id_login, id_hvsprod, class, variety, farmer, location, harvest, crop
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@test_ger" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="test_ger" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@test_via" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="test_via" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@test_raf" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="test_raf" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@test_ontest" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="test_ontest" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@remark" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="remark" SourceColumnNullMapping="false" SourceVersion="Current" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@repro" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="repro" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@loc_sample" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="loc_sample" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@input_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="input_by" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@input_date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="input_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@update_user" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="update_user" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@update_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="update_by" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@update_date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="update_date" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@visible" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="visible" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@visible_lv2" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="visible_lv2" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@kesehatan_benih" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="kesehatan_benih" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@unit" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="unit" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_id_login" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_login" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_login" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_login" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_id_hvsprod" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_hvsprod" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@Original_id_hvsprod" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="id_hvsprod" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_class" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="class" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_class" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="class" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_variety" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="variety" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_variety" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="variety" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_farmer" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="farmer" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -778,12 +799,12 @@ SELECT id, id_login, id_hvsprod, class, variety, farmer, location, harvest, crop
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_location" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="location" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_harvest" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="harvest" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_harvest" Precision="0" ProviderType="SmallDateTime" Scale="0" Size="0" SourceColumn="harvest" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_croptype" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="croptype" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_croptype" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="croptype" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nomnl" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nomnl" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_nomnl" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nomnl" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_nojob" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="nojob" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_nojob" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="nojob" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_insplot" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="insplot" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_insplot" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="insplot" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_weight" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="weight" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Decimal" Direction="Input" ParameterName="@Original_weight" Precision="9" ProviderType="Decimal" Scale="2" Size="0" SourceColumn="weight" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_scope" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="scope" SourceColumnNullMapping="true" SourceVersion="Original" />
@@ -802,16 +823,27 @@ SELECT id, id_login, id_hvsprod, class, variety, farmer, location, harvest, crop
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_test_via" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="test_via" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_test_raf" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="test_raf" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_test_raf" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="test_raf" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_test_ontest" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="test_ontest" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_test_ontest" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="test_ontest" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_remark" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="remark" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_remark" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="remark" SourceColumnNullMapping="false" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_repro" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="repro" SourceColumnNullMapping="true" SourceVersion="Original" />
-                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_repro" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="repro" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_loc_sample" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="loc_sample" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_loc_sample" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="loc_sample" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_input_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="input_by" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_input_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="input_by" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_input_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="input_date" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_input_date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="input_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_update_user" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="update_user" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_update_user" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="update_user" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_update_by" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="update_by" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_update_by" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="update_by" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_update_date" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="update_date" SourceColumnNullMapping="true" SourceVersion="Original" />
                       <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="DateTime" Direction="Input" ParameterName="@Original_update_date" Precision="0" ProviderType="DateTime" Scale="0" Size="0" SourceColumn="update_date" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_visible" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="visible" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_visible_lv2" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="visible_lv2" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="" DataSourceName="" DbType="Boolean" Direction="Input" ParameterName="@Original_kesehatan_benih" Precision="0" ProviderType="Bit" Scale="0" Size="0" SourceColumn="kesehatan_benih" SourceColumnNullMapping="false" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="Int32" Direction="Input" ParameterName="@IsNull_unit" Precision="0" ProviderType="Int" Scale="0" Size="0" SourceColumn="unit" SourceColumnNullMapping="true" SourceVersion="Original" />
+                      <Parameter AllowDbNull="true" AutogeneratedName="" DataSourceName="" DbType="AnsiString" Direction="Input" ParameterName="@Original_unit" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="unit" SourceColumnNullMapping="false" SourceVersion="Original" />
                       <Parameter AllowDbNull="false" AutogeneratedName="id" ColumnName="id" DataSourceName="HCQC_server.dbo.spl_request" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@id" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
@@ -844,19 +876,21 @@ SELECT id, id_login, id_hvsprod, class, variety, farmer, location, harvest, crop
               <Mapping SourceColumn="update_date" DataSetColumn="update_date" />
               <Mapping SourceColumn="id_hvsprod" DataSetColumn="id_hvsprod" />
               <Mapping SourceColumn="bag" DataSetColumn="bag" />
+              <Mapping SourceColumn="insplot" DataSetColumn="insplot" />
+              <Mapping SourceColumn="test_ontest" DataSetColumn="test_ontest" />
+              <Mapping SourceColumn="loc_sample" DataSetColumn="loc_sample" />
+              <Mapping SourceColumn="update_user" DataSetColumn="update_user" />
+              <Mapping SourceColumn="update_by" DataSetColumn="update_by" />
+              <Mapping SourceColumn="visible" DataSetColumn="visible" />
+              <Mapping SourceColumn="visible_lv2" DataSetColumn="visible_lv2" />
+              <Mapping SourceColumn="kesehatan_benih" DataSetColumn="kesehatan_benih" />
+              <Mapping SourceColumn="unit" DataSetColumn="unit" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.spl_request" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByParameter" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByParameter" GeneratorSourceName="FillByParameter" GetMethodModifier="Public" GetMethodName="GetDataByParameter" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByParameter" UserSourceName="FillByParameter">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        id, id_login, id_hvsprod, variety, farmer, location, harvest, nomnl, nojob, weight, scope, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, test_ontest, remark, input_by, input_date, update_user, update_by, 
-                         update_date
-FROM            spl_request
-WHERE id_hvsprod LIKE @value OR
-variety LIKE @value OR
-nomnl LIKE @value OR
-nojob LIKE @value OR
-scope LIKE @value</CommandText>
+                    <CommandText>SELECT bag, farmer, harvest, id, id_hvsprod, id_login, input_by, input_date, insplot, kesehatan_benih, loc_sample, location, nojob, nomnl, remark, scope, test_ger, test_moi, test_ontest, test_pur, test_raf, test_sampling, test_via, unit, update_by, update_date, update_user, variety, visible, visible_lv2, weight FROM spl_request WHERE (id_hvsprod LIKE @value) OR (variety LIKE @value) OR (nomnl LIKE @value) OR (nojob LIKE @value) OR (scope LIKE @value)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="value" ColumnName="id_hvsprod" DataSourceName="HCQC_server.dbo.spl_request" DataTypeServer="int" DbType="AnsiString" Direction="Input" ParameterName="@value" Precision="0" ProviderType="VarChar" Scale="0" Size="255" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -866,11 +900,7 @@ scope LIKE @value</CommandText>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.spl_request" DbObjectType="Table" FillMethodModifier="Public" FillMethodName="FillByThisMonth" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByThisMonth" GeneratorSourceName="FillByThisMonth" GetMethodModifier="Public" GetMethodName="GetDataByThisMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByThisMonth" UserSourceName="FillByThisMonth">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        id, id_login, id_hvsprod, variety, farmer, location, harvest, nomnl, nojob, weight, scope, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, test_ontest, remark, input_by, input_date, update_user, update_by, 
-                         update_date
-FROM            spl_request
-WHERE        (input_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (input_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE())))
-ORDER BY id DESC</CommandText>
+                    <CommandText>SELECT bag, farmer, harvest, id, id_hvsprod, id_login, input_by, input_date, insplot, kesehatan_benih, loc_sample, location, nojob, nomnl, remark, scope, test_ger, test_moi, test_ontest, test_pur, test_raf, test_sampling, test_via, unit, update_by, update_date, update_user, variety, visible, visible_lv2, weight FROM spl_request WHERE (input_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (input_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1671,11 +1701,12 @@ ORDER BY qc_confirm_view.id DESC</CommandText>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT        harvestprod.idcode, harvestprod.variety, category_crop.crop, harvestprod.cgrname, harvestprod.harvest, harvestprod.norencana, harvestprod.nokontrak, log_view_print_la1.Count, log_view_print_la1.LastPrint, 
-                         harvestprod.joblot, harvestprod.kec, harvestprod.area
+                    <CommandText>SELECT        TOP (500) harvestprod.idcode, harvestprod.variety, category_crop.crop, harvestprod.cgrname, harvestprod.harvest, harvestprod.norencana, harvestprod.nokontrak, log_view_print_la1.Count, log_view_print_la1.LastPrint, 
+                         harvestprod.joblot, harvestprod.kec, harvestprod.area, harvestprod.blokno, harvestprod.plant_qty, harvestprod.area_ha, harvestprod.dusun
 FROM            log_view_print_la1 RIGHT OUTER JOIN
                          harvestprod ON log_view_print_la1.idcode = harvestprod.idcode LEFT OUTER JOIN
-                         category_crop ON harvestprod.variety = category_crop.prodcode</CommandText>
+                         category_crop ON harvestprod.variety = category_crop.prodcode
+ORDER BY harvestprod.idcode DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1694,6 +1725,10 @@ FROM            log_view_print_la1 RIGHT OUTER JOIN
               <Mapping SourceColumn="joblot" DataSetColumn="joblot" />
               <Mapping SourceColumn="kec" DataSetColumn="kec" />
               <Mapping SourceColumn="area" DataSetColumn="area" />
+              <Mapping SourceColumn="blokno" DataSetColumn="blokno" />
+              <Mapping SourceColumn="plant_qty" DataSetColumn="plant_qty" />
+              <Mapping SourceColumn="area_ha" DataSetColumn="area_ha" />
+              <Mapping SourceColumn="dusun" DataSetColumn="dusun" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByNotPrint" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByNotPrint" GeneratorSourceName="FillByNotPrint" GetMethodModifier="Public" GetMethodName="GetDataByNotPrint" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByNotPrint" UserSourceName="FillByNotPrint">
@@ -1706,6 +1741,21 @@ FROM            log_view_print_la1 RIGHT OUTER JOIN
                          category_crop ON harvestprod.variety = category_crop.prodcode
 WHERE        (harvestprod.harvest &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 3))) AND (log_view_print_la1.Count IS NULL)</CommandText>
                     <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByParm" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByParm" GeneratorSourceName="FillByParm" GetMethodModifier="Public" GetMethodName="GetDataByParm" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByParm" UserSourceName="FillByParm">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        harvestprod.idcode, harvestprod.variety, category_crop.crop, harvestprod.cgrname, harvestprod.harvest, harvestprod.norencana, harvestprod.nokontrak, log_view_print_la1.Count, log_view_print_la1.LastPrint, 
+                         harvestprod.joblot, harvestprod.kec, harvestprod.area
+FROM            log_view_print_la1 RIGHT OUTER JOIN
+                         harvestprod ON log_view_print_la1.idcode = harvestprod.idcode LEFT OUTER JOIN
+                         category_crop ON harvestprod.variety = category_crop.prodcode
+WHERE (harvestprod.idcode LIKE @strvariable) OR (harvestprod.norencana LIKE @strvariable) OR (harvestprod.nokontrak LIKE @strvariable) </CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="false" AutogeneratedName="strvariable" ColumnName="idcode" DataSourceName="HCQC_server.dbo.harvestprod" DataTypeServer="int" DbType="AnsiString" Direction="Input" ParameterName="@strvariable" Precision="0" ProviderType="VarChar" Scale="0" Size="15" SourceColumn="idcode" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
@@ -1735,7 +1785,7 @@ ORDER BY harvestprod.idcode DESC</CommandText>
                     <CommandText>SELECT        id, id_hvsprod, labnum, variety, nomnl, nojob, location, farmer, harvest, weight, scope, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, test_ontest, input_date, Receipt, brt_in, sampler, sampling, Receipt_Input, 
                          Raf_Test, Raf_Result, Raf_Analys, Raf_input, Moi_Test, Moi_Analys, Moi_input, Ger_Test, Ger_TestLog, Ger_1st, Ger_2nd, Ger_Analys, Ger_input, Via_Test, Via_Analys, Via_input, Pur_Test, Pur_Analys, Pur_input, Quick_Raf, 
                          RetunQC, ReturnQC_Name, Ger_1st_Est, Ger_2nd_Est, StatusResult, days_est, status_confirm, date_est, rafaction_log, purity_log, moisture_log, viability_log, gerout_log, gerout_namelog, gertest_namelog, purity_namelog, 
-                         rafaction_namelog, moisture_namelog, viability_namelog, gervigor_namelog, gervigor_log, accept_date, kesehatan_benih
+                         rafaction_namelog, moisture_namelog, viability_namelog, gervigor_namelog, gervigor_log, accept_date, kesehatan_benih, remark
 FROM            report_status_pengujian</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -1810,12 +1860,13 @@ FROM            report_status_pengujian</CommandText>
               <Mapping SourceColumn="gervigor_log" DataSetColumn="gervigor_log" />
               <Mapping SourceColumn="accept_date" DataSetColumn="accept_date" />
               <Mapping SourceColumn="kesehatan_benih" DataSetColumn="kesehatan_benih" />
+              <Mapping SourceColumn="remark" DataSetColumn="remark" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.report_status_pengujian" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByDateFilter" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDateFilter" GeneratorSourceName="FillByDateFilter" GetMethodModifier="Public" GetMethodName="GetDataByDateFilter" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDateFilter" UserSourceName="FillByDateFilter">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Ger_1st, Ger_1st_Est, Ger_2nd, Ger_2nd_Est, Ger_Analys, Ger_Test, Ger_TestLog, Ger_input, Moi_Analys, Moi_Test, Moi_input, Pur_Analys, Pur_Test, Pur_input, Quick_Raf, Raf_Analys, Raf_Result, Raf_Test, Raf_input, Receipt, Receipt_Input, RetunQC, ReturnQC_Name, StatusResult, Via_Analys, Via_Test, Via_input, accept_date, brt_in, date_est, days_est, farmer, gerout_log, gerout_namelog, gertest_namelog, gervigor_log, gervigor_namelog, harvest, id, id_hvsprod, input_date, kesehatan_benih, labnum, location, moisture_log, moisture_namelog, nojob, nomnl, purity_log, purity_namelog, rafaction_log, rafaction_namelog, sampler, sampling, scope, status_confirm, test_ger, test_moi, test_ontest, test_pur, test_raf, test_sampling, test_via, variety, viability_log, viability_namelog, weight FROM report_status_pengujian WHERE (CAST(input_date AS date) BETWEEN @startdate AND @enddate) ORDER BY id DESC</CommandText>
+                    <CommandText>SELECT Ger_1st, Ger_1st_Est, Ger_2nd, Ger_2nd_Est, Ger_Analys, Ger_Test, Ger_TestLog, Ger_input, Moi_Analys, Moi_Test, Moi_input, Pur_Analys, Pur_Test, Pur_input, Quick_Raf, Raf_Analys, Raf_Result, Raf_Test, Raf_input, Receipt, Receipt_Input, RetunQC, ReturnQC_Name, StatusResult, Via_Analys, Via_Test, Via_input, accept_date, brt_in, date_est, days_est, farmer, gerout_log, gerout_namelog, gertest_namelog, gervigor_log, gervigor_namelog, harvest, id, id_hvsprod, input_date, kesehatan_benih, labnum, location, moisture_log, moisture_namelog, nojob, nomnl, purity_log, purity_namelog, rafaction_log, rafaction_namelog, remark, sampler, sampling, scope, status_confirm, test_ger, test_moi, test_ontest, test_pur, test_raf, test_sampling, test_via, variety, viability_log, viability_namelog, weight FROM report_status_pengujian WHERE (CAST(input_date AS date) BETWEEN @startdate AND @enddate) ORDER BY id DESC</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="false" AutogeneratedName="startdate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@startdate" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
                       <Parameter AllowDbNull="false" AutogeneratedName="enddate" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@enddate" Precision="0" Scale="0" Size="1024" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
@@ -1838,7 +1889,7 @@ FROM            report_status_pengujian</CommandText>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.report_status_pengujian" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByLastMonth" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByLastMonth" GeneratorSourceName="FillByLastMonth" GetMethodModifier="Public" GetMethodName="GetDataByLastMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByLastMonth" UserSourceName="FillByLastMonth">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Ger_1st, Ger_1st_Est, Ger_2nd, Ger_2nd_Est, Ger_Analys, Ger_Test, Ger_TestLog, Ger_input, Moi_Analys, Moi_Test, Moi_input, Pur_Analys, Pur_Test, Pur_input, Quick_Raf, Raf_Analys, Raf_Result, Raf_Test, Raf_input, Receipt, Receipt_Input, RetunQC, ReturnQC_Name, StatusResult, Via_Analys, Via_Test, Via_input, accept_date, brt_in, date_est, days_est, farmer, gerout_log, gerout_namelog, gertest_namelog, gervigor_log, gervigor_namelog, harvest, id, id_hvsprod, input_date, kesehatan_benih, labnum, location, moisture_log, moisture_namelog, nojob, nomnl, purity_log, purity_namelog, rafaction_log, rafaction_namelog, sampler, sampling, scope, status_confirm, test_ger, test_moi, test_ontest, test_pur, test_raf, test_sampling, test_via, variety, viability_log, viability_namelog, weight FROM report_status_pengujian WHERE (input_date &lt;= DATEADD(dd, 1, EOMONTH(GETDATE()))) AND (input_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 2))) ORDER BY input_date DESC</CommandText>
+                    <CommandText>SELECT Ger_1st, Ger_1st_Est, Ger_2nd, Ger_2nd_Est, Ger_Analys, Ger_Test, Ger_TestLog, Ger_input, Moi_Analys, Moi_Test, Moi_input, Pur_Analys, Pur_Test, Pur_input, Quick_Raf, Raf_Analys, Raf_Result, Raf_Test, Raf_input, Receipt, Receipt_Input, RetunQC, ReturnQC_Name, StatusResult, Via_Analys, Via_Test, Via_input, accept_date, brt_in, date_est, days_est, farmer, gerout_log, gerout_namelog, gertest_namelog, gervigor_log, gervigor_namelog, harvest, id, id_hvsprod, input_date, kesehatan_benih, labnum, location, moisture_log, moisture_namelog, nojob, nomnl, purity_log, purity_namelog, rafaction_log, rafaction_namelog, remark, sampler, sampling, scope, status_confirm, test_ger, test_moi, test_ontest, test_pur, test_raf, test_sampling, test_via, variety, viability_log, viability_namelog, weight FROM report_status_pengujian WHERE (input_date &lt;= DATEADD(dd, 1, EOMONTH(GETDATE()))) AND (input_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 2))) ORDER BY input_date DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -1846,7 +1897,7 @@ FROM            report_status_pengujian</CommandText>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.report_status_pengujian" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByThisMonth" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByThisMonth" GeneratorSourceName="FillByThisMonth" GetMethodModifier="Public" GetMethodName="GetDataByThisMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByThisMonth" UserSourceName="FillByThisMonth">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT Ger_1st, Ger_1st_Est, Ger_2nd, Ger_2nd_Est, Ger_Analys, Ger_Test, Ger_TestLog, Ger_input, Moi_Analys, Moi_Test, Moi_input, Pur_Analys, Pur_Test, Pur_input, Quick_Raf, Raf_Analys, Raf_Result, Raf_Test, Raf_input, Receipt, Receipt_Input, RetunQC, ReturnQC_Name, StatusResult, Via_Analys, Via_Test, Via_input, accept_date, brt_in, date_est, days_est, farmer, gerout_log, gerout_namelog, gertest_namelog, gervigor_log, gervigor_namelog, harvest, id, id_hvsprod, input_date, kesehatan_benih, labnum, location, moisture_log, moisture_namelog, nojob, nomnl, purity_log, purity_namelog, rafaction_log, rafaction_namelog, sampler, sampling, scope, status_confirm, test_ger, test_moi, test_ontest, test_pur, test_raf, test_sampling, test_via, variety, viability_log, viability_namelog, weight FROM report_status_pengujian WHERE (input_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (input_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC</CommandText>
+                    <CommandText>SELECT Ger_1st, Ger_1st_Est, Ger_2nd, Ger_2nd_Est, Ger_Analys, Ger_Test, Ger_TestLog, Ger_input, Moi_Analys, Moi_Test, Moi_input, Pur_Analys, Pur_Test, Pur_input, Quick_Raf, Raf_Analys, Raf_Result, Raf_Test, Raf_input, Receipt, Receipt_Input, RetunQC, ReturnQC_Name, StatusResult, Via_Analys, Via_Test, Via_input, accept_date, brt_in, date_est, days_est, farmer, gerout_log, gerout_namelog, gertest_namelog, gervigor_log, gervigor_namelog, harvest, id, id_hvsprod, input_date, kesehatan_benih, labnum, location, moisture_log, moisture_namelog, nojob, nomnl, purity_log, purity_namelog, rafaction_log, rafaction_namelog, remark, sampler, sampling, scope, status_confirm, test_ger, test_moi, test_ontest, test_pur, test_raf, test_sampling, test_via, variety, viability_log, viability_namelog, weight FROM report_status_pengujian WHERE (input_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (input_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -2085,7 +2136,7 @@ FROM            log_status_sampleDate</CommandText>
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        harvestprod.idcode, category_crop.type, category_crop.crop, harvestprod.harvest, harvestprod.variety, harvestprod.staff, harvestprod.kab, harvestprod.kec, harvestprod.desa, harvestprod.dusun, harvestprod.norencana, 
-                         harvestprod.nokontrak, harvestprod.blokno, harvestprod.cgrno, harvestprod.cgrname, harvestprod.upload_date, harvestprod.joblot
+                         harvestprod.nokontrak, harvestprod.blokno, harvestprod.cgrno, harvestprod.cgrname, harvestprod.upload_date, harvestprod.joblot, harvestprod.area, harvestprod.plant_qty, harvestprod.area_ha
 FROM            harvestprod LEFT OUTER JOIN
                          category_crop ON harvestprod.variety = category_crop.prodcode</CommandText>
                     <Parameters />
@@ -2111,19 +2162,44 @@ FROM            harvestprod LEFT OUTER JOIN
               <Mapping SourceColumn="cgrname" DataSetColumn="cgrname" />
               <Mapping SourceColumn="upload_date" DataSetColumn="upload_date" />
               <Mapping SourceColumn="joblot" DataSetColumn="joblot" />
+              <Mapping SourceColumn="area" DataSetColumn="area" />
+              <Mapping SourceColumn="plant_qty" DataSetColumn="plant_qty" />
+              <Mapping SourceColumn="area_ha" DataSetColumn="area_ha" />
             </Mappings>
             <Sources>
+              <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy" UserSourceName="FillBy">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        harvestprod.idcode, category_crop.type, category_crop.crop, harvestprod.harvest, harvestprod.variety, harvestprod.staff, harvestprod.kab, harvestprod.kec, harvestprod.desa, harvestprod.dusun, harvestprod.norencana, 
+                         harvestprod.nokontrak, harvestprod.blokno, harvestprod.cgrno, harvestprod.cgrname, harvestprod.upload_date, harvestprod.joblot, harvestprod.area, harvestprod.plant_qty, harvestprod.area_ha
+FROM            harvestprod LEFT OUTER JOIN
+                         category_crop ON harvestprod.variety = category_crop.prodcode</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillBy1" GenerateMethods="Fill" GenerateShortCommands="true" GeneratorSourceName="FillBy1" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataBy1" UserSourceName="FillBy1">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT        harvestprod.idcode, category_crop.type, category_crop.crop, harvestprod.harvest, harvestprod.variety, harvestprod.staff, harvestprod.kab, harvestprod.kec, harvestprod.desa, harvestprod.dusun, harvestprod.norencana, 
+                         harvestprod.nokontrak, harvestprod.blokno, harvestprod.cgrno, harvestprod.cgrname, harvestprod.upload_date, harvestprod.joblot, harvestprod.area, harvestprod.plant_qty, harvestprod.area_ha
+FROM            harvestprod LEFT OUTER JOIN
+                         category_crop ON harvestprod.variety = category_crop.prodcode</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByTahun" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByTahun" GeneratorSourceName="FillByTahun" GetMethodModifier="Public" GetMethodName="GetDataByTahun" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByTahun" UserSourceName="FillByTahun">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        harvestprod.idcode, category_crop.type, category_crop.crop, harvestprod.harvest, harvestprod.variety, harvestprod.staff, harvestprod.kab, harvestprod.kec, harvestprod.desa, harvestprod.dusun, harvestprod.norencana, 
-                         harvestprod.nokontrak, harvestprod.blokno, harvestprod.cgrno, harvestprod.cgrname, harvestprod.upload_date, harvestprod.joblot
+                         harvestprod.nokontrak, harvestprod.blokno, harvestprod.cgrno, harvestprod.cgrname, harvestprod.upload_date, harvestprod.joblot, harvestprod.area, harvestprod.area_ha, harvestprod.plant_qty, harvestprod.plantdate
 FROM            harvestprod LEFT OUTER JOIN
                          category_crop ON harvestprod.variety = category_crop.prodcode
-WHERE YEAR(harvestprod.harvest)=@tahun
+WHERE        (YEAR(harvestprod.harvest) = @tahun)
 ORDER BY harvestprod.idcode DESC</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="tahun" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="AnsiString" Direction="Input" ParameterName="@tahun" Precision="0" ProviderType="VarChar" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="tahun" ColumnName="" DataSourceName="" DataTypeServer="unknown" DbType="Decimal" Direction="Input" ParameterName="@tahun" Precision="0" Scale="0" Size="0" SourceColumn="" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -2139,7 +2215,7 @@ ORDER BY harvestprod.idcode DESC</CommandText>
                          CASE WHEN test_raf = 1 THEN raf_total ELSE - 1 END AS raf_total, raf_result, analys, raf_inputat, via_date, CASE WHEN test_via = 1 THEN via_mean ELSE - 1 END AS via_mean, via_result, via_analyst, via_inputat, moi_date, 
                          CASE WHEN test_moi = 1 THEN moi_mean ELSE - 1 END AS moi_mean, moi_analyst, moi_inputat, ws, CASE WHEN test_pur = 1 THEN pure ELSE - 1 END AS pure, other, inert, purity_mean, pur_date, pur_inputat, vg, 
                          CASE WHEN test_ger = 1 THEN dt ELSE - 1 END AS dt, [Abnormal Seedling (%)], [Hard Seed (%)], [Fresh Seed (%)], [Dead Seed (%)], ger_date, ger_scnd, ger_inputat, id_hvsprod, staff, pur_result, request_date, abnormality, 
-                         loc_sample, raf_ket
+                         loc_sample, raf_ket, norencana
 FROM            report_global_view</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -2204,6 +2280,7 @@ FROM            report_global_view</CommandText>
               <Mapping SourceColumn="abnormality" DataSetColumn="abnormality" />
               <Mapping SourceColumn="loc_sample" DataSetColumn="loc_sample" />
               <Mapping SourceColumn="raf_ket" DataSetColumn="raf_ket" />
+              <Mapping SourceColumn="norencana" DataSetColumn="norencana" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.GetReportGlobalByDateRange" DbObjectType="StoredProcedure" FillMethodModifier="Public" FillMethodName="FillByDateRange" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByDateRange" GeneratorSourceName="FillByDateRange" GetMethodModifier="Public" GetMethodName="GetDataByDateRange" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByDateRange" UserSourceName="FillByDateRange">
@@ -2221,7 +2298,7 @@ FROM            report_global_view</CommandText>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.report_global_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByLastYear" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByLastYear" GeneratorSourceName="FillByLastYear" GetMethodModifier="Public" GetMethodName="GetDataByLastYear" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByLastYear" UserSourceName="FillByLastYear">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT [Abnormal Seedling (%)], [Dead Seed (%)], [Fresh Seed (%)], [Hard Seed (%)], abnormality, analys, crop, datein, CASE WHEN test_ger = 1 THEN dt ELSE - 1 END AS dt, farmer, ger_date, ger_inputat, ger_scnd, harvest, id, id_hvsprod, inert, labnum, loc_sample, location, moi_analyst, moi_date, moi_inputat, CASE WHEN test_moi = 1 THEN moi_mean ELSE - 1 END AS moi_mean, nojob, nomnl, other, pur_date, pur_inputat, pur_result, CASE WHEN test_pur = 1 THEN pure ELSE - 1 END AS pure, purity_mean, raf_date, raf_inputat, raf_ket, raf_result, CASE WHEN test_raf = 1 THEN raf_total ELSE - 1 END AS raf_total, remark, request_date, sampling_g, scope, staff, test_ger, test_moi, test_ontest, test_pur, test_raf, test_via, variety, vg, via_analyst, via_date, via_inputat, CASE WHEN test_via = 1 THEN via_mean ELSE - 1 END AS via_mean, via_result, weight, ws FROM report_global_view WHERE (request_date &gt;= DATEFROMPARTS(YEAR(GETDATE()) - 1, 1, 1)) AND (request_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE())))</CommandText>
+                    <CommandText>SELECT [Abnormal Seedling (%)], [Dead Seed (%)], [Fresh Seed (%)], [Hard Seed (%)], abnormality, analys, crop, datein, CASE WHEN test_ger = 1 THEN dt ELSE - 1 END AS dt, farmer, ger_date, ger_inputat, ger_scnd, harvest, id, id_hvsprod, inert, labnum, loc_sample, location, moi_analyst, moi_date, moi_inputat, CASE WHEN test_moi = 1 THEN moi_mean ELSE - 1 END AS moi_mean, nojob, nomnl, norencana, other, pur_date, pur_inputat, pur_result, CASE WHEN test_pur = 1 THEN pure ELSE - 1 END AS pure, purity_mean, raf_date, raf_inputat, raf_ket, raf_result, CASE WHEN test_raf = 1 THEN raf_total ELSE - 1 END AS raf_total, remark, request_date, sampling_g, scope, staff, test_ger, test_moi, test_ontest, test_pur, test_raf, test_via, variety, vg, via_analyst, via_date, via_inputat, CASE WHEN test_via = 1 THEN via_mean ELSE - 1 END AS via_mean, via_result, weight, ws FROM report_global_view WHERE (request_date &gt;= DATEFROMPARTS(YEAR(GETDATE()) - 1, 1, 1)) AND (request_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE())))</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -2229,7 +2306,7 @@ FROM            report_global_view</CommandText>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.report_global_view" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByThisYear" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByThisYear" GeneratorSourceName="FillByThisYear" GetMethodModifier="Public" GetMethodName="GetDataByThisYear" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByThisYear" UserSourceName="FillByThisYear">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT [Abnormal Seedling (%)], [Dead Seed (%)], [Fresh Seed (%)], [Hard Seed (%)], abnormality, analys, crop, datein, CASE WHEN test_ger = 1 THEN dt ELSE - 1 END AS dt, farmer, ger_date, ger_inputat, ger_scnd, harvest, id, id_hvsprod, inert, labnum, loc_sample, location, moi_analyst, moi_date, moi_inputat, CASE WHEN test_moi = 1 THEN moi_mean ELSE - 1 END AS moi_mean, nojob, nomnl, other, pur_date, pur_inputat, pur_result, CASE WHEN test_pur = 1 THEN pure ELSE - 1 END AS pure, purity_mean, raf_date, raf_inputat, raf_ket, raf_result, CASE WHEN test_raf = 1 THEN raf_total ELSE - 1 END AS raf_total, remark, request_date, sampling_g, scope, staff, test_ger, test_moi, test_ontest, test_pur, test_raf, test_via, variety, vg, via_analyst, via_date, via_inputat, CASE WHEN test_via = 1 THEN via_mean ELSE - 1 END AS via_mean, via_result, weight, ws FROM report_global_view WHERE (request_date &gt;= DATEFROMPARTS(YEAR(GETDATE()), 1, 1)) AND (request_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE())))</CommandText>
+                    <CommandText>SELECT [Abnormal Seedling (%)], [Dead Seed (%)], [Fresh Seed (%)], [Hard Seed (%)], abnormality, analys, crop, datein, CASE WHEN test_ger = 1 THEN dt ELSE - 1 END AS dt, farmer, ger_date, ger_inputat, ger_scnd, harvest, id, id_hvsprod, inert, labnum, loc_sample, location, moi_analyst, moi_date, moi_inputat, CASE WHEN test_moi = 1 THEN moi_mean ELSE - 1 END AS moi_mean, nojob, nomnl, norencana, other, pur_date, pur_inputat, pur_result, CASE WHEN test_pur = 1 THEN pure ELSE - 1 END AS pure, purity_mean, raf_date, raf_inputat, raf_ket, raf_result, CASE WHEN test_raf = 1 THEN raf_total ELSE - 1 END AS raf_total, remark, request_date, sampling_g, scope, staff, test_ger, test_moi, test_ontest, test_pur, test_raf, test_via, variety, vg, via_analyst, via_date, via_inputat, CASE WHEN test_via = 1 THEN via_mean ELSE - 1 END AS via_mean, via_result, weight, ws FROM report_global_view WHERE (request_date &gt;= DATEFROMPARTS(YEAR(GETDATE()), 1, 1)) AND (request_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE())))</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -2358,7 +2435,62 @@ FROM            category_crop RIGHT OUTER JOIN
               <Mapping SourceColumn="receipt_date" DataSetColumn="receipt_date" />
               <Mapping SourceColumn="loc_sample" DataSetColumn="loc_sample" />
             </Mappings>
-            <Sources />
+            <Sources>
+              <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByLastMonth" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByLastMonth" GeneratorSourceName="FillByLastMonth" GetMethodModifier="Public" GetMethodName="GetDataByLastMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByLastMonth" UserSourceName="FillByLastMonth">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        qc_confirm_view.id, qc_confirm_view.variety, qc_confirm_view.farmer, qc_confirm_view.location, qc_confirm_view.harvest, qc_confirm_view.weight, qc_confirm_view.nomnl, qc_confirm_view.nojob, qc_confirm_view.scope, 
+                         qc_confirm_view.nama_req, qc_confirm_view.input_date, qc_confirm_view.nama_con, qc_confirm_view.tgl_confirm, qc_confirm_view.status, qc_confirm_view.labnum, qc_confirm_view.nama_ppc, qc_confirm_view.tgl_kirim, 
+                         qc_confirm_view.rafaksi, qc_confirm_view.officer, qc_confirm_view.remark, qc_confirm_view.tgl, qc_confirm_view.id_hvsprod, spl_request.test_sampling, spl_request.test_moi, spl_request.test_pur, spl_request.test_ger, 
+                         spl_request.test_via, spl_request.test_raf, category_crop.crop, qc_confirm_view.status_confirm, qc_confirm_view.information_rejected, qc_confirm_view.receipt_date, spl_request.loc_sample
+FROM            category_crop RIGHT OUTER JOIN
+                         qc_confirm_view ON category_crop.prodcode = qc_confirm_view.variety LEFT OUTER JOIN
+                         spl_request ON qc_confirm_view.id = spl_request.id
+WHERE        (spl_request.input_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 2))) AND (spl_request.input_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE())))
+ORDER BY spl_request.id DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByParameter" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByParameter" GeneratorSourceName="FillByParameter" GetMethodModifier="Public" GetMethodName="GetDataByParameter" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByParameter" UserSourceName="FillByParameter">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        qc_confirm_view.id, qc_confirm_view.variety, qc_confirm_view.farmer, qc_confirm_view.location, qc_confirm_view.harvest, qc_confirm_view.weight, qc_confirm_view.nomnl, qc_confirm_view.nojob, qc_confirm_view.scope, 
+                         qc_confirm_view.nama_req, qc_confirm_view.input_date, qc_confirm_view.nama_con, qc_confirm_view.tgl_confirm, qc_confirm_view.status, qc_confirm_view.labnum, qc_confirm_view.nama_ppc, qc_confirm_view.tgl_kirim, 
+                         qc_confirm_view.rafaksi, qc_confirm_view.officer, qc_confirm_view.remark, qc_confirm_view.tgl, qc_confirm_view.id_hvsprod, spl_request.test_sampling, spl_request.test_moi, spl_request.test_pur, spl_request.test_ger, 
+                         spl_request.test_via, spl_request.test_raf, category_crop.crop, qc_confirm_view.status_confirm, qc_confirm_view.information_rejected, qc_confirm_view.receipt_date, spl_request.loc_sample
+FROM            category_crop RIGHT OUTER JOIN
+                         qc_confirm_view ON category_crop.prodcode = qc_confirm_view.variety LEFT OUTER JOIN
+                         spl_request ON qc_confirm_view.id = spl_request.id
+WHERE        (qc_confirm_view.variety LIKE @strvariable) OR
+                         (qc_confirm_view.nojob LIKE @strvariable) OR
+                         (qc_confirm_view.labnum LIKE @strvariable) OR
+                         (qc_confirm_view.id_hvsprod LIKE @strvariable) OR
+                         (qc_confirm_view.farmer LIKE @strvariable)
+ORDER BY spl_request.id DESC</CommandText>
+                    <Parameters>
+                      <Parameter AllowDbNull="true" AutogeneratedName="strvariable" ColumnName="variety" DataSourceName="HCQC_server.dbo.qc_confirm_view" DataTypeServer="varchar(25)" DbType="AnsiString" Direction="Input" ParameterName="@strvariable" Precision="0" ProviderType="VarChar" Scale="0" Size="25" SourceColumn="variety" SourceColumnNullMapping="false" SourceVersion="Current" />
+                    </Parameters>
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByThisMonth" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByThisMonth" GeneratorSourceName="FillByThisMonth" GetMethodModifier="Public" GetMethodName="GetDataByThisMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByThisMonth" UserSourceName="FillByThisMonth">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        qc_confirm_view.id, qc_confirm_view.variety, qc_confirm_view.farmer, qc_confirm_view.location, qc_confirm_view.harvest, qc_confirm_view.weight, qc_confirm_view.nomnl, qc_confirm_view.nojob, qc_confirm_view.scope, 
+                         qc_confirm_view.nama_req, qc_confirm_view.input_date, qc_confirm_view.nama_con, qc_confirm_view.tgl_confirm, qc_confirm_view.status, qc_confirm_view.labnum, qc_confirm_view.nama_ppc, qc_confirm_view.tgl_kirim, 
+                         qc_confirm_view.rafaksi, qc_confirm_view.officer, qc_confirm_view.remark, qc_confirm_view.tgl, qc_confirm_view.id_hvsprod, spl_request.test_sampling, spl_request.test_moi, spl_request.test_pur, spl_request.test_ger, 
+                         spl_request.test_via, spl_request.test_raf, category_crop.crop, qc_confirm_view.status_confirm, qc_confirm_view.information_rejected, qc_confirm_view.receipt_date, spl_request.loc_sample
+FROM            category_crop RIGHT OUTER JOIN
+                         qc_confirm_view ON category_crop.prodcode = qc_confirm_view.variety LEFT OUTER JOIN
+                         spl_request ON qc_confirm_view.id = spl_request.id
+WHERE        (spl_request.input_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE()))) AND (spl_request.input_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1)))
+ORDER BY spl_request.id DESC</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </Sources>
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="qc_confirm_viewerTableAdapter" GeneratorDataComponentClassName="qc_confirm_viewerTableAdapter" Name="qc_confirm_viewer" UserDataComponentName="qc_confirm_viewerTableAdapter">
             <MainSource>
@@ -2366,7 +2498,7 @@ FROM            category_crop RIGHT OUTER JOIN
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        id, id_hvsprod, crop, variety, farmer, nomnl, nojob, scope, weight, location, harvest, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, req_name, tgl_confirm, status, information_rejected, nama_con, labnum, 
-                         status_confirm, req_date, remark, loc_sample
+                         status_confirm, req_date, remark, loc_sample, norencana, unit
 FROM            qc_confirm_viewer</CommandText>
                     <Parameters />
                   </DbCommand>
@@ -2402,12 +2534,14 @@ FROM            qc_confirm_viewer</CommandText>
               <Mapping SourceColumn="req_date" DataSetColumn="req_date" />
               <Mapping SourceColumn="remark" DataSetColumn="remark" />
               <Mapping SourceColumn="loc_sample" DataSetColumn="loc_sample" />
+              <Mapping SourceColumn="norencana" DataSetColumn="norencana" />
+              <Mapping SourceColumn="unit" DataSetColumn="unit" />
             </Mappings>
             <Sources>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.qc_confirm_viewer" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByAccepted" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByAccepted" GeneratorSourceName="FillByAccepted" GetMethodModifier="Public" GetMethodName="GetDataByAccepted" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByAccepted" UserSourceName="FillByAccepted">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (status_confirm = 'Accepted') AND (req_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE())))</CommandText>
+                    <CommandText>SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tgl_confirm, unit, variety, weight FROM qc_confirm_viewer WHERE (status_confirm = 'Accepted') AND (req_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE())))</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -2415,7 +2549,7 @@ FROM            qc_confirm_viewer</CommandText>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.qc_confirm_viewer" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByLastMonth" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByLastMonth" GeneratorSourceName="FillByLastMonth" GetMethodModifier="Public" GetMethodName="GetDataByLastMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByLastMonth" UserSourceName="FillByLastMonth">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (req_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 2))) AND (req_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC</CommandText>
+                    <CommandText>SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tgl_confirm, unit, variety, weight FROM qc_confirm_viewer WHERE (req_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 2))) AND (req_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -2423,7 +2557,7 @@ FROM            qc_confirm_viewer</CommandText>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.qc_confirm_viewer" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByOnProcess" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByOnProcess" GeneratorSourceName="FillByOnProcess" GetMethodModifier="Public" GetMethodName="GetDataByOnProcess" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByOnProcess" UserSourceName="FillByOnProcess">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (status_confirm = 'On Process')</CommandText>
+                    <CommandText>SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tgl_confirm, unit, variety, weight FROM qc_confirm_viewer WHERE (status_confirm = 'On Process')</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -2431,7 +2565,7 @@ FROM            qc_confirm_viewer</CommandText>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.qc_confirm_viewer" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByRejected" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByRejected" GeneratorSourceName="FillByRejected" GetMethodModifier="Public" GetMethodName="GetDataByRejected" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByRejected" UserSourceName="FillByRejected">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (status_confirm = 'Rejected') AND (req_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC</CommandText>
+                    <CommandText>SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tgl_confirm, unit, variety, weight FROM qc_confirm_viewer WHERE (status_confirm = 'Rejected') AND (req_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -2439,7 +2573,7 @@ FROM            qc_confirm_viewer</CommandText>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.qc_confirm_viewer" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByStrVariable" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByStrVariable" GeneratorSourceName="FillByStrVariable" GetMethodModifier="Public" GetMethodName="GetDataByStrVariable" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByStrVariable" UserSourceName="FillByStrVariable">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (labnum LIKE @strvar) OR (id_hvsprod LIKE @strvar) OR (variety LIKE @strvar) OR (nomnl LIKE @strvar) OR (nojob LIKE @strvar) OR (scope LIKE @strvar) OR (farmer LIKE @strvar) OR (location LIKE @strvar) ORDER BY id DESC</CommandText>
+                    <CommandText>SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tgl_confirm, unit, variety, weight FROM qc_confirm_viewer WHERE (labnum LIKE @strvar) OR (id_hvsprod LIKE @strvar) OR (variety LIKE @strvar) OR (nomnl LIKE @strvar) OR (nojob LIKE @strvar) OR (scope LIKE @strvar) OR (farmer LIKE @strvar) OR (location LIKE @strvar) ORDER BY id DESC</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="strvar" ColumnName="labnum" DataSourceName="HCQC_server.dbo.qc_confirm_viewer" DataTypeServer="varchar(15)" DbType="AnsiString" Direction="Input" ParameterName="@strvar" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -2449,7 +2583,7 @@ FROM            qc_confirm_viewer</CommandText>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.qc_confirm_viewer" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByThisMonth" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByThisMonth" GeneratorSourceName="FillByThisMonth" GetMethodModifier="Public" GetMethodName="GetDataByThisMonth" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByThisMonth" UserSourceName="FillByThisMonth">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (req_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC</CommandText>
+                    <CommandText>SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tgl_confirm, unit, variety, weight FROM qc_confirm_viewer WHERE (req_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -2457,7 +2591,15 @@ FROM            qc_confirm_viewer</CommandText>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.qc_confirm_viewer" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByVariable" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByVariable" GeneratorSourceName="FillByVariable" GetMethodModifier="Public" GetMethodName="GetDataByVariable" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByVariable" UserSourceName="FillByVariable">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (variety LIKE @strvariable) OR (nomnl LIKE @strvariable) OR (nojob LIKE @strvariable) OR (labnum LIKE @strvariable) OR (status_confirm LIKE @strvariable) OR (id_hvsprod LIKE @strvariable)</CommandText>
+                    <CommandText>SELECT        bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, 
+                         test_raf, test_sampling, test_via, tgl_confirm, unit, variety, weight
+FROM            qc_confirm_viewer
+WHERE        (variety LIKE @strvariable) OR
+                         (nomnl LIKE @strvariable) OR
+                         (nojob LIKE @strvariable) OR
+                         (labnum LIKE @strvariable) OR
+                         (status_confirm LIKE @strvariable) OR
+                         (norencana LIKE @strvariable)</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="strvariable" ColumnName="variety" DataSourceName="HCQC_server.dbo.qc_confirm_viewer" DataTypeServer="varchar(25)" DbType="AnsiString" Direction="Input" ParameterName="@strvariable" Precision="0" ProviderType="VarChar" Scale="0" Size="25" SourceColumn="variety" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -2467,7 +2609,7 @@ FROM            qc_confirm_viewer</CommandText>
               <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectName="HCQC_server.dbo.qc_confirm_viewer" DbObjectType="View" FillMethodModifier="Public" FillMethodName="FillByVariety" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByVariety" GeneratorSourceName="FillByVariety" GetMethodModifier="Public" GetMethodName="GetDataByVariety" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByVariety" UserSourceName="FillByVariety">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
-                    <CommandText>SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (req_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE()))) AND (variety LIKE @Variety) AND (scope = 'Raw Material') ORDER BY id DESC</CommandText>
+                    <CommandText>SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date, req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, test_via, tgl_confirm, unit, variety, weight FROM qc_confirm_viewer WHERE (req_date &gt;= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date &lt; DATEADD(dd, 1, EOMONTH(GETDATE()))) AND (variety LIKE @Variety) AND (scope = 'Raw Material') ORDER BY id DESC</CommandText>
                     <Parameters>
                       <Parameter AllowDbNull="true" AutogeneratedName="Variety" ColumnName="variety" DataSourceName="HCQC_server.dbo.qc_confirm_viewer" DataTypeServer="varchar(25)" DbType="AnsiString" Direction="Input" ParameterName="@Variety" Precision="0" ProviderType="VarChar" Scale="0" Size="25" SourceColumn="variety" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
@@ -2602,10 +2744,9 @@ FROM            rafaction_view
 WHERE        (id LIKE @strvariable) OR
                          (variety LIKE @strvariable) OR
                          (labnum LIKE @strvariable) OR
-                         (id_hvsprod LIKE @strvariable) OR
                          (nojob LIKE @strvariable)</CommandText>
                     <Parameters>
-                      <Parameter AllowDbNull="false" AutogeneratedName="strvariable" ColumnName="id" DataSourceName="HCQC_server.dbo.rafaction_view" DataTypeServer="int" DbType="Int32" Direction="Input" ParameterName="@strvariable" Precision="0" ProviderType="Int" Scale="0" Size="4" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
+                      <Parameter AllowDbNull="false" AutogeneratedName="strvariable" ColumnName="id" DataSourceName="HCQC_server.dbo.rafaction_view" DataTypeServer="int" DbType="AnsiString" Direction="Input" ParameterName="@strvariable" Precision="0" ProviderType="VarChar" Scale="0" Size="50" SourceColumn="id" SourceColumnNullMapping="false" SourceVersion="Current" />
                     </Parameters>
                   </DbCommand>
                 </SelectCommand>
@@ -2624,13 +2765,14 @@ WHERE        (request_date &gt;= DATEFROMPARTS(YEAR(GETDATE()), 1, 1)) AND (requ
           </TableAdapter>
           <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="TermalDataTableTableAdapter" GeneratorDataComponentClassName="TermalDataTableTableAdapter" Name="TermalDataTable" UserDataComponentName="TermalDataTableTableAdapter">
             <MainSource>
-              <DbSource ConnectionRef="HCQC_serverConnectionString1 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
+              <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="false" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        qc_confirm_viewer.id, qc_confirm_viewer.id_hvsprod, qc_confirm_viewer.crop, qc_confirm_viewer.variety, qc_confirm_viewer.farmer, qc_confirm_viewer.nomnl, qc_confirm_viewer.nojob, qc_confirm_viewer.scope, 
                          qc_confirm_viewer.weight, qc_confirm_viewer.location, qc_confirm_viewer.harvest, qc_confirm_viewer.bag, qc_confirm_viewer.test_sampling, qc_confirm_viewer.test_moi, qc_confirm_viewer.test_pur, 
                          qc_confirm_viewer.test_ger, qc_confirm_viewer.test_via, qc_confirm_viewer.test_raf, qc_confirm_viewer.req_name, qc_confirm_viewer.tgl_confirm, qc_confirm_viewer.status, qc_confirm_viewer.information_rejected, 
-                         qc_confirm_viewer.nama_con, qc_confirm_viewer.labnum, qc_confirm_viewer.status_confirm, qc_confirm_viewer.req_date, qc_confirm_viewer.remark, qc_confirm_viewer.loc_sample, log_view_print_la4.Count AS LA4
+                         qc_confirm_viewer.nama_con, qc_confirm_viewer.labnum, qc_confirm_viewer.status_confirm, qc_confirm_viewer.req_date, qc_confirm_viewer.remark, qc_confirm_viewer.loc_sample, log_view_print_la4.Count AS LA4, 
+                         qc_confirm_viewer.norencana, qc_confirm_viewer.unit
 FROM            qc_confirm_viewer LEFT OUTER JOIN
                          log_view_print_la4 ON qc_confirm_viewer.labnum = log_view_print_la4.labnum</CommandText>
                     <Parameters />
@@ -2668,15 +2810,33 @@ FROM            qc_confirm_viewer LEFT OUTER JOIN
               <Mapping SourceColumn="remark" DataSetColumn="remark" />
               <Mapping SourceColumn="loc_sample" DataSetColumn="loc_sample" />
               <Mapping SourceColumn="LA4" DataSetColumn="LA4" />
+              <Mapping SourceColumn="norencana" DataSetColumn="norencana" />
+              <Mapping SourceColumn="unit" DataSetColumn="unit" />
             </Mappings>
             <Sources>
-              <DbSource ConnectionRef="HCQC_serverConnectionString1 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByParameterLabnum" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByParameterLabnum" GeneratorSourceName="FillByParameterLabnum" GetMethodModifier="Public" GetMethodName="GetDataByParameterLabnum" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByParameterLabnum" UserSourceName="FillByParameterLabnum">
+              <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByNotPrint" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByNotPrint" GeneratorSourceName="FillByNotPrint" GetMethodModifier="Public" GetMethodName="GetDataByNotPrint" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByNotPrint" UserSourceName="FillByNotPrint">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        qc_confirm_viewer.id, qc_confirm_viewer.id_hvsprod, qc_confirm_viewer.crop, qc_confirm_viewer.variety, qc_confirm_viewer.farmer, qc_confirm_viewer.nomnl, qc_confirm_viewer.nojob, qc_confirm_viewer.scope, 
                          qc_confirm_viewer.weight, qc_confirm_viewer.location, qc_confirm_viewer.harvest, qc_confirm_viewer.bag, qc_confirm_viewer.test_sampling, qc_confirm_viewer.test_moi, qc_confirm_viewer.test_pur, 
                          qc_confirm_viewer.test_ger, qc_confirm_viewer.test_via, qc_confirm_viewer.test_raf, qc_confirm_viewer.req_name, qc_confirm_viewer.tgl_confirm, qc_confirm_viewer.status, qc_confirm_viewer.information_rejected, 
-                         qc_confirm_viewer.nama_con, qc_confirm_viewer.labnum, qc_confirm_viewer.status_confirm, qc_confirm_viewer.req_date, qc_confirm_viewer.remark, qc_confirm_viewer.loc_sample, log_view_print_la4.Count AS LA4
+                         qc_confirm_viewer.nama_con, qc_confirm_viewer.labnum, qc_confirm_viewer.status_confirm, qc_confirm_viewer.req_date, qc_confirm_viewer.remark, qc_confirm_viewer.loc_sample, log_view_print_la4.Count AS LA4, 
+                         qc_confirm_viewer.unit
+FROM            qc_confirm_viewer LEFT OUTER JOIN
+                         log_view_print_la4 ON qc_confirm_viewer.labnum = log_view_print_la4.labnum
+WHERE        (log_view_print_la4.Count IS NULL) AND (CAST(qc_confirm_viewer.tgl_confirm AS DATE) = CAST(GETDATE() AS DATE)) AND (qc_confirm_viewer.labnum IS NOT NULL)</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+              <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByParameterLabnum" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByParameterLabnum" GeneratorSourceName="FillByParameterLabnum" GetMethodModifier="Public" GetMethodName="GetDataByParameterLabnum" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByParameterLabnum" UserSourceName="FillByParameterLabnum">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="true">
+                    <CommandText>SELECT        TOP (100) qc_confirm_viewer.id, qc_confirm_viewer.id_hvsprod, qc_confirm_viewer.crop, qc_confirm_viewer.variety, qc_confirm_viewer.farmer, qc_confirm_viewer.nomnl, qc_confirm_viewer.nojob, qc_confirm_viewer.scope, 
+                         qc_confirm_viewer.weight, qc_confirm_viewer.location, qc_confirm_viewer.harvest, qc_confirm_viewer.bag, qc_confirm_viewer.test_sampling, qc_confirm_viewer.test_moi, qc_confirm_viewer.test_pur, 
+                         qc_confirm_viewer.test_ger, qc_confirm_viewer.test_via, qc_confirm_viewer.test_raf, qc_confirm_viewer.req_name, qc_confirm_viewer.tgl_confirm, qc_confirm_viewer.status, qc_confirm_viewer.information_rejected, 
+                         qc_confirm_viewer.nama_con, qc_confirm_viewer.labnum, qc_confirm_viewer.status_confirm, qc_confirm_viewer.req_date, qc_confirm_viewer.remark, qc_confirm_viewer.loc_sample, log_view_print_la4.Count AS LA4, 
+                         qc_confirm_viewer.unit
 FROM            qc_confirm_viewer LEFT OUTER JOIN
                          log_view_print_la4 ON qc_confirm_viewer.labnum = log_view_print_la4.labnum
 WHERE        (qc_confirm_viewer.labnum LIKE @ParameterLabnum)</CommandText>
@@ -2686,13 +2846,14 @@ WHERE        (qc_confirm_viewer.labnum LIKE @ParameterLabnum)</CommandText>
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="HCQC_serverConnectionString1 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByParameterScope" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByParameterScope" GeneratorSourceName="FillByParameterScope" GetMethodModifier="Public" GetMethodName="GetDataByParameterScope" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByParameterScope" UserSourceName="FillByParameterScope">
+              <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByParameterScope" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByParameterScope" GeneratorSourceName="FillByParameterScope" GetMethodModifier="Public" GetMethodName="GetDataByParameterScope" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByParameterScope" UserSourceName="FillByParameterScope">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        qc_confirm_viewer.id, qc_confirm_viewer.id_hvsprod, qc_confirm_viewer.crop, qc_confirm_viewer.variety, qc_confirm_viewer.farmer, qc_confirm_viewer.nomnl, qc_confirm_viewer.nojob, qc_confirm_viewer.scope, 
                          qc_confirm_viewer.weight, qc_confirm_viewer.location, qc_confirm_viewer.harvest, qc_confirm_viewer.bag, qc_confirm_viewer.test_sampling, qc_confirm_viewer.test_moi, qc_confirm_viewer.test_pur, 
                          qc_confirm_viewer.test_ger, qc_confirm_viewer.test_via, qc_confirm_viewer.test_raf, qc_confirm_viewer.req_name, qc_confirm_viewer.tgl_confirm, qc_confirm_viewer.status, qc_confirm_viewer.information_rejected, 
-                         qc_confirm_viewer.nama_con, qc_confirm_viewer.labnum, qc_confirm_viewer.status_confirm, qc_confirm_viewer.req_date, qc_confirm_viewer.remark, qc_confirm_viewer.loc_sample, log_view_print_la4.Count AS LA4
+                         qc_confirm_viewer.nama_con, qc_confirm_viewer.labnum, qc_confirm_viewer.status_confirm, qc_confirm_viewer.req_date, qc_confirm_viewer.remark, qc_confirm_viewer.loc_sample, log_view_print_la4.Count AS LA4, 
+                         qc_confirm_viewer.unit
 FROM            qc_confirm_viewer LEFT OUTER JOIN
                          log_view_print_la4 ON qc_confirm_viewer.labnum = log_view_print_la4.labnum
 WHERE        (qc_confirm_viewer.scope LIKE @parameterscope) AND (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (qc_confirm_viewer.labnum IS NOT NULL)</CommandText>
@@ -2702,7 +2863,7 @@ WHERE        (qc_confirm_viewer.scope LIKE @parameterscope) AND (qc_confirm_view
                   </DbCommand>
                 </SelectCommand>
               </DbSource>
-              <DbSource ConnectionRef="HCQC_serverConnectionString1 (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByShowAll" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByShowAll" GeneratorSourceName="FillByShowAll" GetMethodModifier="Public" GetMethodName="GetDataByShowAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByShowAll" UserSourceName="FillByShowAll">
+              <DbSource ConnectionRef="HCQC_serverConnectionString (MySettings)" DbObjectType="Unknown" FillMethodModifier="Public" FillMethodName="FillByShowAll" GenerateMethods="Both" GenerateShortCommands="true" GeneratorGetMethodName="GetDataByShowAll" GeneratorSourceName="FillByShowAll" GetMethodModifier="Public" GetMethodName="GetDataByShowAll" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetDataByShowAll" UserSourceName="FillByShowAll">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="true">
                     <CommandText>SELECT        qc_confirm_viewer.id, qc_confirm_viewer.id_hvsprod, qc_confirm_viewer.crop, qc_confirm_viewer.variety, qc_confirm_viewer.farmer, qc_confirm_viewer.nomnl, qc_confirm_viewer.nojob, qc_confirm_viewer.scope, 
@@ -3168,7 +3329,7 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_UserColumnName="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -3247,6 +3408,45 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="update_date" msprop:Generator_ColumnPropNameInTable="update_dateColumn" msprop:Generator_ColumnPropNameInRow="update_date" msprop:Generator_UserColumnName="update_date" msprop:Generator_ColumnVarNameInTable="columnupdate_date" type="xs:dateTime" minOccurs="0" />
               <xs:element name="id_hvsprod" msprop:Generator_ColumnPropNameInTable="id_hvsprodColumn" msprop:Generator_ColumnPropNameInRow="id_hvsprod" msprop:Generator_UserColumnName="id_hvsprod" msprop:Generator_ColumnVarNameInTable="columnid_hvsprod" type="xs:int" minOccurs="0" />
               <xs:element name="bag" msprop:Generator_ColumnPropNameInTable="bagColumn" msprop:Generator_ColumnPropNameInRow="bag" msprop:Generator_UserColumnName="bag" msprop:Generator_ColumnVarNameInTable="columnbag" type="xs:int" minOccurs="0" />
+              <xs:element name="insplot" msprop:Generator_UserColumnName="insplot" msprop:Generator_ColumnPropNameInTable="insplotColumn" msprop:Generator_ColumnPropNameInRow="insplot" msprop:Generator_ColumnVarNameInTable="columninsplot" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="test_ontest" msprop:Generator_UserColumnName="test_ontest" msprop:Generator_ColumnPropNameInTable="test_ontestColumn" msprop:Generator_ColumnPropNameInRow="test_ontest" msprop:Generator_ColumnVarNameInTable="columntest_ontest" type="xs:boolean" minOccurs="0" />
+              <xs:element name="loc_sample" msprop:Generator_UserColumnName="loc_sample" msprop:Generator_ColumnPropNameInTable="loc_sampleColumn" msprop:Generator_ColumnPropNameInRow="loc_sample" msprop:Generator_ColumnVarNameInTable="columnloc_sample" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="update_user" msprop:Generator_UserColumnName="update_user" msprop:Generator_ColumnPropNameInTable="update_userColumn" msprop:Generator_ColumnPropNameInRow="update_user" msprop:Generator_ColumnVarNameInTable="columnupdate_user" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="update_by" msprop:Generator_UserColumnName="update_by" msprop:Generator_ColumnPropNameInTable="update_byColumn" msprop:Generator_ColumnPropNameInRow="update_by" msprop:Generator_ColumnVarNameInTable="columnupdate_by" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="visible" msprop:Generator_UserColumnName="visible" msprop:Generator_ColumnPropNameInTable="visibleColumn" msprop:Generator_ColumnPropNameInRow="visible" msprop:Generator_ColumnVarNameInTable="columnvisible" type="xs:boolean" />
+              <xs:element name="visible_lv2" msprop:Generator_UserColumnName="visible_lv2" msprop:Generator_ColumnPropNameInTable="visible_lv2Column" msprop:Generator_ColumnPropNameInRow="visible_lv2" msprop:Generator_ColumnVarNameInTable="columnvisible_lv2" type="xs:boolean" />
+              <xs:element name="kesehatan_benih" msprop:Generator_UserColumnName="kesehatan_benih" msprop:Generator_ColumnPropNameInTable="kesehatan_benihColumn" msprop:Generator_ColumnPropNameInRow="kesehatan_benih" msprop:Generator_ColumnVarNameInTable="columnkesehatan_benih" type="xs:boolean" />
+              <xs:element name="unit" msprop:Generator_UserColumnName="unit" msprop:Generator_ColumnPropNameInTable="unitColumn" msprop:Generator_ColumnPropNameInRow="unit" msprop:Generator_ColumnVarNameInTable="columnunit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -3484,7 +3684,7 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_UserColumnName="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -3616,7 +3816,7 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_UserColumnName="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -3673,6 +3873,22 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="blokno" msprop:Generator_ColumnPropNameInTable="bloknoColumn" msprop:Generator_ColumnPropNameInRow="blokno" msprop:Generator_UserColumnName="blokno" msprop:Generator_ColumnVarNameInTable="columnblokno" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="25" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="plant_qty" msprop:Generator_ColumnPropNameInTable="plant_qtyColumn" msprop:Generator_ColumnPropNameInRow="plant_qty" msprop:Generator_UserColumnName="plant_qty" msprop:Generator_ColumnVarNameInTable="columnplant_qty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="area_ha" msprop:Generator_ColumnPropNameInTable="area_haColumn" msprop:Generator_ColumnPropNameInRow="area_ha" msprop:Generator_UserColumnName="area_ha" msprop:Generator_ColumnVarNameInTable="columnarea_ha" type="xs:decimal" minOccurs="0" />
+              <xs:element name="dusun" msprop:Generator_ColumnPropNameInTable="dusunColumn" msprop:Generator_ColumnPropNameInRow="dusun" msprop:Generator_UserColumnName="dusun" msprop:Generator_ColumnVarNameInTable="columndusun" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -3699,7 +3915,7 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_UserColumnName="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -3892,6 +4108,13 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="gervigor_log" msprop:Generator_ColumnPropNameInTable="gervigor_logColumn" msprop:Generator_ColumnPropNameInRow="gervigor_log" msprop:Generator_UserColumnName="gervigor_log" msprop:Generator_ColumnVarNameInTable="columngervigor_log" type="xs:dateTime" minOccurs="0" />
               <xs:element name="accept_date" msprop:Generator_ColumnPropNameInTable="accept_dateColumn" msprop:Generator_ColumnPropNameInRow="accept_date" msprop:Generator_UserColumnName="accept_date" msprop:Generator_ColumnVarNameInTable="columnaccept_date" type="xs:dateTime" minOccurs="0" />
               <xs:element name="kesehatan_benih" msprop:Generator_ColumnPropNameInTable="kesehatan_benihColumn" msprop:Generator_ColumnPropNameInRow="kesehatan_benih" msprop:Generator_UserColumnName="kesehatan_benih" msprop:Generator_ColumnVarNameInTable="columnkesehatan_benih" type="xs:boolean" />
+              <xs:element name="remark" msprop:Generator_ColumnPropNameInTable="remarkColumn" msprop:Generator_ColumnPropNameInRow="remark" msprop:Generator_UserColumnName="remark" msprop:Generator_ColumnVarNameInTable="columnremark" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="225" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -3958,7 +4181,7 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_UserColumnName="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -4146,7 +4369,7 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_UserColumnName="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -4269,7 +4492,7 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_UserColumnName="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="50" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -4351,6 +4574,15 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="area" msprop:Generator_ColumnPropNameInTable="areaColumn" msprop:Generator_ColumnPropNameInRow="area" msprop:Generator_UserColumnName="area" msprop:Generator_ColumnVarNameInTable="columnarea" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="plant_qty" msprop:Generator_ColumnPropNameInTable="plant_qtyColumn" msprop:Generator_ColumnPropNameInRow="plant_qty" msprop:Generator_UserColumnName="plant_qty" msprop:Generator_ColumnVarNameInTable="columnplant_qty" type="xs:decimal" minOccurs="0" />
+              <xs:element name="area_ha" msprop:Generator_ColumnPropNameInTable="area_haColumn" msprop:Generator_ColumnPropNameInRow="area_ha" msprop:Generator_UserColumnName="area_ha" msprop:Generator_ColumnVarNameInTable="columnarea_ha" type="xs:decimal" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -4389,7 +4621,7 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_UserColumnName="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -4492,7 +4724,7 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="abnormality" msprop:Generator_ColumnPropNameInTable="abnormalityColumn" msprop:Generator_ColumnPropNameInRow="abnormality" msprop:Generator_UserColumnName="abnormality" msprop:Generator_ColumnVarNameInTable="columnabnormality" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="150" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -4510,6 +4742,7 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="norencana" msprop:Generator_ColumnPropNameInTable="norencanaColumn" msprop:Generator_ColumnPropNameInRow="norencana" msprop:Generator_UserColumnName="norencana" msprop:Generator_ColumnVarNameInTable="columnnorencana" type="xs:string" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -4534,7 +4767,7 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_UserColumnName="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -4638,7 +4871,7 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_UserColumnName="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -4787,7 +5020,7 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_UserColumnName="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -4887,6 +5120,20 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="norencana" msprop:Generator_ColumnPropNameInTable="norencanaColumn" msprop:Generator_ColumnPropNameInRow="norencana" msprop:Generator_UserColumnName="norencana" msprop:Generator_ColumnVarNameInTable="columnnorencana" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="unit" msprop:Generator_ColumnPropNameInTable="unitColumn" msprop:Generator_ColumnPropNameInRow="unit" msprop:Generator_UserColumnName="unit" msprop:Generator_ColumnVarNameInTable="columnunit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>
@@ -4905,7 +5152,7 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_UserColumnName="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -4981,10 +5228,6 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="StockOnProcess" msprop:Generator_RowEvHandlerName="StockOnProcessRowChangeEventHandler" msprop:Generator_RowDeletedName="StockOnProcessRowDeleted" msprop:Generator_RowDeletingName="StockOnProcessRowDeleting" msprop:Generator_RowEvArgName="StockOnProcessRowChangeEvent" msprop:Generator_TablePropName="StockOnProcess" msprop:Generator_RowChangedName="StockOnProcessRowChanged" msprop:Generator_UserTableName="StockOnProcess" msprop:Generator_RowChangingName="StockOnProcessRowChanging" msprop:Generator_RowClassName="StockOnProcessRow" msprop:Generator_TableClassName="StockOnProcessDataTable" msprop:Generator_TableVarName="tableStockOnProcess">
-          <xs:complexType>
-          </xs:complexType>
-        </xs:element>
         <xs:element name="rafaction_view" msprop:Generator_RowEvHandlerName="rafaction_viewRowChangeEventHandler" msprop:Generator_RowDeletedName="rafaction_viewRowDeleted" msprop:Generator_RowDeletingName="rafaction_viewRowDeleting" msprop:Generator_RowEvArgName="rafaction_viewRowChangeEvent" msprop:Generator_TablePropName="rafaction_view" msprop:Generator_RowChangedName="rafaction_viewRowChanged" msprop:Generator_UserTableName="rafaction_view" msprop:Generator_RowChangingName="rafaction_viewRowChanging" msprop:Generator_RowClassName="rafaction_viewRow" msprop:Generator_TableClassName="rafaction_viewDataTable" msprop:Generator_TableVarName="tablerafaction_view">
           <xs:complexType>
             <xs:sequence>
@@ -4999,7 +5242,7 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
               <xs:element name="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_UserColumnName="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
+                    <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
@@ -5110,122 +5353,136 @@ WHERE        (qc_confirm_viewer.tgl_confirm &gt;= CAST(GETDATE() AS Date)) AND (
             </xs:sequence>
           </xs:complexType>
         </xs:element>
-        <xs:element name="TermalDataTable" msprop:Generator_RowClassName="TermalDataTableRow" msprop:Generator_RowEvHandlerName="TermalDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="TermalDataTableRowDeleted" msprop:Generator_RowDeletingName="TermalDataTableRowDeleting" msprop:Generator_RowEvArgName="TermalDataTableRowChangeEvent" msprop:Generator_TablePropName="TermalDataTable" msprop:Generator_RowChangedName="TermalDataTableRowChanged" msprop:Generator_UserTableName="TermalDataTable" msprop:Generator_RowChangingName="TermalDataTableRowChanging" msprop:Generator_TableClassName="TermalDataTableDataTable" msprop:Generator_TableVarName="tableTermalDataTable">
+        <xs:element name="TermalDataTable" msprop:Generator_RowEvHandlerName="TermalDataTableRowChangeEventHandler" msprop:Generator_RowDeletedName="TermalDataTableRowDeleted" msprop:Generator_RowDeletingName="TermalDataTableRowDeleting" msprop:Generator_RowEvArgName="TermalDataTableRowChangeEvent" msprop:Generator_TablePropName="TermalDataTable" msprop:Generator_RowChangedName="TermalDataTableRowChanged" msprop:Generator_UserTableName="TermalDataTable" msprop:Generator_RowChangingName="TermalDataTableRowChanging" msprop:Generator_RowClassName="TermalDataTableRow" msprop:Generator_TableClassName="TermalDataTableDataTable" msprop:Generator_TableVarName="tableTermalDataTable">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" />
-              <xs:element name="id_hvsprod" msprop:Generator_UserColumnName="id_hvsprod" msprop:Generator_ColumnPropNameInTable="id_hvsprodColumn" msprop:Generator_ColumnPropNameInRow="id_hvsprod" msprop:Generator_ColumnVarNameInTable="columnid_hvsprod" type="xs:int" minOccurs="0" />
-              <xs:element name="crop" msprop:Generator_UserColumnName="crop" msprop:Generator_ColumnPropNameInTable="cropColumn" msprop:Generator_ColumnPropNameInRow="crop" msprop:Generator_ColumnVarNameInTable="columncrop" minOccurs="0">
+              <xs:element name="id" msprop:Generator_ColumnPropNameInTable="idColumn" msprop:Generator_ColumnPropNameInRow="id" msprop:Generator_UserColumnName="id" msprop:Generator_ColumnVarNameInTable="columnid" type="xs:int" />
+              <xs:element name="id_hvsprod" msprop:Generator_ColumnPropNameInTable="id_hvsprodColumn" msprop:Generator_ColumnPropNameInRow="id_hvsprod" msprop:Generator_UserColumnName="id_hvsprod" msprop:Generator_ColumnVarNameInTable="columnid_hvsprod" type="xs:int" minOccurs="0" />
+              <xs:element name="crop" msprop:Generator_ColumnPropNameInTable="cropColumn" msprop:Generator_ColumnPropNameInRow="crop" msprop:Generator_UserColumnName="crop" msprop:Generator_ColumnVarNameInTable="columncrop" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="variety" msprop:Generator_UserColumnName="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" minOccurs="0">
-                <xs:simpleType>
-                  <xs:restriction base="xs:string">
-                    <xs:maxLength value="25" />
-                  </xs:restriction>
-                </xs:simpleType>
-              </xs:element>
-              <xs:element name="farmer" msprop:Generator_UserColumnName="farmer" msprop:Generator_ColumnPropNameInTable="farmerColumn" msprop:Generator_ColumnPropNameInRow="farmer" msprop:Generator_ColumnVarNameInTable="columnfarmer" minOccurs="0">
+              <xs:element name="variety" msprop:Generator_ColumnPropNameInTable="varietyColumn" msprop:Generator_ColumnPropNameInRow="variety" msprop:Generator_UserColumnName="variety" msprop:Generator_ColumnVarNameInTable="columnvariety" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="nomnl" msprop:Generator_UserColumnName="nomnl" msprop:Generator_ColumnPropNameInTable="nomnlColumn" msprop:Generator_ColumnPropNameInRow="nomnl" msprop:Generator_ColumnVarNameInTable="columnnomnl" minOccurs="0">
+              <xs:element name="farmer" msprop:Generator_ColumnPropNameInTable="farmerColumn" msprop:Generator_ColumnPropNameInRow="farmer" msprop:Generator_UserColumnName="farmer" msprop:Generator_ColumnVarNameInTable="columnfarmer" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="255" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="nomnl" msprop:Generator_ColumnPropNameInTable="nomnlColumn" msprop:Generator_ColumnPropNameInRow="nomnl" msprop:Generator_UserColumnName="nomnl" msprop:Generator_ColumnVarNameInTable="columnnomnl" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="8" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="nojob" msprop:Generator_UserColumnName="nojob" msprop:Generator_ColumnPropNameInTable="nojobColumn" msprop:Generator_ColumnPropNameInRow="nojob" msprop:Generator_ColumnVarNameInTable="columnnojob" minOccurs="0">
+              <xs:element name="nojob" msprop:Generator_ColumnPropNameInTable="nojobColumn" msprop:Generator_ColumnPropNameInRow="nojob" msprop:Generator_UserColumnName="nojob" msprop:Generator_ColumnVarNameInTable="columnnojob" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="scope" msprop:Generator_UserColumnName="scope" msprop:Generator_ColumnPropNameInTable="scopeColumn" msprop:Generator_ColumnPropNameInRow="scope" msprop:Generator_ColumnVarNameInTable="columnscope" minOccurs="0">
+              <xs:element name="scope" msprop:Generator_ColumnPropNameInTable="scopeColumn" msprop:Generator_ColumnPropNameInRow="scope" msprop:Generator_UserColumnName="scope" msprop:Generator_ColumnVarNameInTable="columnscope" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="50" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="weight" msprop:Generator_UserColumnName="weight" msprop:Generator_ColumnPropNameInTable="weightColumn" msprop:Generator_ColumnPropNameInRow="weight" msprop:Generator_ColumnVarNameInTable="columnweight" type="xs:decimal" minOccurs="0" />
-              <xs:element name="location" msprop:Generator_UserColumnName="location" msprop:Generator_ColumnPropNameInTable="locationColumn" msprop:Generator_ColumnPropNameInRow="location" msprop:Generator_ColumnVarNameInTable="columnlocation" minOccurs="0">
+              <xs:element name="weight" msprop:Generator_ColumnPropNameInTable="weightColumn" msprop:Generator_ColumnPropNameInRow="weight" msprop:Generator_UserColumnName="weight" msprop:Generator_ColumnVarNameInTable="columnweight" type="xs:decimal" minOccurs="0" />
+              <xs:element name="location" msprop:Generator_ColumnPropNameInTable="locationColumn" msprop:Generator_ColumnPropNameInRow="location" msprop:Generator_UserColumnName="location" msprop:Generator_ColumnVarNameInTable="columnlocation" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="harvest" msprop:Generator_UserColumnName="harvest" msprop:Generator_ColumnPropNameInTable="harvestColumn" msprop:Generator_ColumnPropNameInRow="harvest" msprop:Generator_ColumnVarNameInTable="columnharvest" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="bag" msprop:Generator_UserColumnName="bag" msprop:Generator_ColumnPropNameInTable="bagColumn" msprop:Generator_ColumnPropNameInRow="bag" msprop:Generator_ColumnVarNameInTable="columnbag" type="xs:int" minOccurs="0" />
-              <xs:element name="test_sampling" msprop:Generator_UserColumnName="test_sampling" msprop:Generator_ColumnPropNameInTable="test_samplingColumn" msprop:Generator_ColumnPropNameInRow="test_sampling" msprop:Generator_ColumnVarNameInTable="columntest_sampling" type="xs:boolean" minOccurs="0" />
-              <xs:element name="test_moi" msprop:Generator_UserColumnName="test_moi" msprop:Generator_ColumnPropNameInTable="test_moiColumn" msprop:Generator_ColumnPropNameInRow="test_moi" msprop:Generator_ColumnVarNameInTable="columntest_moi" type="xs:boolean" minOccurs="0" />
-              <xs:element name="test_pur" msprop:Generator_UserColumnName="test_pur" msprop:Generator_ColumnPropNameInTable="test_purColumn" msprop:Generator_ColumnPropNameInRow="test_pur" msprop:Generator_ColumnVarNameInTable="columntest_pur" type="xs:boolean" minOccurs="0" />
-              <xs:element name="test_ger" msprop:Generator_UserColumnName="test_ger" msprop:Generator_ColumnPropNameInTable="test_gerColumn" msprop:Generator_ColumnPropNameInRow="test_ger" msprop:Generator_ColumnVarNameInTable="columntest_ger" type="xs:boolean" minOccurs="0" />
-              <xs:element name="test_via" msprop:Generator_UserColumnName="test_via" msprop:Generator_ColumnPropNameInTable="test_viaColumn" msprop:Generator_ColumnPropNameInRow="test_via" msprop:Generator_ColumnVarNameInTable="columntest_via" type="xs:boolean" minOccurs="0" />
-              <xs:element name="test_raf" msprop:Generator_UserColumnName="test_raf" msprop:Generator_ColumnPropNameInTable="test_rafColumn" msprop:Generator_ColumnPropNameInRow="test_raf" msprop:Generator_ColumnVarNameInTable="columntest_raf" type="xs:boolean" minOccurs="0" />
-              <xs:element name="req_name" msprop:Generator_UserColumnName="req_name" msprop:Generator_ColumnPropNameInTable="req_nameColumn" msprop:Generator_ColumnPropNameInRow="req_name" msprop:Generator_ColumnVarNameInTable="columnreq_name" minOccurs="0">
+              <xs:element name="harvest" msprop:Generator_ColumnPropNameInTable="harvestColumn" msprop:Generator_ColumnPropNameInRow="harvest" msprop:Generator_UserColumnName="harvest" msprop:Generator_ColumnVarNameInTable="columnharvest" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="bag" msprop:Generator_ColumnPropNameInTable="bagColumn" msprop:Generator_ColumnPropNameInRow="bag" msprop:Generator_UserColumnName="bag" msprop:Generator_ColumnVarNameInTable="columnbag" type="xs:int" minOccurs="0" />
+              <xs:element name="test_sampling" msprop:Generator_ColumnPropNameInTable="test_samplingColumn" msprop:Generator_ColumnPropNameInRow="test_sampling" msprop:Generator_UserColumnName="test_sampling" msprop:Generator_ColumnVarNameInTable="columntest_sampling" type="xs:boolean" minOccurs="0" />
+              <xs:element name="test_moi" msprop:Generator_ColumnPropNameInTable="test_moiColumn" msprop:Generator_ColumnPropNameInRow="test_moi" msprop:Generator_UserColumnName="test_moi" msprop:Generator_ColumnVarNameInTable="columntest_moi" type="xs:boolean" minOccurs="0" />
+              <xs:element name="test_pur" msprop:Generator_ColumnPropNameInTable="test_purColumn" msprop:Generator_ColumnPropNameInRow="test_pur" msprop:Generator_UserColumnName="test_pur" msprop:Generator_ColumnVarNameInTable="columntest_pur" type="xs:boolean" minOccurs="0" />
+              <xs:element name="test_ger" msprop:Generator_ColumnPropNameInTable="test_gerColumn" msprop:Generator_ColumnPropNameInRow="test_ger" msprop:Generator_UserColumnName="test_ger" msprop:Generator_ColumnVarNameInTable="columntest_ger" type="xs:boolean" minOccurs="0" />
+              <xs:element name="test_via" msprop:Generator_ColumnPropNameInTable="test_viaColumn" msprop:Generator_ColumnPropNameInRow="test_via" msprop:Generator_UserColumnName="test_via" msprop:Generator_ColumnVarNameInTable="columntest_via" type="xs:boolean" minOccurs="0" />
+              <xs:element name="test_raf" msprop:Generator_ColumnPropNameInTable="test_rafColumn" msprop:Generator_ColumnPropNameInRow="test_raf" msprop:Generator_UserColumnName="test_raf" msprop:Generator_ColumnVarNameInTable="columntest_raf" type="xs:boolean" minOccurs="0" />
+              <xs:element name="req_name" msprop:Generator_ColumnPropNameInTable="req_nameColumn" msprop:Generator_ColumnPropNameInRow="req_name" msprop:Generator_UserColumnName="req_name" msprop:Generator_ColumnVarNameInTable="columnreq_name" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="tgl_confirm" msprop:Generator_UserColumnName="tgl_confirm" msprop:Generator_ColumnPropNameInTable="tgl_confirmColumn" msprop:Generator_ColumnPropNameInRow="tgl_confirm" msprop:Generator_ColumnVarNameInTable="columntgl_confirm" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="status" msprop:Generator_UserColumnName="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_ColumnVarNameInTable="columnstatus" type="xs:boolean" minOccurs="0" />
-              <xs:element name="information_rejected" msprop:Generator_UserColumnName="information_rejected" msprop:Generator_ColumnPropNameInTable="information_rejectedColumn" msprop:Generator_ColumnPropNameInRow="information_rejected" msprop:Generator_ColumnVarNameInTable="columninformation_rejected" minOccurs="0">
+              <xs:element name="tgl_confirm" msprop:Generator_ColumnPropNameInTable="tgl_confirmColumn" msprop:Generator_ColumnPropNameInRow="tgl_confirm" msprop:Generator_UserColumnName="tgl_confirm" msprop:Generator_ColumnVarNameInTable="columntgl_confirm" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="status" msprop:Generator_ColumnPropNameInTable="statusColumn" msprop:Generator_ColumnPropNameInRow="status" msprop:Generator_UserColumnName="status" msprop:Generator_ColumnVarNameInTable="columnstatus" type="xs:boolean" minOccurs="0" />
+              <xs:element name="information_rejected" msprop:Generator_ColumnPropNameInTable="information_rejectedColumn" msprop:Generator_ColumnPropNameInRow="information_rejected" msprop:Generator_UserColumnName="information_rejected" msprop:Generator_ColumnVarNameInTable="columninformation_rejected" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="150" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="nama_con" msprop:Generator_UserColumnName="nama_con" msprop:Generator_ColumnPropNameInTable="nama_conColumn" msprop:Generator_ColumnPropNameInRow="nama_con" msprop:Generator_ColumnVarNameInTable="columnnama_con" minOccurs="0">
+              <xs:element name="nama_con" msprop:Generator_ColumnPropNameInTable="nama_conColumn" msprop:Generator_ColumnPropNameInRow="nama_con" msprop:Generator_UserColumnName="nama_con" msprop:Generator_ColumnVarNameInTable="columnnama_con" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="255" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="labnum" msprop:Generator_UserColumnName="labnum" msprop:Generator_ColumnPropNameInTable="labnumColumn" msprop:Generator_ColumnPropNameInRow="labnum" msprop:Generator_ColumnVarNameInTable="columnlabnum" minOccurs="0">
+              <xs:element name="labnum" msprop:Generator_ColumnPropNameInTable="labnumColumn" msprop:Generator_ColumnPropNameInRow="labnum" msprop:Generator_UserColumnName="labnum" msprop:Generator_ColumnVarNameInTable="columnlabnum" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="15" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="status_confirm" msdata:ReadOnly="true" msprop:Generator_UserColumnName="status_confirm" msprop:Generator_ColumnPropNameInTable="status_confirmColumn" msprop:Generator_ColumnPropNameInRow="status_confirm" msprop:Generator_ColumnVarNameInTable="columnstatus_confirm" minOccurs="0">
+              <xs:element name="status_confirm" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInTable="status_confirmColumn" msprop:Generator_ColumnPropNameInRow="status_confirm" msprop:Generator_UserColumnName="status_confirm" msprop:Generator_ColumnVarNameInTable="columnstatus_confirm" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="10" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="req_date" msprop:Generator_UserColumnName="req_date" msprop:Generator_ColumnPropNameInTable="req_dateColumn" msprop:Generator_ColumnPropNameInRow="req_date" msprop:Generator_ColumnVarNameInTable="columnreq_date" type="xs:dateTime" minOccurs="0" />
-              <xs:element name="remark" msprop:Generator_UserColumnName="remark" msprop:Generator_ColumnPropNameInTable="remarkColumn" msprop:Generator_ColumnPropNameInRow="remark" msprop:Generator_ColumnVarNameInTable="columnremark" minOccurs="0">
+              <xs:element name="req_date" msprop:Generator_ColumnPropNameInTable="req_dateColumn" msprop:Generator_ColumnPropNameInRow="req_date" msprop:Generator_UserColumnName="req_date" msprop:Generator_ColumnVarNameInTable="columnreq_date" type="xs:dateTime" minOccurs="0" />
+              <xs:element name="remark" msprop:Generator_ColumnPropNameInTable="remarkColumn" msprop:Generator_ColumnPropNameInRow="remark" msprop:Generator_UserColumnName="remark" msprop:Generator_ColumnVarNameInTable="columnremark" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="225" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="loc_sample" msprop:Generator_UserColumnName="loc_sample" msprop:Generator_ColumnPropNameInTable="loc_sampleColumn" msprop:Generator_ColumnPropNameInRow="loc_sample" msprop:Generator_ColumnVarNameInTable="columnloc_sample" minOccurs="0">
+              <xs:element name="loc_sample" msprop:Generator_ColumnPropNameInTable="loc_sampleColumn" msprop:Generator_ColumnPropNameInRow="loc_sample" msprop:Generator_UserColumnName="loc_sample" msprop:Generator_ColumnVarNameInTable="columnloc_sample" minOccurs="0">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="25" />
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
-              <xs:element name="LA4" msprop:Generator_UserColumnName="LA4" msprop:Generator_ColumnPropNameInTable="LA4Column" msprop:Generator_ColumnPropNameInRow="LA4" msprop:Generator_ColumnVarNameInTable="columnLA4" type="xs:int" minOccurs="0" />
+              <xs:element name="LA4" msprop:Generator_ColumnPropNameInTable="LA4Column" msprop:Generator_ColumnPropNameInRow="LA4" msprop:Generator_UserColumnName="LA4" msprop:Generator_ColumnVarNameInTable="columnLA4" type="xs:int" minOccurs="0" />
+              <xs:element name="norencana" msprop:Generator_ColumnPropNameInTable="norencanaColumn" msprop:Generator_ColumnPropNameInRow="norencana" msprop:Generator_UserColumnName="norencana" msprop:Generator_ColumnVarNameInTable="columnnorencana" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="200" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="unit" msprop:Generator_ColumnPropNameInTable="unitColumn" msprop:Generator_ColumnPropNameInRow="unit" msprop:Generator_UserColumnName="unit" msprop:Generator_ColumnVarNameInTable="columnunit" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="50" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
             </xs:sequence>
           </xs:complexType>
         </xs:element>

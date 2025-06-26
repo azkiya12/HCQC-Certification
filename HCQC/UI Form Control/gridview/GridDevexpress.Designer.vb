@@ -222,6 +222,7 @@ Partial Class GridDevexpress
         Me.ComboBoxEdit1 = New DevExpress.XtraEditors.ComboBoxEdit()
         Me.MetroLink2 = New MetroFramework.Controls.MetroLink()
         Me.MetroLink1 = New MetroFramework.Controls.MetroLink()
+        Me.colnorencana = New DevExpress.XtraGrid.Columns.GridColumn()
         CType(Me.MoistureGridView2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.ReportglobalviewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -1124,7 +1125,7 @@ Partial Class GridDevexpress
         'GridView
         '
         Me.GridView.BorderStyle = DevExpress.XtraEditors.Controls.BorderStyles.Flat
-        Me.GridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.collabnum1, Me.colid_hvsprod, Me.colcrop, Me.colvariety, Me.colfarmer, Me.collocation, Me.colharvest, Me.colnomnl, Me.colnojob, Me.colweight, Me.colscope, Me.colloc_sample, Me.colrequest_date, Me.coldatein, Me.colremark, Me.coltest_moi, Me.coltest_pur, Me.coltest_ger, Me.coltest_raf, Me.coltest_via, Me.coltest_ontest, Me.colraf_date, Me.colraf_total, Me.colraf_ket, Me.colraf_result, Me.colanalys2, Me.colraf_inputat, Me.colvia_date, Me.colvia_mean, Me.colvia_result, Me.colvia_analyst, Me.colvia_inputat, Me.colmoi_date, Me.colmoi_mean, Me.colmoi_analyst, Me.colmoi_inputat, Me.colws2, Me.colpure1, Me.colother1, Me.colinert1, Me.colpurity_mean, Me.colpur_date, Me.colpur_inputat, Me.colvg, Me.coldt, Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.colger_date, Me.colger_scnd, Me.colger_inputat, Me.GridColumn5, Me.GridColumn6, Me.colstaff, Me.colsampling_g, Me.colpur_result, Me.colabnormality})
+        Me.GridView.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.collabnum1, Me.colid_hvsprod, Me.colnorencana, Me.colcrop, Me.colvariety, Me.colfarmer, Me.collocation, Me.colharvest, Me.colnomnl, Me.colnojob, Me.colweight, Me.colscope, Me.colloc_sample, Me.colrequest_date, Me.coldatein, Me.colremark, Me.coltest_moi, Me.coltest_pur, Me.coltest_ger, Me.coltest_raf, Me.coltest_via, Me.coltest_ontest, Me.colraf_date, Me.colraf_total, Me.colraf_ket, Me.colraf_result, Me.colanalys2, Me.colraf_inputat, Me.colvia_date, Me.colvia_mean, Me.colvia_result, Me.colvia_analyst, Me.colvia_inputat, Me.colmoi_date, Me.colmoi_mean, Me.colmoi_analyst, Me.colmoi_inputat, Me.colws2, Me.colpure1, Me.colother1, Me.colinert1, Me.colpurity_mean, Me.colpur_date, Me.colpur_inputat, Me.colvg, Me.coldt, Me.GridColumn1, Me.GridColumn2, Me.GridColumn3, Me.GridColumn4, Me.colger_date, Me.colger_scnd, Me.colger_inputat, Me.GridColumn5, Me.GridColumn6, Me.colstaff, Me.colsampling_g, Me.colpur_result, Me.colabnormality})
         Me.GridView.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFocus
         Me.GridView.GridControl = Me.GridControl1
         Me.GridView.Name = "GridView"
@@ -1160,7 +1161,7 @@ Partial Class GridDevexpress
         Me.colid_hvsprod.FieldName = "id_hvsprod"
         Me.colid_hvsprod.Name = "colid_hvsprod"
         Me.colid_hvsprod.Visible = True
-        Me.colid_hvsprod.VisibleIndex = 1
+        Me.colid_hvsprod.VisibleIndex = 2
         Me.colid_hvsprod.Width = 82
         '
         'colcrop
@@ -1169,16 +1170,16 @@ Partial Class GridDevexpress
         Me.colcrop.FieldName = "crop"
         Me.colcrop.Name = "colcrop"
         Me.colcrop.Visible = True
-        Me.colcrop.VisibleIndex = 2
+        Me.colcrop.VisibleIndex = 3
         Me.colcrop.Width = 80
         '
         'colvariety
         '
-        Me.colvariety.Caption = "Variety"
+        Me.colvariety.Caption = "Code"
         Me.colvariety.FieldName = "variety"
         Me.colvariety.Name = "colvariety"
         Me.colvariety.Visible = True
-        Me.colvariety.VisibleIndex = 3
+        Me.colvariety.VisibleIndex = 4
         Me.colvariety.Width = 70
         '
         'colfarmer
@@ -1187,7 +1188,7 @@ Partial Class GridDevexpress
         Me.colfarmer.FieldName = "farmer"
         Me.colfarmer.Name = "colfarmer"
         Me.colfarmer.Visible = True
-        Me.colfarmer.VisibleIndex = 4
+        Me.colfarmer.VisibleIndex = 5
         '
         'collocation
         '
@@ -1195,7 +1196,7 @@ Partial Class GridDevexpress
         Me.collocation.FieldName = "location"
         Me.collocation.Name = "collocation"
         Me.collocation.Visible = True
-        Me.collocation.VisibleIndex = 5
+        Me.collocation.VisibleIndex = 6
         '
         'colharvest
         '
@@ -1209,7 +1210,7 @@ Partial Class GridDevexpress
         Me.colnomnl.FieldName = "nomnl"
         Me.colnomnl.Name = "colnomnl"
         Me.colnomnl.Visible = True
-        Me.colnomnl.VisibleIndex = 6
+        Me.colnomnl.VisibleIndex = 7
         Me.colnomnl.Width = 56
         '
         'colnojob
@@ -1218,7 +1219,7 @@ Partial Class GridDevexpress
         Me.colnojob.FieldName = "nojob"
         Me.colnojob.Name = "colnojob"
         Me.colnojob.Visible = True
-        Me.colnojob.VisibleIndex = 7
+        Me.colnojob.VisibleIndex = 8
         Me.colnojob.Width = 66
         '
         'colweight
@@ -1227,7 +1228,7 @@ Partial Class GridDevexpress
         Me.colweight.FieldName = "weight"
         Me.colweight.Name = "colweight"
         Me.colweight.Visible = True
-        Me.colweight.VisibleIndex = 8
+        Me.colweight.VisibleIndex = 9
         Me.colweight.Width = 61
         '
         'colscope
@@ -1236,7 +1237,7 @@ Partial Class GridDevexpress
         Me.colscope.FieldName = "scope"
         Me.colscope.Name = "colscope"
         Me.colscope.Visible = True
-        Me.colscope.VisibleIndex = 9
+        Me.colscope.VisibleIndex = 10
         Me.colscope.Width = 84
         '
         'colloc_sample
@@ -1258,7 +1259,7 @@ Partial Class GridDevexpress
         Me.coldatein.FieldName = "datein"
         Me.coldatein.Name = "coldatein"
         Me.coldatein.Visible = True
-        Me.coldatein.VisibleIndex = 10
+        Me.coldatein.VisibleIndex = 11
         Me.coldatein.Width = 109
         '
         'colremark
@@ -1315,7 +1316,7 @@ Partial Class GridDevexpress
         Me.colraf_total.FieldName = "raf_total"
         Me.colraf_total.Name = "colraf_total"
         Me.colraf_total.Visible = True
-        Me.colraf_total.VisibleIndex = 14
+        Me.colraf_total.VisibleIndex = 15
         Me.colraf_total.Width = 85
         '
         'colraf_ket
@@ -1324,7 +1325,7 @@ Partial Class GridDevexpress
         Me.colraf_ket.FieldName = "raf_ket"
         Me.colraf_ket.Name = "colraf_ket"
         Me.colraf_ket.Visible = True
-        Me.colraf_ket.VisibleIndex = 15
+        Me.colraf_ket.VisibleIndex = 16
         '
         'colraf_result
         '
@@ -1332,7 +1333,7 @@ Partial Class GridDevexpress
         Me.colraf_result.FieldName = "raf_result"
         Me.colraf_result.Name = "colraf_result"
         Me.colraf_result.Visible = True
-        Me.colraf_result.VisibleIndex = 17
+        Me.colraf_result.VisibleIndex = 18
         Me.colraf_result.Width = 68
         '
         'colanalys2
@@ -1359,7 +1360,7 @@ Partial Class GridDevexpress
         Me.colvia_mean.FieldName = "via_mean"
         Me.colvia_mean.Name = "colvia_mean"
         Me.colvia_mean.Visible = True
-        Me.colvia_mean.VisibleIndex = 16
+        Me.colvia_mean.VisibleIndex = 17
         '
         'colvia_result
         '
@@ -1391,7 +1392,7 @@ Partial Class GridDevexpress
         Me.colmoi_mean.FieldName = "moi_mean"
         Me.colmoi_mean.Name = "colmoi_mean"
         Me.colmoi_mean.Visible = True
-        Me.colmoi_mean.VisibleIndex = 11
+        Me.colmoi_mean.VisibleIndex = 12
         Me.colmoi_mean.Width = 83
         '
         'colmoi_analyst
@@ -1418,7 +1419,7 @@ Partial Class GridDevexpress
         Me.colpure1.FieldName = "pure"
         Me.colpure1.Name = "colpure1"
         Me.colpure1.Visible = True
-        Me.colpure1.VisibleIndex = 12
+        Me.colpure1.VisibleIndex = 13
         '
         'colother1
         '
@@ -1462,7 +1463,7 @@ Partial Class GridDevexpress
         Me.coldt.FieldName = "dt"
         Me.coldt.Name = "coldt"
         Me.coldt.Visible = True
-        Me.coldt.VisibleIndex = 13
+        Me.coldt.VisibleIndex = 14
         Me.coldt.Width = 64
         '
         'GridColumn1
@@ -1535,7 +1536,7 @@ Partial Class GridDevexpress
         Me.colpur_result.FieldName = "pur_result"
         Me.colpur_result.Name = "colpur_result"
         Me.colpur_result.Visible = True
-        Me.colpur_result.VisibleIndex = 18
+        Me.colpur_result.VisibleIndex = 19
         Me.colpur_result.Width = 66
         '
         'colabnormality
@@ -1544,7 +1545,7 @@ Partial Class GridDevexpress
         Me.colabnormality.FieldName = "abnormality"
         Me.colabnormality.Name = "colabnormality"
         Me.colabnormality.Visible = True
-        Me.colabnormality.VisibleIndex = 19
+        Me.colabnormality.VisibleIndex = 20
         '
         'RepositoryItemHyperLinkEdit1
         '
@@ -1814,6 +1815,15 @@ Partial Class GridDevexpress
         Me.MetroLink1.UseSelectable = True
         Me.MetroLink1.UseStyleColors = True
         '
+        'colnorencana
+        '
+        Me.colnorencana.Caption = "Plant/DoVendor"
+        Me.colnorencana.FieldName = "norencana"
+        Me.colnorencana.Name = "colnorencana"
+        Me.colnorencana.Visible = True
+        Me.colnorencana.VisibleIndex = 1
+        Me.colnorencana.Width = 95
+        '
         'GridDevexpress
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -2048,4 +2058,5 @@ Partial Class GridDevexpress
     Friend WithEvents ComboBoxEdit1 As DevExpress.XtraEditors.ComboBoxEdit
     Friend WithEvents MetroLink2 As MetroLink
     Friend WithEvents MetroLink1 As MetroLink
+    Friend WithEvents colnorencana As DevExpress.XtraGrid.Columns.GridColumn
 End Class

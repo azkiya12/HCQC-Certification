@@ -123,7 +123,16 @@
   <metadata name="id_hvsprodColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="insplot.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="unit.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="bagColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="loc_sample.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="test_moi.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -147,19 +156,16 @@
   <metadata name="HCQC_NewDataset.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <metadata name="HCQC_NewDataset.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 17</value>
-  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
   <data name="BtnSend.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAYAAADHl1ErAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAATlJREFUeF7t0EGKxDAQA8D5/6dnQRQBw5BDsJ01qI5q00rnU1VVVVVVVVVVVVVV
-        VVX1X303UXc+9yyn7nzuWU7d+dwTommsDdH53BOiaawN0fncE6JprA3R+dwTommsDdH53BOiaawN0fnc
-        s5y687lnOXXnc89y6s7nnhBNY22IzueeEE1jbYjO554QTWNtiM7nnhBNY22IHrFiYLSf/hBNY22IHrFi
-        YLSf/tf4jFueDoz20/8an3HL04HRfvpf4zNueTow2k9/iJZTF6KL+BEr1tIVouXUhegifsSKtXSFaDl1
-        IbqIH7FiLV0hWk5diC7iR6xYS1eIllMXoov4ESvW0vUan3HL04HRfvpf4zNueTow2k//a3zGLU8HRvWL
-        fzQwql/8o4FRVVVVVVVVVVVVVVVVVe3y+fwB7GrDrWINe2QAAAAASUVORK5CYII=
+        wAAADsABataJCQAAAQ1JREFUeF7t0EGKAzEMRNHc/9IJXgTEx0xjSElj+G/bcpXUr5ckSZIkSZIkSZIk
+        /VPvJuy9Fg9LYe+1eFgKe6+VPCqZPSZ5VDJ7TPKoZPaY5FHJ7DHJo5LZY+pRSey9Fg9LYe+1eFgKe6+V
+        PCqZPSZ5VDJ7TPKoZPaY5FG/yq45X5xpk1ziV9k154szbbhIN+6zwzcLZ9pwkW7cZ4dvFs604SLduM8O
+        3yycaTOxxF+d9dspZkW0Fz501m+nmBXRXvjQWb+dYlZEe+FDZ/12ilkR7YUPnfXbKWZFsLQb99nhm4Uz
+        bbhIN+6zwzcLZ9pwkW7cZ4dvFs6o4M9aOKOCP2vhjCRJkiRJkiRJkqS4D+xqw628pk7WAAAAAElFTkSu
+        QmCC
 </value>
   </data>
   <metadata name="MetroToolTip1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

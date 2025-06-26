@@ -156,20 +156,20 @@ Public Class Harvest_Planning
                         ^MMT^LS0
                         ^BY3,3,30^FT45,54^BCN,,Y,N
                         ^FH\^FD>;" & VCode.Insert(8, ">6") & "^FS
-                        ^FT238,128^AAN,18,10^FB156,1,0,R^FH\^FD" & VnoRen & "^FS
-                        ^FT19,107^A@N,14,13,TT0003M_^FH\^CI28^FDNo. Kontrak^FS^CI27
-                        ^FT106,106^AAN,18,10^FB288,1,0,R^FH\^FD" & VKontrak & "^FS
-                        ^FT19,128^A@N,14,13,TT0003M_^FH\^CI28^FDNo. Rencana Panen^FS^CI27
+                        ^FT0,128^AAN,18,10^FB371,1,0,R^FH\^FD" & VnoRen & "^FS
+                        ^FT19,107^A@N,14,13,TT0003M_^FH\^CI28^FDContract No^FS^CI27
+                        ^FT0,106^AAN,18,10^FB382,1,0,R^FH\^FD" & VKontrak & "^FS
+                        ^FT19,128^A@N,14,13,TT0003M_^FH\^CI28^FDDO Vendor^FS^CI27
                         ^FT19,153^A@N,17,18,TT0003M_^FH\^CI28^FD" & VCrop & "^FS^CI27
-                        ^FPH,1^FT269,153^A@N,17,18,TT0003M_^FB124,1,9,R^FH\^CI28^FDP: " & VHarvest & "^FS^CI27
+                        ^FPH,1^FT0,153^A@N,17,18,TT0003M_^FB371,1,9,R^FH\^CI28^FDP: " & VHarvest & "^FS^CI27
                         ^BY3,3,30^FT469,54^BCN,,Y,N
                         ^FH\^FD>;" & VCode.Insert(8, ">6") & "^FS
-                        ^FT662,128^AAN,18,10^FB156,1,0,R^FH\^FD" & VnoRen & "^FS
-                        ^FT443,107^A@N,14,13,TT0003M_^FH\^CI28^FDNo. Kontrak^FS^CI27
-                        ^FT530,106^AAN,18,10^FB288,1,0,R^FH\^FD" & VKontrak & "^FS
-                        ^FT443,128^A@N,14,13,TT0003M_^FH\^CI28^FDNo. Rencana Panen^FS^CI27
+                        ^FT0,128^AAN,18,10^FB795,1,0,R^FH\^FD" & VnoRen & "^FS
+                        ^FT443,107^A@N,14,13,TT0003M_^FH\^CI28^FDContract No^FS^CI27
+                        ^FT0,106^AAN,18,10^FB806,1,0,R^FH\^FD" & VKontrak & "^FS
+                        ^FT443,128^A@N,14,13,TT0003M_^FH\^CI28^FDDO Vendor^FS^CI27
                         ^FT443,153^A@N,17,18,TT0003M_^FH\^CI28^FD" & VCrop & "^FS^CI27
-                        ^FPH,1^FT693,153^A@N,17,18,TT0003M_^FB124,1,9,R^FH\^CI28^FDP: " & VHarvest & "^FS^CI27
+                        ^FPH,1^FT0,153^A@N,17,18,TT0003M_^FB795,1,9,R^FH\^CI28^FDP: " & VHarvest & "^FS^CI27
                         ^PQ" & trequestcopy.Text & ",0,1,Y
                         ^XZ"
 
@@ -368,8 +368,9 @@ Public Class Harvest_Planning
     End Sub
 
     Private Sub LinkImport_Click(sender As Object, e As EventArgs) Handles LinkImport.Click
-        Dim F_Import As Form = New Form_Import
-        F_Import.ShowDialog(Me)
+        Dim frm As New Form_Import()
+        frm.CallerSource = FormCaller.Harvest_Planning
+        frm.ShowDialog(Me)
     End Sub
 
     Private Sub linkClearAll_Click(sender As Object, e As EventArgs) Handles linkClearAll.Click
@@ -419,6 +420,24 @@ Public Class Harvest_Planning
     End Sub
 
     Private Sub ComboBtn1_Click(sender As Object, e As EventArgs) Handles ComboBtn1.Click
+
+    End Sub
+
+    Private Sub FillByToolStripButton_Click(sender As Object, e As EventArgs)
+        Try
+            Me.HarvestProductionTableAdapter.FillBy(Me.HCQC_NewDataset.HarvestProduction)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
+
+    End Sub
+
+    Private Sub FillBy1ToolStripButton_Click(sender As Object, e As EventArgs)
+        Try
+            Me.HarvestProductionTableAdapter.FillBy1(Me.HCQC_NewDataset.HarvestProduction)
+        Catch ex As System.Exception
+            System.Windows.Forms.MessageBox.Show(ex.Message)
+        End Try
 
     End Sub
 End Class

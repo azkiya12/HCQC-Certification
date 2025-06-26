@@ -8,14 +8,12 @@ Public Class Request_Sampling_From
     Public cek As Boolean = False
     Public vid As Integer
 
+    ' Variabel global untuk menampung inspection lot WIP
+    Public inspLot As String
+
     Public Shared Sub SetDoubleBuffered(ByVal control As Control)
         GetType(Control).InvokeMember("DoubleBuffered", BindingFlags.SetProperty Or BindingFlags.Instance Or BindingFlags.NonPublic, Nothing, control, New Object() {True})
     End Sub
-
-    Public Sub OnRefreshEventHendler()
-        Spl_request1TableAdapter.Fill(HCQC_NewDataset.Spl_request1)
-    End Sub
-
 
     Private Sub Request_Sampling_From_Load(sender As Object, e As EventArgs) Handles Me.Load
         'LinkThisMonth_Click(sender, e)
@@ -30,6 +28,7 @@ Public Class Request_Sampling_From
         tgl_hvs.Text = Today.ToString(LabelDate.Text)
         tid_hvsprod.Select()
         SetDoubleBuffered(MetroTabControl1)
+        tunit.SelectedIndex = 0
     End Sub
 
     Private Sub BtnSave_Click(sender As Object, e As EventArgs) Handles BtnSave.Click
@@ -62,7 +61,9 @@ Public Class Request_Sampling_From
                        ,[harvest]
                        ,[nomnl]
                        ,[nojob]
+                       ,[insplot]
                        ,[weight]
+                       ,[unit]
                        ,[scope]
                        ,[bag]
                        ,[test_sampling]
@@ -85,7 +86,9 @@ Public Class Request_Sampling_From
                        ,'" & tglharvest.ToString("yyyy-MM-dd") & "'
                        ,'" & tnoman.Text & "'
                        ,'" & tlotref.Text & "'
+                       ,'" & tinsplot.Text & "'
                        ," & Math.Round(CDbl(tlotqtt.Text), 2) & "
+                       ,'" & tunit.Text & "'
                        ,'" & tscope.Text & "'
                        ," & CInt(tbag.Text) & "
                        ,'" & tsampling.CheckState & "'
@@ -110,7 +113,9 @@ Public Class Request_Sampling_From
                                     ,[harvest] = '" & tglharvest.ToString("yyyy-MM-dd") & "'
                                     ,[nomnl] = '" & tnoman.Text & "'
                                     ,[nojob] = '" & tlotref.Text & "'
+                                    ,[insplot] = '" & tinsplot.Text & "'
                                     ,[weight] = " & Math.Round(CDbl(tlotqtt.Text), 2) & "
+                                    ,[unit] = '" & tunit.Text & "'
                                     ,[scope] = '" & tscope.Text & "'
                                     ,[bag]=" & CInt(tbag.Text) & "
                                     ,[test_sampling] = '" & tsampling.CheckState & "'
@@ -153,13 +158,14 @@ Public Class Request_Sampling_From
 
         With MetroGrid1
             i = .CurrentRow.Index
-            '' ### Parameter vid penting untuk melakukan update
+            '' ### Parameter vid penting untuk melakukan update pada spl_request
             vid = .Rows(i).Cells("IdColumn").Value
             If MetroGrid1.Columns(e.ColumnIndex).Name = "ColmEdit" Then
 
                 Dim strlogin As Integer = _DataToValue("Select [id_login] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & vid & "")
                 If strlogin = login.Luserid.Text Then
                     tid_hvsprod.Text = .Rows(i).Cells("IdhvsprodColumn").Value.ToString
+                    tDOVendor.Text = .Rows(i).Cells("norencana").Value.ToString
                     tvariety.Text = .Rows(i).Cells("varietyColumn").Value.ToString
                     tfarmer.Text = .Rows(i).Cells("farmerColumn").Value.ToString
                     tlocation.Text = .Rows(i).Cells("LocationColumn").Value.ToString
@@ -168,9 +174,14 @@ Public Class Request_Sampling_From
 						 where variety='" & tvariety.Text & "'")
                     tnoman.Text = .Rows(i).Cells("NomnlColumn").Value.ToString
                     tlotref.Text = .Rows(i).Cells("NojobColumn").Value.ToString
+                    tinsplot.Text = _DataToValue("Select [insplot] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & vid & "")
                     tlotqtt.Text = .Rows(i).Cells("WeightColumn").Value.ToString
+                    tunit.Text = .Rows(i).Cells("UnitColumn").Value.ToString
                     tscope.Text = .Rows(i).Cells("ScopeColumn").Value.ToString
                     tloc_sample.Text = .Rows(i).Cells("loc_sampleColumn").Value.ToString
+
+                    Dim NoRencana As String = _DataToValue("SELECT [norencana] From [HCQC_server].[dbo].[harvestprod] WHERE [idcode]=" & tid_hvsprod.Text)
+                    tDOVendor.Text = NoRencana.Replace(" ", "")
 
                     Try
                         Using dread As SqlDataReader = GetSpl_RequestData(vid)
@@ -181,8 +192,9 @@ Public Class Request_Sampling_From
                                         tgl_hvs.Text = harvestDate.ToString("dd-MM-yyyy")
                                     End If
                                     'tgl_hvs.Text = dread.Item("harvest").ToString(LabelDate.Text)
-                                    tloc_sample.Text = dread.Item("loc_sample")
+                                    tinsplot.Text = dread.Item("insplot")
                                     tbag.Text = dread.Item("bag")
+
                                     tsampling.Checked = Convert.ToBoolean(dread.Item("test_sampling"))
                                     tmoi.Checked = Convert.ToBoolean(dread.Item("test_moi"))
                                     tpur.Checked = Convert.ToBoolean(dread.Item("test_pur"))
@@ -216,7 +228,7 @@ Public Class Request_Sampling_From
     Private Function GetSpl_RequestData(ByVal vid As String) As SqlDataReader
         'Function untuk manmpilkan identitas secara dinamis, contoh:
 
-        Dim sql As String = "SELECT   loc_sample, harvest, [bag], [test_sampling], [test_moi], [test_pur], [test_raf], [test_ger], [test_via], [kesehatan_benih], remark
+        Dim sql As String = "SELECT   [insplot],loc_sample, harvest, [bag], [test_sampling], [test_moi], [test_pur], [test_raf], [test_ger], [test_via], [kesehatan_benih], remark
                             FROM [HCQC_server].[dbo].[spl_request] WHERE ([id] = @ID)"
         openDB()
         Dim cmd As New SqlCommand(sql, con) With {
@@ -318,25 +330,46 @@ Public Class Request_Sampling_From
     End Sub
 
     '' Mencari Production Plan dengan key production_code
-    Private Sub tid_hvsprod_KeyDown(sender As Object, e As KeyEventArgs) Handles tid_hvsprod.KeyDown
+    Private Sub Tid_hvsprod_KeyDown(sender As Object, e As KeyEventArgs) Handles tid_hvsprod.KeyDown
         Dim sql As String
+
         If e.KeyCode = Keys.Enter Then
             If _isBOF("[harvestprod]", "[idcode]", tid_hvsprod.Text) = True Then
                 Try
                     openDB()
-                    sql = "SELECT [variety], cgrname, dusun,harvest, case when [joblot] IS NULL then '' else [joblot] end as [joblot] From [HCQC_server].[dbo].[harvestprod] WHERE [idcode]=" & tid_hvsprod.Text & ""
-                    cmd = New SqlClient.SqlCommand(Sql, con) With {
-                        .CommandType = CommandType.Text,
-                        .CommandText = Sql
-                    }
-                    dread = cmd.ExecuteReader
-                    If dread.Read = True Then
-                        tvariety.Text = dread.Item("variety")
-                        tfarmer.Text = dread.Item("cgrname")
-                        tlocation.Text = dread.Item("dusun")
-                        tlotref.Text = dread.Item("joblot")
-                        tgl_hvs.Text = dread.Item("harvest").ToString(LabelDate.Text)
-                    End If
+                    sql = "SELECT [variety], cgrname, dusun,harvest, [area], plant_qty, case when [joblot] IS NULL then '' else [joblot] end as [joblot], [norencana] From [HCQC_server].[dbo].[harvestprod] WHERE [idcode]=" & tid_hvsprod.Text
+
+                    Using cmd As New SqlClient.SqlCommand(sql, con)
+                        cmd.CommandType = CommandType.Text
+                        Dim dread As SqlDataReader = cmd.ExecuteReader()
+                        If dread.Read() Then
+                            tvariety.Text = dread.Item("variety")
+                            tfarmer.Text = dread.Item("cgrname")
+                            tlocation.Text = dread.Item("dusun")
+                            tlotref.Text = dread.Item("joblot")
+                            tDOVendor.Text = dread.Item("norencana")
+                            tlotqtt.Text = dread.Item("plant_qty")
+
+                            Dim myValue As String = dread.Item("area")
+
+                            If Not tloc_sample.Items.Contains(myValue) Then
+                                tloc_sample.Items.Add(myValue) ' Tambahkan ke ComboBox
+                            End If
+
+                            tloc_sample.SelectedItem = myValue ' Pilih item tersebut
+
+                            ' Asumsikan dread.Item("harvest") adalah DateTime
+                            Dim harvestDate As DateTime = Convert.ToDateTime(dread.Item("harvest"))
+
+                            ' Jika Anda ingin memformat sesuai dengan LabelDate.Text (misal "dd-MM-yyyy")
+                            Dim formattedDate As String = harvestDate.ToString("dd-MM-yyyy")
+
+                            ' Menampilkan di textbox tgl_hvs
+                            tgl_hvs.Text = formattedDate
+                            'tgl_hvs.Text = dread.Item("harvest").ToString(LabelDate.Text)
+                        End If
+                    End Using
+
                 Catch ex As Exception
                     MetroMessageBox.Show(Form.ActiveForm, "Error Get Data Production: " + ex.Message, Form.ActiveForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
                 Finally
@@ -382,6 +415,7 @@ Public Class Request_Sampling_From
     End Sub
 
     Private Sub tbag_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tbag.KeyPress
+        'hanya angka
         If Asc(e.KeyChar) <> 8 Then
             If Asc(e.KeyChar) < 48 Or Asc(e.KeyChar) > 57 Then
                 e.Handled = True
@@ -390,7 +424,7 @@ Public Class Request_Sampling_From
     End Sub
 
     Private Sub Size_change(sender As Object, e As EventArgs) Handles MetroPanel1.SizeChanged
-        MetroPanel1.MaximumSize = New Size(Screen.PrimaryScreen.Bounds.Height - 12, 310)
+        MetroPanel1.MaximumSize = New Size(Screen.PrimaryScreen.Bounds.Width - 12, 350)
 
         MetroLabel2.Location = New Point(MetroLabel2.Location.X, MetroPanel1.Location.Y + MetroPanel1.Size.Height + 25)
 
@@ -399,8 +433,8 @@ Public Class Request_Sampling_From
 
         LinkThisMonth.Location = New Point(MetroLabel2.Location.X + 66 + 6, MetroLabel2.Location.Y)
         Link2MonthAgo.Location = New Point(LinkThisMonth.Location.X + 70, MetroLabel2.Location.Y)
-        LinkAll.Location = New Point(Link2MonthAgo.Location.X + 77, MetroLabel2.Location.Y)
-        Tsearch.Location = New Point(LinkAll.Location.X + 32 + 36, MetroLabel2.Location.Y)
+
+        Tsearch.Location = New Point(Link2MonthAgo.Location.X + 32 + 70, MetroLabel2.Location.Y)
     End Sub
 
     Private Sub BunifuFlatButton1_Click(sender As Object, e As EventArgs) Handles BunifuFlatButton1.Click
@@ -410,6 +444,12 @@ Public Class Request_Sampling_From
     Private Sub OnOptionsSave(ByVal strData As String)
         'Or whatever you want to do on frmMain with Options Data.
         tid_hvsprod.Text = strData
+
+        ' Membuat objek KeyEventArgs untuk mensimulasikan tombol yang ditekan
+        Dim keyArgs As New KeyEventArgs(Keys.Enter) ' Simulasi tombol Enter
+
+        ' Memanggil subroutine secara manual
+        Tid_hvsprod_KeyDown(tid_hvsprod, keyArgs)
     End Sub
 
     Private Sub LinkFind_Click(sender As Object, e As EventArgs) Handles LinkFind.Click
@@ -440,12 +480,6 @@ Public Class Request_Sampling_From
         Qc_confirm_viewerTableAdapter.FillByThisMonth(HCQC_NewDataset.qc_confirm_viewer)
         MetroGrid1.Refresh()
         Tsearch.Tag = "this_month"
-    End Sub
-
-    Private Sub LinkAll_Click(sender As Object, e As EventArgs) Handles LinkAll.Click
-        Qc_confirm_viewerTableAdapter.Fill(HCQC_NewDataset.qc_confirm_viewer)
-        MetroGrid1.Refresh()
-        Tsearch.Tag = "all"
     End Sub
 
     Private Sub tvariety_ButtonClick(sender As Object, e As EventArgs) Handles tvariety.ButtonClick
@@ -503,11 +537,6 @@ Public Class Request_Sampling_From
         End If
     End Sub
 
-    Private Sub LinkLoad_Click(sender As Object, e As EventArgs) Handles LinkLoad.Click
-        OnRefreshEventHendler()
-        LinkLoad.Text = "Refresh"
-    End Sub
-
     Private Sub Tsearch_ButtonClick(sender As Object, e As EventArgs) Handles Tsearch.ButtonClick
         If String.IsNullOrEmpty(Tsearch.Text) Then
             LinkThisMonth_Click(sender, e)
@@ -520,6 +549,112 @@ Public Class Request_Sampling_From
     Private Sub Tsearch_KeyDown(sender As Object, e As KeyEventArgs) Handles Tsearch.KeyDown
         If e.KeyCode = Keys.Enter Then
             Tsearch_ButtonClick(sender, e)
+        End If
+    End Sub
+
+    Private Sub LinkFindVendor_Click(sender As Object, e As EventArgs) Handles LinkFindVendor.Click
+        Dim sql As String
+
+        If _isBOF("[harvestprod]", "[norencana]", tDOVendor.Text) = True Then
+            Try
+                openDB()
+                sql = "SELECT idcode, [variety], cgrname, blokno, harvest, [area], [plant_qty], case when [joblot] IS NULL then '' else [joblot] end as [joblot], [norencana] From [HCQC_server].[dbo].[harvestprod] WHERE [norencana]='" & tDOVendor.Text & "'"
+
+                Using cmd As New SqlClient.SqlCommand(sql, con)
+                    cmd.CommandType = CommandType.Text
+                    Dim dread As SqlDataReader = cmd.ExecuteReader()
+                    If dread.Read() Then
+                        tid_hvsprod.Text = dread.Item("idcode")
+                        tvariety.Text = dread.Item("variety")
+                        tfarmer.Text = dread.Item("cgrname")
+                        tlocation.Text = dread.Item("blokno") ''material/lokasi
+                        tlotref.Text = dread.Item("joblot")
+                        tDOVendor.Text = dread.Item("norencana")
+                        tlotqtt.Text = dread.Item("plant_qty")
+                        tunit.Text = "KG"
+
+                        Dim myValue As String = dread.Item("area")
+                        If Not tloc_sample.Items.Contains(myValue) Then
+                            tloc_sample.Items.Add(myValue) ' Tambahkan ke ComboBox
+                        End If
+
+                        tloc_sample.SelectedItem = myValue ' Pilih item tersebut
+
+
+                        ' Asumsikan dread.Item("harvest") adalah DateTime
+                        Dim harvestDate As DateTime = Convert.ToDateTime(dread.Item("harvest"))
+
+                        ' Jika Anda ingin memformat sesuai dengan LabelDate.Text (misal "dd-MM-yyyy")
+                        Dim formattedDate As String = harvestDate.ToString("dd-MM-yyyy")
+
+                        ' Menampilkan di textbox tgl_hvs
+                        tgl_hvs.Text = formattedDate
+                        'tgl_hvs.Text = dread.Item("harvest").ToString(LabelDate.Text)
+                    End If
+                End Using
+
+            Catch ex As Exception
+                MetroMessageBox.Show(Form.ActiveForm, "Error Get Data Vendor: " + ex.Message, Form.ActiveForm.Text, MessageBoxButtons.OK, MessageBoxIcon.Error, 211)
+            Finally
+                If con.State = ConnectionState.Open Then
+                    con.Close()
+                End If
+            End Try
+
+            tid_hvsprod.SelectAll()
+        Else
+            MetroMessageBox.Show(Me, "Data ID Vendor not found")
+        End If
+    End Sub
+
+    Private Sub tDOVendor_KeyDown(sender As Object, e As KeyEventArgs) Handles tDOVendor.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            LinkFindVendor_Click(sender, e)
+        End If
+    End Sub
+
+    Private Sub tloc_sample_SelectedIndexChanged(sender As Object, e As EventArgs) Handles tloc_sample.SelectedIndexChanged
+
+    End Sub
+
+    Private Sub tlotqtt_KeyPress(sender As Object, e As KeyPressEventArgs) Handles tlotqtt.KeyPress
+        ' Izinkan hanya angka, titik, koma, dan backspace
+        If Not Char.IsControl(e.KeyChar) AndAlso
+           Not Char.IsDigit(e.KeyChar) AndAlso
+           e.KeyChar <> "."c AndAlso
+           e.KeyChar <> ","c Then
+
+            e.Handled = True
+        End If
+
+        'Penjelasan:
+        'Char.IsDigit(e.KeyChar) → angka 0–9
+        'Char.IsControl(e.KeyChar) → untuk mengizinkan tombol kontrol seperti backspace
+        'e.KeyChar <> "."c → izinkan titik
+        'e.KeyChar <> ","c → izinkan koma
+        'e.Handled = True → membatalkan input selain yang diizinkan
+
+    End Sub
+
+    Private Sub MetroLinkThisM_Click(sender As Object, e As EventArgs) Handles MetroLinkThisM.Click
+        Spl_request1TableAdapter.FillByThisMonth(HCQC_NewDataset.Spl_request1)
+    End Sub
+
+    Private Sub MetroLinkLastM_Click(sender As Object, e As EventArgs) Handles MetroLinkLastM.Click
+        Spl_request1TableAdapter.FillByLastMonth(HCQC_NewDataset.Spl_request1)
+    End Sub
+
+    Private Sub MetroTextBoxParam_ButtonClick(sender As Object, e As EventArgs) Handles MetroTextBoxParam.ButtonClick
+        If String.IsNullOrEmpty(MetroTextBoxParam.Text) Then
+            Return
+        Else
+            Spl_request1TableAdapter.FillByParameter(HCQC_NewDataset.Spl_request1, "%" + MetroTextBoxParam.Text + "%")
+        End If
+    End Sub
+
+    Private Sub MetroTextBoxParam_KeyDown(sender As Object, e As KeyEventArgs) Handles MetroTextBoxParam.KeyDown
+        If e.KeyCode = Keys.Enter Then
+            MetroTextBoxParam_ButtonClick(sender, e)
         End If
     End Sub
 End Class

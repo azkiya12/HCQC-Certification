@@ -23,21 +23,34 @@ Partial Class Data_Request
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Data_Request))
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid()
+        Me.SplrequestBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HCQC_NewDataset = New WindowsApplication1.HCQC_NewDataset()
+        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
+        Me.LInkRefresh = New MetroFramework.Controls.MetroLink()
+        Me.CheckBox1 = New MetroFramework.Controls.MetroCheckBox()
+        Me.BtnSend = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BunifuFlatButton1 = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.Tsearch = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroToolTip1 = New MetroFramework.Components.MetroToolTip()
+        Me.Spl_requestTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.spl_requestTableAdapter()
         Me.CheckColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.id_hvsprodColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VarietyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.insplot = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.FarmerDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LocationDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HarvestDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NomnlDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NojobDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.WeightDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.unit = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.bagColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.loc_sample = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ScopeDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.test_moi = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.test_raf = New System.Windows.Forms.DataGridViewCheckBoxColumn()
@@ -46,16 +59,6 @@ Partial Class Data_Request
         Me.test_via = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.RemarkDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.InputdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.SplrequestBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_NewDataset = New HCQC_NewDataset()
-        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
-        Me.LInkRefresh = New MetroFramework.Controls.MetroLink()
-        Me.CheckBox1 = New MetroFramework.Controls.MetroCheckBox()
-        Me.BtnSend = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.BunifuFlatButton1 = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.Tsearch = New MetroFramework.Controls.MetroTextBox()
-        Me.MetroToolTip1 = New MetroFramework.Components.MetroToolTip()
-        Me.Spl_requestTableAdapter = New HCQC_NewDatasetTableAdapters.spl_requestTableAdapter()
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.SplrequestBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HCQC_NewDataset, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -74,163 +77,43 @@ Partial Class Data_Request
         Me.MetroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.MetroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.MetroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.MetroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CheckColumn, Me.id_hvsprodColumn, Me.VarietyDataGridViewTextBoxColumn, Me.FarmerDataGridViewTextBoxColumn, Me.LocationDataGridViewTextBoxColumn, Me.HarvestDataGridViewTextBoxColumn, Me.NomnlDataGridViewTextBoxColumn, Me.NojobDataGridViewTextBoxColumn, Me.WeightDataGridViewTextBoxColumn, Me.bagColumn, Me.ScopeDataGridViewTextBoxColumn, Me.test_moi, Me.test_raf, Me.test_pur, Me.test_ger, Me.test_via, Me.RemarkDataGridViewTextBoxColumn, Me.InputdateDataGridViewTextBoxColumn})
+        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CheckColumn, Me.id_hvsprodColumn, Me.VarietyDataGridViewTextBoxColumn, Me.insplot, Me.FarmerDataGridViewTextBoxColumn, Me.LocationDataGridViewTextBoxColumn, Me.HarvestDataGridViewTextBoxColumn, Me.NomnlDataGridViewTextBoxColumn, Me.NojobDataGridViewTextBoxColumn, Me.WeightDataGridViewTextBoxColumn, Me.unit, Me.bagColumn, Me.loc_sample, Me.ScopeDataGridViewTextBoxColumn, Me.test_moi, Me.test_raf, Me.test_pur, Me.test_ger, Me.test_via, Me.RemarkDataGridViewTextBoxColumn, Me.InputdateDataGridViewTextBoxColumn})
         Me.MetroGrid1.DataSource = Me.SplrequestBindingSource
-        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle5
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle2
         Me.MetroGrid1.EnableHeadersVisualStyles = False
         Me.MetroGrid1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.MetroGrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.MetroGrid1.Location = New System.Drawing.Point(23, 115)
         Me.MetroGrid1.Name = "MetroGrid1"
         Me.MetroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.MetroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.MetroGrid1.Size = New System.Drawing.Size(875, 276)
         Me.MetroGrid1.TabIndex = 65
-        '
-        'CheckColumn
-        '
-        Me.CheckColumn.HeaderText = ""
-        Me.CheckColumn.Name = "CheckColumn"
-        Me.CheckColumn.Width = 40
-        '
-        'id_hvsprodColumn
-        '
-        Me.id_hvsprodColumn.DataPropertyName = "id_hvsprod"
-        Me.id_hvsprodColumn.HeaderText = "Production Code"
-        Me.id_hvsprodColumn.Name = "id_hvsprodColumn"
-        Me.id_hvsprodColumn.Width = 90
-        '
-        'VarietyDataGridViewTextBoxColumn
-        '
-        Me.VarietyDataGridViewTextBoxColumn.DataPropertyName = "variety"
-        Me.VarietyDataGridViewTextBoxColumn.HeaderText = "Variety"
-        Me.VarietyDataGridViewTextBoxColumn.Name = "VarietyDataGridViewTextBoxColumn"
-        Me.VarietyDataGridViewTextBoxColumn.Width = 80
-        '
-        'FarmerDataGridViewTextBoxColumn
-        '
-        Me.FarmerDataGridViewTextBoxColumn.DataPropertyName = "farmer"
-        Me.FarmerDataGridViewTextBoxColumn.HeaderText = "Farmer"
-        Me.FarmerDataGridViewTextBoxColumn.Name = "FarmerDataGridViewTextBoxColumn"
-        Me.FarmerDataGridViewTextBoxColumn.Width = 80
-        '
-        'LocationDataGridViewTextBoxColumn
-        '
-        Me.LocationDataGridViewTextBoxColumn.DataPropertyName = "location"
-        Me.LocationDataGridViewTextBoxColumn.HeaderText = "Location"
-        Me.LocationDataGridViewTextBoxColumn.Name = "LocationDataGridViewTextBoxColumn"
-        '
-        'HarvestDataGridViewTextBoxColumn
-        '
-        Me.HarvestDataGridViewTextBoxColumn.DataPropertyName = "harvest"
-        Me.HarvestDataGridViewTextBoxColumn.HeaderText = "Harvest"
-        Me.HarvestDataGridViewTextBoxColumn.Name = "HarvestDataGridViewTextBoxColumn"
-        '
-        'NomnlDataGridViewTextBoxColumn
-        '
-        Me.NomnlDataGridViewTextBoxColumn.DataPropertyName = "nomnl"
-        Me.NomnlDataGridViewTextBoxColumn.HeaderText = "Manual"
-        Me.NomnlDataGridViewTextBoxColumn.Name = "NomnlDataGridViewTextBoxColumn"
-        Me.NomnlDataGridViewTextBoxColumn.Width = 65
-        '
-        'NojobDataGridViewTextBoxColumn
-        '
-        Me.NojobDataGridViewTextBoxColumn.DataPropertyName = "nojob"
-        Me.NojobDataGridViewTextBoxColumn.HeaderText = "Lot/Job"
-        Me.NojobDataGridViewTextBoxColumn.Name = "NojobDataGridViewTextBoxColumn"
-        Me.NojobDataGridViewTextBoxColumn.Width = 80
-        '
-        'WeightDataGridViewTextBoxColumn
-        '
-        Me.WeightDataGridViewTextBoxColumn.DataPropertyName = "weight"
-        Me.WeightDataGridViewTextBoxColumn.HeaderText = "Weight (kg)"
-        Me.WeightDataGridViewTextBoxColumn.Name = "WeightDataGridViewTextBoxColumn"
-        Me.WeightDataGridViewTextBoxColumn.Width = 80
-        '
-        'bagColumn
-        '
-        Me.bagColumn.DataPropertyName = "bag"
-        Me.bagColumn.HeaderText = "Bags"
-        Me.bagColumn.Name = "bagColumn"
-        Me.bagColumn.Width = 65
-        '
-        'ScopeDataGridViewTextBoxColumn
-        '
-        Me.ScopeDataGridViewTextBoxColumn.DataPropertyName = "scope"
-        Me.ScopeDataGridViewTextBoxColumn.HeaderText = "Scope"
-        Me.ScopeDataGridViewTextBoxColumn.Name = "ScopeDataGridViewTextBoxColumn"
-        '
-        'test_moi
-        '
-        Me.test_moi.DataPropertyName = "test_moi"
-        Me.test_moi.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.test_moi.HeaderText = "Test Moi"
-        Me.test_moi.Name = "test_moi"
-        '
-        'test_raf
-        '
-        Me.test_raf.DataPropertyName = "test_raf"
-        Me.test_raf.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.test_raf.HeaderText = "Test Raf"
-        Me.test_raf.Name = "test_raf"
-        '
-        'test_pur
-        '
-        Me.test_pur.DataPropertyName = "test_pur"
-        Me.test_pur.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.test_pur.HeaderText = "Test Pur"
-        Me.test_pur.Name = "test_pur"
-        '
-        'test_ger
-        '
-        Me.test_ger.DataPropertyName = "test_ger"
-        Me.test_ger.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.test_ger.HeaderText = "Test Ger"
-        Me.test_ger.Name = "test_ger"
-        '
-        'test_via
-        '
-        Me.test_via.DataPropertyName = "test_via"
-        Me.test_via.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.test_via.HeaderText = "Test Via"
-        Me.test_via.Name = "test_via"
-        '
-        'RemarkDataGridViewTextBoxColumn
-        '
-        Me.RemarkDataGridViewTextBoxColumn.DataPropertyName = "remark"
-        Me.RemarkDataGridViewTextBoxColumn.HeaderText = "Remark"
-        Me.RemarkDataGridViewTextBoxColumn.Name = "RemarkDataGridViewTextBoxColumn"
-        '
-        'InputdateDataGridViewTextBoxColumn
-        '
-        Me.InputdateDataGridViewTextBoxColumn.DataPropertyName = "input_date"
-        Me.InputdateDataGridViewTextBoxColumn.HeaderText = "Request Date"
-        Me.InputdateDataGridViewTextBoxColumn.Name = "InputdateDataGridViewTextBoxColumn"
         '
         'SplrequestBindingSource
         '
@@ -276,6 +159,7 @@ Partial Class Data_Request
         '
         'BtnSend
         '
+        Me.BtnSend.Active = True
         Me.BtnSend.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnSend.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnSend.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -311,6 +195,7 @@ Partial Class Data_Request
         '
         'BunifuFlatButton1
         '
+        Me.BunifuFlatButton1.Active = True
         Me.BunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BunifuFlatButton1.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BunifuFlatButton1.BackColor = System.Drawing.Color.Transparent
@@ -387,6 +272,144 @@ Partial Class Data_Request
         '
         Me.Spl_requestTableAdapter.ClearBeforeFill = True
         '
+        'CheckColumn
+        '
+        Me.CheckColumn.HeaderText = ""
+        Me.CheckColumn.Name = "CheckColumn"
+        Me.CheckColumn.Width = 40
+        '
+        'id_hvsprodColumn
+        '
+        Me.id_hvsprodColumn.DataPropertyName = "id_hvsprod"
+        Me.id_hvsprodColumn.HeaderText = "Production Code"
+        Me.id_hvsprodColumn.Name = "id_hvsprodColumn"
+        Me.id_hvsprodColumn.Width = 90
+        '
+        'VarietyDataGridViewTextBoxColumn
+        '
+        Me.VarietyDataGridViewTextBoxColumn.DataPropertyName = "variety"
+        Me.VarietyDataGridViewTextBoxColumn.HeaderText = "Variety"
+        Me.VarietyDataGridViewTextBoxColumn.Name = "VarietyDataGridViewTextBoxColumn"
+        Me.VarietyDataGridViewTextBoxColumn.Width = 80
+        '
+        'insplot
+        '
+        Me.insplot.DataPropertyName = "insplot"
+        Me.insplot.HeaderText = "Inspection lot"
+        Me.insplot.Name = "insplot"
+        '
+        'FarmerDataGridViewTextBoxColumn
+        '
+        Me.FarmerDataGridViewTextBoxColumn.DataPropertyName = "farmer"
+        Me.FarmerDataGridViewTextBoxColumn.HeaderText = "Farmer"
+        Me.FarmerDataGridViewTextBoxColumn.Name = "FarmerDataGridViewTextBoxColumn"
+        Me.FarmerDataGridViewTextBoxColumn.Width = 80
+        '
+        'LocationDataGridViewTextBoxColumn
+        '
+        Me.LocationDataGridViewTextBoxColumn.DataPropertyName = "location"
+        Me.LocationDataGridViewTextBoxColumn.HeaderText = "Location"
+        Me.LocationDataGridViewTextBoxColumn.Name = "LocationDataGridViewTextBoxColumn"
+        '
+        'HarvestDataGridViewTextBoxColumn
+        '
+        Me.HarvestDataGridViewTextBoxColumn.DataPropertyName = "harvest"
+        Me.HarvestDataGridViewTextBoxColumn.HeaderText = "Harvest"
+        Me.HarvestDataGridViewTextBoxColumn.Name = "HarvestDataGridViewTextBoxColumn"
+        '
+        'NomnlDataGridViewTextBoxColumn
+        '
+        Me.NomnlDataGridViewTextBoxColumn.DataPropertyName = "nomnl"
+        Me.NomnlDataGridViewTextBoxColumn.HeaderText = "Manual"
+        Me.NomnlDataGridViewTextBoxColumn.Name = "NomnlDataGridViewTextBoxColumn"
+        Me.NomnlDataGridViewTextBoxColumn.Width = 65
+        '
+        'NojobDataGridViewTextBoxColumn
+        '
+        Me.NojobDataGridViewTextBoxColumn.DataPropertyName = "nojob"
+        Me.NojobDataGridViewTextBoxColumn.HeaderText = "Lot/Job"
+        Me.NojobDataGridViewTextBoxColumn.Name = "NojobDataGridViewTextBoxColumn"
+        Me.NojobDataGridViewTextBoxColumn.Width = 80
+        '
+        'WeightDataGridViewTextBoxColumn
+        '
+        Me.WeightDataGridViewTextBoxColumn.DataPropertyName = "weight"
+        Me.WeightDataGridViewTextBoxColumn.HeaderText = "Weight (kg)"
+        Me.WeightDataGridViewTextBoxColumn.Name = "WeightDataGridViewTextBoxColumn"
+        Me.WeightDataGridViewTextBoxColumn.Width = 80
+        '
+        'unit
+        '
+        Me.unit.DataPropertyName = "unit"
+        Me.unit.HeaderText = "Unit"
+        Me.unit.Name = "unit"
+        '
+        'bagColumn
+        '
+        Me.bagColumn.DataPropertyName = "bag"
+        Me.bagColumn.HeaderText = "Bags"
+        Me.bagColumn.Name = "bagColumn"
+        Me.bagColumn.Width = 65
+        '
+        'loc_sample
+        '
+        Me.loc_sample.DataPropertyName = "loc_sample"
+        Me.loc_sample.HeaderText = "Location spl"
+        Me.loc_sample.Name = "loc_sample"
+        '
+        'ScopeDataGridViewTextBoxColumn
+        '
+        Me.ScopeDataGridViewTextBoxColumn.DataPropertyName = "scope"
+        Me.ScopeDataGridViewTextBoxColumn.HeaderText = "Scope"
+        Me.ScopeDataGridViewTextBoxColumn.Name = "ScopeDataGridViewTextBoxColumn"
+        '
+        'test_moi
+        '
+        Me.test_moi.DataPropertyName = "test_moi"
+        Me.test_moi.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.test_moi.HeaderText = "Test Moi"
+        Me.test_moi.Name = "test_moi"
+        '
+        'test_raf
+        '
+        Me.test_raf.DataPropertyName = "test_raf"
+        Me.test_raf.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.test_raf.HeaderText = "Test Raf"
+        Me.test_raf.Name = "test_raf"
+        '
+        'test_pur
+        '
+        Me.test_pur.DataPropertyName = "test_pur"
+        Me.test_pur.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.test_pur.HeaderText = "Test Pur"
+        Me.test_pur.Name = "test_pur"
+        '
+        'test_ger
+        '
+        Me.test_ger.DataPropertyName = "test_ger"
+        Me.test_ger.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.test_ger.HeaderText = "Test Ger"
+        Me.test_ger.Name = "test_ger"
+        '
+        'test_via
+        '
+        Me.test_via.DataPropertyName = "test_via"
+        Me.test_via.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.test_via.HeaderText = "Test Via"
+        Me.test_via.Name = "test_via"
+        '
+        'RemarkDataGridViewTextBoxColumn
+        '
+        Me.RemarkDataGridViewTextBoxColumn.DataPropertyName = "remark"
+        Me.RemarkDataGridViewTextBoxColumn.HeaderText = "Remark"
+        Me.RemarkDataGridViewTextBoxColumn.Name = "RemarkDataGridViewTextBoxColumn"
+        '
+        'InputdateDataGridViewTextBoxColumn
+        '
+        Me.InputdateDataGridViewTextBoxColumn.DataPropertyName = "input_date"
+        Me.InputdateDataGridViewTextBoxColumn.HeaderText = "Request Date"
+        Me.InputdateDataGridViewTextBoxColumn.Name = "InputdateDataGridViewTextBoxColumn"
+        '
         'Data_Request
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -418,16 +441,21 @@ Partial Class Data_Request
     Friend WithEvents CheckBox1 As MetroCheckBox
     Friend WithEvents BtnSend As Bunifu.Framework.UI.BunifuFlatButton
     Friend WithEvents BunifuFlatButton1 As Bunifu.Framework.UI.BunifuFlatButton
+    Friend WithEvents Tsearch As MetroTextBox
+    Friend WithEvents MetroToolTip1 As Components.MetroToolTip
     Friend WithEvents CheckColumn As DataGridViewCheckBoxColumn
     Friend WithEvents id_hvsprodColumn As DataGridViewTextBoxColumn
     Friend WithEvents VarietyDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents insplot As DataGridViewTextBoxColumn
     Friend WithEvents FarmerDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LocationDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents HarvestDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NomnlDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NojobDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents WeightDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents unit As DataGridViewTextBoxColumn
     Friend WithEvents bagColumn As DataGridViewTextBoxColumn
+    Friend WithEvents loc_sample As DataGridViewTextBoxColumn
     Friend WithEvents ScopeDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents test_moi As DataGridViewCheckBoxColumn
     Friend WithEvents test_raf As DataGridViewCheckBoxColumn
@@ -436,6 +464,4 @@ Partial Class Data_Request
     Friend WithEvents test_via As DataGridViewCheckBoxColumn
     Friend WithEvents RemarkDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents InputdateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents Tsearch As MetroTextBox
-    Friend WithEvents MetroToolTip1 As Components.MetroToolTip
 End Class

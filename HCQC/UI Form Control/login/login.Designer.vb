@@ -38,6 +38,7 @@ Partial Class login
         Me.BtnLoginShow = New MetroFramework.Controls.MetroLink()
         Me.Lfooter = New MetroFramework.Controls.MetroLabel()
         Me.BunifuDragControl1 = New Bunifu.Framework.UI.BunifuDragControl(Me.components)
+        Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.MetroPanel1.SuspendLayout()
         CType(Me.BunifuImageButton1, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.MetroPanel2.SuspendLayout()
@@ -233,6 +234,11 @@ Partial Class login
         Me.BunifuDragControl1.TargetControl = Me.MetroPanel1
         Me.BunifuDragControl1.Vertical = True
         '
+        'BunifuElipse1
+        '
+        Me.BunifuElipse1.ElipseRadius = 10
+        Me.BunifuElipse1.TargetControl = Me
+        '
         'login
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -270,4 +276,5 @@ Partial Class login
     Friend WithEvents Luserid As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents BunifuImageButton1 As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents Laboutme As Bunifu.Framework.UI.BunifuCustomLabel
+    Friend WithEvents BunifuElipse1 As Bunifu.Framework.UI.BunifuElipse
 End Class

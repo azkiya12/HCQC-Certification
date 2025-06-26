@@ -32,6 +32,14 @@ Module Module1
         End Try
 
     End Function
+
+    Public Sub DebugSqlCommand(cmd As SqlCommand)
+        Console.WriteLine("CommandText: " & cmd.CommandText)
+        For Each param As SqlParameter In cmd.Parameters
+            Console.WriteLine($"Parameter: @{param.ParameterName} = {param.Value}")
+        Next
+    End Sub
+
     Public Sub _ComboData(ByVal Sql As String, ByVal obj As Object)
         ''berguna jika anda ingin mengisi sebuah combobox dengan isi field pada database
         ''contoh : _ComboData("Select nama_barang from barang",Me.ComboBox1)
@@ -184,11 +192,7 @@ Module Module1
 
         Dim p As Integer
         p = _DataToValue("Select count(" & field & ") from " & table & " Where " & field & " = '" & whereValue & "'")
-        If 0 < p Then
-            Return True
-        Else
-            Return False
-        End If
+        Return (p > 0)
 
     End Function
 
@@ -370,5 +374,12 @@ Module Module1
         End If
 
         Return dataTable
+    End Function
+    Public Function IsNetworkAvailable() As Boolean
+        'Jika Anda hanya ingin memeriksa apakah komputer memiliki koneksi jaringan,
+        'bukan koneksi internet secara spesifik,
+        'Anda bisa menggunakan My.Computer.Network.IsAvailable.
+
+        Return My.Computer.Network.IsAvailable
     End Function
 End Module

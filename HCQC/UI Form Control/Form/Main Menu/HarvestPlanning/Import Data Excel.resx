@@ -117,4 +117,59 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="ToolTipController1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>15, 19</value>
+  </metadata>
+  <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
+  <data name="BunifuImageButton2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAADAAAAAwCAYAAABXAvmHAAAABGdBTUEAALGPC/xhBQAAAp9JREFUaEPt
+        mU1rE1EUhqNVXPiBbixo1TnTgAuXYheu/A+ixd/RhQtBu/ATF9q091yLdS+h2u7ElVJQ1xa3LkQroaXG
+        5EziVCEjkxII753amTv5GskDDxROz7lvJx3uZG4uN2TIkPRMB3tJVyZIe1PE8py0rBLLD/Djds2bclXt
+        QtiDY3pOvlAfc7X3wGX5RixBIrV8dZR3b0zXT+LcrnOafx4jJbPE4hvBkuuTkhnnUfkortMVSMtVYlmP
+        CJJOJSVXy2Vcr2Ocnw/2E8u8sXCn1aLCtXD9VJxT64eI5bWxWNesvhp9WDqIOazIF4IDxPLWXKTrvgnX
+        xjyJcVg4YnhvVDKDeRLhKJk0hvZY6xv71GztBLFUcGAf3BzXchzz7QqxtxAxLLb3P2wFJa/R9O5736gn
+        0VXyBPP9E0eXHWL5g4Piem25HiCTy3Xj9xL4m+Z+ncGcOxJu8RFDYhteceT2u3SfArHcwZyRXJoO9oW7
+        YsSA2IZXu9EWPvz5ylKqTyB0LVcMRjCvwbiqXoxoTuytFT8o+42mN1dSX/1tdWUC8xqQkhtG44DocPU6
+        5jVwWZawcYBcxLwGDsuniMbBUMsq5jUINw6j0UIE65ZuYF4DYtmKaEwsgnVLfcxr0Nw0zMbEIli3NNYf
+        kO1/oU7dxAjWrYx5Ey8ajRYiWLe0iHkNOrWRIVi3MdZG1qlHCQTrVsZ5lGi+ZWP5YjQnFMG6hZ9zQbAH
+        40aS9nE6FMG6hfEep0PoqTdKLPWIIbFFsJ7QWuKvlcQyFzGoL7paHmO+XckXNo8Qy3cc1gfXzj7bOIz5
+        YpHp1yotMv1iq0kxGHGVvDSGd1mH5UXHDkEy/XK3RaZfr7eT2QOOdjJ9xNROZg/5DHY+Zm0FHsxj1iFD
+        /gP+AgZe0R2bBbSmAAAAAElFTkSuQmCC
+</value>
+  </data>
+  <assembly alias="DevExpress.Data.v22.1" name="DevExpress.Data.v22.1, Version=22.1.3.0, Culture=neutral, PublicKeyToken=b88d1754d700e49a" />
+  <data name="resource.SvgImage" type="DevExpress.Utils.Svg.SvgImage, DevExpress.Data.v22.1" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        AAEAAAD/////AQAAAAAAAAAMAgAAAFlEZXZFeHByZXNzLkRhdGEudjIyLjEsIFZlcnNpb249MjIuMS4z
+        LjAsIEN1bHR1cmU9bmV1dHJhbCwgUHVibGljS2V5VG9rZW49Yjg4ZDE3NTRkNzAwZTQ5YQUBAAAAHURl
+        dkV4cHJlc3MuVXRpbHMuU3ZnLlN2Z0ltYWdlAQAAAAREYXRhBwICAAAACQMAAAAPAwAAAPMCAAAC77u/
+        PD94bWwgdmVyc2lvbj0nMS4wJyBlbmNvZGluZz0nVVRGLTgnPz4NCjxzdmcgeD0iMHB4IiB5PSIwcHgi
+        IHZpZXdCb3g9IjAgMCAzMiAzMiIgdmVyc2lvbj0iMS4xIiB4bWxucz0iaHR0cDovL3d3dy53My5vcmcv
+        MjAwMC9zdmciIHhtbG5zOnhsaW5rPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5L3hsaW5rIiB4bWw6c3Bh
+        Y2U9InByZXNlcnZlIiBpZD0iTGF5ZXJfMSIgc3R5bGU9ImVuYWJsZS1iYWNrZ3JvdW5kOm5ldyAwIDAg
+        MzIgMzIiPg0KICA8c3R5bGUgdHlwZT0idGV4dC9jc3MiPgoJLlllbGxvd3tmaWxsOiNGRkIxMTU7fQoJ
+        LlJlZHtmaWxsOiNEMTFDMUM7fQoJLkJsYWNre2ZpbGw6IzcyNzI3Mjt9CgkuQmx1ZXtmaWxsOiMxMTc3
+        RDc7fQoJLldoaXRle2ZpbGw6I0ZGRkZGRjt9CgkuR3JlZW57ZmlsbDojMDM5QzIzO30KCS5zdDB7b3Bh
+        Y2l0eTowLjc1O30KCS5zdDF7b3BhY2l0eTowLjU7fQoJLnN0MntvcGFjaXR5OjAuMjU7fQoJLnN0M3tm
+        aWxsOiNGRkIxMTU7fQo8L3N0eWxlPg0KICA8ZyAvPg0KICA8ZyBpZD0iQ29sdW1uSGVhZGVycyI+DQog
+        ICAgPHBhdGggZD0iTTEyLDRoOHY2aC04VjR6IE0yMiw0aDh2NmgtOFY0eiBNMiw0aDh2NkgyVjR6IiBj
+        bGFzcz0iWWVsbG93IiAvPg0KICAgIDxnIGNsYXNzPSJzdDEiPg0KICAgICAgPHBhdGggZD0iTTEyLDEy
+        aDh2MTZoLThWMTJ6IE0yLDEyaDh2MTZIMlYxMnogTTIyLDI4aDhWMTJoLThWMjh6IiBjbGFzcz0iQmxh
+        Y2siIC8+DQogICAgPC9nPg0KICA8L2c+DQo8L3N2Zz4L
+</value>
+  </data>
+  <data name="ToolTipItem2.Text" xml:space="preserve">
+    <value>Struktur urutan Column
+1. Harvest &lt;br&gt;2. Area &lt;br&gt;3.Variety&lt;br&gt;4. Staff&lt;br&gt;5. Kab 6. Kec 7. Desa 8. Dusun&lt;br&gt;9.  Plant Date&lt;br&gt;10. Area Ha &lt;br&gt;11. Qty Kg&lt;br&gt;12. No Kontrak &lt;br&gt;13. No Rencana&lt;br&gt;14. Blok No&lt;br&gt;15. CGR No&lt;br&gt;16.CGR Name&lt;br&gt;17. No Lot</value>
+  </data>
+  <metadata name="MetroStyleManager1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>168, 19</value>
+  </metadata>
+  <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>54</value>
+  </metadata>
+  <metadata name="MetroStyleExtender1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>334, 19</value>
+  </metadata>
 </root>

@@ -142,21 +142,24 @@ Public Class Sample_Receipt
 
                         ^XA
                         ^MMT^PW831^LL120^LS0
-                        ^BY2,3,20^FT6,70^BCN,,N,N
+                        ^BY2,3,20^FT15,70^BCN,,N,N
                         ^FH\^FD>:" & labzpl & "^FS
-                        ^FT12,36^AAN,18,10^FH\^FD" & v_labnum & "^FS
-                        ^FPH,1^FT13,96^A0N,17,18^FH\^CI28^FD" & V_variety & "; " & V_manual & " / " & V_job & "^FS^CI27
-                        ^FT167,36^AAN,18,10^FH\^FD" & V_scope & "^FS
-                        ^BY2,3,20^FT294,70^BCN,,N,N
+                        ^FT0,36^AAN,18,10^FB260,1,0,C^FH\^FD" & v_labnum & "\5C&^FS
+                        ^FPH,1^FT0,92^A0N,17,18^FB260,1,4,C^FH\^CI28^FD" & V_variety & "; " & V_manual & " / \5C&^FS^CI27
+                        ^FT0,36^AAN,18,10^FB243,1,0,R^FH\^FD" & V_scope & "^FS
+                        ^FPH,1^FT0,110^A0N,17,18^FB259,1,4,C^FH\^CI28^FD" & V_job & "\5C&^FS^CI27
+                        ^BY2,3,20^FT303,70^BCN,,N,N
                         ^FH\^FD>:" & labzpl & "^FS
-                        ^FT300,36^AAN,18,10^FH\^FD" & v_labnum & "^FS
-                        ^FPH,1^FT301,96^A0N,17,18^FH\^CI28^FD" & V_variety & "; " & V_manual & " / " & V_job & "^FS^CI27
-                        ^FT455,36^AAN,18,10^FH\^FD" & V_scope & "^FS
-                        ^BY2,3,20^FT581,70^BCN,,N,N
+                        ^FT5,36^AAN,18,10^FB826,1,0,C^FH\^FD" & v_labnum & "\5C&^FS
+                        ^FPH,1^FT5,92^A0N,17,18^FB826,1,4,C^FH\^CI28^FD" & V_variety & "; " & V_manual & " / \5C&^FS^CI27
+                        ^FT0,36^AAN,18,10^FB531,1,0,R^FH\^FD" & V_scope & "^FS
+                        ^FPH,1^FT4,110^A0N,17,18^FB827,1,4,C^FH\^CI28^FD" & V_job & "\5C&^FS^CI27
+                        ^BY2,3,20^FT585,70^BCN,,N,N
                         ^FH\^FD>:" & labzpl & "^FS
-                        ^FT587,36^AAN,18,10^FH\^FD" & v_labnum & "^FS
-                        ^FPH,1^FT588,96^A0N,17,18^FH\^CI28^FD" & V_variety & "; " & V_manual & " / " & V_job & "^FS^CI27
-                        ^FT742,36^AAN,18,10^FH\^FD" & V_scope & "^FS
+                        ^FT579,36^AAN,18,10^FB252,1,0,C^FH\^FD" & v_labnum & "\5C&^FS
+                        ^FPH,1^FT579,92^A0N,17,18^FB252,1,4,C^FH\^CI28^FD" & V_variety & "; " & V_manual & " / \5C&^FS^CI27
+                        ^FT0,36^AAN,18,10^FB818,1,0,R^FH\^FD" & V_scope & "^FS
+                        ^FPH,1^FT578,110^A0N,17,18^FB253,1,4,C^FH\^CI28^FD" & V_job & "\5C&^FS^CI27
                         ^PQ" & tcopy.Text & ",0,1,Y
                         ^XZ"
 
@@ -193,12 +196,14 @@ Public Class Sample_Receipt
                           ,[nojob]
                           ,[scope]
                           ,[id_hvsprod]
+                          ,[norencana]
                           ,[labnum]
                       FROM [HCQC_server].[dbo].[qc_confirm_viewer] WHERE [labnum]='" & tlabnum.Text & "'"
             cmd = New SqlClient.SqlCommand(sql, con) With {
                 .CommandType = CommandType.Text,
                 .CommandText = sql
             }
+
             dread = cmd.ExecuteReader
             If dread.Read = True Then
                 Lreqnum.Text = dread.Item("id")
@@ -212,7 +217,7 @@ Public Class Sample_Receipt
                 LQtt.Text = dread.Item("weight")
                 LScope.Text = dread.Item("scope")
 
-                LProductionCode.Text = dread.Item("id_hvsprod")
+                LProductionCode.Text = If(IsDBNull(dread("norencana")), String.Empty, dread("norencana").ToString())
 
                 tsam.Checked = Convert.ToBoolean(_DataToValue("Select [test_sampling] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & Lreqnum.Text & ""))
                 tmoi.Checked = Convert.ToBoolean(_DataToValue("Select [test_moi] from [HCQC_server].[dbo].[spl_request] WHERE [id]=" & Lreqnum.Text & ""))
@@ -261,6 +266,8 @@ Public Class Sample_Receipt
     End Sub
 
     Private Sub BtnSave2_Click(sender As Object, e As EventArgs) Handles BtnSave2.Click
+
+        ''Validation Input
         If String.IsNullOrEmpty(tdatereceive.Text) Then
             MetroMessageBox.Show(Me, "Receivet Date harus ada!", Me.Text, MessageBoxButtons.OK, MessageBoxIcon.Information, 211)
             Return
@@ -287,6 +294,7 @@ Public Class Sample_Receipt
             tlabel.WithError = True
         Else
             If BtnSave2.Text = "Save" Then
+
                 Dim tglrecipt As Date
                 tglrecipt = Date.ParseExact(tdatereceive.Text, formatDate, DateTimeFormatInfo.InvariantInfo, DateTimeStyles.None)
                 Dim tglsampling As Date
@@ -294,6 +302,7 @@ Public Class Sample_Receipt
                 Try
                     'Perulangan tidak diterapkan pada GRAVITY
                     'Proses Insert Rerecord Database
+
                     _RunSQL("INSERT INTO [dbo].[receipt]
                            ([id_request]
                            ,[id_login]
@@ -533,6 +542,10 @@ Public Class Sample_Receipt
     End Sub
 
     Private Sub tkarantina_CheckedChanged(sender As Object, e As EventArgs) Handles tkarantina.CheckedChanged
+
+    End Sub
+
+    Private Sub MetroTabPage1_Click(sender As Object, e As EventArgs) Handles MetroTabPage1.Click
 
     End Sub
 

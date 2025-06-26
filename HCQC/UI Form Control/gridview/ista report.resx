@@ -126,7 +126,7 @@
   <metadata name="ConcludedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="seedColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="seed1000.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="BtnQcPassColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -148,18 +148,17 @@
   <data name="BtnFilterDate.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         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
-        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
+        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
 </value>
   </data>
   <metadata name="MetroStyleExtender1.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">

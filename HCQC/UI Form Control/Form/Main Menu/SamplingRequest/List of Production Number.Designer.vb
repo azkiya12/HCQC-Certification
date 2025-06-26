@@ -28,18 +28,20 @@ Partial Class List_of_Production_Number
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid()
         Me.Reporta1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_NewDataset = New HCQC_NewDataset()
-        Me.tsearch = New MetroFramework.Controls.MetroTextBox()
-        Me.Report_a1TableAdapter = New HCQC_NewDatasetTableAdapters.report_a1TableAdapter()
+        Me.HCQC_NewDataset = New WindowsApplication1.HCQC_NewDataset()
+        Me.TSearch = New MetroFramework.Controls.MetroTextBox()
+        Me.Report_a1TableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.report_a1TableAdapter()
         Me.IdcodeColumn = New System.Windows.Forms.DataGridViewLinkColumn()
-        Me.VarietyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CropDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CgrnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HarvestDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NorencanaDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CropDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VarietyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NokontrakDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CgrnameDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.blokno = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dusun = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.joblot = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.kec = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.plant_qty = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HarvestDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.CountDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LastPrintDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -69,7 +71,7 @@ Partial Class List_of_Production_Number
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.MetroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdcodeColumn, Me.VarietyDataGridViewTextBoxColumn, Me.CropDataGridViewTextBoxColumn, Me.CgrnameDataGridViewTextBoxColumn, Me.HarvestDataGridViewTextBoxColumn, Me.NorencanaDataGridViewTextBoxColumn, Me.NokontrakDataGridViewTextBoxColumn, Me.joblot, Me.kec, Me.CountDataGridViewTextBoxColumn, Me.LastPrintDataGridViewTextBoxColumn})
+        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdcodeColumn, Me.NorencanaDataGridViewTextBoxColumn, Me.CropDataGridViewTextBoxColumn, Me.VarietyDataGridViewTextBoxColumn, Me.NokontrakDataGridViewTextBoxColumn, Me.CgrnameDataGridViewTextBoxColumn, Me.blokno, Me.dusun, Me.joblot, Me.plant_qty, Me.HarvestDataGridViewTextBoxColumn, Me.CountDataGridViewTextBoxColumn, Me.LastPrintDataGridViewTextBoxColumn})
         Me.MetroGrid1.DataSource = Me.Reporta1BindingSource
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -108,38 +110,38 @@ Partial Class List_of_Production_Number
         Me.HCQC_NewDataset.DataSetName = "HCQC_NewDataset"
         Me.HCQC_NewDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
         '
-        'tsearch
+        'TSearch
         '
-        Me.tsearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.TSearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.tsearch.CustomButton.Image = Nothing
-        Me.tsearch.CustomButton.Location = New System.Drawing.Point(201, 1)
-        Me.tsearch.CustomButton.Name = ""
-        Me.tsearch.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.tsearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.tsearch.CustomButton.TabIndex = 1
-        Me.tsearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.tsearch.CustomButton.UseSelectable = True
-        Me.tsearch.CustomButton.Visible = False
-        Me.tsearch.Lines = New String(-1) {}
-        Me.tsearch.Location = New System.Drawing.Point(532, 34)
-        Me.tsearch.MaxLength = 32767
-        Me.tsearch.Name = "tsearch"
-        Me.tsearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.tsearch.PromptText = "Search"
-        Me.tsearch.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.tsearch.SelectedText = ""
-        Me.tsearch.SelectionLength = 0
-        Me.tsearch.SelectionStart = 0
-        Me.tsearch.ShortcutsEnabled = True
-        Me.tsearch.Size = New System.Drawing.Size(223, 23)
-        Me.tsearch.TabIndex = 1
-        Me.tsearch.UseSelectable = True
-        Me.tsearch.WaterMark = "Search"
-        Me.tsearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.tsearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.TSearch.CustomButton.Image = Global.WindowsApplication1.My.Resources.Resources.Find
+        Me.TSearch.CustomButton.Location = New System.Drawing.Point(169, 1)
+        Me.TSearch.CustomButton.Name = ""
+        Me.TSearch.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.TSearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.TSearch.CustomButton.TabIndex = 1
+        Me.TSearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.TSearch.CustomButton.UseSelectable = True
+        Me.TSearch.Lines = New String(-1) {}
+        Me.TSearch.Location = New System.Drawing.Point(564, 34)
+        Me.TSearch.MaxLength = 12
+        Me.TSearch.Name = "TSearch"
+        Me.TSearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.TSearch.PromptText = "Search"
+        Me.TSearch.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.TSearch.SelectedText = ""
+        Me.TSearch.SelectionLength = 0
+        Me.TSearch.SelectionStart = 0
+        Me.TSearch.ShortcutsEnabled = True
+        Me.TSearch.ShowButton = True
+        Me.TSearch.Size = New System.Drawing.Size(191, 23)
+        Me.TSearch.TabIndex = 1
+        Me.TSearch.UseSelectable = True
+        Me.TSearch.WaterMark = "Search"
+        Me.TSearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.TSearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Report_a1TableAdapter
         '
@@ -153,11 +155,11 @@ Partial Class List_of_Production_Number
         Me.IdcodeColumn.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
         Me.IdcodeColumn.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic
         '
-        'VarietyDataGridViewTextBoxColumn
+        'NorencanaDataGridViewTextBoxColumn
         '
-        Me.VarietyDataGridViewTextBoxColumn.DataPropertyName = "variety"
-        Me.VarietyDataGridViewTextBoxColumn.HeaderText = "Variety"
-        Me.VarietyDataGridViewTextBoxColumn.Name = "VarietyDataGridViewTextBoxColumn"
+        Me.NorencanaDataGridViewTextBoxColumn.DataPropertyName = "norencana"
+        Me.NorencanaDataGridViewTextBoxColumn.HeaderText = "No Renc /Do Vendor"
+        Me.NorencanaDataGridViewTextBoxColumn.Name = "NorencanaDataGridViewTextBoxColumn"
         '
         'CropDataGridViewTextBoxColumn
         '
@@ -165,41 +167,54 @@ Partial Class List_of_Production_Number
         Me.CropDataGridViewTextBoxColumn.HeaderText = "Crop"
         Me.CropDataGridViewTextBoxColumn.Name = "CropDataGridViewTextBoxColumn"
         '
+        'VarietyDataGridViewTextBoxColumn
+        '
+        Me.VarietyDataGridViewTextBoxColumn.DataPropertyName = "variety"
+        Me.VarietyDataGridViewTextBoxColumn.HeaderText = "Variety"
+        Me.VarietyDataGridViewTextBoxColumn.Name = "VarietyDataGridViewTextBoxColumn"
+        '
+        'NokontrakDataGridViewTextBoxColumn
+        '
+        Me.NokontrakDataGridViewTextBoxColumn.DataPropertyName = "nokontrak"
+        Me.NokontrakDataGridViewTextBoxColumn.HeaderText = "Contract No"
+        Me.NokontrakDataGridViewTextBoxColumn.Name = "NokontrakDataGridViewTextBoxColumn"
+        Me.NokontrakDataGridViewTextBoxColumn.Width = 200
+        '
         'CgrnameDataGridViewTextBoxColumn
         '
         Me.CgrnameDataGridViewTextBoxColumn.DataPropertyName = "cgrname"
-        Me.CgrnameDataGridViewTextBoxColumn.HeaderText = "CGR"
+        Me.CgrnameDataGridViewTextBoxColumn.HeaderText = "CGR Name"
         Me.CgrnameDataGridViewTextBoxColumn.Name = "CgrnameDataGridViewTextBoxColumn"
+        '
+        'blokno
+        '
+        Me.blokno.DataPropertyName = "blokno"
+        Me.blokno.HeaderText = "Block/Material"
+        Me.blokno.Name = "blokno"
+        '
+        'dusun
+        '
+        Me.dusun.DataPropertyName = "dusun"
+        Me.dusun.HeaderText = "Dusun"
+        Me.dusun.Name = "dusun"
+        '
+        'joblot
+        '
+        Me.joblot.DataPropertyName = "joblot"
+        Me.joblot.HeaderText = "Job/ Lot/ Batch"
+        Me.joblot.Name = "joblot"
+        '
+        'plant_qty
+        '
+        Me.plant_qty.DataPropertyName = "plant_qty"
+        Me.plant_qty.HeaderText = "Plant Qty"
+        Me.plant_qty.Name = "plant_qty"
         '
         'HarvestDataGridViewTextBoxColumn
         '
         Me.HarvestDataGridViewTextBoxColumn.DataPropertyName = "harvest"
         Me.HarvestDataGridViewTextBoxColumn.HeaderText = "Harvest"
         Me.HarvestDataGridViewTextBoxColumn.Name = "HarvestDataGridViewTextBoxColumn"
-        '
-        'NorencanaDataGridViewTextBoxColumn
-        '
-        Me.NorencanaDataGridViewTextBoxColumn.DataPropertyName = "norencana"
-        Me.NorencanaDataGridViewTextBoxColumn.HeaderText = "Rencana"
-        Me.NorencanaDataGridViewTextBoxColumn.Name = "NorencanaDataGridViewTextBoxColumn"
-        '
-        'NokontrakDataGridViewTextBoxColumn
-        '
-        Me.NokontrakDataGridViewTextBoxColumn.DataPropertyName = "nokontrak"
-        Me.NokontrakDataGridViewTextBoxColumn.HeaderText = "Kontrak"
-        Me.NokontrakDataGridViewTextBoxColumn.Name = "NokontrakDataGridViewTextBoxColumn"
-        '
-        'joblot
-        '
-        Me.joblot.DataPropertyName = "joblot"
-        Me.joblot.HeaderText = "joblot"
-        Me.joblot.Name = "joblot"
-        '
-        'kec
-        '
-        Me.kec.DataPropertyName = "kec"
-        Me.kec.HeaderText = "kec"
-        Me.kec.Name = "kec"
         '
         'CountDataGridViewTextBoxColumn
         '
@@ -218,7 +233,7 @@ Partial Class List_of_Production_Number
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(778, 383)
-        Me.Controls.Add(Me.tsearch)
+        Me.Controls.Add(Me.TSearch)
         Me.Controls.Add(Me.MetroGrid1)
         Me.Name = "List_of_Production_Number"
         Me.Text = "List of Production Number"
@@ -230,19 +245,21 @@ Partial Class List_of_Production_Number
     End Sub
 
     Friend WithEvents MetroGrid1 As MetroGrid
-    Friend WithEvents tsearch As MetroTextBox
+    Friend WithEvents TSearch As MetroTextBox
     Friend WithEvents HCQC_NewDataset As HCQC_NewDataset
     Friend WithEvents Reporta1BindingSource As BindingSource
     Friend WithEvents Report_a1TableAdapter As HCQC_NewDatasetTableAdapters.report_a1TableAdapter
     Friend WithEvents IdcodeColumn As DataGridViewLinkColumn
-    Friend WithEvents VarietyDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CropDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CgrnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents HarvestDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NorencanaDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CropDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents VarietyDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents NokontrakDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CgrnameDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
+    Friend WithEvents blokno As DataGridViewTextBoxColumn
+    Friend WithEvents dusun As DataGridViewTextBoxColumn
     Friend WithEvents joblot As DataGridViewTextBoxColumn
-    Friend WithEvents kec As DataGridViewTextBoxColumn
+    Friend WithEvents plant_qty As DataGridViewTextBoxColumn
+    Friend WithEvents HarvestDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CountDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents LastPrintDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
 End Class

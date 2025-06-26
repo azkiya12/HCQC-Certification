@@ -14,6 +14,9 @@ Partial Public Class HCQC_NewDataset
 End Class
 
 Namespace HCQC_NewDatasetTableAdapters
+    Partial Public Class report_sampel_ambilTableAdapter
+    End Class
+
     Partial Public Class report_global_viewTableAdapter
     End Class
 

@@ -24,11 +24,11 @@ Partial Class Request_Sampling_From
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Request_Sampling_From))
-        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.MetroToolTip1 = New MetroFramework.Components.MetroToolTip()
         Me.tid_hvsprod = New MetroFramework.Controls.MetroTextBox()
         Me.tgl_hvs = New System.Windows.Forms.MaskedTextBox()
@@ -64,10 +64,13 @@ Partial Class Request_Sampling_From
         Me.coltgl_confirm = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroTabPage1 = New MetroFramework.Controls.MetroTabPage()
-        Me.Tsearch = New MetroFramework.Controls.MetroTextBox()
         Me.MetroPanel1 = New MetroFramework.Controls.MetroPanel()
+        Me.tunit = New MetroFramework.Controls.MetroComboBox()
+        Me.MetroLabel8 = New MetroFramework.Controls.MetroLabel()
+        Me.tinsplot = New MetroFramework.Controls.MetroTextBox()
+        Me.LinkFindVendor = New MetroFramework.Controls.MetroLink()
         Me.tkarantina = New MetroFramework.Controls.MetroCheckBox()
-        Me.MetroTextBox1 = New MetroFramework.Controls.MetroTextBox()
+        Me.tDOVendor = New MetroFramework.Controls.MetroTextBox()
         Me.tloc_sample = New MetroFramework.Controls.MetroComboBox()
         Me.LinkFind = New MetroFramework.Controls.MetroLink()
         Me.BtnSave = New DevExpress.XtraEditors.SimpleButton()
@@ -107,13 +110,14 @@ Partial Class Request_Sampling_From
         Me.tvariety = New MetroFramework.Controls.MetroTextBox()
         Me.tnoman = New MetroFramework.Controls.MetroTextBox()
         Me.tlotref = New MetroFramework.Controls.MetroTextBox()
-        Me.LinkAll = New MetroFramework.Controls.MetroLink()
+        Me.Tsearch = New MetroFramework.Controls.MetroTextBox()
         Me.Link2MonthAgo = New MetroFramework.Controls.MetroLink()
         Me.LinkThisMonth = New MetroFramework.Controls.MetroLink()
         Me.MetroLabel2 = New MetroFramework.Controls.MetroLabel()
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid()
         Me.IdColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.IdhvsprodColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.norencana = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LabnumColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ScopeColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.VarietyColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -121,6 +125,7 @@ Partial Class Request_Sampling_From
         Me.LocationColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.HarvestColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.WeightColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UnitColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NomnlColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.NojobColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.loc_sampleColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -132,7 +137,9 @@ Partial Class Request_Sampling_From
         Me.QcconfirmviewerBindingSource = New System.Windows.Forms.BindingSource(Me.components)
         Me.MetroTabControl1 = New MetroFramework.Controls.MetroTabControl()
         Me.MetroTabPage3 = New MetroFramework.Controls.MetroTabPage()
-        Me.LinkLoad = New MetroFramework.Controls.MetroLink()
+        Me.MetroTextBoxParam = New MetroFramework.Controls.MetroTextBox()
+        Me.MetroLinkLastM = New MetroFramework.Controls.MetroLink()
+        Me.MetroLinkThisM = New MetroFramework.Controls.MetroLink()
         Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.Spl_request1TableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.Spl_request1TableAdapter()
         Me.Qc_confirm_viewerTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.qc_confirm_viewerTableAdapter()
@@ -474,9 +481,8 @@ Partial Class Request_Sampling_From
         '
         Me.MetroTabPage1.AutoScroll = True
         Me.MetroTabPage1.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.MetroTabPage1.Controls.Add(Me.Tsearch)
         Me.MetroTabPage1.Controls.Add(Me.MetroPanel1)
-        Me.MetroTabPage1.Controls.Add(Me.LinkAll)
+        Me.MetroTabPage1.Controls.Add(Me.Tsearch)
         Me.MetroTabPage1.Controls.Add(Me.Link2MonthAgo)
         Me.MetroTabPage1.Controls.Add(Me.LinkThisMonth)
         Me.MetroTabPage1.Controls.Add(Me.MetroLabel2)
@@ -487,7 +493,7 @@ Partial Class Request_Sampling_From
         Me.MetroTabPage1.HorizontalScrollbarSize = 10
         Me.MetroTabPage1.Location = New System.Drawing.Point(4, 38)
         Me.MetroTabPage1.Name = "MetroTabPage1"
-        Me.MetroTabPage1.Size = New System.Drawing.Size(818, 478)
+        Me.MetroTabPage1.Size = New System.Drawing.Size(818, 530)
         Me.MetroTabPage1.TabIndex = 0
         Me.MetroTabPage1.Text = "Request Form   "
         Me.MetroTabPage1.Theme = MetroFramework.MetroThemeStyle.Dark
@@ -497,48 +503,18 @@ Partial Class Request_Sampling_From
         Me.MetroTabPage1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage1.VerticalScrollbarSize = 10
         '
-        'Tsearch
-        '
-        '
-        '
-        '
-        Me.Tsearch.CustomButton.Image = Global.WindowsApplication1.My.Resources.Resources.Find
-        Me.Tsearch.CustomButton.Location = New System.Drawing.Point(194, 1)
-        Me.Tsearch.CustomButton.Name = ""
-        Me.Tsearch.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.Tsearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.Tsearch.CustomButton.TabIndex = 1
-        Me.Tsearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.Tsearch.CustomButton.UseSelectable = True
-        Me.Tsearch.Lines = New String(-1) {}
-        Me.Tsearch.Location = New System.Drawing.Point(271, 278)
-        Me.Tsearch.MaxLength = 32767
-        Me.Tsearch.Name = "Tsearch"
-        Me.Tsearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.Tsearch.PromptText = "Find..."
-        Me.Tsearch.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.Tsearch.SelectedText = ""
-        Me.Tsearch.SelectionLength = 0
-        Me.Tsearch.SelectionStart = 0
-        Me.Tsearch.ShortcutsEnabled = True
-        Me.Tsearch.ShowButton = True
-        Me.Tsearch.Size = New System.Drawing.Size(216, 23)
-        Me.Tsearch.Style = MetroFramework.MetroColorStyle.Blue
-        Me.Tsearch.TabIndex = 59
-        Me.Tsearch.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.Tsearch.UseSelectable = True
-        Me.Tsearch.WaterMark = "Find..."
-        Me.Tsearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.Tsearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
-        '
         'MetroPanel1
         '
         Me.MetroPanel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroPanel1.AutoScroll = True
+        Me.MetroPanel1.Controls.Add(Me.tunit)
+        Me.MetroPanel1.Controls.Add(Me.MetroLabel8)
+        Me.MetroPanel1.Controls.Add(Me.tinsplot)
+        Me.MetroPanel1.Controls.Add(Me.LinkFindVendor)
         Me.MetroPanel1.Controls.Add(Me.tkarantina)
-        Me.MetroPanel1.Controls.Add(Me.MetroTextBox1)
+        Me.MetroPanel1.Controls.Add(Me.tDOVendor)
         Me.MetroPanel1.Controls.Add(Me.tloc_sample)
         Me.MetroPanel1.Controls.Add(Me.LinkFind)
         Me.MetroPanel1.Controls.Add(Me.BtnSave)
@@ -583,9 +559,10 @@ Partial Class Request_Sampling_From
         Me.MetroPanel1.HorizontalScrollbarBarColor = True
         Me.MetroPanel1.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.HorizontalScrollbarSize = 10
-        Me.MetroPanel1.Location = New System.Drawing.Point(3, 16)
+        Me.MetroPanel1.Location = New System.Drawing.Point(3, 14)
         Me.MetroPanel1.Name = "MetroPanel1"
-        Me.MetroPanel1.Size = New System.Drawing.Size(814, 229)
+        Me.MetroPanel1.Padding = New System.Windows.Forms.Padding(0, 0, 0, 5)
+        Me.MetroPanel1.Size = New System.Drawing.Size(816, 287)
         Me.MetroPanel1.TabIndex = 56
         Me.MetroPanel1.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroPanel1.VerticalScrollbar = True
@@ -593,12 +570,96 @@ Partial Class Request_Sampling_From
         Me.MetroPanel1.VerticalScrollbarHighlightOnWheel = False
         Me.MetroPanel1.VerticalScrollbarSize = 10
         '
+        'tunit
+        '
+        Me.tunit.AllowDrop = True
+        Me.tunit.BackColor = System.Drawing.Color.Transparent
+        Me.tunit.FontSize = MetroFramework.MetroComboBoxSize.Small
+        Me.tunit.ForeColor = System.Drawing.Color.Transparent
+        Me.tunit.FormattingEnabled = True
+        Me.tunit.ItemHeight = 19
+        Me.tunit.Items.AddRange(New Object() {"KG", "GR", "PAC", "SEEDS"})
+        Me.tunit.Location = New System.Drawing.Point(216, 280)
+        Me.tunit.Name = "tunit"
+        Me.tunit.PromptText = "Unit..."
+        Me.tunit.Size = New System.Drawing.Size(123, 25)
+        Me.tunit.Style = MetroFramework.MetroColorStyle.Blue
+        Me.tunit.TabIndex = 73
+        Me.tunit.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.tunit.UseSelectable = True
+        Me.tunit.UseStyleColors = True
+        '
+        'MetroLabel8
+        '
+        Me.MetroLabel8.AutoSize = True
+        Me.MetroLabel8.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLabel8.FontWeight = MetroFramework.MetroLabelWeight.Regular
+        Me.MetroLabel8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
+        Me.MetroLabel8.Location = New System.Drawing.Point(84, 226)
+        Me.MetroLabel8.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
+        Me.MetroLabel8.Name = "MetroLabel8"
+        Me.MetroLabel8.Size = New System.Drawing.Size(62, 19)
+        Me.MetroLabel8.TabIndex = 99
+        Me.MetroLabel8.Text = "Insp. Lot"
+        Me.MetroLabel8.UseCustomBackColor = True
+        Me.MetroLabel8.UseCustomForeColor = True
+        '
+        'tinsplot
+        '
+        '
+        '
+        '
+        Me.tinsplot.CustomButton.Image = Nothing
+        Me.tinsplot.CustomButton.Location = New System.Drawing.Point(186, 1)
+        Me.tinsplot.CustomButton.Name = ""
+        Me.tinsplot.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.tinsplot.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.tinsplot.CustomButton.TabIndex = 1
+        Me.tinsplot.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.tinsplot.CustomButton.UseSelectable = True
+        Me.tinsplot.CustomButton.Visible = False
+        Me.tinsplot.Lines = New String(-1) {}
+        Me.tinsplot.Location = New System.Drawing.Point(152, 222)
+        Me.tinsplot.MaxLength = 32767
+        Me.tinsplot.Name = "tinsplot"
+        Me.tinsplot.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tinsplot.PromptText = "Inspection lot"
+        Me.tinsplot.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.tinsplot.SelectedText = ""
+        Me.tinsplot.SelectionLength = 0
+        Me.tinsplot.SelectionStart = 0
+        Me.tinsplot.ShortcutsEnabled = True
+        Me.tinsplot.Size = New System.Drawing.Size(208, 23)
+        Me.tinsplot.TabIndex = 69
+        Me.tinsplot.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.tinsplot.UseSelectable = True
+        Me.tinsplot.WaterMark = "Inspection lot"
+        Me.tinsplot.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.tinsplot.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'LinkFindVendor
+        '
+        Me.LinkFindVendor.AutoSize = True
+        Me.LinkFindVendor.BackColor = System.Drawing.Color.Transparent
+        Me.LinkFindVendor.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkFindVendor.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.LinkFindVendor.Location = New System.Drawing.Point(363, 67)
+        Me.LinkFindVendor.Margin = New System.Windows.Forms.Padding(0)
+        Me.LinkFindVendor.Name = "LinkFindVendor"
+        Me.LinkFindVendor.Size = New System.Drawing.Size(41, 23)
+        Me.LinkFindVendor.TabIndex = 97
+        Me.LinkFindVendor.TabStop = False
+        Me.LinkFindVendor.Text = "Find"
+        Me.LinkFindVendor.UseCustomBackColor = True
+        Me.LinkFindVendor.UseSelectable = True
+        Me.LinkFindVendor.UseStyleColors = True
+        '
         'tkarantina
         '
         Me.tkarantina.AutoSize = True
         Me.tkarantina.BackColor = System.Drawing.Color.Transparent
         Me.tkarantina.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tkarantina.Location = New System.Drawing.Point(603, 68)
+        Me.tkarantina.Location = New System.Drawing.Point(626, 67)
         Me.tkarantina.Name = "tkarantina"
         Me.tkarantina.Size = New System.Drawing.Size(110, 15)
         Me.tkarantina.TabIndex = 96
@@ -607,54 +668,52 @@ Partial Class Request_Sampling_From
         Me.tkarantina.UseCustomForeColor = True
         Me.tkarantina.UseSelectable = True
         '
-        'MetroTextBox1
+        'tDOVendor
         '
         '
         '
         '
-        Me.MetroTextBox1.CustomButton.Image = Nothing
-        Me.MetroTextBox1.CustomButton.Location = New System.Drawing.Point(154, 1)
-        Me.MetroTextBox1.CustomButton.Name = ""
-        Me.MetroTextBox1.CustomButton.Size = New System.Drawing.Size(21, 21)
-        Me.MetroTextBox1.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
-        Me.MetroTextBox1.CustomButton.TabIndex = 1
-        Me.MetroTextBox1.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
-        Me.MetroTextBox1.CustomButton.UseSelectable = True
-        Me.MetroTextBox1.CustomButton.Visible = False
-        Me.MetroTextBox1.Lines = New String(-1) {}
-        Me.MetroTextBox1.Location = New System.Drawing.Point(152, 96)
-        Me.MetroTextBox1.MaxLength = 32767
-        Me.MetroTextBox1.Name = "MetroTextBox1"
-        Me.MetroTextBox1.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.MetroTextBox1.PromptText = "Commercial Name"
-        Me.MetroTextBox1.ScrollBars = System.Windows.Forms.ScrollBars.None
-        Me.MetroTextBox1.SelectedText = ""
-        Me.MetroTextBox1.SelectionLength = 0
-        Me.MetroTextBox1.SelectionStart = 0
-        Me.MetroTextBox1.ShortcutsEnabled = True
-        Me.MetroTextBox1.Size = New System.Drawing.Size(176, 23)
-        Me.MetroTextBox1.TabIndex = 95
-        Me.MetroTextBox1.Theme = MetroFramework.MetroThemeStyle.Dark
-        Me.MetroTextBox1.UseSelectable = True
-        Me.MetroTextBox1.Visible = False
-        Me.MetroTextBox1.WaterMark = "Commercial Name"
-        Me.MetroTextBox1.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        Me.MetroTextBox1.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        Me.tDOVendor.CustomButton.Image = Nothing
+        Me.tDOVendor.CustomButton.Location = New System.Drawing.Point(186, 1)
+        Me.tDOVendor.CustomButton.Name = ""
+        Me.tDOVendor.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.tDOVendor.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.tDOVendor.CustomButton.TabIndex = 1
+        Me.tDOVendor.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.tDOVendor.CustomButton.UseSelectable = True
+        Me.tDOVendor.CustomButton.Visible = False
+        Me.tDOVendor.Lines = New String(-1) {}
+        Me.tDOVendor.Location = New System.Drawing.Point(152, 67)
+        Me.tDOVendor.MaxLength = 32767
+        Me.tDOVendor.Name = "tDOVendor"
+        Me.tDOVendor.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tDOVendor.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.tDOVendor.SelectedText = ""
+        Me.tDOVendor.SelectionLength = 0
+        Me.tDOVendor.SelectionStart = 0
+        Me.tDOVendor.ShortcutsEnabled = True
+        Me.tDOVendor.Size = New System.Drawing.Size(208, 23)
+        Me.tDOVendor.TabIndex = 62
+        Me.tDOVendor.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.tDOVendor.UseSelectable = True
+        Me.tDOVendor.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.tDOVendor.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'tloc_sample
         '
+        Me.tloc_sample.AllowDrop = True
         Me.tloc_sample.BackColor = System.Drawing.Color.Transparent
         Me.tloc_sample.FontSize = MetroFramework.MetroComboBoxSize.Small
         Me.tloc_sample.ForeColor = System.Drawing.Color.Transparent
         Me.tloc_sample.FormattingEnabled = True
         Me.tloc_sample.ItemHeight = 19
         Me.tloc_sample.Items.AddRange(New Object() {"Gudang A", "Gudang B", "Gudang C", "Gudang E", "Gudang G", "Small G", "Gudang WP", "Gudang TR", "CR C", "CR E", "CR F", "CR G"})
-        Me.tloc_sample.Location = New System.Drawing.Point(216, 239)
+        Me.tloc_sample.Location = New System.Drawing.Point(216, 311)
         Me.tloc_sample.Name = "tloc_sample"
         Me.tloc_sample.PromptText = "Sample Location..."
-        Me.tloc_sample.Size = New System.Drawing.Size(120, 25)
+        Me.tloc_sample.Size = New System.Drawing.Size(123, 25)
         Me.tloc_sample.Style = MetroFramework.MetroColorStyle.Blue
-        Me.tloc_sample.TabIndex = 94
+        Me.tloc_sample.TabIndex = 74
         Me.tloc_sample.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.tloc_sample.UseSelectable = True
         Me.tloc_sample.UseStyleColors = True
@@ -688,7 +747,7 @@ Partial Class Request_Sampling_From
         Me.BtnSave.AppearanceHovered.Options.UseBackColor = True
         Me.BtnSave.AppearancePressed.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(102, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnSave.AppearancePressed.Options.UseBackColor = True
-        Me.BtnSave.Location = New System.Drawing.Point(483, 254)
+        Me.BtnSave.Location = New System.Drawing.Point(506, 309)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.ShowFocusRectangle = DevExpress.Utils.DefaultBoolean.[True]
         Me.BtnSave.Size = New System.Drawing.Size(230, 34)
@@ -701,15 +760,14 @@ Partial Class Request_Sampling_From
         Me.MetroLabel6.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel6.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.MetroLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.MetroLabel6.Location = New System.Drawing.Point(35, 100)
+        Me.MetroLabel6.Location = New System.Drawing.Point(68, 71)
         Me.MetroLabel6.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.MetroLabel6.Name = "MetroLabel6"
-        Me.MetroLabel6.Size = New System.Drawing.Size(111, 19)
+        Me.MetroLabel6.Size = New System.Drawing.Size(71, 19)
         Me.MetroLabel6.TabIndex = 92
-        Me.MetroLabel6.Text = "Packaging Name"
+        Me.MetroLabel6.Text = "ID Vendor"
         Me.MetroLabel6.UseCustomBackColor = True
         Me.MetroLabel6.UseCustomForeColor = True
-        Me.MetroLabel6.Visible = False
         '
         'tcrop
         '
@@ -729,7 +787,7 @@ Partial Class Request_Sampling_From
         Me.tcrop.Enabled = False
         Me.tcrop.ForeColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.tcrop.Lines = New String(-1) {}
-        Me.tcrop.Location = New System.Drawing.Point(268, 67)
+        Me.tcrop.Location = New System.Drawing.Point(268, 96)
         Me.tcrop.MaxLength = 32767
         Me.tcrop.Name = "tcrop"
         Me.tcrop.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -741,6 +799,7 @@ Partial Class Request_Sampling_From
         Me.tcrop.ShortcutsEnabled = True
         Me.tcrop.Size = New System.Drawing.Size(92, 23)
         Me.tcrop.TabIndex = 62
+        Me.tcrop.TabStop = False
         Me.tcrop.UseCustomBackColor = True
         Me.tcrop.UseCustomForeColor = True
         Me.tcrop.UseSelectable = True
@@ -759,7 +818,7 @@ Partial Class Request_Sampling_From
         Me.BunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray
         Me.BunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton1.Iconimage = CType(resources.GetObject("BunifuFlatButton1.Iconimage"), System.Drawing.Image)
+        Me.BunifuFlatButton1.Iconimage = Global.WindowsApplication1.My.Resources.Resources.appbar_add_multiple
         Me.BunifuFlatButton1.Iconimage_right = Nothing
         Me.BunifuFlatButton1.Iconimage_right_Selected = Nothing
         Me.BunifuFlatButton1.Iconimage_Selected = Nothing
@@ -768,15 +827,15 @@ Partial Class Request_Sampling_From
         Me.BunifuFlatButton1.IconRightVisible = False
         Me.BunifuFlatButton1.IconRightZoom = 0R
         Me.BunifuFlatButton1.IconVisible = False
-        Me.BunifuFlatButton1.IconZoom = 90.0R
+        Me.BunifuFlatButton1.IconZoom = 50.0R
         Me.BunifuFlatButton1.IsTab = False
-        Me.BunifuFlatButton1.Location = New System.Drawing.Point(226, 0)
+        Me.BunifuFlatButton1.Location = New System.Drawing.Point(205, 0)
         Me.BunifuFlatButton1.Name = "BunifuFlatButton1"
         Me.BunifuFlatButton1.Normalcolor = System.Drawing.Color.Transparent
         Me.BunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.BunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White
         Me.BunifuFlatButton1.selected = False
-        Me.BunifuFlatButton1.Size = New System.Drawing.Size(91, 20)
+        Me.BunifuFlatButton1.Size = New System.Drawing.Size(112, 20)
         Me.BunifuFlatButton1.TabIndex = 90
         Me.BunifuFlatButton1.TabStop = False
         Me.BunifuFlatButton1.Text = "Add Multiple"
@@ -790,7 +849,7 @@ Partial Class Request_Sampling_From
         Me.LinkSelectallRequest.BackColor = System.Drawing.Color.Transparent
         Me.LinkSelectallRequest.Cursor = System.Windows.Forms.Cursors.Hand
         Me.LinkSelectallRequest.FontWeight = MetroFramework.MetroLinkWeight.Light
-        Me.LinkSelectallRequest.Location = New System.Drawing.Point(691, 0)
+        Me.LinkSelectallRequest.Location = New System.Drawing.Point(714, -1)
         Me.LinkSelectallRequest.Margin = New System.Windows.Forms.Padding(0)
         Me.LinkSelectallRequest.Name = "LinkSelectallRequest"
         Me.LinkSelectallRequest.Size = New System.Drawing.Size(60, 23)
@@ -816,7 +875,7 @@ Partial Class Request_Sampling_From
         Me.tbag.CustomButton.UseSelectable = True
         Me.tbag.CustomButton.Visible = False
         Me.tbag.Lines = New String(-1) {}
-        Me.tbag.Location = New System.Drawing.Point(152, 268)
+        Me.tbag.Location = New System.Drawing.Point(152, 311)
         Me.tbag.MaxLength = 32767
         Me.tbag.Name = "tbag"
         Me.tbag.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -836,17 +895,17 @@ Partial Class Request_Sampling_From
         '
         'BunifuImageButton2
         '
-        Me.BunifuImageButton2.BackColor = System.Drawing.Color.Black
+        Me.BunifuImageButton2.BackColor = System.Drawing.Color.Gray
         Me.BunifuImageButton2.Cursor = System.Windows.Forms.Cursors.Hand
         Me.BunifuImageButton2.Image = CType(resources.GetObject("BunifuImageButton2.Image"), System.Drawing.Image)
         Me.BunifuImageButton2.ImageActive = Nothing
-        Me.BunifuImageButton2.Location = New System.Drawing.Point(363, 67)
+        Me.BunifuImageButton2.Location = New System.Drawing.Point(363, 96)
         Me.BunifuImageButton2.Name = "BunifuImageButton2"
         Me.BunifuImageButton2.Size = New System.Drawing.Size(41, 23)
         Me.BunifuImageButton2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom
         Me.BunifuImageButton2.TabIndex = 57
         Me.BunifuImageButton2.TabStop = False
-        Me.BunifuImageButton2.Zoom = 20
+        Me.BunifuImageButton2.Zoom = 15
         '
         'LinkClearRequest
         '
@@ -872,9 +931,9 @@ Partial Class Request_Sampling_From
         '
         '
         Me.tremark.CustomButton.Image = Nothing
-        Me.tremark.CustomButton.Location = New System.Drawing.Point(180, 2)
+        Me.tremark.CustomButton.Location = New System.Drawing.Point(150, 1)
         Me.tremark.CustomButton.Name = ""
-        Me.tremark.CustomButton.Size = New System.Drawing.Size(47, 47)
+        Me.tremark.CustomButton.Size = New System.Drawing.Size(79, 79)
         Me.tremark.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
         Me.tremark.CustomButton.TabIndex = 1
         Me.tremark.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
@@ -882,7 +941,7 @@ Partial Class Request_Sampling_From
         Me.tremark.CustomButton.Visible = False
         Me.tremark.ForeColor = System.Drawing.Color.Transparent
         Me.tremark.Lines = New String(-1) {}
-        Me.tremark.Location = New System.Drawing.Point(483, 194)
+        Me.tremark.Location = New System.Drawing.Point(506, 206)
         Me.tremark.MaxLength = 32767
         Me.tremark.Multiline = True
         Me.tremark.Name = "tremark"
@@ -893,7 +952,7 @@ Partial Class Request_Sampling_From
         Me.tremark.SelectionLength = 0
         Me.tremark.SelectionStart = 0
         Me.tremark.ShortcutsEnabled = True
-        Me.tremark.Size = New System.Drawing.Size(230, 52)
+        Me.tremark.Size = New System.Drawing.Size(230, 81)
         Me.tremark.TabIndex = 82
         Me.tremark.UseCustomBackColor = True
         Me.tremark.UseCustomForeColor = True
@@ -907,9 +966,9 @@ Partial Class Request_Sampling_From
         Me.traf.AutoSize = True
         Me.traf.BackColor = System.Drawing.Color.Transparent
         Me.traf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.traf.Location = New System.Drawing.Point(483, 131)
+        Me.traf.Location = New System.Drawing.Point(506, 130)
         Me.traf.Name = "traf"
-        Me.traf.Size = New System.Drawing.Size(96, 15)
+        Me.traf.Size = New System.Drawing.Size(97, 15)
         Me.traf.TabIndex = 79
         Me.traf.Text = "Rafaction Test"
         Me.traf.UseCustomBackColor = True
@@ -921,9 +980,9 @@ Partial Class Request_Sampling_From
         Me.tvia.AutoSize = True
         Me.tvia.BackColor = System.Drawing.Color.Transparent
         Me.tvia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tvia.Location = New System.Drawing.Point(483, 173)
+        Me.tvia.Location = New System.Drawing.Point(506, 172)
         Me.tvia.Name = "tvia"
-        Me.tvia.Size = New System.Drawing.Size(88, 15)
+        Me.tvia.Size = New System.Drawing.Size(89, 15)
         Me.tvia.TabIndex = 81
         Me.tvia.Text = "Viability Test"
         Me.tvia.UseCustomBackColor = True
@@ -950,9 +1009,9 @@ Partial Class Request_Sampling_From
         Me.tger.AutoSize = True
         Me.tger.BackColor = System.Drawing.Color.Transparent
         Me.tger.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tger.Location = New System.Drawing.Point(483, 152)
+        Me.tger.Location = New System.Drawing.Point(506, 151)
         Me.tger.Name = "tger"
-        Me.tger.Size = New System.Drawing.Size(112, 15)
+        Me.tger.Size = New System.Drawing.Size(113, 15)
         Me.tger.TabIndex = 80
         Me.tger.Text = "Germination Test"
         Me.tger.UseCustomBackColor = True
@@ -965,12 +1024,13 @@ Partial Class Request_Sampling_From
         Me.MetroLabel11.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel11.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.MetroLabel11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.MetroLabel11.Location = New System.Drawing.Point(85, 158)
+        Me.MetroLabel11.Location = New System.Drawing.Point(26, 158)
         Me.MetroLabel11.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.MetroLabel11.Name = "MetroLabel11"
-        Me.MetroLabel11.Size = New System.Drawing.Size(61, 19)
+        Me.MetroLabel11.Size = New System.Drawing.Size(120, 19)
         Me.MetroLabel11.TabIndex = 66
-        Me.MetroLabel11.Text = "Location"
+        Me.MetroLabel11.Text = "Location/ Material"
+        Me.MetroLabel11.TextAlign = System.Drawing.ContentAlignment.TopRight
         Me.MetroLabel11.UseCustomBackColor = True
         Me.MetroLabel11.UseCustomForeColor = True
         '
@@ -979,9 +1039,9 @@ Partial Class Request_Sampling_From
         Me.tpur.AutoSize = True
         Me.tpur.BackColor = System.Drawing.Color.Transparent
         Me.tpur.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tpur.Location = New System.Drawing.Point(483, 110)
+        Me.tpur.Location = New System.Drawing.Point(506, 109)
         Me.tpur.Name = "tpur"
-        Me.tpur.Size = New System.Drawing.Size(77, 15)
+        Me.tpur.Size = New System.Drawing.Size(78, 15)
         Me.tpur.TabIndex = 78
         Me.tpur.Text = "Purity Test"
         Me.tpur.UseCustomBackColor = True
@@ -994,7 +1054,7 @@ Partial Class Request_Sampling_From
         Me.MetroLabel3.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel3.FontWeight = MetroFramework.MetroLabelWeight.Bold
         Me.MetroLabel3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.MetroLabel3.Location = New System.Drawing.Point(407, 4)
+        Me.MetroLabel3.Location = New System.Drawing.Point(430, 3)
         Me.MetroLabel3.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.MetroLabel3.Name = "MetroLabel3"
         Me.MetroLabel3.Size = New System.Drawing.Size(113, 19)
@@ -1023,9 +1083,9 @@ Partial Class Request_Sampling_From
         Me.tmoi.AutoSize = True
         Me.tmoi.BackColor = System.Drawing.Color.Transparent
         Me.tmoi.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tmoi.Location = New System.Drawing.Point(483, 89)
+        Me.tmoi.Location = New System.Drawing.Point(506, 88)
         Me.tmoi.Name = "tmoi"
-        Me.tmoi.Size = New System.Drawing.Size(93, 15)
+        Me.tmoi.Size = New System.Drawing.Size(94, 15)
         Me.tmoi.TabIndex = 77
         Me.tmoi.Text = "Moisture Test"
         Me.tmoi.UseCustomBackColor = True
@@ -1053,7 +1113,7 @@ Partial Class Request_Sampling_From
         Me.MetroLabel13.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel13.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.MetroLabel13.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.MetroLabel13.Location = New System.Drawing.Point(95, 71)
+        Me.MetroLabel13.Location = New System.Drawing.Point(95, 100)
         Me.MetroLabel13.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.MetroLabel13.Name = "MetroLabel13"
         Me.MetroLabel13.Size = New System.Drawing.Size(51, 19)
@@ -1067,7 +1127,7 @@ Partial Class Request_Sampling_From
         Me.tsampling.AutoSize = True
         Me.tsampling.BackColor = System.Drawing.Color.Transparent
         Me.tsampling.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tsampling.Location = New System.Drawing.Point(483, 68)
+        Me.tsampling.Location = New System.Drawing.Point(506, 67)
         Me.tsampling.Name = "tsampling"
         Me.tsampling.Size = New System.Drawing.Size(73, 15)
         Me.tsampling.TabIndex = 76
@@ -1084,7 +1144,7 @@ Partial Class Request_Sampling_From
         Me.tscope.FormattingEnabled = True
         Me.tscope.ItemHeight = 19
         Me.tscope.Items.AddRange(New Object() {"Raw Material", "Gravity", "Periodic", "Finish Good", "Other"})
-        Me.tscope.Location = New System.Drawing.Point(537, 37)
+        Me.tscope.Location = New System.Drawing.Point(560, 36)
         Me.tscope.Name = "tscope"
         Me.tscope.PromptText = "Lot Scope..."
         Me.tscope.Size = New System.Drawing.Size(176, 25)
@@ -1101,7 +1161,7 @@ Partial Class Request_Sampling_From
         Me.LabelDate.FontSize = MetroFramework.MetroLabelSize.Small
         Me.LabelDate.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.LabelDate.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.LabelDate.Location = New System.Drawing.Point(268, 186)
+        Me.LabelDate.Location = New System.Drawing.Point(268, 188)
         Me.LabelDate.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.LabelDate.Name = "LabelDate"
         Me.LabelDate.Size = New System.Drawing.Size(71, 15)
@@ -1116,7 +1176,7 @@ Partial Class Request_Sampling_From
         Me.MetroLabel15.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel15.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.MetroLabel15.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.MetroLabel15.Location = New System.Drawing.Point(57, 185)
+        Me.MetroLabel15.Location = New System.Drawing.Point(57, 187)
         Me.MetroLabel15.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.MetroLabel15.Name = "MetroLabel15"
         Me.MetroLabel15.Size = New System.Drawing.Size(89, 19)
@@ -1130,7 +1190,7 @@ Partial Class Request_Sampling_From
         Me.BunifuSeparator3.BackColor = System.Drawing.Color.Transparent
         Me.BunifuSeparator3.LineColor = System.Drawing.Color.FromArgb(CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer), CType(CType(105, Byte), Integer))
         Me.BunifuSeparator3.LineThickness = 1
-        Me.BunifuSeparator3.Location = New System.Drawing.Point(407, 23)
+        Me.BunifuSeparator3.Location = New System.Drawing.Point(430, 22)
         Me.BunifuSeparator3.Name = "BunifuSeparator3"
         Me.BunifuSeparator3.Size = New System.Drawing.Size(338, 5)
         Me.BunifuSeparator3.TabIndex = 77
@@ -1157,12 +1217,12 @@ Partial Class Request_Sampling_From
         Me.MetroLabel17.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel17.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.MetroLabel17.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.MetroLabel17.Location = New System.Drawing.Point(37, 214)
+        Me.MetroLabel17.Location = New System.Drawing.Point(52, 255)
         Me.MetroLabel17.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.MetroLabel17.Name = "MetroLabel17"
-        Me.MetroLabel17.Size = New System.Drawing.Size(109, 19)
+        Me.MetroLabel17.Size = New System.Drawing.Size(94, 19)
         Me.MetroLabel17.TabIndex = 72
-        Me.MetroLabel17.Text = "Lot/Job Number"
+        Me.MetroLabel17.Text = "Lot/ Batch No"
         Me.MetroLabel17.UseCustomBackColor = True
         Me.MetroLabel17.UseCustomForeColor = True
         '
@@ -1172,7 +1232,7 @@ Partial Class Request_Sampling_From
         Me.MetroLabel4.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel4.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.MetroLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.MetroLabel4.Location = New System.Drawing.Point(423, 43)
+        Me.MetroLabel4.Location = New System.Drawing.Point(446, 42)
         Me.MetroLabel4.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.MetroLabel4.Name = "MetroLabel4"
         Me.MetroLabel4.Size = New System.Drawing.Size(108, 19)
@@ -1187,7 +1247,7 @@ Partial Class Request_Sampling_From
         Me.MetroLabel7.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel7.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.MetroLabel7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.MetroLabel7.Location = New System.Drawing.Point(41, 269)
+        Me.MetroLabel7.Location = New System.Drawing.Point(38, 313)
         Me.MetroLabel7.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.MetroLabel7.Name = "MetroLabel7"
         Me.MetroLabel7.Size = New System.Drawing.Size(108, 19)
@@ -1202,12 +1262,12 @@ Partial Class Request_Sampling_From
         Me.MetroLabel18.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel18.FontWeight = MetroFramework.MetroLabelWeight.Regular
         Me.MetroLabel18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.MetroLabel18.Location = New System.Drawing.Point(67, 243)
+        Me.MetroLabel18.Location = New System.Drawing.Point(70, 284)
         Me.MetroLabel18.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.MetroLabel18.Name = "MetroLabel18"
-        Me.MetroLabel18.Size = New System.Drawing.Size(79, 19)
+        Me.MetroLabel18.Size = New System.Drawing.Size(76, 19)
         Me.MetroLabel18.TabIndex = 73
-        Me.MetroLabel18.Text = "Weight (kg)"
+        Me.MetroLabel18.Text = "Lot Weight"
         Me.MetroLabel18.UseCustomBackColor = True
         Me.MetroLabel18.UseCustomForeColor = True
         '
@@ -1218,7 +1278,7 @@ Partial Class Request_Sampling_From
         '
         '
         Me.tfarmer.CustomButton.Image = Nothing
-        Me.tfarmer.CustomButton.Location = New System.Drawing.Point(154, 1)
+        Me.tfarmer.CustomButton.Location = New System.Drawing.Point(186, 1)
         Me.tfarmer.CustomButton.Name = ""
         Me.tfarmer.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.tfarmer.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -1237,8 +1297,8 @@ Partial Class Request_Sampling_From
         Me.tfarmer.SelectionLength = 0
         Me.tfarmer.SelectionStart = 0
         Me.tfarmer.ShortcutsEnabled = True
-        Me.tfarmer.Size = New System.Drawing.Size(176, 23)
-        Me.tfarmer.TabIndex = 63
+        Me.tfarmer.Size = New System.Drawing.Size(208, 23)
+        Me.tfarmer.TabIndex = 64
         Me.tfarmer.UseCustomBackColor = True
         Me.tfarmer.UseCustomForeColor = True
         Me.tfarmer.UseSelectable = True
@@ -1252,7 +1312,7 @@ Partial Class Request_Sampling_From
         '
         '
         Me.tlocation.CustomButton.Image = Nothing
-        Me.tlocation.CustomButton.Location = New System.Drawing.Point(154, 1)
+        Me.tlocation.CustomButton.Location = New System.Drawing.Point(186, 1)
         Me.tlocation.CustomButton.Name = ""
         Me.tlocation.CustomButton.Size = New System.Drawing.Size(21, 21)
         Me.tlocation.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
@@ -1271,8 +1331,8 @@ Partial Class Request_Sampling_From
         Me.tlocation.SelectionLength = 0
         Me.tlocation.SelectionStart = 0
         Me.tlocation.ShortcutsEnabled = True
-        Me.tlocation.Size = New System.Drawing.Size(176, 23)
-        Me.tlocation.TabIndex = 64
+        Me.tlocation.Size = New System.Drawing.Size(208, 23)
+        Me.tlocation.TabIndex = 65
         Me.tlocation.UseCustomBackColor = True
         Me.tlocation.UseCustomForeColor = True
         Me.tlocation.UseSelectable = True
@@ -1287,7 +1347,7 @@ Partial Class Request_Sampling_From
         Me.MetroPanel2.HorizontalScrollbarBarColor = True
         Me.MetroPanel2.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroPanel2.HorizontalScrollbarSize = 10
-        Me.MetroPanel2.Location = New System.Drawing.Point(152, 181)
+        Me.MetroPanel2.Location = New System.Drawing.Point(152, 183)
         Me.MetroPanel2.Name = "MetroPanel2"
         Me.MetroPanel2.Padding = New System.Windows.Forms.Padding(1)
         Me.MetroPanel2.Size = New System.Drawing.Size(110, 23)
@@ -1316,10 +1376,11 @@ Partial Class Request_Sampling_From
         Me.tlotqtt.CustomButton.Visible = False
         Me.tlotqtt.ForeColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.tlotqtt.Lines = New String(-1) {}
-        Me.tlotqtt.Location = New System.Drawing.Point(152, 239)
+        Me.tlotqtt.Location = New System.Drawing.Point(152, 280)
         Me.tlotqtt.MaxLength = 32767
         Me.tlotqtt.Name = "tlotqtt"
         Me.tlotqtt.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.tlotqtt.PromptText = "weight"
         Me.tlotqtt.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.tlotqtt.SelectedText = ""
         Me.tlotqtt.SelectionLength = 0
@@ -1330,6 +1391,7 @@ Partial Class Request_Sampling_From
         Me.tlotqtt.UseCustomBackColor = True
         Me.tlotqtt.UseCustomForeColor = True
         Me.tlotqtt.UseSelectable = True
+        Me.tlotqtt.WaterMark = "weight"
         Me.tlotqtt.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.tlotqtt.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
@@ -1350,7 +1412,7 @@ Partial Class Request_Sampling_From
         Me.tvariety.CustomButton.UseStyleColors = True
         Me.tvariety.ForeColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.tvariety.Lines = New String(-1) {}
-        Me.tvariety.Location = New System.Drawing.Point(152, 67)
+        Me.tvariety.Location = New System.Drawing.Point(152, 96)
         Me.tvariety.MaxLength = 32767
         Me.tvariety.Name = "tvariety"
         Me.tvariety.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -1361,7 +1423,7 @@ Partial Class Request_Sampling_From
         Me.tvariety.ShortcutsEnabled = True
         Me.tvariety.ShowButton = True
         Me.tvariety.Size = New System.Drawing.Size(110, 23)
-        Me.tvariety.TabIndex = 61
+        Me.tvariety.TabIndex = 63
         Me.tvariety.UseCustomBackColor = True
         Me.tvariety.UseCustomForeColor = True
         Me.tvariety.UseSelectable = True
@@ -1385,7 +1447,7 @@ Partial Class Request_Sampling_From
         Me.tnoman.CustomButton.Visible = False
         Me.tnoman.ForeColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.tnoman.Lines = New String(-1) {}
-        Me.tnoman.Location = New System.Drawing.Point(152, 210)
+        Me.tnoman.Location = New System.Drawing.Point(152, 251)
         Me.tnoman.MaxLength = 32767
         Me.tnoman.Name = "tnoman"
         Me.tnoman.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
@@ -1421,11 +1483,11 @@ Partial Class Request_Sampling_From
         Me.tlotref.CustomButton.Visible = False
         Me.tlotref.ForeColor = System.Drawing.Color.FromArgb(CType(CType(239, Byte), Integer), CType(CType(240, Byte), Integer), CType(CType(240, Byte), Integer))
         Me.tlotref.Lines = New String(-1) {}
-        Me.tlotref.Location = New System.Drawing.Point(216, 210)
+        Me.tlotref.Location = New System.Drawing.Point(216, 251)
         Me.tlotref.MaxLength = 32767
         Me.tlotref.Name = "tlotref"
         Me.tlotref.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
-        Me.tlotref.PromptText = "id job sas/etc"
+        Me.tlotref.PromptText = "id job sas/batch etc"
         Me.tlotref.ScrollBars = System.Windows.Forms.ScrollBars.None
         Me.tlotref.SelectedText = ""
         Me.tlotref.SelectionLength = 0
@@ -1436,25 +1498,43 @@ Partial Class Request_Sampling_From
         Me.tlotref.UseCustomBackColor = True
         Me.tlotref.UseCustomForeColor = True
         Me.tlotref.UseSelectable = True
-        Me.tlotref.WaterMark = "id job sas/etc"
+        Me.tlotref.WaterMark = "id job sas/batch etc"
         Me.tlotref.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.tlotref.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'LinkAll
+        'Tsearch
         '
-        Me.LinkAll.AutoSize = True
-        Me.LinkAll.BackColor = System.Drawing.Color.Transparent
-        Me.LinkAll.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkAll.FontWeight = MetroFramework.MetroLinkWeight.Light
-        Me.LinkAll.Location = New System.Drawing.Point(229, 278)
-        Me.LinkAll.Margin = New System.Windows.Forms.Padding(0)
-        Me.LinkAll.Name = "LinkAll"
-        Me.LinkAll.Size = New System.Drawing.Size(32, 23)
-        Me.LinkAll.TabIndex = 55
-        Me.LinkAll.Text = "All"
-        Me.LinkAll.UseCustomBackColor = True
-        Me.LinkAll.UseSelectable = True
-        Me.LinkAll.UseStyleColors = True
+        '
+        '
+        '
+        Me.Tsearch.CustomButton.Image = Global.WindowsApplication1.My.Resources.Resources.Find
+        Me.Tsearch.CustomButton.Location = New System.Drawing.Point(194, 1)
+        Me.Tsearch.CustomButton.Name = ""
+        Me.Tsearch.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.Tsearch.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.Tsearch.CustomButton.TabIndex = 1
+        Me.Tsearch.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.Tsearch.CustomButton.UseSelectable = True
+        Me.Tsearch.Lines = New String(-1) {}
+        Me.Tsearch.Location = New System.Drawing.Point(271, 321)
+        Me.Tsearch.MaxLength = 32767
+        Me.Tsearch.Name = "Tsearch"
+        Me.Tsearch.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.Tsearch.PromptText = "Find..."
+        Me.Tsearch.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.Tsearch.SelectedText = ""
+        Me.Tsearch.SelectionLength = 0
+        Me.Tsearch.SelectionStart = 0
+        Me.Tsearch.ShortcutsEnabled = True
+        Me.Tsearch.ShowButton = True
+        Me.Tsearch.Size = New System.Drawing.Size(216, 23)
+        Me.Tsearch.Style = MetroFramework.MetroColorStyle.Blue
+        Me.Tsearch.TabIndex = 59
+        Me.Tsearch.Theme = MetroFramework.MetroThemeStyle.Dark
+        Me.Tsearch.UseSelectable = True
+        Me.Tsearch.WaterMark = "Find..."
+        Me.Tsearch.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.Tsearch.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
         'Link2MonthAgo
         '
@@ -1462,7 +1542,7 @@ Partial Class Request_Sampling_From
         Me.Link2MonthAgo.BackColor = System.Drawing.Color.Transparent
         Me.Link2MonthAgo.Cursor = System.Windows.Forms.Cursors.Hand
         Me.Link2MonthAgo.FontWeight = MetroFramework.MetroLinkWeight.Light
-        Me.Link2MonthAgo.Location = New System.Drawing.Point(152, 278)
+        Me.Link2MonthAgo.Location = New System.Drawing.Point(152, 321)
         Me.Link2MonthAgo.Margin = New System.Windows.Forms.Padding(0)
         Me.Link2MonthAgo.Name = "Link2MonthAgo"
         Me.Link2MonthAgo.Size = New System.Drawing.Size(77, 23)
@@ -1478,7 +1558,7 @@ Partial Class Request_Sampling_From
         Me.LinkThisMonth.BackColor = System.Drawing.Color.Transparent
         Me.LinkThisMonth.Cursor = System.Windows.Forms.Cursors.Hand
         Me.LinkThisMonth.FontWeight = MetroFramework.MetroLinkWeight.Light
-        Me.LinkThisMonth.Location = New System.Drawing.Point(82, 278)
+        Me.LinkThisMonth.Location = New System.Drawing.Point(82, 321)
         Me.LinkThisMonth.Margin = New System.Windows.Forms.Padding(0)
         Me.LinkThisMonth.Name = "LinkThisMonth"
         Me.LinkThisMonth.Size = New System.Drawing.Size(70, 23)
@@ -1494,7 +1574,7 @@ Partial Class Request_Sampling_From
         Me.MetroLabel2.BackColor = System.Drawing.Color.Transparent
         Me.MetroLabel2.FontWeight = MetroFramework.MetroLabelWeight.Bold
         Me.MetroLabel2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.MetroLabel2.Location = New System.Drawing.Point(3, 279)
+        Me.MetroLabel2.Location = New System.Drawing.Point(3, 322)
         Me.MetroLabel2.Margin = New System.Windows.Forms.Padding(3, 3, 3, 0)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(66, 19)
@@ -1508,9 +1588,9 @@ Partial Class Request_Sampling_From
         Me.MetroGrid1.AllowUserToAddRows = False
         Me.MetroGrid1.AllowUserToDeleteRows = False
         Me.MetroGrid1.AllowUserToResizeRows = False
-        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.Black
-        Me.MetroGrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle6
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.Black
+        Me.MetroGrid1.AlternatingRowsDefaultCellStyle = DataGridViewCellStyle1
         Me.MetroGrid1.Anchor = CType(((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Left) _
             Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroGrid1.AutoGenerateColumns = False
@@ -1518,46 +1598,45 @@ Partial Class Request_Sampling_From
         Me.MetroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.MetroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.MetroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.MetroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdColumn, Me.IdhvsprodColumn, Me.LabnumColumn, Me.ScopeColumn, Me.VarietyColumn, Me.FarmerColumn, Me.LocationColumn, Me.HarvestColumn, Me.WeightColumn, Me.NomnlColumn, Me.NojobColumn, Me.loc_sampleColumn, Me.status_confirm, Me.req_date, Me.req_name, Me.ColmEdit, Me.ColmDelete})
+        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.IdColumn, Me.IdhvsprodColumn, Me.norencana, Me.LabnumColumn, Me.ScopeColumn, Me.VarietyColumn, Me.FarmerColumn, Me.LocationColumn, Me.HarvestColumn, Me.WeightColumn, Me.UnitColumn, Me.NomnlColumn, Me.NojobColumn, Me.loc_sampleColumn, Me.status_confirm, Me.req_date, Me.req_name, Me.ColmEdit, Me.ColmDelete})
         Me.MetroGrid1.DataSource = Me.QcconfirmviewerBindingSource
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle3
         Me.MetroGrid1.EnableHeadersVisualStyles = False
         Me.MetroGrid1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.MetroGrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        Me.MetroGrid1.Location = New System.Drawing.Point(3, 306)
+        Me.MetroGrid1.Location = New System.Drawing.Point(3, 358)
         Me.MetroGrid1.Name = "MetroGrid1"
-        Me.MetroGrid1.ReadOnly = True
         Me.MetroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.MetroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.WhiteSmoke
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.Black
-        Me.MetroGrid1.RowsDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.WhiteSmoke
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.Black
+        Me.MetroGrid1.RowsDefaultCellStyle = DataGridViewCellStyle5
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.MetroGrid1.Size = New System.Drawing.Size(814, 169)
+        Me.MetroGrid1.Size = New System.Drawing.Size(812, 169)
         Me.MetroGrid1.TabIndex = 24
         Me.MetroGrid1.Theme = MetroFramework.MetroThemeStyle.Dark
         '
@@ -1566,37 +1645,37 @@ Partial Class Request_Sampling_From
         Me.IdColumn.DataPropertyName = "id"
         Me.IdColumn.HeaderText = "Request Number"
         Me.IdColumn.Name = "IdColumn"
-        Me.IdColumn.ReadOnly = True
         Me.IdColumn.Width = 80
         '
         'IdhvsprodColumn
         '
         Me.IdhvsprodColumn.DataPropertyName = "id_hvsprod"
-        Me.IdhvsprodColumn.HeaderText = "Production Code"
+        Me.IdhvsprodColumn.HeaderText = "Prod. Code"
         Me.IdhvsprodColumn.Name = "IdhvsprodColumn"
-        Me.IdhvsprodColumn.ReadOnly = True
-        Me.IdhvsprodColumn.Width = 90
+        '
+        'norencana
+        '
+        Me.norencana.DataPropertyName = "norencana"
+        Me.norencana.HeaderText = "ID Vendor"
+        Me.norencana.Name = "norencana"
         '
         'LabnumColumn
         '
         Me.LabnumColumn.DataPropertyName = "labnum"
         Me.LabnumColumn.HeaderText = "Lab Number"
         Me.LabnumColumn.Name = "LabnumColumn"
-        Me.LabnumColumn.ReadOnly = True
         '
         'ScopeColumn
         '
         Me.ScopeColumn.DataPropertyName = "scope"
         Me.ScopeColumn.HeaderText = "Scope"
         Me.ScopeColumn.Name = "ScopeColumn"
-        Me.ScopeColumn.ReadOnly = True
         '
         'VarietyColumn
         '
         Me.VarietyColumn.DataPropertyName = "variety"
         Me.VarietyColumn.HeaderText = "Variety"
         Me.VarietyColumn.Name = "VarietyColumn"
-        Me.VarietyColumn.ReadOnly = True
         Me.VarietyColumn.Width = 80
         '
         'FarmerColumn
@@ -1604,7 +1683,6 @@ Partial Class Request_Sampling_From
         Me.FarmerColumn.DataPropertyName = "farmer"
         Me.FarmerColumn.HeaderText = "Farmer"
         Me.FarmerColumn.Name = "FarmerColumn"
-        Me.FarmerColumn.ReadOnly = True
         Me.FarmerColumn.Width = 80
         '
         'LocationColumn
@@ -1612,30 +1690,33 @@ Partial Class Request_Sampling_From
         Me.LocationColumn.DataPropertyName = "location"
         Me.LocationColumn.HeaderText = "Location"
         Me.LocationColumn.Name = "LocationColumn"
-        Me.LocationColumn.ReadOnly = True
         '
         'HarvestColumn
         '
         Me.HarvestColumn.DataPropertyName = "harvest"
         Me.HarvestColumn.HeaderText = "Harvest"
         Me.HarvestColumn.Name = "HarvestColumn"
-        Me.HarvestColumn.ReadOnly = True
         Me.HarvestColumn.Width = 90
         '
         'WeightColumn
         '
         Me.WeightColumn.DataPropertyName = "weight"
-        Me.WeightColumn.HeaderText = "Weight (kg)"
+        Me.WeightColumn.HeaderText = "Weight"
         Me.WeightColumn.Name = "WeightColumn"
-        Me.WeightColumn.ReadOnly = True
         Me.WeightColumn.Width = 75
+        '
+        'UnitColumn
+        '
+        Me.UnitColumn.DataPropertyName = "unit"
+        Me.UnitColumn.HeaderText = "Unit"
+        Me.UnitColumn.Name = "UnitColumn"
+        Me.UnitColumn.Width = 50
         '
         'NomnlColumn
         '
         Me.NomnlColumn.DataPropertyName = "nomnl"
         Me.NomnlColumn.HeaderText = "Manual"
         Me.NomnlColumn.Name = "NomnlColumn"
-        Me.NomnlColumn.ReadOnly = True
         Me.NomnlColumn.Width = 70
         '
         'NojobColumn
@@ -1643,7 +1724,6 @@ Partial Class Request_Sampling_From
         Me.NojobColumn.DataPropertyName = "nojob"
         Me.NojobColumn.HeaderText = "Lot/Job"
         Me.NojobColumn.Name = "NojobColumn"
-        Me.NojobColumn.ReadOnly = True
         Me.NojobColumn.Width = 80
         '
         'loc_sampleColumn
@@ -1651,7 +1731,6 @@ Partial Class Request_Sampling_From
         Me.loc_sampleColumn.DataPropertyName = "loc_sample"
         Me.loc_sampleColumn.HeaderText = "Sample Location"
         Me.loc_sampleColumn.Name = "loc_sampleColumn"
-        Me.loc_sampleColumn.ReadOnly = True
         Me.loc_sampleColumn.Width = 80
         '
         'status_confirm
@@ -1667,7 +1746,6 @@ Partial Class Request_Sampling_From
         Me.req_date.DataPropertyName = "req_date"
         Me.req_date.HeaderText = "Create at"
         Me.req_date.Name = "req_date"
-        Me.req_date.ReadOnly = True
         Me.req_date.Width = 85
         '
         'req_name
@@ -1675,14 +1753,12 @@ Partial Class Request_Sampling_From
         Me.req_name.DataPropertyName = "req_name"
         Me.req_name.HeaderText = "Request by"
         Me.req_name.Name = "req_name"
-        Me.req_name.ReadOnly = True
         '
         'ColmEdit
         '
         Me.ColmEdit.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ColmEdit.HeaderText = "Button"
         Me.ColmEdit.Name = "ColmEdit"
-        Me.ColmEdit.ReadOnly = True
         Me.ColmEdit.Text = "Edit"
         Me.ColmEdit.UseColumnTextForButtonValue = True
         Me.ColmEdit.Width = 65
@@ -1692,7 +1768,6 @@ Partial Class Request_Sampling_From
         Me.ColmDelete.FlatStyle = System.Windows.Forms.FlatStyle.Flat
         Me.ColmDelete.HeaderText = "Button"
         Me.ColmDelete.Name = "ColmDelete"
-        Me.ColmDelete.ReadOnly = True
         Me.ColmDelete.Text = "Delete"
         Me.ColmDelete.UseColumnTextForButtonValue = True
         Me.ColmDelete.Width = 65
@@ -1710,43 +1785,93 @@ Partial Class Request_Sampling_From
         Me.MetroTabControl1.Location = New System.Drawing.Point(0, 0)
         Me.MetroTabControl1.Name = "MetroTabControl1"
         Me.MetroTabControl1.SelectedIndex = 0
-        Me.MetroTabControl1.Size = New System.Drawing.Size(826, 520)
+        Me.MetroTabControl1.Size = New System.Drawing.Size(826, 572)
         Me.MetroTabControl1.TabIndex = 55
         Me.MetroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroTabControl1.UseSelectable = True
         '
         'MetroTabPage3
         '
-        Me.MetroTabPage3.Controls.Add(Me.LinkLoad)
+        Me.MetroTabPage3.Controls.Add(Me.MetroTextBoxParam)
+        Me.MetroTabPage3.Controls.Add(Me.MetroLinkLastM)
+        Me.MetroTabPage3.Controls.Add(Me.MetroLinkThisM)
         Me.MetroTabPage3.Controls.Add(Me.GridControl1)
         Me.MetroTabPage3.HorizontalScrollbarBarColor = True
         Me.MetroTabPage3.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroTabPage3.HorizontalScrollbarSize = 10
         Me.MetroTabPage3.Location = New System.Drawing.Point(4, 38)
         Me.MetroTabPage3.Name = "MetroTabPage3"
-        Me.MetroTabPage3.Size = New System.Drawing.Size(818, 478)
+        Me.MetroTabPage3.Size = New System.Drawing.Size(818, 530)
         Me.MetroTabPage3.TabIndex = 2
         Me.MetroTabPage3.Text = "List of Request   "
         Me.MetroTabPage3.VerticalScrollbarBarColor = True
         Me.MetroTabPage3.VerticalScrollbarHighlightOnWheel = False
         Me.MetroTabPage3.VerticalScrollbarSize = 10
         '
-        'LinkLoad
+        'MetroTextBoxParam
         '
-        Me.LinkLoad.AutoSize = True
-        Me.LinkLoad.BackColor = System.Drawing.Color.Transparent
-        Me.LinkLoad.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.LinkLoad.FontWeight = MetroFramework.MetroLinkWeight.Light
-        Me.LinkLoad.Location = New System.Drawing.Point(3, 3)
-        Me.LinkLoad.Margin = New System.Windows.Forms.Padding(0)
-        Me.LinkLoad.Name = "LinkLoad"
-        Me.LinkLoad.Size = New System.Drawing.Size(105, 23)
-        Me.LinkLoad.TabIndex = 88
-        Me.LinkLoad.TabStop = False
-        Me.LinkLoad.Text = "Click to Load Data"
-        Me.LinkLoad.UseCustomBackColor = True
-        Me.LinkLoad.UseSelectable = True
-        Me.LinkLoad.UseStyleColors = True
+        '
+        '
+        '
+        Me.MetroTextBoxParam.CustomButton.Image = Global.WindowsApplication1.My.Resources.Resources.Find
+        Me.MetroTextBoxParam.CustomButton.Location = New System.Drawing.Point(194, 1)
+        Me.MetroTextBoxParam.CustomButton.Name = ""
+        Me.MetroTextBoxParam.CustomButton.Size = New System.Drawing.Size(21, 21)
+        Me.MetroTextBoxParam.CustomButton.Style = MetroFramework.MetroColorStyle.Blue
+        Me.MetroTextBoxParam.CustomButton.TabIndex = 1
+        Me.MetroTextBoxParam.CustomButton.Theme = MetroFramework.MetroThemeStyle.Light
+        Me.MetroTextBoxParam.CustomButton.UseSelectable = True
+        Me.MetroTextBoxParam.Lines = New String(-1) {}
+        Me.MetroTextBoxParam.Location = New System.Drawing.Point(162, 3)
+        Me.MetroTextBoxParam.MaxLength = 32767
+        Me.MetroTextBoxParam.Name = "MetroTextBoxParam"
+        Me.MetroTextBoxParam.PasswordChar = Global.Microsoft.VisualBasic.ChrW(0)
+        Me.MetroTextBoxParam.PromptText = "Find..."
+        Me.MetroTextBoxParam.ScrollBars = System.Windows.Forms.ScrollBars.None
+        Me.MetroTextBoxParam.SelectedText = ""
+        Me.MetroTextBoxParam.SelectionLength = 0
+        Me.MetroTextBoxParam.SelectionStart = 0
+        Me.MetroTextBoxParam.ShortcutsEnabled = True
+        Me.MetroTextBoxParam.ShowButton = True
+        Me.MetroTextBoxParam.Size = New System.Drawing.Size(216, 23)
+        Me.MetroTextBoxParam.Style = MetroFramework.MetroColorStyle.Blue
+        Me.MetroTextBoxParam.TabIndex = 91
+        Me.MetroTextBoxParam.UseSelectable = True
+        Me.MetroTextBoxParam.WaterMark = "Find..."
+        Me.MetroTextBoxParam.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
+        Me.MetroTextBoxParam.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
+        '
+        'MetroLinkLastM
+        '
+        Me.MetroLinkLastM.AutoSize = True
+        Me.MetroLinkLastM.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLinkLastM.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MetroLinkLastM.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.MetroLinkLastM.Location = New System.Drawing.Point(73, 3)
+        Me.MetroLinkLastM.Margin = New System.Windows.Forms.Padding(0)
+        Me.MetroLinkLastM.Name = "MetroLinkLastM"
+        Me.MetroLinkLastM.Size = New System.Drawing.Size(77, 23)
+        Me.MetroLinkLastM.TabIndex = 89
+        Me.MetroLinkLastM.Text = "Last Month"
+        Me.MetroLinkLastM.UseCustomBackColor = True
+        Me.MetroLinkLastM.UseSelectable = True
+        Me.MetroLinkLastM.UseStyleColors = True
+        '
+        'MetroLinkThisM
+        '
+        Me.MetroLinkThisM.AutoSize = True
+        Me.MetroLinkThisM.BackColor = System.Drawing.Color.Transparent
+        Me.MetroLinkThisM.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.MetroLinkThisM.FontWeight = MetroFramework.MetroLinkWeight.Light
+        Me.MetroLinkThisM.Location = New System.Drawing.Point(3, 3)
+        Me.MetroLinkThisM.Margin = New System.Windows.Forms.Padding(0)
+        Me.MetroLinkThisM.Name = "MetroLinkThisM"
+        Me.MetroLinkThisM.Size = New System.Drawing.Size(70, 23)
+        Me.MetroLinkThisM.TabIndex = 90
+        Me.MetroLinkThisM.Text = "This Month"
+        Me.MetroLinkThisM.UseCustomBackColor = True
+        Me.MetroLinkThisM.UseSelectable = True
+        Me.MetroLinkThisM.UseStyleColors = True
         '
         'BunifuElipse1
         '
@@ -1769,7 +1894,7 @@ Partial Class Request_Sampling_From
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(45, Byte), Integer))
         Me.Controls.Add(Me.MetroTabControl1)
         Me.Name = "Request_Sampling_From"
-        Me.Size = New System.Drawing.Size(826, 520)
+        Me.Size = New System.Drawing.Size(826, 572)
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.Splrequest1BindingSource, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.HCQC_NewDataset, System.ComponentModel.ISupportInitialize).EndInit()
@@ -1827,7 +1952,6 @@ Partial Class Request_Sampling_From
     Friend WithEvents tnoman As MetroTextBox
     Friend WithEvents tlotref As MetroTextBox
     Friend WithEvents MetroLabel4 As MetroLabel
-    Friend WithEvents LinkAll As MetroLink
     Friend WithEvents Link2MonthAgo As MetroLink
     Friend WithEvents LinkThisMonth As MetroLink
     Friend WithEvents LinkClearRequest As MetroLink
@@ -1884,7 +2008,6 @@ Partial Class Request_Sampling_From
     Friend WithEvents Splrequest1BindingSource As BindingSource
     Friend WithEvents colstatus_confirm As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents Spl_request1TableAdapter As HCQC_NewDatasetTableAdapters.Spl_request1TableAdapter
-    Friend WithEvents LinkLoad As MetroLink
     Friend WithEvents QcconfirmviewerBindingSource As BindingSource
     Friend WithEvents Qc_confirm_viewerTableAdapter As HCQC_NewDatasetTableAdapters.qc_confirm_viewerTableAdapter
     Friend WithEvents Tsearch As MetroTextBox
@@ -1893,8 +2016,15 @@ Partial Class Request_Sampling_From
     Friend WithEvents colinformation_rejected As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents coltgl_confirm As DevExpress.XtraGrid.Columns.GridColumn
     Friend WithEvents colloc_sample As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents tkarantina As MetroCheckBox
+    Friend WithEvents tDOVendor As MetroTextBox
+    Friend WithEvents LinkFindVendor As MetroLink
+    Friend WithEvents MetroLabel8 As MetroLabel
+    Friend WithEvents tinsplot As MetroTextBox
+    Friend WithEvents tunit As MetroComboBox
     Friend WithEvents IdColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdhvsprodColumn As DataGridViewTextBoxColumn
+    Friend WithEvents norencana As DataGridViewTextBoxColumn
     Friend WithEvents LabnumColumn As DataGridViewTextBoxColumn
     Friend WithEvents ScopeColumn As DataGridViewTextBoxColumn
     Friend WithEvents VarietyColumn As DataGridViewTextBoxColumn
@@ -1902,6 +2032,7 @@ Partial Class Request_Sampling_From
     Friend WithEvents LocationColumn As DataGridViewTextBoxColumn
     Friend WithEvents HarvestColumn As DataGridViewTextBoxColumn
     Friend WithEvents WeightColumn As DataGridViewTextBoxColumn
+    Friend WithEvents UnitColumn As DataGridViewTextBoxColumn
     Friend WithEvents NomnlColumn As DataGridViewTextBoxColumn
     Friend WithEvents NojobColumn As DataGridViewTextBoxColumn
     Friend WithEvents loc_sampleColumn As DataGridViewTextBoxColumn
@@ -1910,6 +2041,7 @@ Partial Class Request_Sampling_From
     Friend WithEvents req_name As DataGridViewTextBoxColumn
     Friend WithEvents ColmEdit As DataGridViewButtonColumn
     Friend WithEvents ColmDelete As DataGridViewButtonColumn
-    Friend WithEvents MetroTextBox1 As MetroTextBox
-    Friend WithEvents tkarantina As MetroCheckBox
+    Friend WithEvents MetroTextBoxParam As MetroTextBox
+    Friend WithEvents MetroLinkLastM As MetroLink
+    Friend WithEvents MetroLinkThisM As MetroLink
 End Class

@@ -83,8 +83,6 @@ Partial Public Class HCQC_NewDataset
     
     Private tableLabnumDataTable As LabnumDataTableDataTable
     
-    Private tableStockOnProcess As StockOnProcessDataTable
-    
     Private relationspl_request_qc_confirm As Global.System.Data.DataRelation
     
     Private relationspl_request_spl_ambil As Global.System.Data.DataRelation
@@ -230,9 +228,6 @@ Partial Public Class HCQC_NewDataset
             End If
             If (Not (ds.Tables("LabnumDataTable")) Is Nothing) Then
                 MyBase.Tables.Add(New LabnumDataTableDataTable(ds.Tables("LabnumDataTable")))
-            End If
-            If (Not (ds.Tables("StockOnProcess")) Is Nothing) Then
-                MyBase.Tables.Add(New StockOnProcessDataTable(ds.Tables("StockOnProcess")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -543,16 +538,6 @@ Partial Public Class HCQC_NewDataset
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-     Global.System.ComponentModel.Browsable(false),  _
-     Global.System.ComponentModel.DesignerSerializationVisibility(Global.System.ComponentModel.DesignerSerializationVisibility.Content)>  _
-    Public ReadOnly Property StockOnProcess() As StockOnProcessDataTable
-        Get
-            Return Me.tableStockOnProcess
-        End Get
-    End Property
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
      Global.System.ComponentModel.BrowsableAttribute(true),  _
      Global.System.ComponentModel.DesignerSerializationVisibilityAttribute(Global.System.ComponentModel.DesignerSerializationVisibility.Visible)>  _
     Public Overrides Property SchemaSerializationMode() As Global.System.Data.SchemaSerializationMode
@@ -704,9 +689,6 @@ Partial Public Class HCQC_NewDataset
             End If
             If (Not (ds.Tables("LabnumDataTable")) Is Nothing) Then
                 MyBase.Tables.Add(New LabnumDataTableDataTable(ds.Tables("LabnumDataTable")))
-            End If
-            If (Not (ds.Tables("StockOnProcess")) Is Nothing) Then
-                MyBase.Tables.Add(New StockOnProcessDataTable(ds.Tables("StockOnProcess")))
             End If
             Me.DataSetName = ds.DataSetName
             Me.Prefix = ds.Prefix
@@ -914,12 +896,6 @@ Partial Public Class HCQC_NewDataset
                 Me.tableLabnumDataTable.InitVars
             End If
         End If
-        Me.tableStockOnProcess = CType(MyBase.Tables("StockOnProcess"),StockOnProcessDataTable)
-        If (initTable = true) Then
-            If (Not (Me.tableStockOnProcess) Is Nothing) Then
-                Me.tableStockOnProcess.InitVars
-            End If
-        End If
         Me.relationspl_request_qc_confirm = Me.Relations("spl_request_qc_confirm")
         Me.relationspl_request_spl_ambil = Me.Relations("spl_request_spl_ambil")
         Me.relationFK_qc_confirm_login = Me.Relations("FK_qc_confirm_login")
@@ -1003,8 +979,6 @@ Partial Public Class HCQC_NewDataset
         MyBase.Tables.Add(Me.tablereport_a1_Table)
         Me.tableLabnumDataTable = New LabnumDataTableDataTable()
         MyBase.Tables.Add(Me.tableLabnumDataTable)
-        Me.tableStockOnProcess = New StockOnProcessDataTable()
-        MyBase.Tables.Add(Me.tableStockOnProcess)
         Me.relationspl_request_qc_confirm = New Global.System.Data.DataRelation("spl_request_qc_confirm", New Global.System.Data.DataColumn() {Me.tablespl_request.idColumn}, New Global.System.Data.DataColumn() {Me.tableqc_confirm.id_requestColumn}, false)
         Me.Relations.Add(Me.relationspl_request_qc_confirm)
         Me.relationspl_request_spl_ambil = New Global.System.Data.DataRelation("spl_request_spl_ambil", New Global.System.Data.DataColumn() {Me.tablespl_request.idColumn}, New Global.System.Data.DataColumn() {Me.tablespl_ambil.id_requestColumn}, false)
@@ -1213,12 +1187,6 @@ Partial Public Class HCQC_NewDataset
     
     <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
      Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Private Function ShouldSerializeStockOnProcess() As Boolean
-        Return false
-    End Function
-    
-    <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Private Sub SchemaChanged(ByVal sender As Object, ByVal e As Global.System.ComponentModel.CollectionChangeEventArgs)
         If (e.Action = Global.System.ComponentModel.CollectionChangeAction.Remove) Then
             Me.InitVars
@@ -1361,9 +1329,6 @@ Partial Public Class HCQC_NewDataset
     
     <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
     Public Delegate Sub LabnumDataTableRowChangeEventHandler(ByVal sender As Object, ByVal e As LabnumDataTableRowChangeEvent)
-    
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Delegate Sub StockOnProcessRowChangeEventHandler(ByVal sender As Object, ByVal e As StockOnProcessRowChangeEvent)
     
     '''<summary>
     '''Represents the strongly named DataTable class.
@@ -4658,6 +4623,24 @@ Partial Public Class HCQC_NewDataset
         
         Private columnbag As Global.System.Data.DataColumn
         
+        Private columninsplot As Global.System.Data.DataColumn
+        
+        Private columntest_ontest As Global.System.Data.DataColumn
+        
+        Private columnloc_sample As Global.System.Data.DataColumn
+        
+        Private columnupdate_user As Global.System.Data.DataColumn
+        
+        Private columnupdate_by As Global.System.Data.DataColumn
+        
+        Private columnvisible As Global.System.Data.DataColumn
+        
+        Private columnvisible_lv2 As Global.System.Data.DataColumn
+        
+        Private columnkesehatan_benih As Global.System.Data.DataColumn
+        
+        Private columnunit As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -4894,6 +4877,78 @@ Partial Public Class HCQC_NewDataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property insplotColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columninsplot
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property test_ontestColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columntest_ontest
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property loc_sampleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnloc_sample
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property update_userColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnupdate_user
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property update_byColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnupdate_by
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property visibleColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnvisible
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property visible_lv2Column() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnvisible_lv2
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property kesehatan_benihColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnkesehatan_benih
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property unitColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnunit
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -4954,9 +5009,18 @@ Partial Public Class HCQC_NewDataset
                     ByVal input_date As Date,  _
                     ByVal update_date As Date,  _
                     ByVal id_hvsprod As Integer,  _
-                    ByVal bag As Integer) As spl_requestRow
+                    ByVal bag As Integer,  _
+                    ByVal insplot As String,  _
+                    ByVal test_ontest As Boolean,  _
+                    ByVal loc_sample As String,  _
+                    ByVal update_user As String,  _
+                    ByVal update_by As String,  _
+                    ByVal visible As Boolean,  _
+                    ByVal visible_lv2 As Boolean,  _
+                    ByVal kesehatan_benih As Boolean,  _
+                    ByVal unit As String) As spl_requestRow
             Dim rowspl_requestRow As spl_requestRow = CType(Me.NewRow,spl_requestRow)
-            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, _class, variety, farmer, location, harvest, croptype, nomnl, nojob, weight, scope, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, remark, repro, input_by, input_date, update_date, id_hvsprod, bag}
+            Dim columnValuesArray() As Object = New Object() {Nothing, Nothing, _class, variety, farmer, location, harvest, croptype, nomnl, nojob, weight, scope, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, remark, repro, input_by, input_date, update_date, id_hvsprod, bag, insplot, test_ontest, loc_sample, update_user, update_by, visible, visible_lv2, kesehatan_benih, unit}
             If (Not (parentloginRowByFK_spl_request_login1) Is Nothing) Then
                 columnValuesArray(1) = parentloginRowByFK_spl_request_login1(0)
             End If
@@ -5013,6 +5077,15 @@ Partial Public Class HCQC_NewDataset
             Me.columnupdate_date = MyBase.Columns("update_date")
             Me.columnid_hvsprod = MyBase.Columns("id_hvsprod")
             Me.columnbag = MyBase.Columns("bag")
+            Me.columninsplot = MyBase.Columns("insplot")
+            Me.columntest_ontest = MyBase.Columns("test_ontest")
+            Me.columnloc_sample = MyBase.Columns("loc_sample")
+            Me.columnupdate_user = MyBase.Columns("update_user")
+            Me.columnupdate_by = MyBase.Columns("update_by")
+            Me.columnvisible = MyBase.Columns("visible")
+            Me.columnvisible_lv2 = MyBase.Columns("visible_lv2")
+            Me.columnkesehatan_benih = MyBase.Columns("kesehatan_benih")
+            Me.columnunit = MyBase.Columns("unit")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -5071,6 +5144,24 @@ Partial Public Class HCQC_NewDataset
             MyBase.Columns.Add(Me.columnid_hvsprod)
             Me.columnbag = New Global.System.Data.DataColumn("bag", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnbag)
+            Me.columninsplot = New Global.System.Data.DataColumn("insplot", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columninsplot)
+            Me.columntest_ontest = New Global.System.Data.DataColumn("test_ontest", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columntest_ontest)
+            Me.columnloc_sample = New Global.System.Data.DataColumn("loc_sample", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnloc_sample)
+            Me.columnupdate_user = New Global.System.Data.DataColumn("update_user", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnupdate_user)
+            Me.columnupdate_by = New Global.System.Data.DataColumn("update_by", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnupdate_by)
+            Me.columnvisible = New Global.System.Data.DataColumn("visible", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnvisible)
+            Me.columnvisible_lv2 = New Global.System.Data.DataColumn("visible_lv2", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnvisible_lv2)
+            Me.columnkesehatan_benih = New Global.System.Data.DataColumn("kesehatan_benih", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnkesehatan_benih)
+            Me.columnunit = New Global.System.Data.DataColumn("unit", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnunit)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AutoIncrement = true
             Me.columnid.AutoIncrementSeed = -1
@@ -5079,7 +5170,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnid.ReadOnly = true
             Me.columnid.Unique = true
             Me.columnclass.MaxLength = 15
-            Me.columnvariety.MaxLength = 25
+            Me.columnvariety.MaxLength = 255
             Me.columnfarmer.MaxLength = 255
             Me.columnlocation.MaxLength = 255
             Me.columncroptype.MaxLength = 10
@@ -5089,6 +5180,14 @@ Partial Public Class HCQC_NewDataset
             Me.columnremark.MaxLength = 225
             Me.columnrepro.MaxLength = 5
             Me.columninput_by.MaxLength = 25
+            Me.columninsplot.MaxLength = 20
+            Me.columnloc_sample.MaxLength = 25
+            Me.columnupdate_user.MaxLength = 25
+            Me.columnupdate_by.MaxLength = 25
+            Me.columnvisible.AllowDBNull = false
+            Me.columnvisible_lv2.AllowDBNull = false
+            Me.columnkesehatan_benih.AllowDBNull = false
+            Me.columnunit.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -7871,7 +7970,7 @@ Partial Public Class HCQC_NewDataset
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
-            Me.columnvariety.MaxLength = 25
+            Me.columnvariety.MaxLength = 255
             Me.columnfarmer.MaxLength = 255
             Me.columnlocation.MaxLength = 255
             Me.columnnomnl.MaxLength = 8
@@ -8048,6 +8147,14 @@ Partial Public Class HCQC_NewDataset
         
         Private columnarea As Global.System.Data.DataColumn
         
+        Private columnblokno As Global.System.Data.DataColumn
+        
+        Private columnplant_qty As Global.System.Data.DataColumn
+        
+        Private columnarea_ha As Global.System.Data.DataColumn
+        
+        Private columndusun As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -8180,6 +8287,38 @@ Partial Public Class HCQC_NewDataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property bloknoColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnblokno
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property plant_qtyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnplant_qty
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property area_haColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnarea_ha
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property dusunColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columndusun
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -8216,9 +8355,25 @@ Partial Public Class HCQC_NewDataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function Addreport_a1Row(ByVal variety As String, ByVal crop As String, ByVal harvest As Date, ByVal Count As Integer, ByVal LastPrint As Date, ByVal idcode As Integer, ByVal norencana As String, ByVal cgrname As String, ByVal nokontrak As String, ByVal joblot As String, ByVal kec As String, ByVal area As String) As report_a1Row
+        Public Overloads Function Addreport_a1Row( _
+                    ByVal variety As String,  _
+                    ByVal crop As String,  _
+                    ByVal harvest As Date,  _
+                    ByVal Count As Integer,  _
+                    ByVal LastPrint As Date,  _
+                    ByVal idcode As Integer,  _
+                    ByVal norencana As String,  _
+                    ByVal cgrname As String,  _
+                    ByVal nokontrak As String,  _
+                    ByVal joblot As String,  _
+                    ByVal kec As String,  _
+                    ByVal area As String,  _
+                    ByVal blokno As String,  _
+                    ByVal plant_qty As Decimal,  _
+                    ByVal area_ha As Decimal,  _
+                    ByVal dusun As String) As report_a1Row
             Dim rowreport_a1Row As report_a1Row = CType(Me.NewRow,report_a1Row)
-            Dim columnValuesArray() As Object = New Object() {variety, crop, harvest, Count, LastPrint, idcode, norencana, cgrname, nokontrak, joblot, kec, area}
+            Dim columnValuesArray() As Object = New Object() {variety, crop, harvest, Count, LastPrint, idcode, norencana, cgrname, nokontrak, joblot, kec, area, blokno, plant_qty, area_ha, dusun}
             rowreport_a1Row.ItemArray = columnValuesArray
             Me.Rows.Add(rowreport_a1Row)
             Return rowreport_a1Row
@@ -8259,6 +8414,10 @@ Partial Public Class HCQC_NewDataset
             Me.columnjoblot = MyBase.Columns("joblot")
             Me.columnkec = MyBase.Columns("kec")
             Me.columnarea = MyBase.Columns("area")
+            Me.columnblokno = MyBase.Columns("blokno")
+            Me.columnplant_qty = MyBase.Columns("plant_qty")
+            Me.columnarea_ha = MyBase.Columns("area_ha")
+            Me.columndusun = MyBase.Columns("dusun")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8288,8 +8447,16 @@ Partial Public Class HCQC_NewDataset
             MyBase.Columns.Add(Me.columnkec)
             Me.columnarea = New Global.System.Data.DataColumn("area", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnarea)
+            Me.columnblokno = New Global.System.Data.DataColumn("blokno", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnblokno)
+            Me.columnplant_qty = New Global.System.Data.DataColumn("plant_qty", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnplant_qty)
+            Me.columnarea_ha = New Global.System.Data.DataColumn("area_ha", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnarea_ha)
+            Me.columndusun = New Global.System.Data.DataColumn("dusun", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columndusun)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnidcode}, true))
-            Me.columnvariety.MaxLength = 50
+            Me.columnvariety.MaxLength = 255
             Me.columncrop.MaxLength = 25
             Me.columnidcode.AllowDBNull = false
             Me.columnidcode.Unique = true
@@ -8299,6 +8466,8 @@ Partial Public Class HCQC_NewDataset
             Me.columnjoblot.MaxLength = 20
             Me.columnkec.MaxLength = 200
             Me.columnarea.MaxLength = 200
+            Me.columnblokno.MaxLength = 25
+            Me.columndusun.MaxLength = 200
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -8569,6 +8738,8 @@ Partial Public Class HCQC_NewDataset
         Private columnaccept_date As Global.System.Data.DataColumn
         
         Private columnkesehatan_benih As Global.System.Data.DataColumn
+        
+        Private columnremark As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
@@ -9142,6 +9313,14 @@ Partial Public Class HCQC_NewDataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property remarkColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnremark
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -9245,9 +9424,10 @@ Partial Public Class HCQC_NewDataset
                     ByVal gervigor_namelog As String,  _
                     ByVal gervigor_log As Date,  _
                     ByVal accept_date As Date,  _
-                    ByVal kesehatan_benih As Boolean) As report_status_pengujianRow
+                    ByVal kesehatan_benih As Boolean,  _
+                    ByVal remark As String) As report_status_pengujianRow
             Dim rowreport_status_pengujianRow As report_status_pengujianRow = CType(Me.NewRow,report_status_pengujianRow)
-            Dim columnValuesArray() As Object = New Object() {id, id_hvsprod, labnum, variety, nomnl, nojob, weight, location, brt_in, sampler, farmer, harvest, scope, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, input_date, Receipt, sampling, Receipt_Input, Raf_Test, Raf_Result, Raf_Analys, Raf_input, Moi_Test, Moi_Analys, Moi_input, Ger_Test, Ger_1st, Ger_2nd, Ger_Analys, Ger_input, Via_Test, Via_Analys, Via_input, Pur_Test, Pur_Analys, Pur_input, Quick_Raf, RetunQC, ReturnQC_Name, Ger_TestLog, test_ontest, Ger_1st_Est, Ger_2nd_Est, StatusResult, days_est, status_confirm, date_est, rafaction_log, purity_log, moisture_log, viability_log, gerout_log, gerout_namelog, gertest_namelog, purity_namelog, rafaction_namelog, moisture_namelog, viability_namelog, gervigor_namelog, gervigor_log, accept_date, kesehatan_benih}
+            Dim columnValuesArray() As Object = New Object() {id, id_hvsprod, labnum, variety, nomnl, nojob, weight, location, brt_in, sampler, farmer, harvest, scope, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, input_date, Receipt, sampling, Receipt_Input, Raf_Test, Raf_Result, Raf_Analys, Raf_input, Moi_Test, Moi_Analys, Moi_input, Ger_Test, Ger_1st, Ger_2nd, Ger_Analys, Ger_input, Via_Test, Via_Analys, Via_input, Pur_Test, Pur_Analys, Pur_input, Quick_Raf, RetunQC, ReturnQC_Name, Ger_TestLog, test_ontest, Ger_1st_Est, Ger_2nd_Est, StatusResult, days_est, status_confirm, date_est, rafaction_log, purity_log, moisture_log, viability_log, gerout_log, gerout_namelog, gertest_namelog, purity_namelog, rafaction_namelog, moisture_namelog, viability_namelog, gervigor_namelog, gervigor_log, accept_date, kesehatan_benih, remark}
             rowreport_status_pengujianRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowreport_status_pengujianRow)
             Return rowreport_status_pengujianRow
@@ -9343,6 +9523,7 @@ Partial Public Class HCQC_NewDataset
             Me.columngervigor_log = MyBase.Columns("gervigor_log")
             Me.columnaccept_date = MyBase.Columns("accept_date")
             Me.columnkesehatan_benih = MyBase.Columns("kesehatan_benih")
+            Me.columnremark = MyBase.Columns("remark")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -9482,11 +9663,13 @@ Partial Public Class HCQC_NewDataset
             MyBase.Columns.Add(Me.columnaccept_date)
             Me.columnkesehatan_benih = New Global.System.Data.DataColumn("kesehatan_benih", GetType(Boolean), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnkesehatan_benih)
+            Me.columnremark = New Global.System.Data.DataColumn("remark", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnremark)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
             Me.columnlabnum.MaxLength = 15
-            Me.columnvariety.MaxLength = 25
+            Me.columnvariety.MaxLength = 255
             Me.columnnomnl.MaxLength = 8
             Me.columnnojob.MaxLength = 50
             Me.columnlocation.MaxLength = 255
@@ -9515,6 +9698,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnviability_namelog.MaxLength = 255
             Me.columngervigor_namelog.MaxLength = 255
             Me.columnkesehatan_benih.AllowDBNull = false
+            Me.columnremark.MaxLength = 225
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -10954,7 +11138,7 @@ Partial Public Class HCQC_NewDataset
             Me.columncrop.MaxLength = 50
             Me.columnfarmer.MaxLength = 255
             Me.columnlocation.MaxLength = 255
-            Me.columnvariety.MaxLength = 25
+            Me.columnvariety.MaxLength = 255
             Me.columnnomnl.MaxLength = 8
             Me.columnnojob.MaxLength = 50
             Me.columnlabnum.MaxLength = 15
@@ -11533,7 +11717,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
             Me.columnlabnum.MaxLength = 15
-            Me.columnvariety.MaxLength = 25
+            Me.columnvariety.MaxLength = 255
             Me.columnfarmer.MaxLength = 255
             Me.columnlocation.MaxLength = 255
             Me.columnnomnl.MaxLength = 8
@@ -12010,6 +12194,12 @@ Partial Public Class HCQC_NewDataset
         
         Private columnjoblot As Global.System.Data.DataColumn
         
+        Private columnarea As Global.System.Data.DataColumn
+        
+        Private columnplant_qty As Global.System.Data.DataColumn
+        
+        Private columnarea_ha As Global.System.Data.DataColumn
+        
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub New()
@@ -12182,6 +12372,30 @@ Partial Public Class HCQC_NewDataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property areaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnarea
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property plant_qtyColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnplant_qty
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property area_haColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnarea_ha
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -12235,9 +12449,12 @@ Partial Public Class HCQC_NewDataset
                     ByVal cgrno As String,  _
                     ByVal cgrname As String,  _
                     ByVal upload_date As Date,  _
-                    ByVal joblot As String) As HarvestProductionRow
+                    ByVal joblot As String,  _
+                    ByVal area As String,  _
+                    ByVal plant_qty As Decimal,  _
+                    ByVal area_ha As Decimal) As HarvestProductionRow
             Dim rowHarvestProductionRow As HarvestProductionRow = CType(Me.NewRow,HarvestProductionRow)
-            Dim columnValuesArray() As Object = New Object() {idcode, type, crop, harvest, variety, staff, kab, kec, desa, dusun, norencana, nokontrak, blokno, cgrno, cgrname, upload_date, joblot}
+            Dim columnValuesArray() As Object = New Object() {idcode, type, crop, harvest, variety, staff, kab, kec, desa, dusun, norencana, nokontrak, blokno, cgrno, cgrname, upload_date, joblot, area, plant_qty, area_ha}
             rowHarvestProductionRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowHarvestProductionRow)
             Return rowHarvestProductionRow
@@ -12283,6 +12500,9 @@ Partial Public Class HCQC_NewDataset
             Me.columncgrname = MyBase.Columns("cgrname")
             Me.columnupload_date = MyBase.Columns("upload_date")
             Me.columnjoblot = MyBase.Columns("joblot")
+            Me.columnarea = MyBase.Columns("area")
+            Me.columnplant_qty = MyBase.Columns("plant_qty")
+            Me.columnarea_ha = MyBase.Columns("area_ha")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12322,12 +12542,18 @@ Partial Public Class HCQC_NewDataset
             MyBase.Columns.Add(Me.columnupload_date)
             Me.columnjoblot = New Global.System.Data.DataColumn("joblot", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnjoblot)
+            Me.columnarea = New Global.System.Data.DataColumn("area", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnarea)
+            Me.columnplant_qty = New Global.System.Data.DataColumn("plant_qty", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnplant_qty)
+            Me.columnarea_ha = New Global.System.Data.DataColumn("area_ha", GetType(Decimal), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnarea_ha)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnidcode}, true))
             Me.columnidcode.AllowDBNull = false
             Me.columnidcode.Unique = true
             Me.columntype.MaxLength = 50
             Me.columncrop.MaxLength = 50
-            Me.columnvariety.MaxLength = 50
+            Me.columnvariety.MaxLength = 255
             Me.columnstaff.MaxLength = 100
             Me.columnkab.MaxLength = 200
             Me.columnkec.MaxLength = 200
@@ -12339,6 +12565,7 @@ Partial Public Class HCQC_NewDataset
             Me.columncgrno.MaxLength = 20
             Me.columncgrname.MaxLength = 100
             Me.columnjoblot.MaxLength = 20
+            Me.columnarea.MaxLength = 200
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -12589,6 +12816,8 @@ Partial Public Class HCQC_NewDataset
         Private columnloc_sample As Global.System.Data.DataColumn
         
         Private columnraf_ket As Global.System.Data.DataColumn
+        
+        Private columnnorencana As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
@@ -13082,6 +13311,14 @@ Partial Public Class HCQC_NewDataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property norencanaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnorencana
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -13175,9 +13412,10 @@ Partial Public Class HCQC_NewDataset
                     ByVal request_date As Date,  _
                     ByVal abnormality As String,  _
                     ByVal loc_sample As String,  _
-                    ByVal raf_ket As String) As report_global_viewRow
+                    ByVal raf_ket As String,  _
+                    ByVal norencana As String) As report_global_viewRow
             Dim rowreport_global_viewRow As report_global_viewRow = CType(Me.NewRow,report_global_viewRow)
-            Dim columnValuesArray() As Object = New Object() {id, labnum, crop, farmer, location, variety, harvest, nomnl, nojob, weight, sampling_g, datein, remark, scope, test_moi, test_pur, test_ger, test_raf, test_via, raf_date, raf_total, raf_result, analys, raf_inputat, via_date, via_mean, via_result, via_analyst, via_inputat, moi_date, moi_mean, moi_analyst, moi_inputat, ws, pure, other, inert, purity_mean, pur_date, vg, dt, _Abnormal_Seedling____, _Hard_Seed____, _Fresh_Seed____, _Dead_Seed____, ger_date, ger_scnd, ger_inputat, id_hvsprod, test_ontest, staff, pur_result, pur_inputat, request_date, abnormality, loc_sample, raf_ket}
+            Dim columnValuesArray() As Object = New Object() {id, labnum, crop, farmer, location, variety, harvest, nomnl, nojob, weight, sampling_g, datein, remark, scope, test_moi, test_pur, test_ger, test_raf, test_via, raf_date, raf_total, raf_result, analys, raf_inputat, via_date, via_mean, via_result, via_analyst, via_inputat, moi_date, moi_mean, moi_analyst, moi_inputat, ws, pure, other, inert, purity_mean, pur_date, vg, dt, _Abnormal_Seedling____, _Hard_Seed____, _Fresh_Seed____, _Dead_Seed____, ger_date, ger_scnd, ger_inputat, id_hvsprod, test_ontest, staff, pur_result, pur_inputat, request_date, abnormality, loc_sample, raf_ket, norencana}
             rowreport_global_viewRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowreport_global_viewRow)
             Return rowreport_global_viewRow
@@ -13257,6 +13495,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnabnormality = MyBase.Columns("abnormality")
             Me.columnloc_sample = MyBase.Columns("loc_sample")
             Me.columnraf_ket = MyBase.Columns("raf_ket")
+            Me.columnnorencana = MyBase.Columns("norencana")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -13384,6 +13623,8 @@ Partial Public Class HCQC_NewDataset
             MyBase.Columns.Add(Me.columnloc_sample)
             Me.columnraf_ket = New Global.System.Data.DataColumn("raf_ket", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnraf_ket)
+            Me.columnnorencana = New Global.System.Data.DataColumn("norencana", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnorencana)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, false))
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint2", New Global.System.Data.DataColumn() {Me.columnlabnum}, false))
             Me.columnid.Unique = true
@@ -13392,7 +13633,7 @@ Partial Public Class HCQC_NewDataset
             Me.columncrop.MaxLength = 50
             Me.columnfarmer.MaxLength = 255
             Me.columnlocation.MaxLength = 255
-            Me.columnvariety.MaxLength = 25
+            Me.columnvariety.MaxLength = 255
             Me.columnnomnl.MaxLength = 8
             Me.columnnojob.MaxLength = 50
             Me.columnremark.MaxLength = 200
@@ -13403,7 +13644,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnmoi_analyst.MaxLength = 100
             Me.columnpurity_mean.ReadOnly = true
             Me.columnstaff.MaxLength = 100
-            Me.columnabnormality.MaxLength = 150
+            Me.columnabnormality.MaxLength = 255
             Me.columnloc_sample.MaxLength = 25
             Me.columnraf_ket.MaxLength = 225
         End Sub
@@ -14045,7 +14286,7 @@ Partial Public Class HCQC_NewDataset
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnId}, true))
             Me.columnlabnum.MaxLength = 15
             Me.columncrop.MaxLength = 50
-            Me.columnvariety.MaxLength = 25
+            Me.columnvariety.MaxLength = 255
             Me.columnfarmer.MaxLength = 255
             Me.columnlocation.MaxLength = 255
             Me.columnnomnl.MaxLength = 8
@@ -14765,7 +15006,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnloc_sample = New Global.System.Data.DataColumn("loc_sample", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnloc_sample)
             Me.columnid.AllowDBNull = false
-            Me.columnvariety.MaxLength = 25
+            Me.columnvariety.MaxLength = 255
             Me.columnfarmer.MaxLength = 255
             Me.columnlocation.MaxLength = 255
             Me.columnnomnl.MaxLength = 8
@@ -14976,6 +15217,10 @@ Partial Public Class HCQC_NewDataset
         Private columnremark As Global.System.Data.DataColumn
         
         Private columnloc_sample As Global.System.Data.DataColumn
+        
+        Private columnnorencana As Global.System.Data.DataColumn
+        
+        Private columnunit As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
@@ -15237,6 +15482,22 @@ Partial Public Class HCQC_NewDataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property norencanaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnorencana
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property unitColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnunit
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -15301,9 +15562,11 @@ Partial Public Class HCQC_NewDataset
                     ByVal status_confirm As String,  _
                     ByVal req_date As Date,  _
                     ByVal remark As String,  _
-                    ByVal loc_sample As String) As qc_confirm_viewerRow
+                    ByVal loc_sample As String,  _
+                    ByVal norencana As String,  _
+                    ByVal unit As String) As qc_confirm_viewerRow
             Dim rowqc_confirm_viewerRow As qc_confirm_viewerRow = CType(Me.NewRow,qc_confirm_viewerRow)
-            Dim columnValuesArray() As Object = New Object() {id, id_hvsprod, crop, variety, farmer, nomnl, nojob, scope, weight, location, harvest, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, req_name, tgl_confirm, status, information_rejected, nama_con, labnum, status_confirm, req_date, remark, loc_sample}
+            Dim columnValuesArray() As Object = New Object() {id, id_hvsprod, crop, variety, farmer, nomnl, nojob, scope, weight, location, harvest, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, req_name, tgl_confirm, status, information_rejected, nama_con, labnum, status_confirm, req_date, remark, loc_sample, norencana, unit}
             rowqc_confirm_viewerRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowqc_confirm_viewerRow)
             Return rowqc_confirm_viewerRow
@@ -15360,6 +15623,8 @@ Partial Public Class HCQC_NewDataset
             Me.columnreq_date = MyBase.Columns("req_date")
             Me.columnremark = MyBase.Columns("remark")
             Me.columnloc_sample = MyBase.Columns("loc_sample")
+            Me.columnnorencana = MyBase.Columns("norencana")
+            Me.columnunit = MyBase.Columns("unit")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -15421,11 +15686,15 @@ Partial Public Class HCQC_NewDataset
             MyBase.Columns.Add(Me.columnremark)
             Me.columnloc_sample = New Global.System.Data.DataColumn("loc_sample", GetType(String), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnloc_sample)
+            Me.columnnorencana = New Global.System.Data.DataColumn("norencana", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnorencana)
+            Me.columnunit = New Global.System.Data.DataColumn("unit", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnunit)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
             Me.columncrop.MaxLength = 50
-            Me.columnvariety.MaxLength = 25
+            Me.columnvariety.MaxLength = 255
             Me.columnfarmer.MaxLength = 255
             Me.columnnomnl.MaxLength = 8
             Me.columnnojob.MaxLength = 50
@@ -15439,6 +15708,8 @@ Partial Public Class HCQC_NewDataset
             Me.columnstatus_confirm.MaxLength = 10
             Me.columnremark.MaxLength = 225
             Me.columnloc_sample.MaxLength = 25
+            Me.columnnorencana.MaxLength = 200
+            Me.columnunit.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -15926,7 +16197,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
             Me.columnlabnum.MaxLength = 15
-            Me.columnvariety.MaxLength = 25
+            Me.columnvariety.MaxLength = 255
             Me.columnfarmer.MaxLength = 255
             Me.columnlocation.MaxLength = 255
             Me.columnnomnl.MaxLength = 8
@@ -16673,7 +16944,7 @@ Partial Public Class HCQC_NewDataset
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
             Me.columnlabnum.MaxLength = 15
-            Me.columnvariety.MaxLength = 25
+            Me.columnvariety.MaxLength = 255
             Me.columnfarmer.MaxLength = 255
             Me.columnlocation.MaxLength = 255
             Me.columnnomnl.MaxLength = 8
@@ -16881,6 +17152,10 @@ Partial Public Class HCQC_NewDataset
         Private columnloc_sample As Global.System.Data.DataColumn
         
         Private columnLA4 As Global.System.Data.DataColumn
+        
+        Private columnnorencana As Global.System.Data.DataColumn
+        
+        Private columnunit As Global.System.Data.DataColumn
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
@@ -17150,6 +17425,22 @@ Partial Public Class HCQC_NewDataset
         End Property
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property norencanaColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnnorencana
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public ReadOnly Property unitColumn() As Global.System.Data.DataColumn
+            Get
+                Return Me.columnunit
+            End Get
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Browsable(false)>  _
         Public ReadOnly Property Count() As Integer
@@ -17215,9 +17506,11 @@ Partial Public Class HCQC_NewDataset
                     ByVal req_date As Date,  _
                     ByVal remark As String,  _
                     ByVal loc_sample As String,  _
-                    ByVal LA4 As Integer) As TermalDataTableRow
+                    ByVal LA4 As Integer,  _
+                    ByVal norencana As String,  _
+                    ByVal unit As String) As TermalDataTableRow
             Dim rowTermalDataTableRow As TermalDataTableRow = CType(Me.NewRow,TermalDataTableRow)
-            Dim columnValuesArray() As Object = New Object() {id, id_hvsprod, crop, variety, farmer, nomnl, nojob, scope, weight, location, harvest, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, req_name, tgl_confirm, status, information_rejected, nama_con, labnum, status_confirm, req_date, remark, loc_sample, LA4}
+            Dim columnValuesArray() As Object = New Object() {id, id_hvsprod, crop, variety, farmer, nomnl, nojob, scope, weight, location, harvest, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, req_name, tgl_confirm, status, information_rejected, nama_con, labnum, status_confirm, req_date, remark, loc_sample, LA4, norencana, unit}
             rowTermalDataTableRow.ItemArray = columnValuesArray
             Me.Rows.Add(rowTermalDataTableRow)
             Return rowTermalDataTableRow
@@ -17275,6 +17568,8 @@ Partial Public Class HCQC_NewDataset
             Me.columnremark = MyBase.Columns("remark")
             Me.columnloc_sample = MyBase.Columns("loc_sample")
             Me.columnLA4 = MyBase.Columns("LA4")
+            Me.columnnorencana = MyBase.Columns("norencana")
+            Me.columnunit = MyBase.Columns("unit")
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -17338,11 +17633,15 @@ Partial Public Class HCQC_NewDataset
             MyBase.Columns.Add(Me.columnloc_sample)
             Me.columnLA4 = New Global.System.Data.DataColumn("LA4", GetType(Integer), Nothing, Global.System.Data.MappingType.Element)
             MyBase.Columns.Add(Me.columnLA4)
+            Me.columnnorencana = New Global.System.Data.DataColumn("norencana", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnnorencana)
+            Me.columnunit = New Global.System.Data.DataColumn("unit", GetType(String), Nothing, Global.System.Data.MappingType.Element)
+            MyBase.Columns.Add(Me.columnunit)
             Me.Constraints.Add(New Global.System.Data.UniqueConstraint("Constraint1", New Global.System.Data.DataColumn() {Me.columnid}, true))
             Me.columnid.AllowDBNull = false
             Me.columnid.Unique = true
             Me.columncrop.MaxLength = 50
-            Me.columnvariety.MaxLength = 25
+            Me.columnvariety.MaxLength = 255
             Me.columnfarmer.MaxLength = 255
             Me.columnnomnl.MaxLength = 8
             Me.columnnojob.MaxLength = 50
@@ -17356,6 +17655,8 @@ Partial Public Class HCQC_NewDataset
             Me.columnstatus_confirm.MaxLength = 10
             Me.columnremark.MaxLength = 225
             Me.columnloc_sample.MaxLength = 25
+            Me.columnnorencana.MaxLength = 200
+            Me.columnunit.MaxLength = 50
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -17982,245 +18283,6 @@ Partial Public Class HCQC_NewDataset
             Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
             attribute2.Name = "tableTypeName"
             attribute2.FixedValue = "LabnumDataTableDataTable"
-            type.Attributes.Add(attribute2)
-            type.Particle = sequence
-            Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
-            If xs.Contains(dsSchema.TargetNamespace) Then
-                Dim s1 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Dim s2 As Global.System.IO.MemoryStream = New Global.System.IO.MemoryStream()
-                Try 
-                    Dim schema As Global.System.Xml.Schema.XmlSchema = Nothing
-                    dsSchema.Write(s1)
-                    Dim schemas As Global.System.Collections.IEnumerator = xs.Schemas(dsSchema.TargetNamespace).GetEnumerator
-                    Do While schemas.MoveNext
-                        schema = CType(schemas.Current,Global.System.Xml.Schema.XmlSchema)
-                        s2.SetLength(0)
-                        schema.Write(s2)
-                        If (s1.Length = s2.Length) Then
-                            s1.Position = 0
-                            s2.Position = 0
-                            
-                            Do While ((s1.Position <> s1.Length)  _
-                                        AndAlso (s1.ReadByte = s2.ReadByte))
-                                
-                                
-                            Loop
-                            If (s1.Position = s1.Length) Then
-                                Return type
-                            End If
-                        End If
-                        
-                    Loop
-                Finally
-                    If (Not (s1) Is Nothing) Then
-                        s1.Close
-                    End If
-                    If (Not (s2) Is Nothing) Then
-                        s2.Close
-                    End If
-                End Try
-            End If
-            xs.Add(dsSchema)
-            Return type
-        End Function
-    End Class
-    
-    '''<summary>
-    '''Represents the strongly named DataTable class.
-    '''</summary>
-    <Global.System.Serializable(),  _
-     Global.System.Xml.Serialization.XmlSchemaProviderAttribute("GetTypedTableSchema")>  _
-    Partial Public Class StockOnProcessDataTable
-        Inherits Global.System.Data.TypedTableBase(Of StockOnProcessRow)
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New()
-            MyBase.New
-            Me.TableName = "StockOnProcess"
-            Me.BeginInit
-            Me.InitClass
-            Me.EndInit
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Sub New(ByVal table As Global.System.Data.DataTable)
-            MyBase.New
-            Me.TableName = table.TableName
-            If (table.CaseSensitive <> table.DataSet.CaseSensitive) Then
-                Me.CaseSensitive = table.CaseSensitive
-            End If
-            If (table.Locale.ToString <> table.DataSet.Locale.ToString) Then
-                Me.Locale = table.Locale
-            End If
-            If (table.Namespace <> table.DataSet.Namespace) Then
-                Me.Namespace = table.Namespace
-            End If
-            Me.Prefix = table.Prefix
-            Me.MinimumCapacity = table.MinimumCapacity
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Sub New(ByVal info As Global.System.Runtime.Serialization.SerializationInfo, ByVal context As Global.System.Runtime.Serialization.StreamingContext)
-            MyBase.New(info, context)
-            Me.InitVars
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
-         Global.System.ComponentModel.Browsable(false)>  _
-        Public ReadOnly Property Count() As Integer
-            Get
-                Return Me.Rows.Count
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Default ReadOnly Property Item(ByVal index As Integer) As StockOnProcessRow
-            Get
-                Return CType(Me.Rows(index),StockOnProcessRow)
-            End Get
-        End Property
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event StockOnProcessRowChanging As StockOnProcessRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event StockOnProcessRowChanged As StockOnProcessRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event StockOnProcessRowDeleting As StockOnProcessRowChangeEventHandler
-        
-        <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Event StockOnProcessRowDeleted As StockOnProcessRowChangeEventHandler
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Sub AddStockOnProcessRow(ByVal row As StockOnProcessRow)
-            Me.Rows.Add(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overloads Function AddStockOnProcessRow() As StockOnProcessRow
-            Dim rowStockOnProcessRow As StockOnProcessRow = CType(Me.NewRow,StockOnProcessRow)
-            Dim columnValuesArray(-1) As Object
-            rowStockOnProcessRow.ItemArray = columnValuesArray
-            Me.Rows.Add(rowStockOnProcessRow)
-            Return rowStockOnProcessRow
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Overrides Function Clone() As Global.System.Data.DataTable
-            Dim cln As StockOnProcessDataTable = CType(MyBase.Clone,StockOnProcessDataTable)
-            cln.InitVars
-            Return cln
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Function CreateInstance() As Global.System.Data.DataTable
-            Return New StockOnProcessDataTable()
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Sub InitVars()
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Private Sub InitClass()
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Function NewStockOnProcessRow() As StockOnProcessRow
-            Return CType(Me.NewRow,StockOnProcessRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Function NewRowFromBuilder(ByVal builder As Global.System.Data.DataRowBuilder) As Global.System.Data.DataRow
-            Return New StockOnProcessRow(builder)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Function GetRowType() As Global.System.Type
-            Return GetType(StockOnProcessRow)
-        End Function
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowChanged(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanged(e)
-            If (Not (Me.StockOnProcessRowChangedEvent) Is Nothing) Then
-                RaiseEvent StockOnProcessRowChanged(Me, New StockOnProcessRowChangeEvent(CType(e.Row,StockOnProcessRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowChanging(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowChanging(e)
-            If (Not (Me.StockOnProcessRowChangingEvent) Is Nothing) Then
-                RaiseEvent StockOnProcessRowChanging(Me, New StockOnProcessRowChangeEvent(CType(e.Row,StockOnProcessRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleted(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleted(e)
-            If (Not (Me.StockOnProcessRowDeletedEvent) Is Nothing) Then
-                RaiseEvent StockOnProcessRowDeleted(Me, New StockOnProcessRowChangeEvent(CType(e.Row,StockOnProcessRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Protected Overrides Sub OnRowDeleting(ByVal e As Global.System.Data.DataRowChangeEventArgs)
-            MyBase.OnRowDeleting(e)
-            If (Not (Me.StockOnProcessRowDeletingEvent) Is Nothing) Then
-                RaiseEvent StockOnProcessRowDeleting(Me, New StockOnProcessRowChangeEvent(CType(e.Row,StockOnProcessRow), e.Action))
-            End If
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub RemoveStockOnProcessRow(ByVal row As StockOnProcessRow)
-            Me.Rows.Remove(row)
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Shared Function GetTypedTableSchema(ByVal xs As Global.System.Xml.Schema.XmlSchemaSet) As Global.System.Xml.Schema.XmlSchemaComplexType
-            Dim type As Global.System.Xml.Schema.XmlSchemaComplexType = New Global.System.Xml.Schema.XmlSchemaComplexType()
-            Dim sequence As Global.System.Xml.Schema.XmlSchemaSequence = New Global.System.Xml.Schema.XmlSchemaSequence()
-            Dim ds As HCQC_NewDataset = New HCQC_NewDataset()
-            Dim any1 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any1.Namespace = "http://www.w3.org/2001/XMLSchema"
-            any1.MinOccurs = New Decimal(0)
-            any1.MaxOccurs = Decimal.MaxValue
-            any1.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any1)
-            Dim any2 As Global.System.Xml.Schema.XmlSchemaAny = New Global.System.Xml.Schema.XmlSchemaAny()
-            any2.Namespace = "urn:schemas-microsoft-com:xml-diffgram-v1"
-            any2.MinOccurs = New Decimal(1)
-            any2.ProcessContents = Global.System.Xml.Schema.XmlSchemaContentProcessing.Lax
-            sequence.Items.Add(any2)
-            Dim attribute1 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute1.Name = "namespace"
-            attribute1.FixedValue = ds.Namespace
-            type.Attributes.Add(attribute1)
-            Dim attribute2 As Global.System.Xml.Schema.XmlSchemaAttribute = New Global.System.Xml.Schema.XmlSchemaAttribute()
-            attribute2.Name = "tableTypeName"
-            attribute2.FixedValue = "StockOnProcessDataTable"
             type.Attributes.Add(attribute2)
             type.Particle = sequence
             Dim dsSchema As Global.System.Xml.Schema.XmlSchema = ds.GetSchemaSerializable
@@ -21969,6 +22031,129 @@ Partial Public Class HCQC_NewDataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property insplot() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablespl_request.insplotColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'insplot' in table 'spl_request' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablespl_request.insplotColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property test_ontest() As Boolean
+            Get
+                Try 
+                    Return CType(Me(Me.tablespl_request.test_ontestColumn),Boolean)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'test_ontest' in table 'spl_request' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablespl_request.test_ontestColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property loc_sample() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablespl_request.loc_sampleColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'loc_sample' in table 'spl_request' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablespl_request.loc_sampleColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property update_user() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablespl_request.update_userColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'update_user' in table 'spl_request' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablespl_request.update_userColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property update_by() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablespl_request.update_byColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'update_by' in table 'spl_request' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablespl_request.update_byColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property visible() As Boolean
+            Get
+                Return CType(Me(Me.tablespl_request.visibleColumn),Boolean)
+            End Get
+            Set
+                Me(Me.tablespl_request.visibleColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property visible_lv2() As Boolean
+            Get
+                Return CType(Me(Me.tablespl_request.visible_lv2Column),Boolean)
+            End Get
+            Set
+                Me(Me.tablespl_request.visible_lv2Column) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property kesehatan_benih() As Boolean
+            Get
+                Return CType(Me(Me.tablespl_request.kesehatan_benihColumn),Boolean)
+            End Get
+            Set
+                Me(Me.tablespl_request.kesehatan_benihColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property unit() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablespl_request.unitColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'unit' in table 'spl_request' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablespl_request.unitColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Property loginRow() As loginRow
             Get
                 Return CType(Me.GetParentRow(Me.Table.ParentRelations("FK_spl_request_login1")),loginRow)
@@ -22264,6 +22449,78 @@ Partial Public Class HCQC_NewDataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetbagNull()
             Me(Me.tablespl_request.bagColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsinsplotNull() As Boolean
+            Return Me.IsNull(Me.tablespl_request.insplotColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetinsplotNull()
+            Me(Me.tablespl_request.insplotColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Istest_ontestNull() As Boolean
+            Return Me.IsNull(Me.tablespl_request.test_ontestColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Settest_ontestNull()
+            Me(Me.tablespl_request.test_ontestColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isloc_sampleNull() As Boolean
+            Return Me.IsNull(Me.tablespl_request.loc_sampleColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setloc_sampleNull()
+            Me(Me.tablespl_request.loc_sampleColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isupdate_userNull() As Boolean
+            Return Me.IsNull(Me.tablespl_request.update_userColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setupdate_userNull()
+            Me(Me.tablespl_request.update_userColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isupdate_byNull() As Boolean
+            Return Me.IsNull(Me.tablespl_request.update_byColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setupdate_byNull()
+            Me(Me.tablespl_request.update_byColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsunitNull() As Boolean
+            Return Me.IsNull(Me.tablespl_request.unitColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetunitNull()
+            Me(Me.tablespl_request.unitColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -25069,6 +25326,66 @@ Partial Public Class HCQC_NewDataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property blokno() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereport_a1.bloknoColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'blokno' in table 'report_a1' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereport_a1.bloknoColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property plant_qty() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tablereport_a1.plant_qtyColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'plant_qty' in table 'report_a1' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereport_a1.plant_qtyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property area_ha() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tablereport_a1.area_haColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'area_ha' in table 'report_a1' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereport_a1.area_haColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property dusun() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereport_a1.dusunColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'dusun' in table 'report_a1' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereport_a1.dusunColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsvarietyNull() As Boolean
             Return Me.IsNull(Me.tablereport_a1.varietyColumn)
         End Function
@@ -25197,6 +25514,54 @@ Partial Public Class HCQC_NewDataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetareaNull()
             Me(Me.tablereport_a1.areaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsbloknoNull() As Boolean
+            Return Me.IsNull(Me.tablereport_a1.bloknoColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetbloknoNull()
+            Me(Me.tablereport_a1.bloknoColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isplant_qtyNull() As Boolean
+            Return Me.IsNull(Me.tablereport_a1.plant_qtyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setplant_qtyNull()
+            Me(Me.tablereport_a1.plant_qtyColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isarea_haNull() As Boolean
+            Return Me.IsNull(Me.tablereport_a1.area_haColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setarea_haNull()
+            Me(Me.tablereport_a1.area_haColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsdusunNull() As Boolean
+            Return Me.IsNull(Me.tablereport_a1.dusunColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetdusunNull()
+            Me(Me.tablereport_a1.dusunColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -26230,6 +26595,21 @@ Partial Public Class HCQC_NewDataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property remark() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereport_status_pengujian.remarkColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'remark' in table 'report_status_pengujian' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereport_status_pengujian.remarkColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function Isid_hvsprodNull() As Boolean
             Return Me.IsNull(Me.tablereport_status_pengujian.id_hvsprodColumn)
         End Function
@@ -27006,6 +27386,18 @@ Partial Public Class HCQC_NewDataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub Setaccept_dateNull()
             Me(Me.tablereport_status_pengujian.accept_dateColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsremarkNull() As Boolean
+            Return Me.IsNull(Me.tablereport_status_pengujian.remarkColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetremarkNull()
+            Me(Me.tablereport_status_pengujian.remarkColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -29849,6 +30241,51 @@ Partial Public Class HCQC_NewDataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property area() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableHarvestProduction.areaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'area' in table 'HarvestProduction' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableHarvestProduction.areaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property plant_qty() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableHarvestProduction.plant_qtyColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'plant_qty' in table 'HarvestProduction' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableHarvestProduction.plant_qtyColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property area_ha() As Decimal
+            Get
+                Try 
+                    Return CType(Me(Me.tableHarvestProduction.area_haColumn),Decimal)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'area_ha' in table 'HarvestProduction' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableHarvestProduction.area_haColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IstypeNull() As Boolean
             Return Me.IsNull(Me.tableHarvestProduction.typeColumn)
         End Function
@@ -30037,6 +30474,42 @@ Partial Public Class HCQC_NewDataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetjoblotNull()
             Me(Me.tableHarvestProduction.joblotColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsareaNull() As Boolean
+            Return Me.IsNull(Me.tableHarvestProduction.areaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetareaNull()
+            Me(Me.tableHarvestProduction.areaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isplant_qtyNull() As Boolean
+            Return Me.IsNull(Me.tableHarvestProduction.plant_qtyColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setplant_qtyNull()
+            Me(Me.tableHarvestProduction.plant_qtyColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function Isarea_haNull() As Boolean
+            Return Me.IsNull(Me.tableHarvestProduction.area_haColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub Setarea_haNull()
+            Me(Me.tableHarvestProduction.area_haColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -30913,6 +31386,21 @@ Partial Public Class HCQC_NewDataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property norencana() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tablereport_global_view.norencanaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'norencana' in table 'report_global_view' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tablereport_global_view.norencanaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function IsidNull() As Boolean
             Return Me.IsNull(Me.tablereport_global_view.idColumn)
         End Function
@@ -31593,6 +32081,18 @@ Partial Public Class HCQC_NewDataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub Setraf_ketNull()
             Me(Me.tablereport_global_view.raf_ketColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsnorencanaNull() As Boolean
+            Return Me.IsNull(Me.tablereport_global_view.norencanaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetnorencanaNull()
+            Me(Me.tablereport_global_view.norencanaColumn) = Global.System.Convert.DBNull
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -33737,6 +34237,36 @@ Partial Public Class HCQC_NewDataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property norencana() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableqc_confirm_viewer.norencanaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'norencana' in table 'qc_confirm_viewer' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableqc_confirm_viewer.norencanaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property unit() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableqc_confirm_viewer.unitColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'unit' in table 'qc_confirm_viewer' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableqc_confirm_viewer.unitColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function Isid_hvsprodNull() As Boolean
             Return Me.IsNull(Me.tableqc_confirm_viewer.id_hvsprodColumn)
         End Function
@@ -34057,6 +34587,30 @@ Partial Public Class HCQC_NewDataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub Setloc_sampleNull()
             Me(Me.tableqc_confirm_viewer.loc_sampleColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsnorencanaNull() As Boolean
+            Return Me.IsNull(Me.tableqc_confirm_viewer.norencanaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetnorencanaNull()
+            Me(Me.tableqc_confirm_viewer.norencanaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsunitNull() As Boolean
+            Return Me.IsNull(Me.tableqc_confirm_viewer.unitColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetunitNull()
+            Me(Me.tableqc_confirm_viewer.unitColumn) = Global.System.Convert.DBNull
         End Sub
     End Class
     
@@ -35913,6 +36467,36 @@ Partial Public Class HCQC_NewDataset
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property norencana() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableTermalDataTable.norencanaColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'norencana' in table 'TermalDataTable' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableTermalDataTable.norencanaColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Property unit() As String
+            Get
+                Try 
+                    Return CType(Me(Me.tableTermalDataTable.unitColumn),String)
+                Catch e As Global.System.InvalidCastException
+                    Throw New Global.System.Data.StrongTypingException("The value for column 'unit' in table 'TermalDataTable' is DBNull.", e)
+                End Try
+            End Get
+            Set
+                Me(Me.tableTermalDataTable.unitColumn) = value
+            End Set
+        End Property
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Function Isid_hvsprodNull() As Boolean
             Return Me.IsNull(Me.tableTermalDataTable.id_hvsprodColumn)
         End Function
@@ -36246,6 +36830,30 @@ Partial Public Class HCQC_NewDataset
         Public Sub SetLA4Null()
             Me(Me.tableTermalDataTable.LA4Column) = Global.System.Convert.DBNull
         End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsnorencanaNull() As Boolean
+            Return Me.IsNull(Me.tableTermalDataTable.norencanaColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetnorencanaNull()
+            Me(Me.tableTermalDataTable.norencanaColumn) = Global.System.Convert.DBNull
+        End Sub
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Function IsunitNull() As Boolean
+            Return Me.IsNull(Me.tableTermalDataTable.unitColumn)
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
+        Public Sub SetunitNull()
+            Me(Me.tableTermalDataTable.unitColumn) = Global.System.Convert.DBNull
+        End Sub
     End Class
     
     '''<summary>
@@ -36369,22 +36977,6 @@ Partial Public Class HCQC_NewDataset
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public Sub SetpemohonNull()
             Me(Me.tableLabnumDataTable.pemohonColumn) = Global.System.Convert.DBNull
-        End Sub
-    End Class
-    
-    '''<summary>
-    '''Represents strongly named DataRow class.
-    '''</summary>
-    Partial Public Class StockOnProcessRow
-        Inherits Global.System.Data.DataRow
-        
-        Private tableStockOnProcess As StockOnProcessDataTable
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Friend Sub New(ByVal rb As Global.System.Data.DataRowBuilder)
-            MyBase.New(rb)
-            Me.tableStockOnProcess = CType(Me.Table,StockOnProcessDataTable)
         End Sub
     End Class
     
@@ -37418,42 +38010,6 @@ Partial Public Class HCQC_NewDataset
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Public ReadOnly Property Row() As LabnumDataTableRow
-            Get
-                Return Me.eventRow
-            End Get
-        End Property
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Action() As Global.System.Data.DataRowAction
-            Get
-                Return Me.eventAction
-            End Get
-        End Property
-    End Class
-    
-    '''<summary>
-    '''Row event argument class
-    '''</summary>
-    <Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-    Public Class StockOnProcessRowChangeEvent
-        Inherits Global.System.EventArgs
-        
-        Private eventRow As StockOnProcessRow
-        
-        Private eventAction As Global.System.Data.DataRowAction
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public Sub New(ByVal row As StockOnProcessRow, ByVal action As Global.System.Data.DataRowAction)
-            MyBase.New
-            Me.eventRow = row
-            Me.eventAction = action
-        End Sub
-        
-        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
-         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
-        Public ReadOnly Property Row() As StockOnProcessRow
             Get
                 Return Me.eventRow
             End Get
@@ -41097,44 +41653,57 @@ Namespace HCQC_NewDatasetTableAdapters
             tableMapping.ColumnMappings.Add("update_date", "update_date")
             tableMapping.ColumnMappings.Add("id_hvsprod", "id_hvsprod")
             tableMapping.ColumnMappings.Add("bag", "bag")
+            tableMapping.ColumnMappings.Add("insplot", "insplot")
+            tableMapping.ColumnMappings.Add("test_ontest", "test_ontest")
+            tableMapping.ColumnMappings.Add("loc_sample", "loc_sample")
+            tableMapping.ColumnMappings.Add("update_user", "update_user")
+            tableMapping.ColumnMappings.Add("update_by", "update_by")
+            tableMapping.ColumnMappings.Add("visible", "visible")
+            tableMapping.ColumnMappings.Add("visible_lv2", "visible_lv2")
+            tableMapping.ColumnMappings.Add("kesehatan_benih", "kesehatan_benih")
+            tableMapping.ColumnMappings.Add("unit", "unit")
             Me._adapter.TableMappings.Add(tableMapping)
             Me._adapter.DeleteCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.DeleteCommand.Connection = Me.Connection
             Me._adapter.DeleteCommand.CommandText = "DELETE FROM [spl_request] WHERE (([id] = @Original_id) AND ((@IsNull_id_login = 1"& _ 
                 " AND [id_login] IS NULL) OR ([id_login] = @Original_id_login)) AND ((@IsNull_id_"& _ 
                 "hvsprod = 1 AND [id_hvsprod] IS NULL) OR ([id_hvsprod] = @Original_id_hvsprod)) "& _ 
-                "AND ((@IsNull_class = 1 AND [class] IS NULL) OR ([class] = @Original_class)) AND"& _ 
-                " ((@IsNull_variety = 1 AND [variety] IS NULL) OR ([variety] = @Original_variety)"& _ 
-                ") AND ((@IsNull_farmer = 1 AND [farmer] IS NULL) OR ([farmer] = @Original_farmer"& _ 
-                ")) AND ((@IsNull_location = 1 AND [location] IS NULL) OR ([location] = @Original"& _ 
-                "_location)) AND ((@IsNull_harvest = 1 AND [harvest] IS NULL) OR ([harvest] = @Or"& _ 
-                "iginal_harvest)) AND ((@IsNull_croptype = 1 AND [croptype] IS NULL) OR ([croptyp"& _ 
-                "e] = @Original_croptype)) AND ((@IsNull_nomnl = 1 AND [nomnl] IS NULL) OR ([nomn"& _ 
-                "l] = @Original_nomnl)) AND ((@IsNull_nojob = 1 AND [nojob] IS NULL) OR ([nojob] "& _ 
-                "= @Original_nojob)) AND ((@IsNull_weight = 1 AND [weight] IS NULL) OR ([weight] "& _ 
-                "= @Original_weight)) AND ((@IsNull_scope = 1 AND [scope] IS NULL) OR ([scope] = "& _ 
-                "@Original_scope)) AND ((@IsNull_bag = 1 AND [bag] IS NULL) OR ([bag] = @Original"& _ 
-                "_bag)) AND ((@IsNull_test_sampling = 1 AND [test_sampling] IS NULL) OR ([test_sa"& _ 
-                "mpling] = @Original_test_sampling)) AND ((@IsNull_test_moi = 1 AND [test_moi] IS"& _ 
-                " NULL) OR ([test_moi] = @Original_test_moi)) AND ((@IsNull_test_pur = 1 AND [tes"& _ 
-                "t_pur] IS NULL) OR ([test_pur] = @Original_test_pur)) AND ((@IsNull_test_ger = 1"& _ 
-                " AND [test_ger] IS NULL) OR ([test_ger] = @Original_test_ger)) AND ((@IsNull_tes"& _ 
-                "t_via = 1 AND [test_via] IS NULL) OR ([test_via] = @Original_test_via)) AND ((@I"& _ 
-                "sNull_test_raf = 1 AND [test_raf] IS NULL) OR ([test_raf] = @Original_test_raf))"& _ 
-                " AND ((@IsNull_remark = 1 AND [remark] IS NULL) OR ([remark] = @Original_remark)"& _ 
-                ") AND ((@IsNull_repro = 1 AND [repro] IS NULL) OR ([repro] = @Original_repro)) A"& _ 
-                "ND ((@IsNull_input_by = 1 AND [input_by] IS NULL) OR ([input_by] = @Original_inp"& _ 
-                "ut_by)) AND ((@IsNull_input_date = 1 AND [input_date] IS NULL) OR ([input_date] "& _ 
-                "= @Original_input_date)) AND ((@IsNull_update_date = 1 AND [update_date] IS NULL"& _ 
-                ") OR ([update_date] = @Original_update_date)))"
+                "AND ((@IsNull_variety = 1 AND [variety] IS NULL) OR ([variety] = @Original_varie"& _ 
+                "ty)) AND ((@IsNull_farmer = 1 AND [farmer] IS NULL) OR ([farmer] = @Original_far"& _ 
+                "mer)) AND ((@IsNull_location = 1 AND [location] IS NULL) OR ([location] = @Origi"& _ 
+                "nal_location)) AND ((@IsNull_harvest = 1 AND [harvest] IS NULL) OR ([harvest] = "& _ 
+                "@Original_harvest)) AND ((@IsNull_nomnl = 1 AND [nomnl] IS NULL) OR ([nomnl] = @"& _ 
+                "Original_nomnl)) AND ((@IsNull_nojob = 1 AND [nojob] IS NULL) OR ([nojob] = @Ori"& _ 
+                "ginal_nojob)) AND ((@IsNull_insplot = 1 AND [insplot] IS NULL) OR ([insplot] = @"& _ 
+                "Original_insplot)) AND ((@IsNull_weight = 1 AND [weight] IS NULL) OR ([weight] ="& _ 
+                " @Original_weight)) AND ((@IsNull_scope = 1 AND [scope] IS NULL) OR ([scope] = @"& _ 
+                "Original_scope)) AND ((@IsNull_bag = 1 AND [bag] IS NULL) OR ([bag] = @Original_"& _ 
+                "bag)) AND ((@IsNull_test_sampling = 1 AND [test_sampling] IS NULL) OR ([test_sam"& _ 
+                "pling] = @Original_test_sampling)) AND ((@IsNull_test_moi = 1 AND [test_moi] IS "& _ 
+                "NULL) OR ([test_moi] = @Original_test_moi)) AND ((@IsNull_test_pur = 1 AND [test"& _ 
+                "_pur] IS NULL) OR ([test_pur] = @Original_test_pur)) AND ((@IsNull_test_ger = 1 "& _ 
+                "AND [test_ger] IS NULL) OR ([test_ger] = @Original_test_ger)) AND ((@IsNull_test"& _ 
+                "_via = 1 AND [test_via] IS NULL) OR ([test_via] = @Original_test_via)) AND ((@Is"& _ 
+                "Null_test_raf = 1 AND [test_raf] IS NULL) OR ([test_raf] = @Original_test_raf)) "& _ 
+                "AND ((@IsNull_test_ontest = 1 AND [test_ontest] IS NULL) OR ([test_ontest] = @Or"& _ 
+                "iginal_test_ontest)) AND ((@IsNull_remark = 1 AND [remark] IS NULL) OR ([remark]"& _ 
+                " = @Original_remark)) AND ((@IsNull_loc_sample = 1 AND [loc_sample] IS NULL) OR "& _ 
+                "([loc_sample] = @Original_loc_sample)) AND ((@IsNull_input_by = 1 AND [input_by]"& _ 
+                " IS NULL) OR ([input_by] = @Original_input_by)) AND ((@IsNull_input_date = 1 AND"& _ 
+                " [input_date] IS NULL) OR ([input_date] = @Original_input_date)) AND ((@IsNull_u"& _ 
+                "pdate_user = 1 AND [update_user] IS NULL) OR ([update_user] = @Original_update_u"& _ 
+                "ser)) AND ((@IsNull_update_by = 1 AND [update_by] IS NULL) OR ([update_by] = @Or"& _ 
+                "iginal_update_by)) AND ((@IsNull_update_date = 1 AND [update_date] IS NULL) OR ("& _ 
+                "[update_date] = @Original_update_date)) AND ([visible] = @Original_visible) AND "& _ 
+                "([visible_lv2] = @Original_visible_lv2) AND ([kesehatan_benih] = @Original_keseh"& _ 
+                "atan_benih) AND ((@IsNull_unit = 1 AND [unit] IS NULL) OR ([unit] = @Original_un"& _ 
+                "it)))"
             Me._adapter.DeleteCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_id_login", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_login", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_login", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_login", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_id_hvsprod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_hvsprod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_hvsprod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_hvsprod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_class", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "class", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_class", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "class", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_variety", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "variety", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_variety", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "variety", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_farmer", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "farmer", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -41143,12 +41712,12 @@ Namespace HCQC_NewDatasetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_location", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "location", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_harvest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "harvest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_harvest", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "harvest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_croptype", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "croptype", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_croptype", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "croptype", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_nomnl", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nomnl", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nomnl", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nomnl", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_nojob", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nojob", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nojob", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nojob", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_insplot", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "insplot", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_insplot", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "insplot", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_weight", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "weight", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_weight", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 9, 2, "weight", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_scope", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scope", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -41167,40 +41736,53 @@ Namespace HCQC_NewDatasetTableAdapters
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_test_via", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_via", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_test_raf", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_raf", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_test_raf", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_raf", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_test_ontest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_ontest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_test_ontest", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_ontest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_remark", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "remark", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_remark", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "remark", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_repro", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "repro", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_repro", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "repro", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_loc_sample", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "loc_sample", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_loc_sample", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "loc_sample", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_input_by", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "input_by", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_input_by", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "input_by", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_input_date", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "input_date", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_input_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "input_date", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_update_user", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_user", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_update_user", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_user", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_update_by", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_by", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_update_by", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_by", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_update_date", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_date", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_update_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_date", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_visible", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "visible", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_visible_lv2", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "visible_lv2", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_kesehatan_benih", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "kesehatan_benih", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_unit", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "unit", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.DeleteCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_unit", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "unit", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.InsertCommand.Connection = Me.Connection
-            Me._adapter.InsertCommand.CommandText = "INSERT INTO [spl_request] ([id_login], [id_hvsprod], [class], [variety], [farmer]"& _ 
-                ", [location], [harvest], [croptype], [nomnl], [nojob], [weight], [scope], [bag],"& _ 
-                " [test_sampling], [test_moi], [test_pur], [test_ger], [test_via], [test_raf], [r"& _ 
-                "emark], [repro], [input_by], [input_date], [update_date]) VALUES (@id_login, @id"& _ 
-                "_hvsprod, @class, @variety, @farmer, @location, @harvest, @croptype, @nomnl, @no"& _ 
-                "job, @weight, @scope, @bag, @test_sampling, @test_moi, @test_pur, @test_ger, @te"& _ 
-                "st_via, @test_raf, @remark, @repro, @input_by, @input_date, @update_date);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELE"& _ 
-                "CT id, id_login, id_hvsprod, class, variety, farmer, location, harvest, croptype"& _ 
-                ", nomnl, nojob, weight, scope, bag, test_sampling, test_moi, test_pur, test_ger,"& _ 
-                " test_via, test_raf, remark, repro, input_by, input_date, update_date FROM spl_r"& _ 
-                "equest WHERE (id = SCOPE_IDENTITY())"
+            Me._adapter.InsertCommand.CommandText = "INSERT INTO [spl_request] ([id_login], [id_hvsprod], [variety], [farmer], [locati"& _ 
+                "on], [harvest], [nomnl], [nojob], [insplot], [weight], [scope], [bag], [test_sam"& _ 
+                "pling], [test_moi], [test_pur], [test_ger], [test_via], [test_raf], [test_ontest"& _ 
+                "], [remark], [loc_sample], [input_by], [input_date], [update_user], [update_by],"& _ 
+                " [update_date], [visible], [visible_lv2], [kesehatan_benih], [unit]) VALUES (@id"& _ 
+                "_login, @id_hvsprod, @variety, @farmer, @location, @harvest, @nomnl, @nojob, @in"& _ 
+                "splot, @weight, @scope, @bag, @test_sampling, @test_moi, @test_pur, @test_ger, @"& _ 
+                "test_via, @test_raf, @test_ontest, @remark, @loc_sample, @input_by, @input_date,"& _ 
+                " @update_user, @update_by, @update_date, @visible, @visible_lv2, @kesehatan_beni"& _ 
+                "h, @unit);"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, id_login, id_hvsprod, variety, farmer, location, harvest,"& _ 
+                " nomnl, nojob, insplot, weight, scope, bag, test_sampling, test_moi, test_pur, t"& _ 
+                "est_ger, test_via, test_raf, test_ontest, remark, loc_sample, input_by, input_da"& _ 
+                "te, update_user, update_by, update_date, visible, visible_lv2, kesehatan_benih, "& _ 
+                "unit FROM spl_request WHERE (id = SCOPE_IDENTITY())"
             Me._adapter.InsertCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_login", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_login", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_hvsprod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_hvsprod", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@class", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "class", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@variety", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "variety", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@farmer", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "farmer", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@location", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "location", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@harvest", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "harvest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@croptype", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "croptype", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nomnl", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nomnl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nojob", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nojob", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@insplot", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "insplot", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@weight", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 9, 2, "weight", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scope", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scope", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bag", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bag", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -41210,61 +41792,76 @@ Namespace HCQC_NewDatasetTableAdapters
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@test_ger", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_ger", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@test_via", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_via", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@test_raf", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_raf", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@test_ontest", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_ontest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@remark", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "remark", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@repro", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "repro", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@loc_sample", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "loc_sample", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@input_by", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "input_by", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@input_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "input_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@update_user", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_user", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@update_by", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_by", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@update_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visible", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "visible", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visible_lv2", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "visible_lv2", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@kesehatan_benih", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "kesehatan_benih", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.InsertCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@unit", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "unit", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand = New Global.System.Data.SqlClient.SqlCommand()
             Me._adapter.UpdateCommand.Connection = Me.Connection
-            Me._adapter.UpdateCommand.CommandText = "UPDATE [spl_request] SET [id_login] = @id_login, [id_hvsprod] = @id_hvsprod, [cla"& _ 
-                "ss] = @class, [variety] = @variety, [farmer] = @farmer, [location] = @location, "& _ 
-                "[harvest] = @harvest, [croptype] = @croptype, [nomnl] = @nomnl, [nojob] = @nojob"& _ 
-                ", [weight] = @weight, [scope] = @scope, [bag] = @bag, [test_sampling] = @test_sa"& _ 
-                "mpling, [test_moi] = @test_moi, [test_pur] = @test_pur, [test_ger] = @test_ger, "& _ 
-                "[test_via] = @test_via, [test_raf] = @test_raf, [remark] = @remark, [repro] = @r"& _ 
-                "epro, [input_by] = @input_by, [input_date] = @input_date, [update_date] = @updat"& _ 
-                "e_date WHERE (([id] = @Original_id) AND ((@IsNull_id_login = 1 AND [id_login] IS"& _ 
-                " NULL) OR ([id_login] = @Original_id_login)) AND ((@IsNull_id_hvsprod = 1 AND [i"& _ 
-                "d_hvsprod] IS NULL) OR ([id_hvsprod] = @Original_id_hvsprod)) AND ((@IsNull_clas"& _ 
-                "s = 1 AND [class] IS NULL) OR ([class] = @Original_class)) AND ((@IsNull_variety"& _ 
-                " = 1 AND [variety] IS NULL) OR ([variety] = @Original_variety)) AND ((@IsNull_fa"& _ 
-                "rmer = 1 AND [farmer] IS NULL) OR ([farmer] = @Original_farmer)) AND ((@IsNull_l"& _ 
-                "ocation = 1 AND [location] IS NULL) OR ([location] = @Original_location)) AND (("& _ 
-                "@IsNull_harvest = 1 AND [harvest] IS NULL) OR ([harvest] = @Original_harvest)) A"& _ 
-                "ND ((@IsNull_croptype = 1 AND [croptype] IS NULL) OR ([croptype] = @Original_cro"& _ 
-                "ptype)) AND ((@IsNull_nomnl = 1 AND [nomnl] IS NULL) OR ([nomnl] = @Original_nom"& _ 
-                "nl)) AND ((@IsNull_nojob = 1 AND [nojob] IS NULL) OR ([nojob] = @Original_nojob)"& _ 
-                ") AND ((@IsNull_weight = 1 AND [weight] IS NULL) OR ([weight] = @Original_weight"& _ 
-                ")) AND ((@IsNull_scope = 1 AND [scope] IS NULL) OR ([scope] = @Original_scope)) "& _ 
-                "AND ((@IsNull_bag = 1 AND [bag] IS NULL) OR ([bag] = @Original_bag)) AND ((@IsNu"& _ 
-                "ll_test_sampling = 1 AND [test_sampling] IS NULL) OR ([test_sampling] = @Origina"& _ 
-                "l_test_sampling)) AND ((@IsNull_test_moi = 1 AND [test_moi] IS NULL) OR ([test_m"& _ 
-                "oi] = @Original_test_moi)) AND ((@IsNull_test_pur = 1 AND [test_pur] IS NULL) OR"& _ 
-                " ([test_pur] = @Original_test_pur)) AND ((@IsNull_test_ger = 1 AND [test_ger] IS"& _ 
-                " NULL) OR ([test_ger] = @Original_test_ger)) AND ((@IsNull_test_via = 1 AND [tes"& _ 
-                "t_via] IS NULL) OR ([test_via] = @Original_test_via)) AND ((@IsNull_test_raf = 1"& _ 
-                " AND [test_raf] IS NULL) OR ([test_raf] = @Original_test_raf)) AND ((@IsNull_rem"& _ 
-                "ark = 1 AND [remark] IS NULL) OR ([remark] = @Original_remark)) AND ((@IsNull_re"& _ 
-                "pro = 1 AND [repro] IS NULL) OR ([repro] = @Original_repro)) AND ((@IsNull_input"& _ 
-                "_by = 1 AND [input_by] IS NULL) OR ([input_by] = @Original_input_by)) AND ((@IsN"& _ 
-                "ull_input_date = 1 AND [input_date] IS NULL) OR ([input_date] = @Original_input_"& _ 
-                "date)) AND ((@IsNull_update_date = 1 AND [update_date] IS NULL) OR ([update_date"& _ 
-                "] = @Original_update_date)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, id_login, id_hvsprod, class, variety, "& _ 
-                "farmer, location, harvest, croptype, nomnl, nojob, weight, scope, bag, test_samp"& _ 
-                "ling, test_moi, test_pur, test_ger, test_via, test_raf, remark, repro, input_by,"& _ 
-                " input_date, update_date FROM spl_request WHERE (id = @id)"
+            Me._adapter.UpdateCommand.CommandText = "UPDATE [spl_request] SET [id_login] = @id_login, [id_hvsprod] = @id_hvsprod, [var"& _ 
+                "iety] = @variety, [farmer] = @farmer, [location] = @location, [harvest] = @harve"& _ 
+                "st, [nomnl] = @nomnl, [nojob] = @nojob, [insplot] = @insplot, [weight] = @weight"& _ 
+                ", [scope] = @scope, [bag] = @bag, [test_sampling] = @test_sampling, [test_moi] ="& _ 
+                " @test_moi, [test_pur] = @test_pur, [test_ger] = @test_ger, [test_via] = @test_v"& _ 
+                "ia, [test_raf] = @test_raf, [test_ontest] = @test_ontest, [remark] = @remark, [l"& _ 
+                "oc_sample] = @loc_sample, [input_by] = @input_by, [input_date] = @input_date, [u"& _ 
+                "pdate_user] = @update_user, [update_by] = @update_by, [update_date] = @update_da"& _ 
+                "te, [visible] = @visible, [visible_lv2] = @visible_lv2, [kesehatan_benih] = @kes"& _ 
+                "ehatan_benih, [unit] = @unit WHERE (([id] = @Original_id) AND ((@IsNull_id_login"& _ 
+                " = 1 AND [id_login] IS NULL) OR ([id_login] = @Original_id_login)) AND ((@IsNull"& _ 
+                "_id_hvsprod = 1 AND [id_hvsprod] IS NULL) OR ([id_hvsprod] = @Original_id_hvspro"& _ 
+                "d)) AND ((@IsNull_variety = 1 AND [variety] IS NULL) OR ([variety] = @Original_v"& _ 
+                "ariety)) AND ((@IsNull_farmer = 1 AND [farmer] IS NULL) OR ([farmer] = @Original"& _ 
+                "_farmer)) AND ((@IsNull_location = 1 AND [location] IS NULL) OR ([location] = @O"& _ 
+                "riginal_location)) AND ((@IsNull_harvest = 1 AND [harvest] IS NULL) OR ([harvest"& _ 
+                "] = @Original_harvest)) AND ((@IsNull_nomnl = 1 AND [nomnl] IS NULL) OR ([nomnl]"& _ 
+                " = @Original_nomnl)) AND ((@IsNull_nojob = 1 AND [nojob] IS NULL) OR ([nojob] = "& _ 
+                "@Original_nojob)) AND ((@IsNull_insplot = 1 AND [insplot] IS NULL) OR ([insplot]"& _ 
+                " = @Original_insplot)) AND ((@IsNull_weight = 1 AND [weight] IS NULL) OR ([weigh"& _ 
+                "t] = @Original_weight)) AND ((@IsNull_scope = 1 AND [scope] IS NULL) OR ([scope]"& _ 
+                " = @Original_scope)) AND ((@IsNull_bag = 1 AND [bag] IS NULL) OR ([bag] = @Origi"& _ 
+                "nal_bag)) AND ((@IsNull_test_sampling = 1 AND [test_sampling] IS NULL) OR ([test"& _ 
+                "_sampling] = @Original_test_sampling)) AND ((@IsNull_test_moi = 1 AND [test_moi]"& _ 
+                " IS NULL) OR ([test_moi] = @Original_test_moi)) AND ((@IsNull_test_pur = 1 AND ["& _ 
+                "test_pur] IS NULL) OR ([test_pur] = @Original_test_pur)) AND ((@IsNull_test_ger "& _ 
+                "= 1 AND [test_ger] IS NULL) OR ([test_ger] = @Original_test_ger)) AND ((@IsNull_"& _ 
+                "test_via = 1 AND [test_via] IS NULL) OR ([test_via] = @Original_test_via)) AND ("& _ 
+                "(@IsNull_test_raf = 1 AND [test_raf] IS NULL) OR ([test_raf] = @Original_test_ra"& _ 
+                "f)) AND ((@IsNull_test_ontest = 1 AND [test_ontest] IS NULL) OR ([test_ontest] ="& _ 
+                " @Original_test_ontest)) AND ((@IsNull_remark = 1 AND [remark] IS NULL) OR ([rem"& _ 
+                "ark] = @Original_remark)) AND ((@IsNull_loc_sample = 1 AND [loc_sample] IS NULL)"& _ 
+                " OR ([loc_sample] = @Original_loc_sample)) AND ((@IsNull_input_by = 1 AND [input"& _ 
+                "_by] IS NULL) OR ([input_by] = @Original_input_by)) AND ((@IsNull_input_date = 1"& _ 
+                " AND [input_date] IS NULL) OR ([input_date] = @Original_input_date)) AND ((@IsNu"& _ 
+                "ll_update_user = 1 AND [update_user] IS NULL) OR ([update_user] = @Original_upda"& _ 
+                "te_user)) AND ((@IsNull_update_by = 1 AND [update_by] IS NULL) OR ([update_by] ="& _ 
+                " @Original_update_by)) AND ((@IsNull_update_date = 1 AND [update_date] IS NULL) "& _ 
+                "OR ([update_date] = @Original_update_date)) AND ([visible] = @Original_visible) "& _ 
+                "AND ([visible_lv2] = @Original_visible_lv2) AND ([kesehatan_benih] = @Original_k"& _ 
+                "esehatan_benih) AND ((@IsNull_unit = 1 AND [unit] IS NULL) OR ([unit] = @Origina"& _ 
+                "l_unit)));"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"SELECT id, id_login, id_hvsprod, variety, farmer, location, harvest,"& _ 
+                " nomnl, nojob, insplot, weight, scope, bag, test_sampling, test_moi, test_pur, t"& _ 
+                "est_ger, test_via, test_raf, test_ontest, remark, loc_sample, input_by, input_da"& _ 
+                "te, update_user, update_by, update_date, visible, visible_lv2, kesehatan_benih, "& _ 
+                "unit FROM spl_request WHERE (id = @id)"
             Me._adapter.UpdateCommand.CommandType = Global.System.Data.CommandType.Text
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_login", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_login", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id_hvsprod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_hvsprod", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@class", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "class", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@variety", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "variety", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@farmer", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "farmer", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@location", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "location", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@harvest", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "harvest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@croptype", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "croptype", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nomnl", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nomnl", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@nojob", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nojob", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@insplot", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "insplot", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@weight", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 9, 2, "weight", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@scope", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scope", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@bag", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "bag", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -41274,18 +41871,23 @@ Namespace HCQC_NewDatasetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@test_ger", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_ger", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@test_via", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_via", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@test_raf", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_raf", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@test_ontest", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_ontest", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@remark", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "remark", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@repro", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "repro", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@loc_sample", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "loc_sample", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@input_by", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "input_by", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@input_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "input_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@update_user", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_user", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@update_by", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_by", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@update_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_date", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visible", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "visible", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@visible_lv2", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "visible_lv2", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@kesehatan_benih", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "kesehatan_benih", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@unit", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "unit", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_id_login", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_login", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_login", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_login", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_id_hvsprod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_hvsprod", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_id_hvsprod", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "id_hvsprod", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_class", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "class", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_class", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "class", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_variety", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "variety", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_variety", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "variety", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_farmer", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "farmer", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -41294,12 +41896,12 @@ Namespace HCQC_NewDatasetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_location", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "location", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_harvest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "harvest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_harvest", Global.System.Data.SqlDbType.SmallDateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "harvest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_croptype", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "croptype", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_croptype", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "croptype", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_nomnl", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nomnl", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nomnl", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nomnl", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_nojob", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nojob", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_nojob", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "nojob", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_insplot", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "insplot", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_insplot", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "insplot", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_weight", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "weight", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_weight", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 9, 2, "weight", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_scope", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "scope", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
@@ -41318,16 +41920,27 @@ Namespace HCQC_NewDatasetTableAdapters
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_test_via", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_via", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_test_raf", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_raf", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_test_raf", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_raf", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_test_ontest", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_ontest", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_test_ontest", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "test_ontest", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_remark", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "remark", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_remark", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "remark", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_repro", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "repro", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
-            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_repro", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "repro", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_loc_sample", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "loc_sample", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_loc_sample", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "loc_sample", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_input_by", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "input_by", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_input_by", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "input_by", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_input_date", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "input_date", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_input_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "input_date", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_update_user", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_user", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_update_user", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_user", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_update_by", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_by", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_update_by", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_by", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_update_date", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_date", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_update_date", Global.System.Data.SqlDbType.DateTime, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "update_date", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_visible", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "visible", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_visible_lv2", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "visible_lv2", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_kesehatan_benih", Global.System.Data.SqlDbType.Bit, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "kesehatan_benih", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@IsNull_unit", Global.System.Data.SqlDbType.Int, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "unit", Global.System.Data.DataRowVersion.Original, true, Nothing, "", "", ""))
+            Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Original_unit", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "unit", Global.System.Data.DataRowVersion.Original, false, Nothing, "", "", ""))
             Me._adapter.UpdateCommand.Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@id", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
@@ -41344,26 +41957,30 @@ Namespace HCQC_NewDatasetTableAdapters
             Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        spl_request.*"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            spl_request"
+            Me._commandCollection(0).CommandText = "SELECT        id, id_login, id_hvsprod, variety, farmer, location, harvest, nomnl"& _ 
+                ", nojob, insplot, weight, scope, bag, test_sampling, test_moi, test_pur, test_ge"& _ 
+                "r, test_via, test_raf, test_ontest, remark, loc_sample, input_by, input_date, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "                         update_user, update_by, update_date, visible, visible_l"& _ 
+                "v2, kesehatan_benih, unit"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            spl_request"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
-            Me._commandCollection(1).CommandText = "SELECT        id, id_login, id_hvsprod, variety, farmer, location, harvest, nomnl"& _ 
-                ", nojob, weight, scope, bag, test_sampling, test_moi, test_pur, test_ger, test_v"& _ 
-                "ia, test_raf, test_ontest, remark, input_by, input_date, update_user, update_by,"& _ 
-                " "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         update_date"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            spl_request"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE id_h"& _ 
-                "vsprod LIKE @value OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"variety LIKE @value OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"nomnl LIKE @value OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"nojob LIKE "& _ 
-                "@value OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"scope LIKE @value"
+            Me._commandCollection(1).CommandText = "SELECT bag, farmer, harvest, id, id_hvsprod, id_login, input_by, input_date, insp"& _ 
+                "lot, kesehatan_benih, loc_sample, location, nojob, nomnl, remark, scope, test_ge"& _ 
+                "r, test_moi, test_ontest, test_pur, test_raf, test_sampling, test_via, unit, upd"& _ 
+                "ate_by, update_date, update_user, variety, visible, visible_lv2, weight FROM spl"& _ 
+                "_request WHERE (id_hvsprod LIKE @value) OR (variety LIKE @value) OR (nomnl LIKE "& _ 
+                "@value) OR (nojob LIKE @value) OR (scope LIKE @value)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@value", Global.System.Data.SqlDbType.VarChar, 255, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        id, id_login, id_hvsprod, variety, farmer, location, harvest, nomnl"& _ 
-                ", nojob, weight, scope, bag, test_sampling, test_moi, test_pur, test_ger, test_v"& _ 
-                "ia, test_raf, test_ontest, remark, input_by, input_date, update_user, update_by,"& _ 
-                " "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         update_date"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            spl_request"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE     "& _ 
-                "   (input_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (input_date < DAT"& _ 
-                "EADD(dd, 1, EOMONTH(GETDATE())))"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY id DESC"
+            Me._commandCollection(2).CommandText = "SELECT bag, farmer, harvest, id, id_hvsprod, id_login, input_by, input_date, insp"& _ 
+                "lot, kesehatan_benih, loc_sample, location, nojob, nomnl, remark, scope, test_ge"& _ 
+                "r, test_moi, test_ontest, test_pur, test_raf, test_sampling, test_via, unit, upd"& _ 
+                "ate_by, update_date, update_user, variety, visible, visible_lv2, weight FROM spl"& _ 
+                "_request WHERE (input_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (inpu"& _ 
+                "t_date < DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -41485,14 +42102,13 @@ Namespace HCQC_NewDatasetTableAdapters
                     ByVal Original_id As Integer,  _
                     ByVal Original_id_login As Global.System.Nullable(Of Integer),  _
                     ByVal Original_id_hvsprod As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_class As String,  _
                     ByVal Original_variety As String,  _
                     ByVal Original_farmer As String,  _
                     ByVal Original_location As String,  _
                     ByVal Original_harvest As Global.System.Nullable(Of Date),  _
-                    ByVal Original_croptype As String,  _
                     ByVal Original_nomnl As String,  _
                     ByVal Original_nojob As String,  _
+                    ByVal Original_insplot As String,  _
                     ByVal Original_weight As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_scope As String,  _
                     ByVal Original_bag As Global.System.Nullable(Of Integer),  _
@@ -41502,11 +42118,18 @@ Namespace HCQC_NewDatasetTableAdapters
                     ByVal Original_test_ger As Global.System.Nullable(Of Boolean),  _
                     ByVal Original_test_via As Global.System.Nullable(Of Boolean),  _
                     ByVal Original_test_raf As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_test_ontest As Global.System.Nullable(Of Boolean),  _
                     ByVal Original_remark As String,  _
-                    ByVal Original_repro As String,  _
+                    ByVal Original_loc_sample As String,  _
                     ByVal Original_input_by As String,  _
                     ByVal Original_input_date As Global.System.Nullable(Of Date),  _
-                    ByVal Original_update_date As Global.System.Nullable(Of Date)) As Integer
+                    ByVal Original_update_user As String,  _
+                    ByVal Original_update_by As String,  _
+                    ByVal Original_update_date As Global.System.Nullable(Of Date),  _
+                    ByVal Original_visible As Boolean,  _
+                    ByVal Original_visible_lv2 As Boolean,  _
+                    ByVal Original_kesehatan_benih As Boolean,  _
+                    ByVal Original_unit As String) As Integer
             Me.Adapter.DeleteCommand.Parameters(0).Value = CType(Original_id,Integer)
             If (Original_id_login.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(1).Value = CType(0,Object)
@@ -41522,121 +42145,121 @@ Namespace HCQC_NewDatasetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(3).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(4).Value = Global.System.DBNull.Value
             End If
-            If (Original_class Is Nothing) Then
+            If (Original_variety Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(5).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_class,String)
+                Me.Adapter.DeleteCommand.Parameters(6).Value = CType(Original_variety,String)
             End If
-            If (Original_variety Is Nothing) Then
+            If (Original_farmer Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(8).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(7).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_variety,String)
+                Me.Adapter.DeleteCommand.Parameters(8).Value = CType(Original_farmer,String)
             End If
-            If (Original_farmer Is Nothing) Then
+            If (Original_location Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(9).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_farmer,String)
-            End If
-            If (Original_location Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_location,String)
+                Me.Adapter.DeleteCommand.Parameters(10).Value = CType(Original_location,String)
             End If
             If (Original_harvest.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_harvest.Value,Date)
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = CType(Original_harvest.Value,Date)
             Else
+                Me.Adapter.DeleteCommand.Parameters(11).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(12).Value = Global.System.DBNull.Value
+            End If
+            If (Original_nomnl Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(13).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(14).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(13).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(14).Value = CType(Original_nomnl,String)
             End If
-            If (Original_croptype Is Nothing) Then
+            If (Original_nojob Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(15).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(16).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(15).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_croptype,String)
+                Me.Adapter.DeleteCommand.Parameters(16).Value = CType(Original_nojob,String)
             End If
-            If (Original_nomnl Is Nothing) Then
+            If (Original_insplot Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(17).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(18).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(17).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_nomnl,String)
-            End If
-            If (Original_nojob Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_nojob,String)
+                Me.Adapter.DeleteCommand.Parameters(18).Value = CType(Original_insplot,String)
             End If
             If (Original_weight.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_weight.Value,Decimal)
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = CType(Original_weight.Value,Decimal)
             Else
-                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(19).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(20).Value = Global.System.DBNull.Value
             End If
             If (Original_scope Is Nothing) Then
-                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(1,Object)
-                Me.Adapter.DeleteCommand.Parameters(24).Value = Global.System.DBNull.Value
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(24).Value = CType(Original_scope,String)
+                Me.Adapter.DeleteCommand.Parameters(21).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(22).Value = CType(Original_scope,String)
             End If
             If (Original_bag.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = CType(Original_bag.Value,Integer)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(23).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(24).Value = Global.System.DBNull.Value
+            End If
+            If (Original_test_sampling.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(25).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(26).Value = CType(Original_bag.Value,Integer)
+                Me.Adapter.DeleteCommand.Parameters(26).Value = CType(Original_test_sampling.Value,Boolean)
             Else
                 Me.Adapter.DeleteCommand.Parameters(25).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(26).Value = Global.System.DBNull.Value
             End If
-            If (Original_test_sampling.HasValue = true) Then
+            If (Original_test_moi.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(27).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(28).Value = CType(Original_test_sampling.Value,Boolean)
+                Me.Adapter.DeleteCommand.Parameters(28).Value = CType(Original_test_moi.Value,Boolean)
             Else
                 Me.Adapter.DeleteCommand.Parameters(27).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(28).Value = Global.System.DBNull.Value
             End If
-            If (Original_test_moi.HasValue = true) Then
+            If (Original_test_pur.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(29).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(30).Value = CType(Original_test_moi.Value,Boolean)
+                Me.Adapter.DeleteCommand.Parameters(30).Value = CType(Original_test_pur.Value,Boolean)
             Else
                 Me.Adapter.DeleteCommand.Parameters(29).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(30).Value = Global.System.DBNull.Value
             End If
-            If (Original_test_pur.HasValue = true) Then
+            If (Original_test_ger.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(31).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(32).Value = CType(Original_test_pur.Value,Boolean)
+                Me.Adapter.DeleteCommand.Parameters(32).Value = CType(Original_test_ger.Value,Boolean)
             Else
                 Me.Adapter.DeleteCommand.Parameters(31).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(32).Value = Global.System.DBNull.Value
             End If
-            If (Original_test_ger.HasValue = true) Then
+            If (Original_test_via.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(33).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(34).Value = CType(Original_test_ger.Value,Boolean)
+                Me.Adapter.DeleteCommand.Parameters(34).Value = CType(Original_test_via.Value,Boolean)
             Else
                 Me.Adapter.DeleteCommand.Parameters(33).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(34).Value = Global.System.DBNull.Value
             End If
-            If (Original_test_via.HasValue = true) Then
+            If (Original_test_raf.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(35).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(36).Value = CType(Original_test_via.Value,Boolean)
+                Me.Adapter.DeleteCommand.Parameters(36).Value = CType(Original_test_raf.Value,Boolean)
             Else
                 Me.Adapter.DeleteCommand.Parameters(35).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(36).Value = Global.System.DBNull.Value
             End If
-            If (Original_test_raf.HasValue = true) Then
+            If (Original_test_ontest.HasValue = true) Then
                 Me.Adapter.DeleteCommand.Parameters(37).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(38).Value = CType(Original_test_raf.Value,Boolean)
+                Me.Adapter.DeleteCommand.Parameters(38).Value = CType(Original_test_ontest.Value,Boolean)
             Else
                 Me.Adapter.DeleteCommand.Parameters(37).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(38).Value = Global.System.DBNull.Value
@@ -41648,12 +42271,12 @@ Namespace HCQC_NewDatasetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(39).Value = CType(0,Object)
                 Me.Adapter.DeleteCommand.Parameters(40).Value = CType(Original_remark,String)
             End If
-            If (Original_repro Is Nothing) Then
+            If (Original_loc_sample Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(41).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(42).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.DeleteCommand.Parameters(41).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(42).Value = CType(Original_repro,String)
+                Me.Adapter.DeleteCommand.Parameters(42).Value = CType(Original_loc_sample,String)
             End If
             If (Original_input_by Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(43).Value = CType(1,Object)
@@ -41669,12 +42292,36 @@ Namespace HCQC_NewDatasetTableAdapters
                 Me.Adapter.DeleteCommand.Parameters(45).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(46).Value = Global.System.DBNull.Value
             End If
-            If (Original_update_date.HasValue = true) Then
-                Me.Adapter.DeleteCommand.Parameters(47).Value = CType(0,Object)
-                Me.Adapter.DeleteCommand.Parameters(48).Value = CType(Original_update_date.Value,Date)
-            Else
+            If (Original_update_user Is Nothing) Then
                 Me.Adapter.DeleteCommand.Parameters(47).Value = CType(1,Object)
                 Me.Adapter.DeleteCommand.Parameters(48).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(47).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(48).Value = CType(Original_update_user,String)
+            End If
+            If (Original_update_by Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(49).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(50).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(49).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(50).Value = CType(Original_update_by,String)
+            End If
+            If (Original_update_date.HasValue = true) Then
+                Me.Adapter.DeleteCommand.Parameters(51).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(52).Value = CType(Original_update_date.Value,Date)
+            Else
+                Me.Adapter.DeleteCommand.Parameters(51).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(52).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.DeleteCommand.Parameters(53).Value = CType(Original_visible,Boolean)
+            Me.Adapter.DeleteCommand.Parameters(54).Value = CType(Original_visible_lv2,Boolean)
+            Me.Adapter.DeleteCommand.Parameters(55).Value = CType(Original_kesehatan_benih,Boolean)
+            If (Original_unit Is Nothing) Then
+                Me.Adapter.DeleteCommand.Parameters(56).Value = CType(1,Object)
+                Me.Adapter.DeleteCommand.Parameters(57).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.DeleteCommand.Parameters(56).Value = CType(0,Object)
+                Me.Adapter.DeleteCommand.Parameters(57).Value = CType(Original_unit,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.DeleteCommand.Connection.State
             If ((Me.Adapter.DeleteCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -41698,14 +42345,13 @@ Namespace HCQC_NewDatasetTableAdapters
         Public Overloads Overridable Function Insert( _
                     ByVal id_login As Global.System.Nullable(Of Integer),  _
                     ByVal id_hvsprod As Global.System.Nullable(Of Integer),  _
-                    ByVal _class As String,  _
                     ByVal variety As String,  _
                     ByVal farmer As String,  _
                     ByVal location As String,  _
                     ByVal harvest As Global.System.Nullable(Of Date),  _
-                    ByVal croptype As String,  _
                     ByVal nomnl As String,  _
                     ByVal nojob As String,  _
+                    ByVal insplot As String,  _
                     ByVal weight As Global.System.Nullable(Of Decimal),  _
                     ByVal scope As String,  _
                     ByVal bag As Global.System.Nullable(Of Integer),  _
@@ -41715,11 +42361,18 @@ Namespace HCQC_NewDatasetTableAdapters
                     ByVal test_ger As Global.System.Nullable(Of Boolean),  _
                     ByVal test_via As Global.System.Nullable(Of Boolean),  _
                     ByVal test_raf As Global.System.Nullable(Of Boolean),  _
+                    ByVal test_ontest As Global.System.Nullable(Of Boolean),  _
                     ByVal remark As String,  _
-                    ByVal repro As String,  _
+                    ByVal loc_sample As String,  _
                     ByVal input_by As String,  _
                     ByVal input_date As Global.System.Nullable(Of Date),  _
-                    ByVal update_date As Global.System.Nullable(Of Date)) As Integer
+                    ByVal update_user As String,  _
+                    ByVal update_by As String,  _
+                    ByVal update_date As Global.System.Nullable(Of Date),  _
+                    ByVal visible As Boolean,  _
+                    ByVal visible_lv2 As Boolean,  _
+                    ByVal kesehatan_benih As Boolean,  _
+                    ByVal unit As String) As Integer
             If (id_login.HasValue = true) Then
                 Me.Adapter.InsertCommand.Parameters(0).Value = CType(id_login.Value,Integer)
             Else
@@ -41730,88 +42383,88 @@ Namespace HCQC_NewDatasetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (_class Is Nothing) Then
+            If (variety Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(2).Value = CType(_class,String)
-            End If
-            If (variety Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(3).Value = CType(variety,String)
+                Me.Adapter.InsertCommand.Parameters(2).Value = CType(variety,String)
             End If
             If (farmer Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(4).Value = CType(farmer,String)
+                Me.Adapter.InsertCommand.Parameters(3).Value = CType(farmer,String)
             End If
             If (location Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(5).Value = CType(location,String)
+                Me.Adapter.InsertCommand.Parameters(4).Value = CType(location,String)
             End If
             If (harvest.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(6).Value = CType(harvest.Value,Date)
+                Me.Adapter.InsertCommand.Parameters(5).Value = CType(harvest.Value,Date)
             Else
-                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (croptype Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.InsertCommand.Parameters(7).Value = CType(croptype,String)
+                Me.Adapter.InsertCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
             If (nomnl Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(8).Value = CType(nomnl,String)
+                Me.Adapter.InsertCommand.Parameters(6).Value = CType(nomnl,String)
             End If
             If (nojob Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(9).Value = CType(nojob,String)
+                Me.Adapter.InsertCommand.Parameters(7).Value = CType(nojob,String)
+            End If
+            If (insplot Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(8).Value = CType(insplot,String)
             End If
             If (weight.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(10).Value = CType(weight.Value,Decimal)
+                Me.Adapter.InsertCommand.Parameters(9).Value = CType(weight.Value,Decimal)
             Else
-                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
             If (scope Is Nothing) Then
-                Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.InsertCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(11).Value = CType(scope,String)
+                Me.Adapter.InsertCommand.Parameters(10).Value = CType(scope,String)
             End If
             If (bag.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(12).Value = CType(bag.Value,Integer)
+                Me.Adapter.InsertCommand.Parameters(11).Value = CType(bag.Value,Integer)
+            Else
+                Me.Adapter.InsertCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (test_sampling.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(12).Value = CType(test_sampling.Value,Boolean)
             Else
                 Me.Adapter.InsertCommand.Parameters(12).Value = Global.System.DBNull.Value
             End If
-            If (test_sampling.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(13).Value = CType(test_sampling.Value,Boolean)
+            If (test_moi.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(13).Value = CType(test_moi.Value,Boolean)
             Else
                 Me.Adapter.InsertCommand.Parameters(13).Value = Global.System.DBNull.Value
             End If
-            If (test_moi.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(14).Value = CType(test_moi.Value,Boolean)
+            If (test_pur.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(14).Value = CType(test_pur.Value,Boolean)
             Else
                 Me.Adapter.InsertCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
-            If (test_pur.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(15).Value = CType(test_pur.Value,Boolean)
+            If (test_ger.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(15).Value = CType(test_ger.Value,Boolean)
             Else
                 Me.Adapter.InsertCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
-            If (test_ger.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(16).Value = CType(test_ger.Value,Boolean)
+            If (test_via.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(16).Value = CType(test_via.Value,Boolean)
             Else
                 Me.Adapter.InsertCommand.Parameters(16).Value = Global.System.DBNull.Value
             End If
-            If (test_via.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(17).Value = CType(test_via.Value,Boolean)
+            If (test_raf.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(17).Value = CType(test_raf.Value,Boolean)
             Else
                 Me.Adapter.InsertCommand.Parameters(17).Value = Global.System.DBNull.Value
             End If
-            If (test_raf.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(18).Value = CType(test_raf.Value,Boolean)
+            If (test_ontest.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(18).Value = CType(test_ontest.Value,Boolean)
             Else
                 Me.Adapter.InsertCommand.Parameters(18).Value = Global.System.DBNull.Value
             End If
@@ -41820,10 +42473,10 @@ Namespace HCQC_NewDatasetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(19).Value = CType(remark,String)
             End If
-            If (repro Is Nothing) Then
+            If (loc_sample Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(20).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.InsertCommand.Parameters(20).Value = CType(repro,String)
+                Me.Adapter.InsertCommand.Parameters(20).Value = CType(loc_sample,String)
             End If
             If (input_by Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(21).Value = Global.System.DBNull.Value
@@ -41835,10 +42488,28 @@ Namespace HCQC_NewDatasetTableAdapters
             Else
                 Me.Adapter.InsertCommand.Parameters(22).Value = Global.System.DBNull.Value
             End If
-            If (update_date.HasValue = true) Then
-                Me.Adapter.InsertCommand.Parameters(23).Value = CType(update_date.Value,Date)
-            Else
+            If (update_user Is Nothing) Then
                 Me.Adapter.InsertCommand.Parameters(23).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(23).Value = CType(update_user,String)
+            End If
+            If (update_by Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(24).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(24).Value = CType(update_by,String)
+            End If
+            If (update_date.HasValue = true) Then
+                Me.Adapter.InsertCommand.Parameters(25).Value = CType(update_date.Value,Date)
+            Else
+                Me.Adapter.InsertCommand.Parameters(25).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.InsertCommand.Parameters(26).Value = CType(visible,Boolean)
+            Me.Adapter.InsertCommand.Parameters(27).Value = CType(visible_lv2,Boolean)
+            Me.Adapter.InsertCommand.Parameters(28).Value = CType(kesehatan_benih,Boolean)
+            If (unit Is Nothing) Then
+                Me.Adapter.InsertCommand.Parameters(29).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.InsertCommand.Parameters(29).Value = CType(unit,String)
             End If
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.InsertCommand.Connection.State
             If ((Me.Adapter.InsertCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
@@ -41862,14 +42533,13 @@ Namespace HCQC_NewDatasetTableAdapters
         Public Overloads Overridable Function Update( _
                     ByVal id_login As Global.System.Nullable(Of Integer),  _
                     ByVal id_hvsprod As Global.System.Nullable(Of Integer),  _
-                    ByVal _class As String,  _
                     ByVal variety As String,  _
                     ByVal farmer As String,  _
                     ByVal location As String,  _
                     ByVal harvest As Global.System.Nullable(Of Date),  _
-                    ByVal croptype As String,  _
                     ByVal nomnl As String,  _
                     ByVal nojob As String,  _
+                    ByVal insplot As String,  _
                     ByVal weight As Global.System.Nullable(Of Decimal),  _
                     ByVal scope As String,  _
                     ByVal bag As Global.System.Nullable(Of Integer),  _
@@ -41879,22 +42549,28 @@ Namespace HCQC_NewDatasetTableAdapters
                     ByVal test_ger As Global.System.Nullable(Of Boolean),  _
                     ByVal test_via As Global.System.Nullable(Of Boolean),  _
                     ByVal test_raf As Global.System.Nullable(Of Boolean),  _
+                    ByVal test_ontest As Global.System.Nullable(Of Boolean),  _
                     ByVal remark As String,  _
-                    ByVal repro As String,  _
+                    ByVal loc_sample As String,  _
                     ByVal input_by As String,  _
                     ByVal input_date As Global.System.Nullable(Of Date),  _
+                    ByVal update_user As String,  _
+                    ByVal update_by As String,  _
                     ByVal update_date As Global.System.Nullable(Of Date),  _
+                    ByVal visible As Boolean,  _
+                    ByVal visible_lv2 As Boolean,  _
+                    ByVal kesehatan_benih As Boolean,  _
+                    ByVal unit As String,  _
                     ByVal Original_id As Integer,  _
                     ByVal Original_id_login As Global.System.Nullable(Of Integer),  _
                     ByVal Original_id_hvsprod As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_class As String,  _
                     ByVal Original_variety As String,  _
                     ByVal Original_farmer As String,  _
                     ByVal Original_location As String,  _
                     ByVal Original_harvest As Global.System.Nullable(Of Date),  _
-                    ByVal Original_croptype As String,  _
                     ByVal Original_nomnl As String,  _
                     ByVal Original_nojob As String,  _
+                    ByVal Original_insplot As String,  _
                     ByVal Original_weight As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_scope As String,  _
                     ByVal Original_bag As Global.System.Nullable(Of Integer),  _
@@ -41904,11 +42580,18 @@ Namespace HCQC_NewDatasetTableAdapters
                     ByVal Original_test_ger As Global.System.Nullable(Of Boolean),  _
                     ByVal Original_test_via As Global.System.Nullable(Of Boolean),  _
                     ByVal Original_test_raf As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_test_ontest As Global.System.Nullable(Of Boolean),  _
                     ByVal Original_remark As String,  _
-                    ByVal Original_repro As String,  _
+                    ByVal Original_loc_sample As String,  _
                     ByVal Original_input_by As String,  _
                     ByVal Original_input_date As Global.System.Nullable(Of Date),  _
+                    ByVal Original_update_user As String,  _
+                    ByVal Original_update_by As String,  _
                     ByVal Original_update_date As Global.System.Nullable(Of Date),  _
+                    ByVal Original_visible As Boolean,  _
+                    ByVal Original_visible_lv2 As Boolean,  _
+                    ByVal Original_kesehatan_benih As Boolean,  _
+                    ByVal Original_unit As String,  _
                     ByVal id As Integer) As Integer
             If (id_login.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(0).Value = CType(id_login.Value,Integer)
@@ -41920,88 +42603,88 @@ Namespace HCQC_NewDatasetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(1).Value = Global.System.DBNull.Value
             End If
-            If (_class Is Nothing) Then
+            If (variety Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(2).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(_class,String)
-            End If
-            If (variety Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(variety,String)
+                Me.Adapter.UpdateCommand.Parameters(2).Value = CType(variety,String)
             End If
             If (farmer Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(3).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(farmer,String)
+                Me.Adapter.UpdateCommand.Parameters(3).Value = CType(farmer,String)
             End If
             If (location Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(4).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(location,String)
+                Me.Adapter.UpdateCommand.Parameters(4).Value = CType(location,String)
             End If
             If (harvest.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(harvest.Value,Date)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = CType(harvest.Value,Date)
             Else
-                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
-            End If
-            If (croptype Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(croptype,String)
+                Me.Adapter.UpdateCommand.Parameters(5).Value = Global.System.DBNull.Value
             End If
             If (nomnl Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(6).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(nomnl,String)
+                Me.Adapter.UpdateCommand.Parameters(6).Value = CType(nomnl,String)
             End If
             If (nojob Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(7).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(nojob,String)
+                Me.Adapter.UpdateCommand.Parameters(7).Value = CType(nojob,String)
+            End If
+            If (insplot Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(8).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(8).Value = CType(insplot,String)
             End If
             If (weight.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(weight.Value,Decimal)
+                Me.Adapter.UpdateCommand.Parameters(9).Value = CType(weight.Value,Decimal)
             Else
-                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(9).Value = Global.System.DBNull.Value
             End If
             If (scope Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+                Me.Adapter.UpdateCommand.Parameters(10).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(scope,String)
+                Me.Adapter.UpdateCommand.Parameters(10).Value = CType(scope,String)
             End If
             If (bag.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(bag.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(11).Value = CType(bag.Value,Integer)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(11).Value = Global.System.DBNull.Value
+            End If
+            If (test_sampling.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(12).Value = CType(test_sampling.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(12).Value = Global.System.DBNull.Value
             End If
-            If (test_sampling.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(test_sampling.Value,Boolean)
+            If (test_moi.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(13).Value = CType(test_moi.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(13).Value = Global.System.DBNull.Value
             End If
-            If (test_moi.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(test_moi.Value,Boolean)
+            If (test_pur.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(14).Value = CType(test_pur.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(14).Value = Global.System.DBNull.Value
             End If
-            If (test_pur.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(test_pur.Value,Boolean)
+            If (test_ger.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(15).Value = CType(test_ger.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(15).Value = Global.System.DBNull.Value
             End If
-            If (test_ger.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(test_ger.Value,Boolean)
+            If (test_via.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(16).Value = CType(test_via.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(16).Value = Global.System.DBNull.Value
             End If
-            If (test_via.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(test_via.Value,Boolean)
+            If (test_raf.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(17).Value = CType(test_raf.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(17).Value = Global.System.DBNull.Value
             End If
-            If (test_raf.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(test_raf.Value,Boolean)
+            If (test_ontest.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(18).Value = CType(test_ontest.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(18).Value = Global.System.DBNull.Value
             End If
@@ -42010,10 +42693,10 @@ Namespace HCQC_NewDatasetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(19).Value = CType(remark,String)
             End If
-            If (repro Is Nothing) Then
+            If (loc_sample Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(20).Value = Global.System.DBNull.Value
             Else
-                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(repro,String)
+                Me.Adapter.UpdateCommand.Parameters(20).Value = CType(loc_sample,String)
             End If
             If (input_by Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(21).Value = Global.System.DBNull.Value
@@ -42025,181 +42708,223 @@ Namespace HCQC_NewDatasetTableAdapters
             Else
                 Me.Adapter.UpdateCommand.Parameters(22).Value = Global.System.DBNull.Value
             End If
-            If (update_date.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(update_date.Value,Date)
-            Else
+            If (update_user Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(23).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(23).Value = CType(update_user,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(24).Value = CType(Original_id,Integer)
+            If (update_by Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(24).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(24).Value = CType(update_by,String)
+            End If
+            If (update_date.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(update_date.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(25).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(26).Value = CType(visible,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(27).Value = CType(visible_lv2,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(28).Value = CType(kesehatan_benih,Boolean)
+            If (unit Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(29).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(unit,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_id,Integer)
             If (Original_id_login.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = CType(Original_id_login.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_id_login.Value,Integer)
             Else
-                Me.Adapter.UpdateCommand.Parameters(25).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(26).Value = Global.System.DBNull.Value
-            End If
-            If (Original_id_hvsprod.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = CType(Original_id_hvsprod.Value,Integer)
-            Else
-                Me.Adapter.UpdateCommand.Parameters(27).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(28).Value = Global.System.DBNull.Value
-            End If
-            If (Original_class Is Nothing) Then
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(1,Object)
-                Me.Adapter.UpdateCommand.Parameters(30).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(29).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(30).Value = CType(Original_class,String)
-            End If
-            If (Original_variety Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(31).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(32).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(31).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(32).Value = CType(Original_variety,String)
             End If
-            If (Original_farmer Is Nothing) Then
+            If (Original_id_hvsprod.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(Original_id_hvsprod.Value,Integer)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(33).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(34).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(33).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(34).Value = CType(Original_farmer,String)
             End If
-            If (Original_location Is Nothing) Then
+            If (Original_variety Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(35).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(36).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(35).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(Original_location,String)
+                Me.Adapter.UpdateCommand.Parameters(36).Value = CType(Original_variety,String)
             End If
-            If (Original_harvest.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(Original_harvest.Value,Date)
-            Else
+            If (Original_farmer Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(37).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(38).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(37).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(38).Value = CType(Original_farmer,String)
             End If
-            If (Original_croptype Is Nothing) Then
+            If (Original_location Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(39).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(40).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(39).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(Original_croptype,String)
+                Me.Adapter.UpdateCommand.Parameters(40).Value = CType(Original_location,String)
             End If
-            If (Original_nomnl Is Nothing) Then
+            If (Original_harvest.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(Original_harvest.Value,Date)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(41).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(42).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(41).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(42).Value = CType(Original_nomnl,String)
             End If
-            If (Original_nojob Is Nothing) Then
+            If (Original_nomnl Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(43).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(44).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(43).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(Original_nojob,String)
+                Me.Adapter.UpdateCommand.Parameters(44).Value = CType(Original_nomnl,String)
             End If
-            If (Original_weight.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(Original_weight.Value,Decimal)
-            Else
+            If (Original_nojob Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(45).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(46).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(45).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(46).Value = CType(Original_nojob,String)
             End If
-            If (Original_scope Is Nothing) Then
+            If (Original_insplot Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(47).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(48).Value = Global.System.DBNull.Value
             Else
                 Me.Adapter.UpdateCommand.Parameters(47).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(Original_scope,String)
+                Me.Adapter.UpdateCommand.Parameters(48).Value = CType(Original_insplot,String)
             End If
-            If (Original_bag.HasValue = true) Then
+            If (Original_weight.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(49).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(Original_bag.Value,Integer)
+                Me.Adapter.UpdateCommand.Parameters(50).Value = CType(Original_weight.Value,Decimal)
             Else
                 Me.Adapter.UpdateCommand.Parameters(49).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(50).Value = Global.System.DBNull.Value
             End If
-            If (Original_test_sampling.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(Original_test_sampling.Value,Boolean)
-            Else
+            If (Original_scope Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(51).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(52).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(51).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(52).Value = CType(Original_scope,String)
             End If
-            If (Original_test_moi.HasValue = true) Then
+            If (Original_bag.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(53).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(Original_test_moi.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(54).Value = CType(Original_bag.Value,Integer)
             Else
                 Me.Adapter.UpdateCommand.Parameters(53).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(54).Value = Global.System.DBNull.Value
             End If
-            If (Original_test_pur.HasValue = true) Then
+            If (Original_test_sampling.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(55).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(Original_test_pur.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(56).Value = CType(Original_test_sampling.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(55).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(56).Value = Global.System.DBNull.Value
             End If
-            If (Original_test_ger.HasValue = true) Then
+            If (Original_test_moi.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(57).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(Original_test_ger.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(58).Value = CType(Original_test_moi.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(57).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(58).Value = Global.System.DBNull.Value
             End If
-            If (Original_test_via.HasValue = true) Then
+            If (Original_test_pur.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(59).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(Original_test_via.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(60).Value = CType(Original_test_pur.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(59).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(60).Value = Global.System.DBNull.Value
             End If
-            If (Original_test_raf.HasValue = true) Then
+            If (Original_test_ger.HasValue = true) Then
                 Me.Adapter.UpdateCommand.Parameters(61).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(Original_test_raf.Value,Boolean)
+                Me.Adapter.UpdateCommand.Parameters(62).Value = CType(Original_test_ger.Value,Boolean)
             Else
                 Me.Adapter.UpdateCommand.Parameters(61).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(62).Value = Global.System.DBNull.Value
             End If
-            If (Original_remark Is Nothing) Then
+            If (Original_test_via.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(Original_test_via.Value,Boolean)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(63).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(64).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(63).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(64).Value = CType(Original_remark,String)
             End If
-            If (Original_repro Is Nothing) Then
+            If (Original_test_raf.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(Original_test_raf.Value,Boolean)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(65).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(66).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(65).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(66).Value = CType(Original_repro,String)
             End If
-            If (Original_input_by Is Nothing) Then
+            If (Original_test_ontest.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(68).Value = CType(Original_test_ontest.Value,Boolean)
+            Else
                 Me.Adapter.UpdateCommand.Parameters(67).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(68).Value = Global.System.DBNull.Value
-            Else
-                Me.Adapter.UpdateCommand.Parameters(67).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(68).Value = CType(Original_input_by,String)
             End If
-            If (Original_input_date.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(70).Value = CType(Original_input_date.Value,Date)
-            Else
+            If (Original_remark Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(69).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(70).Value = Global.System.DBNull.Value
-            End If
-            If (Original_update_date.HasValue = true) Then
-                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(0,Object)
-                Me.Adapter.UpdateCommand.Parameters(72).Value = CType(Original_update_date.Value,Date)
             Else
+                Me.Adapter.UpdateCommand.Parameters(69).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(70).Value = CType(Original_remark,String)
+            End If
+            If (Original_loc_sample Is Nothing) Then
                 Me.Adapter.UpdateCommand.Parameters(71).Value = CType(1,Object)
                 Me.Adapter.UpdateCommand.Parameters(72).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(71).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(72).Value = CType(Original_loc_sample,String)
             End If
-            Me.Adapter.UpdateCommand.Parameters(73).Value = CType(id,Integer)
+            If (Original_input_by Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(74).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(73).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(74).Value = CType(Original_input_by,String)
+            End If
+            If (Original_input_date.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(76).Value = CType(Original_input_date.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(75).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(76).Value = Global.System.DBNull.Value
+            End If
+            If (Original_update_user Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(78).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(77).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(78).Value = CType(Original_update_user,String)
+            End If
+            If (Original_update_by Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(80).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(79).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(80).Value = CType(Original_update_by,String)
+            End If
+            If (Original_update_date.HasValue = true) Then
+                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(82).Value = CType(Original_update_date.Value,Date)
+            Else
+                Me.Adapter.UpdateCommand.Parameters(81).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(82).Value = Global.System.DBNull.Value
+            End If
+            Me.Adapter.UpdateCommand.Parameters(83).Value = CType(Original_visible,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(84).Value = CType(Original_visible_lv2,Boolean)
+            Me.Adapter.UpdateCommand.Parameters(85).Value = CType(Original_kesehatan_benih,Boolean)
+            If (Original_unit Is Nothing) Then
+                Me.Adapter.UpdateCommand.Parameters(86).Value = CType(1,Object)
+                Me.Adapter.UpdateCommand.Parameters(87).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.UpdateCommand.Parameters(86).Value = CType(0,Object)
+                Me.Adapter.UpdateCommand.Parameters(87).Value = CType(Original_unit,String)
+            End If
+            Me.Adapter.UpdateCommand.Parameters(88).Value = CType(id,Integer)
             Dim previousConnectionState As Global.System.Data.ConnectionState = Me.Adapter.UpdateCommand.Connection.State
             If ((Me.Adapter.UpdateCommand.Connection.State And Global.System.Data.ConnectionState.Open)  _
                         <> Global.System.Data.ConnectionState.Open) Then
@@ -42222,14 +42947,13 @@ Namespace HCQC_NewDatasetTableAdapters
         Public Overloads Overridable Function Update( _
                     ByVal id_login As Global.System.Nullable(Of Integer),  _
                     ByVal id_hvsprod As Global.System.Nullable(Of Integer),  _
-                    ByVal _class As String,  _
                     ByVal variety As String,  _
                     ByVal farmer As String,  _
                     ByVal location As String,  _
                     ByVal harvest As Global.System.Nullable(Of Date),  _
-                    ByVal croptype As String,  _
                     ByVal nomnl As String,  _
                     ByVal nojob As String,  _
+                    ByVal insplot As String,  _
                     ByVal weight As Global.System.Nullable(Of Decimal),  _
                     ByVal scope As String,  _
                     ByVal bag As Global.System.Nullable(Of Integer),  _
@@ -42239,22 +42963,28 @@ Namespace HCQC_NewDatasetTableAdapters
                     ByVal test_ger As Global.System.Nullable(Of Boolean),  _
                     ByVal test_via As Global.System.Nullable(Of Boolean),  _
                     ByVal test_raf As Global.System.Nullable(Of Boolean),  _
+                    ByVal test_ontest As Global.System.Nullable(Of Boolean),  _
                     ByVal remark As String,  _
-                    ByVal repro As String,  _
+                    ByVal loc_sample As String,  _
                     ByVal input_by As String,  _
                     ByVal input_date As Global.System.Nullable(Of Date),  _
+                    ByVal update_user As String,  _
+                    ByVal update_by As String,  _
                     ByVal update_date As Global.System.Nullable(Of Date),  _
+                    ByVal visible As Boolean,  _
+                    ByVal visible_lv2 As Boolean,  _
+                    ByVal kesehatan_benih As Boolean,  _
+                    ByVal unit As String,  _
                     ByVal Original_id As Integer,  _
                     ByVal Original_id_login As Global.System.Nullable(Of Integer),  _
                     ByVal Original_id_hvsprod As Global.System.Nullable(Of Integer),  _
-                    ByVal Original_class As String,  _
                     ByVal Original_variety As String,  _
                     ByVal Original_farmer As String,  _
                     ByVal Original_location As String,  _
                     ByVal Original_harvest As Global.System.Nullable(Of Date),  _
-                    ByVal Original_croptype As String,  _
                     ByVal Original_nomnl As String,  _
                     ByVal Original_nojob As String,  _
+                    ByVal Original_insplot As String,  _
                     ByVal Original_weight As Global.System.Nullable(Of Decimal),  _
                     ByVal Original_scope As String,  _
                     ByVal Original_bag As Global.System.Nullable(Of Integer),  _
@@ -42264,12 +42994,19 @@ Namespace HCQC_NewDatasetTableAdapters
                     ByVal Original_test_ger As Global.System.Nullable(Of Boolean),  _
                     ByVal Original_test_via As Global.System.Nullable(Of Boolean),  _
                     ByVal Original_test_raf As Global.System.Nullable(Of Boolean),  _
+                    ByVal Original_test_ontest As Global.System.Nullable(Of Boolean),  _
                     ByVal Original_remark As String,  _
-                    ByVal Original_repro As String,  _
+                    ByVal Original_loc_sample As String,  _
                     ByVal Original_input_by As String,  _
                     ByVal Original_input_date As Global.System.Nullable(Of Date),  _
-                    ByVal Original_update_date As Global.System.Nullable(Of Date)) As Integer
-            Return Me.Update(id_login, id_hvsprod, _class, variety, farmer, location, harvest, croptype, nomnl, nojob, weight, scope, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, remark, repro, input_by, input_date, update_date, Original_id, Original_id_login, Original_id_hvsprod, Original_class, Original_variety, Original_farmer, Original_location, Original_harvest, Original_croptype, Original_nomnl, Original_nojob, Original_weight, Original_scope, Original_bag, Original_test_sampling, Original_test_moi, Original_test_pur, Original_test_ger, Original_test_via, Original_test_raf, Original_remark, Original_repro, Original_input_by, Original_input_date, Original_update_date, Original_id)
+                    ByVal Original_update_user As String,  _
+                    ByVal Original_update_by As String,  _
+                    ByVal Original_update_date As Global.System.Nullable(Of Date),  _
+                    ByVal Original_visible As Boolean,  _
+                    ByVal Original_visible_lv2 As Boolean,  _
+                    ByVal Original_kesehatan_benih As Boolean,  _
+                    ByVal Original_unit As String) As Integer
+            Return Me.Update(id_login, id_hvsprod, variety, farmer, location, harvest, nomnl, nojob, insplot, weight, scope, bag, test_sampling, test_moi, test_pur, test_ger, test_via, test_raf, test_ontest, remark, loc_sample, input_by, input_date, update_user, update_by, update_date, visible, visible_lv2, kesehatan_benih, unit, Original_id, Original_id_login, Original_id_hvsprod, Original_variety, Original_farmer, Original_location, Original_harvest, Original_nomnl, Original_nojob, Original_insplot, Original_weight, Original_scope, Original_bag, Original_test_sampling, Original_test_moi, Original_test_pur, Original_test_ger, Original_test_via, Original_test_raf, Original_test_ontest, Original_remark, Original_loc_sample, Original_input_by, Original_input_date, Original_update_user, Original_update_by, Original_update_date, Original_visible, Original_visible_lv2, Original_kesehatan_benih, Original_unit, Original_id)
         End Function
     End Class
     
@@ -46387,6 +47124,10 @@ Namespace HCQC_NewDatasetTableAdapters
             tableMapping.ColumnMappings.Add("joblot", "joblot")
             tableMapping.ColumnMappings.Add("kec", "kec")
             tableMapping.ColumnMappings.Add("area", "area")
+            tableMapping.ColumnMappings.Add("blokno", "blokno")
+            tableMapping.ColumnMappings.Add("plant_qty", "plant_qty")
+            tableMapping.ColumnMappings.Add("area_ha", "area_ha")
+            tableMapping.ColumnMappings.Add("dusun", "dusun")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -46400,16 +47141,18 @@ Namespace HCQC_NewDatasetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(2) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
-            Me._commandCollection(0).CommandText = "SELECT        harvestprod.idcode, harvestprod.variety, category_crop.crop, harves"& _ 
-                "tprod.cgrname, harvestprod.harvest, harvestprod.norencana, harvestprod.nokontrak"& _ 
-                ", log_view_print_la1.Count, log_view_print_la1.LastPrint, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                    "& _ 
-                "     harvestprod.joblot, harvestprod.kec, harvestprod.area"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            log_"& _ 
-                "view_print_la1 RIGHT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         harvestprod ON log_vie"& _ 
-                "w_print_la1.idcode = harvestprod.idcode LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                       "& _ 
-                "  category_crop ON harvestprod.variety = category_crop.prodcode"
+            Me._commandCollection(0).CommandText = "SELECT        TOP (500) harvestprod.idcode, harvestprod.variety, category_crop.cr"& _ 
+                "op, harvestprod.cgrname, harvestprod.harvest, harvestprod.norencana, harvestprod"& _ 
+                ".nokontrak, log_view_print_la1.Count, log_view_print_la1.LastPrint, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
+                "               harvestprod.joblot, harvestprod.kec, harvestprod.area, harvestpro"& _ 
+                "d.blokno, harvestprod.plant_qty, harvestprod.area_ha, harvestprod.dusun"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM   "& _ 
+                "         log_view_print_la1 RIGHT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         harvestpr"& _ 
+                "od ON log_view_print_la1.idcode = harvestprod.idcode LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
+                "               category_crop ON harvestprod.variety = category_crop.prodcode"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"OR"& _ 
+                "DER BY harvestprod.idcode DESC"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -46431,10 +47174,23 @@ Namespace HCQC_NewDatasetTableAdapters
                 "     harvestprod.joblot, harvestprod.kec, harvestprod.area"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            log_"& _ 
                 "view_print_la1 RIGHT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         harvestprod ON log_vie"& _ 
                 "w_print_la1.idcode = harvestprod.idcode LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                       "& _ 
+                "  category_crop ON harvestprod.variety = category_crop.prodcode"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE (harvestp"& _ 
+                "rod.idcode LIKE @strvariable) OR (harvestprod.norencana LIKE @strvariable) OR (h"& _ 
+                "arvestprod.nokontrak LIKE @strvariable) "
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@strvariable", Global.System.Data.SqlDbType.VarChar, 15, Global.System.Data.ParameterDirection.Input, 0, 0, "idcode", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "SELECT        harvestprod.idcode, harvestprod.variety, category_crop.crop, harves"& _ 
+                "tprod.cgrname, harvestprod.harvest, harvestprod.norencana, harvestprod.nokontrak"& _ 
+                ", log_view_print_la1.Count, log_view_print_la1.LastPrint, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                    "& _ 
+                "     harvestprod.joblot, harvestprod.kec, harvestprod.area"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            log_"& _ 
+                "view_print_la1 RIGHT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         harvestprod ON log_vie"& _ 
+                "w_print_la1.idcode = harvestprod.idcode LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                       "& _ 
                 "  category_crop ON harvestprod.variety = category_crop.prodcode"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE YEAR(harv"& _ 
                 "estprod.harvest)=@tahun"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY harvestprod.idcode DESC"
-            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tahun", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tahun", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -46489,8 +47245,42 @@ Namespace HCQC_NewDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByTahun(ByVal dataTable As HCQC_NewDataset.report_a1DataTable, ByVal tahun As Decimal) As Integer
+        Public Overloads Overridable Function FillByParm(ByVal dataTable As HCQC_NewDataset.report_a1DataTable, ByVal strvariable As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (strvariable Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("strvariable")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(strvariable,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByParm(ByVal strvariable As String) As HCQC_NewDataset.report_a1DataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (strvariable Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("strvariable")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(strvariable,String)
+            End If
+            Dim dataTable As HCQC_NewDataset.report_a1DataTable = New HCQC_NewDataset.report_a1DataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByTahun(ByVal dataTable As HCQC_NewDataset.report_a1DataTable, ByVal tahun As Decimal) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(tahun,Decimal)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
@@ -46504,7 +47294,7 @@ Namespace HCQC_NewDatasetTableAdapters
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
         Public Overloads Overridable Function GetDataByTahun(ByVal tahun As Decimal) As HCQC_NewDataset.report_a1DataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
             Me.Adapter.SelectCommand.Parameters(0).Value = CType(tahun,Decimal)
             Dim dataTable As HCQC_NewDataset.report_a1DataTable = New HCQC_NewDataset.report_a1DataTable()
             Me.Adapter.Fill(dataTable)
@@ -46706,6 +47496,7 @@ Namespace HCQC_NewDatasetTableAdapters
             tableMapping.ColumnMappings.Add("gervigor_log", "gervigor_log")
             tableMapping.ColumnMappings.Add("accept_date", "accept_date")
             tableMapping.ColumnMappings.Add("kesehatan_benih", "kesehatan_benih")
+            tableMapping.ColumnMappings.Add("remark", "remark")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -46732,8 +47523,8 @@ Namespace HCQC_NewDatasetTableAdapters
                 "_Est, StatusResult, days_est, status_confirm, date_est, rafaction_log, purity_lo"& _ 
                 "g, moisture_log, viability_log, gerout_log, gerout_namelog, gertest_namelog, pur"& _ 
                 "ity_namelog, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         rafaction_namelog, moisture_namelog, via"& _ 
-                "bility_namelog, gervigor_namelog, gervigor_log, accept_date, kesehatan_benih"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FR"& _ 
-                "OM            report_status_pengujian"
+                "bility_namelog, gervigor_namelog, gervigor_log, accept_date, kesehatan_benih, re"& _ 
+                "mark"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            report_status_pengujian"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -46744,11 +47535,11 @@ Namespace HCQC_NewDatasetTableAdapters
                 "date, brt_in, date_est, days_est, farmer, gerout_log, gerout_namelog, gertest_na"& _ 
                 "melog, gervigor_log, gervigor_namelog, harvest, id, id_hvsprod, input_date, kese"& _ 
                 "hatan_benih, labnum, location, moisture_log, moisture_namelog, nojob, nomnl, pur"& _ 
-                "ity_log, purity_namelog, rafaction_log, rafaction_namelog, sampler, sampling, sc"& _ 
-                "ope, status_confirm, test_ger, test_moi, test_ontest, test_pur, test_raf, test_s"& _ 
-                "ampling, test_via, variety, viability_log, viability_namelog, weight FROM report"& _ 
-                "_status_pengujian WHERE (CAST(input_date AS date) BETWEEN @startdate AND @enddat"& _ 
-                "e) ORDER BY id DESC"
+                "ity_log, purity_namelog, rafaction_log, rafaction_namelog, remark, sampler, samp"& _ 
+                "ling, scope, status_confirm, test_ger, test_moi, test_ontest, test_pur, test_raf"& _ 
+                ", test_sampling, test_via, variety, viability_log, viability_namelog, weight FRO"& _ 
+                "M report_status_pengujian WHERE (CAST(input_date AS date) BETWEEN @startdate AND"& _ 
+                " @enddate) ORDER BY id DESC"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@startdate", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@enddate", Global.System.Data.SqlDbType.VarChar, 1024, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
@@ -46768,11 +47559,12 @@ Namespace HCQC_NewDatasetTableAdapters
                 "date, brt_in, date_est, days_est, farmer, gerout_log, gerout_namelog, gertest_na"& _ 
                 "melog, gervigor_log, gervigor_namelog, harvest, id, id_hvsprod, input_date, kese"& _ 
                 "hatan_benih, labnum, location, moisture_log, moisture_namelog, nojob, nomnl, pur"& _ 
-                "ity_log, purity_namelog, rafaction_log, rafaction_namelog, sampler, sampling, sc"& _ 
-                "ope, status_confirm, test_ger, test_moi, test_ontest, test_pur, test_raf, test_s"& _ 
-                "ampling, test_via, variety, viability_log, viability_namelog, weight FROM report"& _ 
-                "_status_pengujian WHERE (input_date <= DATEADD(dd, 1, EOMONTH(GETDATE()))) AND ("& _ 
-                "input_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 2))) ORDER BY input_date DESC"
+                "ity_log, purity_namelog, rafaction_log, rafaction_namelog, remark, sampler, samp"& _ 
+                "ling, scope, status_confirm, test_ger, test_moi, test_ontest, test_pur, test_raf"& _ 
+                ", test_sampling, test_via, variety, viability_log, viability_namelog, weight FRO"& _ 
+                "M report_status_pengujian WHERE (input_date <= DATEADD(dd, 1, EOMONTH(GETDATE())"& _ 
+                ")) AND (input_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 2))) ORDER BY input_da"& _ 
+                "te DESC"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
@@ -46783,11 +47575,11 @@ Namespace HCQC_NewDatasetTableAdapters
                 "date, brt_in, date_est, days_est, farmer, gerout_log, gerout_namelog, gertest_na"& _ 
                 "melog, gervigor_log, gervigor_namelog, harvest, id, id_hvsprod, input_date, kese"& _ 
                 "hatan_benih, labnum, location, moisture_log, moisture_namelog, nojob, nomnl, pur"& _ 
-                "ity_log, purity_namelog, rafaction_log, rafaction_namelog, sampler, sampling, sc"& _ 
-                "ope, status_confirm, test_ger, test_moi, test_ontest, test_pur, test_raf, test_s"& _ 
-                "ampling, test_via, variety, viability_log, viability_namelog, weight FROM report"& _ 
-                "_status_pengujian WHERE (input_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) "& _ 
-                "AND (input_date < DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC"
+                "ity_log, purity_namelog, rafaction_log, rafaction_namelog, remark, sampler, samp"& _ 
+                "ling, scope, status_confirm, test_ger, test_moi, test_ontest, test_pur, test_raf"& _ 
+                ", test_sampling, test_via, variety, viability_log, viability_namelog, weight FRO"& _ 
+                "M report_status_pengujian WHERE (input_date >= DATEADD(dd, 1, EOMONTH(GETDATE(),"& _ 
+                " - 1))) AND (input_date < DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -48058,6 +48850,9 @@ Namespace HCQC_NewDatasetTableAdapters
             tableMapping.ColumnMappings.Add("cgrname", "cgrname")
             tableMapping.ColumnMappings.Add("upload_date", "upload_date")
             tableMapping.ColumnMappings.Add("joblot", "joblot")
+            tableMapping.ColumnMappings.Add("area", "area")
+            tableMapping.ColumnMappings.Add("plant_qty", "plant_qty")
+            tableMapping.ColumnMappings.Add("area_ha", "area_ha")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -48071,16 +48866,17 @@ Namespace HCQC_NewDatasetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(1) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        harvestprod.idcode, category_crop.type, category_crop.crop, harvest"& _ 
                 "prod.harvest, harvestprod.variety, harvestprod.staff, harvestprod.kab, harvestpr"& _ 
                 "od.kec, harvestprod.desa, harvestprod.dusun, harvestprod.norencana, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
                 "               harvestprod.nokontrak, harvestprod.blokno, harvestprod.cgrno, har"& _ 
-                "vestprod.cgrname, harvestprod.upload_date, harvestprod.joblot"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            h"& _ 
-                "arvestprod LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         category_crop ON harvestpro"& _ 
-                "d.variety = category_crop.prodcode"
+                "vestprod.cgrname, harvestprod.upload_date, harvestprod.joblot, harvestprod.area,"& _ 
+                " harvestprod.plant_qty, harvestprod.area_ha"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            harvestprod LEFT OU"& _ 
+                "TER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         category_crop ON harvestprod.variety = catego"& _ 
+                "ry_crop.prodcode"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -48088,12 +48884,35 @@ Namespace HCQC_NewDatasetTableAdapters
                 "prod.harvest, harvestprod.variety, harvestprod.staff, harvestprod.kab, harvestpr"& _ 
                 "od.kec, harvestprod.desa, harvestprod.dusun, harvestprod.norencana, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
                 "               harvestprod.nokontrak, harvestprod.blokno, harvestprod.cgrno, har"& _ 
-                "vestprod.cgrname, harvestprod.upload_date, harvestprod.joblot"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            h"& _ 
-                "arvestprod LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         category_crop ON harvestpro"& _ 
-                "d.variety = category_crop.prodcode"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE YEAR(harvestprod.harvest)=@tahun"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDE"& _ 
-                "R BY harvestprod.idcode DESC"
+                "vestprod.cgrname, harvestprod.upload_date, harvestprod.joblot, harvestprod.area,"& _ 
+                " harvestprod.plant_qty, harvestprod.area_ha"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            harvestprod LEFT OU"& _ 
+                "TER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         category_crop ON harvestprod.variety = catego"& _ 
+                "ry_crop.prodcode"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(1).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tahun", Global.System.Data.SqlDbType.VarChar, 0, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT        harvestprod.idcode, category_crop.type, category_crop.crop, harvest"& _ 
+                "prod.harvest, harvestprod.variety, harvestprod.staff, harvestprod.kab, harvestpr"& _ 
+                "od.kec, harvestprod.desa, harvestprod.dusun, harvestprod.norencana, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
+                "               harvestprod.nokontrak, harvestprod.blokno, harvestprod.cgrno, har"& _ 
+                "vestprod.cgrname, harvestprod.upload_date, harvestprod.joblot, harvestprod.area,"& _ 
+                " harvestprod.plant_qty, harvestprod.area_ha"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            harvestprod LEFT OU"& _ 
+                "TER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         category_crop ON harvestprod.variety = catego"& _ 
+                "ry_crop.prodcode"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "SELECT        harvestprod.idcode, category_crop.type, category_crop.crop, harvest"& _ 
+                "prod.harvest, harvestprod.variety, harvestprod.staff, harvestprod.kab, harvestpr"& _ 
+                "od.kec, harvestprod.desa, harvestprod.dusun, harvestprod.norencana, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"          "& _ 
+                "               harvestprod.nokontrak, harvestprod.blokno, harvestprod.cgrno, har"& _ 
+                "vestprod.cgrname, harvestprod.upload_date, harvestprod.joblot, harvestprod.area,"& _ 
+                " harvestprod.area_ha, harvestprod.plant_qty, harvestprod.plantdate"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM        "& _ 
+                "    harvestprod LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         category_crop ON harve"& _ 
+                "stprod.variety = category_crop.prodcode"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (YEAR(harvestprod.harvest)"& _ 
+                " = @tahun)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY harvestprod.idcode DESC"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@tahun", Global.System.Data.SqlDbType.[Decimal], 0, Global.System.Data.ParameterDirection.Input, 0, 0, "", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -48124,13 +48943,35 @@ Namespace HCQC_NewDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByTahun(ByVal dataTable As HCQC_NewDataset.HarvestProductionDataTable, ByVal tahun As String) As Integer
+        Public Overloads Overridable Function FillBy(ByVal dataTable As HCQC_NewDataset.HarvestProductionDataTable) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (tahun Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("tahun")
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(tahun,String)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
             End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillBy1(ByVal dataTable As HCQC_NewDataset.HarvestProductionDataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByTahun(ByVal dataTable As HCQC_NewDataset.HarvestProductionDataTable, ByVal tahun As Decimal) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(tahun,Decimal)
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -48142,13 +48983,9 @@ Namespace HCQC_NewDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataByTahun(ByVal tahun As String) As HCQC_NewDataset.HarvestProductionDataTable
-            Me.Adapter.SelectCommand = Me.CommandCollection(1)
-            If (tahun Is Nothing) Then
-                Throw New Global.System.ArgumentNullException("tahun")
-            Else
-                Me.Adapter.SelectCommand.Parameters(0).Value = CType(tahun,String)
-            End If
+        Public Overloads Overridable Function GetDataByTahun(ByVal tahun As Decimal) As HCQC_NewDataset.HarvestProductionDataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            Me.Adapter.SelectCommand.Parameters(0).Value = CType(tahun,Decimal)
             Dim dataTable As HCQC_NewDataset.HarvestProductionDataTable = New HCQC_NewDataset.HarvestProductionDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -48339,6 +49176,7 @@ Namespace HCQC_NewDatasetTableAdapters
             tableMapping.ColumnMappings.Add("abnormality", "abnormality")
             tableMapping.ColumnMappings.Add("loc_sample", "loc_sample")
             tableMapping.ColumnMappings.Add("raf_ket", "raf_ket")
+            tableMapping.ColumnMappings.Add("norencana", "norencana")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -48367,7 +49205,7 @@ Namespace HCQC_NewDatasetTableAdapters
                 "1 THEN dt ELSE - 1 END AS dt, [Abnormal Seedling (%)], [Hard Seed (%)], [Fresh S"& _ 
                 "eed (%)], [Dead Seed (%)], ger_date, ger_scnd, ger_inputat, id_hvsprod, staff, p"& _ 
                 "ur_result, request_date, abnormality, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         loc_sample, raf"& _ 
-                "_ket"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            report_global_view"
+                "_ket, norencana"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            report_global_view"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
@@ -48382,15 +49220,15 @@ Namespace HCQC_NewDatasetTableAdapters
                 "], abnormality, analys, crop, datein, CASE WHEN test_ger = 1 THEN dt ELSE - 1 EN"& _ 
                 "D AS dt, farmer, ger_date, ger_inputat, ger_scnd, harvest, id, id_hvsprod, inert"& _ 
                 ", labnum, loc_sample, location, moi_analyst, moi_date, moi_inputat, CASE WHEN te"& _ 
-                "st_moi = 1 THEN moi_mean ELSE - 1 END AS moi_mean, nojob, nomnl, other, pur_date"& _ 
-                ", pur_inputat, pur_result, CASE WHEN test_pur = 1 THEN pure ELSE - 1 END AS pure"& _ 
-                ", purity_mean, raf_date, raf_inputat, raf_ket, raf_result, CASE WHEN test_raf = "& _ 
-                "1 THEN raf_total ELSE - 1 END AS raf_total, remark, request_date, sampling_g, sc"& _ 
-                "ope, staff, test_ger, test_moi, test_ontest, test_pur, test_raf, test_via, varie"& _ 
-                "ty, vg, via_analyst, via_date, via_inputat, CASE WHEN test_via = 1 THEN via_mean"& _ 
-                " ELSE - 1 END AS via_mean, via_result, weight, ws FROM report_global_view WHERE "& _ 
-                "(request_date >= DATEFROMPARTS(YEAR(GETDATE()) - 1, 1, 1)) AND (request_date < D"& _ 
-                "ATEADD(dd, 1, EOMONTH(GETDATE())))"
+                "st_moi = 1 THEN moi_mean ELSE - 1 END AS moi_mean, nojob, nomnl, norencana, othe"& _ 
+                "r, pur_date, pur_inputat, pur_result, CASE WHEN test_pur = 1 THEN pure ELSE - 1 "& _ 
+                "END AS pure, purity_mean, raf_date, raf_inputat, raf_ket, raf_result, CASE WHEN "& _ 
+                "test_raf = 1 THEN raf_total ELSE - 1 END AS raf_total, remark, request_date, sam"& _ 
+                "pling_g, scope, staff, test_ger, test_moi, test_ontest, test_pur, test_raf, test"& _ 
+                "_via, variety, vg, via_analyst, via_date, via_inputat, CASE WHEN test_via = 1 TH"& _ 
+                "EN via_mean ELSE - 1 END AS via_mean, via_result, weight, ws FROM report_global_"& _ 
+                "view WHERE (request_date >= DATEFROMPARTS(YEAR(GETDATE()) - 1, 1, 1)) AND (reque"& _ 
+                "st_date < DATEADD(dd, 1, EOMONTH(GETDATE())))"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
@@ -48398,15 +49236,15 @@ Namespace HCQC_NewDatasetTableAdapters
                 "], abnormality, analys, crop, datein, CASE WHEN test_ger = 1 THEN dt ELSE - 1 EN"& _ 
                 "D AS dt, farmer, ger_date, ger_inputat, ger_scnd, harvest, id, id_hvsprod, inert"& _ 
                 ", labnum, loc_sample, location, moi_analyst, moi_date, moi_inputat, CASE WHEN te"& _ 
-                "st_moi = 1 THEN moi_mean ELSE - 1 END AS moi_mean, nojob, nomnl, other, pur_date"& _ 
-                ", pur_inputat, pur_result, CASE WHEN test_pur = 1 THEN pure ELSE - 1 END AS pure"& _ 
-                ", purity_mean, raf_date, raf_inputat, raf_ket, raf_result, CASE WHEN test_raf = "& _ 
-                "1 THEN raf_total ELSE - 1 END AS raf_total, remark, request_date, sampling_g, sc"& _ 
-                "ope, staff, test_ger, test_moi, test_ontest, test_pur, test_raf, test_via, varie"& _ 
-                "ty, vg, via_analyst, via_date, via_inputat, CASE WHEN test_via = 1 THEN via_mean"& _ 
-                " ELSE - 1 END AS via_mean, via_result, weight, ws FROM report_global_view WHERE "& _ 
-                "(request_date >= DATEFROMPARTS(YEAR(GETDATE()), 1, 1)) AND (request_date < DATEA"& _ 
-                "DD(dd, 1, EOMONTH(GETDATE())))"
+                "st_moi = 1 THEN moi_mean ELSE - 1 END AS moi_mean, nojob, nomnl, norencana, othe"& _ 
+                "r, pur_date, pur_inputat, pur_result, CASE WHEN test_pur = 1 THEN pure ELSE - 1 "& _ 
+                "END AS pure, purity_mean, raf_date, raf_inputat, raf_ket, raf_result, CASE WHEN "& _ 
+                "test_raf = 1 THEN raf_total ELSE - 1 END AS raf_total, remark, request_date, sam"& _ 
+                "pling_g, scope, staff, test_ger, test_moi, test_ontest, test_pur, test_raf, test"& _ 
+                "_via, variety, vg, via_analyst, via_date, via_inputat, CASE WHEN test_via = 1 TH"& _ 
+                "EN via_mean ELSE - 1 END AS via_mean, via_result, weight, ws FROM report_global_"& _ 
+                "view WHERE (request_date >= DATEFROMPARTS(YEAR(GETDATE()), 1, 1)) AND (request_d"& _ 
+                "ate < DATEADD(dd, 1, EOMONTH(GETDATE())))"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
@@ -48970,7 +49808,7 @@ Namespace HCQC_NewDatasetTableAdapters
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitCommandCollection()
-            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(0) {}
+            Me._commandCollection = New Global.System.Data.SqlClient.SqlCommand(3) {}
             Me._commandCollection(0) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(0).Connection = Me.Connection
             Me._commandCollection(0).CommandText = "SELECT        qc_confirm_view.id, qc_confirm_view.variety, qc_confirm_view.farmer"& _ 
@@ -48989,6 +49827,70 @@ Namespace HCQC_NewDatasetTableAdapters
                 "_confirm_view.variety LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         spl_request ON q"& _ 
                 "c_confirm_view.id = spl_request.id"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(1).Connection = Me.Connection
+            Me._commandCollection(1).CommandText = "SELECT        qc_confirm_view.id, qc_confirm_view.variety, qc_confirm_view.farmer"& _ 
+                ", qc_confirm_view.location, qc_confirm_view.harvest, qc_confirm_view.weight, qc_"& _ 
+                "confirm_view.nomnl, qc_confirm_view.nojob, qc_confirm_view.scope, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"            "& _ 
+                "             qc_confirm_view.nama_req, qc_confirm_view.input_date, qc_confirm_vi"& _ 
+                "ew.nama_con, qc_confirm_view.tgl_confirm, qc_confirm_view.status, qc_confirm_vie"& _ 
+                "w.labnum, qc_confirm_view.nama_ppc, qc_confirm_view.tgl_kirim, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
+                "          qc_confirm_view.rafaksi, qc_confirm_view.officer, qc_confirm_view.rema"& _ 
+                "rk, qc_confirm_view.tgl, qc_confirm_view.id_hvsprod, spl_request.test_sampling, "& _ 
+                "spl_request.test_moi, spl_request.test_pur, spl_request.test_ger, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"            "& _ 
+                "             spl_request.test_via, spl_request.test_raf, category_crop.crop, qc_"& _ 
+                "confirm_view.status_confirm, qc_confirm_view.information_rejected, qc_confirm_vi"& _ 
+                "ew.receipt_date, spl_request.loc_sample"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            category_crop RIGHT OUT"& _ 
+                "ER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         qc_confirm_view ON category_crop.prodcode = qc"& _ 
+                "_confirm_view.variety LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         spl_request ON q"& _ 
+                "c_confirm_view.id = spl_request.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (spl_request.input_date >= DATE"& _ 
+                "ADD(dd, 1, EOMONTH(GETDATE(), - 2))) AND (spl_request.input_date < DATEADD(dd, 1"& _ 
+                ", EOMONTH(GETDATE())))"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY spl_request.id DESC"
+            Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(2).Connection = Me.Connection
+            Me._commandCollection(2).CommandText = "SELECT        qc_confirm_view.id, qc_confirm_view.variety, qc_confirm_view.farmer"& _ 
+                ", qc_confirm_view.location, qc_confirm_view.harvest, qc_confirm_view.weight, qc_"& _ 
+                "confirm_view.nomnl, qc_confirm_view.nojob, qc_confirm_view.scope, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"            "& _ 
+                "             qc_confirm_view.nama_req, qc_confirm_view.input_date, qc_confirm_vi"& _ 
+                "ew.nama_con, qc_confirm_view.tgl_confirm, qc_confirm_view.status, qc_confirm_vie"& _ 
+                "w.labnum, qc_confirm_view.nama_ppc, qc_confirm_view.tgl_kirim, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
+                "          qc_confirm_view.rafaksi, qc_confirm_view.officer, qc_confirm_view.rema"& _ 
+                "rk, qc_confirm_view.tgl, qc_confirm_view.id_hvsprod, spl_request.test_sampling, "& _ 
+                "spl_request.test_moi, spl_request.test_pur, spl_request.test_ger, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"            "& _ 
+                "             spl_request.test_via, spl_request.test_raf, category_crop.crop, qc_"& _ 
+                "confirm_view.status_confirm, qc_confirm_view.information_rejected, qc_confirm_vi"& _ 
+                "ew.receipt_date, spl_request.loc_sample"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            category_crop RIGHT OUT"& _ 
+                "ER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         qc_confirm_view ON category_crop.prodcode = qc"& _ 
+                "_confirm_view.variety LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         spl_request ON q"& _ 
+                "c_confirm_view.id = spl_request.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (qc_confirm_view.variety LIKE @"& _ 
+                "strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (qc_confirm_view.nojob LIKE @strvariab"& _ 
+                "le) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (qc_confirm_view.labnum LIKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)& _ 
+                "                         (qc_confirm_view.id_hvsprod LIKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    "& _ 
+                "                     (qc_confirm_view.farmer LIKE @strvariable)"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY spl_re"& _ 
+                "quest.id DESC"
+            Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
+            Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@strvariable", Global.System.Data.SqlDbType.VarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "variety", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
+            Me._commandCollection(3).Connection = Me.Connection
+            Me._commandCollection(3).CommandText = "SELECT        qc_confirm_view.id, qc_confirm_view.variety, qc_confirm_view.farmer"& _ 
+                ", qc_confirm_view.location, qc_confirm_view.harvest, qc_confirm_view.weight, qc_"& _ 
+                "confirm_view.nomnl, qc_confirm_view.nojob, qc_confirm_view.scope, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"            "& _ 
+                "             qc_confirm_view.nama_req, qc_confirm_view.input_date, qc_confirm_vi"& _ 
+                "ew.nama_con, qc_confirm_view.tgl_confirm, qc_confirm_view.status, qc_confirm_vie"& _ 
+                "w.labnum, qc_confirm_view.nama_ppc, qc_confirm_view.tgl_kirim, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"               "& _ 
+                "          qc_confirm_view.rafaksi, qc_confirm_view.officer, qc_confirm_view.rema"& _ 
+                "rk, qc_confirm_view.tgl, qc_confirm_view.id_hvsprod, spl_request.test_sampling, "& _ 
+                "spl_request.test_moi, spl_request.test_pur, spl_request.test_ger, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"            "& _ 
+                "             spl_request.test_via, spl_request.test_raf, category_crop.crop, qc_"& _ 
+                "confirm_view.status_confirm, qc_confirm_view.information_rejected, qc_confirm_vi"& _ 
+                "ew.receipt_date, spl_request.loc_sample"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            category_crop RIGHT OUT"& _ 
+                "ER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         qc_confirm_view ON category_crop.prodcode = qc"& _ 
+                "_confirm_view.variety LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         spl_request ON q"& _ 
+                "c_confirm_view.id = spl_request.id"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (spl_request.input_date < DATEA"& _ 
+                "DD(dd, 1, EOMONTH(GETDATE()))) AND (spl_request.input_date >= DATEADD(dd, 1, EOM"& _ 
+                "ONTH(GETDATE(), - 1)))"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"ORDER BY spl_request.id DESC"
+            Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -49010,6 +49912,88 @@ Namespace HCQC_NewDatasetTableAdapters
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], true)>  _
         Public Overloads Overridable Function GetData() As HCQC_NewDataset.Spl_request1DataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(0)
+            Dim dataTable As HCQC_NewDataset.Spl_request1DataTable = New HCQC_NewDataset.Spl_request1DataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByLastMonth(ByVal dataTable As HCQC_NewDataset.Spl_request1DataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByLastMonth() As HCQC_NewDataset.Spl_request1DataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(1)
+            Dim dataTable As HCQC_NewDataset.Spl_request1DataTable = New HCQC_NewDataset.Spl_request1DataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByParameter(ByVal dataTable As HCQC_NewDataset.Spl_request1DataTable, ByVal strvariable As String) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (strvariable Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(strvariable,String)
+            End If
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByParameter(ByVal strvariable As String) As HCQC_NewDataset.Spl_request1DataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(2)
+            If (strvariable Is Nothing) Then
+                Me.Adapter.SelectCommand.Parameters(0).Value = Global.System.DBNull.Value
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(strvariable,String)
+            End If
+            Dim dataTable As HCQC_NewDataset.Spl_request1DataTable = New HCQC_NewDataset.Spl_request1DataTable()
+            Me.Adapter.Fill(dataTable)
+            Return dataTable
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
+        Public Overloads Overridable Function FillByThisMonth(ByVal dataTable As HCQC_NewDataset.Spl_request1DataTable) As Integer
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
+            If (Me.ClearBeforeFill = true) Then
+                dataTable.Clear
+            End If
+            Dim returnValue As Integer = Me.Adapter.Fill(dataTable)
+            Return returnValue
+        End Function
+        
+        <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
+         Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
+         Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
+        Public Overloads Overridable Function GetDataByThisMonth() As HCQC_NewDataset.Spl_request1DataTable
+            Me.Adapter.SelectCommand = Me.CommandCollection(3)
             Dim dataTable As HCQC_NewDataset.Spl_request1DataTable = New HCQC_NewDataset.Spl_request1DataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -49171,6 +50155,8 @@ Namespace HCQC_NewDatasetTableAdapters
             tableMapping.ColumnMappings.Add("req_date", "req_date")
             tableMapping.ColumnMappings.Add("remark", "remark")
             tableMapping.ColumnMappings.Add("loc_sample", "loc_sample")
+            tableMapping.ColumnMappings.Add("norencana", "norencana")
+            tableMapping.ColumnMappings.Add("unit", "unit")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -49190,84 +50176,86 @@ Namespace HCQC_NewDatasetTableAdapters
             Me._commandCollection(0).CommandText = "SELECT        id, id_hvsprod, crop, variety, farmer, nomnl, nojob, scope, weight,"& _ 
                 " location, harvest, bag, test_sampling, test_moi, test_pur, test_ger, test_via, "& _ 
                 "test_raf, req_name, tgl_confirm, status, information_rejected, nama_con, labnum,"& _ 
-                " "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         status_confirm, req_date, remark, loc_sample"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM  "& _ 
-                "          qc_confirm_viewer"
+                " "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         status_confirm, req_date, remark, loc_sample, norenc"& _ 
+                "ana, unit"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            qc_confirm_viewer"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(1) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(1).Connection = Me.Connection
             Me._commandCollection(1).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
-                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
-                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (status_conf"& _ 
-                "irm = 'Accepted') AND (req_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND "& _ 
-                "(req_date < DATEADD(dd, 1, EOMONTH(GETDATE())))"
+                "loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date, req_n"& _ 
+                "ame, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test"& _ 
+                "_sampling, test_via, tgl_confirm, unit, variety, weight FROM qc_confirm_viewer W"& _ 
+                "HERE (status_confirm = 'Accepted') AND (req_date >= DATEADD(dd, 1, EOMONTH(GETDA"& _ 
+                "TE(), - 1))) AND (req_date < DATEADD(dd, 1, EOMONTH(GETDATE())))"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
             Me._commandCollection(2).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
-                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
-                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (req_date >="& _ 
-                " DATEADD(dd, 1, EOMONTH(GETDATE(), - 2))) AND (req_date < DATEADD(dd, 1, EOMONTH"& _ 
-                "(GETDATE()))) ORDER BY id DESC"
+                "loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date, req_n"& _ 
+                "ame, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test"& _ 
+                "_sampling, test_via, tgl_confirm, unit, variety, weight FROM qc_confirm_viewer W"& _ 
+                "HERE (req_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 2))) AND (req_date < DATEA"& _ 
+                "DD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(3).Connection = Me.Connection
             Me._commandCollection(3).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
-                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
-                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (status_conf"& _ 
-                "irm = 'On Process')"
+                "loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date, req_n"& _ 
+                "ame, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test"& _ 
+                "_sampling, test_via, tgl_confirm, unit, variety, weight FROM qc_confirm_viewer W"& _ 
+                "HERE (status_confirm = 'On Process')"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
             Me._commandCollection(4).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
-                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
-                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (status_conf"& _ 
-                "irm = 'Rejected') AND (req_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND "& _ 
-                "(req_date < DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC"
+                "loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date, req_n"& _ 
+                "ame, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test"& _ 
+                "_sampling, test_via, tgl_confirm, unit, variety, weight FROM qc_confirm_viewer W"& _ 
+                "HERE (status_confirm = 'Rejected') AND (req_date >= DATEADD(dd, 1, EOMONTH(GETDA"& _ 
+                "TE(), - 1))) AND (req_date < DATEADD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DES"& _ 
+                "C"
             Me._commandCollection(4).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(5) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(5).Connection = Me.Connection
             Me._commandCollection(5).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
-                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
-                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (labnum LIKE"& _ 
-                " @strvar) OR (id_hvsprod LIKE @strvar) OR (variety LIKE @strvar) OR (nomnl LIKE "& _ 
-                "@strvar) OR (nojob LIKE @strvar) OR (scope LIKE @strvar) OR (farmer LIKE @strvar"& _ 
-                ") OR (location LIKE @strvar) ORDER BY id DESC"
+                "loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date, req_n"& _ 
+                "ame, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test"& _ 
+                "_sampling, test_via, tgl_confirm, unit, variety, weight FROM qc_confirm_viewer W"& _ 
+                "HERE (labnum LIKE @strvar) OR (id_hvsprod LIKE @strvar) OR (variety LIKE @strvar"& _ 
+                ") OR (nomnl LIKE @strvar) OR (nojob LIKE @strvar) OR (scope LIKE @strvar) OR (fa"& _ 
+                "rmer LIKE @strvar) OR (location LIKE @strvar) ORDER BY id DESC"
             Me._commandCollection(5).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(5).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@strvar", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, Nothing, Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(6) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(6).Connection = Me.Connection
             Me._commandCollection(6).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
-                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
-                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (req_date >="& _ 
-                " DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date < DATEADD(dd, 1, EOMONTH"& _ 
-                "(GETDATE()))) ORDER BY id DESC"
+                "loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date, req_n"& _ 
+                "ame, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test"& _ 
+                "_sampling, test_via, tgl_confirm, unit, variety, weight FROM qc_confirm_viewer W"& _ 
+                "HERE (req_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date < DATEA"& _ 
+                "DD(dd, 1, EOMONTH(GETDATE()))) ORDER BY id DESC"
             Me._commandCollection(6).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(7) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(7).Connection = Me.Connection
-            Me._commandCollection(7).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
-                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
-                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (variety LIK"& _ 
-                "E @strvariable) OR (nomnl LIKE @strvariable) OR (nojob LIKE @strvariable) OR (la"& _ 
-                "bnum LIKE @strvariable) OR (status_confirm LIKE @strvariable) OR (id_hvsprod LIK"& _ 
-                "E @strvariable)"
+            Me._commandCollection(7).CommandText = "SELECT        bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, l"& _ 
+                "abnum, loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date"& _ 
+                ", req_name, scope, status, status_confirm, test_ger, test_moi, test_pur, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"     "& _ 
+                "                    test_raf, test_sampling, test_via, tgl_confirm, unit, variet"& _ 
+                "y, weight"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            qc_confirm_viewer"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (variety LIKE @strvar"& _ 
+                "iable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (nomnl LIKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"              "& _ 
+                "           (nojob LIKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (labnum LIKE @"& _ 
+                "strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (status_confirm LIKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (norencana LIKE @strvariable)"
             Me._commandCollection(7).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(7).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@strvariable", Global.System.Data.SqlDbType.VarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "variety", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(8) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(8).Connection = Me.Connection
             Me._commandCollection(8).CommandText = "SELECT bag, crop, farmer, harvest, id, id_hvsprod, information_rejected, labnum, "& _ 
-                "loc_sample, location, nama_con, nojob, nomnl, remark, req_date, req_name, scope,"& _ 
-                " status, status_confirm, test_ger, test_moi, test_pur, test_raf, test_sampling, "& _ 
-                "test_via, tgl_confirm, variety, weight FROM qc_confirm_viewer WHERE (req_date >="& _ 
-                " DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date < DATEADD(dd, 1, EOMONTH"& _ 
-                "(GETDATE()))) AND (variety LIKE @Variety) AND (scope = 'Raw Material') ORDER BY "& _ 
-                "id DESC"
+                "loc_sample, location, nama_con, nojob, nomnl, norencana, remark, req_date, req_n"& _ 
+                "ame, scope, status, status_confirm, test_ger, test_moi, test_pur, test_raf, test"& _ 
+                "_sampling, test_via, tgl_confirm, unit, variety, weight FROM qc_confirm_viewer W"& _ 
+                "HERE (req_date >= DATEADD(dd, 1, EOMONTH(GETDATE(), - 1))) AND (req_date < DATEA"& _ 
+                "DD(dd, 1, EOMONTH(GETDATE()))) AND (variety LIKE @Variety) AND (scope = 'Raw Mat"& _ 
+                "erial') ORDER BY id DESC"
             Me._commandCollection(8).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(8).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@Variety", Global.System.Data.SqlDbType.VarChar, 25, Global.System.Data.ParameterDirection.Input, 0, 0, "variety", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
         End Sub
@@ -49962,10 +50950,10 @@ Namespace HCQC_NewDatasetTableAdapters
                 "ss' ELSE 'Not Pass' END AS result, dt_t, analys, ket, arsipcek, id_hvsprod, prod"& _ 
                 "_staff, cgrname"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            rafaction_view"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (id LIKE @strvaria"& _ 
                 "ble) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (variety LIKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"              "& _ 
-                "           (labnum LIKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (id_hvsprod L"& _ 
-                "IKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (nojob LIKE @strvariable)"
+                "           (labnum LIKE @strvariable) OR"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         (nojob LIKE @"& _ 
+                "strvariable)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
-            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@strvariable", Global.System.Data.SqlDbType.Int, 4, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
+            Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@strvariable", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "id", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(4).Connection = Me.Connection
             Me._commandCollection(4).CommandText = "SELECT        id, labnum, variety, farmer, location, harvest, nomnl, nojob, weigh"& _ 
@@ -50073,9 +51061,13 @@ Namespace HCQC_NewDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.Fill, false)>  _
-        Public Overloads Overridable Function FillByStrParameter(ByVal dataTable As HCQC_NewDataset.rafaction_viewDataTable, ByVal strvariable As Integer) As Integer
+        Public Overloads Overridable Function FillByStrParameter(ByVal dataTable As HCQC_NewDataset.rafaction_viewDataTable, ByVal strvariable As String) As Integer
             Me.Adapter.SelectCommand = Me.CommandCollection(3)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(strvariable,Integer)
+            If (strvariable Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("strvariable")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(strvariable,String)
+            End If
             If (Me.ClearBeforeFill = true) Then
                 dataTable.Clear
             End If
@@ -50087,9 +51079,13 @@ Namespace HCQC_NewDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0"),  _
          Global.System.ComponentModel.Design.HelpKeywordAttribute("vs.data.TableAdapter"),  _
          Global.System.ComponentModel.DataObjectMethodAttribute(Global.System.ComponentModel.DataObjectMethodType.[Select], false)>  _
-        Public Overloads Overridable Function GetDataByStrParameter(ByVal strvariable As Integer) As HCQC_NewDataset.rafaction_viewDataTable
+        Public Overloads Overridable Function GetDataByStrParameter(ByVal strvariable As String) As HCQC_NewDataset.rafaction_viewDataTable
             Me.Adapter.SelectCommand = Me.CommandCollection(3)
-            Me.Adapter.SelectCommand.Parameters(0).Value = CType(strvariable,Integer)
+            If (strvariable Is Nothing) Then
+                Throw New Global.System.ArgumentNullException("strvariable")
+            Else
+                Me.Adapter.SelectCommand.Parameters(0).Value = CType(strvariable,String)
+            End If
             Dim dataTable As HCQC_NewDataset.rafaction_viewDataTable = New HCQC_NewDataset.rafaction_viewDataTable()
             Me.Adapter.Fill(dataTable)
             Return dataTable
@@ -50276,6 +51272,8 @@ Namespace HCQC_NewDatasetTableAdapters
             tableMapping.ColumnMappings.Add("remark", "remark")
             tableMapping.ColumnMappings.Add("loc_sample", "loc_sample")
             tableMapping.ColumnMappings.Add("LA4", "LA4")
+            tableMapping.ColumnMappings.Add("norencana", "norencana")
+            tableMapping.ColumnMappings.Add("unit", "unit")
             Me._adapter.TableMappings.Add(tableMapping)
         End Sub
         
@@ -50283,7 +51281,7 @@ Namespace HCQC_NewDatasetTableAdapters
          Global.System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")>  _
         Private Sub InitConnection()
             Me._connection = New Global.System.Data.SqlClient.SqlConnection()
-            Me._connection.ConnectionString = Global.WindowsApplication1.My.MySettings.Default.HCQC_serverConnectionString1
+            Me._connection.ConnectionString = Global.WindowsApplication1.My.MySettings.Default.HCQC_serverConnectionString
         End Sub
         
         <Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
@@ -50303,7 +51301,8 @@ Namespace HCQC_NewDatasetTableAdapters
                 "irm_viewer.information_rejected, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         qc_confirm_viewer.na"& _ 
                 "ma_con, qc_confirm_viewer.labnum, qc_confirm_viewer.status_confirm, qc_confirm_v"& _ 
                 "iewer.req_date, qc_confirm_viewer.remark, qc_confirm_viewer.loc_sample, log_view"& _ 
-                "_print_la4.Count AS LA4"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            qc_confirm_viewer LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    "& _ 
+                "_print_la4.Count AS LA4, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         qc_confirm_viewer.norencana,"& _ 
+                " qc_confirm_viewer.unit"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            qc_confirm_viewer LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    "& _ 
                 "                     log_view_print_la4 ON qc_confirm_viewer.labnum = log_view_p"& _ 
                 "rint_la4.labnum"
             Me._commandCollection(0).CommandType = Global.System.Data.CommandType.Text
@@ -50320,28 +51319,29 @@ Namespace HCQC_NewDatasetTableAdapters
                 "irm_viewer.information_rejected, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         qc_confirm_viewer.na"& _ 
                 "ma_con, qc_confirm_viewer.labnum, qc_confirm_viewer.status_confirm, qc_confirm_v"& _ 
                 "iewer.req_date, qc_confirm_viewer.remark, qc_confirm_viewer.loc_sample, log_view"& _ 
-                "_print_la4.Count AS LA4"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            qc_confirm_viewer LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    "& _ 
-                "                     log_view_print_la4 ON qc_confirm_viewer.labnum = log_view_p"& _ 
-                "rint_la4.labnum"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (log_view_print_la4.Count IS NULL) AND (qc_confirm"& _ 
-                "_viewer.tgl_confirm >= CAST(GETDATE() AS Date)) AND (qc_confirm_viewer.labnum IS"& _ 
-                " NOT NULL)"
+                "_print_la4.Count AS LA4, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         qc_confirm_viewer.unit"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM"& _ 
+                "            qc_confirm_viewer LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         log_view"& _ 
+                "_print_la4 ON qc_confirm_viewer.labnum = log_view_print_la4.labnum"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE       "& _ 
+                " (log_view_print_la4.Count IS NULL) AND (CAST(qc_confirm_viewer.tgl_confirm AS D"& _ 
+                "ATE) = CAST(GETDATE() AS DATE)) AND (qc_confirm_viewer.labnum IS NOT NULL)"
             Me._commandCollection(1).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2) = New Global.System.Data.SqlClient.SqlCommand()
             Me._commandCollection(2).Connection = Me.Connection
-            Me._commandCollection(2).CommandText = "SELECT        qc_confirm_viewer.id, qc_confirm_viewer.id_hvsprod, qc_confirm_view"& _ 
-                "er.crop, qc_confirm_viewer.variety, qc_confirm_viewer.farmer, qc_confirm_viewer."& _ 
-                "nomnl, qc_confirm_viewer.nojob, qc_confirm_viewer.scope, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                     "& _ 
-                "    qc_confirm_viewer.weight, qc_confirm_viewer.location, qc_confirm_viewer.harv"& _ 
-                "est, qc_confirm_viewer.bag, qc_confirm_viewer.test_sampling, qc_confirm_viewer.t"& _ 
-                "est_moi, qc_confirm_viewer.test_pur, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         qc_confirm_viewe"& _ 
-                "r.test_ger, qc_confirm_viewer.test_via, qc_confirm_viewer.test_raf, qc_confirm_v"& _ 
-                "iewer.req_name, qc_confirm_viewer.tgl_confirm, qc_confirm_viewer.status, qc_conf"& _ 
-                "irm_viewer.information_rejected, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         qc_confirm_viewer.na"& _ 
-                "ma_con, qc_confirm_viewer.labnum, qc_confirm_viewer.status_confirm, qc_confirm_v"& _ 
-                "iewer.req_date, qc_confirm_viewer.remark, qc_confirm_viewer.loc_sample, log_view"& _ 
-                "_print_la4.Count AS LA4"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            qc_confirm_viewer LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    "& _ 
-                "                     log_view_print_la4 ON qc_confirm_viewer.labnum = log_view_p"& _ 
-                "rint_la4.labnum"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (qc_confirm_viewer.labnum LIKE @ParameterLabnum)"
+            Me._commandCollection(2).CommandText = "SELECT        TOP (100) qc_confirm_viewer.id, qc_confirm_viewer.id_hvsprod, qc_co"& _ 
+                "nfirm_viewer.crop, qc_confirm_viewer.variety, qc_confirm_viewer.farmer, qc_confi"& _ 
+                "rm_viewer.nomnl, qc_confirm_viewer.nojob, qc_confirm_viewer.scope, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"           "& _ 
+                "              qc_confirm_viewer.weight, qc_confirm_viewer.location, qc_confirm_v"& _ 
+                "iewer.harvest, qc_confirm_viewer.bag, qc_confirm_viewer.test_sampling, qc_confir"& _ 
+                "m_viewer.test_moi, qc_confirm_viewer.test_pur, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         qc_con"& _ 
+                "firm_viewer.test_ger, qc_confirm_viewer.test_via, qc_confirm_viewer.test_raf, qc"& _ 
+                "_confirm_viewer.req_name, qc_confirm_viewer.tgl_confirm, qc_confirm_viewer.statu"& _ 
+                "s, qc_confirm_viewer.information_rejected, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         qc_confirm"& _ 
+                "_viewer.nama_con, qc_confirm_viewer.labnum, qc_confirm_viewer.status_confirm, qc"& _ 
+                "_confirm_viewer.req_date, qc_confirm_viewer.remark, qc_confirm_viewer.loc_sample"& _ 
+                ", log_view_print_la4.Count AS LA4, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         qc_confirm_viewer."& _ 
+                "unit"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            qc_confirm_viewer LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                       "& _ 
+                "  log_view_print_la4 ON qc_confirm_viewer.labnum = log_view_print_la4.labnum"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WH"& _ 
+                "ERE        (qc_confirm_viewer.labnum LIKE @ParameterLabnum)"
             Me._commandCollection(2).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(2).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@ParameterLabnum", Global.System.Data.SqlDbType.VarChar, 15, Global.System.Data.ParameterDirection.Input, 0, 0, "labnum", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(3) = New Global.System.Data.SqlClient.SqlCommand()
@@ -50357,11 +51357,11 @@ Namespace HCQC_NewDatasetTableAdapters
                 "irm_viewer.information_rejected, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         qc_confirm_viewer.na"& _ 
                 "ma_con, qc_confirm_viewer.labnum, qc_confirm_viewer.status_confirm, qc_confirm_v"& _ 
                 "iewer.req_date, qc_confirm_viewer.remark, qc_confirm_viewer.loc_sample, log_view"& _ 
-                "_print_la4.Count AS LA4"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM            qc_confirm_viewer LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"    "& _ 
-                "                     log_view_print_la4 ON qc_confirm_viewer.labnum = log_view_p"& _ 
-                "rint_la4.labnum"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE        (qc_confirm_viewer.scope LIKE @parameterscope) AND"& _ 
-                " (qc_confirm_viewer.tgl_confirm >= CAST(GETDATE() AS Date)) AND (qc_confirm_view"& _ 
-                "er.labnum IS NOT NULL)"
+                "_print_la4.Count AS LA4, "&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         qc_confirm_viewer.unit"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"FROM"& _ 
+                "            qc_confirm_viewer LEFT OUTER JOIN"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"                         log_view"& _ 
+                "_print_la4 ON qc_confirm_viewer.labnum = log_view_print_la4.labnum"&Global.Microsoft.VisualBasic.ChrW(13)&Global.Microsoft.VisualBasic.ChrW(10)&"WHERE       "& _ 
+                " (qc_confirm_viewer.scope LIKE @parameterscope) AND (qc_confirm_viewer.tgl_confi"& _ 
+                "rm >= CAST(GETDATE() AS Date)) AND (qc_confirm_viewer.labnum IS NOT NULL)"
             Me._commandCollection(3).CommandType = Global.System.Data.CommandType.Text
             Me._commandCollection(3).Parameters.Add(New Global.System.Data.SqlClient.SqlParameter("@parameterscope", Global.System.Data.SqlDbType.VarChar, 50, Global.System.Data.ParameterDirection.Input, 0, 0, "scope", Global.System.Data.DataRowVersion.Current, false, Nothing, "", "", ""))
             Me._commandCollection(4) = New Global.System.Data.SqlClient.SqlCommand()

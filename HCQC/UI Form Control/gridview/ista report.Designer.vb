@@ -29,12 +29,9 @@ Partial Class ista_report
         Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(ista_report))
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid()
-        Me.ReportistaviewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_serverDataSet = New HCQC_serverDataSet()
         Me.MetroStyleManager1 = New MetroFramework.Components.MetroStyleManager(Me.components)
         Me.MetroStyleExtender1 = New MetroFramework.Components.MetroStyleExtender(Me.components)
         Me.StartDate = New System.Windows.Forms.DateTimePicker()
-        Me.Report_ista_viewTableAdapter = New HCQC_serverDataSetTableAdapters.report_ista_viewTableAdapter()
         Me.Tsearch = New MetroFramework.Controls.MetroTextBox()
         Me.BtnFilterDate = New Bunifu.Framework.UI.BunifuImageButton()
         Me.MetroLabel18 = New MetroFramework.Controls.MetroLabel()
@@ -43,6 +40,9 @@ Partial Class ista_report
         Me.EndDate = New System.Windows.Forms.DateTimePicker()
         Me.LinkLastMonth1 = New MetroFramework.Controls.MetroLink()
         Me.LinkThisMonth1 = New MetroFramework.Controls.MetroLink()
+        Me.ReportistaviewBindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.HCQC_serverDataSet = New WindowsApplication1.HCQC_serverDataSet()
+        Me.Report_ista_viewTableAdapter = New WindowsApplication1.HCQC_serverDataSetTableAdapters.report_ista_viewTableAdapter()
         Me.DetailColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Labnum = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.ProductionCodeColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -56,14 +56,14 @@ Partial Class ista_report
         Me.ConcludedColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MeanColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.PurityColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.seedColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.seed1000 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.DtColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BtnQcPassColumn = New System.Windows.Forms.DataGridViewButtonColumn()
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.ReportistaviewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.HCQC_serverDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.BtnFilterDate, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.ReportistaviewBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.HCQC_serverDataSet, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MetroGrid1
@@ -90,7 +90,7 @@ Partial Class ista_report
         DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle2
         Me.MetroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DetailColumn, Me.Labnum, Me.ProductionCodeColumn, Me.VarietyColumn, Me.HarvestColumn, Me.NomnlColumn, Me.NojobColumn, Me.WeightColumn, Me.ScopeColumn, Me.DateinColumn, Me.ConcludedColumn, Me.MeanColumn, Me.PurityColumn, Me.seedColumn, Me.DtColumn, Me.BtnQcPassColumn})
+        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.DetailColumn, Me.Labnum, Me.ProductionCodeColumn, Me.VarietyColumn, Me.HarvestColumn, Me.NomnlColumn, Me.NojobColumn, Me.WeightColumn, Me.ScopeColumn, Me.DateinColumn, Me.ConcludedColumn, Me.MeanColumn, Me.PurityColumn, Me.seed1000, Me.DtColumn, Me.BtnQcPassColumn})
         Me.MetroGrid1.DataSource = Me.ReportistaviewBindingSource
         DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -119,16 +119,6 @@ Partial Class ista_report
         Me.MetroGrid1.Size = New System.Drawing.Size(900, 323)
         Me.MetroGrid1.TabIndex = 0
         '
-        'ReportistaviewBindingSource
-        '
-        Me.ReportistaviewBindingSource.DataMember = "report_ista_view"
-        Me.ReportistaviewBindingSource.DataSource = Me.HCQC_serverDataSet
-        '
-        'HCQC_serverDataSet
-        '
-        Me.HCQC_serverDataSet.DataSetName = "HCQC_serverDataSet"
-        Me.HCQC_serverDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
         'MetroStyleManager1
         '
         Me.MetroStyleManager1.Owner = Me
@@ -146,17 +136,13 @@ Partial Class ista_report
         Me.StartDate.TabIndex = 154
         Me.StartDate.Value = New Date(2022, 9, 19, 0, 0, 0, 0)
         '
-        'Report_ista_viewTableAdapter
-        '
-        Me.Report_ista_viewTableAdapter.ClearBeforeFill = True
-        '
         'Tsearch
         '
         Me.Tsearch.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         '
         '
         '
-        Me.Tsearch.CustomButton.Image = My.Resources.Resources.Find
+        Me.Tsearch.CustomButton.Image = Global.WindowsApplication1.My.Resources.Resources.Find
         Me.Tsearch.CustomButton.Location = New System.Drawing.Point(168, 1)
         Me.Tsearch.CustomButton.Name = ""
         Me.Tsearch.CustomButton.Size = New System.Drawing.Size(21, 21)
@@ -270,6 +256,20 @@ Partial Class ista_report
         Me.LinkThisMonth1.UseSelectable = True
         Me.LinkThisMonth1.UseStyleColors = True
         '
+        'ReportistaviewBindingSource
+        '
+        Me.ReportistaviewBindingSource.DataMember = "report_ista_view"
+        Me.ReportistaviewBindingSource.DataSource = Me.HCQC_serverDataSet
+        '
+        'HCQC_serverDataSet
+        '
+        Me.HCQC_serverDataSet.DataSetName = "HCQC_serverDataSet"
+        Me.HCQC_serverDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
+        '
+        'Report_ista_viewTableAdapter
+        '
+        Me.Report_ista_viewTableAdapter.ClearBeforeFill = True
+        '
         'DetailColumn
         '
         Me.DetailColumn.DataPropertyName = "status"
@@ -352,11 +352,11 @@ Partial Class ista_report
         Me.PurityColumn.Name = "PurityColumn"
         Me.PurityColumn.ReadOnly = True
         '
-        'seedColumn
+        'seed1000
         '
-        Me.seedColumn.DataPropertyName = "1000seed"
-        Me.seedColumn.HeaderText = "1000seed"
-        Me.seedColumn.Name = "seedColumn"
+        Me.seed1000.DataPropertyName = "seed1000"
+        Me.seed1000.HeaderText = "Seed1000"
+        Me.seed1000.Name = "seed1000"
         '
         'DtColumn
         '
@@ -392,10 +392,10 @@ Partial Class ista_report
         Me.Name = "ista_report"
         Me.Text = "Certification Standart"
         CType(Me.MetroGrid1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.ReportistaviewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.HCQC_serverDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.MetroStyleManager1, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.BtnFilterDate, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.ReportistaviewBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.HCQC_serverDataSet, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
@@ -429,7 +429,7 @@ Partial Class ista_report
     Friend WithEvents ConcludedColumn As DataGridViewTextBoxColumn
     Friend WithEvents MeanColumn As DataGridViewTextBoxColumn
     Friend WithEvents PurityColumn As DataGridViewTextBoxColumn
-    Friend WithEvents seedColumn As DataGridViewTextBoxColumn
+    Friend WithEvents seed1000 As DataGridViewTextBoxColumn
     Friend WithEvents DtColumn As DataGridViewTextBoxColumn
     Friend WithEvents BtnQcPassColumn As DataGridViewButtonColumn
 End Class

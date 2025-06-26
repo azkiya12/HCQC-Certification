@@ -120,10 +120,16 @@
   <metadata name="CheckColumn1.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
-  <metadata name="idproductionColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+  <metadata name="ProductionCodeColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="dovendorColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="VarietyColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="InsplotColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="FarmerColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -144,7 +150,16 @@
   <metadata name="WeightColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
+  <metadata name="UnitColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
   <metadata name="BagColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="smplLocation.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
+    <value>True</value>
+  </metadata>
+  <metadata name="ScopeColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>
   </metadata>
   <metadata name="KetColumn.UserAddedColumn" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
@@ -154,23 +169,14 @@
   <data name="BtnSave.Iconimage" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAAEwAAABMCAYAAADHl1ErAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        vwAADr8BOAVTJAAAATJJREFUeF7t0DGOBSEMRMG5/6V3k0pa8hB8kcB0pc+ywE9VVVVVVVVVVVVV3e5v
-        INXEjYJUEzcKUk3cKEg1caMg1cSNglQTNwrSd7nDFlbezV+3sPJu/rqFlXfz1y2svJu/bmHld7lDkGri
-        RkG6n/8G6ZWxIN3Pf4P0yliQ7ue/QXplLEj3898gvTIWpPv5b5BeGQvS/fw3SDVxoyB9lztsYeWS0SCd
-        wZu3sHLJaJDO4M1bWLlkNEhn8OYtrFwyGqQzePMWVi4ZDdL5/CdIP7MmSOfznyD9zJognc9/grRkdAsr
-        z+DNQVoyuoWVZ/DmIC0Z3cLKM3hzkJaMbmHlGbw5SEtGt7Dyu9whSDVxoyDVxI2CVBM3ClJN3ChINXGj
-        INXEjYJUVVVVVVVVVVVVVQd4nn9UArSuwkoV7AAAAABJRU5ErkJggg==
+        vAAADrwBlbxySQAAATZJREFUeF7t0DFuBDAMA8H8/9MJ2AkDN4Ean49TrwVLPz9VVVVVVVVVVVVV9bjf
+        A5saPFbY1OCxwqYGjxU2NXissKnBY4VNDR4rbL6OB9lw9pNcesPZT3LpDWc/yaU3nP0kl95w9tfxIGFT
+        g8cKm2e5eNjIPmye5eJhI/uweZaLh43sw+ZZLh42sg+bZ7l42Mg+bJ7l4mFTg8cKm6/jQTacfeKbsLma
+        n99w9olvwuZqfn7D2Se+CZur+fkNZ5/4Jmyu5uc3nH3im7D5WC4WNv/lvLD5WC4WNv/lvLD5WC4WNie+
+        2XD21fx82Jz4ZsPZV/PzYXPimw1nX83Ph82JbzacfTU/HzYnvtlw9tfxIGFTg8cKmxo8VtjU4LHCpgaP
+        FTY1eKywqcFjhU1VVVVVVVVVVVVV3ewPVAK0rn6X4PgAAAAASUVORK5CYII=
 </value>
   </data>
-  <metadata name="SplrequestBindingSource.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>173, 11</value>
-  </metadata>
-  <metadata name="HCQC_NewDataset.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>17, 11</value>
-  </metadata>
-  <metadata name="Spl_requestTableAdapter.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
-    <value>361, 11</value>
-  </metadata>
   <metadata name="$this.TrayHeight" type="System.Int32, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>50</value>
   </metadata>

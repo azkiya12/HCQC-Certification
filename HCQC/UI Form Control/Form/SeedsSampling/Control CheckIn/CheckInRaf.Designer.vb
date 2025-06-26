@@ -103,6 +103,7 @@ Partial Class CheckInRaf
         '
         'Btn_del_raf
         '
+        Me.Btn_del_raf.Active = False
         Me.Btn_del_raf.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.Btn_del_raf.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Btn_del_raf.BackColor = System.Drawing.Color.Transparent
@@ -138,6 +139,7 @@ Partial Class CheckInRaf
         '
         'Btn_save_raf
         '
+        Me.Btn_save_raf.Active = False
         Me.Btn_save_raf.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.Btn_save_raf.Anchor = CType((System.Windows.Forms.AnchorStyles.Bottom Or System.Windows.Forms.AnchorStyles.Left), System.Windows.Forms.AnchorStyles)
         Me.Btn_save_raf.BackColor = System.Drawing.Color.DimGray

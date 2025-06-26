@@ -8,9 +8,9 @@ Imports System.Runtime.InteropServices
 
 ' Review the values of the assembly attributes
 
-<Assembly: AssemblyTitle("HCQC Certification")> 
-<Assembly: AssemblyDescription("")> 
-<Assembly: AssemblyCompany("")> 
+<Assembly: AssemblyTitle("HCQC Certification")>
+<Assembly: AssemblyDescription("Aplikasi ini dibual oleh Azkiya Amala.")>
+<Assembly: AssemblyCompany("PT. Bisi International")>
 <Assembly: AssemblyProduct("BISI Internasional")> 
 <Assembly: AssemblyCopyright("Copyright ©  2015")> 
 <Assembly: AssemblyTrademark("")> 

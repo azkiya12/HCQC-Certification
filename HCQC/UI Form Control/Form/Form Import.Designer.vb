@@ -22,7 +22,7 @@ Partial Class Form_Import
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.Import_Data_Excel1 = New Import_Data_Excel()
+        Me.Import_Data_Excel1 = New WindowsApplication1.Import_Data_Excel()
         Me.SuspendLayout()
         '
         'Import_Data_Excel1

@@ -23,7 +23,7 @@ Partial Class containermenu
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim Animation1 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
+        Dim Animation2 As BunifuAnimatorNS.Animation = New BunifuAnimatorNS.Animation()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(containermenu))
         Me.BunifuTransition1 = New BunifuAnimatorNS.BunifuTransition(Me.components)
         Me.PnSampling = New System.Windows.Forms.Panel()
@@ -48,6 +48,12 @@ Partial Class containermenu
         Me.BtnInspectionList = New System.Windows.Forms.Button()
         Me.BtnLeadTime = New System.Windows.Forms.Button()
         Me.Panel1 = New MetroFramework.Controls.MetroPanel()
+        Me.AboutMeButton = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BunifuFlatButton1 = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BtnMonitor = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BtnInternal = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BtnStandard = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BtnSampling = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.PnMainMenu = New System.Windows.Forms.Panel()
         Me.Button1 = New System.Windows.Forms.Button()
         Me.BtnHarvestPlan = New System.Windows.Forms.Button()
@@ -55,13 +61,8 @@ Partial Class containermenu
         Me.BtnGlobal = New System.Windows.Forms.Button()
         Me.BtnTracking = New System.Windows.Forms.Button()
         Me.BtnRequest = New System.Windows.Forms.Button()
-        Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
-        Me.BunifuFlatButton1 = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.BtnMonitor = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.BtnInternal = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.BtnStandard = New Bunifu.Framework.UI.BunifuFlatButton()
-        Me.BtnSampling = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.BtnMainMenu = New Bunifu.Framework.UI.BunifuFlatButton()
+        Me.BunifuElipse1 = New Bunifu.Framework.UI.BunifuElipse(Me.components)
         Me.PnSampling.SuspendLayout()
         Me.Panel2.SuspendLayout()
         Me.PnInternal.SuspendLayout()
@@ -75,22 +76,22 @@ Partial Class containermenu
         '
         Me.BunifuTransition1.AnimationType = BunifuAnimatorNS.AnimationType.VertSlide
         Me.BunifuTransition1.Cursor = Nothing
-        Animation1.AnimateOnlyDifferences = True
-        Animation1.BlindCoeff = CType(resources.GetObject("Animation1.BlindCoeff"), System.Drawing.PointF)
-        Animation1.LeafCoeff = 0!
-        Animation1.MaxTime = 1.0!
-        Animation1.MinTime = 0!
-        Animation1.MosaicCoeff = CType(resources.GetObject("Animation1.MosaicCoeff"), System.Drawing.PointF)
-        Animation1.MosaicShift = CType(resources.GetObject("Animation1.MosaicShift"), System.Drawing.PointF)
-        Animation1.MosaicSize = 0
-        Animation1.Padding = New System.Windows.Forms.Padding(0)
-        Animation1.RotateCoeff = 0!
-        Animation1.RotateLimit = 0!
-        Animation1.ScaleCoeff = CType(resources.GetObject("Animation1.ScaleCoeff"), System.Drawing.PointF)
-        Animation1.SlideCoeff = CType(resources.GetObject("Animation1.SlideCoeff"), System.Drawing.PointF)
-        Animation1.TimeCoeff = 0!
-        Animation1.TransparencyCoeff = 0!
-        Me.BunifuTransition1.DefaultAnimation = Animation1
+        Animation2.AnimateOnlyDifferences = True
+        Animation2.BlindCoeff = CType(resources.GetObject("Animation2.BlindCoeff"), System.Drawing.PointF)
+        Animation2.LeafCoeff = 0!
+        Animation2.MaxTime = 1.0!
+        Animation2.MinTime = 0!
+        Animation2.MosaicCoeff = CType(resources.GetObject("Animation2.MosaicCoeff"), System.Drawing.PointF)
+        Animation2.MosaicShift = CType(resources.GetObject("Animation2.MosaicShift"), System.Drawing.PointF)
+        Animation2.MosaicSize = 0
+        Animation2.Padding = New System.Windows.Forms.Padding(0)
+        Animation2.RotateCoeff = 0!
+        Animation2.RotateLimit = 0!
+        Animation2.ScaleCoeff = CType(resources.GetObject("Animation2.ScaleCoeff"), System.Drawing.PointF)
+        Animation2.SlideCoeff = CType(resources.GetObject("Animation2.SlideCoeff"), System.Drawing.PointF)
+        Animation2.TimeCoeff = 0!
+        Animation2.TransparencyCoeff = 0!
+        Me.BunifuTransition1.DefaultAnimation = Animation2
         '
         'PnSampling
         '
@@ -445,6 +446,9 @@ Partial Class containermenu
         '
         'Panel1
         '
+        Me.Panel1.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
+            Or System.Windows.Forms.AnchorStyles.Left) _
+            Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.Panel1.AutoScroll = True
         Me.Panel1.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.Panel1.Controls.Add(Me.BunifuFlatButton1)
@@ -459,14 +463,13 @@ Partial Class containermenu
         Me.Panel1.Controls.Add(Me.PnMainMenu)
         Me.Panel1.Controls.Add(Me.BtnMainMenu)
         Me.BunifuTransition1.SetDecoration(Me.Panel1, BunifuAnimatorNS.DecorationType.None)
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
         Me.Panel1.HorizontalScrollbar = True
         Me.Panel1.HorizontalScrollbarBarColor = False
         Me.Panel1.HorizontalScrollbarHighlightOnWheel = False
         Me.Panel1.HorizontalScrollbarSize = 0
         Me.Panel1.Location = New System.Drawing.Point(0, 0)
         Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(215, 780)
+        Me.Panel1.Size = New System.Drawing.Size(215, 737)
         Me.Panel1.TabIndex = 0
         Me.Panel1.UseCustomBackColor = True
         Me.Panel1.UseCustomForeColor = True
@@ -475,6 +478,242 @@ Partial Class containermenu
         Me.Panel1.VerticalScrollbarBarColor = True
         Me.Panel1.VerticalScrollbarHighlightOnWheel = True
         Me.Panel1.VerticalScrollbarSize = 8
+        '
+        'AboutMeButton
+        '
+        Me.AboutMeButton.Active = False
+        Me.AboutMeButton.Activecolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
+        Me.AboutMeButton.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.AboutMeButton.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.AboutMeButton.BorderRadius = 0
+        Me.AboutMeButton.ButtonText = "  About Me"
+        Me.AboutMeButton.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BunifuTransition1.SetDecoration(Me.AboutMeButton, BunifuAnimatorNS.DecorationType.None)
+        Me.AboutMeButton.DisabledColor = System.Drawing.Color.Gray
+        Me.AboutMeButton.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.AboutMeButton.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.AboutMeButton.Iconcolor = System.Drawing.Color.Transparent
+        Me.AboutMeButton.Iconimage = CType(resources.GetObject("AboutMeButton.Iconimage"), System.Drawing.Image)
+        Me.AboutMeButton.Iconimage_right = Nothing
+        Me.AboutMeButton.Iconimage_right_Selected = Nothing
+        Me.AboutMeButton.Iconimage_Selected = Nothing
+        Me.AboutMeButton.IconMarginLeft = 0
+        Me.AboutMeButton.IconMarginRight = 0
+        Me.AboutMeButton.IconRightVisible = True
+        Me.AboutMeButton.IconRightZoom = 0R
+        Me.AboutMeButton.IconVisible = True
+        Me.AboutMeButton.IconZoom = 50.0R
+        Me.AboutMeButton.IsTab = False
+        Me.AboutMeButton.Location = New System.Drawing.Point(0, 740)
+        Me.AboutMeButton.Margin = New System.Windows.Forms.Padding(0)
+        Me.AboutMeButton.Name = "AboutMeButton"
+        Me.AboutMeButton.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.AboutMeButton.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
+        Me.AboutMeButton.OnHoverTextColor = System.Drawing.Color.White
+        Me.AboutMeButton.selected = False
+        Me.AboutMeButton.Size = New System.Drawing.Size(215, 40)
+        Me.AboutMeButton.TabIndex = 17
+        Me.AboutMeButton.Text = "  About Me"
+        Me.AboutMeButton.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.AboutMeButton.Textcolor = System.Drawing.Color.White
+        Me.AboutMeButton.TextFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'BunifuFlatButton1
+        '
+        Me.BunifuFlatButton1.Active = False
+        Me.BunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
+        Me.BunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.BunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BunifuFlatButton1.BorderRadius = 0
+        Me.BunifuFlatButton1.ButtonText = "  Reporting"
+        Me.BunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BunifuTransition1.SetDecoration(Me.BunifuFlatButton1, BunifuAnimatorNS.DecorationType.None)
+        Me.BunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray
+        Me.BunifuFlatButton1.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BunifuFlatButton1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent
+        Me.BunifuFlatButton1.Iconimage = CType(resources.GetObject("BunifuFlatButton1.Iconimage"), System.Drawing.Image)
+        Me.BunifuFlatButton1.Iconimage_right = Nothing
+        Me.BunifuFlatButton1.Iconimage_right_Selected = Nothing
+        Me.BunifuFlatButton1.Iconimage_Selected = Nothing
+        Me.BunifuFlatButton1.IconMarginLeft = 0
+        Me.BunifuFlatButton1.IconMarginRight = 0
+        Me.BunifuFlatButton1.IconRightVisible = True
+        Me.BunifuFlatButton1.IconRightZoom = 0R
+        Me.BunifuFlatButton1.IconVisible = True
+        Me.BunifuFlatButton1.IconZoom = 50.0R
+        Me.BunifuFlatButton1.IsTab = False
+        Me.BunifuFlatButton1.Location = New System.Drawing.Point(0, 809)
+        Me.BunifuFlatButton1.Margin = New System.Windows.Forms.Padding(0)
+        Me.BunifuFlatButton1.Name = "BunifuFlatButton1"
+        Me.BunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.BunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
+        Me.BunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White
+        Me.BunifuFlatButton1.selected = False
+        Me.BunifuFlatButton1.Size = New System.Drawing.Size(198, 40)
+        Me.BunifuFlatButton1.TabIndex = 14
+        Me.BunifuFlatButton1.Text = "  Reporting"
+        Me.BunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BunifuFlatButton1.Textcolor = System.Drawing.Color.White
+        Me.BunifuFlatButton1.TextFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'BtnMonitor
+        '
+        Me.BtnMonitor.Active = False
+        Me.BtnMonitor.Activecolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
+        Me.BtnMonitor.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.BtnMonitor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnMonitor.BorderRadius = 0
+        Me.BtnMonitor.ButtonText = "  Monitoring"
+        Me.BtnMonitor.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BunifuTransition1.SetDecoration(Me.BtnMonitor, BunifuAnimatorNS.DecorationType.None)
+        Me.BtnMonitor.DisabledColor = System.Drawing.Color.Gray
+        Me.BtnMonitor.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BtnMonitor.Enabled = False
+        Me.BtnMonitor.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnMonitor.Iconcolor = System.Drawing.Color.Transparent
+        Me.BtnMonitor.Iconimage = CType(resources.GetObject("BtnMonitor.Iconimage"), System.Drawing.Image)
+        Me.BtnMonitor.Iconimage_right = Nothing
+        Me.BtnMonitor.Iconimage_right_Selected = Nothing
+        Me.BtnMonitor.Iconimage_Selected = Nothing
+        Me.BtnMonitor.IconMarginLeft = 0
+        Me.BtnMonitor.IconMarginRight = 0
+        Me.BtnMonitor.IconRightVisible = True
+        Me.BtnMonitor.IconRightZoom = 0R
+        Me.BtnMonitor.IconVisible = True
+        Me.BtnMonitor.IconZoom = 50.0R
+        Me.BtnMonitor.IsTab = False
+        Me.BtnMonitor.Location = New System.Drawing.Point(0, 682)
+        Me.BtnMonitor.Margin = New System.Windows.Forms.Padding(0)
+        Me.BtnMonitor.Name = "BtnMonitor"
+        Me.BtnMonitor.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.BtnMonitor.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
+        Me.BtnMonitor.OnHoverTextColor = System.Drawing.Color.White
+        Me.BtnMonitor.selected = False
+        Me.BtnMonitor.Size = New System.Drawing.Size(198, 40)
+        Me.BtnMonitor.TabIndex = 12
+        Me.BtnMonitor.Text = "  Monitoring"
+        Me.BtnMonitor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnMonitor.Textcolor = System.Drawing.Color.White
+        Me.BtnMonitor.TextFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnMonitor.Visible = False
+        '
+        'BtnInternal
+        '
+        Me.BtnInternal.Active = False
+        Me.BtnInternal.Activecolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
+        Me.BtnInternal.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.BtnInternal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnInternal.BorderRadius = 0
+        Me.BtnInternal.ButtonText = "  Internal Quality"
+        Me.BtnInternal.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BunifuTransition1.SetDecoration(Me.BtnInternal, BunifuAnimatorNS.DecorationType.None)
+        Me.BtnInternal.DisabledColor = System.Drawing.Color.Gray
+        Me.BtnInternal.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BtnInternal.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnInternal.Iconcolor = System.Drawing.Color.Transparent
+        Me.BtnInternal.Iconimage = CType(resources.GetObject("BtnInternal.Iconimage"), System.Drawing.Image)
+        Me.BtnInternal.Iconimage_right = Nothing
+        Me.BtnInternal.Iconimage_right_Selected = Nothing
+        Me.BtnInternal.Iconimage_Selected = Nothing
+        Me.BtnInternal.IconMarginLeft = 0
+        Me.BtnInternal.IconMarginRight = 0
+        Me.BtnInternal.IconRightVisible = True
+        Me.BtnInternal.IconRightZoom = 0R
+        Me.BtnInternal.IconVisible = True
+        Me.BtnInternal.IconZoom = 50.0R
+        Me.BtnInternal.IsTab = False
+        Me.BtnInternal.Location = New System.Drawing.Point(0, 526)
+        Me.BtnInternal.Margin = New System.Windows.Forms.Padding(0)
+        Me.BtnInternal.Name = "BtnInternal"
+        Me.BtnInternal.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.BtnInternal.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
+        Me.BtnInternal.OnHoverTextColor = System.Drawing.Color.White
+        Me.BtnInternal.selected = False
+        Me.BtnInternal.Size = New System.Drawing.Size(198, 40)
+        Me.BtnInternal.TabIndex = 8
+        Me.BtnInternal.Text = "  Internal Quality"
+        Me.BtnInternal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnInternal.Textcolor = System.Drawing.Color.White
+        Me.BtnInternal.TextFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'BtnStandard
+        '
+        Me.BtnStandard.Active = False
+        Me.BtnStandard.Activecolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
+        Me.BtnStandard.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.BtnStandard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnStandard.BorderRadius = 0
+        Me.BtnStandard.ButtonText = "  Certification Standard"
+        Me.BtnStandard.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BunifuTransition1.SetDecoration(Me.BtnStandard, BunifuAnimatorNS.DecorationType.None)
+        Me.BtnStandard.DisabledColor = System.Drawing.Color.Gray
+        Me.BtnStandard.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BtnStandard.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnStandard.Iconcolor = System.Drawing.Color.Transparent
+        Me.BtnStandard.Iconimage = CType(resources.GetObject("BtnStandard.Iconimage"), System.Drawing.Image)
+        Me.BtnStandard.Iconimage_right = Nothing
+        Me.BtnStandard.Iconimage_right_Selected = Nothing
+        Me.BtnStandard.Iconimage_Selected = Nothing
+        Me.BtnStandard.IconMarginLeft = 0
+        Me.BtnStandard.IconMarginRight = 0
+        Me.BtnStandard.IconRightVisible = False
+        Me.BtnStandard.IconRightZoom = 0R
+        Me.BtnStandard.IconVisible = True
+        Me.BtnStandard.IconZoom = 50.0R
+        Me.BtnStandard.IsTab = False
+        Me.BtnStandard.Location = New System.Drawing.Point(0, 370)
+        Me.BtnStandard.Margin = New System.Windows.Forms.Padding(0)
+        Me.BtnStandard.Name = "BtnStandard"
+        Me.BtnStandard.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.BtnStandard.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
+        Me.BtnStandard.OnHoverTextColor = System.Drawing.Color.White
+        Me.BtnStandard.selected = False
+        Me.BtnStandard.Size = New System.Drawing.Size(198, 40)
+        Me.BtnStandard.TabIndex = 10
+        Me.BtnStandard.Text = "  Certification Standard"
+        Me.BtnStandard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnStandard.Textcolor = System.Drawing.Color.White
+        Me.BtnStandard.TextFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
+        'BtnSampling
+        '
+        Me.BtnSampling.Active = False
+        Me.BtnSampling.Activecolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
+        Me.BtnSampling.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.BtnSampling.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnSampling.BorderRadius = 0
+        Me.BtnSampling.ButtonText = "  QC Menu"
+        Me.BtnSampling.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BunifuTransition1.SetDecoration(Me.BtnSampling, BunifuAnimatorNS.DecorationType.None)
+        Me.BtnSampling.DisabledColor = System.Drawing.Color.Gray
+        Me.BtnSampling.Dock = System.Windows.Forms.DockStyle.Top
+        Me.BtnSampling.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.BtnSampling.Iconcolor = System.Drawing.Color.Transparent
+        Me.BtnSampling.Iconimage = CType(resources.GetObject("BtnSampling.Iconimage"), System.Drawing.Image)
+        Me.BtnSampling.Iconimage_right = Nothing
+        Me.BtnSampling.Iconimage_right_Selected = Nothing
+        Me.BtnSampling.Iconimage_Selected = Nothing
+        Me.BtnSampling.IconMarginLeft = 0
+        Me.BtnSampling.IconMarginRight = 0
+        Me.BtnSampling.IconRightVisible = False
+        Me.BtnSampling.IconRightZoom = 0R
+        Me.BtnSampling.IconVisible = True
+        Me.BtnSampling.IconZoom = 50.0R
+        Me.BtnSampling.IsTab = False
+        Me.BtnSampling.Location = New System.Drawing.Point(0, 214)
+        Me.BtnSampling.Margin = New System.Windows.Forms.Padding(0)
+        Me.BtnSampling.Name = "BtnSampling"
+        Me.BtnSampling.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
+        Me.BtnSampling.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
+        Me.BtnSampling.OnHoverTextColor = System.Drawing.Color.White
+        Me.BtnSampling.selected = False
+        Me.BtnSampling.Size = New System.Drawing.Size(198, 40)
+        Me.BtnSampling.TabIndex = 2
+        Me.BtnSampling.Text = "  QC Menu"
+        Me.BtnSampling.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnSampling.Textcolor = System.Drawing.Color.White
+        Me.BtnSampling.TextFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
         'PnMainMenu
         '
@@ -508,7 +747,7 @@ Partial Class containermenu
         Me.Button1.Padding = New System.Windows.Forms.Padding(35, 0, 0, 0)
         Me.Button1.Size = New System.Drawing.Size(198, 29)
         Me.Button1.TabIndex = 16
-        Me.Button1.Text = "Customer Info"
+        Me.Button1.Text = "Users List"
         Me.Button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.Button1.UseVisualStyleBackColor = True
         '
@@ -597,205 +836,9 @@ Partial Class containermenu
         Me.BtnRequest.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
         Me.BtnRequest.UseVisualStyleBackColor = True
         '
-        'BunifuElipse1
-        '
-        Me.BunifuElipse1.ElipseRadius = 12
-        Me.BunifuElipse1.TargetControl = Me.Panel2
-        '
-        'BunifuFlatButton1
-        '
-        Me.BunifuFlatButton1.Activecolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
-        Me.BunifuFlatButton1.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.BunifuFlatButton1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BunifuFlatButton1.BorderRadius = 0
-        Me.BunifuFlatButton1.ButtonText = "  Reporting"
-        Me.BunifuFlatButton1.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuTransition1.SetDecoration(Me.BunifuFlatButton1, BunifuAnimatorNS.DecorationType.None)
-        Me.BunifuFlatButton1.DisabledColor = System.Drawing.Color.Gray
-        Me.BunifuFlatButton1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BunifuFlatButton1.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BunifuFlatButton1.Iconcolor = System.Drawing.Color.Transparent
-        Me.BunifuFlatButton1.Iconimage = CType(resources.GetObject("BunifuFlatButton1.Iconimage"), System.Drawing.Image)
-        Me.BunifuFlatButton1.Iconimage_right = Nothing
-        Me.BunifuFlatButton1.Iconimage_right_Selected = Nothing
-        Me.BunifuFlatButton1.Iconimage_Selected = Nothing
-        Me.BunifuFlatButton1.IconMarginLeft = 0
-        Me.BunifuFlatButton1.IconMarginRight = 0
-        Me.BunifuFlatButton1.IconRightVisible = True
-        Me.BunifuFlatButton1.IconRightZoom = 0R
-        Me.BunifuFlatButton1.IconVisible = True
-        Me.BunifuFlatButton1.IconZoom = 50.0R
-        Me.BunifuFlatButton1.IsTab = False
-        Me.BunifuFlatButton1.Location = New System.Drawing.Point(0, 809)
-        Me.BunifuFlatButton1.Margin = New System.Windows.Forms.Padding(0)
-        Me.BunifuFlatButton1.Name = "BunifuFlatButton1"
-        Me.BunifuFlatButton1.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.BunifuFlatButton1.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
-        Me.BunifuFlatButton1.OnHoverTextColor = System.Drawing.Color.White
-        Me.BunifuFlatButton1.selected = False
-        Me.BunifuFlatButton1.Size = New System.Drawing.Size(198, 40)
-        Me.BunifuFlatButton1.TabIndex = 14
-        Me.BunifuFlatButton1.Text = "  Reporting"
-        Me.BunifuFlatButton1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BunifuFlatButton1.Textcolor = System.Drawing.Color.White
-        Me.BunifuFlatButton1.TextFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'BtnMonitor
-        '
-        Me.BtnMonitor.Activecolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
-        Me.BtnMonitor.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.BtnMonitor.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnMonitor.BorderRadius = 0
-        Me.BtnMonitor.ButtonText = "  Monitoring"
-        Me.BtnMonitor.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuTransition1.SetDecoration(Me.BtnMonitor, BunifuAnimatorNS.DecorationType.None)
-        Me.BtnMonitor.DisabledColor = System.Drawing.Color.Gray
-        Me.BtnMonitor.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BtnMonitor.Enabled = False
-        Me.BtnMonitor.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnMonitor.Iconcolor = System.Drawing.Color.Transparent
-        Me.BtnMonitor.Iconimage = CType(resources.GetObject("BtnMonitor.Iconimage"), System.Drawing.Image)
-        Me.BtnMonitor.Iconimage_right = Nothing
-        Me.BtnMonitor.Iconimage_right_Selected = Nothing
-        Me.BtnMonitor.Iconimage_Selected = Nothing
-        Me.BtnMonitor.IconMarginLeft = 0
-        Me.BtnMonitor.IconMarginRight = 0
-        Me.BtnMonitor.IconRightVisible = True
-        Me.BtnMonitor.IconRightZoom = 0R
-        Me.BtnMonitor.IconVisible = True
-        Me.BtnMonitor.IconZoom = 50.0R
-        Me.BtnMonitor.IsTab = False
-        Me.BtnMonitor.Location = New System.Drawing.Point(0, 682)
-        Me.BtnMonitor.Margin = New System.Windows.Forms.Padding(0)
-        Me.BtnMonitor.Name = "BtnMonitor"
-        Me.BtnMonitor.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.BtnMonitor.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
-        Me.BtnMonitor.OnHoverTextColor = System.Drawing.Color.White
-        Me.BtnMonitor.selected = False
-        Me.BtnMonitor.Size = New System.Drawing.Size(198, 40)
-        Me.BtnMonitor.TabIndex = 12
-        Me.BtnMonitor.Text = "  Monitoring"
-        Me.BtnMonitor.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnMonitor.Textcolor = System.Drawing.Color.White
-        Me.BtnMonitor.TextFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnMonitor.Visible = False
-        '
-        'BtnInternal
-        '
-        Me.BtnInternal.Activecolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
-        Me.BtnInternal.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.BtnInternal.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnInternal.BorderRadius = 0
-        Me.BtnInternal.ButtonText = "  Internal Quality"
-        Me.BtnInternal.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuTransition1.SetDecoration(Me.BtnInternal, BunifuAnimatorNS.DecorationType.None)
-        Me.BtnInternal.DisabledColor = System.Drawing.Color.Gray
-        Me.BtnInternal.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BtnInternal.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnInternal.Iconcolor = System.Drawing.Color.Transparent
-        Me.BtnInternal.Iconimage = CType(resources.GetObject("BtnInternal.Iconimage"), System.Drawing.Image)
-        Me.BtnInternal.Iconimage_right = Nothing
-        Me.BtnInternal.Iconimage_right_Selected = Nothing
-        Me.BtnInternal.Iconimage_Selected = Nothing
-        Me.BtnInternal.IconMarginLeft = 0
-        Me.BtnInternal.IconMarginRight = 0
-        Me.BtnInternal.IconRightVisible = True
-        Me.BtnInternal.IconRightZoom = 0R
-        Me.BtnInternal.IconVisible = True
-        Me.BtnInternal.IconZoom = 50.0R
-        Me.BtnInternal.IsTab = False
-        Me.BtnInternal.Location = New System.Drawing.Point(0, 526)
-        Me.BtnInternal.Margin = New System.Windows.Forms.Padding(0)
-        Me.BtnInternal.Name = "BtnInternal"
-        Me.BtnInternal.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.BtnInternal.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
-        Me.BtnInternal.OnHoverTextColor = System.Drawing.Color.White
-        Me.BtnInternal.selected = False
-        Me.BtnInternal.Size = New System.Drawing.Size(198, 40)
-        Me.BtnInternal.TabIndex = 8
-        Me.BtnInternal.Text = "  Internal Quality"
-        Me.BtnInternal.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnInternal.Textcolor = System.Drawing.Color.White
-        Me.BtnInternal.TextFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'BtnStandard
-        '
-        Me.BtnStandard.Activecolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
-        Me.BtnStandard.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.BtnStandard.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnStandard.BorderRadius = 0
-        Me.BtnStandard.ButtonText = "  Certification Standard"
-        Me.BtnStandard.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuTransition1.SetDecoration(Me.BtnStandard, BunifuAnimatorNS.DecorationType.None)
-        Me.BtnStandard.DisabledColor = System.Drawing.Color.Gray
-        Me.BtnStandard.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BtnStandard.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnStandard.Iconcolor = System.Drawing.Color.Transparent
-        Me.BtnStandard.Iconimage = CType(resources.GetObject("BtnStandard.Iconimage"), System.Drawing.Image)
-        Me.BtnStandard.Iconimage_right = Nothing
-        Me.BtnStandard.Iconimage_right_Selected = Nothing
-        Me.BtnStandard.Iconimage_Selected = Nothing
-        Me.BtnStandard.IconMarginLeft = 0
-        Me.BtnStandard.IconMarginRight = 0
-        Me.BtnStandard.IconRightVisible = False
-        Me.BtnStandard.IconRightZoom = 0R
-        Me.BtnStandard.IconVisible = True
-        Me.BtnStandard.IconZoom = 50.0R
-        Me.BtnStandard.IsTab = False
-        Me.BtnStandard.Location = New System.Drawing.Point(0, 370)
-        Me.BtnStandard.Margin = New System.Windows.Forms.Padding(0)
-        Me.BtnStandard.Name = "BtnStandard"
-        Me.BtnStandard.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.BtnStandard.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
-        Me.BtnStandard.OnHoverTextColor = System.Drawing.Color.White
-        Me.BtnStandard.selected = False
-        Me.BtnStandard.Size = New System.Drawing.Size(198, 40)
-        Me.BtnStandard.TabIndex = 10
-        Me.BtnStandard.Text = "  Certification Standard"
-        Me.BtnStandard.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnStandard.Textcolor = System.Drawing.Color.White
-        Me.BtnStandard.TextFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
-        'BtnSampling
-        '
-        Me.BtnSampling.Activecolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
-        Me.BtnSampling.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.BtnSampling.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnSampling.BorderRadius = 0
-        Me.BtnSampling.ButtonText = "  QC Menu"
-        Me.BtnSampling.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BunifuTransition1.SetDecoration(Me.BtnSampling, BunifuAnimatorNS.DecorationType.None)
-        Me.BtnSampling.DisabledColor = System.Drawing.Color.Gray
-        Me.BtnSampling.Dock = System.Windows.Forms.DockStyle.Top
-        Me.BtnSampling.Font = New System.Drawing.Font("Segoe UI", 8.25!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.BtnSampling.Iconcolor = System.Drawing.Color.Transparent
-        Me.BtnSampling.Iconimage = CType(resources.GetObject("BtnSampling.Iconimage"), System.Drawing.Image)
-        Me.BtnSampling.Iconimage_right = Nothing
-        Me.BtnSampling.Iconimage_right_Selected = Nothing
-        Me.BtnSampling.Iconimage_Selected = Nothing
-        Me.BtnSampling.IconMarginLeft = 0
-        Me.BtnSampling.IconMarginRight = 0
-        Me.BtnSampling.IconRightVisible = False
-        Me.BtnSampling.IconRightZoom = 0R
-        Me.BtnSampling.IconVisible = True
-        Me.BtnSampling.IconZoom = 50.0R
-        Me.BtnSampling.IsTab = False
-        Me.BtnSampling.Location = New System.Drawing.Point(0, 214)
-        Me.BtnSampling.Margin = New System.Windows.Forms.Padding(0)
-        Me.BtnSampling.Name = "BtnSampling"
-        Me.BtnSampling.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
-        Me.BtnSampling.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
-        Me.BtnSampling.OnHoverTextColor = System.Drawing.Color.White
-        Me.BtnSampling.selected = False
-        Me.BtnSampling.Size = New System.Drawing.Size(198, 40)
-        Me.BtnSampling.TabIndex = 2
-        Me.BtnSampling.Text = "  QC Menu"
-        Me.BtnSampling.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnSampling.Textcolor = System.Drawing.Color.White
-        Me.BtnSampling.TextFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
         'BtnMainMenu
         '
+        Me.BtnMainMenu.Active = False
         Me.BtnMainMenu.Activecolor = System.Drawing.Color.FromArgb(CType(CType(11, Byte), Integer), CType(CType(12, Byte), Integer), CType(CType(14, Byte), Integer))
         Me.BtnMainMenu.BackColor = System.Drawing.Color.FromArgb(CType(CType(23, Byte), Integer), CType(CType(24, Byte), Integer), CType(CType(28, Byte), Integer))
         Me.BtnMainMenu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -832,10 +875,16 @@ Partial Class containermenu
         Me.BtnMainMenu.Textcolor = System.Drawing.Color.White
         Me.BtnMainMenu.TextFont = New System.Drawing.Font("Segoe UI Semibold", 9.75!, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
         '
+        'BunifuElipse1
+        '
+        Me.BunifuElipse1.ElipseRadius = 12
+        Me.BunifuElipse1.TargetControl = Me.Panel2
+        '
         'containermenu
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
+        Me.Controls.Add(Me.AboutMeButton)
         Me.Controls.Add(Me.Panel1)
         Me.BunifuTransition1.SetDecoration(Me, BunifuAnimatorNS.DecorationType.None)
         Me.Name = "containermenu"
@@ -888,4 +937,5 @@ Partial Class containermenu
     Friend WithEvents LabelNotifContainerTracing As Bunifu.Framework.UI.BunifuCustomLabel
     Friend WithEvents BtnQcMenu As Button
     Friend WithEvents BtnHarvestPlan As Button
+    Friend WithEvents AboutMeButton As Bunifu.Framework.UI.BunifuFlatButton
 End Class

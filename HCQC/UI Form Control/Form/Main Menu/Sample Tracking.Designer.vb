@@ -115,6 +115,7 @@ Partial Class Sample_Tracking
         Me.colgerout_namelog = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colgervigor_namelog = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colaccept_date = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colremark = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.LinkLastMonth1 = New MetroFramework.Controls.MetroLink()
         Me.LinkThisMonth1 = New MetroFramework.Controls.MetroLink()
         Me.MetroTabPage2 = New MetroFramework.Controls.MetroTabPage()
@@ -400,7 +401,7 @@ Partial Class Sample_Tracking
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.collabnum, Me.colid_hvsprod, Me.colvariety, Me.colnomnl, Me.colnojob, Me.colweight, Me.colfarmer, Me.collocation, Me.colharvest, Me.colscope, Me.coltest_sampling, Me.coltest_moi, Me.coltest_pur, Me.coltest_ger, Me.coltest_via, Me.coltest_raf, Me.colkesehatan_benih, Me.coltest_ontest, Me.colinput_date, Me.colReceipt, Me.colbrt_in, Me.colReceipt_Input, Me.colsampler, Me.colstatus_confirm, Me.colsampling, Me.colRaf_Test, Me.colRaf_Result, Me.colRaf_Analys, Me.colRaf_input, Me.colMoi_Test, Me.colMoi_Analys, Me.colMoi_input, Me.colGer_TestLog, Me.colGer_Test, Me.colGer_1st, Me.colGer_1st_Est, Me.colGer_2nd, Me.colGer_2nd_Est, Me.colGer_Analys, Me.colGer_input, Me.colVia_Test, Me.colVia_Analys, Me.colVia_input, Me.colPur_Test, Me.colPur_Analys, Me.colPur_input, Me.colQuick_Raf, Me.colRetunQC, Me.colReturnQC_Name, Me.colStatusResult, Me.coldays_est, Me.coldate_est, Me.colmoisture_log, Me.colpurity_log, Me.colrafaction_log, Me.colviability_log, Me.colgervigor_log, Me.colgerout_log, Me.colmoisture_namelog, Me.colpurity_namelog, Me.colrafaction_namelog, Me.colviability_namelog, Me.colgertest_namelog, Me.colgerout_namelog, Me.colgervigor_namelog, Me.colaccept_date})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colid, Me.collabnum, Me.colid_hvsprod, Me.colvariety, Me.colnomnl, Me.colnojob, Me.colweight, Me.colfarmer, Me.collocation, Me.colharvest, Me.colscope, Me.coltest_sampling, Me.coltest_moi, Me.coltest_pur, Me.coltest_ger, Me.coltest_via, Me.coltest_raf, Me.colkesehatan_benih, Me.coltest_ontest, Me.colinput_date, Me.colReceipt, Me.colbrt_in, Me.colReceipt_Input, Me.colsampler, Me.colstatus_confirm, Me.colsampling, Me.colRaf_Test, Me.colRaf_Result, Me.colRaf_Analys, Me.colRaf_input, Me.colMoi_Test, Me.colMoi_Analys, Me.colMoi_input, Me.colGer_TestLog, Me.colGer_Test, Me.colGer_1st, Me.colGer_1st_Est, Me.colGer_2nd, Me.colGer_2nd_Est, Me.colGer_Analys, Me.colGer_input, Me.colVia_Test, Me.colVia_Analys, Me.colVia_input, Me.colPur_Test, Me.colPur_Analys, Me.colPur_input, Me.colQuick_Raf, Me.colRetunQC, Me.colReturnQC_Name, Me.colStatusResult, Me.coldays_est, Me.coldate_est, Me.colmoisture_log, Me.colpurity_log, Me.colrafaction_log, Me.colviability_log, Me.colgervigor_log, Me.colgerout_log, Me.colmoisture_namelog, Me.colpurity_namelog, Me.colrafaction_namelog, Me.colviability_namelog, Me.colgertest_namelog, Me.colgerout_namelog, Me.colgervigor_namelog, Me.colaccept_date, Me.colremark})
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
         Me.GridView1.OptionsBehavior.EditingMode = DevExpress.XtraGrid.Views.Grid.GridEditingMode.EditFormInplace
@@ -921,6 +922,14 @@ Partial Class Sample_Tracking
         Me.colaccept_date.Name = "colaccept_date"
         Me.colaccept_date.Visible = True
         Me.colaccept_date.VisibleIndex = 34
+        '
+        'colremark
+        '
+        Me.colremark.Caption = "Remark"
+        Me.colremark.FieldName = "remark"
+        Me.colremark.Name = "colremark"
+        Me.colremark.Visible = True
+        Me.colremark.VisibleIndex = 35
         '
         'LinkLastMonth1
         '
@@ -1503,6 +1512,7 @@ Partial Class Sample_Tracking
         '
         'BtnSave
         '
+        Me.BtnSave.Active = False
         Me.BtnSave.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -1615,6 +1625,7 @@ Partial Class Sample_Tracking
         '
         'BtnCariLab
         '
+        Me.BtnCariLab.Active = False
         Me.BtnCariLab.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnCariLab.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnCariLab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -1855,4 +1866,5 @@ Partial Class Sample_Tracking
     Friend WithEvents MetroLabel19 As MetroLabel
     Friend WithEvents BtnFilterDate As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents colkesehatan_benih As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colremark As DevExpress.XtraGrid.Columns.GridColumn
 End Class

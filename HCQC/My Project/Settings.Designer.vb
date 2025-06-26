@@ -15,7 +15,7 @@ Option Explicit On
 Namespace My
     
     <Global.System.Runtime.CompilerServices.CompilerGeneratedAttribute(),  _
-     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.6.0.0"),  _
+     Global.System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.11.0.0"),  _
      Global.System.ComponentModel.EditorBrowsableAttribute(Global.System.ComponentModel.EditorBrowsableState.Advanced)>  _
     Partial Friend NotInheritable Class MySettings
         Inherits Global.System.Configuration.ApplicationSettingsBase
@@ -108,7 +108,7 @@ Namespace My
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=10.15.13.91\SQLEXPRESS;Initial Catalog=HCQC_server;User ID=admin;Pass"& _ 
-            "word=administrator;Connect Timeout=0")>  _
+            "word=administrator;Connect Timeout=0;TrustServerCertificate=True")>  _
         Public ReadOnly Property HCQC_serverConnectionString() As String
             Get
                 Return CType(Me("HCQC_serverConnectionString"),String)
@@ -119,10 +119,21 @@ Namespace My
          Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
          Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
          Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DHONA\SQLEXPRESS;Initial Catalog=HCQC_server;User ID=admin;Password=a"& _ 
-            "dministrator;Connect Timeout=0")>  _
+            "dministrator;Connect Timeout=0;TrustServerCertificate=True")>  _
         Public ReadOnly Property HCQC_serverConnectionString1() As String
             Get
                 Return CType(Me("HCQC_serverConnectionString1"),String)
+            End Get
+        End Property
+        
+        <Global.System.Configuration.ApplicationScopedSettingAttribute(),  _
+         Global.System.Diagnostics.DebuggerNonUserCodeAttribute(),  _
+         Global.System.Configuration.SpecialSettingAttribute(Global.System.Configuration.SpecialSetting.ConnectionString),  _
+         Global.System.Configuration.DefaultSettingValueAttribute("Data Source=DHONA\SQLEXPRESS;Initial Catalog=HCQC_server;Persist Security Info=Tr"& _ 
+            "ue;User ID=admin;Password=administrator;TrustServerCertificate=True")>  _
+        Public ReadOnly Property HCQC_serverConnectionString2() As String
+            Get
+                Return CType(Me("HCQC_serverConnectionString2"),String)
             End Get
         End Property
     End Class

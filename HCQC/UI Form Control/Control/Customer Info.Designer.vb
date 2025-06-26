@@ -113,12 +113,14 @@ Partial Class Customer_Info
         Me.TCompany.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.TCompany.BorderColorMouseHover = System.Drawing.Color.Blue
         Me.TCompany.BorderThickness = 1
+        Me.TCompany.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.TCompany.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TCompany.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.TCompany.ForeColor = System.Drawing.Color.Black
         Me.TCompany.isPassword = False
         Me.TCompany.Location = New System.Drawing.Point(16, 181)
         Me.TCompany.Margin = New System.Windows.Forms.Padding(2, 2, 2, 10)
+        Me.TCompany.MaxLength = 32767
         Me.TCompany.Name = "TCompany"
         Me.TCompany.Size = New System.Drawing.Size(283, 32)
         Me.TCompany.TabIndex = 9
@@ -130,12 +132,14 @@ Partial Class Customer_Info
         Me.Temail.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Temail.BorderColorMouseHover = System.Drawing.Color.Blue
         Me.Temail.BorderThickness = 1
+        Me.Temail.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.Temail.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Temail.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.Temail.ForeColor = System.Drawing.Color.Black
         Me.Temail.isPassword = False
         Me.Temail.Location = New System.Drawing.Point(18, 455)
         Me.Temail.Margin = New System.Windows.Forms.Padding(2, 2, 2, 10)
+        Me.Temail.MaxLength = 32767
         Me.Temail.Name = "Temail"
         Me.Temail.Size = New System.Drawing.Size(283, 32)
         Me.Temail.TabIndex = 10
@@ -148,12 +152,14 @@ Partial Class Customer_Info
         Me.TPhone.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.TPhone.BorderColorMouseHover = System.Drawing.Color.Blue
         Me.TPhone.BorderThickness = 1
+        Me.TPhone.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.TPhone.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TPhone.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.TPhone.ForeColor = System.Drawing.Color.Black
         Me.TPhone.isPassword = False
         Me.TPhone.Location = New System.Drawing.Point(326, 67)
         Me.TPhone.Margin = New System.Windows.Forms.Padding(2, 2, 2, 10)
+        Me.TPhone.MaxLength = 32767
         Me.TPhone.Name = "TPhone"
         Me.TPhone.Size = New System.Drawing.Size(153, 32)
         Me.TPhone.TabIndex = 11
@@ -165,12 +171,14 @@ Partial Class Customer_Info
         Me.Tname.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Tname.BorderColorMouseHover = System.Drawing.Color.Blue
         Me.Tname.BorderThickness = 1
+        Me.Tname.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.Tname.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Tname.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.Tname.ForeColor = System.Drawing.Color.Black
         Me.Tname.isPassword = False
         Me.Tname.Location = New System.Drawing.Point(17, 67)
         Me.Tname.Margin = New System.Windows.Forms.Padding(2, 2, 2, 10)
+        Me.Tname.MaxLength = 32767
         Me.Tname.Name = "Tname"
         Me.Tname.Size = New System.Drawing.Size(283, 32)
         Me.Tname.TabIndex = 12
@@ -218,12 +226,14 @@ Partial Class Customer_Info
         Me.Toffice_Phone.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Toffice_Phone.BorderColorMouseHover = System.Drawing.Color.Blue
         Me.Toffice_Phone.BorderThickness = 1
+        Me.Toffice_Phone.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.Toffice_Phone.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Toffice_Phone.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.Toffice_Phone.ForeColor = System.Drawing.Color.Black
         Me.Toffice_Phone.isPassword = False
         Me.Toffice_Phone.Location = New System.Drawing.Point(483, 67)
         Me.Toffice_Phone.Margin = New System.Windows.Forms.Padding(2, 2, 2, 10)
+        Me.Toffice_Phone.MaxLength = 32767
         Me.Toffice_Phone.Name = "Toffice_Phone"
         Me.Toffice_Phone.Size = New System.Drawing.Size(128, 32)
         Me.Toffice_Phone.TabIndex = 11
@@ -245,12 +255,14 @@ Partial Class Customer_Info
         Me.TJabatan.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.TJabatan.BorderColorMouseHover = System.Drawing.Color.Blue
         Me.TJabatan.BorderThickness = 1
+        Me.TJabatan.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.TJabatan.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TJabatan.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.TJabatan.ForeColor = System.Drawing.Color.Black
         Me.TJabatan.isPassword = False
         Me.TJabatan.Location = New System.Drawing.Point(17, 238)
         Me.TJabatan.Margin = New System.Windows.Forms.Padding(2, 2, 2, 10)
+        Me.TJabatan.MaxLength = 32767
         Me.TJabatan.Name = "TJabatan"
         Me.TJabatan.Size = New System.Drawing.Size(283, 32)
         Me.TJabatan.TabIndex = 9
@@ -271,12 +283,14 @@ Partial Class Customer_Info
         Me.Talamat.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Talamat.BorderColorMouseHover = System.Drawing.Color.Blue
         Me.Talamat.BorderThickness = 1
+        Me.Talamat.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.Talamat.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Talamat.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.Talamat.ForeColor = System.Drawing.Color.Black
         Me.Talamat.isPassword = False
         Me.Talamat.Location = New System.Drawing.Point(326, 124)
         Me.Talamat.Margin = New System.Windows.Forms.Padding(2, 2, 2, 10)
+        Me.Talamat.MaxLength = 32767
         Me.Talamat.Name = "Talamat"
         Me.Talamat.Size = New System.Drawing.Size(285, 32)
         Me.Talamat.TabIndex = 9
@@ -298,12 +312,14 @@ Partial Class Customer_Info
         Me.TPendidikan.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.TPendidikan.BorderColorMouseHover = System.Drawing.Color.Blue
         Me.TPendidikan.BorderThickness = 1
+        Me.TPendidikan.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.TPendidikan.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TPendidikan.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.TPendidikan.ForeColor = System.Drawing.Color.Black
         Me.TPendidikan.isPassword = False
         Me.TPendidikan.Location = New System.Drawing.Point(17, 295)
         Me.TPendidikan.Margin = New System.Windows.Forms.Padding(2, 2, 2, 10)
+        Me.TPendidikan.MaxLength = 32767
         Me.TPendidikan.Name = "TPendidikan"
         Me.TPendidikan.Size = New System.Drawing.Size(283, 32)
         Me.TPendidikan.TabIndex = 9
@@ -356,12 +372,14 @@ Partial Class Customer_Info
         Me.TUser_name.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.TUser_name.BorderColorMouseHover = System.Drawing.Color.Blue
         Me.TUser_name.BorderThickness = 1
+        Me.TUser_name.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.TUser_name.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.TUser_name.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.TUser_name.ForeColor = System.Drawing.Color.Black
         Me.TUser_name.isPassword = False
         Me.TUser_name.Location = New System.Drawing.Point(18, 398)
         Me.TUser_name.Margin = New System.Windows.Forms.Padding(2, 2, 2, 10)
+        Me.TUser_name.MaxLength = 32767
         Me.TUser_name.Name = "TUser_name"
         Me.TUser_name.Size = New System.Drawing.Size(283, 32)
         Me.TUser_name.TabIndex = 10
@@ -410,12 +428,14 @@ Partial Class Customer_Info
         Me.Tlahir.BorderColorIdle = System.Drawing.Color.FromArgb(CType(CType(218, Byte), Integer), CType(CType(220, Byte), Integer), CType(CType(224, Byte), Integer))
         Me.Tlahir.BorderColorMouseHover = System.Drawing.Color.Blue
         Me.Tlahir.BorderThickness = 1
+        Me.Tlahir.characterCasing = System.Windows.Forms.CharacterCasing.Normal
         Me.Tlahir.Cursor = System.Windows.Forms.Cursors.IBeam
         Me.Tlahir.Font = New System.Drawing.Font("Segoe UI", 9.75!)
         Me.Tlahir.ForeColor = System.Drawing.Color.Black
         Me.Tlahir.isPassword = False
         Me.Tlahir.Location = New System.Drawing.Point(16, 124)
         Me.Tlahir.Margin = New System.Windows.Forms.Padding(2, 2, 2, 10)
+        Me.Tlahir.MaxLength = 32767
         Me.Tlahir.Name = "Tlahir"
         Me.Tlahir.Size = New System.Drawing.Size(104, 32)
         Me.Tlahir.TabIndex = 12
@@ -443,6 +463,7 @@ Partial Class Customer_Info
         '
         'BtnSave
         '
+        Me.BtnSave.Active = False
         Me.BtnSave.Activecolor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.BtnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(46, Byte), Integer), CType(CType(139, Byte), Integer), CType(CType(87, Byte), Integer))
         Me.BtnSave.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -477,6 +498,7 @@ Partial Class Customer_Info
         '
         'BtnChangePass
         '
+        Me.BtnChangePass.Active = False
         Me.BtnChangePass.Activecolor = System.Drawing.Color.Gray
         Me.BtnChangePass.BackColor = System.Drawing.Color.Gray
         Me.BtnChangePass.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch

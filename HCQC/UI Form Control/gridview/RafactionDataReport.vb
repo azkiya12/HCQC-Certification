@@ -1,7 +1,14 @@
-﻿Public Class RafactionDataReport
-    Private Sub RafactionDataReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
-        LinkThisYear_Click(sender, e)
+﻿Imports DgvFilterPopup
 
+Public Class RafactionDataReport
+
+    Private Sub RafactionDataReport_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+        Dim DgvFilter As New DgvFilterManager With {
+            .DataGridView = MetroGrid1
+        }
+        MetroGrid1.ColumnHeadersHeight = 25
+
+        LinkThisYear_Click(sender, e)
     End Sub
 
     Private Sub Tsearch_ButtonClick(sender As Object, e As EventArgs) Handles Tsearch.ButtonClick

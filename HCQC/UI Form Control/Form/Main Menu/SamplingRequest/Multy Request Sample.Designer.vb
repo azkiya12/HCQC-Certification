@@ -22,23 +22,11 @@ Partial Class Multy_Request_Sample
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
-        Me.components = New System.ComponentModel.Container()
         Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Multy_Request_Sample))
         Me.MetroGrid2 = New MetroFramework.Controls.MetroGrid()
-        Me.CheckColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.idproductionColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.VarietyColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.FarmerColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LocationColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HarvestColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ManualColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.LotColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.WeightColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.BagColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.KetColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MetroLabel4 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.TComboScope = New MetroFramework.Controls.MetroComboBox()
@@ -56,22 +44,33 @@ Partial Class Multy_Request_Sample
         Me.BtnSave = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.BtnClearSelected = New MetroFramework.Controls.MetroLink()
-        Me.LprosesSave = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
-        Me.tloc_sample = New MetroFramework.Controls.MetroComboBox()
-        Me.SplrequestBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_NewDataset = New WindowsApplication1.HCQC_NewDataset()
-        Me.Spl_requestTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.spl_requestTableAdapter()
         Me.tkarantina = New MetroFramework.Controls.MetroCheckBox()
+        Me.LinkImport = New MetroFramework.Controls.MetroLink()
+        Me.BtnSetAll = New MetroFramework.Controls.MetroButton()
+        Me.BtnSetSelected = New MetroFramework.Controls.MetroButton()
+        Me.BtnTestSetSelected = New MetroFramework.Controls.MetroButton()
+        Me.CheckColumn1 = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.ProductionCodeColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.dovendorColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VarietyColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.InsplotColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.FarmerColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LocationColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HarvestColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ManualColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.LotColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.WeightColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.UnitColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.BagColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.smplLocation = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ScopeColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.KetColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.MetroGrid2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.SplrequestBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.HCQC_NewDataset, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'MetroGrid2
         '
         Me.MetroGrid2.AllowUserToAddRows = False
-        Me.MetroGrid2.AllowUserToDeleteRows = False
         Me.MetroGrid2.AllowUserToResizeRows = False
         Me.MetroGrid2.Anchor = CType((((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Bottom) _
             Or System.Windows.Forms.AnchorStyles.Left) _
@@ -89,7 +88,7 @@ Partial Class Multy_Request_Sample
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.MetroGrid2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.MetroGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MetroGrid2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CheckColumn1, Me.idproductionColumn, Me.VarietyColumn, Me.FarmerColumn, Me.LocationColumn, Me.HarvestColumn, Me.ManualColumn, Me.LotColumn, Me.WeightColumn, Me.BagColumn, Me.KetColumn})
+        Me.MetroGrid2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CheckColumn1, Me.ProductionCodeColumn, Me.dovendorColumn, Me.VarietyColumn, Me.InsplotColumn, Me.FarmerColumn, Me.LocationColumn, Me.HarvestColumn, Me.ManualColumn, Me.LotColumn, Me.WeightColumn, Me.UnitColumn, Me.BagColumn, Me.smplLocation, Me.ScopeColumn, Me.KetColumn})
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
@@ -116,73 +115,6 @@ Partial Class Multy_Request_Sample
         Me.MetroGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.MetroGrid2.Size = New System.Drawing.Size(861, 353)
         Me.MetroGrid2.TabIndex = 77
-        '
-        'CheckColumn1
-        '
-        Me.CheckColumn1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.CheckColumn1.HeaderText = ""
-        Me.CheckColumn1.Name = "CheckColumn1"
-        Me.CheckColumn1.Width = 40
-        '
-        'idproductionColumn
-        '
-        Me.idproductionColumn.HeaderText = "Production Code"
-        Me.idproductionColumn.Name = "idproductionColumn"
-        Me.idproductionColumn.ReadOnly = True
-        Me.idproductionColumn.Width = 90
-        '
-        'VarietyColumn
-        '
-        Me.VarietyColumn.HeaderText = "Variety"
-        Me.VarietyColumn.Name = "VarietyColumn"
-        Me.VarietyColumn.ReadOnly = True
-        Me.VarietyColumn.Width = 80
-        '
-        'FarmerColumn
-        '
-        Me.FarmerColumn.HeaderText = "Farmer"
-        Me.FarmerColumn.Name = "FarmerColumn"
-        Me.FarmerColumn.Width = 80
-        '
-        'LocationColumn
-        '
-        Me.LocationColumn.HeaderText = "Location"
-        Me.LocationColumn.Name = "LocationColumn"
-        Me.LocationColumn.ReadOnly = True
-        '
-        'HarvestColumn
-        '
-        Me.HarvestColumn.HeaderText = "Harvest"
-        Me.HarvestColumn.Name = "HarvestColumn"
-        Me.HarvestColumn.ReadOnly = True
-        '
-        'ManualColumn
-        '
-        Me.ManualColumn.HeaderText = "Manual"
-        Me.ManualColumn.Name = "ManualColumn"
-        Me.ManualColumn.Width = 70
-        '
-        'LotColumn
-        '
-        Me.LotColumn.HeaderText = "Lot/Job"
-        Me.LotColumn.Name = "LotColumn"
-        Me.LotColumn.Width = 80
-        '
-        'WeightColumn
-        '
-        Me.WeightColumn.HeaderText = "Weight (kg)"
-        Me.WeightColumn.Name = "WeightColumn"
-        '
-        'BagColumn
-        '
-        Me.BagColumn.HeaderText = "Bags"
-        Me.BagColumn.Name = "BagColumn"
-        Me.BagColumn.Width = 65
-        '
-        'KetColumn
-        '
-        Me.KetColumn.HeaderText = "Keterangan"
-        Me.KetColumn.Name = "KetColumn"
         '
         'MetroLabel4
         '
@@ -224,9 +156,9 @@ Partial Class Multy_Request_Sample
         Me.traf.AutoSize = True
         Me.traf.BackColor = System.Drawing.Color.Transparent
         Me.traf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.traf.Location = New System.Drawing.Point(944, 310)
+        Me.traf.Location = New System.Drawing.Point(943, 282)
         Me.traf.Name = "traf"
-        Me.traf.Size = New System.Drawing.Size(96, 15)
+        Me.traf.Size = New System.Drawing.Size(97, 15)
         Me.traf.TabIndex = 89
         Me.traf.Text = "Rafaction Test"
         Me.traf.UseSelectable = True
@@ -237,9 +169,9 @@ Partial Class Multy_Request_Sample
         Me.tvia.AutoSize = True
         Me.tvia.BackColor = System.Drawing.Color.Transparent
         Me.tvia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tvia.Location = New System.Drawing.Point(944, 352)
+        Me.tvia.Location = New System.Drawing.Point(943, 324)
         Me.tvia.Name = "tvia"
-        Me.tvia.Size = New System.Drawing.Size(88, 15)
+        Me.tvia.Size = New System.Drawing.Size(89, 15)
         Me.tvia.TabIndex = 91
         Me.tvia.Text = "Viability Test"
         Me.tvia.UseSelectable = True
@@ -250,9 +182,9 @@ Partial Class Multy_Request_Sample
         Me.tger.AutoSize = True
         Me.tger.BackColor = System.Drawing.Color.Transparent
         Me.tger.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tger.Location = New System.Drawing.Point(944, 331)
+        Me.tger.Location = New System.Drawing.Point(943, 303)
         Me.tger.Name = "tger"
-        Me.tger.Size = New System.Drawing.Size(112, 15)
+        Me.tger.Size = New System.Drawing.Size(113, 15)
         Me.tger.TabIndex = 90
         Me.tger.Text = "Germination Test"
         Me.tger.UseSelectable = True
@@ -263,9 +195,9 @@ Partial Class Multy_Request_Sample
         Me.tpur.AutoSize = True
         Me.tpur.BackColor = System.Drawing.Color.Transparent
         Me.tpur.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tpur.Location = New System.Drawing.Point(944, 289)
+        Me.tpur.Location = New System.Drawing.Point(943, 261)
         Me.tpur.Name = "tpur"
-        Me.tpur.Size = New System.Drawing.Size(77, 15)
+        Me.tpur.Size = New System.Drawing.Size(78, 15)
         Me.tpur.TabIndex = 88
         Me.tpur.Text = "Purity Test"
         Me.tpur.UseSelectable = True
@@ -276,9 +208,9 @@ Partial Class Multy_Request_Sample
         Me.tmoi.AutoSize = True
         Me.tmoi.BackColor = System.Drawing.Color.Transparent
         Me.tmoi.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tmoi.Location = New System.Drawing.Point(944, 268)
+        Me.tmoi.Location = New System.Drawing.Point(943, 240)
         Me.tmoi.Name = "tmoi"
-        Me.tmoi.Size = New System.Drawing.Size(93, 15)
+        Me.tmoi.Size = New System.Drawing.Size(94, 15)
         Me.tmoi.TabIndex = 87
         Me.tmoi.Text = "Moisture Test"
         Me.tmoi.UseSelectable = True
@@ -289,7 +221,7 @@ Partial Class Multy_Request_Sample
         Me.tsampling.AutoSize = True
         Me.tsampling.BackColor = System.Drawing.Color.Transparent
         Me.tsampling.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tsampling.Location = New System.Drawing.Point(944, 226)
+        Me.tsampling.Location = New System.Drawing.Point(944, 198)
         Me.tsampling.Name = "tsampling"
         Me.tsampling.Size = New System.Drawing.Size(73, 15)
         Me.tsampling.TabIndex = 86
@@ -300,11 +232,11 @@ Partial Class Multy_Request_Sample
         '
         Me.MetroLabel2.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.MetroLabel2.AutoSize = True
-        Me.MetroLabel2.Location = New System.Drawing.Point(923, 204)
+        Me.MetroLabel2.Location = New System.Drawing.Point(923, 176)
         Me.MetroLabel2.Name = "MetroLabel2"
         Me.MetroLabel2.Size = New System.Drawing.Size(163, 19)
         Me.MetroLabel2.TabIndex = 92
-        Me.MetroLabel2.Text = "3. Test Laboratory Request"
+        Me.MetroLabel2.Text = "2. Test Laboratory Request"
         '
         'MetroLabel7
         '
@@ -358,6 +290,7 @@ Partial Class Multy_Request_Sample
         '
         'BtnSave
         '
+        Me.BtnSave.Active = True
         Me.BtnSave.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnSave.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -378,7 +311,7 @@ Partial Class Multy_Request_Sample
         Me.BtnSave.IconVisible = True
         Me.BtnSave.IconZoom = 50.0R
         Me.BtnSave.IsTab = False
-        Me.BtnSave.Location = New System.Drawing.Point(926, 373)
+        Me.BtnSave.Location = New System.Drawing.Point(923, 409)
         Me.BtnSave.Name = "BtnSave"
         Me.BtnSave.Normalcolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnSave.OnHovercolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -417,84 +350,177 @@ Partial Class Multy_Request_Sample
         Me.BtnClearSelected.UseSelectable = True
         Me.BtnClearSelected.UseStyleColors = True
         '
-        'LprosesSave
-        '
-        Me.LprosesSave.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.LprosesSave.AutoSize = True
-        Me.LprosesSave.FontSize = MetroFramework.MetroLabelSize.Small
-        Me.LprosesSave.ForeColor = System.Drawing.Color.LightGray
-        Me.LprosesSave.Location = New System.Drawing.Point(926, 420)
-        Me.LprosesSave.Name = "LprosesSave"
-        Me.LprosesSave.Size = New System.Drawing.Size(16, 15)
-        Me.LprosesSave.TabIndex = 94
-        Me.LprosesSave.Text = "..."
-        Me.LprosesSave.UseCustomForeColor = True
-        Me.LprosesSave.WrapToLine = True
-        '
-        'MetroLabel6
-        '
-        Me.MetroLabel6.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.MetroLabel6.AutoSize = True
-        Me.MetroLabel6.Location = New System.Drawing.Point(923, 146)
-        Me.MetroLabel6.Name = "MetroLabel6"
-        Me.MetroLabel6.Size = New System.Drawing.Size(120, 19)
-        Me.MetroLabel6.TabIndex = 98
-        Me.MetroLabel6.Text = "2. Sample Location"
-        '
-        'tloc_sample
-        '
-        Me.tloc_sample.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
-        Me.tloc_sample.FontSize = MetroFramework.MetroComboBoxSize.Small
-        Me.tloc_sample.FormattingEnabled = True
-        Me.tloc_sample.ItemHeight = 19
-        Me.tloc_sample.Items.AddRange(New Object() {"Gudang A", "Gudang B", "Gudang C", "Gudang E", "Gudang G", "Small G", "Gudang WP", "Gudang TR", "CR C", "CR E", "CR F", "CR G"})
-        Me.tloc_sample.Location = New System.Drawing.Point(944, 167)
-        Me.tloc_sample.Name = "tloc_sample"
-        Me.tloc_sample.Size = New System.Drawing.Size(172, 25)
-        Me.tloc_sample.TabIndex = 99
-        Me.tloc_sample.UseSelectable = True
-        '
-        'SplrequestBindingSource
-        '
-        Me.SplrequestBindingSource.DataMember = "spl_request"
-        Me.SplrequestBindingSource.DataSource = Me.HCQC_NewDataset
-        '
-        'HCQC_NewDataset
-        '
-        Me.HCQC_NewDataset.DataSetName = "HCQC_NewDataset"
-        Me.HCQC_NewDataset.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema
-        '
-        'Spl_requestTableAdapter
-        '
-        Me.Spl_requestTableAdapter.ClearBeforeFill = True
-        '
         'tkarantina
         '
         Me.tkarantina.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.tkarantina.AutoSize = True
         Me.tkarantina.BackColor = System.Drawing.Color.Transparent
         Me.tkarantina.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
-        Me.tkarantina.Location = New System.Drawing.Point(944, 247)
+        Me.tkarantina.Location = New System.Drawing.Point(944, 219)
         Me.tkarantina.Name = "tkarantina"
         Me.tkarantina.Size = New System.Drawing.Size(110, 15)
         Me.tkarantina.TabIndex = 100
         Me.tkarantina.Text = "Kesehatan Benih"
         Me.tkarantina.UseSelectable = True
         '
+        'LinkImport
+        '
+        Me.LinkImport.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.LinkImport.AutoSize = True
+        Me.LinkImport.BackColor = System.Drawing.Color.Transparent
+        Me.LinkImport.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.LinkImport.FontSize = MetroFramework.MetroLinkSize.Medium
+        Me.LinkImport.FontWeight = MetroFramework.MetroLinkWeight.Regular
+        Me.LinkImport.Location = New System.Drawing.Point(543, 57)
+        Me.LinkImport.Name = "LinkImport"
+        Me.LinkImport.Size = New System.Drawing.Size(99, 23)
+        Me.LinkImport.TabIndex = 107
+        Me.LinkImport.TabStop = False
+        Me.LinkImport.Text = "Import Data"
+        Me.LinkImport.TextAlign = System.Drawing.ContentAlignment.MiddleRight
+        Me.LinkImport.UseCustomBackColor = True
+        Me.LinkImport.UseSelectable = True
+        Me.LinkImport.UseStyleColors = True
+        '
+        'BtnSetAll
+        '
+        Me.BtnSetAll.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnSetAll.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.BtnSetAll.Location = New System.Drawing.Point(945, 139)
+        Me.BtnSetAll.Name = "BtnSetAll"
+        Me.BtnSetAll.Size = New System.Drawing.Size(76, 22)
+        Me.BtnSetAll.TabIndex = 108
+        Me.BtnSetAll.Text = "Set All"
+        Me.BtnSetAll.UseSelectable = True
+        '
+        'BtnSetSelected
+        '
+        Me.BtnSetSelected.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnSetSelected.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.BtnSetSelected.Location = New System.Drawing.Point(1040, 139)
+        Me.BtnSetSelected.Name = "BtnSetSelected"
+        Me.BtnSetSelected.Size = New System.Drawing.Size(76, 22)
+        Me.BtnSetSelected.TabIndex = 109
+        Me.BtnSetSelected.Text = "Set Selected"
+        Me.BtnSetSelected.UseSelectable = True
+        '
+        'BtnTestSetSelected
+        '
+        Me.BtnTestSetSelected.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
+        Me.BtnTestSetSelected.FontWeight = MetroFramework.MetroButtonWeight.Light
+        Me.BtnTestSetSelected.Location = New System.Drawing.Point(1040, 345)
+        Me.BtnTestSetSelected.Name = "BtnTestSetSelected"
+        Me.BtnTestSetSelected.Size = New System.Drawing.Size(76, 22)
+        Me.BtnTestSetSelected.TabIndex = 111
+        Me.BtnTestSetSelected.Text = "Set Selected"
+        Me.BtnTestSetSelected.UseSelectable = True
+        '
+        'CheckColumn1
+        '
+        Me.CheckColumn1.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CheckColumn1.HeaderText = ""
+        Me.CheckColumn1.Name = "CheckColumn1"
+        Me.CheckColumn1.Width = 40
+        '
+        'ProductionCodeColumn
+        '
+        Me.ProductionCodeColumn.HeaderText = "Production Code"
+        Me.ProductionCodeColumn.Name = "ProductionCodeColumn"
+        '
+        'dovendorColumn
+        '
+        Me.dovendorColumn.HeaderText = "DO Vendor"
+        Me.dovendorColumn.Name = "dovendorColumn"
+        Me.dovendorColumn.Width = 90
+        '
+        'VarietyColumn
+        '
+        Me.VarietyColumn.HeaderText = "Variety"
+        Me.VarietyColumn.Name = "VarietyColumn"
+        Me.VarietyColumn.Width = 80
+        '
+        'InsplotColumn
+        '
+        Me.InsplotColumn.HeaderText = "Insp. Lot"
+        Me.InsplotColumn.Name = "InsplotColumn"
+        '
+        'FarmerColumn
+        '
+        Me.FarmerColumn.HeaderText = "Farmer"
+        Me.FarmerColumn.Name = "FarmerColumn"
+        Me.FarmerColumn.Width = 80
+        '
+        'LocationColumn
+        '
+        Me.LocationColumn.HeaderText = "Location"
+        Me.LocationColumn.Name = "LocationColumn"
+        '
+        'HarvestColumn
+        '
+        Me.HarvestColumn.HeaderText = "Harvest"
+        Me.HarvestColumn.Name = "HarvestColumn"
+        '
+        'ManualColumn
+        '
+        Me.ManualColumn.HeaderText = "Manual"
+        Me.ManualColumn.Name = "ManualColumn"
+        Me.ManualColumn.Width = 70
+        '
+        'LotColumn
+        '
+        Me.LotColumn.HeaderText = "Lot/Job"
+        Me.LotColumn.Name = "LotColumn"
+        Me.LotColumn.Width = 80
+        '
+        'WeightColumn
+        '
+        Me.WeightColumn.HeaderText = "Weight"
+        Me.WeightColumn.Name = "WeightColumn"
+        '
+        'UnitColumn
+        '
+        Me.UnitColumn.HeaderText = "Unit"
+        Me.UnitColumn.Name = "UnitColumn"
+        Me.UnitColumn.Width = 65
+        '
+        'BagColumn
+        '
+        Me.BagColumn.HeaderText = "Bags"
+        Me.BagColumn.Name = "BagColumn"
+        Me.BagColumn.Width = 65
+        '
+        'smplLocation
+        '
+        Me.smplLocation.HeaderText = "Sample Location"
+        Me.smplLocation.Name = "smplLocation"
+        Me.smplLocation.Resizable = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.smplLocation.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.NotSortable
+        '
+        'ScopeColumn
+        '
+        Me.ScopeColumn.HeaderText = "Scope"
+        Me.ScopeColumn.Name = "ScopeColumn"
+        '
+        'KetColumn
+        '
+        Me.KetColumn.HeaderText = "Keterangan"
+        Me.KetColumn.Name = "KetColumn"
+        '
         'Multy_Request_Sample
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(1142, 496)
+        Me.Controls.Add(Me.BtnTestSetSelected)
+        Me.Controls.Add(Me.BtnSetSelected)
+        Me.Controls.Add(Me.BtnSetAll)
+        Me.Controls.Add(Me.LinkImport)
         Me.Controls.Add(Me.tkarantina)
-        Me.Controls.Add(Me.tloc_sample)
-        Me.Controls.Add(Me.MetroLabel6)
         Me.Controls.Add(Me.MetroLabel5)
         Me.Controls.Add(Me.BtnClearSelected)
         Me.Controls.Add(Me.LinkClear)
         Me.Controls.Add(Me.Linkadd)
         Me.Controls.Add(Me.MetroLabel3)
-        Me.Controls.Add(Me.LprosesSave)
         Me.Controls.Add(Me.MetroLabel7)
         Me.Controls.Add(Me.BtnSave)
         Me.Controls.Add(Me.MetroLabel2)
@@ -511,16 +537,11 @@ Partial Class Multy_Request_Sample
         Me.Name = "Multy_Request_Sample"
         Me.Text = "Multipel Request Sample"
         CType(Me.MetroGrid2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.SplrequestBindingSource, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.HCQC_NewDataset, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
     Friend WithEvents MetroGrid2 As MetroGrid
-    Friend WithEvents HCQC_NewDataset As HCQC_NewDataset
-    Friend WithEvents SplrequestBindingSource As BindingSource
-    Friend WithEvents Spl_requestTableAdapter As HCQC_NewDatasetTableAdapters.spl_requestTableAdapter
     Friend WithEvents MetroLabel4 As MetroLabel
     Friend WithEvents MetroLabel1 As MetroLabel
     Friend WithEvents TComboScope As MetroComboBox
@@ -538,19 +559,25 @@ Partial Class Multy_Request_Sample
     Friend WithEvents LinkClear As MetroLink
     Friend WithEvents MetroLabel5 As MetroLabel
     Friend WithEvents BtnClearSelected As MetroLink
-    Friend WithEvents LprosesSave As MetroLabel
+    Friend WithEvents tkarantina As MetroCheckBox
+    Friend WithEvents LinkImport As MetroLink
+    Friend WithEvents BtnSetAll As MetroButton
+    Friend WithEvents BtnSetSelected As MetroButton
+    Friend WithEvents BtnTestSetSelected As MetroButton
     Friend WithEvents CheckColumn1 As DataGridViewCheckBoxColumn
-    Friend WithEvents idproductionColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ProductionCodeColumn As DataGridViewTextBoxColumn
+    Friend WithEvents dovendorColumn As DataGridViewTextBoxColumn
     Friend WithEvents VarietyColumn As DataGridViewTextBoxColumn
+    Friend WithEvents InsplotColumn As DataGridViewTextBoxColumn
     Friend WithEvents FarmerColumn As DataGridViewTextBoxColumn
     Friend WithEvents LocationColumn As DataGridViewTextBoxColumn
     Friend WithEvents HarvestColumn As DataGridViewTextBoxColumn
     Friend WithEvents ManualColumn As DataGridViewTextBoxColumn
     Friend WithEvents LotColumn As DataGridViewTextBoxColumn
     Friend WithEvents WeightColumn As DataGridViewTextBoxColumn
+    Friend WithEvents UnitColumn As DataGridViewTextBoxColumn
     Friend WithEvents BagColumn As DataGridViewTextBoxColumn
+    Friend WithEvents smplLocation As DataGridViewTextBoxColumn
+    Friend WithEvents ScopeColumn As DataGridViewTextBoxColumn
     Friend WithEvents KetColumn As DataGridViewTextBoxColumn
-    Friend WithEvents MetroLabel6 As MetroLabel
-    Friend WithEvents tloc_sample As MetroComboBox
-    Friend WithEvents tkarantina As MetroCheckBox
 End Class

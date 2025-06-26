@@ -63,7 +63,6 @@ Partial Class Sample_Receipt
         Me.MetroLabel10 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel11 = New MetroFramework.Controls.MetroLabel()
         Me.tremark = New MetroFramework.Controls.MetroTextBox()
-        Me.BtnDel = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
         Me.BtnCariLab = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.MetroToolTip1 = New MetroFramework.Components.MetroToolTip()
@@ -94,6 +93,7 @@ Partial Class Sample_Receipt
         Me.tsampling = New System.Windows.Forms.MaskedTextBox()
         Me.MetroLabel5 = New MetroFramework.Controls.MetroLabel()
         Me.LabelDate = New MetroFramework.Controls.MetroLabel()
+        Me.BtnDel = New Bunifu.Framework.UI.BunifuFlatButton()
         Me.tcopy = New MetroFramework.Controls.MetroTextBox()
         Me.MetroLabel24 = New MetroFramework.Controls.MetroLabel()
         Me.MetroLabel17 = New MetroFramework.Controls.MetroLabel()
@@ -119,7 +119,6 @@ Partial Class Sample_Receipt
         Me.TestviaDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.TestrafDataGridViewCheckBoxColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.InputdateDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.RequestbyDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.BrtinDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SamplingDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.SamplerDataGridViewTextBoxColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -227,6 +226,7 @@ Partial Class Sample_Receipt
         '
         'tlabnum
         '
+        Me.tlabnum.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         '
         '
         '
@@ -362,6 +362,7 @@ Partial Class Sample_Receipt
         '
         'tseed
         '
+        Me.tseed.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         '
         '
         '
@@ -409,6 +410,7 @@ Partial Class Sample_Receipt
         '
         'tlabel
         '
+        Me.tlabel.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper
         '
         '
         '
@@ -506,7 +508,7 @@ Partial Class Sample_Receipt
         Me.Lreqnum.AutoSize = True
         Me.Lreqnum.FontWeight = MetroFramework.MetroLabelWeight.Bold
         Me.Lreqnum.ForeColor = System.Drawing.Color.White
-        Me.Lreqnum.Location = New System.Drawing.Point(632, 107)
+        Me.Lreqnum.Location = New System.Drawing.Point(525, 107)
         Me.Lreqnum.Name = "Lreqnum"
         Me.Lreqnum.Size = New System.Drawing.Size(21, 19)
         Me.Lreqnum.TabIndex = 55
@@ -519,7 +521,7 @@ Partial Class Sample_Receipt
         Me.Lvariety.AutoSize = True
         Me.Lvariety.FontWeight = MetroFramework.MetroLabelWeight.Bold
         Me.Lvariety.ForeColor = System.Drawing.Color.White
-        Me.Lvariety.Location = New System.Drawing.Point(525, 60)
+        Me.Lvariety.Location = New System.Drawing.Point(412, 60)
         Me.Lvariety.Margin = New System.Windows.Forms.Padding(3, 0, 3, 6)
         Me.Lvariety.Name = "Lvariety"
         Me.Lvariety.Size = New System.Drawing.Size(21, 19)
@@ -543,7 +545,7 @@ Partial Class Sample_Receipt
         '
         Me.MetroLabel9.AutoSize = True
         Me.MetroLabel9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.MetroLabel9.Location = New System.Drawing.Point(632, 88)
+        Me.MetroLabel9.Location = New System.Drawing.Point(525, 88)
         Me.MetroLabel9.Name = "MetroLabel9"
         Me.MetroLabel9.Size = New System.Drawing.Size(108, 19)
         Me.MetroLabel9.TabIndex = 57
@@ -555,7 +557,7 @@ Partial Class Sample_Receipt
         Me.Lfarmer.AutoSize = True
         Me.Lfarmer.FontWeight = MetroFramework.MetroLabelWeight.Bold
         Me.Lfarmer.ForeColor = System.Drawing.Color.White
-        Me.Lfarmer.Location = New System.Drawing.Point(525, 107)
+        Me.Lfarmer.Location = New System.Drawing.Point(643, 107)
         Me.Lfarmer.Name = "Lfarmer"
         Me.Lfarmer.Size = New System.Drawing.Size(21, 19)
         Me.Lfarmer.TabIndex = 58
@@ -567,7 +569,7 @@ Partial Class Sample_Receipt
         '
         Me.MetroLabel6.AutoSize = True
         Me.MetroLabel6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.MetroLabel6.Location = New System.Drawing.Point(525, 41)
+        Me.MetroLabel6.Location = New System.Drawing.Point(412, 41)
         Me.MetroLabel6.Name = "MetroLabel6"
         Me.MetroLabel6.Size = New System.Drawing.Size(47, 19)
         Me.MetroLabel6.TabIndex = 59
@@ -592,7 +594,7 @@ Partial Class Sample_Receipt
         Me.LScope.AutoSize = True
         Me.LScope.FontWeight = MetroFramework.MetroLabelWeight.Bold
         Me.LScope.ForeColor = System.Drawing.Color.White
-        Me.LScope.Location = New System.Drawing.Point(412, 60)
+        Me.LScope.Location = New System.Drawing.Point(643, 60)
         Me.LScope.Name = "LScope"
         Me.LScope.Size = New System.Drawing.Size(21, 19)
         Me.LScope.TabIndex = 61
@@ -618,7 +620,7 @@ Partial Class Sample_Receipt
         Me.LLocation.AutoSize = True
         Me.LLocation.FontWeight = MetroFramework.MetroLabelWeight.Bold
         Me.LLocation.ForeColor = System.Drawing.Color.White
-        Me.LLocation.Location = New System.Drawing.Point(525, 156)
+        Me.LLocation.Location = New System.Drawing.Point(643, 156)
         Me.LLocation.Name = "LLocation"
         Me.LLocation.Size = New System.Drawing.Size(21, 19)
         Me.LLocation.TabIndex = 61
@@ -643,7 +645,7 @@ Partial Class Sample_Receipt
         '
         Me.MetroLabel7.AutoSize = True
         Me.MetroLabel7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.MetroLabel7.Location = New System.Drawing.Point(525, 88)
+        Me.MetroLabel7.Location = New System.Drawing.Point(643, 88)
         Me.MetroLabel7.Name = "MetroLabel7"
         Me.MetroLabel7.Size = New System.Drawing.Size(51, 19)
         Me.MetroLabel7.TabIndex = 63
@@ -665,7 +667,7 @@ Partial Class Sample_Receipt
         '
         Me.MetroLabel4.AutoSize = True
         Me.MetroLabel4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.MetroLabel4.Location = New System.Drawing.Point(412, 41)
+        Me.MetroLabel4.Location = New System.Drawing.Point(643, 41)
         Me.MetroLabel4.Name = "MetroLabel4"
         Me.MetroLabel4.Size = New System.Drawing.Size(45, 19)
         Me.MetroLabel4.TabIndex = 65
@@ -687,7 +689,7 @@ Partial Class Sample_Receipt
         '
         Me.MetroLabel10.AutoSize = True
         Me.MetroLabel10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.MetroLabel10.Location = New System.Drawing.Point(525, 137)
+        Me.MetroLabel10.Location = New System.Drawing.Point(643, 137)
         Me.MetroLabel10.Name = "MetroLabel10"
         Me.MetroLabel10.Size = New System.Drawing.Size(58, 19)
         Me.MetroLabel10.TabIndex = 65
@@ -741,40 +743,6 @@ Partial Class Sample_Receipt
         Me.tremark.WaterMarkColor = System.Drawing.Color.FromArgb(CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer), CType(CType(109, Byte), Integer))
         Me.tremark.WaterMarkFont = New System.Drawing.Font("Segoe UI", 12.0!, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Pixel)
         '
-        'BtnDel
-        '
-        Me.BtnDel.Activecolor = System.Drawing.Color.Red
-        Me.BtnDel.BackColor = System.Drawing.Color.DimGray
-        Me.BtnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
-        Me.BtnDel.BorderRadius = 0
-        Me.BtnDel.ButtonText = "Delete"
-        Me.BtnDel.Cursor = System.Windows.Forms.Cursors.Hand
-        Me.BtnDel.DisabledColor = System.Drawing.Color.Transparent
-        Me.BtnDel.Iconcolor = System.Drawing.Color.Transparent
-        Me.BtnDel.Iconimage = CType(resources.GetObject("BtnDel.Iconimage"), System.Drawing.Image)
-        Me.BtnDel.Iconimage_right = Nothing
-        Me.BtnDel.Iconimage_right_Selected = Nothing
-        Me.BtnDel.Iconimage_Selected = Nothing
-        Me.BtnDel.IconMarginLeft = 0
-        Me.BtnDel.IconMarginRight = 0
-        Me.BtnDel.IconRightVisible = False
-        Me.BtnDel.IconRightZoom = 0R
-        Me.BtnDel.IconVisible = False
-        Me.BtnDel.IconZoom = 90.0R
-        Me.BtnDel.IsTab = False
-        Me.BtnDel.Location = New System.Drawing.Point(240, 403)
-        Me.BtnDel.Name = "BtnDel"
-        Me.BtnDel.Normalcolor = System.Drawing.Color.DimGray
-        Me.BtnDel.OnHovercolor = System.Drawing.Color.Red
-        Me.BtnDel.OnHoverTextColor = System.Drawing.Color.White
-        Me.BtnDel.selected = False
-        Me.BtnDel.Size = New System.Drawing.Size(80, 34)
-        Me.BtnDel.TabIndex = 53
-        Me.BtnDel.Text = "Delete"
-        Me.BtnDel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
-        Me.BtnDel.Textcolor = System.Drawing.Color.WhiteSmoke
-        Me.BtnDel.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        '
         'MetroLabel1
         '
         Me.MetroLabel1.AutoSize = True
@@ -790,6 +758,7 @@ Partial Class Sample_Receipt
         '
         'BtnCariLab
         '
+        Me.BtnCariLab.Active = False
         Me.BtnCariLab.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnCariLab.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnCariLab.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
@@ -843,8 +812,8 @@ Partial Class Sample_Receipt
         Me.MetroTabControl1.Controls.Add(Me.MetroTabPage2)
         Me.MetroTabControl1.Location = New System.Drawing.Point(3, 3)
         Me.MetroTabControl1.Name = "MetroTabControl1"
-        Me.MetroTabControl1.SelectedIndex = 1
-        Me.MetroTabControl1.Size = New System.Drawing.Size(1178, 482)
+        Me.MetroTabControl1.SelectedIndex = 0
+        Me.MetroTabControl1.Size = New System.Drawing.Size(1178, 495)
         Me.MetroTabControl1.TabIndex = 53
         Me.MetroTabControl1.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.MetroTabControl1.UseSelectable = True
@@ -920,7 +889,7 @@ Partial Class Sample_Receipt
         Me.MetroTabPage1.HorizontalScrollbarSize = 10
         Me.MetroTabPage1.Location = New System.Drawing.Point(4, 38)
         Me.MetroTabPage1.Name = "MetroTabPage1"
-        Me.MetroTabPage1.Size = New System.Drawing.Size(1170, 440)
+        Me.MetroTabPage1.Size = New System.Drawing.Size(1170, 453)
         Me.MetroTabPage1.TabIndex = 0
         Me.MetroTabPage1.Text = "Receipt Form       "
         Me.MetroTabPage1.Theme = MetroFramework.MetroThemeStyle.Dark
@@ -947,7 +916,7 @@ Partial Class Sample_Receipt
         '
         Me.MetroLabel18.AutoSize = True
         Me.MetroLabel18.ForeColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.MetroLabel18.Location = New System.Drawing.Point(632, 41)
+        Me.MetroLabel18.Location = New System.Drawing.Point(643, 186)
         Me.MetroLabel18.Name = "MetroLabel18"
         Me.MetroLabel18.Size = New System.Drawing.Size(54, 19)
         Me.MetroLabel18.TabIndex = 100
@@ -959,7 +928,7 @@ Partial Class Sample_Receipt
         Me.Lremark.AutoSize = True
         Me.Lremark.FontWeight = MetroFramework.MetroLabelWeight.Bold
         Me.Lremark.ForeColor = System.Drawing.Color.White
-        Me.Lremark.Location = New System.Drawing.Point(632, 60)
+        Me.Lremark.Location = New System.Drawing.Point(643, 205)
         Me.Lremark.Name = "Lremark"
         Me.Lremark.Size = New System.Drawing.Size(21, 19)
         Me.Lremark.TabIndex = 99
@@ -1020,11 +989,11 @@ Partial Class Sample_Receipt
         '
         Me.MetroLabel14.AutoSize = True
         Me.MetroLabel14.ForeColor = System.Drawing.Color.FromArgb(CType(CType(199, Byte), Integer), CType(CType(199, Byte), Integer), CType(CType(199, Byte), Integer))
-        Me.MetroLabel14.Location = New System.Drawing.Point(632, 137)
+        Me.MetroLabel14.Location = New System.Drawing.Point(525, 137)
         Me.MetroLabel14.Name = "MetroLabel14"
-        Me.MetroLabel14.Size = New System.Drawing.Size(109, 19)
+        Me.MetroLabel14.Size = New System.Drawing.Size(67, 19)
         Me.MetroLabel14.TabIndex = 93
-        Me.MetroLabel14.Text = "Production Code"
+        Me.MetroLabel14.Text = "ID Vendor"
         Me.MetroLabel14.Theme = MetroFramework.MetroThemeStyle.Dark
         '
         'LProductionCode
@@ -1032,7 +1001,7 @@ Partial Class Sample_Receipt
         Me.LProductionCode.AutoSize = True
         Me.LProductionCode.FontWeight = MetroFramework.MetroLabelWeight.Bold
         Me.LProductionCode.ForeColor = System.Drawing.Color.White
-        Me.LProductionCode.Location = New System.Drawing.Point(632, 156)
+        Me.LProductionCode.Location = New System.Drawing.Point(525, 156)
         Me.LProductionCode.Name = "LProductionCode"
         Me.LProductionCode.Size = New System.Drawing.Size(21, 19)
         Me.LProductionCode.TabIndex = 92
@@ -1047,7 +1016,7 @@ Partial Class Sample_Receipt
         Me.traf.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.traf.Location = New System.Drawing.Point(540, 321)
         Me.traf.Name = "traf"
-        Me.traf.Size = New System.Drawing.Size(96, 15)
+        Me.traf.Size = New System.Drawing.Size(97, 15)
         Me.traf.TabIndex = 89
         Me.traf.TabStop = False
         Me.traf.Text = "Rafaction Test"
@@ -1062,7 +1031,7 @@ Partial Class Sample_Receipt
         Me.tvia.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.tvia.Location = New System.Drawing.Point(540, 300)
         Me.tvia.Name = "tvia"
-        Me.tvia.Size = New System.Drawing.Size(88, 15)
+        Me.tvia.Size = New System.Drawing.Size(89, 15)
         Me.tvia.TabIndex = 91
         Me.tvia.TabStop = False
         Me.tvia.Text = "Viability Test"
@@ -1077,7 +1046,7 @@ Partial Class Sample_Receipt
         Me.tger.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.tger.Location = New System.Drawing.Point(411, 363)
         Me.tger.Name = "tger"
-        Me.tger.Size = New System.Drawing.Size(112, 15)
+        Me.tger.Size = New System.Drawing.Size(113, 15)
         Me.tger.TabIndex = 90
         Me.tger.TabStop = False
         Me.tger.Text = "Germination Test"
@@ -1092,7 +1061,7 @@ Partial Class Sample_Receipt
         Me.tpur.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.tpur.Location = New System.Drawing.Point(411, 342)
         Me.tpur.Name = "tpur"
-        Me.tpur.Size = New System.Drawing.Size(77, 15)
+        Me.tpur.Size = New System.Drawing.Size(78, 15)
         Me.tpur.TabIndex = 88
         Me.tpur.TabStop = False
         Me.tpur.Text = "Purity Test"
@@ -1107,7 +1076,7 @@ Partial Class Sample_Receipt
         Me.tmoi.ForeColor = System.Drawing.Color.FromArgb(CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer), CType(CType(153, Byte), Integer))
         Me.tmoi.Location = New System.Drawing.Point(411, 321)
         Me.tmoi.Name = "tmoi"
-        Me.tmoi.Size = New System.Drawing.Size(93, 15)
+        Me.tmoi.Size = New System.Drawing.Size(94, 15)
         Me.tmoi.TabIndex = 87
         Me.tmoi.TabStop = False
         Me.tmoi.Text = "Moisture Test"
@@ -1165,7 +1134,7 @@ Partial Class Sample_Receipt
         Me.BunifuSeparator2.LineThickness = 1
         Me.BunifuSeparator2.Location = New System.Drawing.Point(392, 11)
         Me.BunifuSeparator2.Name = "BunifuSeparator2"
-        Me.BunifuSeparator2.Size = New System.Drawing.Size(13, 363)
+        Me.BunifuSeparator2.Size = New System.Drawing.Size(13, 325)
         Me.BunifuSeparator2.TabIndex = 79
         Me.BunifuSeparator2.Transparency = 255
         Me.BunifuSeparator2.Vertical = True
@@ -1256,6 +1225,41 @@ Partial Class Sample_Receipt
         Me.LabelDate.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.LabelDate.UseCustomForeColor = True
         '
+        'BtnDel
+        '
+        Me.BtnDel.Active = False
+        Me.BtnDel.Activecolor = System.Drawing.Color.Red
+        Me.BtnDel.BackColor = System.Drawing.Color.DimGray
+        Me.BtnDel.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch
+        Me.BtnDel.BorderRadius = 0
+        Me.BtnDel.ButtonText = "Delete"
+        Me.BtnDel.Cursor = System.Windows.Forms.Cursors.Hand
+        Me.BtnDel.DisabledColor = System.Drawing.Color.Transparent
+        Me.BtnDel.Iconcolor = System.Drawing.Color.Transparent
+        Me.BtnDel.Iconimage = CType(resources.GetObject("BtnDel.Iconimage"), System.Drawing.Image)
+        Me.BtnDel.Iconimage_right = Nothing
+        Me.BtnDel.Iconimage_right_Selected = Nothing
+        Me.BtnDel.Iconimage_Selected = Nothing
+        Me.BtnDel.IconMarginLeft = 0
+        Me.BtnDel.IconMarginRight = 0
+        Me.BtnDel.IconRightVisible = False
+        Me.BtnDel.IconRightZoom = 0R
+        Me.BtnDel.IconVisible = False
+        Me.BtnDel.IconZoom = 90.0R
+        Me.BtnDel.IsTab = False
+        Me.BtnDel.Location = New System.Drawing.Point(240, 403)
+        Me.BtnDel.Name = "BtnDel"
+        Me.BtnDel.Normalcolor = System.Drawing.Color.DimGray
+        Me.BtnDel.OnHovercolor = System.Drawing.Color.Red
+        Me.BtnDel.OnHoverTextColor = System.Drawing.Color.White
+        Me.BtnDel.selected = False
+        Me.BtnDel.Size = New System.Drawing.Size(94, 34)
+        Me.BtnDel.TabIndex = 53
+        Me.BtnDel.Text = "Delete"
+        Me.BtnDel.TextAlign = System.Drawing.ContentAlignment.MiddleLeft
+        Me.BtnDel.Textcolor = System.Drawing.Color.WhiteSmoke
+        Me.BtnDel.TextFont = New System.Drawing.Font("Microsoft Sans Serif", 9.75!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        '
         'tcopy
         '
         '
@@ -1322,9 +1326,9 @@ Partial Class Sample_Receipt
         Me.MetroTabPage2.HorizontalScrollbarBarColor = True
         Me.MetroTabPage2.HorizontalScrollbarHighlightOnWheel = False
         Me.MetroTabPage2.HorizontalScrollbarSize = 10
-        Me.MetroTabPage2.Location = New System.Drawing.Point(4, 38)
+        Me.MetroTabPage2.Location = New System.Drawing.Point(4, 35)
         Me.MetroTabPage2.Name = "MetroTabPage2"
-        Me.MetroTabPage2.Size = New System.Drawing.Size(1170, 440)
+        Me.MetroTabPage2.Size = New System.Drawing.Size(1170, 456)
         Me.MetroTabPage2.Style = MetroFramework.MetroColorStyle.Lime
         Me.MetroTabPage2.TabIndex = 1
         Me.MetroTabPage2.Text = "Receipt List       "
@@ -1379,7 +1383,7 @@ Partial Class Sample_Receipt
         DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
         Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.MetroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.LabnumDataGridViewTextBoxColumn, Me.IdhvsprodDataGridViewTextBoxColumn, Me.CropDataGridViewTextBoxColumn, Me.VarietyDataGridViewTextBoxColumn, Me.FarmerDataGridViewTextBoxColumn, Me.LocationDataGridViewTextBoxColumn, Me.HarvestDataGridViewTextBoxColumn, Me.WeightDataGridViewTextBoxColumn, Me.NomnlDataGridViewTextBoxColumn, Me.NojobDataGridViewTextBoxColumn, Me.ScopeDataGridViewTextBoxColumn, Me.TestsamplingDataGridViewCheckBoxColumn, Me.TestmoiDataGridViewCheckBoxColumn, Me.TestpurDataGridViewCheckBoxColumn, Me.TestgerDataGridViewCheckBoxColumn, Me.TestviaDataGridViewCheckBoxColumn, Me.TestrafDataGridViewCheckBoxColumn, Me.InputdateDataGridViewTextBoxColumn, Me.RequestbyDataGridViewTextBoxColumn, Me.BrtinDataGridViewTextBoxColumn, Me.SamplingDataGridViewTextBoxColumn, Me.SamplerDataGridViewTextBoxColumn, Me.PackDataGridViewTextBoxColumn, Me.SeedsDataGridViewTextBoxColumn, Me.LabelDataGridViewTextBoxColumn, Me.InputatDataGridViewTextBoxColumn, Me.ReceiptbyDataGridViewTextBoxColumn})
+        Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.LabnumDataGridViewTextBoxColumn, Me.IdhvsprodDataGridViewTextBoxColumn, Me.CropDataGridViewTextBoxColumn, Me.VarietyDataGridViewTextBoxColumn, Me.FarmerDataGridViewTextBoxColumn, Me.LocationDataGridViewTextBoxColumn, Me.HarvestDataGridViewTextBoxColumn, Me.WeightDataGridViewTextBoxColumn, Me.NomnlDataGridViewTextBoxColumn, Me.NojobDataGridViewTextBoxColumn, Me.ScopeDataGridViewTextBoxColumn, Me.TestsamplingDataGridViewCheckBoxColumn, Me.TestmoiDataGridViewCheckBoxColumn, Me.TestpurDataGridViewCheckBoxColumn, Me.TestgerDataGridViewCheckBoxColumn, Me.TestviaDataGridViewCheckBoxColumn, Me.TestrafDataGridViewCheckBoxColumn, Me.InputdateDataGridViewTextBoxColumn, Me.BrtinDataGridViewTextBoxColumn, Me.SamplingDataGridViewTextBoxColumn, Me.SamplerDataGridViewTextBoxColumn, Me.PackDataGridViewTextBoxColumn, Me.SeedsDataGridViewTextBoxColumn, Me.LabelDataGridViewTextBoxColumn, Me.InputatDataGridViewTextBoxColumn, Me.ReceiptbyDataGridViewTextBoxColumn})
         Me.MetroGrid1.DataSource = Me.ReceiptListBindingSource
         DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
         DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
@@ -1405,7 +1409,7 @@ Partial Class Sample_Receipt
         Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.MetroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
-        Me.MetroGrid1.Size = New System.Drawing.Size(1167, 397)
+        Me.MetroGrid1.Size = New System.Drawing.Size(1167, 373)
         Me.MetroGrid1.TabIndex = 2
         Me.MetroGrid1.UseStyleColors = True
         '
@@ -1529,12 +1533,6 @@ Partial Class Sample_Receipt
         Me.InputdateDataGridViewTextBoxColumn.Name = "InputdateDataGridViewTextBoxColumn"
         Me.InputdateDataGridViewTextBoxColumn.Width = 80
         '
-        'RequestbyDataGridViewTextBoxColumn
-        '
-        Me.RequestbyDataGridViewTextBoxColumn.DataPropertyName = "request_by"
-        Me.RequestbyDataGridViewTextBoxColumn.HeaderText = "Request by"
-        Me.RequestbyDataGridViewTextBoxColumn.Name = "RequestbyDataGridViewTextBoxColumn"
-        '
         'BrtinDataGridViewTextBoxColumn
         '
         Me.BrtinDataGridViewTextBoxColumn.DataPropertyName = "brt_in"
@@ -1624,7 +1622,7 @@ Partial Class Sample_Receipt
         Me.BackColor = System.Drawing.Color.FromArgb(CType(CType(39, Byte), Integer), CType(CType(41, Byte), Integer), CType(CType(45, Byte), Integer))
         Me.Controls.Add(Me.MetroTabControl1)
         Me.Name = "Sample_Receipt"
-        Me.Size = New System.Drawing.Size(1184, 494)
+        Me.Size = New System.Drawing.Size(1184, 507)
         Me.Theme = MetroFramework.MetroThemeStyle.Dark
         Me.UseCustomBackColor = True
         Me.UseCustomForeColor = True
@@ -1711,6 +1709,21 @@ Partial Class Sample_Receipt
     Friend WithEvents LProductionCode As MetroLabel
     Friend WithEvents BtnSave2 As DevExpress.XtraEditors.SimpleButton
     Friend WithEvents MetroGrid1 As MetroGrid
+    Friend WithEvents ReceiptListBindingSource As BindingSource
+    Friend WithEvents HCQC_NewDataset As HCQC_NewDataset
+    Friend WithEvents ReceiptListTableAdapter As HCQC_NewDatasetTableAdapters.ReceiptListTableAdapter
+    Friend WithEvents MetroLabel15 As MetroLabel
+    Friend WithEvents DropDownButton1 As DevExpress.XtraEditors.DropDownButton
+    Friend WithEvents DateTimeChartRangeControlClient1 As DevExpress.XtraEditors.DateTimeChartRangeControlClient
+    Friend WithEvents Cek_auto_print As MetroCheckBox
+    Friend WithEvents MetroLabel16 As MetroLabel
+    Friend WithEvents tcopy As MetroTextBox
+    Friend WithEvents MetroLabel17 As MetroLabel
+    Friend WithEvents LabelPrinter As MetroLink
+    Friend WithEvents MetroLabel24 As MetroLabel
+    Friend WithEvents MetroLabel18 As MetroLabel
+    Friend WithEvents Lremark As MetroLabel
+    Friend WithEvents tkarantina As MetroCheckBox
     Friend WithEvents LabnumDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents IdhvsprodDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents CropDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -1729,7 +1742,6 @@ Partial Class Sample_Receipt
     Friend WithEvents TestviaDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
     Friend WithEvents TestrafDataGridViewCheckBoxColumn As DataGridViewCheckBoxColumn
     Friend WithEvents InputdateDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents RequestbyDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents BrtinDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SamplingDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents SamplerDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
@@ -1738,19 +1750,4 @@ Partial Class Sample_Receipt
     Friend WithEvents LabelDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents InputatDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
     Friend WithEvents ReceiptbyDataGridViewTextBoxColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ReceiptListBindingSource As BindingSource
-    Friend WithEvents HCQC_NewDataset As HCQC_NewDataset
-    Friend WithEvents ReceiptListTableAdapter As HCQC_NewDatasetTableAdapters.ReceiptListTableAdapter
-    Friend WithEvents MetroLabel15 As MetroLabel
-    Friend WithEvents DropDownButton1 As DevExpress.XtraEditors.DropDownButton
-    Friend WithEvents DateTimeChartRangeControlClient1 As DevExpress.XtraEditors.DateTimeChartRangeControlClient
-    Friend WithEvents Cek_auto_print As MetroCheckBox
-    Friend WithEvents MetroLabel16 As MetroLabel
-    Friend WithEvents tcopy As MetroTextBox
-    Friend WithEvents MetroLabel17 As MetroLabel
-    Friend WithEvents LabelPrinter As MetroLink
-    Friend WithEvents MetroLabel24 As MetroLabel
-    Friend WithEvents MetroLabel18 As MetroLabel
-    Friend WithEvents Lremark As MetroLabel
-    Friend WithEvents tkarantina As MetroCheckBox
 End Class

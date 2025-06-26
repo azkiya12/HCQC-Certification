@@ -1,13 +1,10 @@
-﻿Imports ZXing
-Imports ZXing.Common
-Imports DgvFilterPopup
-Imports System.Data.SqlClient
+﻿Imports System.Data.SqlClient
 Imports System.Drawing.Printing
 Imports DevExpress.XtraBars
 Imports DevExpress.XtraEditors
-Imports System.ComponentModel
-Imports System.Windows.Controls
-Imports DevExpress.ExpressApp.Editors
+Imports DgvFilterPopup
+Imports ZXing
+Imports ZXing.Common
 
 Public Class Report_Label_HCQC
     Private barManager1 As BarManager
@@ -294,12 +291,12 @@ Public Class Report_Label_HCQC
     End Sub
 
     Public Sub TermalPrintLA2(sender As Object, e As EventArgs)
-        Dim labzpl, v_labnum, V_variety2, V_manual, V_job, V_scope As String
+        Dim labzpl, v_labnum, V_variety, V_manual, V_job, V_scope As String
         Dim zplcom As String
 
         For Each row As DataGridViewRow In MetroGrid2.Rows
             v_labnum = CType(row.Cells("LabNumberColumn").Value, String)
-            V_variety2 = CType(row.Cells("VarietyColumn").Value, String)
+            V_variety = CType(row.Cells("VarietyColumn").Value, String)
             V_manual = CType(row.Cells("ManualColumn").Value, String)
             V_job = CType(row.Cells("LotColumn").Value, String)
             V_scope = CType(row.Cells("ScopeColumn").Value, String)
@@ -329,21 +326,24 @@ Public Class Report_Label_HCQC
 
                         ^XA
                         ^MMT^PW831^LL120^LS0
-                        ^BY2,3,20^FT6,70^BCN,,N,N
+                        ^BY2,3,20^FT15,70^BCN,,N,N
                         ^FH\^FD>:" & labzpl & "^FS
-                        ^FT12,36^AAN,18,10^FH\^FD" & v_labnum & "^FS
-                        ^FPH,1^FT13,96^A0N,17,18^FH\^CI28^FD" & V_variety2 & "; " & V_manual & " / " & V_job & "^FS^CI27
-                        ^FT167,36^AAN,18,10^FH\^FD" & V_scope & "^FS
-                        ^BY2,3,20^FT294,70^BCN,,N,N
+                        ^FT0,36^AAN,18,10^FB260,1,0,C^FH\^FD" & v_labnum & "\5C&^FS
+                        ^FPH,1^FT0,92^A0N,17,18^FB260,1,4,C^FH\^CI28^FD" & V_variety & "; " & V_manual & " / \5C&^FS^CI27
+                        ^FT0,36^AAN,18,10^FB243,1,0,R^FH\^FD" & V_scope & "^FS
+                        ^FPH,1^FT0,110^A0N,17,18^FB259,1,4,C^FH\^CI28^FD" & V_job & "\5C&^FS^CI27
+                        ^BY2,3,20^FT303,70^BCN,,N,N
                         ^FH\^FD>:" & labzpl & "^FS
-                        ^FT300,36^AAN,18,10^FH\^FD" & v_labnum & "^FS
-                        ^FPH,1^FT301,96^A0N,17,18^FH\^CI28^FD" & V_variety2 & "; " & V_manual & " / " & V_job & "^FS^CI27
-                        ^FT455,36^AAN,18,10^FH\^FD" & V_scope & "^FS
-                        ^BY2,3,20^FT581,70^BCN,,N,N
+                        ^FT5,36^AAN,18,10^FB826,1,0,C^FH\^FD" & v_labnum & "\5C&^FS
+                        ^FPH,1^FT5,92^A0N,17,18^FB826,1,4,C^FH\^CI28^FD" & V_variety & "; " & V_manual & " / \5C&^FS^CI27
+                        ^FT0,36^AAN,18,10^FB531,1,0,R^FH\^FD" & V_scope & "^FS
+                        ^FPH,1^FT4,110^A0N,17,18^FB827,1,4,C^FH\^CI28^FD" & V_job & "\5C&^FS^CI27
+                        ^BY2,3,20^FT585,70^BCN,,N,N
                         ^FH\^FD>:" & labzpl & "^FS
-                        ^FT587,36^AAN,18,10^FH\^FD" & v_labnum & "^FS
-                        ^FPH,1^FT588,96^A0N,17,18^FH\^CI28^FD" & V_variety2 & "; " & V_manual & " / " & V_job & "^FS^CI27
-                        ^FT742,36^AAN,18,10^FH\^FD" & V_scope & "^FS
+                        ^FT579,36^AAN,18,10^FB252,1,0,C^FH\^FD" & v_labnum & "\5C&^FS
+                        ^FPH,1^FT579,92^A0N,17,18^FB252,1,4,C^FH\^CI28^FD" & V_variety & "; " & V_manual & " / \5C&^FS^CI27
+                        ^FT0,36^AAN,18,10^FB818,1,0,R^FH\^FD" & V_scope & "^FS
+                        ^FPH,1^FT578,110^A0N,17,18^FB253,1,4,C^FH\^CI28^FD" & V_job & "\5C&^FS^CI27
                         ^PQ1,0,1,Y
                         ^XZ"
             Printer.RawHelper.SendStringToPrinter(LabelPrinter.Text, zplcom)
@@ -660,7 +660,7 @@ Public Class Report_Label_HCQC
             Else
                 noprodzpl = ""
             End If
-            'noprodzpl = IIf(V_idprod.Length >= 8, V_idprod.Insert(8, ">6"), V_idprod)
+
 
             zplcom = "CT~~CD,~CC^~CT~
             ^XA
@@ -688,8 +688,8 @@ Public Class Report_Label_HCQC
             ^FPH,3^FT52,321^A0B,23,23^FH\^CI28^FDSUBMITTED SAMPLE^FS^CI27
             ^FT101,117^A0N,20,23^FH\^CI28^FD" & V_Crop & "; " & V_variety1 & "^FS^CI27
             ^FT101,144^A0N,20,23^FH\^CI28^FD" & V_farmer & "^FS^CI27
-            ^FT101,170^A0N,20,23^FH\^CI28^FD" & VManualLot & "; " & V_Location.ToUpper & "^FS^CI27
-            ^FT101,197^A0N,20,23^FH\^CI28^FD" & V_weight & " (kg); " & V_Bags & " Bags^FS^CI27
+            ^FPH,1^FT101,164^ADN,18,10^FH\^FD" & VManualLot & "; " & V_Location.ToUpper & "^FS
+            ^FPH,1^FT101,191^ADN,18,10^FH\^FD" & V_weight & " (kg); " & V_Bags & " Bags^FS
             ^BY3,3,23^FT598,386^BCB,,Y,N
             ^FH\^FD>" & IIf(noprodzpl = "", ":" & labzpl, ";" & noprodzpl) & "^FS
 
@@ -836,12 +836,14 @@ Public Class Report_Label_HCQC
         If Not LabelCount.Text = "..." Or LabelCount.Text = "0" Then
             If String.IsNullOrEmpty(LabelCount.Text) = False And LabelCount.Text > 0 Then
                 If RadioA2internal.Checked = True Then
+                    'Internal Lab Label
                     TermalPrintLA2(sender, e)
                     FlagRawStorage()
                     'ElseIf RadioA3SubLabel.Checked = True Then
                     '    TermalPrintLA3(sender, e)
                     '    FlagRawStorage()
                 ElseIf RadioA4LabelSample.Checked = True Then
+                    'Sampling Lab Label
                     TermalPrintA42024(sender, e)
                     FlagRawStorage()
                 Else
@@ -877,7 +879,7 @@ Public Class Report_Label_HCQC
                     'filtering loop to see if the row already exist on MetroGrid2
                     For j As Integer = 0 To MetroGrid2.Rows.Count() - 1 Step +1
                         'membandingkan MetroGrid1 pada Column(3) Lab number dengan MetroGrid2 pada Column(1) Lab number
-                        If row.Cells(3).Value.ToString() = MetroGrid2.Rows(j).Cells(1).Value.ToString() Then
+                        If row.Cells("LabnumColumn").Value.ToString() = MetroGrid2.Rows(j).Cells(1).Value.ToString() Then
                             rowAlreadyExist = True
                             Exit For
                         End If
@@ -885,45 +887,45 @@ Public Class Report_Label_HCQC
 
                     If rowAlreadyExist = False Then
                         MetroGrid2.Rows.Add(False,
-                                            row.Cells(3).Value.ToString(),
-                                            row.Cells(2).Value.ToString(),
-                                            SqlToBinding2("category_crop.crop", row.Cells(3).Value.ToString()),
-                                            row.Cells(4).Value.ToString(),
-                                            row.Cells(9).Value.ToString(),
-                                            row.Cells(10).Value.ToString(),
-                                            row.Cells(7).Value,
-                                            row.Cells(8).Value.ToString(),
-                                            row.Cells(11).Value.ToString(),
+                                            row.Cells("LabnumColumn").Value.ToString(),
+                                            row.Cells("norencana").Value.ToString(), '' ID VEndor
+                                            SqlToBinding2("category_crop.crop", row.Cells("LabnumColumn").Value.ToString()),
+                                            row.Cells("VarietyColumn1").Value.ToString(),
+                                            row.Cells("NomnlColumn").Value.ToString(),
+                                            row.Cells("NojobColumn").Value.ToString(),
+                                            row.Cells("HarvestColumn").Value,
+                                            row.Cells("WeightColumn1").Value.ToString(),
+                                            row.Cells("ScopeColumn1").Value.ToString(),
                                             "",
                                             "",
-                                            SqlToBinding2("qc_confirm_viewer.test_moi", row.Cells(3).Value.ToString()),
-                                            SqlToBinding2("qc_confirm_viewer.test_pur", row.Cells(3).Value.ToString()),
-                                            SqlToBinding2("qc_confirm_viewer.test_ger", row.Cells(3).Value.ToString()),
-                                            SqlToBinding2("qc_confirm_viewer.test_sampling", row.Cells(3).Value.ToString()),
-                                            SqlToBinding2("qc_confirm_viewer.test_raf", row.Cells(3).Value.ToString()),
-                                            SqlToBinding2("qc_confirm_viewer.test_via", row.Cells(3).Value.ToString())
+                                            SqlToBinding2("qc_confirm_viewer.test_moi", row.Cells("LabnumColumn").Value.ToString()),
+                                            SqlToBinding2("qc_confirm_viewer.test_pur", row.Cells("LabnumColumn").Value.ToString()),
+                                            SqlToBinding2("qc_confirm_viewer.test_ger", row.Cells("LabnumColumn").Value.ToString()),
+                                            SqlToBinding2("qc_confirm_viewer.test_sampling", row.Cells("LabnumColumn").Value.ToString()),
+                                            SqlToBinding2("qc_confirm_viewer.test_raf", row.Cells("LabnumColumn").Value.ToString()),
+                                            SqlToBinding2("qc_confirm_viewer.test_via", row.Cells("LabnumColumn").Value.ToString())
                                             )
                     End If
 
                 Else
                     MetroGrid2.Rows.Add(False,
-                                        row.Cells(3).Value.ToString(),
-                                        row.Cells(2).Value.ToString(),
-                                        SqlToBinding2("category_crop.crop", row.Cells(3).Value.ToString()),
-                                        row.Cells(4).Value.ToString(),
-                                        row.Cells(9).Value.ToString(),
-                                        row.Cells(10).Value.ToString(),
-                                        row.Cells(7).Value,
-                                        row.Cells(8).Value.ToString(),
-                                        row.Cells(11).Value.ToString(),
+                                        row.Cells("LabnumColumn").Value.ToString(),
+                                        row.Cells("norencana").Value.ToString(), 'ID Vendor
+                                        SqlToBinding2("category_crop.crop", row.Cells("LabnumColumn").Value.ToString()),
+                                        row.Cells("VarietyColumn1").Value.ToString(),
+                                        row.Cells("NomnlColumn").Value.ToString(),
+                                        row.Cells("NojobColumn").Value.ToString(),
+                                        row.Cells("HarvestColumn").Value,
+                                        row.Cells("WeightColumn1").Value.ToString(),
+                                        row.Cells("ScopeColumn1").Value.ToString(),
                                         "",
                                         "",
-                                        SqlToBinding2("qc_confirm_viewer.test_moi", row.Cells(3).Value.ToString()),
-                                        SqlToBinding2("qc_confirm_viewer.test_pur", row.Cells(3).Value.ToString()),
-                                        SqlToBinding2("qc_confirm_viewer.test_ger", row.Cells(3).Value.ToString()),
-                                        SqlToBinding2("qc_confirm_viewer.test_sampling", row.Cells(3).Value.ToString()),
-                                        SqlToBinding2("qc_confirm_viewer.test_raf", row.Cells(3).Value.ToString()),
-                                        SqlToBinding2("qc_confirm_viewer.test_via", row.Cells(3).Value.ToString())
+                                        SqlToBinding2("qc_confirm_viewer.test_moi", row.Cells("LabnumColumn").Value.ToString()),
+                                        SqlToBinding2("qc_confirm_viewer.test_pur", row.Cells("LabnumColumn").Value.ToString()),
+                                        SqlToBinding2("qc_confirm_viewer.test_ger", row.Cells("LabnumColumn").Value.ToString()),
+                                        SqlToBinding2("qc_confirm_viewer.test_sampling", row.Cells("LabnumColumn").Value.ToString()),
+                                        SqlToBinding2("qc_confirm_viewer.test_raf", row.Cells("LabnumColumn").Value.ToString()),
+                                        SqlToBinding2("qc_confirm_viewer.test_via", row.Cells("LabnumColumn").Value.ToString())
                                         )
                 End If
             End If
@@ -1032,7 +1034,8 @@ Public Class Report_Label_HCQC
 
     Private Sub LinkFiltertoPrint_Click(sender As Object, e As EventArgs) Handles LinkFiltertoPrint.Click
         MetroPanel1.Enabled = False
-        Me.TermalDataTableTableAdapter.FillByNotPrint(Me.HCQC_NewDataset.TermalDataTable)
+        TermalDataTableTableAdapter.FillByNotPrint(Me.HCQC_NewDataset.TermalDataTable)
         MetroPanel1.Enabled = True
     End Sub
+
 End Class

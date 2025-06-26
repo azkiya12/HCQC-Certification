@@ -1984,6 +1984,7 @@ Partial Class Germination_Test
         '
         'BtnFind
         '
+        Me.BtnFind.Active = False
         Me.BtnFind.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnFind.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnFind.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch

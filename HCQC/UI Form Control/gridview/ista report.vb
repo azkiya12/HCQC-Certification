@@ -117,5 +117,12 @@ Public Class ista_report
 
     End Sub
 
+    Private Sub BtnFilterDate_Click(sender As Object, e As EventArgs) Handles BtnFilterDate.Click
+        '' Mengatur tanggal awal
+        Dim getstartDate As DateTime = EndDate.Value.Date
 
+        '' Menambahkan satu hari ke tanggal awal dan mengurangi satu detik
+        Dim endDateTime As DateTime = getstartDate.AddDays(1).AddSeconds(-1)
+        Me.Report_ista_viewTableAdapter.FillByDateRange(HCQC_serverDataSet.report_ista_view, StartDate.Value.Date.ToString("yyyy-MM-ddTHH:mm:ss"), endDateTime.ToString("yyyy-MM-ddTHH:mm:ss"))
+    End Sub
 End Class

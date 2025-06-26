@@ -3,6 +3,7 @@ Public Class leadtime_report
     Private Sub MetroGrid1_RowPostPaint(ByVal sender As Object, ByVal e As System.Windows.Forms.DataGridViewRowPostPaintEventArgs) Handles MetroGrid1.RowPostPaint
         'penomoran pada MetroGrid view
         MetroGrid1 = DirectCast(sender, DataGridView)
+
         Dim rowNumber As String = (e.RowIndex + 1).ToString()
         While rowNumber.Length < MetroGrid1.RowCount.ToString().Length
             rowNumber = "0" & rowNumber

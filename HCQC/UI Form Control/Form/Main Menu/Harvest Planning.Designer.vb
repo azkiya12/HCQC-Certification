@@ -24,15 +24,15 @@ Partial Class Harvest_Planning
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Harvest_Planning))
-        Dim DataGridViewCellStyle7 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle8 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle9 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle10 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle11 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
-        Dim DataGridViewCellStyle12 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle1 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle2 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle3 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle4 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle5 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
+        Dim DataGridViewCellStyle6 As System.Windows.Forms.DataGridViewCellStyle = New System.Windows.Forms.DataGridViewCellStyle()
         Me.RealTimeSource1 = New DevExpress.Data.RealTimeSource()
         Me.HarvestProductionBindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.HCQC_NewDataset = New HCQC_NewDataset()
+        Me.HCQC_NewDataset = New WindowsApplication1.HCQC_NewDataset()
         Me.GridControl1 = New DevExpress.XtraGrid.GridControl()
         Me.GridView1 = New DevExpress.XtraGrid.Views.Grid.GridView()
         Me.colidcode = New DevExpress.XtraGrid.Columns.GridColumn()
@@ -47,12 +47,15 @@ Partial Class Harvest_Planning
         Me.coldusun = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colnorencana = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colnokontrak = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colcgrname = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colblokno = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.colcgrno = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colcgrname = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.colupload_date = New DevExpress.XtraGrid.Columns.GridColumn()
         Me.coljoblot = New DevExpress.XtraGrid.Columns.GridColumn()
-        Me.HarvestProductionTableAdapter = New HCQC_NewDatasetTableAdapters.HarvestProductionTableAdapter()
+        Me.colplant_qty = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colarea = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colarea_ha = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.colupload_date = New DevExpress.XtraGrid.Columns.GridColumn()
+        Me.HarvestProductionTableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.HarvestProductionTableAdapter()
         Me.NavigationFrame1 = New DevExpress.XtraBars.Navigation.NavigationFrame()
         Me.NavigationPage1 = New DevExpress.XtraBars.Navigation.NavigationPage()
         Me.MetroLink1 = New MetroFramework.Controls.MetroLink()
@@ -73,14 +76,20 @@ Partial Class Harvest_Planning
         Me.BtnSendBack = New Bunifu.Framework.UI.BunifuImageButton()
         Me.BtnSend = New Bunifu.Framework.UI.BunifuImageButton()
         Me.MetroGrid2 = New MetroFramework.Controls.MetroGrid()
-        Me.CekColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
-        Me.IdColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.VarietyColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.CropColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.PlantColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.ContractColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.HarvestColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.MetroGrid1 = New MetroFramework.Controls.MetroGrid()
+        Me.Reporta1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
+        Me.MetroLink2 = New MetroFramework.Controls.MetroLink()
+        Me.linkClearAll = New MetroFramework.Controls.MetroLink()
+        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
+        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
+        Me.LInkRefresh = New MetroFramework.Controls.MetroLink()
+        Me.CheckBox1 = New MetroFramework.Controls.MetroCheckBox()
+        Me.LinkData = New MetroFramework.Controls.MetroLink()
+        Me.LinkReport = New MetroFramework.Controls.MetroLink()
+        Me.Report_a1TableAdapter = New WindowsApplication1.HCQC_NewDatasetTableAdapters.report_a1TableAdapter()
+        Me.LinkImport = New MetroFramework.Controls.MetroLink()
+        Me.LinkDirectUpdateSAS = New MetroFramework.Controls.MetroLink()
+        Me.ComboBtn1 = New MetroFramework.Controls.MetroComboBox()
         Me.CheckColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
         Me.IdcodeColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.areaColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
@@ -92,19 +101,13 @@ Partial Class Harvest_Planning
         Me.CgrColumn1 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.Count = New System.Windows.Forms.DataGridViewTextBoxColumn()
         Me.LastPrint = New System.Windows.Forms.DataGridViewTextBoxColumn()
-        Me.Reporta1BindingSource = New System.Windows.Forms.BindingSource(Me.components)
-        Me.MetroLink2 = New MetroFramework.Controls.MetroLink()
-        Me.linkClearAll = New MetroFramework.Controls.MetroLink()
-        Me.MetroLabel6 = New MetroFramework.Controls.MetroLabel()
-        Me.MetroLabel1 = New MetroFramework.Controls.MetroLabel()
-        Me.LInkRefresh = New MetroFramework.Controls.MetroLink()
-        Me.CheckBox1 = New MetroFramework.Controls.MetroCheckBox()
-        Me.LinkData = New MetroFramework.Controls.MetroLink()
-        Me.LinkReport = New MetroFramework.Controls.MetroLink()
-        Me.Report_a1TableAdapter = New HCQC_NewDatasetTableAdapters.report_a1TableAdapter()
-        Me.LinkImport = New MetroFramework.Controls.MetroLink()
-        Me.LinkDirectUpdateSAS = New MetroFramework.Controls.MetroLink()
-        Me.ComboBtn1 = New MetroFramework.Controls.MetroComboBox()
+        Me.CekColumn = New System.Windows.Forms.DataGridViewCheckBoxColumn()
+        Me.IdColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.VarietyColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.CropColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.PlantColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.ContractColumn = New System.Windows.Forms.DataGridViewTextBoxColumn()
+        Me.HarvestColumn2 = New System.Windows.Forms.DataGridViewTextBoxColumn()
         CType(Me.HarvestProductionBindingSource, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.HCQC_NewDataset, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.GridControl1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -125,7 +128,7 @@ Partial Class Harvest_Planning
         '
         Me.RealTimeSource1.DataSource = Me.HarvestProductionBindingSource
         Me.RealTimeSource1.DisplayableProperties = "idcode;type;crop;harvest;variety;staff;kab;kec;desa;dusun;norencana;nokontrak;blo" &
-    "kno;cgrno;cgrname;upload_date;joblot"
+    "kno;cgrno;cgrname;upload_date;joblot;plant_qty;area;area_ha"
         '
         'HarvestProductionBindingSource
         '
@@ -152,7 +155,7 @@ Partial Class Harvest_Planning
         '
         'GridView1
         '
-        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colidcode, Me.coltype, Me.colcrop, Me.colharvest, Me.colvariety, Me.colstaff, Me.colkab, Me.colkec, Me.coldesa, Me.coldusun, Me.colnorencana, Me.colnokontrak, Me.colblokno, Me.colcgrno, Me.colcgrname, Me.colupload_date, Me.coljoblot})
+        Me.GridView1.Columns.AddRange(New DevExpress.XtraGrid.Columns.GridColumn() {Me.colidcode, Me.coltype, Me.colcrop, Me.colharvest, Me.colvariety, Me.colstaff, Me.colkab, Me.colkec, Me.coldesa, Me.coldusun, Me.colnorencana, Me.colnokontrak, Me.colcgrname, Me.colblokno, Me.colcgrno, Me.coljoblot, Me.colplant_qty, Me.colarea, Me.colarea_ha, Me.colupload_date})
         Me.GridView1.FocusRectStyle = DevExpress.XtraGrid.Views.Grid.DrawFocusRectStyle.RowFullFocus
         Me.GridView1.GridControl = Me.GridControl1
         Me.GridView1.Name = "GridView1"
@@ -221,16 +224,12 @@ Partial Class Harvest_Planning
         Me.colkab.Caption = "Kab"
         Me.colkab.FieldName = "kab"
         Me.colkab.Name = "colkab"
-        Me.colkab.Visible = True
-        Me.colkab.VisibleIndex = 6
         '
         'colkec
         '
         Me.colkec.Caption = "Kec"
         Me.colkec.FieldName = "kec"
         Me.colkec.Name = "colkec"
-        Me.colkec.Visible = True
-        Me.colkec.VisibleIndex = 7
         '
         'coldesa
         '
@@ -238,7 +237,7 @@ Partial Class Harvest_Planning
         Me.coldesa.FieldName = "desa"
         Me.coldesa.Name = "coldesa"
         Me.coldesa.Visible = True
-        Me.coldesa.VisibleIndex = 8
+        Me.coldesa.VisibleIndex = 6
         '
         'coldusun
         '
@@ -246,40 +245,25 @@ Partial Class Harvest_Planning
         Me.coldusun.FieldName = "dusun"
         Me.coldusun.Name = "coldusun"
         Me.coldusun.Visible = True
-        Me.coldusun.VisibleIndex = 9
+        Me.coldusun.VisibleIndex = 7
         '
         'colnorencana
         '
-        Me.colnorencana.Caption = "No Rencana"
+        Me.colnorencana.Caption = "No Rencana/Do Vendor"
         Me.colnorencana.FieldName = "norencana"
         Me.colnorencana.Name = "colnorencana"
         Me.colnorencana.Visible = True
-        Me.colnorencana.VisibleIndex = 10
+        Me.colnorencana.VisibleIndex = 8
+        Me.colnorencana.Width = 137
         '
         'colnokontrak
         '
-        Me.colnokontrak.Caption = "No Kontrak"
+        Me.colnokontrak.Caption = "Contract No"
         Me.colnokontrak.FieldName = "nokontrak"
         Me.colnokontrak.Name = "colnokontrak"
         Me.colnokontrak.Visible = True
-        Me.colnokontrak.VisibleIndex = 11
+        Me.colnokontrak.VisibleIndex = 9
         Me.colnokontrak.Width = 133
-        '
-        'colblokno
-        '
-        Me.colblokno.Caption = "No Block"
-        Me.colblokno.FieldName = "blokno"
-        Me.colblokno.Name = "colblokno"
-        Me.colblokno.Visible = True
-        Me.colblokno.VisibleIndex = 12
-        '
-        'colcgrno
-        '
-        Me.colcgrno.Caption = "No CGR"
-        Me.colcgrno.FieldName = "cgrno"
-        Me.colcgrno.Name = "colcgrno"
-        Me.colcgrno.Visible = True
-        Me.colcgrno.VisibleIndex = 13
         '
         'colcgrname
         '
@@ -287,7 +271,53 @@ Partial Class Harvest_Planning
         Me.colcgrname.FieldName = "cgrname"
         Me.colcgrname.Name = "colcgrname"
         Me.colcgrname.Visible = True
-        Me.colcgrname.VisibleIndex = 14
+        Me.colcgrname.VisibleIndex = 11
+        '
+        'colblokno
+        '
+        Me.colblokno.Caption = "No Block/Material"
+        Me.colblokno.FieldName = "blokno"
+        Me.colblokno.Name = "colblokno"
+        Me.colblokno.Visible = True
+        Me.colblokno.VisibleIndex = 10
+        Me.colblokno.Width = 104
+        '
+        'colcgrno
+        '
+        Me.colcgrno.Caption = "No CGR"
+        Me.colcgrno.FieldName = "cgrno"
+        Me.colcgrno.Name = "colcgrno"
+        '
+        'coljoblot
+        '
+        Me.coljoblot.Caption = "Lot/Job/Batch"
+        Me.coljoblot.FieldName = "joblot"
+        Me.coljoblot.Name = "coljoblot"
+        Me.coljoblot.Visible = True
+        Me.coljoblot.VisibleIndex = 12
+        Me.coljoblot.Width = 95
+        '
+        'colplant_qty
+        '
+        Me.colplant_qty.Caption = "Plant Qty"
+        Me.colplant_qty.FieldName = "plant_qty"
+        Me.colplant_qty.Name = "colplant_qty"
+        Me.colplant_qty.Visible = True
+        Me.colplant_qty.VisibleIndex = 13
+        '
+        'colarea
+        '
+        Me.colarea.Caption = "Area"
+        Me.colarea.FieldName = "area"
+        Me.colarea.Name = "colarea"
+        Me.colarea.Visible = True
+        Me.colarea.VisibleIndex = 14
+        '
+        'colarea_ha
+        '
+        Me.colarea_ha.Caption = "Area Ha"
+        Me.colarea_ha.FieldName = "area_ha"
+        Me.colarea_ha.Name = "colarea_ha"
         '
         'colupload_date
         '
@@ -295,15 +325,7 @@ Partial Class Harvest_Planning
         Me.colupload_date.FieldName = "upload_date"
         Me.colupload_date.Name = "colupload_date"
         Me.colupload_date.Visible = True
-        Me.colupload_date.VisibleIndex = 16
-        '
-        'coljoblot
-        '
-        Me.coljoblot.Caption = "Lot/Job"
-        Me.coljoblot.FieldName = "joblot"
-        Me.coljoblot.Name = "coljoblot"
-        Me.coljoblot.Visible = True
-        Me.coljoblot.VisibleIndex = 15
+        Me.colupload_date.VisibleIndex = 15
         '
         'HarvestProductionTableAdapter
         '
@@ -352,6 +374,7 @@ Partial Class Harvest_Planning
         '
         'NavigationPage2
         '
+        Me.NavigationPage2.Caption = "NavigationPage2"
         Me.NavigationPage2.Controls.Add(Me.MetroLabel4)
         Me.NavigationPage2.Controls.Add(Me.MetroLabel3)
         Me.NavigationPage2.Controls.Add(Me.trequestcopy)
@@ -541,6 +564,7 @@ Partial Class Harvest_Planning
         '
         'BtnPreview
         '
+        Me.BtnPreview.Active = True
         Me.BtnPreview.Activecolor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
         Me.BtnPreview.Anchor = CType((System.Windows.Forms.AnchorStyles.Top Or System.Windows.Forms.AnchorStyles.Right), System.Windows.Forms.AnchorStyles)
         Me.BtnPreview.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(122, Byte), Integer), CType(CType(204, Byte), Integer))
@@ -613,81 +637,42 @@ Partial Class Harvest_Planning
         Me.MetroGrid2.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.MetroGrid2.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.MetroGrid2.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle7.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle7.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle7.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle7.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle7
+        DataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle1.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid2.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle1
         Me.MetroGrid2.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MetroGrid2.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CekColumn, Me.IdColumn, Me.VarietyColumn, Me.CropColumn, Me.PlantColumn, Me.ContractColumn, Me.HarvestColumn2})
-        DataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle8.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle8.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle8.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle8.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle8.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle8.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.MetroGrid2.DefaultCellStyle = DataGridViewCellStyle8
+        DataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle2.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle2.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.MetroGrid2.DefaultCellStyle = DataGridViewCellStyle2
         Me.MetroGrid2.EnableHeadersVisualStyles = False
         Me.MetroGrid2.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.MetroGrid2.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.MetroGrid2.Location = New System.Drawing.Point(442, 29)
         Me.MetroGrid2.Name = "MetroGrid2"
         Me.MetroGrid2.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle9.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle9.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle9.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle9.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle9.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle9.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle9.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid2.RowHeadersDefaultCellStyle = DataGridViewCellStyle9
+        DataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle3.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle3.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle3.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle3.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid2.RowHeadersDefaultCellStyle = DataGridViewCellStyle3
         Me.MetroGrid2.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid2.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.MetroGrid2.Size = New System.Drawing.Size(231, 347)
         Me.MetroGrid2.TabIndex = 93
-        '
-        'CekColumn
-        '
-        Me.CekColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
-        Me.CekColumn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.CekColumn.HeaderText = ""
-        Me.CekColumn.MinimumWidth = 50
-        Me.CekColumn.Name = "CekColumn"
-        Me.CekColumn.Width = 50
-        '
-        'IdColumn
-        '
-        Me.IdColumn.HeaderText = "Production Code"
-        Me.IdColumn.Name = "IdColumn"
-        '
-        'VarietyColumn
-        '
-        Me.VarietyColumn.HeaderText = "Variety"
-        Me.VarietyColumn.Name = "VarietyColumn"
-        '
-        'CropColumn
-        '
-        Me.CropColumn.HeaderText = "Area"
-        Me.CropColumn.Name = "CropColumn"
-        '
-        'PlantColumn
-        '
-        Me.PlantColumn.HeaderText = "Plant No"
-        Me.PlantColumn.Name = "PlantColumn"
-        '
-        'ContractColumn
-        '
-        Me.ContractColumn.HeaderText = "Contract No"
-        Me.ContractColumn.Name = "ContractColumn"
-        '
-        'HarvestColumn2
-        '
-        Me.HarvestColumn2.HeaderText = "Harvest"
-        Me.HarvestColumn2.Name = "HarvestColumn2"
         '
         'MetroGrid1
         '
@@ -702,111 +687,43 @@ Partial Class Harvest_Planning
         Me.MetroGrid1.BorderStyle = System.Windows.Forms.BorderStyle.None
         Me.MetroGrid1.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None
         Me.MetroGrid1.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle10.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle10.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle10.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle10.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle10.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle10.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle10.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle10
+        DataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle4.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle4.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.ColumnHeadersDefaultCellStyle = DataGridViewCellStyle4
         Me.MetroGrid1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize
         Me.MetroGrid1.Columns.AddRange(New System.Windows.Forms.DataGridViewColumn() {Me.CheckColumn, Me.IdcodeColumn1, Me.areaColumn, Me.VarietyColumn1, Me.CropColumn1, Me.norencanaColumn1, Me.HarvestColumn1, Me.ContractColumn1, Me.CgrColumn1, Me.Count, Me.LastPrint})
         Me.MetroGrid1.DataSource = Me.Reporta1BindingSource
-        DataGridViewCellStyle11.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle11.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle11.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle11.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
-        DataGridViewCellStyle11.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle11.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle11.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
-        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle11
+        DataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle5.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle5.ForeColor = System.Drawing.Color.FromArgb(CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer), CType(CType(136, Byte), Integer))
+        DataGridViewCellStyle5.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle5.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.[False]
+        Me.MetroGrid1.DefaultCellStyle = DataGridViewCellStyle5
         Me.MetroGrid1.EnableHeadersVisualStyles = False
         Me.MetroGrid1.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
         Me.MetroGrid1.GridColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
         Me.MetroGrid1.Location = New System.Drawing.Point(3, 29)
         Me.MetroGrid1.Name = "MetroGrid1"
         Me.MetroGrid1.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None
-        DataGridViewCellStyle12.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
-        DataGridViewCellStyle12.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
-        DataGridViewCellStyle12.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
-        DataGridViewCellStyle12.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
-        DataGridViewCellStyle12.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
-        DataGridViewCellStyle12.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
-        DataGridViewCellStyle12.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
-        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle12
+        DataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft
+        DataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(174, Byte), Integer), CType(CType(219, Byte), Integer))
+        DataGridViewCellStyle6.Font = New System.Drawing.Font("Segoe UI", 11.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Pixel)
+        DataGridViewCellStyle6.ForeColor = System.Drawing.Color.FromArgb(CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer), CType(CType(255, Byte), Integer))
+        DataGridViewCellStyle6.SelectionBackColor = System.Drawing.Color.FromArgb(CType(CType(0, Byte), Integer), CType(CType(198, Byte), Integer), CType(CType(247, Byte), Integer))
+        DataGridViewCellStyle6.SelectionForeColor = System.Drawing.Color.FromArgb(CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer), CType(CType(17, Byte), Integer))
+        DataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.[True]
+        Me.MetroGrid1.RowHeadersDefaultCellStyle = DataGridViewCellStyle6
         Me.MetroGrid1.RowHeadersWidthSizeMode = System.Windows.Forms.DataGridViewRowHeadersWidthSizeMode.DisableResizing
         Me.MetroGrid1.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect
         Me.MetroGrid1.Size = New System.Drawing.Size(388, 347)
         Me.MetroGrid1.TabIndex = 92
-        '
-        'CheckColumn
-        '
-        Me.CheckColumn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
-        Me.CheckColumn.HeaderText = ""
-        Me.CheckColumn.Name = "CheckColumn"
-        Me.CheckColumn.Width = 55
-        '
-        'IdcodeColumn1
-        '
-        Me.IdcodeColumn1.DataPropertyName = "idcode"
-        Me.IdcodeColumn1.HeaderText = "Production Code"
-        Me.IdcodeColumn1.Name = "IdcodeColumn1"
-        '
-        'areaColumn
-        '
-        Me.areaColumn.DataPropertyName = "area"
-        Me.areaColumn.HeaderText = "Area"
-        Me.areaColumn.Name = "areaColumn"
-        '
-        'VarietyColumn1
-        '
-        Me.VarietyColumn1.DataPropertyName = "variety"
-        Me.VarietyColumn1.HeaderText = "Variety"
-        Me.VarietyColumn1.Name = "VarietyColumn1"
-        '
-        'CropColumn1
-        '
-        Me.CropColumn1.DataPropertyName = "crop"
-        Me.CropColumn1.HeaderText = "Crop"
-        Me.CropColumn1.Name = "CropColumn1"
-        '
-        'norencanaColumn1
-        '
-        Me.norencanaColumn1.DataPropertyName = "norencana"
-        Me.norencanaColumn1.HeaderText = "No Rencana"
-        Me.norencanaColumn1.Name = "norencanaColumn1"
-        '
-        'HarvestColumn1
-        '
-        Me.HarvestColumn1.DataPropertyName = "harvest"
-        Me.HarvestColumn1.HeaderText = "Harvest Date"
-        Me.HarvestColumn1.Name = "HarvestColumn1"
-        '
-        'ContractColumn1
-        '
-        Me.ContractColumn1.DataPropertyName = "nokontrak"
-        Me.ContractColumn1.HeaderText = "Contact No"
-        Me.ContractColumn1.Name = "ContractColumn1"
-        '
-        'CgrColumn1
-        '
-        Me.CgrColumn1.DataPropertyName = "cgrname"
-        Me.CgrColumn1.HeaderText = "CGR Name"
-        Me.CgrColumn1.Name = "CgrColumn1"
-        '
-        'Count
-        '
-        Me.Count.DataPropertyName = "Count"
-        Me.Count.HeaderText = "Print Count"
-        Me.Count.Name = "Count"
-        Me.Count.Width = 70
-        '
-        'LastPrint
-        '
-        Me.LastPrint.DataPropertyName = "LastPrint"
-        Me.LastPrint.HeaderText = "Last Print"
-        Me.LastPrint.Name = "LastPrint"
         '
         'Reporta1BindingSource
         '
@@ -984,6 +901,113 @@ Partial Class Harvest_Planning
         Me.ComboBtn1.UseSelectable = True
         Me.ComboBtn1.UseStyleColors = True
         '
+        'CheckColumn
+        '
+        Me.CheckColumn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CheckColumn.HeaderText = ""
+        Me.CheckColumn.Name = "CheckColumn"
+        Me.CheckColumn.Width = 55
+        '
+        'IdcodeColumn1
+        '
+        Me.IdcodeColumn1.DataPropertyName = "idcode"
+        Me.IdcodeColumn1.HeaderText = "Production Code"
+        Me.IdcodeColumn1.Name = "IdcodeColumn1"
+        '
+        'areaColumn
+        '
+        Me.areaColumn.DataPropertyName = "area"
+        Me.areaColumn.HeaderText = "Area"
+        Me.areaColumn.Name = "areaColumn"
+        '
+        'VarietyColumn1
+        '
+        Me.VarietyColumn1.DataPropertyName = "variety"
+        Me.VarietyColumn1.HeaderText = "Variety"
+        Me.VarietyColumn1.Name = "VarietyColumn1"
+        '
+        'CropColumn1
+        '
+        Me.CropColumn1.DataPropertyName = "crop"
+        Me.CropColumn1.HeaderText = "Crop"
+        Me.CropColumn1.Name = "CropColumn1"
+        '
+        'norencanaColumn1
+        '
+        Me.norencanaColumn1.DataPropertyName = "norencana"
+        Me.norencanaColumn1.HeaderText = "No Renc/ Do Vendor"
+        Me.norencanaColumn1.Name = "norencanaColumn1"
+        '
+        'HarvestColumn1
+        '
+        Me.HarvestColumn1.DataPropertyName = "harvest"
+        Me.HarvestColumn1.HeaderText = "Harvest Date"
+        Me.HarvestColumn1.Name = "HarvestColumn1"
+        '
+        'ContractColumn1
+        '
+        Me.ContractColumn1.DataPropertyName = "nokontrak"
+        Me.ContractColumn1.HeaderText = "Contact No"
+        Me.ContractColumn1.Name = "ContractColumn1"
+        '
+        'CgrColumn1
+        '
+        Me.CgrColumn1.DataPropertyName = "cgrname"
+        Me.CgrColumn1.HeaderText = "CGR Name"
+        Me.CgrColumn1.Name = "CgrColumn1"
+        '
+        'Count
+        '
+        Me.Count.DataPropertyName = "Count"
+        Me.Count.HeaderText = "Print Count"
+        Me.Count.Name = "Count"
+        Me.Count.Width = 70
+        '
+        'LastPrint
+        '
+        Me.LastPrint.DataPropertyName = "LastPrint"
+        Me.LastPrint.HeaderText = "Last Print"
+        Me.LastPrint.Name = "LastPrint"
+        '
+        'CekColumn
+        '
+        Me.CekColumn.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCellsExceptHeader
+        Me.CekColumn.FlatStyle = System.Windows.Forms.FlatStyle.Popup
+        Me.CekColumn.HeaderText = ""
+        Me.CekColumn.MinimumWidth = 50
+        Me.CekColumn.Name = "CekColumn"
+        Me.CekColumn.Width = 50
+        '
+        'IdColumn
+        '
+        Me.IdColumn.HeaderText = "Production Code"
+        Me.IdColumn.Name = "IdColumn"
+        '
+        'VarietyColumn
+        '
+        Me.VarietyColumn.HeaderText = "Variety"
+        Me.VarietyColumn.Name = "VarietyColumn"
+        '
+        'CropColumn
+        '
+        Me.CropColumn.HeaderText = "Area"
+        Me.CropColumn.Name = "CropColumn"
+        '
+        'PlantColumn
+        '
+        Me.PlantColumn.HeaderText = "Plant No/Do Vendor"
+        Me.PlantColumn.Name = "PlantColumn"
+        '
+        'ContractColumn
+        '
+        Me.ContractColumn.HeaderText = "Contract No"
+        Me.ContractColumn.Name = "ContractColumn"
+        '
+        'HarvestColumn2
+        '
+        Me.HarvestColumn2.HeaderText = "Harvest"
+        Me.HarvestColumn2.Name = "HarvestColumn2"
+        '
         'Harvest_Planning
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -1053,13 +1077,6 @@ Partial Class Harvest_Planning
     Friend WithEvents BtnSendBack As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents BtnSend As Bunifu.Framework.UI.BunifuImageButton
     Friend WithEvents MetroGrid2 As MetroGrid
-    Friend WithEvents CekColumn As DataGridViewCheckBoxColumn
-    Friend WithEvents IdColumn As DataGridViewTextBoxColumn
-    Friend WithEvents VarietyColumn As DataGridViewTextBoxColumn
-    Friend WithEvents CropColumn As DataGridViewTextBoxColumn
-    Friend WithEvents PlantColumn As DataGridViewTextBoxColumn
-    Friend WithEvents ContractColumn As DataGridViewTextBoxColumn
-    Friend WithEvents HarvestColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents MetroGrid1 As MetroGrid
     Friend WithEvents trequestcopy As MetroTextBox
     Friend WithEvents MetroLabel7 As MetroLabel
@@ -1077,6 +1094,21 @@ Partial Class Harvest_Planning
     Friend WithEvents LinkData As MetroLink
     Friend WithEvents LinkReport As MetroLink
     Friend WithEvents Reporta1BindingSource As BindingSource
+    Friend WithEvents Report_a1TableAdapter As HCQC_NewDatasetTableAdapters.report_a1TableAdapter
+    Friend WithEvents LinkImport As MetroLink
+    Friend WithEvents MetroLink1 As MetroLink
+    Friend WithEvents LinkDirectUpdateSAS As MetroLink
+    Friend WithEvents ComboBtn1 As MetroComboBox
+    Friend WithEvents colplant_qty As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colarea As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents colarea_ha As DevExpress.XtraGrid.Columns.GridColumn
+    Friend WithEvents CekColumn As DataGridViewCheckBoxColumn
+    Friend WithEvents IdColumn As DataGridViewTextBoxColumn
+    Friend WithEvents VarietyColumn As DataGridViewTextBoxColumn
+    Friend WithEvents CropColumn As DataGridViewTextBoxColumn
+    Friend WithEvents PlantColumn As DataGridViewTextBoxColumn
+    Friend WithEvents ContractColumn As DataGridViewTextBoxColumn
+    Friend WithEvents HarvestColumn2 As DataGridViewTextBoxColumn
     Friend WithEvents CheckColumn As DataGridViewCheckBoxColumn
     Friend WithEvents IdcodeColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents areaColumn As DataGridViewTextBoxColumn
@@ -1088,9 +1120,4 @@ Partial Class Harvest_Planning
     Friend WithEvents CgrColumn1 As DataGridViewTextBoxColumn
     Friend WithEvents Count As DataGridViewTextBoxColumn
     Friend WithEvents LastPrint As DataGridViewTextBoxColumn
-    Friend WithEvents Report_a1TableAdapter As HCQC_NewDatasetTableAdapters.report_a1TableAdapter
-    Friend WithEvents LinkImport As MetroLink
-    Friend WithEvents MetroLink1 As MetroLink
-    Friend WithEvents LinkDirectUpdateSAS As MetroLink
-    Friend WithEvents ComboBtn1 As MetroComboBox
 End Class
